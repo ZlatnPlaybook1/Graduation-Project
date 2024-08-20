@@ -1,27 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./bars.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import Sidebar from "./Sidebar";
+import { Menu } from "../../Context/MenuContext";
 
 export default function Topbar() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
+  const { setIsOpen } = useContext(Menu); // Destructure setIsOpen from Menu context
 
   return (
-    <>
-      <div className="top-bar">
+    <div className="topbar d-flex">
+      <div className="top-menu">
+        <a href="/" target="_self" className="Home-link">
+          Cyber Labs
+        </a>
         <FontAwesomeIcon
+          onClick={() => setIsOpen((prev) => !prev)}
           icon={faBars}
-          className="menu-icon"
-          onClick={toggleSidebar}
+          className="fabars-size"
         />
-        <h3>Cyber Security</h3>
       </div>
-      <Sidebar isOpen={sidebarOpen} onClose={toggleSidebar} />
-    </>
+    </div>
   );
 }

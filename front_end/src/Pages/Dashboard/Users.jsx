@@ -1,28 +1,25 @@
 import React, { useEffect } from "react";
 import { baseUrl, USERS } from "../../Api/Api";
 import axios from "axios";
-import Cookie from "cookie-universal"; // Importing cookie-universal
-import Logout from "../Auth/Logout";
+import Cookie from "cookie-universal";
 
 export default function Users() {
-  const cookie = Cookie(); // Initialize cookie-universal
-
+  const cookie = Cookie();
+  const token = cookie.get("CuberWeb");
   useEffect(() => {
     axios
       .get(`${baseUrl}/${USERS}`, {
         headers: {
-          Authorization: "Bearer " + cookie.get("CuberWeb"), // Use the get method from cookie-universal
+          Authorization: "Bearer " + token,
         },
       })
       .then((response) => console.log(response.data))
       .catch((err) => console.log(err));
-  }, []);
+  });
 
   return (
     <>
-      {""}
-      <h1>Users pages</h1>
-      <Logout />
+      <h1>Users Page</h1>
     </>
   );
 }

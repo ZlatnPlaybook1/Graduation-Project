@@ -5,15 +5,15 @@ import Login from "./Pages/Auth/Login";
 import Register from "./Pages/Auth/Register";
 import Users from "./Pages/Dashboard/Users.jsx";
 import Dashboard from "./Pages/Dashboard/Dashboard.jsx";
+// import RequireAuth from "./Pages/Auth/RequireAuth.jsx";
 function App() {
   return (
     <div className="App">
       <Routes>
         {/* Public Routes */}
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Register />}></Route>
-        <Route path="/users" element={<Users />}></Route>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
         {/* Protected Routes */}
         <Route path="/dashboard" element={<Dashboard />}>

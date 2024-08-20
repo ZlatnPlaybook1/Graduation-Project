@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Cookie from "cookie-universal";
 import { baseUrl, LOGIN } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
+import { replace, useNavigate } from "react-router-dom";
 
 export default function Register() {
   // Handle States
@@ -10,6 +11,8 @@ export default function Register() {
     email: "",
     password: "",
   });
+  //  Navigate
+  const navigate = useNavigate();
   // Cookies
   const cookie = Cookie();
   // Loading state
@@ -35,7 +38,7 @@ export default function Register() {
       setLoading(false);
       const token = res.data.token;
       cookie.set("CuberWeb", token);
-      window.location.pathname = "/users";
+      navigate("/dashboard/users", { replace: true });
     } catch (error) {
       setLoading(false);
       if (error.response && error.response.status === 401) {

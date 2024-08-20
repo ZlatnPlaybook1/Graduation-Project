@@ -1,16 +1,16 @@
 /* Media Query */
 @media (min-width: 576px) {
-  .container {
+  .containerr {
     width: 540px;
   }
 }
 @media (min-width: 768) {
-  .container {
+  .containerr {
     width: 720px;
   }
 }
 @media (min-width: 992px) {
-  .container {
+  .containerr {
     width: 960px;
   }
   .custom-form {
@@ -28,12 +28,12 @@
   }
 }
 @media (min-width: 1200px) {
-  .container {
+  .containerr {
     width: 1140px;
   }
 }
 @media (min-width: 1400px) {
-  .container {
+  .containerr {
     width: 1320px;
   }
 }
