@@ -3,7 +3,7 @@ import {createJWT, hashPassword} from "../modules/auth";
 import {Request, Response} from "express";
 import {sendAuthEmail,validateAuthNumber} from "./authonticator"
 
-
+let email, name ,password
 // Step 1: Initial registration
 export const initiateRegistration = async (req: Request, res: Response) => {
   try {
@@ -14,7 +14,9 @@ export const initiateRegistration = async (req: Request, res: Response) => {
     if (existingEmail) {
       return res.status(400).json({ data: "Email already exists" });
     }
-
+    email = req.body.email;
+    name = req.body.name;
+    password = req.body.password;
     await sendAuthEmail(req.body.email);
 
     return res.status(200).json({ message: "Authentication email sent" });
@@ -27,7 +29,8 @@ export const initiateRegistration = async (req: Request, res: Response) => {
 // Step 2: Complete registration
 export const completeRegistration = async (req: Request, res: Response) => {
   try {
-    const { email, authNumber, name, password } = req.body;
+
+    const authNumber = req.body.authNumber;
 
     const validationResponse = validateAuthNumber(email, authNumber);
 
@@ -39,8 +42,8 @@ export const completeRegistration = async (req: Request, res: Response) => {
 
     const user = await prisma.user.create({
       data: {
-        name,
-        email,
+        name:name,
+        email:email,
         password: hash
       }
     });
