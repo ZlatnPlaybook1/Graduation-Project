@@ -9,7 +9,7 @@ export const initiateRegistration = async (req: Request, res: Response) => {
         });
 
         if (existingEmail) {
-            return res.status(400).json({data: "Email already exists"});
+            return res.status(422).json({data: "Email already exists"});
         }
     } catch (error) {
         console.error('Error initiating registration:', error);

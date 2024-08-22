@@ -19,5 +19,5 @@ export const login = async (req, res): Promise<any> => {
     }
 
     const token: string = createJWT(user);
-    return res.status(200).json({ token });
+    return res.status(200).json({token});
 };
