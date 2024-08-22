@@ -1,13 +1,11 @@
 import express from 'express';
-import registerRouter from './register/RegisterRouter';
+import registerRouter from './registerWithoutAuthentication/RegisterRouter';
 import loginRouter from './login/LoginRouter';
 import morgan from 'morgan';
-import {login} from './login/login';
 import cors from 'cors'
-import {protect} from "./modules/auth";
 
 
-const app= express();
+const app = express();
 
 app.use(cors())
 app.use(morgan('dev')); // morgan: HTTP request logger middleware,
@@ -17,9 +15,11 @@ app.use(express.urlencoded({extended: true}))
 app.get('/', (req, res, next) => {
     res.status(200).json({'data': "welcome to home page"})
 })
-
-app.use('/', registerRouter);
-app.use('/', loginRouter);
+app.get('/api', (req, res) => {
+    res.status(200).json({'data': "api"})
+})
+app.use('/api', registerRouter);
+app.use('/api', loginRouter);
 
 
 export default app

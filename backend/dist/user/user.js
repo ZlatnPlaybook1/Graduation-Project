@@ -26,4 +26,4 @@ export const signin = async (req, res) => {
     const token = createJWT(user);
     return res.status(200).json({ token });
 };
-//# sourceMappingURL=register.js.map
+//# sourceMappingURL=registerWithoutAuthentication.js.map

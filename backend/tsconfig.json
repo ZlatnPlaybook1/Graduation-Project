@@ -4,7 +4,10 @@
       "sourceMap": true,
       "outDir": "dist",
       "strict": false,
-      "lib": ["esnext"],
+      "lib": [
+        "esnext",
+        "dom"
+      ],
       "esModuleInterop": true,
       "skipLibCheck": true,
       "moduleResolution": "NodeNext"
