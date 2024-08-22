@@ -10,14 +10,14 @@ export default function Topbar() {
   return (
     <div className="topbar d-flex">
       <div className="top-menu">
-        <a href="/" target="_self" className="Home-link">
-          Cyber Labs
-        </a>
         <FontAwesomeIcon
           onClick={() => setIsOpen((prev) => !prev)}
           icon={faBars}
           className="fabars-size"
         />
+        <a href="/" target="_self" className="Home-link">
+          Cyber Labs
+        </a>
       </div>
     </div>
   );

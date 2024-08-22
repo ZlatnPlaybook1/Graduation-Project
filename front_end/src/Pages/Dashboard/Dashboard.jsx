@@ -9,7 +9,9 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <Topbar />
-      <Sidebar />
+      <div className="side-effect">
+        <Sidebar />
+      </div>
       <Outlet />
     </div>
   );

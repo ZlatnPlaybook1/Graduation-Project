@@ -1,4 +1,4 @@
-.btn {
+.botton {
   border: none;
   outline: none;
   border: 0;
@@ -6,7 +6,7 @@
   border-radius: 6px;
   cursor: pointer;
 }
-.btn-primary {
+.botton-primary {
   background-color: #06279c;
   color: white;
   font-size: 1rem;
@@ -26,4 +26,5 @@
   height: 40px;
   transition: all 0.3s ease;
   color: inherit;
+  cursor: pointer;
 }

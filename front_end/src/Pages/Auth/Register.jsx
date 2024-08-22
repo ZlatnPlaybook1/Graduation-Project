@@ -51,11 +51,11 @@ export default function Register() {
     <>
       {loading && <Loading />}
       <div className="container">
-        <div className="row h-100">
+        <div className="rows hh-100">
           <form className="form" onSubmit={handleSubmit}>
             <div className="custom-form">
-              <h1 className="text-center">Register Now</h1>
-              <div className="form-control">
+              <h1 className="textcenter">Register Now</h1>
+              <div className="formcontrol">
                 <input
                   type="text"
                   id="name"
@@ -67,7 +67,7 @@ export default function Register() {
                 />
                 <label htmlFor="name">Name:</label>
               </div>
-              <div className="form-control">
+              <div className="formcontrol">
                 <input
                   type="email"
                   id="email"
@@ -79,7 +79,7 @@ export default function Register() {
                 />
                 <label htmlFor="email">Email:</label>
               </div>
-              <div className="form-control">
+              <div className="formcontrol">
                 <input
                   type="password"
                   id="password"
@@ -92,7 +92,7 @@ export default function Register() {
                 />
                 <label htmlFor="password">Password:</label>
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="botton botton-primary">
                 Register
               </button>
               {err !== "" && <span className="error">{err}</span>}

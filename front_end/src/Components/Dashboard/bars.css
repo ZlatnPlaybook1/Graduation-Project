@@ -20,7 +20,7 @@
 .top-menu {
   display: flex;
   align-items: center;
-  gap: 90px;
+  gap: 20px;
 }
 .top-menu .fabars-size {
   font-size: 1.2rem;
@@ -37,18 +37,21 @@
 /* End Topbar */
 
 /* Start Sidebar */
+.full-cont {
+  height: 100vh;
+}
 .sidebar {
-  position: fixed;
+  max-height: 100vh;
+  position: sticky;
   top: 90px;
   left: 0;
   background-color: white;
   z-index: 3;
-  height: 100vh;
+  height: calc(100vh - 90px);
   box-shadow: 0 0 0 1px rgb(0, 0, 0, 0.1);
   width: 220px;
   padding: 20px 0;
 }
-
 .text {
   font-size: 18px;
 }
@@ -79,7 +82,9 @@
   background-color: #f2f3f0;
   color: #038edc;
 }
-
+.sidebar p {
+  padding-top: 13px;
+}
 a {
   text-decoration: none !important;
 }

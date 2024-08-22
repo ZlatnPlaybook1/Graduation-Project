@@ -7,19 +7,22 @@ import "./Css/components/button.css";
 import "./Css/components/alerts.css";
 import "./Css/components/loading.css";
 import "./Css/components/register-login.css";
-// import "bootstrap/dist/css/bootstrap.min.css";
-
+import "./Pages/Website/homepage.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import MenuContext from "./Context/MenuContext";
+import WindowContext from "./Context/WindowContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <MenuContext>
-      <Router>
-        <App />
-      </Router>
-    </MenuContext>
+    <WindowContext>
+      <MenuContext>
+        <Router>
+          <App />
+        </Router>
+      </MenuContext>
+    </WindowContext>
   </React.StrictMode>
 );

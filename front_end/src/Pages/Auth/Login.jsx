@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import Cookie from "cookie-universal";
 import { baseUrl, LOGIN } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
-import { replace, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export default function Register() {
+export default function Login() {
   // Handle States
   const [form, setForm] = useState({
     email: "",
@@ -53,11 +53,11 @@ export default function Register() {
     <>
       {loading && <Loading />}
       <div className="container">
-        <div className="row h-100">
+        <div className="rows hh-100">
           <form className="form" onSubmit={handleSubmit}>
             <div className="custom-form">
-              <h1 className="text-center">Login Now</h1>
-              <div className="form-control">
+              <h1 className="textcenter">Login Now</h1>
+              <div className="formcontrol">
                 <input
                   type="email"
                   id="email"
@@ -69,7 +69,7 @@ export default function Register() {
                 />
                 <label htmlFor="email">Email:</label>
               </div>
-              <div className="form-control">
+              <div className="formcontrol">
                 <input
                   type="password"
                   id="password"
@@ -82,11 +82,6 @@ export default function Register() {
                 />
                 <label htmlFor="password">Password:</label>
               </div>
-              <button type="submit" className="btn btn-primary">
-                Login
-              </button>
-              {err !== "" && <span className="error">{err}</span>}
-
               <div className="social-icons">
                 <a href="{}" className="icon">
                   <i className="fa-brands fa-google-plus-g"></i>
@@ -101,6 +96,10 @@ export default function Register() {
                   <i className="fa-brands fa-linkedin-in"></i>
                 </a>
               </div>
+              <button type="submit" className="botton botton-primary">
+                Login
+              </button>
+              {err !== "" && <span className="error">{err}</span>}
               <div className="register-link">
                 <p>
                   Not account yet? <a href="/register">Register</a>

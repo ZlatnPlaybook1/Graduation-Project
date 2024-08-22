@@ -1,47 +1,51 @@
 .form {
-  background-image: linear-gradient(
-      110deg,
-      white 0%,
-      white 50%,
-      transparent 50%
-    ),
-    url("../../../form.jpg");
-  background-position: right;
-  background-size: contain;
+  background-image: url("../../../form.jpg");
+  background-position: right center; /* Centers the image vertically */
+  background-size: 50% 100%; /* Makes the image cover the right half */
   background-repeat: no-repeat;
   width: 100%;
   height: 80%;
-  border-radius: 12px;
+  border-radius: 14px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
+
 .custom-form h1 {
   text-align: left;
-  margin: 20px;
+  margin: 20px 0;
   font-size: 2.5rem;
-  font-weight: 600;
-  color: black;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 1px;
+  font-family: "Montserrat", sans-serif; /* Modern font */
+  line-height: 1.2;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #333, #555);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .custom-form {
   width: 50%;
 }
-.form-control {
+.formcontrol {
   margin-bottom: 20px;
   position: relative;
 }
-.form-control label,
-.form-control input {
+.formcontrol label,
+.formcontrol input {
   display: block;
   margin-right: 20px;
   margin-bottom: 30px;
 }
-.form-control input {
+.formcontrol input {
   padding: 20px 20px;
   outline: none;
-  border-radius: 3px;
+  border-radius: 8px;
   border: 0;
   background-color: #eee;
   width: 80%;
@@ -49,19 +53,19 @@
   font-family: "Lato", sans-serif;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
 }
-.form-control input:focus:valid {
+.formcontrol input:focus:valid {
   border-bottom: 3px solid #06279c;
 }
-.form-control input:focus:not(:valid) {
+.formcontrol input:focus:not(:valid) {
   border-bottom: 3px solid orange;
 }
-.form-control input:placeholder-shown + label {
+.formcontrol input:placeholder-shown + label {
   opacity: 0;
   visibility: hidden;
   top: 20px;
   left: 20px;
 }
-.form-control label {
+.formcontrol label {
   position: absolute;
   top: -20px;
   left: 0;
