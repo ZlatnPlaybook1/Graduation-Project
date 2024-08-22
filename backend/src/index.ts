@@ -1,7 +1,8 @@
-// the starting point of the project 
+// the starting point of the project
 
 import app from './server'
-import * as dotenv from 'dotenv' 
+import * as dotenv from 'dotenv'
+
 dotenv.config() //  Loads environment variables from a .env file into process.env
 
 

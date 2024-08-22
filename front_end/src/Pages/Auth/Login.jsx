@@ -43,7 +43,10 @@ export default function Register() {
       setLoading(false);
       if (error.response && error.response.status === 401) {
         setErr("Wrong Email or Password");
-      } else {
+      }else if (error.response && error.response.status === 404){
+          setErr("Not a user");
+      } 
+      else {
         setErr("Internal server error");
       }
     }
