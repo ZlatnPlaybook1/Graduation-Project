@@ -5,7 +5,9 @@ import Login from "./Pages/Auth/Login";
 import Register from "./Pages/Auth/Register";
 import Users from "./Pages/Dashboard/Users.jsx";
 import Dashboard from "./Pages/Dashboard/Dashboard.jsx";
-// import RequierAuth from "./Pages/Auth/RequierAuth.jsx";
+import User from "./Pages/Dashboard/User.jsx";
+import Authincate from "./Pages/Auth/Authincate.jsx";
+import RequierAuth from "./Pages/Auth/RequierAuth.jsx";
 function App() {
   const location = useLocation();
 
@@ -25,13 +27,16 @@ function App() {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/authincate" element={<Authincate />} />
+        <Route path="/login" element={<Login />} />
 
         {/* Protected Routes */}
-        {/* <Route element={<RequierAuth />}> */}
-        <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="users" element={<Users />} />
+        <Route element={<RequierAuth />}>
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="users" element={<Users />} />
+            <Route path="users/:id" element={<User />} />
+          </Route>
         </Route>
       </Routes>
     </div>

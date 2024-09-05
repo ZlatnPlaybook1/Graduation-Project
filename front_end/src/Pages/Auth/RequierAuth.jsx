@@ -5,7 +5,7 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import Cookie from "cookie-universal";
-import axios from "axios";
+import axios, { Axios } from "axios";
 import { baseUrl, USER } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
 

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Cookie from "cookie-universal";
 import { baseUrl, REGISTER } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
-import { replace, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   // Handle States
