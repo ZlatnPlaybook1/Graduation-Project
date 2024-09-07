@@ -1,7 +1,7 @@
 import Axios from "axios";
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import { USER } from "../../Api/Api";
+import { baseUrl, USER } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +18,7 @@ export default function AddUser() {
     e.preventDefault();
     setLoading(true);
     try {
-      await Axios.post(`${USER}/add`, {
+      await Axios.post(`${baseUrl}/${USER}/add`, {
         name: name,
         email: email,
         password: password,

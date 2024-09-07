@@ -14,7 +14,7 @@ export default function Users() {
   const [NoUsers, setNoUsers] = useState(false);
   // Get Current User
   useEffect(() => {
-    axios.get(`${USER}`).then((res) => setCurrentUser(res.data));
+    axios.get(`${baseUrl}/${USER}`).then((res) => setCurrentUser(res.data));
   }, []);
 
   // Get All Users

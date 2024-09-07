@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import { USER } from "../../Api/Api";
+import { baseUrl, USER } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -19,7 +19,7 @@ export default function User() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = axios.get(`${USER}/${id}`);
+        const response = axios.get(`${baseUrl}/${USER}/${id}`);
         setName(response.data.name);
         setEmail(response.data.email);
         setRole(response.data.role);
@@ -38,7 +38,7 @@ export default function User() {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post(`${USER}/edit/${id}`, {
+      await axios.post(`${baseUrl}/${USER}/edit/${id}`, {
         name: name,
         email: email,
         role: role,
