@@ -9,10 +9,10 @@ registerRouter.get("/register", (req: Request, res: Response) => {
 })
 registerRouter.post("/register", initiateRegistration);
 
-registerRouter.get("/authentication", (req: Request, res: Response) => {
-    res.status(200).json({data: "authentication"})
+registerRouter.get("/authincate", (req: Request, res: Response) => {
+    res.status(200).json({data: "authincate"})
 })
-registerRouter.post("/authentication", completeRegistration);
+registerRouter.post("/authincate", completeRegistration);
 
 
 export default registerRouter;

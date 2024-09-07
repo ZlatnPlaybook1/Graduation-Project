@@ -1,5 +1,5 @@
 import express from 'express';
-import registerRouter from './registerWithoutAuthentication/RegisterRouter';
+import registerRouter from './registerWithAuthentication/RegisterRouter';
 import loginRouter from './login/LoginRouter';
 import morgan from 'morgan';
 import cors from 'cors'
