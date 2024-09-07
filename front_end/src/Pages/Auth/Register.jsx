@@ -20,7 +20,6 @@ export default function Register() {
   const [loading, setLoading] = useState(false);
   // Error state
   const [err, setErr] = useState("");
-
   // Handle Form Change
   function handleChange(e) {
     e.preventDefault();

@@ -38,11 +38,11 @@ export default function Authincate() {
                 id="number"
                 value={number}
                 onChange={handleChange}
-                placeholder="Enter 5-digit number"
+                placeholder="Enter 6-digit number"
                 required
-                maxLength="5"
+                maxLength="6"
               />
-              <label htmlFor="number">5-Digit Number:</label>
+              <label htmlFor="number">6-Digit Number:</label>
             </div>
             <button type="submit" className="botton botton-primary">
               Submit
