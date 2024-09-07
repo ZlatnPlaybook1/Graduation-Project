@@ -26,13 +26,13 @@ export default function Users() {
       .catch((err) => console.log(err));
   }, [deleteUser]);
 
-  // Filter Current User
-  const userFilter = userData.filter((user) => user.id !== currentUser.id);
   // Mapping on users
-  const userShow = userFilter.map((user, key) => (
+  const userShow = userData.map((user, key) => (
     <tr key={user.id}>
       <td>{key + 1}</td>
-      <td>{user.name}</td>
+      <td>
+        {user.name === currentUser.name ? user.name + "(You)" : user.name}
+      </td>
       <td>{user.email}</td>
       <td>
         {user.role === "1900"
@@ -46,30 +46,40 @@ export default function Users() {
           <Link to={`/user/${user.id}`}>
             <FontAwesomeIcon fontSize={"19px"} icon={faPenToSquare} />
           </Link>
-          <FontAwesomeIcon
-            onClick={() => handleDelete(user.id)}
-            fontSize={"19px"}
-            color="red"
-            cursor={"pointer"}
-            icon={faTrash}
-          />
+          {currentUser.name !==
+            user.name(
+              <FontAwesomeIcon
+                onClick={() => handleDelete(user.id)}
+                fontSize={"19px"}
+                color="red"
+                cursor={"pointer"}
+                icon={faTrash}
+              />
+            )}
         </div>
       </td>
     </tr>
   ));
   // Handle Delete
   async function handleDelete(id) {
-    try {
-      await axios.delete(`${USER}/${id}`);
-      setDeleteUser((prev) => !prev);
-    } catch (err) {
-      console.log(err);
+    if (currentUser.id !== id) {
+      try {
+        await axios.delete(`${USER}/${id}`);
+        setDeleteUser((prev) => !prev);
+      } catch (err) {
+        console.log(err);
+      }
     }
   }
 
   return (
     <div className="table-container">
       <h2 className="table-title">User List</h2>
+      <div className="d-flex justify-content-start">
+        <Link className="btn btn-primary" to={"/dashboard/user/add"}>
+          Add User
+        </Link>
+      </div>
       <Table responsive="sm" className="modern-table">
         <thead>
           <tr>
@@ -87,7 +97,7 @@ export default function Users() {
                 Loading...
               </td>
             </tr>
-          ) : userData.length <= 1 && NoUsers ? (
+          ) : userData.length === 0 && NoUsers ? (
             <tr>
               <td colSpan={12} className="text-center">
                 No Users Found

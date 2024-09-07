@@ -36,7 +36,8 @@ export default function Register() {
       setLoading(false);
       const token = res.data.token;
       cookie.set("CuberWeb", token);
-      navigate("/dashboard/users", { replace: true });
+      // /dashboard/users
+      navigate("/authincate", { replace: true });
     } catch (error) {
       setLoading(false);
       if (error.response && error.response.status === 422) {

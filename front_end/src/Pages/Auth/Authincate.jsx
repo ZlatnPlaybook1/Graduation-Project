@@ -19,7 +19,7 @@ export default function Authincate() {
       // Use the AUTH constant in the API request
       const response = await axios.post(`${baseUrl}/${AUTH}`, { number });
       if (response.status === 200) {
-        navigate("/login");
+        navigate("/dashboard/users");
       }
     } catch (error) {
       setError("Invalid number");

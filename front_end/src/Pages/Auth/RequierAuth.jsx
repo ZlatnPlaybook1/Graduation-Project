@@ -21,7 +21,7 @@ export default function RequierAuth() {
       })
       .then((data) => setUser(data.data))
       .catch(() => Navigate("/login", { replace: true }));
-  });
+  }, []);
   // cookie & token
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");

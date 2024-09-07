@@ -38,7 +38,7 @@ export default function Login() {
       setLoading(false);
       const token = res.data.token;
       cookie.set("CuberWeb", token);
-      navigate("/dashboard/users", { replace: true });
+      window.location.pathname = "/dashboard/users";
     } catch (error) {
       setLoading(false);
       if (error.response && error.response.status === 401) {

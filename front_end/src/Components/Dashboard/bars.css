@@ -34,6 +34,12 @@
   font-weight: 600;
   color: #038edc;
 }
+.mb-0 p {
+  margin: 0;
+  padding: 15px;
+  font-size: 16px;
+  color: #000;
+}
 /* End Topbar */
 
 /* Start Sidebar */

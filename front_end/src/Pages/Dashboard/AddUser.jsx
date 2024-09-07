@@ -1,46 +1,27 @@
-import React, { useEffect, useState } from "react";
+import Axios from "axios";
+import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { USER } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
-export default function User() {
+export default function AddUser() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
-  const [disable, setDisable] = useState(true);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
-  // id
-  const id = Number(window.location.pathname.replace("/dashboard/users/", ""));
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const response = axios.get(`${USER}/${id}`);
-        setName(response.data.name);
-        setEmail(response.data.email);
-        setRole(response.data.role);
-        setDisable(false);
-      } catch (error) {
-        setLoading(false);
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, [id]);
+  const [password, setPassword] = useState("");
 
   // Handle Submit
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post(`${USER}/edit/${id}`, {
+      await Axios.post(`${USER}/add`, {
         name: name,
         email: email,
+        password: password,
         role: role,
       });
       navigate("/dashboard/users");
@@ -80,6 +61,16 @@ export default function User() {
             placeholder="name@example.com"
           />
         </Form.Group>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            value={password}
+            required
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="password..."
+          />
+        </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
           <Form.Label>Role</Form.Label>
           <Form.Select value={role} onChange={(e) => setRole(e.target.value)}>
@@ -91,7 +82,18 @@ export default function User() {
             <option value="2005">writer</option>
           </Form.Select>
         </Form.Group>
-        <Button disabled={disable} type="submit" className="btn btn-primary">
+        <Button
+          disabled={
+            name.length > 1 &&
+            email.length > 1 &&
+            password.length > 1 &&
+            role !== ""
+              ? false
+              : true
+          }
+          type="submit"
+          className="btn btn-primary"
+        >
           Save
         </Button>
       </Form>

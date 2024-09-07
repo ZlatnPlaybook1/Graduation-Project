@@ -5,6 +5,7 @@ import {
   faFaceSmile,
   faGear,
   faHouse,
+  faPlus,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
@@ -50,6 +51,23 @@ export default function Sidebar() {
             }}
           >
             Users
+          </p>
+        </NavLink>
+        <NavLink
+          to="/dashboard/user/add"
+          className="navlink active side-bar-link"
+        >
+          <FontAwesomeIcon
+            icon={faPlus}
+            style={{ padding: isOpen ? "10px 8px 10px 15px" : "0 0" }}
+          />
+          <p
+            className="text"
+            style={{
+              display: isOpen ? "block" : "none",
+            }}
+          >
+            Add User
           </p>
         </NavLink>
         <NavLink to="/settings" className="navlink active side-bar-link">
