@@ -29,9 +29,8 @@ export const initiateRegistration = async (req: Request, res: Response) => {
 
 // Step 2: Complete registration
 export const completeRegistration = async (req: Request, res: Response) => {
+        const authNumber : number = req.body.number;
     try {
-
-        const authNumber : number = req.body.authNumber;
 
         const validationResponse = validateAuthNumber(email, authNumber);
 
@@ -51,9 +50,12 @@ export const completeRegistration = async (req: Request, res: Response) => {
         });
 
         const token: string = createJWT(user);
-        res.json({token});
-    } catch (error) {
+
+
+        return res.status(201).json({token});
+    }catch (error) {
         console.error('Error completing registration:', error);
         return res.status(500).json({data: "Error completing registration"});
     }
-};
+
+}

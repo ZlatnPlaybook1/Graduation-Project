@@ -20,7 +20,7 @@ app.get('/api', (req, res) => {
     res.status(200).json({'data': "api"})
 })
 app.use('/api', registerRouter);
-app.use('/api',protect, loginRouter);
+app.use('/api', loginRouter);
 
 
 export default app
