@@ -31,11 +31,12 @@ export const initiateRegistration = async (req: Request, res: Response) => {
 export const completeRegistration = async (req: Request, res: Response) => {
     try {
 
-        const authNumber = req.body.authNumber;
+        const authNumber : number = req.body.authNumber;
 
         const validationResponse = validateAuthNumber(email, authNumber);
 
         if (!validationResponse.valid) {
+            console.log("Validation response:", validationResponse);
             return res.status(400).json({data: validationResponse.message});
         }
 

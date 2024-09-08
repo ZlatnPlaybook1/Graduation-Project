@@ -3,6 +3,7 @@ import registerRouter from './registerWithAuthentication/RegisterRouter';
 import loginRouter from './login/LoginRouter';
 import morgan from 'morgan';
 import cors from 'cors'
+import {protect} from "./modules/auth";
 
 
 const app = express();
@@ -19,7 +20,7 @@ app.get('/api', (req, res) => {
     res.status(200).json({'data': "api"})
 })
 app.use('/api', registerRouter);
-app.use('/api', loginRouter);
+app.use('/api',protect, loginRouter);
 
 
 export default app

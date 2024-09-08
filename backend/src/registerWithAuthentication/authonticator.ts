@@ -10,12 +10,12 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-const authNumbers: { [key: string]: { number: string, expiry: number } } = {};
+const authNumbers: { [key: number]: { number: number, expiry: number } } = {};
 
-function generateAuthNumber(email: string): string {
-    const number = crypto.randomInt(100000, 999999).toString();
+function generateAuthNumber(email: string): number {
+    const number = crypto.randomInt(100000, 999999);
     const expiry = Date.now() + 10 * 60 * 1000; // 10 minutes from now
-    authNumbers[email] = {number, expiry};
+    authNumbers[email] = { number , expiry};
     return number;
 }
 
@@ -36,8 +36,8 @@ export async function sendAuthEmail(toEmail: string): Promise<void> {
 }
 
 
-export function validateAuthNumber(email: string, userInput: string): { valid: boolean, message: string } {
-    const storedAuth = authNumbers[email];
+export function validateAuthNumber(email: string, userInput: number): { valid: boolean, message: string } {
+    const storedAuth  = authNumbers[email];
     if (!storedAuth) {
         return {valid: false, message: "No authentication number found for this email."};
     }
