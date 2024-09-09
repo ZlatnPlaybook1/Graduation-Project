@@ -37,17 +37,24 @@ export async function sendAuthEmail(toEmail: string): Promise<void> {
 
 
 export function validateAuthNumber(email: string, userInput: number): { valid: boolean, message: string } {
-    const storedAuth  = authNumbers[email];
-    if (!storedAuth) {
-        return {valid: false, message: "No authentication number found for this email."};
+    try {
+
+        const storedAuth = authNumbers[email];
+        if (!storedAuth) {
+            return {valid: false, message: "No authentication number found for this email."};
+        }
+        if (Date.now() > storedAuth.expiry) {
+            delete authNumbers[email];
+            return {valid: false, message: "Authentication number has expired."};
+        }
+        if ((storedAuth.number) ===Number(userInput)) {
+            delete authNumbers[email];
+            return {valid: true, message: "Authentication successful."};
+        }
+        return {valid: false, message: "Invalid authentication number."};
+
+    } catch (error) {
+        console.error('Error invalid authentication number:', error);
+        return {valid: false, message: "Error validating authentication number."};
     }
-    if (Date.now() > storedAuth.expiry) {
-        delete authNumbers[email];
-        return {valid: false, message: "Authentication number has expired."};
-    }
-    if (storedAuth.number === userInput) {
-        delete authNumbers[email];
-        return {valid: true, message: "Authentication successful."};
-    }
-    return {valid: false, message: "Invalid authentication number."};
 }
