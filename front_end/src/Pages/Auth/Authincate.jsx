@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Cookie from "cookie-universal";
+// import Cookie from "cookie-universal";
 import { useNavigate } from "react-router-dom";
 import { AUTH, baseUrl } from "../../Api/Api";
-import Loading from "../../Components/Loading/Loading";
+// import Loading from "../../Components/Loading/Loading";
 import "./Auth.css";
 
 export default function Authincate() {
@@ -12,9 +12,9 @@ export default function Authincate() {
   const navigate = useNavigate();
 
   // Cookies
-  const cookie = Cookie();
+  // const cookie = Cookie();
   // Loading state
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const handleChange = (e) => {
     setNumber(e.target.value);
   };
@@ -24,11 +24,11 @@ export default function Authincate() {
     try {
       // Use the AUTH constant in the API request
       const response = await axios.post(`${baseUrl}/${AUTH}`, { number });
-      setLoading(false);
-      const token = response.data.token;
-      cookie.set("CuberWeb", token);
+      // setLoading(false);
+      // const token = response.data.token;
+      // cookie.set("CuberWeb", token);
       if (response.status === 201) {
-        navigate("/dashboard/users", { replace: true });
+        navigate("/dashboard/users");
       }
     } catch (error) {
       setError("Invalid number");
@@ -37,7 +37,7 @@ export default function Authincate() {
 
   return (
     <>
-      {loading && <Loading />}
+      {/* {loading && <Loading />} */}
       <div className="container">
         <div className="rows hh-100">
           <form className="form" onSubmit={handleSubmit}>
