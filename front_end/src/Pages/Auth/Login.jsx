@@ -52,63 +52,65 @@ export default function Login() {
   return (
     <>
       {loading && <Loading />}
-      <div className="container">
-        <div className="rows hh-100">
-          <form className="form" onSubmit={handleSubmit}>
-            <div className="custom-form">
-              <h1 className="textcenter">Login Now</h1>
-              <div className="formcontrol">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="Enter Your Email.."
-                />
-                <label htmlFor="email">Email:</label>
+      <body class="login-register-body">
+        <div className="container">
+          <div className="rows hh-100">
+            <form className="form" onSubmit={handleSubmit}>
+              <div className="custom-form">
+                <h1 className="textcenter">Login Now</h1>
+                <div className="formcontrol">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter Your Email.."
+                  />
+                  <label htmlFor="email">Email:</label>
+                </div>
+                <div className="formcontrol">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    value={form.password}
+                    onChange={handleChange}
+                    required
+                    minLength={6}
+                    placeholder="Enter Your Password.."
+                  />
+                  <label htmlFor="password">Password:</label>
+                </div>
+                <div className="social-icons">
+                  <a href="{}" className="icon">
+                    <i className="fa-brands fa-google-plus-g"></i>
+                  </a>
+                  <a href="{}" className="icon">
+                    <i className="fa-brands fa-facebook-f"></i>
+                  </a>
+                  <a href="{}" className="icon">
+                    <i className="fa-brands fa-github"></i>
+                  </a>
+                  <a href="{}" className="icon">
+                    <i className="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </div>
+                <button type="submit" className="botton botton-primary">
+                  Login
+                </button>
+                {err !== "" && <span className="error">{err}</span>}
+                <div className="register-link">
+                  <p>
+                    Not account yet? <a href="/register">Register</a>
+                  </p>
+                </div>
               </div>
-              <div className="formcontrol">
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  value={form.password}
-                  onChange={handleChange}
-                  required
-                  minLength={6}
-                  placeholder="Enter Your Password.."
-                />
-                <label htmlFor="password">Password:</label>
-              </div>
-              <div className="social-icons">
-                <a href="{}" className="icon">
-                  <i className="fa-brands fa-google-plus-g"></i>
-                </a>
-                <a href="{}" className="icon">
-                  <i className="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="{}" className="icon">
-                  <i className="fa-brands fa-github"></i>
-                </a>
-                <a href="{}" className="icon">
-                  <i className="fa-brands fa-linkedin-in"></i>
-                </a>
-              </div>
-              <button type="submit" className="botton botton-primary">
-                Login
-              </button>
-              {err !== "" && <span className="error">{err}</span>}
-              <div className="register-link">
-                <p>
-                  Not account yet? <a href="/register">Register</a>
-                </p>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
+      </body>
     </>
   );
 }

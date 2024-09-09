@@ -1,0 +1,196 @@
+/* Start Landing */
+.landing {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-color: white !important;
+}
+
+@media (max-width: 991px) {
+  .landing {
+    background-color: #7450fe !important;
+  }
+}
+
+.landing .background-image {
+  position: absolute !important;
+  z-index: 1 !important;
+  width: 100% !important;
+  top: -20% !important;
+}
+
+@media (max-width: 991px) {
+  .landing .background-image {
+    display: none !important;
+  }
+}
+
+.landing .container {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.landing .container .row {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.landing .container .row .text {
+  width: 50% !important;
+  padding-top: -18px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+@media (max-width: 991px) {
+  .landing .container .row .text {
+    width: 100% !important;
+  }
+}
+
+.landing .container .row .text .text-header {
+  font-size: 18px !important;
+  text-transform: capitalize !important;
+  color: #00ffff !important;
+  padding-left: 35px !important;
+  position: relative !important;
+}
+
+@media (max-width: 991px) {
+  .landing .container .row .text .text-header {
+    font-size: 16px !important;
+  }
+}
+
+.landing .container .row .text .text-header::before {
+  content: "" !important;
+  position: absolute !important;
+  width: 25px !important;
+  height: 2px !important;
+  background: #00ffff !important;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.landing .container .row .text h1 {
+  color: white !important;
+  text-transform: capitalize !important;
+  margin-top: 26px !important;
+  margin-bottom: 30px !important;
+  line-height: 50px !important;
+}
+
+@media (max-width: 991px) {
+  .landing .container .row .text h1 {
+    font-size: 24px !important;
+  }
+}
+
+.landing .container .row .text h1 .wrapper .is-visible {
+  color: #00ffff !important;
+  padding: 10px 5px !important;
+  border-right: 1px solid #ddd !important;
+  font-size: 28px !important;
+}
+
+.landing .container .row .text h1 .wrapper .is-hidden {
+  display: none !important;
+}
+.landing .cd-words-wrapper {
+  max-height: 40px !important;
+}
+.landing .container .row .text p {
+  color: white !important;
+  line-height: 30px !important;
+  font-size: 16px !important;
+  margin-right: 15px !important;
+}
+
+@media (max-width: 991px) {
+  .landing .container .row .text p {
+    font-size: 14px !important;
+  }
+}
+
+.landing .container .row .text .learn-more {
+  position: relative !important;
+  z-index: 2 !important;
+  margin-top: 50px !important;
+}
+
+.landing .container .row .text .learn-more .learn-btn {
+  background-color: #ff6699 !important;
+  color: white !important;
+  border-radius: 15rem !important;
+  font-size: 14px !important;
+  padding: 15px 30px !important;
+  margin-right: 0 !important;
+}
+
+@media (max-width: 991px) {
+  .landing .container .row .text .learn-more .learn-btn {
+    margin-right: 15px !important;
+  }
+}
+
+.landing .container .row .text .learn-more .play {
+  color: white !important;
+}
+
+.landing .container .row .text .learn-more .play-btn {
+  color: #fff !important;
+  position: relative !important;
+  padding: 15px !important;
+  margin-right: 10px !important;
+  border-radius: 50% !important;
+  background: var(--main-gradient) !important;
+  border: 1px solid #fff !important;
+}
+
+.landing .container .row .image {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+@media (max-width: 991px) {
+  .landing .container .row .image {
+    display: none !important;
+  }
+}
+.landing .banner {
+  position: absolute !important;
+  width: 53% !important;
+  left: 50% !important;
+  transform: translateY(0) !important;
+  animation: bouncing 3s infinite !important;
+  top: -7% !important;
+}
+.landing .shield {
+  position: absolute !important;
+  width: 8% !important;
+  left: 76% !important;
+  transform: translateY(0) !important;
+  animation: bouncing 3s infinite !important;
+  top: -11%;
+}
+
+@keyframes bouncing {
+  0% {
+    transform: translateY(0) !important;
+  }
+
+  50% {
+    transform: translateY(-5px) !important;
+  }
+
+  100% {
+    transform: translateY(0) !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .landing .shield {
+    display: none !important;
+  }
+}
+/* End Landing */

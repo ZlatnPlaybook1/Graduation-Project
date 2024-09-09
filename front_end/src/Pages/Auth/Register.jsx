@@ -20,6 +20,7 @@ export default function Register() {
   const [loading, setLoading] = useState(false);
   // Error state
   const [err, setErr] = useState("");
+
   // Handle Form Change
   function handleChange(e) {
     e.preventDefault();
@@ -35,8 +36,7 @@ export default function Register() {
       setLoading(false);
       const token = res.data.token;
       cookie.set("CuberWeb", token);
-      // /dashboard/users
-      navigate("/authincate", { replace: true });
+      navigate("/dashboard/users", { replace: true });
     } catch (error) {
       setLoading(false);
       if (error.response && error.response.status === 422) {
@@ -50,61 +50,63 @@ export default function Register() {
   return (
     <>
       {loading && <Loading />}
-      <div className="container">
-        <div className="rows hh-100">
-          <form className="form" onSubmit={handleSubmit}>
-            <div className="custom-form">
-              <h1 className="textcenter">Register Now</h1>
-              <div className="formcontrol">
-                <input
-                  type="text"
-                  id="name"
-                  value={form.name}
-                  name="name"
-                  onChange={handleChange}
-                  placeholder="Enter Your Name.."
-                  required
-                />
-                <label htmlFor="name">Name:</label>
+      <body class="login-register-body">
+        <div className="container">
+          <div className="rows hh-100">
+            <form className="form" onSubmit={handleSubmit}>
+              <div className="custom-form">
+                <h1 className="textcenter">Register Now</h1>
+                <div className="formcontrol">
+                  <input
+                    type="text"
+                    id="name"
+                    value={form.name}
+                    name="name"
+                    onChange={handleChange}
+                    placeholder="Enter Your Name.."
+                    required
+                  />
+                  <label htmlFor="name">Name:</label>
+                </div>
+                <div className="formcontrol">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter Your Email.."
+                  />
+                  <label htmlFor="email">Email:</label>
+                </div>
+                <div className="formcontrol">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    value={form.password}
+                    onChange={handleChange}
+                    required
+                    minLength={6}
+                    placeholder="Enter Your Password.."
+                  />
+                  <label htmlFor="password">Password:</label>
+                </div>
+                <button type="submit" className="botton botton-primary">
+                  Register
+                </button>
+                {err !== "" && <span className="error">{err}</span>}
+                <div className="login-link">
+                  <p>
+                    Have an account? <a href="/login">Login</a>
+                  </p>
+                </div>
               </div>
-              <div className="formcontrol">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="Enter Your Email.."
-                />
-                <label htmlFor="email">Email:</label>
-              </div>
-              <div className="formcontrol">
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  value={form.password}
-                  onChange={handleChange}
-                  required
-                  minLength={6}
-                  placeholder="Enter Your Password.."
-                />
-                <label htmlFor="password">Password:</label>
-              </div>
-              <button type="submit" className="botton botton-primary">
-                Register
-              </button>
-              {err !== "" && <span className="error">{err}</span>}
-              <div className="login-link">
-                <p>
-                  Have an account? <a href="/login">Login</a>
-                </p>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
+      </body>
     </>
   );
 }
