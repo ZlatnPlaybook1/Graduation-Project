@@ -36,7 +36,7 @@ export default function Register() {
       setLoading(false);
       const token = res.data.token;
       cookie.set("CuberWeb", token);
-      navigate("/dashboard/users", { replace: true });
+      navigate("/authincate", { replace: true });
     } catch (error) {
       setLoading(false);
       if (error.response && error.response.status === 422) {
@@ -50,7 +50,7 @@ export default function Register() {
   return (
     <>
       {loading && <Loading />}
-      <body class="login-register-body">
+      <body className="login-register-body">
         <div className="container">
           <div className="rows hh-100">
             <form className="form" onSubmit={handleSubmit}>
