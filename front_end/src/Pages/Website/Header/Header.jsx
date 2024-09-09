@@ -8,6 +8,7 @@ import image1 from "../assets/img/core-img/shield.png";
 import image2 from "../assets/img/core-img/banner1.png";
 import logo from "../assets/img/core-img/logo.png";
 import pg from "../assets/img/bg-img/header-bg1.png";
+
 const Header = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
 
@@ -345,26 +346,34 @@ const Header = () => {
                   <span
                     className="cd-words-wrapper wrapper"
                     style={{
-                      paddingBottom: "47px",
                       width: "250px",
                       display: "inline",
                     }}
                   >
                     <b
                       className="gradient-text cyan bolder is-hidden"
-                      style={{ width: "250px", display: "block" }}
+                      style={{
+                        width: "250px",
+                        display: "block",
+                      }}
                     >
                       Best Quality
                     </b>
                     <b
                       className="gradient-text cyan bolder is-visible"
-                      style={{ width: "250px", display: "block" }}
+                      style={{
+                        width: "250px",
+                        display: "block",
+                      }}
                     >
                       Fast Results
                     </b>
                     <b
                       className="gradient-text cyan bolder is-hidden"
-                      style={{ width: "250px", display: "block" }}
+                      style={{
+                        width: "250px",
+                        display: "block",
+                      }}
                     >
                       Total Support
                     </b>
