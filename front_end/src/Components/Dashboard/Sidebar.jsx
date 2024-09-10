@@ -28,7 +28,7 @@ export default function Sidebar() {
         <NavLink to="/" className="navlink active side-bar-link">
           <FontAwesomeIcon
             icon={faHouse}
-            style={{ padding: isOpen ? "10px 8px 10px 15px" : "0" }}
+            style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
           />
           <p
             className="text"
@@ -42,7 +42,7 @@ export default function Sidebar() {
         <NavLink to="/dashboard/users" className="navlink active side-bar-link">
           <FontAwesomeIcon
             icon={faUsers}
-            style={{ padding: isOpen ? "10px 8px 10px 15px" : "0 0" }}
+            style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
           />
           <p
             className="text"
@@ -59,7 +59,7 @@ export default function Sidebar() {
         >
           <FontAwesomeIcon
             icon={faPlus}
-            style={{ padding: isOpen ? "10px 8px 10px 15px" : "0 0" }}
+            style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
           />
           <p
             className="text"
@@ -73,7 +73,7 @@ export default function Sidebar() {
         <NavLink to="/settings" className="navlink active side-bar-link">
           <FontAwesomeIcon
             icon={faGear}
-            style={{ padding: isOpen ? "10px 8px 10px 15px" : "0 0" }}
+            style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
           />
           <p
             className="text"
@@ -87,7 +87,7 @@ export default function Sidebar() {
         <NavLink to="/about" className="navlink active side-bar-link">
           <FontAwesomeIcon
             icon={faFaceSmile}
-            style={{ padding: isOpen ? "10px 8px 10px 15px" : "0 0" }}
+            style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
           />
           <p
             className="text"
