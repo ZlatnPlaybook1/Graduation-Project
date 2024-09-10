@@ -23,7 +23,7 @@ router.post('/users', body('name').isString(), body('email').isEmail(), body('pa
 //     body('version').isString().optional(),
 //     updateUpdate
 // )
-// login.RegisterRouter.ts.post('/update',
+// login.register.router.ts.post('/update',
 //     body('body').exists().isString(),
 //     body('title').exists().isString(),
 //     body('productId').exists().isString(),
@@ -35,7 +35,7 @@ router.post('/users', body('name').isString(), body('email').isEmail(), body('pa
 // * */
 // login.registerRouter.ts.get('/updatedetail', ()=>{})
 // loginRouter.ts.get('/updatedetail/:id', ()=>{})
-// login.RegisterRouter.ts.put('/updatedetail/:id',
+// login.register.router.ts.put('/updatedetail/:id',
 //     body('name').isString().optional(),
 //     body('description').isString().optional(),
 //     ()=>{}
