@@ -8,12 +8,12 @@ import Cookie from "cookie-universal";
 import axios from "axios";
 import { baseUrl, USER } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
+import Error403 from "./403";
 
-export default function RequierAuth() {
+export default function RequierAuth({ allowedRole }) {
   // user
   const [user, setUser] = useState("");
   const Navigate = useNavigate();
-
   useEffect(() => {
     axios
       .get(`${baseUrl}/${USER}`, {
@@ -32,8 +32,10 @@ export default function RequierAuth() {
   return token ? (
     user === "" ? (
       <Loading />
-    ) : (
+    ) : allowedRole.includes(user.role) ? (
       <Outlet />
+    ) : (
+      <Error403 role={user.role} />
     )
   ) : (
     <Navigate to={"/login"} replace={true} />

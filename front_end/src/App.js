@@ -8,8 +8,9 @@ import Dashboard from "./Pages/Dashboard/Dashboard.jsx";
 import User from "./Pages/Dashboard/User.jsx";
 import Authincate from "./Pages/Auth/Authincate.jsx";
 import AddUser from "./Pages/Dashboard/AddUser.jsx";
-import Error403 from "./Pages/Auth/403.jsx";
 import RequierAuth from "./Pages/Auth/RequierAuth.jsx";
+import Writer from "./Pages/Dashboard/Writer.jsx";
+import Error404 from "./Pages/Auth/404.jsx";
 
 function App() {
   const location = useLocation();
@@ -20,10 +21,10 @@ function App() {
   return (
     <div className="App">
       {showAnimation && (
-        <div>
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
+        <div className="wave-container">
+          <div className="wave-wave"></div>
+          <div className="wave-wave"></div>
+          <div className="wave-wave"></div>
         </div>
       )}
 
@@ -33,14 +34,19 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/authincate" element={<Authincate />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/*" element={<Error404 />} />
 
         {/* Protected Routes */}
-        <Route element={<RequierAuth />}>
+        <Route element={<RequierAuth allowedRole={["2005", "1900"]} />}>
           <Route path="/dashboard" element={<Dashboard />}>
-            <Route path="403" element={<Error403 />} />
-            <Route path="users" element={<Users />} />
-            <Route path="users/:id" element={<User />} />
-            <Route path="user/add" element={<AddUser />} />
+            <Route element={<RequierAuth allowedRole={["1900"]} />}>
+              <Route path="users" element={<Users />} />
+              <Route path="users/:id" element={<User />} />
+              <Route path="user/add" element={<AddUser />} />
+            </Route>
+            <Route element={<RequierAuth allowedRole={["2005", "1900"]} />}>
+              <Route path="writer" element={<Writer />} />
+            </Route>
           </Route>
         </Route>
       </Routes>

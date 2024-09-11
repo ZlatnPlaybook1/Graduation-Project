@@ -1,6 +1,7 @@
 import React from "react";
 import "./403.css";
-export default function Error403() {
+import { Link } from "react-router-dom";
+export default function Error403({ role }) {
   return (
     <div className="text-wrapper">
       <div className="title" data-content={404}>
@@ -8,6 +9,12 @@ export default function Error403() {
       </div>
       <div className="subtitle">
         Oops , You don't have permission to access this page
+        <Link
+          to={role === "2005" ? "/dashboard/writer" : "/"}
+          className="d-block text-center btn btn-primary"
+        >
+          [role === "2005" ? "Go to Writer Page" : "Go to Home Page"]
+        </Link>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Cookie from "cookie-universal";
 import { baseUrl, LOGIN } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   // Handle States
@@ -12,7 +12,7 @@ export default function Login() {
     password: "",
   });
   //  Navigate
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // Cookies
   const cookie = Cookie();
   // Loading state

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import { USER } from "../../Api/Api";
+import { baseUrl, USER } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -16,34 +16,30 @@ export default function User() {
   // id
   const id = Number(window.location.pathname.replace("/dashboard/users/", ""));
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const response = axios.get(`${USER}/${id}`);
-        setName(response.data.name);
-        setEmail(response.data.email);
-        setRole(response.data.role);
-        setDisable(false);
-      } catch (error) {
+    setLoading(true);
+    axios
+      .get(`${baseUrl}/${USER}/${id}`)
+      .then((data) => {
+        setName(data.data.name);
+        setEmail(data.data.email);
+        setRole(data.data.role);
         setLoading(false);
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, [id]);
+      })
+      .then(() => setDisable(false))
+      .catch(() => navigate("/dasboard/users/page/404", { replace: true }));
+  }, []);
 
   // Handle Submit
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post(`${USER}/edit/${id}`, {
+      await axios.post(`${baseUrl}/${USER}/edit/${id}`, {
         name: name,
         email: email,
         role: role,
       });
-      navigate("/dashboard/users");
+      window.location.pathname = "/dashboard/users";
     } catch (error) {
       setLoading(false);
       console.error("Error submitting form:", error);
