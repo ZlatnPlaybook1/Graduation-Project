@@ -115,7 +115,18 @@
 .menu-button {
   display: none !important;
 }
-
+.log-reg {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+.center-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
 @media (max-width: 991px) {
   .hideOnMobile {
     display: none !important;

@@ -14,6 +14,7 @@ const Header = () => {
 
   const showSidebar = () => setSidebarVisible(true);
   const hideSidebar = () => setSidebarVisible(false);
+
   useEffect(() => {
     // Sticky header
     $(window).on("scroll", function () {
@@ -282,31 +283,35 @@ const Header = () => {
               {/* Navbar */}
               <nav>
                 <ul className="web-version">
-                  <li className="hideOnMobile">
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li className="hideOnMobile">
-                    <Link to="/">About Us</Link>
-                  </li>
-                  <li className="hideOnMobile">
-                    <Link to="/">Services</Link>
-                  </li>
-                  <li className="hideOnMobile">
-                    <Link to="/">Pricing</Link>
-                  </li>
-                  <li className="hideOnMobile">
-                    <Link to="/">Contact</Link>
-                  </li>
-                  <li className="hideOnMobile">
-                    <Link to="/login" className="login">
-                      Login
-                    </Link>
-                  </li>
-                  <li className="hideOnMobile">
-                    <Link to="/register" className="login">
-                      Register
-                    </Link>
-                  </li>
+                  <div className="center-link">
+                    <li className="hideOnMobile">
+                      <Link to="/">Home</Link>
+                    </li>
+                    <li className="hideOnMobile">
+                      <Link to="/">About Us</Link>
+                    </li>
+                    <li className="hideOnMobile">
+                      <Link to="/">Services</Link>
+                    </li>
+                    <li className="hideOnMobile">
+                      <Link to="/">Pricing</Link>
+                    </li>
+                    <li className="hideOnMobile">
+                      <Link to="/">Contact</Link>
+                    </li>
+                  </div>
+                  <div className="log-reg">
+                    <li className="hideOnMobile ">
+                      <Link to="/login" className="login">
+                        Login
+                      </Link>
+                    </li>
+                    <li className="hideOnMobile">
+                      <Link to="/register" className="login">
+                        Register
+                      </Link>
+                    </li>
+                  </div>
                   <li className="menu-button" onClick={showSidebar}>
                     <Link to="#">
                       <svg
