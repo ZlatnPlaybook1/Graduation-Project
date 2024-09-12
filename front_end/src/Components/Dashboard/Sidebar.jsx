@@ -115,55 +115,60 @@ export default function Sidebar() {
             </NavLink>
           </>
         ) : (
-          user.role === "2005" && (
-            <>
-              <NavLink
-                to="/dashboard/writer"
-                className="navlink active side-bar-link"
-              >
-                <FontAwesomeIcon
-                  icon={faPlus}
-                  style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
-                />
-                <p
-                  className="text"
-                  style={{
-                    display: isOpen ? "block" : "none",
-                  }}
+          user.role === "2005" ||
+          user.role ===
+            "1900"(
+              <>
+                <NavLink
+                  to="/dashboard/writer"
+                  className="navlink active side-bar-link"
                 >
-                  Writer
-                </p>
-              </NavLink>
-              <NavLink to="/settings" className="navlink active side-bar-link">
-                <FontAwesomeIcon
-                  icon={faGear}
-                  style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
-                />
-                <p
-                  className="text"
-                  style={{
-                    display: isOpen ? "block" : "none",
-                  }}
+                  <FontAwesomeIcon
+                    icon={faPlus}
+                    style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
+                  />
+                  <p
+                    className="text"
+                    style={{
+                      display: isOpen ? "block" : "none",
+                    }}
+                  >
+                    Writer
+                  </p>
+                </NavLink>
+                <NavLink
+                  to="/settings"
+                  className="navlink active side-bar-link"
                 >
-                  Settings
-                </p>
-              </NavLink>
-              <NavLink to="/about" className="navlink active side-bar-link">
-                <FontAwesomeIcon
-                  icon={faFaceSmile}
-                  style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
-                />
-                <p
-                  className="text"
-                  style={{
-                    display: isOpen ? "block" : "none",
-                  }}
-                >
-                  About Us
-                </p>
-              </NavLink>
-            </>
-          )
+                  <FontAwesomeIcon
+                    icon={faGear}
+                    style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
+                  />
+                  <p
+                    className="text"
+                    style={{
+                      display: isOpen ? "block" : "none",
+                    }}
+                  >
+                    Settings
+                  </p>
+                </NavLink>
+                <NavLink to="/about" className="navlink active side-bar-link">
+                  <FontAwesomeIcon
+                    icon={faFaceSmile}
+                    style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
+                  />
+                  <p
+                    className="text"
+                    style={{
+                      display: isOpen ? "block" : "none",
+                    }}
+                  >
+                    About Us
+                  </p>
+                </NavLink>
+              </>
+            )
         )}
       </div>
     </div>

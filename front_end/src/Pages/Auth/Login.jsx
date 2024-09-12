@@ -37,8 +37,11 @@ export default function Login() {
       });
       setLoading(false);
       const token = res.data.token;
+      const role = res.data.user.role;
+      console.log(role);
+      const go = role === "1900" ? "users" : "writer";
       cookie.set("CuberWeb", token);
-      window.location.pathname = "/dashboard/users";
+      window.location.pathname = `/dashboard/${go}`;
     } catch (error) {
       setLoading(false);
       if (error.response && error.response.status === 401) {
@@ -50,9 +53,9 @@ export default function Login() {
   }
 
   return (
-    <>
-      {loading && <Loading />}
-      <body class="login-register-body">
+    <body className="login-register-body">
+      <>
+        {loading && <Loading />}
         <div className="container">
           <div className="rows hh-100">
             <form className="form" onSubmit={handleSubmit}>
@@ -110,7 +113,7 @@ export default function Login() {
             </form>
           </div>
         </div>
-      </body>
-    </>
+      </>
+    </body>
   );
 }

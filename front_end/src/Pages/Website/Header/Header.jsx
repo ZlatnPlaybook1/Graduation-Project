@@ -285,19 +285,13 @@ const Header = () => {
                 <ul className="web-version">
                   <div className="center-link">
                     <li className="hideOnMobile">
-                      <Link to="/">Home</Link>
+                      <Link to={"/"}>Home</Link>
                     </li>
                     <li className="hideOnMobile">
-                      <Link to="/">About Us</Link>
+                      <Link to="#">About Us</Link>
                     </li>
                     <li className="hideOnMobile">
-                      <Link to="/">Services</Link>
-                    </li>
-                    <li className="hideOnMobile">
-                      <Link to="/">Pricing</Link>
-                    </li>
-                    <li className="hideOnMobile">
-                      <Link to="/">Contact</Link>
+                      <Link to="#">Contact</Link>
                     </li>
                   </div>
                   <div className="log-reg">
