@@ -83,7 +83,7 @@ export default function User() {
               Select Role
             </option>
             <option value="1900">Admin</option>
-            <option value="2003">User</option>
+            {/* <option value="2003">User</option> */}
             <option value="2005">writer</option>
           </Form.Select>
         </Form.Group>

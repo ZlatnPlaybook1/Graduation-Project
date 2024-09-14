@@ -48,9 +48,9 @@ export default function Register() {
   }
 
   return (
-    <>
-      {loading && <Loading />}
-      <body className="login-register-body">
+    <body className="login-register-body">
+      <>
+        {loading && <Loading />}
         <div className="container">
           <div className="rows hh-100">
             <form className="form" onSubmit={handleSubmit}>
@@ -106,7 +106,7 @@ export default function Register() {
             </form>
           </div>
         </div>
-      </body>
-    </>
+      </>
+    </body>
   );
 }
