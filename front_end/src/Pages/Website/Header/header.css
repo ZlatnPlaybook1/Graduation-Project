@@ -2,9 +2,9 @@
 header {
   width: 100%;
   position: fixed;
-  padding: 0.7rem 2rem;
+  padding: 0.2rem 2rem;
   z-index: 3;
-  height: 85px;
+  height: 70px;
   transition: all 0.3s ease;
   background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
 }
