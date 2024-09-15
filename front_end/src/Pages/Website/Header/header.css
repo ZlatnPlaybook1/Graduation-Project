@@ -46,12 +46,12 @@ header .navbar {
 }
 
 .navbar .links .text:hover::before {
-  transform: scaleX(1);
+  transform: scaleX(1) !important;
   transform-origin: left;
 }
 
 header .links .text:hover {
-  color: #f0e68c;
+  color: #f0f0f0 !important;
 }
 
 .navbar .logo {
@@ -146,7 +146,7 @@ header .log_reg .login:hover {
     min-width: 100px;
     background: var(--main-gradient);
     border-radius: 7px;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     letter-spacing: 1px;
   }
 }
