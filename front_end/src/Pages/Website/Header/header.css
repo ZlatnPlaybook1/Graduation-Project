@@ -6,7 +6,7 @@ header {
   z-index: 3;
   height: 70px;
   transition: all 0.3s ease;
-  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+  background: #f8f8ff;
 }
 
 header .navbar {
@@ -23,7 +23,7 @@ header .navbar {
 }
 
 .navbar .links .text {
-  color: #fff;
+  color: #3b444b;
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
@@ -39,7 +39,7 @@ header .navbar {
   height: 3px;
   bottom: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #3b444b;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
@@ -51,7 +51,7 @@ header .navbar {
 }
 
 header .links .text:hover {
-  color: #f0f0f0 !important;
+  color: #253529 !important;
 }
 
 .navbar .logo {
@@ -65,7 +65,7 @@ header .links .text:hover {
   font-weight: 600;
   padding-top: 15px;
   padding-left: 15px;
-  color: #fff;
+  color: #555555;
 }
 
 header .log_reg .login {
@@ -87,7 +87,9 @@ header .log_reg .login:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
-
+header .icon {
+  color: #3b444b;
+}
 .navbar .toggle_btn {
   color: #fff;
   font-size: 1.5rem;
