@@ -40,14 +40,14 @@ function App() {
         <Route path="/*" element={<Error404 />} />
 
         {/* Protected Routes */}
-        <Route element={<RequierAuth allowedRole={["2005", "1900"]} />}>
+        <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
           <Route path="/dashboard" element={<Dashboard />}>
-            <Route element={<RequierAuth allowedRole={["1900"]} />}>
+            <Route element={<RequierAuth allowedRole={["admin"]} />}>
               <Route path="users" element={<Users />} />
               <Route path="users/:id" element={<User />} />
               <Route path="user/add" element={<AddUser />} />
             </Route>
-            <Route element={<RequierAuth allowedRole={["2005", "1900"]} />}>
+            <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
               <Route path="writer" element={<Writer />} />
             </Route>
           </Route>

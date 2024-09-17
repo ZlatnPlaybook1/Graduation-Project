@@ -59,7 +59,7 @@ export default function Sidebar() {
           </p>
         </NavLink>
 
-        {user.role === "1900" ? (
+        {user.role === "admin" ? (
           <>
             {" "}
             <NavLink
@@ -115,9 +115,9 @@ export default function Sidebar() {
             </NavLink>
           </>
         ) : (
-          user.role === "2005" ||
+          user.role === "writer" ||
           user.role ===
-            "1900"(
+            "admin"(
               <>
                 <NavLink
                   to="/dashboard/writer"

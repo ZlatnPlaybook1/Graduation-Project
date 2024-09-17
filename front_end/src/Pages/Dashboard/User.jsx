@@ -82,9 +82,9 @@ export default function User() {
             <option disabled value="">
               Select Role
             </option>
-            <option value="1900">Admin</option>
+            <option value="admin">Admin</option>
             {/* <option value="2003">User</option> */}
-            <option value="2005">writer</option>
+            <option value="writer">writer</option>
           </Form.Select>
         </Form.Group>
         <Button disabled={disable} type="submit" className="btn btn-primary">

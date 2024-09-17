@@ -39,7 +39,7 @@ export default function Login() {
       const token = res.data.token;
       const role = res.data.user.role;
       console.log(role);
-      const go = role === "1900" ? "users" : "writer";
+      const go = role === "admin" ? "users" : "writer";
       cookie.set("CuberWeb", token);
       window.location.pathname = `/dashboard/${go}`;
     } catch (error) {

@@ -34,7 +34,7 @@ export default function Users() {
         {user.name === currentUser.name ? user.name + "(You)" : user.name}
       </td>
       <td>{user.email}</td>
-      <td>{user.role === "1900" ? "Admin" : "Writer"}</td>
+      <td>{user.role === "admin" ? "Admin" : "Writer"}</td>
       <td>
         <div className="d-flex align-items-center gap-2">
           <Link to={`/user/${user.id}`}>
