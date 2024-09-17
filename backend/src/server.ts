@@ -21,8 +21,8 @@ app.get('/api', (req, res) => {
     res.status(200).json({'data': "api"})
 })
 app.use('/api', registerRouter);
-app.use('/api',isAuthenticated, loginRouter);
-app.use('/api',isAuthenticated, dashboardRouter)
+app.use('/api', isAuthenticated, loginRouter);
+app.use('/api', isAuthenticated, dashboardRouter)
 
 
 export default app

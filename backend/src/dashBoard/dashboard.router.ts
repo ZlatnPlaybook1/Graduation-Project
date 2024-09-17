@@ -3,9 +3,11 @@ import {userInfo} from "./dashboard.controller";
 
 let dashboardRouter = Router();
 
-
+dashboardRouter.get("/user", (req: Request, res: Response) => {
+    res.status(200).json({data: "user"})
+})
 dashboardRouter.get("/user/:id", userInfo)
-dashboardRouter.post("/user",  )
+dashboardRouter.post("/user",)
 
 export default dashboardRouter;
 
