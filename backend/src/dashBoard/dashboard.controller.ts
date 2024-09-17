@@ -16,11 +16,7 @@ export async function userInfo(req: Request, res: Response): Promise<Response> {
         }
 
         // Return the user email and name
-        if (user.role === "admin") {
-            return res.status(200).json({email: user.email, name: user.name, role: "1900"});
-        }else if (user.role === "writer") {
-            return res.status(200).json({email: user.email, name: user.name, role: "2005"});
-        }
+            return res.status(200).json({email: user.email, name: user.name, role:user.role});
     } catch (error) {
         console.error('Error fetching user info:', error);
         return res.status(500).json({error: "Internal server error"});
