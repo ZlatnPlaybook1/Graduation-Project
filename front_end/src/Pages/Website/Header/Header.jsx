@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import $ from "jquery";
 import "./header.css";
 import "./landing.css";
@@ -8,13 +8,15 @@ import image1 from "../assets/img/core-img/shield.png";
 import image2 from "../assets/img/core-img/banner1.png";
 import logo from "../assets/img/core-img/logo.png";
 import pg from "../assets/img/bg-img/header-bg1.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
-  const [isSidebarVisible, setSidebarVisible] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const showSidebar = () => setSidebarVisible(true);
-  const hideSidebar = () => setSidebarVisible(false);
-
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
   useEffect(() => {
     // Sticky header
     $(window).on("scroll", function () {
@@ -210,11 +212,11 @@ const Header = () => {
         : $word.parent().children().eq(0);
     }
 
-    function takePrev($word) {
-      return !$word.is(":first-child")
-        ? $word.prev()
-        : $word.parent().children().last();
-    }
+    // function takePrev($word) {
+    //   return !$word.is(":first-child")
+    //     ? $word.prev()
+    //     : $word.parent().children().last();
+    // }
 
     function switchWord($oldWord, $newWord) {
       $oldWord.removeClass("is-visible").addClass("is-hidden");
@@ -227,103 +229,78 @@ const Header = () => {
   return (
     <>
       {/* Start Header */}
-      <div className="header">
-        <div className="container">
-          <div className="row">
-            <div className="logo">
-              <img
-                src={logo}
-                alt="Logo"
-                style={{ width: "50px", height: "auto" }}
-              />
-              <h2>Cyber Labs</h2>
-            </div>
-            <div className="links">
-              {/* Sidebar */}
-              <ul className={`sidebar ${isSidebarVisible ? "active" : ""}`}>
-                <li onClick={hideSidebar}>
-                  <Link to="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="26"
-                      viewBox="0 96 960 960"
-                      width="26"
-                    >
-                      <path d="M249 849L207 807 438 576 207 345l42-42 231 231 231-231 42 42L480 576l231 231-42 42-231-231-231 231z" />
-                    </svg>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/">About Us</Link>
-                </li>
-                <li>
-                  <Link to="/">Services</Link>
-                </li>
-                <li>
-                  <Link to="/">Pricing</Link>
-                </li>
-                <li>
-                  <Link to="/">Contact</Link>
-                </li>
-                <li>
-                  <Link to="/login" className="login">
-                    Login
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/register" className="login">
-                    Register
-                  </Link>
-                </li>
-              </ul>
-
-              {/* Navbar */}
-              <nav>
-                <ul className="web-version">
-                  <div className="center-link">
-                    <li className="hideOnMobile">
-                      <Link to={"/"}>Home</Link>
-                    </li>
-                    <li className="hideOnMobile">
-                      <Link to="#">About Us</Link>
-                    </li>
-                    <li className="hideOnMobile">
-                      <Link to="#">Contact</Link>
-                    </li>
-                  </div>
-                  <div className="log-reg">
-                    <li className="hideOnMobile ">
-                      <Link to="/login" className="login">
-                        Login
-                      </Link>
-                    </li>
-                    <li className="hideOnMobile">
-                      <Link to="/register" className="login">
-                        Register
-                      </Link>
-                    </li>
-                  </div>
-                  <li className="menu-button" onClick={showSidebar}>
-                    <Link to="#">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="26"
-                        viewBox="0 96 960 960"
-                        width="26"
-                      >
-                        <path d="M120 816v-60h720v60H120zM120 606v-60h720v60H120zM120 396v-60h720v60H120z" />
-                      </svg>
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+      <header>
+        <div className="navbar">
+          <div className="logo">
+            <img
+              src={logo}
+              alt="Logo"
+              style={{ width: "50px", height: "auto" }}
+            />
+            <h2>Cyber Labs</h2>
+          </div>
+          <ul className="links">
+            <li>
+              <NavLink className="text" to="/">
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="text" to="/about">
+                About Us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="text" to="/services">
+                Services
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="text" to="/contact">
+                Contact
+              </NavLink>
+            </li>
+          </ul>
+          <div className="log_reg">
+            <Link to="/login" className="login">
+              Login
+            </Link>
+            <Link to="/register" className="login">
+              Register
+            </Link>
+          </div>
+          <div className="toggle_btn" onClick={toggleDropdown}>
+            <FontAwesomeIcon
+              className="icon"
+              icon={isDropdownOpen ? faXmark : faBars}
+            />
+          </div>
+          <div className={`dropdown_menu ${isDropdownOpen ? "open" : ""}`}>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about">About Us</NavLink>
+            </li>
+            <li>
+              <NavLink to="/services">Services</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">Contact</NavLink>
+            </li>
+            <li>
+              <Link to="/login" className="login">
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link to="/register" className="login">
+                Register
+              </Link>
+            </li>
           </div>
         </div>
-      </div>
+      </header>
       {/* End Header */}
       {/* Start Landing Page */}
       <div className="landing section">

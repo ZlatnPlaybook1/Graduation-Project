@@ -107,6 +107,7 @@
 
 @media (max-width: 991px) {
   .features .our-features-text .row .text {
+    width: 100% !important;
     margin-right: 0 !important;
   }
 }

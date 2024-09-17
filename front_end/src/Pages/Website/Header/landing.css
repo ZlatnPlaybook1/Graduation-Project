@@ -163,7 +163,7 @@
   left: 50% !important;
   transform: translateY(0) !important;
   animation: bouncing 3s infinite !important;
-  top: -7% !important;
+  top: -3% !important;
 }
 .landing .shield {
   position: absolute !important;
@@ -171,7 +171,7 @@
   left: 76% !important;
   transform: translateY(0) !important;
   animation: bouncing 3s infinite !important;
-  top: -11%;
+  top: -4% !important;
 }
 
 @keyframes bouncing {
