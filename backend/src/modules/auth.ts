@@ -15,7 +15,7 @@ export const createJWT = (user: User) => {
     return jwt.sign({id: user.id}, process.env.JWT_SECRET);
 }
 
-export const protect = (req: Request, res: Response, next: NextFunction) => {
+export const isAuthenticated = (req: Request, res: Response, next: NextFunction) => {
     const bearer = req.headers.authorization;   //authorization not authentication
     if (!bearer) {
         res.status(401);
