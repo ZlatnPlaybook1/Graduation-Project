@@ -1,9 +1,9 @@
-import { Axios } from "axios";
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import { baseUrl, USER } from "../../Api/Api";
+import { USER } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
+import { Axios } from "../../Api/axios";
 
 export default function AddUser() {
   const [name, setName] = useState("");
@@ -18,7 +18,7 @@ export default function AddUser() {
     e.preventDefault();
     setLoading(true);
     try {
-      await Axios.post(`${baseUrl}/${USER}/add`, {
+      await Axios.post(`/${USER}/add`, {
         name: name,
         email: email,
         password: password,
@@ -86,7 +86,7 @@ export default function AddUser() {
           disabled={
             name.length > 1 &&
             email.length > 1 &&
-            password.length > 1 &&
+            password.length > 4 &&
             role !== ""
               ? false
               : true

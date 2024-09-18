@@ -3,37 +3,27 @@ import "./bars.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Menu } from "../../Context/MenuContext";
-import axios from "axios";
-import { baseUrl, LOGOUT, USER } from "../../Api/Api";
+import { LOGOUT, USER } from "../../Api/Api";
 import { useNavigate } from "react-router-dom";
 import Cookie from "cookie-universal";
 import { Dropdown, DropdownButton } from "react-bootstrap";
+import { Axios } from "../../Api/axios";
 
 export default function Topbar() {
   const { setIsOpen } = useContext(Menu);
   const Navigate = useNavigate();
   const [name, setName] = useState("");
+  const cookie = Cookie();
 
   useEffect(() => {
-    axios
-      .get(`${baseUrl}/${USER}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+    Axios.get(`/${USER}`)
       .then((data) => setName(data.data.name))
       .catch(() => Navigate("/login", { replace: true }));
   }, []);
 
-  // cookie & token
-  const cookie = Cookie();
-  const token = cookie.get("CuberWeb");
-
   async function handleLogout() {
     try {
-      await axios.get(`${baseUrl}/${LOGOUT}`, {
-        headers: {
-          Authorization: "Bearer " + cookie.get("CuberWeb"),
-        },
-      });
+      await Axios.get(`/${LOGOUT}`);
       cookie.remove("CuberWeb");
       window.location.pathname = "/login";
     } catch (err) {

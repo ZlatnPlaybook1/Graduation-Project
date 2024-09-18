@@ -11,7 +11,7 @@ import AddUser from "./Pages/Dashboard/AddUser.jsx";
 import RequierAuth from "./Pages/Auth/RequierAuth.jsx";
 import Writer from "./Pages/Dashboard/Writer.jsx";
 import Error404 from "./Pages/Auth/404.jsx";
-import RequireBack from "./Pages/Auth/RequireBack.jsx";
+// import RequireBack from "./Pages/Auth/RequireBack.jsx";
 
 function App() {
   const location = useLocation();
@@ -32,11 +32,11 @@ function App() {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
-        <Route element={<RequireBack />}>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/authincate" element={<Authincate />} />
-        </Route>
+        {/* <Route element={<RequireBack />}> */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/authincate" element={<Authincate />} />
+        {/* </Route> */}
         <Route path="/*" element={<Error404 />} />
 
         {/* Protected Routes */}

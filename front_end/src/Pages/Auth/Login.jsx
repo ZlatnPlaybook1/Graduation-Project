@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Cookie from "cookie-universal";
 import { baseUrl, LOGIN } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   // Handle States
@@ -12,7 +12,7 @@ export default function Login() {
     password: "",
   });
   //  Navigate
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // Cookies
   const cookie = Cookie();
   // Loading state
@@ -41,7 +41,8 @@ export default function Login() {
       console.log(role);
       const go = role === "admin" ? "users" : "writer";
       cookie.set("CuberWeb", token);
-      window.location.pathname = `/dashboard/${go}`;
+      // window.location.pathname = `/dashboard/${go}`;
+      navigate(`/dashboard/${go}`);
     } catch (error) {
       setLoading(false);
       if (error.response && error.response.status === 401) {

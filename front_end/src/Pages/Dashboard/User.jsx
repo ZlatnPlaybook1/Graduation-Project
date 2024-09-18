@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import { baseUrl, USER } from "../../Api/Api";
+import { USER } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-
+import { Axios } from "../../Api/axios";
 export default function User() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -17,8 +16,7 @@ export default function User() {
   const id = Number(window.location.pathname.replace("/dashboard/users/", ""));
   useEffect(() => {
     setLoading(true);
-    axios
-      .get(`${baseUrl}/${USER}/${id}`)
+    Axios.get(`/${USER}/${id}`)
       .then((data) => {
         setName(data.data.name);
         setEmail(data.data.email);
@@ -34,7 +32,7 @@ export default function User() {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post(`${baseUrl}/${USER}/edit/${id}`, {
+      await Axios.post(`${USER}/edit/${id}`, {
         name: name,
         email: email,
         role: role,

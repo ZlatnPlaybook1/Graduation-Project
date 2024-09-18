@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { baseUrl, USER, USERS } from "../../Api/Api";
+import { USER, USERS } from "../../Api/Api";
 import Table from "react-bootstrap/Table";
 import "./dashboard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { Axios } from "../../Api/axios";
 
 export default function Users() {
   const [userData, setUserData] = useState([]);
@@ -14,13 +14,12 @@ export default function Users() {
   const [NoUsers, setNoUsers] = useState(false);
   // Get Current User
   useEffect(() => {
-    axios.get(`${USER}`).then((res) => setCurrentUser(res.data));
+    Axios.get(`${USER}`).then((res) => setCurrentUser(res.data));
   }, []);
 
   // Get All Users
   useEffect(() => {
-    axios
-      .get(`${baseUrl}/${USERS}`)
+    Axios.get(`/${USERS}`)
       .then((response) => setUserData(response.data))
       .then(() => setNoUsers(true))
       .catch((err) => console.log(err));
@@ -58,7 +57,7 @@ export default function Users() {
   async function handleDelete(id) {
     if (currentUser.id !== id) {
       try {
-        await axios.delete(`${USER}/${id}`);
+        await Axios.delete(`${USER}/${id}`);
         setDeleteUser((prev) => !prev);
       } catch (err) {
         console.log(err);

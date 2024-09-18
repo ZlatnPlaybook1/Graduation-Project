@@ -9,31 +9,24 @@ import {
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, useNavigate } from "react-router-dom";
-import Cookie from "cookie-universal";
 import { Menu } from "../../Context/MenuContext";
 import { WindowSizeContext } from "../../Context/WindowContext";
-import axios from "axios";
-import { baseUrl, USER } from "../../Api/Api";
+import { USER } from "../../Api/Api";
+import { Axios } from "../../Api/axios";
 
 export default function Sidebar() {
-  const { isOpen } = useContext(Menu); // Destructure isOpen from Menu context
-  const { windowSize } = useContext(WindowSizeContext); // Correctly destructuring windowSize
+  const { isOpen } = useContext(Menu);
+  const { windowSize } = useContext(WindowSizeContext);
 
   // user
   const [user, setUser] = useState("");
-  const Navigate = useNavigate();
-  useEffect(() => {
-    axios
-      .get(`${baseUrl}/${USER}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((data) => setUser(data.data))
-      .catch(() => Navigate("/login", { replace: true }));
-  }, []);
+  const navigate = useNavigate();
 
-  // cookie & token
-  const cookie = Cookie();
-  const token = cookie.get("CuberWeb");
+  useEffect(() => {
+    Axios.get(`/${USER}`)
+      .then((data) => setUser(data.data))
+      .catch(() => navigate("/login", { replace: true }));
+  }, []);
 
   return (
     <div className="full-cont">
@@ -61,7 +54,6 @@ export default function Sidebar() {
 
         {user.role === "admin" ? (
           <>
-            {" "}
             <NavLink
               to="/dashboard/users"
               className="navlink active side-bar-link"
@@ -114,62 +106,55 @@ export default function Sidebar() {
               </p>
             </NavLink>
           </>
-        ) : (
-          user.role === "writer" ||
-          user.role ===
-            "admin"(
-              <>
-                <NavLink
-                  to="/dashboard/writer"
-                  className="navlink active side-bar-link"
-                >
-                  <FontAwesomeIcon
-                    icon={faPlus}
-                    style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
-                  />
-                  <p
-                    className="text"
-                    style={{
-                      display: isOpen ? "block" : "none",
-                    }}
-                  >
-                    Writer
-                  </p>
-                </NavLink>
-                <NavLink
-                  to="/settings"
-                  className="navlink active side-bar-link"
-                >
-                  <FontAwesomeIcon
-                    icon={faGear}
-                    style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
-                  />
-                  <p
-                    className="text"
-                    style={{
-                      display: isOpen ? "block" : "none",
-                    }}
-                  >
-                    Settings
-                  </p>
-                </NavLink>
-                <NavLink to="/about" className="navlink active side-bar-link">
-                  <FontAwesomeIcon
-                    icon={faFaceSmile}
-                    style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
-                  />
-                  <p
-                    className="text"
-                    style={{
-                      display: isOpen ? "block" : "none",
-                    }}
-                  >
-                    About Us
-                  </p>
-                </NavLink>
-              </>
-            )
-        )}
+        ) : user.role === "writer" || user.role === "admin" ? (
+          <>
+            <NavLink
+              to="/dashboard/writer"
+              className="navlink active side-bar-link"
+            >
+              <FontAwesomeIcon
+                icon={faPlus}
+                style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
+              />
+              <p
+                className="text"
+                style={{
+                  display: isOpen ? "block" : "none",
+                }}
+              >
+                Writer
+              </p>
+            </NavLink>
+            <NavLink to="/settings" className="navlink active side-bar-link">
+              <FontAwesomeIcon
+                icon={faGear}
+                style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
+              />
+              <p
+                className="text"
+                style={{
+                  display: isOpen ? "block" : "none",
+                }}
+              >
+                Settings
+              </p>
+            </NavLink>
+            <NavLink to="/about" className="navlink active side-bar-link">
+              <FontAwesomeIcon
+                icon={faFaceSmile}
+                style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 8px" }}
+              />
+              <p
+                className="text"
+                style={{
+                  display: isOpen ? "block" : "none",
+                }}
+              >
+                About Us
+              </p>
+            </NavLink>
+          </>
+        ) : null}
       </div>
     </div>
   );
