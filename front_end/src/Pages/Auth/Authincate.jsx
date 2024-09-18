@@ -3,7 +3,7 @@ import axios from "axios";
 import Cookie from "cookie-universal";
 import { useNavigate } from "react-router-dom";
 import { AUTH, baseUrl } from "../../Api/Api";
-// import Loading from "../../Components/Loading/Loading";
+import Loading from "../../Components/Loading/Loading";
 import "./Auth.css";
 
 export default function Authincate() {
@@ -38,7 +38,7 @@ export default function Authincate() {
   return (
     <body className="login-register-body">
       <>
-        {/* {loading && <Loading />} */}
+        {loading && <Loading />}
         <div className="container">
           <div className="rows hh-100">
             <form className="form" onSubmit={handleSubmit}>
