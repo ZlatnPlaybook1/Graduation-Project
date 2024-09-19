@@ -31,18 +31,16 @@ export default function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post(`${baseUrl}/${LOGIN}`, {
-        email: form.email,
-        password: form.password,
-      });
+      const res = await axios.post(`${baseUrl}/${LOGIN}`, form);
+      console.log(res);
       setLoading(false);
       const token = res.data.token;
       const role = res.data.user.role;
       console.log(role);
-      const go = role === "admin" ? "users" : "writer";
+      // const go = role === "admin" ? "users" : "writer";
       cookie.set("CuberWeb", token);
-      // window.location.pathname = `/dashboard/${go}`;
-      navigate(`/dashboard/${go}`);
+      window.location.pathname = `/dashboard/users`;
+      // navigate(`/dashboard/${go}`);
     } catch (error) {
       setLoading(false);
       if (error.response && error.response.status === 401) {
@@ -55,66 +53,64 @@ export default function Login() {
 
   return (
     <body className="login-register-body">
-      <>
-        {loading && <Loading />}
-        <div className="container">
-          <div className="rows hh-100">
-            <form className="form" onSubmit={handleSubmit}>
-              <div className="custom-form">
-                <h1 className="textcenter">Login Now</h1>
-                <div className="formcontrol">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="Enter Your Email.."
-                  />
-                  <label htmlFor="email">Email:</label>
-                </div>
-                <div className="formcontrol">
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    value={form.password}
-                    onChange={handleChange}
-                    required
-                    minLength={6}
-                    placeholder="Enter Your Password.."
-                  />
-                  <label htmlFor="password">Password:</label>
-                </div>
-                <div className="social-icons">
-                  <a href="{}" className="icon">
-                    <i className="fa-brands fa-google-plus-g"></i>
-                  </a>
-                  <a href="{}" className="icon">
-                    <i className="fa-brands fa-facebook-f"></i>
-                  </a>
-                  <a href="{}" className="icon">
-                    <i className="fa-brands fa-github"></i>
-                  </a>
-                  <a href="{}" className="icon">
-                    <i className="fa-brands fa-linkedin-in"></i>
-                  </a>
-                </div>
-                <button type="submit" className="botton botton-primary">
-                  Login
-                </button>
-                {err !== "" && <span className="error">{err}</span>}
-                <div className="register-link">
-                  <p>
-                    Not account yet? <a href="/register">Register</a>
-                  </p>
-                </div>
+      {loading && <Loading />}
+      <div className="container">
+        <div className="rows hh-100">
+          <form className="form" onSubmit={handleSubmit}>
+            <div className="custom-form">
+              <h1 className="textcenter">Login Now</h1>
+              <div className="formcontrol">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="Enter Your Email.."
+                />
+                <label htmlFor="email">Email:</label>
               </div>
-            </form>
-          </div>
+              <div className="formcontrol">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={form.password}
+                  onChange={handleChange}
+                  required
+                  minLength={6}
+                  placeholder="Enter Your Password.."
+                />
+                <label htmlFor="password">Password:</label>
+              </div>
+              <div className="social-icons">
+                <a href="{}" className="icon">
+                  <i className="fa-brands fa-google-plus-g"></i>
+                </a>
+                <a href="{}" className="icon">
+                  <i className="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="{}" className="icon">
+                  <i className="fa-brands fa-github"></i>
+                </a>
+                <a href="{}" className="icon">
+                  <i className="fa-brands fa-linkedin-in"></i>
+                </a>
+              </div>
+              <button type="submit" className="botton botton-primary">
+                Login
+              </button>
+              {err !== "" && <span className="error">{err}</span>}
+              <div className="register-link">
+                <p>
+                  Not account yet? <a href="/register">Register</a>
+                </p>
+              </div>
+            </div>
+          </form>
         </div>
-      </>
+      </div>
     </body>
   );
 }

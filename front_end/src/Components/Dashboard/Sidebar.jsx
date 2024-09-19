@@ -11,8 +11,8 @@ import {
 import { NavLink, useNavigate } from "react-router-dom";
 import { Menu } from "../../Context/MenuContext";
 import { WindowSizeContext } from "../../Context/WindowContext";
-import { USER } from "../../Api/Api";
-import { Axios } from "../../Api/axios";
+import { baseUrl, USER } from "../../Api/Api";
+import axios from "axios";
 
 export default function Sidebar() {
   const { isOpen } = useContext(Menu);
@@ -23,7 +23,8 @@ export default function Sidebar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    Axios.get(`/${USER}`)
+    axios
+      .get(`/${baseUrl}/${USER}`)
       .then((data) => setUser(data.data))
       .catch(() => navigate("/login", { replace: true }));
   }, []);

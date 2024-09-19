@@ -37,34 +37,32 @@ export default function Authincate() {
 
   return (
     <body className="login-register-body">
-      <>
-        {loading && <Loading />}
-        <div className="container">
-          <div className="rows hh-100">
-            <form className="form" onSubmit={handleSubmit}>
-              <div className="custom-form">
-                <h1 className="textcenter">Authenticate</h1>
-                <div className="formcontrol">
-                  <input
-                    type="text"
-                    id="number"
-                    value={number}
-                    onChange={handleChange}
-                    placeholder="Enter 6-digit number"
-                    required
-                    maxLength="6"
-                  />
-                  <label htmlFor="number">6-Digit Number:</label>
-                </div>
-                <button type="submit" className="botton botton-primary">
-                  Submit
-                </button>
-                {error && <span className="error">{error}</span>}
+      {loading && <Loading />}
+      <div className="container">
+        <div className="rows hh-100">
+          <form className="form" onSubmit={handleSubmit}>
+            <div className="custom-form">
+              <h1 className="textcenter">Authenticate</h1>
+              <div className="formcontrol">
+                <input
+                  type="text"
+                  id="number"
+                  value={number}
+                  onChange={handleChange}
+                  placeholder="Enter 6-digit number"
+                  required
+                  maxLength="6"
+                />
+                <label htmlFor="number">6-Digit Number:</label>
               </div>
-            </form>
-          </div>
+              <button type="submit" className="botton botton-primary">
+                Submit
+              </button>
+              {error && <span className="error">{error}</span>}
+            </div>
+          </form>
         </div>
-      </>
+      </div>
     </body>
   );
 }
