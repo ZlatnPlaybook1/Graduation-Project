@@ -18,14 +18,14 @@ export default function Topbar() {
   useEffect(() => {
     Axios.get(`/${USER}`)
       .then((data) => setName(data.data.name))
-      .catch(() => Navigate("/loginController", { replace: true }));
+      .catch(() => Navigate("/login", { replace: true }));
   }, []);
 
   async function handleLogout() {
     try {
       await Axios.get(`/${LOGOUT}`);
       cookie.remove("CuberWeb");
-      window.location.pathname = "/loginController";
+      window.location.pathname = "/login";
     } catch (err) {
       console.log(err);
     }

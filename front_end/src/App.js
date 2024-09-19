@@ -17,7 +17,7 @@ function App() {
   const location = useLocation();
 
   const showAnimation =
-    location.pathname === "/loginController" || location.pathname === "/register";
+    location.pathname === "/login" || location.pathname === "/register";
 
   return (
     <div className="App">
@@ -33,7 +33,7 @@ function App() {
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
         {/* <Route element={<RequireBack />}> */}
-        <Route path="/loginController" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/authincate" element={<Authincate />} />
         {/* </Route> */}
