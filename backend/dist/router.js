@@ -9,13 +9,13 @@ let router = Router();
 router.get('/users');
 router.post('/users', body('name').isString(), body('email').isEmail(), body('password').isString(), createNewUser);
 // loginRouter.ts.('/users',body('name').isString(),handleUserInput,createProduct)
-// login.registerRouter.ts.delete('/users/:id',deleteProduct)
+// loginController.registerRouter.ts.delete('/users/:id',deleteProduct)
 // /*
 // * update
 // * */
 // loginRouter.ts.get('/update', getUpdates)
 // loginRouter.ts.get('/update/:id', getOneUpdate)
-// login.registerRouter.ts.put('/update/:id',
+// loginController.registerRouter.ts.put('/update/:id',
 //     body('title').isString().optional(),
 //     body('updateStatus').isIn(['IN_PROGRESS', 'SHIPPED', 'DEPRECATED']).optional(),
 //     body('body').isString().optional(),
@@ -23,7 +23,7 @@ router.post('/users', body('name').isString(), body('email').isEmail(), body('pa
 //     body('version').isString().optional(),
 //     updateUpdate
 // )
-// login.register.router.ts.post('/update',
+// loginController.register.router.ts.post('/update',
 //     body('body').exists().isString(),
 //     body('title').exists().isString(),
 //     body('productId').exists().isString(),
@@ -33,9 +33,9 @@ router.post('/users', body('name').isString(), body('email').isEmail(), body('pa
 // /*
 // * updatepoint
 // * */
-// login.registerRouter.ts.get('/updatedetail', ()=>{})
+// loginController.registerRouter.ts.get('/updatedetail', ()=>{})
 // loginRouter.ts.get('/updatedetail/:id', ()=>{})
-// login.register.router.ts.put('/updatedetail/:id',
+// loginController.register.router.ts.put('/updatedetail/:id',
 //     body('name').isString().optional(),
 //     body('description').isString().optional(),
 //     ()=>{}

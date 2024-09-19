@@ -1,7 +1,8 @@
 import {Request, Response} from "express";
-import prisma from "../db";
+import prisma from "../utilities/db";
 
-export async function userInfo(req: Request, res: Response): Promise<Response> {
+// Function to get user information based on the role
+export async function infoToDisplayInDashboard(req: Request, res: Response): Promise<Response> {
     try {
         const userId = req.params.id;
 
@@ -27,6 +28,40 @@ export async function userInfo(req: Request, res: Response): Promise<Response> {
         }
     } catch (error) {
         console.error('Error fetching user info:', error);
+        return res.status(500).json({error: "Internal server error"});
+    }
+}
+
+export async function deleteUser(req: Request, res: Response): Promise<Response> {
+    try {
+        const userId = req.params.id;
+        const user = await prisma.user.findUnique({
+            where: {id: userId},
+        });
+
+        if (!user) {
+            return res.status(404).json({error: "User not found"});
+        }
+
+        const userIdWantedToBeDeleted = req.body.id
+        const userWantedToBeDeleted = await prisma.user.findUnique({
+            where: {id: userIdWantedToBeDeleted},
+        });
+
+        if (!userWantedToBeDeleted) {
+            return res.status(404).json({error: "Requesting user not found"});
+        }
+
+        if (userWantedToBeDeleted.role === 'admin' || (userWantedToBeDeleted.role === 'writer' && userIdWantedToBeDeleted === userId)) {
+            await prisma.user.delete({
+                where: {id: userId},
+            });
+            return res.status(200).json({message: "User deleted successfully"});
+        } else {
+            return res.status(403).json({error: "Forbidden"});
+        }
+    } catch (error) {
+        console.error('Error deleting user:', error);
         return res.status(500).json({error: "Internal server error"});
     }
 }

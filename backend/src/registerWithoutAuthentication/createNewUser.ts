@@ -1,5 +1,5 @@
-import prisma from "../db";
-import {createJWT, hashPassword} from "../modules/auth";
+import prisma from "../utilities/db";
+import {createJWT, hashPassword} from "../utilities/auth";
 import {Request, Response} from "express";
 
 export const initiateRegistration = async (req: Request, res: Response) => {

@@ -1,6 +1,6 @@
-// ->> This page if the user login and there is a token in the
+// ->> This page if the user loginController and there is a token in the
 //  Cookies go to dashboard and if there is no token for the user
-//  navigate to login page to signin
+//  navigate to loginController page to signin
 
 import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
@@ -17,13 +17,13 @@ export default function RequierAuth({ allowedRole }) {
   useEffect(() => {
     Axios.get(`/${USER}`)
       .then((data) => setUser(data.data))
-      .catch(() => Navigate("/login", { replace: true }));
+      .catch(() => Navigate("/loginController", { replace: true }));
   }, []);
   // cookie & token
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
 
-  // if there is no token go to directly to login
+  // if there is no token go to directly to loginController
   // if there is no user dawnload loading
   //  else go to outlet
   return token ? (
@@ -35,6 +35,6 @@ export default function RequierAuth({ allowedRole }) {
       <Error403 role={user.role} />
     )
   ) : (
-    <Navigate to={"/login"} replace={true} />
+    <Navigate to={"/loginController"} replace={true} />
   );
 }
