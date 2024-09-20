@@ -1,7 +1,7 @@
 import prisma from "../utilities/db";
-import { createJWT, hashPassword } from "../utilities/auth";
-import { Request, Response } from "express";
-import { sendAuthEmail, validateAuthNumber } from "./authenticator.service";
+import {createJWT, hashPassword} from "../utilities/auth";
+import {Request, Response} from "express";
+import {sendAuthEmail, validateAuthNumber} from "./authenticator.service";
 
 class RegistrationController {
     public email: string;
@@ -14,19 +14,19 @@ class RegistrationController {
         this.email = '';
         this.name = '';
         this.password = '';
-            this.initiateRegistration = this.initiateRegistration.bind(this);
-            this.completeRegistration = this.completeRegistration.bind(this);
+        this.initiateRegistration = this.initiateRegistration.bind(this);
+        this.completeRegistration = this.completeRegistration.bind(this);
     }
 
     // Step 1: Initial registration
     public async initiateRegistration(req: Request, res: Response): Promise<Response> {
         try {
             const existingEmail = await prisma.user.findFirst({
-                where: { email: req.body.email }
+                where: {email: req.body.email}
             });
 
             if (existingEmail) {
-                return res.status(422).json({ data: "Email already exists" });
+                return res.status(422).json({data: "Email already exists"});
             }
 
             this.email = req.body.email;
@@ -35,10 +35,10 @@ class RegistrationController {
 
             await sendAuthEmail(this.email);
 
-            return res.status(200).json({ message: "Authentication email sent" });
+            return res.status(200).json({message: "Authentication email sent"});
         } catch (error) {
             console.error('Error initiating registration:', error);
-            return res.status(500).json({ data: "Error initiating registration" });
+            return res.status(500).json({data: "Error initiating registration"});
         }
     }
 
@@ -51,7 +51,7 @@ class RegistrationController {
 
             if (!validationResponse.valid) {
                 console.log("Validation response:", validationResponse);
-                return res.status(400).json({ data: validationResponse.message });
+                return res.status(400).json({data: validationResponse.message});
             }
 
             const hash: string = await hashPassword(this.password);
@@ -66,10 +66,10 @@ class RegistrationController {
 
             const token: string = createJWT(user);
 
-            return res.status(201).json({ token });
+            return res.status(201).json({token});
         } catch (error) {
             console.error('Error completing registration:', error);
-            return res.status(500).json({ data: "Error completing registration" });
+            return res.status(500).json({data: "Error completing registration"});
         }
     }
 }
