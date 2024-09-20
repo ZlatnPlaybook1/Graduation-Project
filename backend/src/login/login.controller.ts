@@ -1,7 +1,8 @@
-import prisma from "../db";
-import {comparePasswords, createJWT} from "../modules/auth";
+import prisma from "../utilities/db";
+import {comparePasswords, createJWT} from "../utilities/auth";
+import {Request, Response} from "express";
 
-export const login = async (req, res): Promise<any> => {
+export const loginController = async (req :Request, res : Response): Promise<any> => {
     const user = await prisma.user.findUnique({
         where: {
             email: req.body.email
@@ -19,5 +20,5 @@ export const login = async (req, res): Promise<any> => {
     }
 
     const token: string = createJWT(user);
-    return res.status(200).json({token});
+    return res.status(200).json({token: token, name: user.name, email: user.email,role: user.role});
 };

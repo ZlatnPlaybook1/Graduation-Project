@@ -1,7 +1,7 @@
-import prisma from "../db";
-import { createJWT, hashPassword } from "../modules/auth";
+import prisma from "../utilities/db";
+import { createJWT, hashPassword } from "../utilities/auth";
 import { Request, Response } from "express";
-import { sendAuthEmail, validateAuthNumber } from "./authonticator";
+import { sendAuthEmail, validateAuthNumber } from "./authenticator.service";
 
 class RegistrationController {
     public email: string;
