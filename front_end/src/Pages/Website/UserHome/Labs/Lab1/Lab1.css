@@ -1,0 +1,443 @@
+:root {
+  --main-color: #212c42 !important;
+  --sec-main-color: #a3ea2a !important;
+  --alt-color: #151c2b !important;
+  --font-color: rgba(255, 255, 255, 0.5) !important;
+  --font-color-hover: rgba(255, 255, 255, 0.75) !important;
+  --main-transition: 0.5s !important;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 15px;
+}
+/* Start Landing */
+.landing-lab1 {
+  height: auto !important;
+  position: relative !important;
+  background-color: var(--alt-color) !important;
+  isolation: isolate !important;
+  z-index: 3 !important;
+  padding: 0 120px;
+  overflow: hidden;
+}
+
+.landing-lab1 .banner {
+  position: absolute !important;
+  height: 100% !important;
+  width: 100% !important;
+  z-index: -1 !important;
+  overflow: hidden !important;
+}
+
+.landing-lab1 .banner::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0px !important;
+  z-index: 1 !important;
+  height: 100% !important;
+  background: linear-gradient(
+    to right,
+    var(--alt-color) 30%,
+    rgba(21, 28, 43, 0.98) 50%,
+    transparent 100%
+  ) !important;
+}
+
+.landing-lab1 .banner img {
+  position: absolute !important;
+  left: 10% !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+  max-width: 80%;
+  height: auto;
+}
+
+.landing-lab1 .container-lab1 {
+  padding: 24px 12px !important;
+}
+
+.landing-lab1 .breadcrumb ul {
+  display: flex !important;
+  gap: 0.5rem !important;
+}
+
+.landing-lab1 .breadcrumb ul li:first-of-type::before {
+  content: "" !important;
+}
+
+.landing-lab1 .breadcrumb ul li::before {
+  content: ">" !important;
+  color: rgb(184, 190, 201) !important;
+  padding-right: 5px !important;
+}
+
+.landing-lab1 .breadcrumb ul li a {
+  font-size: 12px !important;
+  color: rgb(184, 190, 201) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.landing-lab1 .breadcrumb ul li span.active-breadcrumb {
+  font-size: 12px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: rgb(99, 110, 129) !important;
+}
+
+.landing-lab1 .breadcrumb ul li a:hover {
+  text-decoration: underline !important;
+}
+
+.landing-lab1 .course-info {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  color: white !important;
+}
+
+.landing-lab1 .course-info img {
+  width: 90px !important;
+}
+
+.landing-lab1 .course-info .course-text {
+  margin-left: 20px !important;
+}
+
+.landing-lab1 .course-info .course-text p {
+  margin-top: 5px !important;
+  font-size: 12px !important;
+}
+
+.landing-lab1 .course-info .course-icons {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  color: white !important;
+}
+
+.landing-lab1 .course-info .course-icons i.fa-signal {
+  color: green !important;
+}
+
+.landing-lab1 .course-info .course-icons i.fa-signal + p {
+  display: inline-block !important;
+  color: green !important;
+}
+
+.landing-lab1 .course-info .course-icons .diff,
+.landing-lab1 .course-info .course-icons .duration {
+  display: inline-block !important;
+  margin-right: 20px !important;
+}
+
+.landing-lab1 .course-info .course-icons i.fa-clock + p {
+  display: inline-block !important;
+}
+
+.landing-lab1 .course-info .course-icons p {
+  padding-left: 10px !important;
+}
+
+.landing-lab1 .options {
+  display: flex !important;
+  justify-content: start !important;
+  gap: 12px !important;
+  align-items: center !important;
+  flex-direction: row !important;
+}
+
+.landing-lab1 .options .like {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: fit-content !important;
+  border: 1px solid rgb(62, 71, 90) !important;
+  border-radius: 4px !important;
+}
+
+.landing-lab1 .options p {
+  padding-top: 15px;
+  padding-left: 15px;
+}
+.landing-lab1 .options button {
+  background-color: var(--alt-color) !important;
+  border-color: rgb(62, 71, 90) !important;
+  color: white !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 5px !important;
+  max-width: 100% !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+  gap: 6px !important;
+  height: 36px !important;
+  padding: 9px 16px !important;
+  pointer-events: initial !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  transition: var(--main-transition) !important;
+}
+
+.landing-lab1 .options button:hover {
+  background-color: white !important;
+  color: var(--alt-color) !important;
+}
+
+.landing-lab1 .options .like button {
+  border-radius: 4px 0px 0px 4px !important;
+  border: none !important;
+}
+
+.landing-lab1 .options .like button:first-of-type {
+  border-right: 1px solid rgb(62, 71, 90) !important;
+}
+
+/* End Landing */
+/* Start Course Content */
+.course-lab1 .row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  flex-direction: column !important;
+  margin-bottom: 70px !important;
+}
+
+.course-lab1 .course-section {
+  background-color: inherit !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.course-lab1 .course-section .arrow {
+  background-color: inherit !important;
+  float: right !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
+
+.faq-section-lab1 {
+  margin-top: 75px !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+@media (max-width: 991px) {
+  .faq-section-lab1 .section-text-lab1 {
+    margin-left: 0 !important;
+  }
+
+  .faq-section-lab1 .image {
+    display: none !important;
+  }
+}
+
+.faq-item-lab1 {
+  margin-bottom: 30px !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-header-lab1 {
+  border-radius: 5px 5px 0 0 !important;
+  color: white !important;
+  background-color: #212c42 !important;
+  font-size: 18px !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  line-height: 20px !important;
+  padding: 10px 25px !important;
+  font-weight: lighter !important;
+  position: relative !important;
+  width: 100% !important;
+  margin-top: 20px !important;
+}
+
+@media (max-width: 991px) {
+  .faq-section-lab1 .section-text-lab1 .faq-header-lab1 {
+    font-size: 16px !important;
+  }
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-header-lab1 span {
+  color: red !important;
+  margin-right: 40px !important;
+  position: relative !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-header-lab1 span::after {
+  content: "" !important;
+  width: 10px !important;
+  height: 10px !important;
+  background-color: transparent !important;
+  border: 1px solid #777 !important;
+  border-radius: 50% !important;
+  position: absolute !important;
+  right: -45% !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 {
+  font-size: 18px !important;
+  padding: 15px 25px !important;
+  line-height: 1.9 !important;
+  border-left: 4px solid red !important;
+  box-shadow: 1px 2px rgb(0, 0, 0, 0.1) !important;
+  border-radius: 0 0 5px 5px !important;
+  background-color: white !important;
+  color: rgb(21, 28, 43) !important;
+}
+
+@media (max-width: 991px) {
+  .faq-section-lab1 .section-text-lab1 .faq-body-lab1 {
+    font-size: 14px !important;
+  }
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 img {
+  width: 25% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: inherit !important;
+  margin-bottom: 30px !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 ul li {
+  list-style: "- " !important;
+  margin-bottom: 10px !important;
+}
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 ol li {
+  list-style: decimal !important;
+  margin-bottom: 10px !important;
+  font-size: 18px !important;
+}
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 ul li a {
+  color: #ff4747 !important;
+  text-decoration: underline !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 ul li span {
+  color: blue !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 li h2 {
+  color: #ff4747 !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 ul pre {
+  padding: 25px 20px !important;
+  margin: 15px 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  background-color: #272822 !important;
+  text-align: left !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 ul pre code {
+  display: flex !important;
+  align-items: start !important;
+  flex-direction: column !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 ul pre span {
+  color: green !important;
+  display: inline !important;
+  white-space: normal !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 form {
+  margin-top: 30px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-direction: row !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 form input {
+  flex: 3 1 0% !important;
+  padding: 7px 12px !important;
+  width: 100% !important;
+  height: auto !important;
+  font-size: 16px !important;
+  color: rgb(28, 37, 56) !important;
+  border-radius: 5px !important;
+  background-color: white !important;
+  outline: none !important;
+  border: 0.1rem solid rgb(212, 216, 223) !important;
+  margin-right: 20px !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 form button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 1 0% !important;
+  cursor: pointer !important;
+  gap: 6px !important;
+  height: 36px !important;
+  min-width: 300px !important;
+  border-radius: 5px !important;
+  max-width: 100% !important;
+  font-size: 16px !important;
+  padding: 7px 16px !important;
+  text-decoration: none !important;
+  pointer-events: initial !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  background-color: transparent !important;
+  color: rgb(21, 28, 43) !important;
+  border-color: rgb(163, 234, 42) !important;
+  transition: 0.2s ease-in-out !important;
+}
+.faq-section-lab1
+  .section-text-lab1
+  .faq-body-lab1
+  form
+  button:hover:not(:disabled) {
+  background-color: rgb(163, 234, 42) !important;
+}
+.go-to-section {
+  display: flex !important;
+  justify-content: end !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.go-to {
+  margin-top: 50px !important;
+  border-radius: 5px !important;
+  max-width: 100% !important;
+  font-size: 16px !important;
+  padding: 7px 16px !important;
+  background-color: transparent !important;
+  color: rgb(21, 28, 43) !important;
+  border: 1px solid rgb(163, 234, 42) !important;
+  transition: var(--main-transition) !important;
+}
+.go-to:hover {
+  background-color: rgb(163, 234, 42) !important;
+}
+/* End Course Content */

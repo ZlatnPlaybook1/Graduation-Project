@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { USER, USERS } from "../../Api/Api";
+import { USER } from "../../Api/Api";
 import Table from "react-bootstrap/Table";
 import "./dashboard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import Cookie from "cookie-universal";
 import { Axios } from "../../Api/axios";
 
 export default function Users() {
@@ -12,25 +14,41 @@ export default function Users() {
   const [deleteUser, setDeleteUser] = useState(false);
   const [currentUser, setCurrentUser] = useState("");
   const [NoUsers, setNoUsers] = useState(false);
-  // Get Current User
+
+  const cookie = Cookie();
+  const token = cookie.get("CuberWeb");
+
+  /// Get Current User
   useEffect(() => {
-    Axios.get(`${USER}`).then((res) => setCurrentUser(res.data));
-  }, []);
+    axios
+      .get(USER, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => setCurrentUser(res.data))
+      .catch((err) => console.log(err));
+  }, [token]);
 
   // Get All Users
   useEffect(() => {
-    Axios.get(`/${USERS}`)
+    axios
+      .get("http://127.0.0.1:8080/api/users", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then((response) => setUserData(response.data))
       .then(() => setNoUsers(true))
       .catch((err) => console.log(err));
-  }, [deleteUser]);
+  }, [deleteUser, token]);
 
   // Mapping on users
   const userShow = userData.map((user, key) => (
     <tr key={user.id}>
       <td>{key + 1}</td>
       <td>
-        {user.name === currentUser.name ? user.name + "(You)" : user.name}
+        {user.name === currentUser.name ? `${user.name} (You)` : user.name}
       </td>
       <td>{user.email}</td>
       <td>{user.role === "admin" ? "Admin" : "Writer"}</td>

@@ -3,25 +3,36 @@
 //  navigate to login page to signin
 
 import React, { useEffect, useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import Cookie from "cookie-universal";
-import { USER } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
 import Error403 from "./403";
-import { Axios } from "../../Api/axios";
+import axios from "axios";
 
 export default function RequierAuth({ allowedRole }) {
-  // user
+  //  State to store user data
   const [user, setUser] = useState("");
-  const Navigate = useNavigate();
-  useEffect(() => {
-    Axios.get(`/${USER}`)
-      .then((data) => setUser(data.data))
-      .catch(() => Navigate("/login", { replace: true }));
-  }, []);
+  const navigate = useNavigate();
+
   // cookie & token
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
+
+  useEffect(() => {
+    if (token) {
+      // Fetch user data if token exists
+      axios
+        .get("http://127.0.0.1:8080/api/user", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((data) => setUser(data.data))
+        .catch(() => navigate("/login", { replace: true }));
+    } else {
+      navigate("/login", { replace: true });
+    }
+  }, [token, navigate]);
 
   // if there is no token go to directly to login
   // if there is no user dawnload loading

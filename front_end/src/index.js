@@ -7,7 +7,6 @@ import "./Css/components/button.css";
 import "./Css/components/alerts.css";
 import "./Css/components/loading.css";
 import "./Css/components/register-login.css";
-import "./Pages/Website/homepage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";

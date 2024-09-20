@@ -11,6 +11,8 @@ import AddUser from "./Pages/Dashboard/AddUser.jsx";
 import RequierAuth from "./Pages/Auth/RequierAuth.jsx";
 import Writer from "./Pages/Dashboard/Writer.jsx";
 import Error404 from "./Pages/Auth/404.jsx";
+import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
+import Lab1 from "./Pages/Website/UserHome/Labs/Lab1/Lab1.jsx";
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 
 function App() {
@@ -39,19 +41,24 @@ function App() {
         {/* </Route> */}
         <Route path="/*" element={<Error404 />} />
 
+        {/* Home - Labs - Routes */}
+        <Route path="/home" element={<UserHome />} />
+        <Route path="/lab1" element={<Lab1 />} />
+
         {/* Protected Routes */}
-        <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
+        {/* allowedRole={["writer", "admin"]} */}
+        <Route element={<RequierAuth />}>
           <Route path="/dashboard" element={<Dashboard />}>
-            <Route element={<RequierAuth allowedRole={["admin"]} />}>
-              <Route path="users" element={<Users />} />
-              <Route path="users/:id" element={<User />} />
-              <Route path="user/add" element={<AddUser />} />
-            </Route>
-            <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
-              <Route path="writer" element={<Writer />} />
-            </Route>
+            {/* <Route element={<RequierAuth allowedRole={["admin"]} />}> */}
+            <Route path="users" element={<Users />} />
+            <Route path="users/:id" element={<User />} />
+            <Route path="user/add" element={<AddUser />} />
+            <Route path="writer" element={<Writer />} />
           </Route>
+          {/* <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}> */}
         </Route>
+        {/* </Route> */}
+        {/* </Route> */}
       </Routes>
     </div>
   );

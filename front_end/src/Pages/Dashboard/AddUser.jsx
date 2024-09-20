@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
-import { USER } from "../../Api/Api";
+import { Form, Button, Alert } from "react-bootstrap";
 import Loading from "../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
-import { Axios } from "../../Api/axios";
+import axios from "axios";
 
 export default function AddUser() {
   const [name, setName] = useState("");
@@ -12,13 +11,15 @@ export default function AddUser() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
   // Handle Submit
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
+    setError(null);
     try {
-      await Axios.post(`/${USER}/add`, {
+      await axios.post("http://127.0.0.1:8080/api/user/add", {
         name: name,
         email: email,
         password: password,
@@ -27,6 +28,7 @@ export default function AddUser() {
       navigate("/dashboard/users");
     } catch (error) {
       setLoading(false);
+      setError("Error submitting the form. Please try again.");
       console.error("Error submitting form:", error);
     }
   }
@@ -34,6 +36,7 @@ export default function AddUser() {
   return (
     <div className="container my-5">
       {loading && <Loading />}
+      {error && <Alert variant="danger">{error}</Alert>}
       <Form
         className="bg-light p-4 border rounded shadow-sm"
         onSubmit={handleSubmit}

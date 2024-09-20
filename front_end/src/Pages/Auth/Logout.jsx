@@ -1,15 +1,31 @@
 import React from "react";
-import { LOGOUT } from "../../Api/Api";
-import { Axios } from "../../Api/axios";
+import Cookie from "cookie-universal";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Logout() {
+  const cookie = Cookie();
+  const token = cookie.get("CuberWeb");
+  const navigate = useNavigate();
+
   async function handleLogout() {
     try {
-      const res = await Axios.get(`/${LOGOUT}`);
+      const res = await axios.get("http://127.0.0.1:8080/api/logout", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       console.log(res);
+      cookie.remove("CuberWeb");
+      navigate("/login", { replace: true });
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   }
-  return <button onClick={handleLogout}>Logout</button>;
+
+  return (
+    <button className="button button-primary" onClick={handleLogout}>
+      Logout
+    </button>
+  );
 }
