@@ -241,7 +241,7 @@ const Header = () => {
           </div>
           <ul className="links">
             <li>
-              <NavLink className="text" to="/">
+              <NavLink className="text" to="/home">
                 Home
               </NavLink>
             </li>

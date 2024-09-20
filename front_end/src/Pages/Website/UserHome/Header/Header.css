@@ -1,0 +1,243 @@
+:root {
+  --main-color: #212c42;
+  --sec-main-color: #a3ea2a;
+  --alt-color: #151c2b;
+  --font-color: rgba(255, 255, 255, 0.5);
+  --font-color-hover: rgba(255, 255, 255, 0.75);
+  --main-transition: 0.5s;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 15px;
+}
+
+.section {
+  padding-top: 100px;
+  padding-bottom: 70px;
+}
+
+.container-home {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Extra small */
+@media (min-width: 0px) {
+  .container-home {
+    max-width: 100%;
+  }
+}
+
+/* small */
+@media (min-width: 576px) {
+  .container-home {
+    max-width: 540px;
+  }
+}
+
+/*  Medium */
+@media (min-width: 768px) {
+  .container-home {
+    max-width: 750px;
+  }
+}
+
+/* Large */
+@media (min-width: 992px) {
+  .container-home {
+    max-width: 970px;
+  }
+}
+
+/* X-Large */
+@media (min-width: 1200px) {
+  .container-home {
+    max-width: 1170px;
+  }
+}
+
+/* Start Header */
+.header-home {
+  background-color: var(--main-color);
+  color: white;
+  position: sticky;
+  width: 100%;
+  z-index: 4;
+  padding: 5px 0;
+}
+
+.header-home .row-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-home .row-home .fa-bars {
+  display: none;
+  color: var(--font-color);
+}
+
+@media (max-width: 991px) {
+  .header-home .row-home .fa-bars {
+    display: block;
+  }
+}
+
+.header-home .row-home .sidebar_links .fa-xmark {
+  color: var(--font-color);
+  float: right;
+  padding: 10px;
+  align-self: end;
+}
+
+.header-home .row-home .sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  display: none;
+  height: 100vh;
+  width: min-content;
+  padding: 20px 20px;
+  background-color: var(--main-color);
+  transition: var(--main-transition);
+}
+
+@media (max-width: 991px) {
+  .header-home .row-home .sidebar {
+    display: block;
+  }
+}
+
+.header-home .row-home .sidebar_links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header-home .row-home .sidebar_links a {
+  width: 100%;
+  padding: 15px;
+  transition: var(--main-transition);
+}
+
+.header-home .row-home .sidebar_links a i:not(.fa-xmark) {
+  margin-right: 20px;
+}
+
+@media (max-width: 991px) {
+  .header-home .row-home .sidebar_links a i:not(.fa-xmark) {
+    margin-right: 7px;
+  }
+}
+
+.header-home .row-home .logo_links,
+.header-home .row-home .profile_links {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 991px) {
+  .header-home .row-home .logo_links {
+    display: none;
+  }
+}
+
+.header-home .row-home .logo_links img,
+.header-home .row-home .sidebar_links img {
+  width: 60px;
+}
+
+.header-home .row-home a,
+.header-home .row-home,
+.header-home .row-home button {
+  font-size: 18px;
+  color: var(--font-color);
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  transition: var(--main-transition);
+}
+
+.header-home .row-home a.logo {
+  margin-left: 0;
+}
+
+.header-home .row-home a:hover {
+  color: var(--font-color-hover);
+}
+
+.header-home .row-home .logo_links a i {
+  margin: 0 auto 5px;
+  display: block;
+  width: auto;
+}
+
+.header-home .profile-section {
+  position: relative;
+}
+
+.header-home .profile {
+  border: 2px solid rgba(82, 90, 106) !important;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 50%;
+  margin-left: 25px;
+}
+
+.header-home .profile_links .profile-section .profile_list {
+  position: absolute;
+  background-color: white;
+  width: 200px;
+  padding: 10px;
+  right: 0;
+  display: none;
+}
+
+.header-home .profile_links .profile-section .profile_list ul:not(:last-child) {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-home .profile_links .profile-section .profile_list ul li a {
+  padding: 10px 0;
+  color: #777;
+  width: 100%;
+  display: block;
+  text-align: start;
+  font-size: 14px;
+}
+
+.header-home .profile_links .profile-section .profile_list ul li a i {
+  margin-right: 7px;
+}
+
+.header-home .profile:hover {
+  border: 2px solid var(--sec-main-color) !important;
+}
+
+.header-home .profile img {
+  background-color: rgba(44, 50, 62);
+  width: 100%;
+  border-radius: 100%;
+}
+
+/* End Header */

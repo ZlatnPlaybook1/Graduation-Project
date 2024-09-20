@@ -1,9 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import Cookie from "cookie-universal";
-import { baseUrl, LOGIN } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   // Handle States
@@ -12,7 +11,7 @@ export default function Login() {
     password: "",
   });
   //  Navigate
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // Cookies
   const cookie = Cookie();
   // Loading state
@@ -31,7 +30,7 @@ export default function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post(`${baseUrl}/${LOGIN}`, form);
+      const res = await axios.post("http://127.0.0.1:8080/api/login", form);
       console.log(res);
       setLoading(false);
       const token = res.data.token;

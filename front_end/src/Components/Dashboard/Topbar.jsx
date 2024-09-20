@@ -3,23 +3,34 @@ import "./bars.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Menu } from "../../Context/MenuContext";
-import { LOGOUT, USER } from "../../Api/Api";
-import { useNavigate } from "react-router-dom";
+import { LOGOUT } from "../../Api/Api";
+import { Link, useNavigate } from "react-router-dom";
 import Cookie from "cookie-universal";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import { Axios } from "../../Api/axios";
+import axios from "axios";
 
 export default function Topbar() {
   const { setIsOpen } = useContext(Menu);
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const cookie = Cookie();
+  const token = cookie.get("CuberWeb");
 
   useEffect(() => {
-    Axios.get(`/${USER}`)
-      .then((data) => setName(data.data.name))
-      .catch(() => Navigate("/login", { replace: true }));
-  }, []);
+    if (token) {
+      axios
+        .get("http://127.0.0.1:8080/api/user", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((data) => setName(data.data.name))
+        .catch(() => navigate("/login", { replace: true }));
+    } else {
+      navigate("/login", { replace: true });
+    }
+  }, [token, navigate]);
 
   async function handleLogout() {
     try {
@@ -38,9 +49,9 @@ export default function Topbar() {
           icon={faBars}
           className="fabars-size"
         />
-        <a href="/" target="_self" className="Home-link">
+        <Link to={"/home"} target="_self" className="Home-link">
           Cyber Labs
-        </a>
+        </Link>
       </div>
       <div className="mb-0">
         <DropdownButton id="dropdown-basic-button" title={name}>
