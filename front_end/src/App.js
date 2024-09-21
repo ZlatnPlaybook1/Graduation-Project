@@ -13,6 +13,7 @@ import Writer from "./Pages/Dashboard/Writer.jsx";
 import Error404 from "./Pages/Auth/404.jsx";
 import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
 import Lab1 from "./Pages/Website/UserHome/Labs/Lab1/Lab1.jsx";
+import Lab2 from "./Pages/Website/UserHome/Labs/Lab2/Lab2.jsx";
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 
 function App() {
@@ -44,6 +45,8 @@ function App() {
         {/* Home - Labs - Routes */}
         <Route path="/home" element={<UserHome />} />
         <Route path="/lab1" element={<Lab1 />} />
+        <Route path="/lab2" element={<Lab2 />} />
+        {/* End Routes of Labs */}
 
         {/* Protected Routes */}
         {/* allowedRole={["writer", "admin"]} */}

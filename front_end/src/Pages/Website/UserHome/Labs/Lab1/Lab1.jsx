@@ -80,7 +80,7 @@ export default function Lab1() {
                 </div>
                 <div className="duration">
                   <i className="fa-solid fa-clock"></i>
-                  <p>15 min</p>
+                  <p className="time">15 min</p>
                 </div>
               </div>
             </div>
@@ -298,9 +298,9 @@ export default function Lab1() {
               </dl>
             </div>
             <div className="go-to-section">
-              <a href="#" className="go-to">
+              <Link href="#" className="go-to">
                 Go To Lab
-              </a>
+              </Link>
             </div>
           </div>
         </div>
