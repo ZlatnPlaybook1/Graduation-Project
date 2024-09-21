@@ -25,7 +25,7 @@ export default function Topbar() {
             Authorization: `Bearer ${token}`,
           },
         })
-        .then((data) => setName(data.name))
+        .then((data) => setName(data.data.name))
         .catch(() => navigate("/login", { replace: true }));
     } else {
       navigate("/login", { replace: true });
