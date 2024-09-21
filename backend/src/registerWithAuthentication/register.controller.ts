@@ -65,6 +65,10 @@ class RegistrationController {
             });
 
             const token: string = createJWT(user);
+            res.cookie('token', token, {
+                httpOnly: true,
+                maxAge: 24 * 60 * 60 * 100   // 24 hours
+            });
 
             return res.status(201).json({token});
         } catch (error) {

@@ -2,6 +2,7 @@ import express from 'express';
 import * as dotenv from 'dotenv'
 import morgan from 'morgan';
 import cors from 'cors'
+import cookieParser from 'cookie-parser';
 import registerRouter from './registerWithAuthentication/register.router';
 import loginRouter from './login/login.router';
 import dashboardRouter from './dashboard/dashboard.router';
@@ -13,6 +14,7 @@ app.use(morgan('dev')); // morgan: HTTP request logger middleware,
                         // dev: predefined format string that Morgan will use to log requests
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+app.use(cookieParser());
 app.get('/', (req, res, next) => {
     res.status(200).json({'data': "welcome to home page"})
 })
