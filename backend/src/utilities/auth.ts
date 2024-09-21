@@ -16,27 +16,22 @@ export const createJWT = (user: User) => {
 }
 
 export const isAuthenticated = (req: Request, res: Response, next: NextFunction) => {
-    const bearer = req.headers.authorization;   //authorization not authentication
+    const bearer = req.headers.authorization;
     if (!bearer) {
-        res.status(401);
-        res.json({message: 'not authorized'});
-        return;
+        return res.status(401).json({message: 'not authorized'});
     }
 
     const [, token] = bearer.split(' ');
     if (!token) {
-        res.status(401);
-        res.json({message: 'not valid'});
-        return;
+        return res.status(401).json({message: 'not valid'});
     }
+
     try {
         const user = jwt.verify(token, process.env.JWT_SECRET) as JwtPayload;
-        req.params.id = user.id;
+        req.params.loggedInUserId = user.id;
         next();
     } catch (e) {
         console.error(e);
-        res.status(401);
-        res.json({message: 'not valid'});
-        return;
+        return res.status(401).json({message: 'not valid'});
     }
 }

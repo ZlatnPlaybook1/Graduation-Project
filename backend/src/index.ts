@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import cors from 'cors'
 import registerRouter from './registerWithAuthentication/register.router';
 import loginRouter from './login/login.router';
-import dashboardRouter from './dashBoard/dashboard.router';
+import dashboardRouter from './dashboard/dashboard.router';
 
 const app = express();
 
