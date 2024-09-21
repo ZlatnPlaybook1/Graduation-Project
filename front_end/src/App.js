@@ -55,11 +55,10 @@ function App() {
               <Route path="users" element={<Users />} />
               <Route path="users/:id" element={<User />} />
               <Route path="user/add" element={<AddUser />} />
+            </Route>
+            <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
               <Route path="writer" element={<Writer />} />
             </Route>
-            <Route
-              element={<RequierAuth allowedRole={["writer", "admin"]} />}
-            ></Route>
           </Route>
         </Route>
       </Routes>
