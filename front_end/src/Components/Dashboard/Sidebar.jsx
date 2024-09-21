@@ -21,10 +21,12 @@ export default function Sidebar() {
   const [user, setUser] = useState("");
   const navigate = useNavigate();
 
+
+  
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8080/api/user")
-      .then((response) => setUser(response.data))
+      .then((data) => setUser(data.data))
       .catch(() => navigate("/login", { replace: true }));
   }, []);
 

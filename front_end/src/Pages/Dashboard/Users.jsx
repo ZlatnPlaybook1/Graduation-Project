@@ -21,7 +21,7 @@ export default function Users() {
   /// Get Current User
   useEffect(() => {
     axios
-      .get(USER, {
+      .get("http://127.0.0.1:8080/api/user", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
