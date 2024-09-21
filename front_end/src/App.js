@@ -49,19 +49,19 @@ function App() {
         {/* End Routes of Labs */}
 
         {/* Protected Routes */}
-        {/* allowedRole={["writer", "admin"]} */}
-        <Route element={<RequierAuth />}>
+        <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
           <Route path="/dashboard" element={<Dashboard />}>
-            {/* <Route element={<RequierAuth allowedRole={["admin"]} />}> */}
-            <Route path="users" element={<Users />} />
-            <Route path="users/:id" element={<User />} />
-            <Route path="user/add" element={<AddUser />} />
-            <Route path="writer" element={<Writer />} />
+            <Route element={<RequierAuth allowedRole={["admin"]} />}>
+              <Route path="users" element={<Users />} />
+              <Route path="users/:id" element={<User />} />
+              <Route path="user/add" element={<AddUser />} />
+              <Route path="writer" element={<Writer />} />
+            </Route>
+            <Route
+              element={<RequierAuth allowedRole={["writer", "admin"]} />}
+            ></Route>
           </Route>
-          {/* <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}> */}
         </Route>
-        {/* </Route> */}
-        {/* </Route> */}
       </Routes>
     </div>
   );
