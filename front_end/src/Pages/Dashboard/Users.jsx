@@ -38,7 +38,7 @@ export default function Users() {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then((response) => setUserData(response.data))
+      .then((data) => setUserData(data.data))
       .then(() => setNoUsers(true))
       .catch((err) => console.log(err));
   }, [deleteUser, token]);

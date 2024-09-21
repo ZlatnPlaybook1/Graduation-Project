@@ -16,7 +16,7 @@ export default function User() {
   const id = Number(window.location.pathname.replace("/dashboard/users/", ""));
   useEffect(() => {
     setLoading(true);
-    Axios.get(`/${USER}/${id}`)
+    Axios.get(`${USER}/${id}`)
       .then((data) => {
         setName(data.data.name);
         setEmail(data.data.email);
