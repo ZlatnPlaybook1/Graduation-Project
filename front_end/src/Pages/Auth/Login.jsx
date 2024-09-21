@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import Cookie from "cookie-universal";
 import Loading from "../../Components/Loading/Loading";
-// import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   // Handle States
@@ -11,7 +11,7 @@ export default function Login() {
     password: "",
   });
   //  Navigate
-  // const navigate = useNavigate();
+//   const navigate = useNavigate();
   // Cookies
   const cookie = Cookie();
   // Loading state
@@ -36,10 +36,10 @@ export default function Login() {
       const token = res.data.token;
       const role = res.data.user.role;
       console.log(role);
-      // const go = role === "admin" ? "users" : "writer";
+//       const go = role === "admin" ? "users" : "writer";
       cookie.set("CuberWeb", token);
       window.location.pathname = `/dashboard/users`;
-      // navigate(`/dashboard/${go}`);
+       //navigate(`/dashboard/${go}`);
     } catch (error) {
       setLoading(false);
       if (error.response && error.response.status === 401) {

@@ -19,5 +19,5 @@ export const loginController = async (req: Request, res: Response) => {
     }
 
     const token: string = createJWT(user);
-    return res.status(200).json({token: token, name: user.name, email: user.email, role: user.role});
+    return res.status(200).json({token: token, user: user});
 };
