@@ -1,13 +1,13 @@
 /* start services section */
 .services {
-  margin-top: 100px;
+  margin-top: 60px;
   background-color: #123d88;
   position: relative;
 }
 
 @media (min-width: 1024px) {
   .services {
-    margin-top: 140px;
+    margin-top: 60px;
     background-color: #123d88;
     position: relative;
   }
