@@ -10,7 +10,7 @@ export default function Team() {
       position: "FrontEnd Develpoer",
       image: team1,
     },
-    { name: "Ebrahim Nasar", position: "Cyber Security", image: team1 },
+    { name: "Ebrahim Nassar", position: "Cyber Security", image: team1 },
     {
       name: "Ahmed Sherif",
       position: "FrontEnd Develpoer",
@@ -39,11 +39,9 @@ export default function Team() {
         <div className="section-row">
           <div className="text">
             <h2 className="first-header section-header">Our Creative Team</h2>
-            <h2 className="second-header">Our Awesome Team</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis odit
-              perspiciatis placeat ut nesciunt quam quas suscipit? Velit
-              obcaecati impedit debitis ad minima non dolore.
+            Meet the passionate team behind our educational platform,
+            composed of dedicated university students who are committed to making learning accessible and engaging for everyone.
             </p>
           </div>
         </div>

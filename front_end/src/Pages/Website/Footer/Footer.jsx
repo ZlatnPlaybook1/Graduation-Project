@@ -14,9 +14,7 @@ export default function Footer() {
               <h2>Cyber Labs</h2>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-              ducimus voluptatibus neque illo id repellat quisquam? Autem
-              expedita earum quae laborum ipsum ad.
+              Your trusted partner in cybersecurity education. We empower individuals with the knowledge and skills to combat cyber threats and secure the digital landscape.
             </p>
             <ul className="links">
               <li>
@@ -44,29 +42,29 @@ export default function Footer() {
           <div className="col-2">
             <h2 className="footer-header">Privacy & TOS</h2>
             <div className="privacy-links">
-              <Link to="#">Advertiser Agreement</Link>
-              <Link to="#">Acceptable Use Policy</Link>
               <Link to="#">Privacy Policy</Link>
-              <Link to="#">Technology Privacy</Link>
-              <Link to="#">Developer Agreement</Link>
+              <Link to="#">Terms of Service</Link>
+              <Link to="#">Acceptable Use Policy</Link>
+              <Link to="#">Data Protection Policy</Link>
+              <Link to="#">Cookies Policy</Link>
             </div>
           </div>
           <div className="col-2">
-            <h2 className="footer-header">Navigate</h2>
+            <h2 className="footer-header">Explore</h2>
             <div className="navigate-links">
-              <Link to="#">Advertisers</Link>
-              <Link to="#">Developers</Link>
+              <Link to="#">Courses</Link>
               <Link to="#">Resources</Link>
-              <Link to="#">Company</Link>
-              <Link to="#">Connect</Link>
+              <Link to="#">Blog</Link>
+              <Link to="#">Webinars</Link>
+              <Link to="#">Community</Link>
             </div>
           </div>
           <div className="col-2">
             <h2 className="footer-header">Contact Us</h2>
-            <p>Mailing Address:xx00 E. Union Ave</p>
-            <p>Suite 1100. Denver, CO 80237</p>
-            <p>+999 90932 627</p>
-            <p>support@yourdomain.com</p>
+            <p>Faculty of Electronic Engineering</p>
+            <p>Menouf City Menofia Governorate</p>
+            <p>+201000000000</p>
+            <p>support@cyberlabs.com</p>
           </div>
         </div>
       </div>
