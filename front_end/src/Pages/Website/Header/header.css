@@ -188,3 +188,60 @@ header .icon {
 }
 
 /* End Header */
+
+/* Link Style */
+.navbar .links a {
+  color: #3b444b;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 5px 0;
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* Underline effect */
+.navbar .links a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #3b444b;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+/* Hover underline */
+.navbar .links a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Hover effect */
+.navbar .links a:hover {
+  color: #253529;
+  letter-spacing: 0.5px;
+}
+
+/* Animated background on hover */
+.navbar .links a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(59, 68, 75, 0.05);
+  transition: all 0.4s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.navbar .links a:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}

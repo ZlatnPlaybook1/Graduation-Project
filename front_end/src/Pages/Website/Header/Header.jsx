@@ -246,19 +246,13 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink className="text" to="/about">
-                About Us
-              </NavLink>
+              <a href="#about">About Us</a>
             </li>
             <li>
-              <NavLink className="text" to="/services">
-                Services
-              </NavLink>
+              <a href="#services">Services</a>
             </li>
             <li>
-              <NavLink className="text" to="/contact">
-                Contact
-              </NavLink>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
           <div className="log_reg">
@@ -280,13 +274,13 @@ const Header = () => {
               <NavLink to="/home">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/about">About Us</NavLink>
+              <a href="#about">About Us</a>
             </li>
             <li>
-              <NavLink to="/services">Services</NavLink>
+              <a href="#services">Services</a>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <a href="#contact">Contact</a>
             </li>
             <li>
               <Link to="/login" className="login">

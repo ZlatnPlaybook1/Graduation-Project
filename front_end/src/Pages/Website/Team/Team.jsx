@@ -34,7 +34,7 @@ export default function Team() {
   ];
 
   return (
-    <div className="team section">
+    <div id="about" className="team section">
       <div className="container">
         <div className="section-row">
           <div className="text">

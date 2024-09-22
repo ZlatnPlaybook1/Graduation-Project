@@ -5,7 +5,7 @@ import logo from "../assets/img/core-img/logo.png";
 
 export default function Footer() {
   return (
-    <div className="footer section">
+    <div id="contact" className="footer section">
       <div className="container">
         <div className="footer-row">
           <div className="col-1">
