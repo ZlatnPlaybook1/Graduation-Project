@@ -2,7 +2,9 @@
 .landing {
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  background-color: white !important;
+  background-color: #262c36 !important;
+  position: relative;
+  overflow: hidden;
 }
 
 @media (max-width: 991px) {
@@ -15,9 +17,11 @@
   position: absolute !important;
   z-index: 1 !important;
   width: 100% !important;
-  top: -20% !important;
-  max-width: fit-content;
-  max-height: fit-content;
+  height: 100%; 
+  top: 0 !important;
+  left: 0 !important; 
+  object-fit: cover; 
+  overflow: hidden;
 }
 
 @media (max-width: 991px) {
