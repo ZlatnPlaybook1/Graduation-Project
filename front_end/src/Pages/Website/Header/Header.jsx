@@ -241,9 +241,7 @@ const Header = () => {
           </div>
           <ul className="links">
             <li>
-              <NavLink className="text" to="/home">
-                Home
-              </NavLink>
+              <a href="/home">Home</a>
             </li>
             <li>
               <a href="#about">About Us</a>
@@ -271,7 +269,7 @@ const Header = () => {
           </div>
           <div className={`dropdown_menu ${isDropdownOpen ? "open" : ""}`}>
             <li>
-              <NavLink to="/home">Home</NavLink>
+              <a href="/home">Home</a>
             </li>
             <li>
               <a href="#about">About Us</a>

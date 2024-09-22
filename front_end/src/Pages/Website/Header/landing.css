@@ -165,8 +165,8 @@
 }
 .landing .banner {
   position: absolute !important;
-  width: 53% !important;
-  left: 50% !important;
+  width: 43% !important;
+  left: 68% !important;
   transform: translateY(0) !important;
   animation: bouncing 3s infinite !important;
   top: -3% !important;
@@ -174,7 +174,7 @@
 .landing .shield {
   position: absolute !important;
   width: 8% !important;
-  left: 76% !important;
+  left: 88% !important;
   transform: translateY(0) !important;
   animation: bouncing 3s infinite !important;
   top: -4% !important;

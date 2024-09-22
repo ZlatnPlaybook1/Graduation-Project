@@ -6,7 +6,7 @@ header {
   z-index: 3;
   height: 70px;
   transition: all 0.3s ease;
-  background: #f8f8ff;
+  background: #212c42;
 }
 
 header .navbar {
@@ -65,7 +65,7 @@ header .links .text:hover {
   font-weight: 600;
   padding-top: 15px;
   padding-left: 15px;
-  color: #555555;
+  color: white;
 }
 
 header .log_reg .login {
@@ -191,7 +191,7 @@ header .icon {
 
 /* Link Style */
 .navbar .links a {
-  color: #3b444b;
+  color: white;
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
@@ -224,7 +224,7 @@ header .icon {
 
 /* Hover effect */
 .navbar .links a:hover {
-  color: #253529;
+  color: white;
   letter-spacing: 0.5px;
 }
 
