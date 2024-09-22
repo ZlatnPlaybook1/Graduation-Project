@@ -69,13 +69,13 @@ header .links .text:hover {
 }
 
 header .log_reg .login {
-  color: #fff;
+  color: black;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   padding: 10px 20px;
   min-width: 100px;
-  background: var(--main-gradient);
+  background: #eee;
   border-radius: 7px;
   border: 1px solid #fff;
   letter-spacing: 1px;
@@ -88,7 +88,7 @@ header .log_reg .login:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 header .icon {
-  color: #3b444b;
+  color: white;
 }
 .navbar .toggle_btn {
   color: #fff;
