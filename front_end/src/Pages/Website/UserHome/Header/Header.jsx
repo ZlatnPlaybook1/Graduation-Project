@@ -74,7 +74,7 @@ const Header = () => {
               >
                 <ul>
                   <li>
-                    <NavLink to="/profile">
+                    <NavLink to="/dashboard">
                       <i className="fas fa-user"></i> View Profile
                     </NavLink>
                   </li>
