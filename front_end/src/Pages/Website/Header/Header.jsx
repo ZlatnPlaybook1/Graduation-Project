@@ -249,9 +249,7 @@ const Header = () => {
               <a href="#about">About Us</a>
             </li>
             <li>
-              <NavLink className="text" to="/services">
-              Learning Paths
-              </NavLink>
+              <a href="#learningPath">Learning Path</a>
             </li>
             <li>
               <a href="#contact">Contact</a>
@@ -279,7 +277,7 @@ const Header = () => {
               <a href="#about">About Us</a>
             </li>
             <li>
-              <NavLink to="/services">Learning Paths</NavLink>
+              <a href="#learningPath">Learning Path</a>
             </li>
             <li>
               <a href="#contact">Contact</a>
@@ -304,16 +302,14 @@ const Header = () => {
         <div className="container">
           <div className="row">
             <div className="text">
-              <h3 className="text-header">
-              Elevate Your Cybersecurity Skills
-              </h3>
+              <h3 className="text-header">Elevate Your Cybersecurity Skills</h3>
               <div className="cd-intro v2 text-left">
                 <h1
                   className="cd-headline clip is-full-width thin"
                   style={{ lineHeight: "1.7" }}
                 >
                   <span className="w-text bold">
-                  Comprehensive Cybersecurity Training for All Levels
+                    Comprehensive Cybersecurity Training for All Levels
                   </span>
                   <span
                     className="cd-words-wrapper wrapper"
@@ -353,12 +349,13 @@ const Header = () => {
                 </h1>
               </div>
               <p>
-              Join our academy to gain practical skills and knowledge to protect against cyber threats 
-              and secure your future in the digital world.
+                Join our academy to gain practical skills and knowledge to
+                protect against cyber threats and secure your future in the
+                digital world.
               </p>
               <div className="learn-more">
                 <Link to="#" className="learn-btn">
-                Discover Our Cybersecurity Courses
+                  Discover Our Cybersecurity Courses
                 </Link>
                 <Link to="#" className="play">
                   <i className="fas fa-play play-btn"></i> Watch Demo

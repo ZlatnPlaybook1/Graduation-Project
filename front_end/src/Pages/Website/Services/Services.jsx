@@ -11,7 +11,7 @@ import bgBubble from "../assets/img/svg/bg-home-bubble.svg";
 const Services = () => {
   const serviceIcons = [s1, s2, s3, s4 , s5 ,s6];
   return (
-    <div id="services" className="services section">
+    <div id="learningPath" className="services section">
       <div className="container">
         <div className="section-row">
           <div className="text">

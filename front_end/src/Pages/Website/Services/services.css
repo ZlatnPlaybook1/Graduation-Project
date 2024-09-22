@@ -5,6 +5,14 @@
   position: relative;
 }
 
+@media (min-width: 1024px) {
+  .services {
+    margin-top: 140px;
+    background-color: #123d88;
+    position: relative;
+  }
+}
+
 .services::before {
   content: "";
   position: absolute;
