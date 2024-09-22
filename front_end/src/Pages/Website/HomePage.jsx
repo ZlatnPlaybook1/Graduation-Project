@@ -4,9 +4,10 @@ import Services from "./Services/Services";
 import Platform from "./Platform/Platform";
 import Team from "./Team/Team";
 import Footer from "./Footer/Footer";
+import "./HomePage.css";
 export default function HomePage() {
   return (
-    <div>
+    <div className="bg-round">
       <Preload />
       <Header />
       <Services />
