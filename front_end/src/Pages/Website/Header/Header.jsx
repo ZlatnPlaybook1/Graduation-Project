@@ -250,7 +250,7 @@ const Header = () => {
             </li>
             <li>
               <NavLink className="text" to="/services">
-                Services
+              Learning Paths
               </NavLink>
             </li>
             <li>
@@ -279,7 +279,7 @@ const Header = () => {
               <a href="#about">About Us</a>
             </li>
             <li>
-              <NavLink to="/services">Services</NavLink>
+              <NavLink to="/services">Learning Paths</NavLink>
             </li>
             <li>
               <a href="#contact">Contact</a>
