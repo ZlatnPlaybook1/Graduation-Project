@@ -249,7 +249,9 @@ const Header = () => {
               <a href="#about">About Us</a>
             </li>
             <li>
-              <a href="#services">Services</a>
+              <NavLink className="text" to="/services">
+                Services
+              </NavLink>
             </li>
             <li>
               <a href="#contact">Contact</a>
@@ -277,7 +279,7 @@ const Header = () => {
               <a href="#about">About Us</a>
             </li>
             <li>
-              <a href="#services">Services</a>
+              <NavLink to="/services">Services</NavLink>
             </li>
             <li>
               <a href="#contact">Contact</a>
@@ -303,7 +305,7 @@ const Header = () => {
           <div className="row">
             <div className="text">
               <h3 className="text-header">
-                Become totally secure from cyber attacks
+              Elevate Your Cybersecurity Skills
               </h3>
               <div className="cd-intro v2 text-left">
                 <h1
@@ -311,7 +313,7 @@ const Header = () => {
                   style={{ lineHeight: "1.7" }}
                 >
                   <span className="w-text bold">
-                    Trusted IT & Cyber Security Experts Provide
+                  Comprehensive Cybersecurity Training for All Levels
                   </span>
                   <span
                     className="cd-words-wrapper wrapper"
@@ -320,14 +322,14 @@ const Header = () => {
                       display: "inline",
                     }}
                   >
-                    <b
+                    {/* <b
                       className="gradient-text cyan bolder is-hidden"
                       style={{
                         width: "250px",
                         display: "block",
                       }}
                     >
-                      Best Quality
+                      Hands-On Practical Labs
                     </b>
                     <b
                       className="gradient-text cyan bolder is-visible"
@@ -336,28 +338,27 @@ const Header = () => {
                         display: "block",
                       }}
                     >
-                      Fast Results
+                      Real-World Cybersecurity Scenarios
                     </b>
-                    <b
+                    { <b
                       className="gradient-text cyan bolder is-hidden"
                       style={{
                         width: "250px",
                         display: "block",
                       }}
                     >
-                      Total Support
-                    </b>
+                      Expert Guidance
+                    </b> } */}
                   </span>
                 </h1>
               </div>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Blanditiis assumenda quam rem eaque ullam pariatur harum
-                possimus optio eius. Accusantium laudantium deleniti.
+              Join our academy to gain practical skills and knowledge to protect against cyber threats 
+              and secure your future in the digital world.
               </p>
               <div className="learn-more">
                 <Link to="#" className="learn-btn">
-                  Learn More
+                Discover Our Cybersecurity Courses
                 </Link>
                 <Link to="#" className="play">
                   <i className="fas fa-play play-btn"></i> Watch Demo
