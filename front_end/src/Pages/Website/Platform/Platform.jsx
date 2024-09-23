@@ -13,29 +13,20 @@ export default function Platform() {
     {
       question: "What are the objectives of this Platform?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore omnis quaerat nostrum, pariatur ipsam sunt accusamus enim necessitatibus est fugiat, assumenda dolorem, deleniti corrupti cupiditate ipsum, dolorum voluptatum esse error?",
+        "Our platform is designed to provide users with comprehensive knowledge in cybersecurity, offering practical exercises and tutorials for real-world skills development.",
     },
     {
       question: "What are the best features and services we deliver?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore omnis quaerat nostrum, pariatur ipsam sunt accusamus enim necessitatibus est fugiat, assumenda dolorem, deleniti corrupti cupiditate ipsum, dolorum voluptatum esse error?",
+        "We deliver hands-on cybersecurity training, LAPS implementation guidance, interactive exercises, and tailored content for users of all levels.",
     },
     {
       question: "Why is this Platform important to me?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore omnis quaerat nostrum, pariatur ipsam sunt accusamus enim necessitatibus est fugiat, assumenda dolorem, deleniti corrupti cupiditate ipsum, dolorum voluptatum esse error?",
-    },
-    {
-      question: "How may I take part in and purchase this Platform?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore omnis quaerat nostrum, pariatur ipsam sunt accusamus enim necessitatibus est fugiat, assumenda dolorem, deleniti corrupti cupiditate ipsum, dolorum voluptatum esse error?",
-    },
-    {
-      question: "What are the best features and services we deliver?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore omnis quaerat nostrum, pariatur ipsam sunt accusamus enim necessitatibus est fugiat, assumenda dolorem, deleniti corrupti cupiditate ipsum, dolorum voluptatum esse error?",
-    },
+        "This platform is crucial for anyone looking to build a career in cybersecurity or strengthen their knowledge in protecting systems and networks from modern threats.",
+    }
   ];
+  
 
   return (
     <div className="striples-bg">
@@ -45,11 +36,6 @@ export default function Platform() {
             <div className="text">
               <h2 className="first-header section-header">Our Platform FAQ</h2>
               <h2 className="second-header">Frequently Asked Questions</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis
-                dicta eius, aliquam similique est totam, laudantium vel error
-                dolore, harum iste soluta odio.
-              </p>
             </div>
           </div>
           <div className="faq-section">

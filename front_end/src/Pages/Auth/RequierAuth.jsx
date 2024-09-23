@@ -21,13 +21,16 @@ export default function RequierAuth({ allowedRole }) {
   useEffect(() => {
     if (token) {
       // Fetch user data if token exists
-      axios
+      const res = axios
         .get("http://127.0.0.1:8080/api/user", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         })
-        .then((data) => setUser(data.data))
+        .then((data) => {
+          console.log(res);
+          setUser(data.data);
+        })
         .catch(() => navigate("/login", { replace: true }));
     } else {
       navigate("/login", { replace: true });

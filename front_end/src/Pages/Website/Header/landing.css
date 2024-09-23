@@ -2,12 +2,14 @@
 .landing {
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  background-color: white !important;
+  background-color: #262c36 !important;
+  position: relative;
+  overflow: hidden;
 }
 
 @media (max-width: 991px) {
   .landing {
-    background-color: #7450fe !important;
+    background-color: #a2d156 !important;
   }
 }
 
@@ -15,7 +17,11 @@
   position: absolute !important;
   z-index: 1 !important;
   width: 100% !important;
-  top: -20% !important;
+  height: 100%;
+  top: 0 !important;
+  left: 0 !important;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 @media (max-width: 991px) {
@@ -50,7 +56,7 @@
 .landing .container .row .text .text-header {
   font-size: 18px !important;
   text-transform: capitalize !important;
-  color: #00ffff !important;
+  color: white !important;
   padding-left: 35px !important;
   position: relative !important;
 }
@@ -66,7 +72,7 @@
   position: absolute !important;
   width: 25px !important;
   height: 2px !important;
-  background: #00ffff !important;
+  background: white !important;
   left: 0 !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
@@ -119,7 +125,7 @@
 }
 
 .landing .container .row .text .learn-more .learn-btn {
-  background-color: #ff6699 !important;
+  background-color: #272425 !important;
   color: white !important;
   border-radius: 15rem !important;
   font-size: 14px !important;
@@ -159,8 +165,8 @@
 }
 .landing .banner {
   position: absolute !important;
-  width: 53% !important;
-  left: 50% !important;
+  width: 43% !important;
+  left: 68% !important;
   transform: translateY(0) !important;
   animation: bouncing 3s infinite !important;
   top: -3% !important;
@@ -168,7 +174,7 @@
 .landing .shield {
   position: absolute !important;
   width: 8% !important;
-  left: 76% !important;
+  left: 88% !important;
   transform: translateY(0) !important;
   animation: bouncing 3s infinite !important;
   top: -4% !important;
