@@ -63,7 +63,14 @@ class RegistrationController {
             // Send the verification email with the user ID
             await sendVerificationEmail(this.email, number.toString());
 
-            return res.status(200).json({message: "Authentication email sent"});
+            return res.status(201).json({
+                msg: "user created successfully",
+                data: {
+                    email: tempUser.email,
+                    name: tempUser.name,
+                }
+
+            });
         } catch (error) {
             console.error('Error initiating registration:', error);
             return res.status(500).json({data: "Error initiating registration"});
@@ -98,7 +105,13 @@ class RegistrationController {
                 maxAge: 24 * 60 * 60 * 1000 // 24 hours
             });
 
-            return res.status(201).json({token});
+            return res.status(200).json({
+                token : token,
+                msg: "Email verified successfully",
+                data: null ,
+
+
+            });
         } catch (error) {
             console.error('Error completing registration:', error);
             return res.status(500).json({data: "Error completing registration"});
