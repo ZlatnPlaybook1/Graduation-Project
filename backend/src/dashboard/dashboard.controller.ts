@@ -47,6 +47,39 @@ export async function createNewUser (req: Request, res: Response): Promise<Respo
     }
 }
 
+export async function updateUser(req: Request, res: Response): Promise<Response> {
+    const {id} = req.params;
+    const {email, name, role} = req.body;
+
+    try {
+        const user = await prisma.user.findUnique({
+            where: {id},
+        });
+
+        if (!user) {
+            return res.status(404).json({error: "User not found"});
+        }
+
+        await prisma.user.update({
+            where: {id},
+            data: {
+                email,
+                name,
+                role,
+            },
+        });
+
+        return res.status(200).json({
+            msg: "User updated successfully",
+            data: user
+        });
+
+    } catch (error) {
+        console.error('Error updating user:', error);
+        return res.status(500).json({error: " server error"});
+    }
+}
+
 export async function deleteUser(req: Request, res: Response): Promise<Response> {
     const {id}  = req.params;
 
