@@ -27,17 +27,13 @@ class RegistrationController {
             const existingEmail = await prisma.user.findFirst({
                 where: {email}
             });
-
             if (existingEmail) {
                 return res.status(409).json({data: "Email already exists"});
             }
-
             this.email = email;
             this.name = name;
             this.password = password;
-
-            // Hash the password before storing it in the database
-            const hashedPassword = await hashPassword(this.password);
+            const hashedPassword = await hashPassword(this.password); // Hash the password before storing it in the database
             const number = crypto.randomInt(100000, 999999);
             const expiry = Date.now() + 10 * 60 * 1000; // 10 minutes from now
 
@@ -46,19 +42,17 @@ class RegistrationController {
                 data: {
                     email: this.email,
                     name: this.name,
-                    password: hashedPassword, // Store the hashed password
+                    password: hashedPassword,
                     isVerified: false,        // User is not verified yet
                     validationNumber: {
                         create: {
-                            number: number.toString(),
+                            number: number.toString(),       // Store the number and expiry time in the database
                             expiration: BigInt(expiry),
                             isVerified: false,
                         }
                     }
                 }
             });
-            // Store the number and expiry time in the database
-
 
             // Send the verification email with the user ID
             await sendVerificationEmail(this.email, number.toString());
@@ -69,7 +63,6 @@ class RegistrationController {
                     email: tempUser.email,
                     name: tempUser.name,
                 }
-
             });
         } catch (error) {
             console.error('Error initiating registration:', error);
@@ -79,25 +72,23 @@ class RegistrationController {
 
     // Step 2: Complete registration
     public async completeRegistration(req: Request, res: Response): Promise<Response> {
-        const {email, number} = req.body; // Take email and auth number from the request
+        const {number} = req.body;
+        const email = this.email;
 
         try {
-            // Validate the verification number using the email
-            const validationResponse = await validateVerificationNumber(email, number); // Await here since it returns a promise
+            const validationResponse = await validateVerificationNumber(email, number);
 
             if (!validationResponse.valid) {
                 console.log("Validation response:", validationResponse);
                 return res.status(400).json({data: validationResponse.message});
             }
-
             // Update the user to mark them as verified
             const user = await prisma.user.update({
-                where: {email}, // Update the user by email
+                where: {email},
                 data: {
                     isVerified: true, // Mark user as verified after successful validation
                 }
             });
-
             // Generate JWT
             const token: string = createJWT(user);
             res.cookie('token', token, {
@@ -106,11 +97,9 @@ class RegistrationController {
             });
 
             return res.status(200).json({
-                token : token,
+                token: token,
                 msg: "Email verified successfully",
-                data: null ,
-
-
+                data: null,
             });
         } catch (error) {
             console.error('Error completing registration:', error);
