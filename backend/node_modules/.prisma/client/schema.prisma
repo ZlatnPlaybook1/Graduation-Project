@@ -15,12 +15,25 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid()) // uuid() used to create a unique id (Universally Unique Identifier)
-  createdAt DateTime @default(now())
-  name      String
-  email     String   @unique
-  password  String
-  role      Role     @default(writer)
+  id               String            @id @default(uuid())
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  name             String
+  email            String            @unique
+  password         String
+  isVerified       Boolean           @default(false) @map("is_verified") @db.Boolean
+  role             Role              @default(writer)
+  validationNumber ValidationNumber?
+}
+
+model ValidationNumber {
+  id         String   @id @default(uuid())
+  number     String
+  createdAt  DateTime @default(now())
+  expiration BigInt   @db.BigInt
+  isVerified Boolean  @default(false) @map("is_verified") @db.Boolean
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String   @unique
 }
 
 enum Role {
