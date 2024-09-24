@@ -24,19 +24,11 @@ function App() {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
-<<<<<<< HEAD
         {/* <Route element={<RequireBack />}> */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/authenticate" element={<Authincate />} />
         {/* </Route> */}
-=======
-        {/*<Route element={<RequireBack />}>*/}
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/authenticate" element={<Authincate />} />
-        {/*</Route>*/}
->>>>>>> 930302e29b2909d9fe392deb09a943b1b6abd650
         <Route path="/*" element={<Error404 />} />
 
         {/* Home - Labs - Routes */}
