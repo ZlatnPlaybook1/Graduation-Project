@@ -1,8 +1,9 @@
 import {Request, Response} from "express";
+import jwt from 'jsonwebtoken';
 import prisma from "../utilities/db";
 import {hashPassword} from "../utilities/auth";
 
-export async function userDashboard(req: Request, res: Response): Promise<Response> {
+export async function userWithId(req: Request, res: Response): Promise<Response> {
     const {userId} = req.params;
     const user = await prisma.user.findUnique({
         where: {id: userId},
@@ -47,6 +48,7 @@ export async function createNewUser (req: Request, res: Response): Promise<Respo
     }
 }
 
+
 export async function updateUser(req: Request, res: Response): Promise<Response> {
     const {id} = req.params;
     const {email, name, role} = req.body;
@@ -80,6 +82,7 @@ export async function updateUser(req: Request, res: Response): Promise<Response>
     }
 }
 
+
 export async function deleteUser(req: Request, res: Response): Promise<Response> {
     const {id}  = req.params;
 
@@ -106,5 +109,39 @@ export async function deleteUser(req: Request, res: Response): Promise<Response>
     } catch (error) {
         console.error('Error deleting user:', error);
         return res.status(500).json({error: " server error"});
+    }
+}
+
+
+export async function currentUser(req: Request, res: Response): Promise<Response> {
+    const token = req.headers.authorization?.split(' ')[1]; // Extract token from "Bearer <token>"
+
+    if (!token) {
+        return res.status(401).json({ error: "Authorization token is required" });
+    }
+
+    try {
+        // Verify the token and extract user ID (assuming you store `id` in the token)
+        const decoded = jwt.verify(token, process.env.JWT_SECRET) as { id: string };
+        const userId = decoded.id;
+
+        // Fetch user information using the userId from the token
+        const user = await prisma.user.findUnique({
+            where: { id: userId },
+            select: { email: true, name: true, role: true, id: true },
+        });
+
+        if (!user) {
+            return res.status(404).json({ error: "User not found" });
+        }
+
+        return res.status(200).json({
+            msg : "User found",
+            data : user
+        });
+
+    } catch (error) {
+        console.error('Error verifying token:', error);
+        return res.status(401).json({ error: "Invalid or expired token" });
     }
 }

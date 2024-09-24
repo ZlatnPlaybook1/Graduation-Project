@@ -24,6 +24,7 @@ model User {
   isVerified       Boolean           @default(false) @map("is_verified") @db.Boolean
   role             Role              @default(writer)
   validationNumber ValidationNumber?
+  token            String?
 }
 
 model ValidationNumber {
