@@ -29,26 +29,26 @@ export default function Login() {
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
-    setErr(""); // Clear previous errors
+    setErr("");
     try {
-      const res = await axios.post("http://127.0.0.1:8000/api/login", form);
+      const res = await axios.post("http://127.0.0.1:8080/api/login", form);
       console.log(res);
-      setLoading(false); // Stop the loading after getting the response
-      const token = res.data.data.token; // Correcting the path to access the token
-      cookie.set("CuberWeb", token); // Store the token in cookies
-      window.location.pathname = `/home`; // Redirect to the home page
+      setLoading(false);
+      const token = res.data.data.token;
+      cookie.set("CuberWeb", token);
+      window.location.pathname = `/home`;
     } catch (error) {
-      setLoading(false); // Stop loading in case of an error
+      setLoading(false);
       if (error.response) {
         if (error.response.status === 401) {
           setErr("Wrong Email or Password");
         } else {
           setErr("Internal server error");
         }
-        console.error(error.response.data); // Log detailed error
+        console.error(error.response.data);
       } else {
         setErr("Network Error");
-        console.error(error); // Log other errors
+        console.error(error);
       }
     }
   }

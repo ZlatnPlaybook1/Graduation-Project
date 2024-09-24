@@ -51,7 +51,7 @@ export default function Writer() {
     data.append("image", image);
 
     try {
-      await axios.post("http://127.0.0.1:8000/api/dataUser", data, {
+      await axios.post("http://127.0.0.1:8080/api/dataUser", data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

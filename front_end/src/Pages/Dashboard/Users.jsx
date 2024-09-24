@@ -20,7 +20,7 @@ export default function Users() {
     const fetchUserData = async () => {
       if (token) {
         try {
-          const res = await axios.get("http://127.0.0.1:8000/api/user", {
+          const res = await axios.get("http://127.0.0.1:8080/api/user", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -38,7 +38,7 @@ export default function Users() {
   // Get All Users
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/users", {
+      .get("http://127.0.0.1:8080/api/users", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -84,7 +84,7 @@ export default function Users() {
   async function handleDelete(id) {
     if (currentUser.id !== id) {
       try {
-        await axios.delete(`http://127.0.0.1:8000/api/user/${id}`);
+        await axios.delete(`http://127.0.0.1:8080/api/user/${id}`);
         setDeleteUser((prev) => !prev);
       } catch (err) {
         console.log(err);

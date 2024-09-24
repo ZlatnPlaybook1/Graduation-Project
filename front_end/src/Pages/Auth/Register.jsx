@@ -31,7 +31,7 @@ export default function Register() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("http://127.0.0.1:8000/api/register", form);
+      const res = await axios.post("http://127.0.0.1:8080/api/register", form);
       setLoading(false);
       const token = res.data.token;
       cookie.set("CuberWeb", token);
