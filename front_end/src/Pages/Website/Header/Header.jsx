@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import $ from "jquery";
 import "./header.css";
 import "./landing.css";
@@ -10,13 +10,65 @@ import logo from "../assets/img/core-img/logo.png";
 import pg from "../assets/img/bg-img/header-bg1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import Cookie from "cookie-universal";
+import profile from "../UserHome/assets/img/profile.png";
+import axios from "axios";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [profileListVisible, setProfileListVisible] = useState(false);
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
 
+  const cookie = Cookie();
+  const token = cookie.get("CuberWeb");
+  const toggleProfileList = () => {
+    setProfileListVisible(!profileListVisible);
+  };
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  // useEffect(() => {
+  //   if (token) {
+  //     console.log("Token found:", token);
+  //     axios
+  //       .get("http://127.0.0.1:8000/api/user", {
+  //         headers: {
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //       })
+  //       .then((res) => {
+  //         console.log("API response:", res);
+  //         setName(res.data.data.name);
+  //       })
+  //       .catch((error) => {
+  //         console.error("API request failed:", error);
+  //         navigate("/login", { replace: true });
+  //       });
+  //   } else {
+  //     console.log("No token found, redirecting to login");
+  //     navigate("/login", { replace: true });
+  //   }
+  // }, [token, navigate]);
+
+  async function handleLogout() {
+    try {
+      await axios.post(
+        "http://127.0.0.1:8000/api/logout",
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      cookie.remove("CuberWeb");
+      window.location.pathname = "/";
+    } catch (err) {
+      console.log(err);
+    }
+  }
   useEffect(() => {
     // Sticky header
     $(window).on("scroll", function () {
@@ -253,44 +305,122 @@ const Header = () => {
               <a href="#contact">Contact</a>
             </li>
           </ul>
-          <div className="log_reg">
-            <Link to="/login" className="login">
-              Login
-            </Link>
-            <Link to="/register" className="login">
-              Register
-            </Link>
-          </div>
-          <div className="toggle_btn" onClick={toggleDropdown}>
-            <FontAwesomeIcon
-              className="icon"
-              icon={isDropdownOpen ? faXmark : faBars}
-            />
-          </div>
-          <div className={`dropdown_menu ${isDropdownOpen ? "open" : ""}`}>
-            <li>
-              <a href="/home">Home</a>
-            </li>
-            <li>
-              <a href="#about">About Us</a>
-            </li>
-            <li>
-              <a href="#learningPath">Learning Path</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-            <li>
+          {token ? (
+            <div className="profile_links">
+              <div className="profile-section">
+                <button className="profile" onClick={toggleProfileList}>
+                  <img src={profile} alt="Profile" />
+                </button>
+
+                {/* Profile list dropdown */}
+                <div
+                  className="profile_list"
+                  style={{ display: profileListVisible ? "block" : "none" }}
+                >
+                  <ul>
+                    <li>
+                      <NavLink to="/dashboard">
+                        <i className="fas fa-user"></i> View Profile
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/dashboard">
+                        <i className="fas fa-gear"></i> Manage Account
+                      </NavLink>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <NavLink onClick={handleLogout}>
+                        <i className="fas fa-right-from-bracket"></i> Log Out
+                      </NavLink>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="log_reg">
               <Link to="/login" className="login">
                 Login
               </Link>
-            </li>
-            <li>
               <Link to="/register" className="login">
                 Register
               </Link>
-            </li>
-          </div>
+            </div>
+          )}
+          {token ? (
+            <div className="profile_links">
+              {/* <p className="user-name">Welcome, {name}</p> */}
+              <div className="profile-section">
+                <button className="profile" onClick={toggleProfileList}>
+                  <img src={profile} alt="Profile" />
+                </button>
+
+                {/* Profile list dropdown */}
+                {profileListVisible && (
+                  <div className="profile_list">
+                    <ul>
+                      <li>
+                        <NavLink to="/dashboard">
+                          <i className="fas fa-user"></i> View Profile
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/dashboard">
+                          <i className="fas fa-gear"></i> Manage Account
+                        </NavLink>
+                      </li>
+                    </ul>
+                    <ul>
+                      <li>
+                        <NavLink to="/" onClick={handleLogout}>
+                          <i className="fas fa-right-from-bracket"></i> Log Out
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+          ) : (
+            <div className="dropdown_wrapper">
+              <div className="toggle_btn" onClick={toggleDropdown}>
+                <FontAwesomeIcon
+                  className="icon"
+                  icon={isDropdownOpen ? faXmark : faBars}
+                />
+              </div>
+              {isDropdownOpen && (
+                <div className="dropdown_menu open">
+                  <ul>
+                    <li>
+                      <a href="/home">Home</a>
+                    </li>
+                    <li>
+                      <a href="#about">About Us</a>
+                    </li>
+                    <li>
+                      <a href="#learningPath">Learning Path</a>
+                    </li>
+                    <li>
+                      <a href="#contact">Contact</a>
+                    </li>
+                    <li>
+                      <Link to="/login" className="login">
+                        Login
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/register" className="login">
+                        Register
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </header>
       {/* End Header */}

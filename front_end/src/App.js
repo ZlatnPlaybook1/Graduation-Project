@@ -14,7 +14,7 @@ import Error404 from "./Pages/Auth/404.jsx";
 import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
 import Lab1 from "./Pages/Website/UserHome/Labs/Lab1/Lab1.jsx";
 import Lab2 from "./Pages/Website/UserHome/Labs/Lab2/Lab2.jsx";
-import RequireBack from "./Pages/Auth/RequireBack.jsx";
+// import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
 import SQLInjection from "./Pages/Website/UserHome/Labs/Lab1/SQLInjection.jsx";
@@ -24,11 +24,11 @@ function App() {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
-        <Route element={<RequireBack />}>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/authenticate" element={<Authincate />} />
-        </Route>
+        {/* <Route element={<RequireBack />}> */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/authenticate" element={<Authincate />} />
+        {/* </Route> */}
         <Route path="/*" element={<Error404 />} />
 
         {/* Home - Labs - Routes */}
