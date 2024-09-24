@@ -156,7 +156,7 @@ export default function Authenticate() {
       setLoading(false);
       if (error.response && error.response.data) {
         console.error("Error Data:", error.response.data);
-        setError(error.response.data.data.join(", "));
+        setError(error.response.data.data);
       } else {
         console.error("Error:", error.message);
         setError("An unexpected error occurred.");

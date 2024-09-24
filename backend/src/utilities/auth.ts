@@ -16,15 +16,20 @@ export const createJWT = (user: User) => {
 }
 
 export const isAuthenticated = (req: Request, res: Response, next: NextFunction) => {
-    const token = req.cookies.token;
+const bearer = req.headers.authorization;   //authorization not authentication
+    if (!bearer)
+        {
+            return res.status(401).json({message:'not authorized'});
+        }
 
+    const[ ,token]=bearer.split(' ');
     if (!token) {
         return res.status(401).json({ message: 'Not authorized, no token' });
     }
 
     try {
         const user = jwt.verify(token, process.env.JWT_SECRET) as JwtPayload;
-        req.params.loggedInUserId = user.id;
+        req.params.id = user.id;
         next();
     } catch (e) {
         console.error(e);

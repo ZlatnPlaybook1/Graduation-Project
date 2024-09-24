@@ -24,11 +24,11 @@ function App() {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
-        <Route element={<RequireBack />}>
+        {/*<Route element={<RequireBack />}>*/}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/authenticate" element={<Authincate />} />
-        </Route>
+        {/*</Route>*/}
         <Route path="/*" element={<Error404 />} />
 
         {/* Home - Labs - Routes */}

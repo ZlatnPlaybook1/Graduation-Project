@@ -73,7 +73,7 @@ class RegistrationController {
     // Step 2: Complete registration
     public async completeRegistration(req: Request, res: Response): Promise<Response> {
         const {number} = req.body;
-        const email = this.email;
+        const email : string = this.email;
 
         try {
             const validationResponse = await validateVerificationNumber(email, number);
@@ -91,6 +91,13 @@ class RegistrationController {
             });
             // Generate JWT
             const token: string = createJWT(user);
+                await prisma.user.update({
+            where: { email },
+            data: {
+                token: token,  // Store the generated token
+            },
+        });
+
             res.cookie('token', token, {
                 httpOnly: true,
                 maxAge: 24 * 60 * 60 * 1000 // 24 hours

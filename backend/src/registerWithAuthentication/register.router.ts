@@ -7,7 +7,7 @@ const registrationController = new RegistrationController();
 
 registerRouter.post("/register", registrationController.initiateRegistration);
 
-registerRouter.post("/authincate", registrationController.completeRegistration);
+registerRouter.post("/authenticate", registrationController.completeRegistration);
 
 export {registrationController};
 export default registerRouter;
