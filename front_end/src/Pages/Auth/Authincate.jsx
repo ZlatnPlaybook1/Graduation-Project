@@ -1,3 +1,113 @@
+// import React, { useState } from "react";
+// import axios from "axios";
+// import Cookie from "cookie-universal";
+// import { useNavigate } from "react-router-dom";
+// import Loading from "../../Components/Loading/Loading";
+// import "./Auth.css";
+
+// export default function Authenticate() {
+//   const [number, setNumber] = useState("");
+//   const [email, setEmail] = useState("");
+//   const [error, setError] = useState("");
+//   const [loading, setLoading] = useState(false);
+//   const navigate = useNavigate();
+//   const cookie = Cookie();
+
+//   const handleNumberChange = (e) => {
+//     setNumber(e.target.value);
+//   };
+
+//   const handleEmailChange = (e) => {
+//     setEmail(e.target.value);
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     setLoading(true);
+//     setError("");
+
+//     // Client-side validation
+//     if (!/^\S+@\S+\.\S+$/.test(email)) {
+//       setError("Please enter a valid email.");
+//       setLoading(false);
+//       return;
+//     }
+//     if (!/^\d{6}$/.test(number)) {
+//       setError("The number must be 6 digits.");
+//       setLoading(false);
+//       return;
+//     }
+
+//     try {
+//       const response = await axios.post(
+//         "http://127.0.0.1:8000/api/authenticate",
+//         {
+//           email,
+//           verification_code: number,
+//         }
+//       );
+
+//       const token = response.data.token;
+//       cookie.set("CuberWeb", token);
+
+//       if (response.status === 200) {
+//         navigate("/dashboard/users");
+//       }
+//     } catch (error) {
+//       setLoading(false);
+//       if (error.response && error.response.data) {
+//         console.error("Error Data:", error.response.data);
+//         setError(error.response.data.data.join(", "));
+//       } else {
+//         console.error("Error:", error.message);
+//         setError("An unexpected error occurred.");
+//       }
+//     }
+//   };
+
+//   return (
+//     <div className="login-register-body">
+//       {loading && <Loading />}
+//       <div className="container">
+//         <div className="rows hh-100">
+//           <form className="form" onSubmit={handleSubmit}>
+//             <div className="custom-form">
+//               <h1 className="textcenter">Authenticate</h1>
+//               <div className="formcontrol">
+//                 <input
+//                   type="email"
+//                   id="email"
+//                   value={email}
+//                   onChange={handleEmailChange}
+//                   placeholder="Enter your email"
+//                   required
+//                 />
+//                 <label htmlFor="email">Email:</label>
+//               </div>
+//               <div className="formcontrol">
+//                 <input
+//                   type="text"
+//                   id="number"
+//                   value={number}
+//                   onChange={handleNumberChange}
+//                   placeholder="Enter 6-digit number"
+//                   required
+//                   maxLength="6"
+//                 />
+//                 <label htmlFor="number">6-Digit Verification Code:</label>
+//               </div>
+//               <button type="submit" className="botton botton-primary">
+//                 Submit
+//               </button>
+//               {error && <span className="error">{error}</span>}
+//             </div>
+//           </form>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
 import React, { useState } from "react";
 import axios from "axios";
 import Cookie from "cookie-universal";
@@ -5,16 +115,14 @@ import { useNavigate } from "react-router-dom";
 import Loading from "../../Components/Loading/Loading";
 import "./Auth.css";
 
-export default function Authincate() {
+export default function Authenticate() {
   const [number, setNumber] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
-
-  // Cookies
-  const cookie = Cookie();
-  // Loading state
   const [loading, setLoading] = useState(false);
-  const handleChange = (e) => {
+  const navigate = useNavigate();
+  const cookie = Cookie();
+
+  const handleNumberChange = (e) => {
     setNumber(e.target.value);
   };
 
@@ -22,26 +130,42 @@ export default function Authincate() {
     e.preventDefault();
     setLoading(true);
     setError("");
-    try {
-      // Use the AUTH constant in the API request
-      const response = await axios.post(
-        "http://127.0.0.1:8080/api/authincate",
-        { number }
-      );
+
+    // Client-side validation
+    if (!/^\d{6}$/.test(number)) {
+      setError("The number must be 6 digits.");
       setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/authenticate",
+        {
+          number,
+        }
+      );
+
       const token = response.data.token;
       cookie.set("CuberWeb", token);
-      if (response.status === 201) {
+
+      if (response.status === 200) {
         navigate("/dashboard/users");
       }
     } catch (error) {
       setLoading(false);
-      setError("Invalid number");
+      if (error.response && error.response.data) {
+        console.error("Error Data:", error.response.data);
+        setError(error.response.data.data.join(", "));
+      } else {
+        console.error("Error:", error.message);
+        setError("An unexpected error occurred.");
+      }
     }
   };
 
   return (
-    <body className="login-register-body">
+    <div className="login-register-body">
       {loading && <Loading />}
       <div className="container">
         <div className="rows hh-100">
@@ -53,7 +177,7 @@ export default function Authincate() {
                   type="text"
                   id="number"
                   value={number}
-                  onChange={handleChange}
+                  onChange={handleNumberChange}
                   placeholder="Enter 6-digit number"
                   required
                   maxLength="6"
@@ -68,6 +192,6 @@ export default function Authincate() {
           </form>
         </div>
       </div>
-    </body>
+    </div>
   );
 }

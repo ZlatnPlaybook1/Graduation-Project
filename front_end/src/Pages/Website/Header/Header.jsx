@@ -241,7 +241,7 @@ const Header = () => {
           </div>
           <ul className="links">
             <li>
-              <a href="/home">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
               <a href="#about">About Us</a>

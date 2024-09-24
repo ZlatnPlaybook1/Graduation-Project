@@ -19,7 +19,7 @@ export default function AddUser() {
     setLoading(true);
     setError(null);
     try {
-      await axios.post("http://127.0.0.1:8080/api/user/add", {
+      await axios.post("http://127.0.0.1:8000/api/user/add", {
         name: name,
         email: email,
         password: password,

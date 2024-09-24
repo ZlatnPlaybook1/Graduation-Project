@@ -33,7 +33,9 @@
     display: none !important;
   }
 }
-
+.striples-bg .second-header {
+  color: white;
+}
 .faq-section {
   margin-top: 75px !important;
   display: flex !important;
@@ -107,7 +109,7 @@
 }
 
 .faq-section .section-text .faq-body.active {
-  max-height: 1000px !important; /* Adjust this value based on your content */
+  max-height: 1000px !important;
   padding: 15px 25px !important;
   opacity: 1 !important;
 }

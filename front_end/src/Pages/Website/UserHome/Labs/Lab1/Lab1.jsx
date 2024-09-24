@@ -3,13 +3,17 @@ import $ from "jquery";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import "./Lab1.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Lab1() {
   const faqSectionRef = useRef(null);
-
+  const navigate = useNavigate();
+  const handleGoToLab = () => {
+    navigate("/SqlInjectionLab");
+  };
   useEffect(() => {
     const $faqSection = $(faqSectionRef.current);
     const $dt = $faqSection.find("dt");
@@ -298,9 +302,9 @@ export default function Lab1() {
               </dl>
             </div>
             <div className="go-to-section">
-              <Link href="#" className="go-to">
+              <button onClick={handleGoToLab} className="go-to">
                 Go To Lab
-              </Link>
+              </button>
             </div>
           </div>
         </div>

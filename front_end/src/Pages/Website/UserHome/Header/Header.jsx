@@ -3,11 +3,15 @@ import { NavLink } from "react-router-dom";
 import "./Header.css";
 import logo from "../assets/img/logo.png";
 import profile from "../assets/img/profile.png";
+import axios from "axios";
+import Cookie from "cookie-universal";
 
 const Header = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const [profileListVisible, setProfileListVisible] = useState(false);
 
+  const cookie = Cookie();
+  const token = cookie.get("CuberWeb");
   const showSidebar = () => {
     setSidebarVisible(true);
   };
@@ -20,6 +24,24 @@ const Header = () => {
     setProfileListVisible(!profileListVisible);
   };
 
+  async function handleLogout() {
+    try {
+      await axios.post(
+        "http://127.0.0.1:8000/api/logout",
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      cookie.remove("CuberWeb");
+      window.location.pathname = "/";
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <div className="header-home">
       <div className="container-home">
@@ -28,7 +50,7 @@ const Header = () => {
           <i className="fa-solid fa-bars" onClick={showSidebar}></i>
           {/* Sidebar */}
           <div
-            className={`sidebar ${sidebarVisible ? "visible" : ""}`}
+            className={`sidebarr ${sidebarVisible ? "visible" : ""}`}
             style={{ left: sidebarVisible ? 0 : "-100%" }}
           >
             <div className="sidebar_links">
@@ -79,14 +101,14 @@ const Header = () => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/account">
+                    <NavLink to="/dashboard">
                       <i className="fas fa-gear"></i> Manage Account
                     </NavLink>
                   </li>
                 </ul>
                 <ul>
                   <li>
-                    <NavLink to="/logout">
+                    <NavLink onClick={handleLogout}>
                       <i className="fas fa-right-from-bracket"></i> Log Out
                     </NavLink>
                   </li>

@@ -5,5 +5,5 @@ export default function RequireBack() {
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
 
-  return token ? window.history.back() : <Outlet />;
+  return token ? (window.location.pathname = "/home") : <Outlet />;
 }

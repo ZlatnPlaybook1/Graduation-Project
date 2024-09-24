@@ -16,7 +16,12 @@
   margin-bottom: 30px;
   overflow: hidden;
 }
-
+.team p {
+  color: white;
+}
+.team-name {
+  color: white;
+}
 @media (max-width: 991px) {
   .team .team-card-section .team-card {
     max-width: 45%;
@@ -116,7 +121,7 @@
 
 .team .team-card-section .team-info .team-position {
   font-size: 14px;
-  color: #777;
+  color: #4e54c8;
   position: relative;
 }
 

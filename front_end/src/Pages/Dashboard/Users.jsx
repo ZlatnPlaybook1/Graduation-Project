@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { USER } from "../../Api/Api";
 import Table from "react-bootstrap/Table";
 import "./dashboard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,7 +6,6 @@ import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Cookie from "cookie-universal";
-import { Axios } from "../../Api/axios";
 
 export default function Users() {
   const [userData, setUserData] = useState([]);
@@ -18,29 +16,40 @@ export default function Users() {
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
 
-  /// Get Current User
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8080/api/user", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => setCurrentUser(res.data))
-      .catch((err) => console.log(err));
+    const fetchUserData = async () => {
+      if (token) {
+        try {
+          const res = await axios.get("http://127.0.0.1:8000/api/user", {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          setCurrentUser(res.data.data);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    };
+
+    fetchUserData();
   }, [token]);
 
   // Get All Users
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8080/api/users", {
+      .get("http://127.0.0.1:8000/api/users", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then((data) => setUserData(data.data))
-      .then(() => setNoUsers(true))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        setUserData(res.data.data);
+        setNoUsers(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, [deleteUser, token]);
 
   // Mapping on users
@@ -54,28 +63,28 @@ export default function Users() {
       <td>{user.role === "admin" ? "Admin" : "Writer"}</td>
       <td>
         <div className="d-flex align-items-center gap-2">
-          <Link to={`/user/${user.id}`}>
+          <Link to={`/dashboard/user/edit/${user.id}`}>
             <FontAwesomeIcon fontSize={"19px"} icon={faPenToSquare} />
           </Link>
-          {currentUser.name !==
-            user.name(
-              <FontAwesomeIcon
-                onClick={() => handleDelete(user.id)}
-                fontSize={"19px"}
-                color="red"
-                cursor={"pointer"}
-                icon={faTrash}
-              />
-            )}
+          {currentUser.name !== user.name && (
+            <FontAwesomeIcon
+              onClick={() => handleDelete(user.id)}
+              fontSize={"19px"}
+              color="red"
+              cursor={"pointer"}
+              icon={faTrash}
+            />
+          )}
         </div>
       </td>
     </tr>
   ));
+
   // Handle Delete
   async function handleDelete(id) {
     if (currentUser.id !== id) {
       try {
-        await Axios.delete(`${USER}/${id}`);
+        await axios.delete(`http://127.0.0.1:8000/api/user/${id}`);
         setDeleteUser((prev) => !prev);
       } catch (err) {
         console.log(err);
@@ -104,13 +113,13 @@ export default function Users() {
         <tbody>
           {userData.length === 0 ? (
             <tr>
-              <td colSpan={12} className="text-center">
+              <td colSpan={5} className="text-center">
                 Loading...
               </td>
             </tr>
-          ) : userData.length === 0 && NoUsers ? (
+          ) : NoUsers && userData.length === 0 ? (
             <tr>
-              <td colSpan={12} className="text-center">
+              <td colSpan={5} className="text-center">
                 No Users Found
               </td>
             </tr>

@@ -1,0 +1,431 @@
+:root {
+  --main-color: #212c42;
+  --sec-main-color: #a3ea2a;
+  --alt-color: #151c2b;
+  --font-color: rgba(255, 255, 255, 0.5);
+  --font-color-hover: rgba(255, 255, 255, 0.75);
+  --main-transition: 0.5s;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+
+body {
+  font-family: "poppins", "sans-serif";
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 15px;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Extra small */
+@media (min-width: 0px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+/* small */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/*  Medium */
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+}
+
+/* Large */
+@media (min-width: 991px) {
+  .container {
+    max-width: 970px;
+  }
+}
+
+/* X-Large */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+.container-sql-injection {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Extra small */
+@media (min-width: 0px) {
+  .container-sql-injection {
+    max-width: 100%;
+  }
+}
+
+/* small */
+@media (min-width: 576px) {
+  .container-sql-injection {
+    max-width: 540px;
+  }
+}
+
+/*  Medium */
+@media (min-width: 768px) {
+  .container-sql-injection {
+    max-width: 750px;
+  }
+}
+
+/* Large */
+@media (min-width: 991px) {
+  .container-sql-injection {
+    max-width: 970px;
+  }
+}
+
+/* X-Large */
+@media (min-width: 1200px) {
+  .container-sql-injection {
+    max-width: 1170px;
+  }
+}
+/* Start Landing */
+.landing-sql-injection {
+  height: auto;
+  background: linear-gradient(
+    105deg,
+    var(--sec-main-color) 0%,
+    var(--sec-main-color) 60%,
+    rgb(28, 37, 56) 60%
+  );
+}
+
+@media (max-width: 991px) {
+  .landing-sql-injection {
+    background: var(--sec-main-color);
+  }
+}
+
+.landing-sql-injection .container-sql-injection {
+  padding: 24px 12px;
+}
+
+.landing-sql-injection .course-info-sql-injection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.landing-sql-injection .course-info-sql-injection .course-text-sql-injection {
+  max-width: 60%;
+}
+
+@media (max-width: 991px) {
+  .landing-sql-injection .course-info-sql-injection .course-text-sql-injection {
+    max-width: 100%;
+  }
+}
+
+.landing-sql-injection
+  .course-info-sql-injection
+  .course-text-sql-injection
+  h1 {
+  font-size: 40px;
+}
+
+.landing-sql-injection .course-info-sql-injection .course-text-sql-injection p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.landing-sql-injection
+  .course-info-sql-injection
+  .course-text-sql-injection
+  p.brief-sql-injection {
+  background-color: var(--alt-color);
+  padding: 10px;
+  width: max-content;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+.landing-sql-injection
+  .course-info-sql-injection
+  .course-text-sql-injection
+  p.brief-sql-injection
+  i {
+  margin-right: 10px;
+}
+
+.landing-sql-injection .course-info-sql-injection .course-icon-sql-injection {
+  display: flex;
+  flex-basis: 30%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media (max-width: 991px) {
+  .landing-sql-injection .course-info-sql-injection .course-icon-sql-injection {
+    display: none;
+  }
+}
+
+.landing-sql-injection
+  .course-info-sql-injection
+  .course-icon-sql-injection
+  .border-sql-injection {
+  transform: rotateZ(-45deg);
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  border: 5px solid;
+  border-right-color: rgb(62, 71, 90);
+  border-top-color: rgb(62, 71, 90);
+  border-bottom-color: var(--sec-main-color);
+  border-left-color: var(--sec-main-color);
+  display: flex;
+  align-items: center;
+}
+
+.landing-sql-injection
+  .course-info-sql-injection
+  .course-icon-sql-injection
+  .content-sql-injection {
+  transform: rotateZ(45deg);
+  width: 230px;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-sql-injection .course-info-sql-injection .course-icon-sql-injection i {
+  border-radius: 50%;
+  padding: 17px;
+  font-size: 45px;
+}
+
+.landing-sql-injection .course-info-sql-injection .course-icon-sql-injection p {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: lighter;
+  margin: 25px 0;
+}
+
+.landing-sql-injection
+  .course-info-sql-injection
+  .course-icon-sql-injection
+  i.fa-book-open.lab-sql-injection {
+  background-color: rgb(62, 71, 90);
+}
+
+.landing-sql-injection
+  .course-info-sql-injection
+  .course-icon-sql-injection
+  i.fa-bullseye.lab-sql-injection {
+  background-color: var(--sec-main-color);
+}
+
+/* End Landing */
+
+/* Start Course  */
+.course-sql-injection {
+  padding: 70px 0;
+}
+
+.course-sql-injection .container-sql-injection {
+  display: flex;
+  flex-direction: column;
+}
+.course-sql-injection .container-sql-injection > h2 {
+  border: 2px solid var(--sec-main-color);
+  width: max-content;
+  align-self: center;
+  padding: 20px 10px;
+}
+
+.course-sql-injection .section-p-sql-injection {
+  color: #777;
+  font-weight: lighter;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.course-sql-injection .row-sql-injection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
+  margin-top: 30px;
+  gap: 20px;
+}
+@media (max-width: 991px) {
+  .course-sql-injection .row-sql-injection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .course-sql-injection .row-sql-injection {
+    grid-template-columns: 1fr;
+  }
+}
+.course-sql-injection .row-sql-injection .course-card-sql-injection {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 0 30px;
+  transition: var(--main-transition);
+}
+
+.course-sql-injection .row-sql-injection .course-card-sql-injection:hover {
+  transform: scale(1.05);
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 991px) {
+  .course-sql-injection .row-sql-injection .course-card-sql-injection {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+.course-sql-injection .row-sql-injection .course-card-sql-injection img {
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.course-sql-injection
+  .row-sql-injection
+  .course-card-sql-injection
+  .course-text-sql-injection {
+  padding: 20px;
+  position: absolute;
+  background-color: white;
+  left: 0;
+  transition: var(--main-transition);
+  margin-bottom: 30px;
+  transform: translateY(-10%);
+}
+@media (min-width: 992px) {
+  .course-sql-injection
+    .row-sql-injection
+    .course-card-sql-injection
+    .course-text-sql-injection {
+    transform: translateY(-15%);
+  }
+}
+@media (max-width: 991px) {
+  .course-sql-injection
+    .row-sql-injection
+    .course-card-sql-injection
+    .course-text-sql-injection {
+    transform: translateY(-10%);
+  }
+}
+@media (max-width: 767px) {
+  .course-sql-injection
+    .row-sql-injection
+    .course-card-sql-injection
+    .course-text-sql-injection {
+    transform: translateY(-60%);
+  }
+}
+
+.course-sql-injection
+  .row-sql-injection
+  .course-card-sql-injection:hover
+  .course-text-sql-injection {
+  transform: translateY(-60%);
+}
+
+.course-sql-injection .row-sql-injection .course-card-sql-injection h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.course-sql-injection .row-sql-injection .course-card-sql-injection p {
+  font-size: 16px;
+  font-weight: lighter;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.course-sql-injection .row-sql-injection .course-card-sql-injection ul li {
+  list-style-type: disc;
+  margin-left: 20px;
+  font-size: 14px;
+  color: #555;
+  font-weight: lighter;
+}
+
+.course-sql-injection
+  .row-sql-injection
+  .course-card-sql-injection
+  .easy-sql-injection {
+  position: absolute;
+  bottom: 0;
+  left: 2%;
+  color: green !important;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  background: white;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.course-sql-injection
+  .row-sql-injection
+  .course-card-sql-injection
+  .easy-sql-injection
+  i {
+  margin-right: 5px;
+}
+
+.course-sql-injection
+  .row-sql-injection
+  .course-card-sql-injection
+  .easy-sql-injection
+  p {
+  margin-bottom: 0;
+  color: green;
+  font-size: 16px;
+}
+
+/* End Course  */

@@ -1,0 +1,60 @@
+.writer-form {
+  margin-top: 8rem;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.writer-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+
+.writer-form input[type="text"],
+.writer-form input[type="number"],
+.writer-form input[type="date"],
+.writer-form input[type="tel"],
+.writer-form input[type="email"],
+.writer-form input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.writer-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  transition: background-color 0.3s;
+}
+
+.writer-form button:hover {
+  background-color: #0056b3;
+}
+
+.image-preview {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.image-preview img {
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

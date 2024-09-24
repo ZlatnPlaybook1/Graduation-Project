@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./Pages/Website/HomePage";
 import Login from "./Pages/Auth/Login";
@@ -14,53 +14,48 @@ import Error404 from "./Pages/Auth/404.jsx";
 import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
 import Lab1 from "./Pages/Website/UserHome/Labs/Lab1/Lab1.jsx";
 import Lab2 from "./Pages/Website/UserHome/Labs/Lab2/Lab2.jsx";
-// import RequireBack from "./Pages/Auth/RequireBack.jsx";
-
+import RequireBack from "./Pages/Auth/RequireBack.jsx";
+import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
+import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
+import SQLInjection from "./Pages/Website/UserHome/Labs/Lab1/SQLInjection.jsx";
 function App() {
-  const location = useLocation();
-
-  const showAnimation =
-    location.pathname === "/login" || location.pathname === "/register";
-
   return (
     <div className="App">
-      {showAnimation && (
-        <div className="wave-container">
-          <div className="wave-wave"></div>
-          <div className="wave-wave"></div>
-          <div className="wave-wave"></div>
-        </div>
-      )}
-
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
-        {/* <Route element={<RequireBack />}> */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/authincate" element={<Authincate />} />
-        {/* </Route> */}
+        <Route element={<RequireBack />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/authenticate" element={<Authincate />} />
+        </Route>
         <Route path="/*" element={<Error404 />} />
 
         {/* Home - Labs - Routes */}
-        <Route path="/home" element={<UserHome />} />
-        <Route path="/lab1" element={<Lab1 />} />
-        <Route path="/lab2" element={<Lab2 />} />
+        <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
+          <Route path="/home" element={<UserHome />} />
+          <Route path="/lab1" element={<Lab1 />} />
+          <Route path="/SqlInjectionLab" element={<SQLInjection />} />
+          <Route path="/lab2" element={<Lab2 />} />
+        </Route>
         {/* End Routes of Labs */}
 
-        {/* Protected Routes */}
+        {/* Start Protected Routes */}
         <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
           <Route path="/dashboard" element={<Dashboard />}>
             <Route element={<RequierAuth allowedRole={["admin"]} />}>
               <Route path="users" element={<Users />} />
-              <Route path="users/:id" element={<User />} />
+              <Route path="user/edit/:id" element={<User />} />
               <Route path="user/add" element={<AddUser />} />
             </Route>
             <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
               <Route path="writer" element={<Writer />} />
+              <Route path="settings" element={<Settings />} />
+              <Route path="about" element={<Aboutus />} />
             </Route>
           </Route>
         </Route>
+        {/* End Protected Routes */}
       </Routes>
     </div>
   );

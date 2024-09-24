@@ -16,14 +16,22 @@
   background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif) !important;
   height: 400px !important;
   background-position: center !important;
+  background-size: cover !important;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
 }
 
 .four_zero_four_bg h1 {
   font-size: 80px !important;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .four_zero_four_bg h3 {
   font-size: 80px !important;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .link_404 {
@@ -32,6 +40,14 @@
   background: #39ac31 !important;
   margin: 20px 0 !important;
   display: inline-block !important;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.link_404:hover {
+  background: #32a12a !important;
+  transform: scale(1.05);
 }
 
 .contant_box_404 {

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Courses.css";
 import imagecourse from "../assets/img/course_image_home.png";
-
+import imagecourse2 from "../assets/img/Lab2.jpg";
 const Courses = () => {
   return (
     <div className="course">
@@ -39,19 +39,19 @@ const Courses = () => {
           <div className="row-course">
             <a href="/lab2" className="course-card">
               <div className="course-image">
-                <img src={imagecourse} alt="Course" />
+                <img src={imagecourse2} alt="Course" />
               </div>
               <div className="course-text">
-                <h3>Pre Security</h3>
+                <h3>Introduction to Cyber Security</h3>
                 <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                  Learn the core skills required to start a career in cyber
+                  security
                 </p>
                 <ul className="circled-order">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
+                  <li>Learn about different careers in cyber</li>
+                  <li>Hack your first application</li>
+                  <li>Defend against a live cyber attack</li>
+                  <li>Explore security topics in the industry</li>
                 </ul>
               </div>
               <div className="easy">

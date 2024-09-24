@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import { USER } from "../../Api/Api";
 import Loading from "../../Components/Loading/Loading";
-import { useNavigate } from "react-router-dom";
-import { Axios } from "../../Api/axios";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
 export default function User() {
+  const { id } = useParams();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
@@ -13,32 +13,34 @@ export default function User() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // id
-  const id = Number(window.location.pathname.replace("/dashboard/users/", ""));
   useEffect(() => {
     setLoading(true);
-    Axios.get(`${USER}/${id}`)
-      .then((data) => {
-        setName(data.data.name);
-        setEmail(data.data.email);
-        setRole(data.data.role);
+    axios
+      .get(`http://127.0.0.1:8000/api/currentUser/${id}`)
+      .then((response) => {
+        setName(response.data.data.name);
+        setEmail(response.data.data.email);
+        setRole(response.data.data.role);
         setLoading(false);
+        setDisable(false);
       })
-      .then(() => setDisable(false))
-      .catch(() => navigate("/dasboard/users/page/404", { replace: true }));
-  }, []);
+      .catch(() => {
+        setLoading(false);
+        navigate("/dashboard/users/page/404", { replace: true });
+      });
+  }, [id, navigate]);
 
   // Handle Submit
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     try {
-      await Axios.post(`${USER}/edit/${id}`, {
+      await axios.put(`http://127.0.0.1:8000/api/user/edit/${id}`, {
         name: name,
         email: email,
         role: role,
       });
-      window.location.pathname = "/dashboard/users";
+      navigate("/dashboard/users");
     } catch (error) {
       setLoading(false);
       console.error("Error submitting form:", error);
@@ -75,6 +77,7 @@ export default function User() {
             placeholder="name@example.com"
           />
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
           <Form.Label>Role</Form.Label>
           <Form.Select value={role} onChange={(e) => setRole(e.target.value)}>
@@ -82,10 +85,10 @@ export default function User() {
               Select Role
             </option>
             <option value="admin">Admin</option>
-            {/* <option value="2003">User</option> */}
-            <option value="writer">writer</option>
+            <option value="writer">Writer</option>
           </Form.Select>
         </Form.Group>
+
         <Button disabled={disable} type="submit" className="btn btn-primary">
           Save
         </Button>

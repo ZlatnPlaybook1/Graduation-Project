@@ -19,7 +19,7 @@
   padding: 24px 12px;
 }
 
-.landing-home .course-info {
+.landing-home .course-info-home {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,27 +29,27 @@
   color: white;
 }
 
-.landing-home .course-info .course-text {
+.landing-home .course-info-home .course-text-home {
   max-width: 60%;
 }
 
 @media (max-width: 991px) {
-  .landing-home .course-info .course-text {
+  .landing-home .course-info-home .course-text-home {
     max-width: 100%;
   }
 }
 
-.landing-home .course-info .course-text h1 {
+.landing-home .course-info-home .course-text-home h1 {
   font-size: 40px;
 }
 
-.landing-home .course-info .course-text p {
+.landing-home .course-info-home .course-text-home p {
   margin-top: 10px;
   font-size: 16px;
   font-weight: lighter;
 }
 
-.landing-home .course-info .course-text p.brief {
+.landing-home .course-info-home .course-text-home p.brief {
   background-color: var(--alt-color);
   padding: 10px;
   width: max-content;
@@ -57,11 +57,11 @@
   border-radius: 8px;
 }
 
-.landing-home .course-info .course-text p.brief i {
+.landing-home .course-info-home .course-text-home p.brief i {
   margin-right: 10px;
 }
 
-.landing-home .course-info .course-icon {
+.landing-home .course-info-home .course-icon-home {
   display: flex;
   flex-basis: 30%;
   align-items: center;
@@ -70,12 +70,12 @@
 }
 
 @media (max-width: 991px) {
-  .landing-home .course-info .course-icon {
+  .landing-home .course-info-home .course-icon-home {
     display: none;
   }
 }
 
-.landing-home .course-info .course-icon .border {
+.landing-home .course-info-home .course-icon-home .border-home {
   transform: rotateZ(-45deg);
   width: 230px;
   height: 230px;
@@ -89,7 +89,7 @@
   align-items: center;
 }
 
-.landing-home .course-info .course-icon .content {
+.landing-home .course-info-home .course-icon-home .content-home {
   transform: rotateZ(45deg);
   width: 230px;
   height: 230px;
@@ -99,24 +99,24 @@
   align-items: center;
 }
 
-.landing-home .course-info .course-icon i {
+.landing-home .course-info-home .course-icon-home i {
   border-radius: 50%;
   padding: 17px;
   font-size: 45px;
 }
 
-.landing-home .course-info .course-icon p {
+.landing-home .course-info-home .course-icon-home p {
   padding: 20px;
   font-size: 24px;
   font-weight: lighter;
   margin: 25px 0;
 }
 
-.landing-home .course-info .course-icon i.fa-book-open {
+.landing-home .course-info-home .course-icon-home i.fa-book-open {
   background-color: rgb(8, 96, 138);
 }
 
-.landing-home .course-info .course-icon i.fa-bullseye {
+.landing-home .course-info-home .course-icon-home i.fa-bullseye {
   background-color: rgb(62, 71, 90);
 }
 

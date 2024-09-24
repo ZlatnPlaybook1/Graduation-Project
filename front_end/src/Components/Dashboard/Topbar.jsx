@@ -3,11 +3,9 @@ import "./bars.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Menu } from "../../Context/MenuContext";
-import { LOGOUT } from "../../Api/Api";
 import { Link, useNavigate } from "react-router-dom";
 import Cookie from "cookie-universal";
 import { Dropdown, DropdownButton } from "react-bootstrap";
-import { Axios } from "../../Api/axios";
 import axios from "axios";
 
 export default function Topbar() {
@@ -19,28 +17,45 @@ export default function Topbar() {
 
   useEffect(() => {
     if (token) {
+      console.log("Token found:", token);
       axios
-        .get("http://127.0.0.1:8080/api/user", {
+        .get("http://127.0.0.1:8000/api/user", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         })
-        .then((data) => setName(data.data.name))
-        .catch(() => navigate("/login", { replace: true }));
+        .then((res) => {
+          console.log("API response:", res);
+          setName(res.data.data.name);
+        })
+        .catch((error) => {
+          console.error("API request failed:", error);
+          navigate("/login", { replace: true });
+        });
     } else {
+      console.log("No token found, redirecting to login");
       navigate("/login", { replace: true });
     }
   }, [token, navigate]);
 
   async function handleLogout() {
     try {
-      await Axios.get(`/${LOGOUT}`);
+      await axios.post(
+        "http://127.0.0.1:8000/api/logout",
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       cookie.remove("CuberWeb");
-      window.location.pathname = "/login";
+      window.location.pathname = "/";
     } catch (err) {
       console.log(err);
     }
   }
+
   return (
     <div className="topbar d-flex justify-content-between align-items-center">
       <div className="top-menu d-flex align-items-center">
