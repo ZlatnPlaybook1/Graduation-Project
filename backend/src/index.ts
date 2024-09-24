@@ -5,6 +5,7 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser';
 import registerRouter from './registerWithAuthentication/register.router';
 import loginRouter from './login/login.router';
+import logoutRouter from "./logout/logout.router";
 import dashboardRouter from './dashboard/dashboard.router';
 
 const app = express();
@@ -15,15 +16,11 @@ app.use(morgan('dev')); // morgan: HTTP request logger middleware,
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cookieParser());
-app.get('/', (req, res, next) => {
-    res.status(200).json({'data': "welcome to home page"})
-})
-app.get('/api', (req, res) => {
-    res.status(200).json({'data': "api"})
-})
+
 app.use('/api', registerRouter);
 app.use('/api', loginRouter);
 app.use('/api', dashboardRouter)
+app.use('/api', logoutRouter)
 
 
 dotenv.config()

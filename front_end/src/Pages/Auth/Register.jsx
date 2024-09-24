@@ -38,7 +38,7 @@ export default function Register() {
       navigate("/authenticate", { replace: true });
     } catch (error) {
       setLoading(false);
-      if (error.response && error.response.status === 422) {
+      if (error.response && error.response.status === 409) {
         setErr("Email has already been taken.");
       } else {
         setErr("Internal server error");

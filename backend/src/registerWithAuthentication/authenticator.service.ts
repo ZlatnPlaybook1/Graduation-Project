@@ -1,32 +1,24 @@
+import {PrismaClient} from '@prisma/client';
 import nodemailer from 'nodemailer';
-import crypto from 'crypto';
 
-
+const prisma = new PrismaClient();
 const transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    service: 'gmail',
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.APP_PASSWORD,
     },
 });
 
-const authNumbers: { [key: number]: { number: number, expiry: number } } = {};
+// 2. Send the authentication email
+export async function sendVerificationEmail(toEmail: string, verificationNum: string): Promise<void> {
 
-function generateAuthNumber(email: string): number {
-    const number = crypto.randomInt(100000, 999999);
-    const expiry = Date.now() + 10 * 60 * 1000; // 10 minutes from now
-    authNumbers[email] = {number, expiry};
-    return number;
-}
-
-export async function sendAuthEmail(toEmail: string): Promise<void> {
     const mailOptions = {
         from: process.env.EMAIL_USER,
         to: toEmail,
-        subject: 'Your Authentication Number',
-        text: `Your authentication number is: ${generateAuthNumber(toEmail)}`,
+        subject: 'Your verification Number',
+        text: `Your verification number is: ${verificationNum}`,
     };
-
     try {
         let info = await transporter.sendMail(mailOptions);
         console.log('Email sent:', info.response);
@@ -36,26 +28,46 @@ export async function sendAuthEmail(toEmail: string): Promise<void> {
     }
 }
 
-export function validateAuthNumber(email: string, userInput: number): { valid: boolean, message: string } {
+// 3. Validate the auth number from the database
+export async function validateVerificationNumber(email: string, userInput: number): Promise<{
+    valid: boolean,
+    message: string
+}> {
     try {
-        const storedAuth = authNumbers[email];
-        if (!storedAuth) {
-            return {valid: false, message: "No authentication number found for this email."};
+        // Find the user by email
+        const user = await prisma.user.findUnique({
+            where: {email},
+            include: {validationNumber: true},
+        });
+
+        if (!user || !user.validationNumber) {
+            return {valid: false, message: "No verification number found for this email."};
         }
 
-        if (Date.now() > storedAuth.expiry) {
-            delete authNumbers[email];
-            return {valid: false, message: "Authentication number has expired."};
+        const {validationNumber} = user;
+        // Check if the auth number has expired
+        if (Date.now() > Number(validationNumber.expiration)) {
+            await prisma.validationNumber.delete({
+                where: {userId: user.id},
+            });
+            return {valid: false, message: "verification number has expired."};
         }
 
-        if ((storedAuth.number) === Number(userInput)) {
-            delete authNumbers[email];
-            return {valid: true, message: "Authentication successful."};
+        // Check if the number matches
+        if (validationNumber.number === userInput.toString()) {      // Mark the number as verified
+            await prisma.validationNumber.update({
+                where: {userId: user.id},
+                data: {isVerified: true},
+            });
+            await prisma.user.update({
+                where: {id: user.id},
+                data: {isVerified: true},
+            });
+            return {valid: true, message: "verification successful."};
         }
-
-        return {valid: false, message: "Invalid authentication number."};
+        return {valid: false, message: "Invalid verification number."};
     } catch (error) {
-        console.error('Error invalid authentication number:', error);
-        return {valid: false, message: "Error validating authentication number."};
+        console.error('Error validating verification number:', error);
+        return {valid: false, message: "Error validating verification number."};
     }
 }

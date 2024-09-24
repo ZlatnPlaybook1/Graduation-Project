@@ -1,19 +1,19 @@
 import prisma from "../utilities/db";
 import {createJWT, hashPassword} from "../utilities/auth";
 import {Request, Response} from "express";
-import {sendAuthEmail, validateAuthNumber} from "./authenticator.service";
+import {sendVerificationEmail, validateVerificationNumber} from "./authenticator.service";
+import crypto from "crypto";
 
 class RegistrationController {
     public email: string;
     public name: string;
     public password: string;
-    static initiateRegistration: any;
-    static completeRegistration: any;
 
     constructor() {
         this.email = '';
         this.name = '';
         this.password = '';
+
         this.initiateRegistration = this.initiateRegistration.bind(this);
         this.completeRegistration = this.completeRegistration.bind(this);
     }
@@ -21,21 +21,49 @@ class RegistrationController {
     // Step 1: Initial registration
     public async initiateRegistration(req: Request, res: Response): Promise<Response> {
         try {
+            const {email, name, password} = req.body;
+
+            // Check if email already exists
             const existingEmail = await prisma.user.findFirst({
-                where: {email: req.body.email}
+                where: {email}
+            });
+            if (existingEmail) {
+                return res.status(409).json({data: "Email already exists"});
+            }
+            this.email = email;
+            this.name = name;
+            this.password = password;
+            const hashedPassword = await hashPassword(this.password); // Hash the password before storing it in the database
+            const number = crypto.randomInt(100000, 999999);
+            const expiry = Date.now() + 10 * 60 * 1000; // 10 minutes from now
+
+            // Create a user with `isVerified` as false and store the hashed password
+            const tempUser = await prisma.user.create({
+                data: {
+                    email: this.email,
+                    name: this.name,
+                    password: hashedPassword,
+                    isVerified: false,        // User is not verified yet
+                    validationNumber: {
+                        create: {
+                            number: number.toString(),       // Store the number and expiry time in the database
+                            expiration: BigInt(expiry),
+                            isVerified: false,
+                        }
+                    }
+                }
             });
 
-            if (existingEmail) {
-                return res.status(422).json({data: "Email already exists"});
-            }
+            // Send the verification email with the user ID
+            await sendVerificationEmail(this.email, number.toString());
 
-            this.email = req.body.email;
-            this.name = req.body.name;
-            this.password = req.body.password;
-
-            await sendAuthEmail(this.email);
-
-            return res.status(200).json({message: "Authentication email sent"});
+            return res.status(201).json({
+                msg: "user created successfully",
+                data: {
+                    email: tempUser.email,
+                    name: tempUser.name,
+                }
+            });
         } catch (error) {
             console.error('Error initiating registration:', error);
             return res.status(500).json({data: "Error initiating registration"});
@@ -44,33 +72,35 @@ class RegistrationController {
 
     // Step 2: Complete registration
     public async completeRegistration(req: Request, res: Response): Promise<Response> {
-        const authNumber: number = req.body.number;
+        const {number} = req.body;
+        const email = this.email;
 
         try {
-            const validationResponse = validateAuthNumber(this.email, authNumber);
+            const validationResponse = await validateVerificationNumber(email, number);
 
             if (!validationResponse.valid) {
                 console.log("Validation response:", validationResponse);
                 return res.status(400).json({data: validationResponse.message});
             }
-
-            const hash: string = await hashPassword(this.password);
-
-            const user = await prisma.user.create({
+            // Update the user to mark them as verified
+            const user = await prisma.user.update({
+                where: {email},
                 data: {
-                    name: this.name,
-                    email: this.email,
-                    password: hash
+                    isVerified: true, // Mark user as verified after successful validation
                 }
             });
-
+            // Generate JWT
             const token: string = createJWT(user);
             res.cookie('token', token, {
                 httpOnly: true,
-                maxAge: 24 * 60 * 60 * 100   // 24 hours
+                maxAge: 24 * 60 * 60 * 1000 // 24 hours
             });
 
-            return res.status(201).json({token});
+            return res.status(200).json({
+                token: token,
+                msg: "Email verified successfully",
+                data: null,
+            });
         } catch (error) {
             console.error('Error completing registration:', error);
             return res.status(500).json({data: "Error completing registration"});
