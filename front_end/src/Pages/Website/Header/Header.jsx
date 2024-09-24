@@ -292,9 +292,15 @@ const Header = () => {
             <h2>Cyber Labs</h2>
           </div>
           <ul className="links">
-            <li>
-              <a href="/">Home</a>
-            </li>
+            {token ? (
+              <li>
+                <a href="/home">Home Labs</a>
+              </li>
+            ) : (
+              <li>
+                <a href="/">Home</a>
+              </li>
+            )}
             <li>
               <a href="#about">About Us</a>
             </li>
@@ -331,7 +337,7 @@ const Header = () => {
                   </ul>
                   <ul>
                     <li>
-                      <NavLink onClick={handleLogout}>
+                      <NavLink to="/" onClick={handleLogout}>
                         <i className="fas fa-right-from-bracket"></i> Log Out
                       </NavLink>
                     </li>
@@ -394,9 +400,15 @@ const Header = () => {
               {isDropdownOpen && (
                 <div className="dropdown_menu open">
                   <ul>
-                    <li>
-                      <a href="/home">Home</a>
-                    </li>
+                    {token ? (
+                      <li>
+                        <a href="/home">Home Labs</a>
+                      </li>
+                    ) : (
+                      <li>
+                        <a href="/">Home</a>
+                      </li>
+                    )}
                     <li>
                       <a href="#about">About Us</a>
                     </li>

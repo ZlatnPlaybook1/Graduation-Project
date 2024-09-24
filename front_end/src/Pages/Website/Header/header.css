@@ -20,6 +20,8 @@ header .navbar {
 .navbar .links {
   display: flex;
   gap: 12px;
+  padding-right: 160px;
+  margin-left: 120px;
 }
 
 .navbar .links .text {
@@ -67,7 +69,10 @@ header .links .text:hover {
   padding-left: 15px;
   color: white;
 }
-
+header .log_reg {
+  position: absolute;
+  right: 0;
+}
 header .log_reg .login {
   color: black;
   font-size: 12px;
