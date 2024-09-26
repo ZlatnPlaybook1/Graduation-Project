@@ -13,29 +13,6 @@ export async function getAllUsers(req: Request, res: Response): Promise<Response
     });
 }
 
-export async function createNewUser(req: Request, res: Response): Promise<Response> {
-    const {email, name, role} = req.body;
-    const hashedPassword = await hashPassword(req.body.password);
-    try {
-        const user = await prisma.user.create({
-            data: {
-                email,
-                password: hashedPassword,
-                name,
-                role,
-                isVerified:true,
-            }
-        });
-        return res.status(201).json({
-            msg: "User created successfully",
-            data: user
-        });
-    } catch (error) {
-        console.error('Error creating user:', error);
-        return res.status(500).json({error: " server error"});
-    }
-}
-
 export async function getUserById(req: Request, res: Response): Promise<Response> {
     const {id} = req.params;
     try {
@@ -56,6 +33,29 @@ export async function getUserById(req: Request, res: Response): Promise<Response
 
     } catch (error) {
         console.error('Error getting user:', error);
+        return res.status(500).json({error: " server error"});
+    }
+}
+
+export async function createNewUser(req: Request, res: Response): Promise<Response> {
+    const {email, name, role} = req.body;
+    const hashedPassword = await hashPassword(req.body.password);
+    try {
+        const user = await prisma.user.create({
+            data: {
+                email,
+                password: hashedPassword,
+                name,
+                role,
+                isVerified:true,
+            }
+        });
+        return res.status(201).json({
+            msg: "User created successfully",
+            data: user
+        });
+    } catch (error) {
+        console.error('Error creating user:', error);
         return res.status(500).json({error: " server error"});
     }
 }

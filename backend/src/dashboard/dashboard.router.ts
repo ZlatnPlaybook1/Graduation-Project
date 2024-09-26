@@ -4,19 +4,21 @@ import {getAllUsers, deleteUser, getUserById, createNewUser, updateUser, getUser
 
 let dashboardRouter = Router();
 
+//admin
 dashboardRouter.get("/users", isAuthenticated, getAllUsers)
-
-dashboardRouter.post("/user/add", createNewUser)
-
-dashboardRouter.delete("/user/:id" , deleteUser)
-
-
-dashboardRouter.get("/user", isAuthenticated, getUserByToken)    // for admin to edit user
 
 dashboardRouter.get("/user/:id", isAuthenticated, getUserById)
 
-dashboardRouter.put("/user/edit/:id",updateUser )
+dashboardRouter.post("/user/add",isAuthenticated, createNewUser)
+
 dashboardRouter.get("/currentUser/:id", getUserById)
+
+dashboardRouter.put("/user/edit/:id",updateUser )
+
+dashboardRouter.delete("/user/:id",deleteUser)
+
+//user
+dashboardRouter.get("/user", isAuthenticated, getUserByToken)
 
 
 export default dashboardRouter;
