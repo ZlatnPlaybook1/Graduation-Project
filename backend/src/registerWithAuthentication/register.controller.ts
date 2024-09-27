@@ -22,31 +22,50 @@ class RegistrationController {
     public async initiateRegistration(req: Request, res: Response): Promise<Response> {
         try {
             const {email, name, password} = req.body;
-
             // Check if email already exists
-            const existingEmail = await prisma.user.findFirst({
-                where: {email}
+            const existingEmail = await prisma.user.findUnique({
+                where: {email},
             });
-            if (existingEmail) {
+
+            if (existingEmail.isVerified) {
                 return res.status(409).json({data: "Email already exists"});
             }
+
+            const existingName = await prisma.user.findUnique({
+                where: {name}
+            });
+
+            if (existingName.isVerified) {
+                return res.status(409).json({data: "Name already exists"});
+            }
+
+            if (existingEmail && !existingEmail.isVerified) {
+                await prisma.validationNumber.deleteMany({
+                    where: {userId: existingEmail.id}
+                });
+            }
+            // Delete the existing user
+            await prisma.user.delete({
+                where: {email},
+            });
+
+
             this.email = email;
             this.name = name;
             this.password = password;
-            const hashedPassword = await hashPassword(this.password); // Hash the password before storing it in the database
+            const hashedPassword = await hashPassword(this.password);
             const number = crypto.randomInt(100000, 999999);
             const expiry = Date.now() + 10 * 60 * 1000; // 10 minutes from now
 
-            // Create a user with `isVerified` as false and store the hashed password
             const tempUser = await prisma.user.create({
                 data: {
                     email: this.email,
                     name: this.name,
                     password: hashedPassword,
-                    isVerified: false,        // User is not verified yet
+                    isVerified: false,
                     validationNumber: {
                         create: {
-                            number: number.toString(),       // Store the number and expiry time in the database
+                            number: number.toString(),
                             expiration: BigInt(expiry),
                             isVerified: false,
                         }
@@ -58,7 +77,7 @@ class RegistrationController {
             await sendVerificationEmail(this.email, number.toString());
 
             return res.status(201).json({
-                msg: "user created successfully",
+                msg: "temp user created successfully. Please verify your email",
                 data: {
                     email: tempUser.email,
                     name: tempUser.name,
@@ -73,7 +92,7 @@ class RegistrationController {
     // Step 2: Complete registration
     public async completeRegistration(req: Request, res: Response): Promise<Response> {
         const {number} = req.body;
-        const email : string = this.email;
+        const email: string = this.email;
 
         try {
             const validationResponse = await validateVerificationNumber(email, number);
@@ -86,17 +105,17 @@ class RegistrationController {
             const user = await prisma.user.update({
                 where: {email},
                 data: {
-                    isVerified: true, // Mark user as verified after successful validation
+                    isVerified: true,
                 }
             });
-            // Generate JWT
+
             const token: string = createJWT(user);
-                await prisma.user.update({
-            where: { email },
-            data: {
-                token: token,  // Store the generated token
-            },
-        });
+            await prisma.user.update({
+                where: {email},
+                data: {
+                    token: token,
+                },
+            });
 
             res.cookie('token', token, {
                 httpOnly: true,
