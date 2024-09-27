@@ -14,10 +14,11 @@ import Error404 from "./Pages/Auth/404.jsx";
 import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
 import Lab1 from "./Pages/Website/UserHome/Labs/Lab1/Lab1.jsx";
 import Lab2 from "./Pages/Website/UserHome/Labs/Lab2/Lab2.jsx";
-// import RequireBack from "./Pages/Auth/RequireBack.jsx";
+import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
 import SQLInjection from "./Pages/Website/UserHome/Labs/Lab1/SQLInjection.jsx";
+import LoginSqlInjection from "./Pages/Website/UserHome/Labs/Lab1/LoginSqlInjection.jsx";
 function App() {
   return (
     <div className="App">
@@ -34,8 +35,14 @@ function App() {
         {/* Home - Labs - Routes */}
         <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
           <Route path="/home" element={<UserHome />} />
+          {/* Start Lab1 Prepare */}
           <Route path="/lab1" element={<Lab1 />} />
-          <Route path="/SqlInjectionLab" element={<SQLInjection />} />
+          <Route path="/lab1/SqlInjectionLab" element={<SQLInjection />} />
+          <Route
+            path="/lab1/SqlInjectionLab/login"
+            element={<LoginSqlInjection />}
+          />
+          {/* End Lab1 */}
           <Route path="/lab2" element={<Lab2 />} />
         </Route>
         {/* End Routes of Labs */}

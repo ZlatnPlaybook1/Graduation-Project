@@ -1,0 +1,109 @@
+:root {
+  --main-color: #212c42;
+  --sec-main-color: #a3ea2a;
+  --alt-color: #151c2b;
+  --font-color: rgba(255, 255, 255, 0.5);
+  --main-transition: all 0.3s linear;
+}
+.sqlcolor {
+  background-color: var(--main-color) !important;
+}
+.container-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Extra small */
+@media (min-width: 0px) {
+  .container-login {
+    max-width: 100%;
+  }
+}
+/* small */
+@media (min-width: 576px) {
+  .container-login {
+    max-width: 540px;
+  }
+}
+/* Medium */
+@media (min-width: 768px) {
+  .container-login {
+    max-width: 750px;
+  }
+}
+/* Large */
+@media (min-width: 992px) {
+  .container-login {
+    max-width: 970px;
+  }
+}
+/* X-Large */
+@media (min-width: 1200px) {
+  .container-login {
+    max-width: 1170px;
+  }
+}
+
+/* Login form styling */
+.login-sql {
+  padding: 50px;
+  border-radius: 5px;
+  background-color: var(--alt-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.login-sql h1 {
+  margin-bottom: 20px;
+  color: var(--font-color);
+}
+
+.login-sql .form-group label {
+  font-size: 1.2rem;
+  font-weight: lighter;
+  color: var(--font-color);
+}
+
+.login-sql .form-group input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  color: var(--font-color);
+  background-color: var(--main-color);
+  font-weight: lighter;
+  outline: none;
+}
+
+.login-sql button {
+  width: 60%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  color: var(--font-color);
+  background-color: var(--sec-main-color);
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+.login-sql button:hover {
+  background-color: #7fc900;
+}
+
+/* Ensure full height coverage on mobile devices */
+@media (max-height: 600px) {
+  .container-login {
+    height: auto;
+    padding: 20px 0;
+  }
+}

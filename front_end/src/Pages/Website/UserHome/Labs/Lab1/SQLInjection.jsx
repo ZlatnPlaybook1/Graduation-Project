@@ -42,7 +42,10 @@ export default function SQLInjection() {
           <h2>SQL Injection Lab</h2>
           <p className="section-p-sql-injection">Test Your Hacking Skills</p>
           <div className="row-sql-injection">
-            <Link to="#" className="course-card-sql-injection">
+            <Link
+              to="/lab1/SqlInjectionLab/login"
+              className="course-card-sql-injection"
+            >
               <div className="course-image-sql-injection">
                 <img src={imagecourse} alt="" />
               </div>

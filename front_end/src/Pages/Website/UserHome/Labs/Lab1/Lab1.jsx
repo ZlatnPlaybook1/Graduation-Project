@@ -3,16 +3,15 @@ import $ from "jquery";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import "./Lab1.css";
-import { Link, Navigate } from "react-router-dom";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Lab1() {
   const faqSectionRef = useRef(null);
   const navigate = useNavigate();
   const handleGoToLab = () => {
-    navigate("/SqlInjectionLab");
+    navigate("/lab1/SqlInjectionLab");
   };
   useEffect(() => {
     const $faqSection = $(faqSectionRef.current);
