@@ -38,7 +38,7 @@ export default function Login_page() {
       console.log(res);
       setLoading(false);
       const role = res.data.role;
-      cookie.set("support", role);
+      cookie.set("role", role);
       window.location.pathname = `/cookies/cookies_lab/first/support`;
     } catch (error) {
       setLoading(false);
