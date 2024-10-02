@@ -46,7 +46,7 @@ a {
 /* Extra small */
 @media (min-width: 0px) {
   .container-login {
-      max-width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -54,7 +54,7 @@ a {
 /* small */
 @media (min-width: 576px) {
   .container-login {
-      max-width: 540px;
+    max-width: 540px;
   }
 }
 
@@ -62,21 +62,21 @@ a {
 /*  Medium */
 @media (min-width: 768px) {
   .container-login {
-      max-width: 750px;
+    max-width: 750px;
   }
 }
 
 /* Large */
 @media (min-width: 992px) {
   .container-login {
-      max-width: 970px;
+    max-width: 970px;
   }
 }
 
 /* X-Large */
 @media (min-width: 1200px) {
   .container-login {
-      max-width: 1170px;
+    max-width: 1170px;
   }
 }
 
@@ -91,14 +91,17 @@ a {
   flex-direction: column;
   text-align: center;
 }
-.login-form h1{
+
+.login-form h1 {
   margin-bottom: 20px;
 }
-.login-form .form-group label{
+
+.login-form .form-group label {
   font-size: 1.2rem;
   font-weight: lighter;
 }
-.login-form .form-group input{
+
+.login-form .form-group input {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
@@ -107,7 +110,8 @@ a {
   color: var(--font-color);
   font-weight: lighter;
 }
-.login-form button{
+
+.login-form button {
   width: 60%;
   padding: 10px;
   margin: 10px 0;
@@ -118,6 +122,12 @@ a {
   cursor: pointer;
   transition: var(--main-transition);
 }
-.login-form button:hover{
+
+.login-form button:hover {
   background-color: #7fc900;
+}
+
+form .error {
+  margin-left: auto;
+  margin-right: auto;
 }

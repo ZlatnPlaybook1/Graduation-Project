@@ -12,13 +12,13 @@ import RequierAuth from "./Pages/Auth/RequierAuth.jsx";
 import Writer from "./Pages/Dashboard/Writer.jsx";
 import Error404 from "./Pages/Auth/404.jsx";
 import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
-import Sql_Injection from "./Pages/Website/UserHome/Labs/Sql_Injection/Sql_Injection.jsx";
+import SQL_INJECTION from "./Pages/Website/UserHome/Labs/Sql_Injection/Sql_Injection.jsx";
 import XSS from "./Pages/Website/UserHome/Labs/XSS/XSS.jsx";
-import XSS_lab from "./Pages/Website/UserHome/Labs/XSS/XSS_lab.jsx";
-import First_lab from "./Pages/Website/UserHome/Labs/XSS/Practical/First_lab.jsx";
+import XSS_LAB from "./Pages/Website/UserHome/Labs/XSS/XSS_lab.jsx";
+import FIRST_LAB from "./Pages/Website/UserHome/Labs/XSS/Practical/First_lab.jsx";
 import Cookies from "./Pages/Website/UserHome/Labs/Cookies/Cookies.jsx";
-import Cookies_lab from "./Pages/Website/UserHome/Labs/Cookies/Cookies_lab.jsx";
-import CookiesLogin from "./Pages/Website/UserHome/Labs/Cookies/Login.jsx";
+import COOKIES_LAB from "./Pages/Website/UserHome/Labs/Cookies/Cookies_lab.jsx";
+import CookiesLogin from "./Pages/Website/UserHome/Labs/Cookies/Login_page.jsx";
 import CookiesAdmin from "./Pages/Website/UserHome/Labs/Cookies/Admin.jsx";
 import CookiesSupport from "./Pages/Website/UserHome/Labs/Cookies/Support.jsx";
 import RequireBack from "./Pages/Auth/RequireBack.jsx";
@@ -43,7 +43,7 @@ function App() {
         {/* <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}> */}
           <Route path="/home" element={<UserHome />} />
           {/* Start Sql_Injection Prepare */}
-          <Route path="/sql_Injection" element={<Sql_Injection />} />
+          <Route path="/sql_Injection" element={<SQL_INJECTION />} />
           <Route path="/sql_Injection/sql_Injection_lab" element={<SQLInjection />} />
           {/* <Route
             path="/Sql_Injection/SqlInjectionLab/login"
@@ -51,11 +51,11 @@ function App() {
           /> */}
           {/* End Sql_Injection */}
           <Route path="/xss" element={<XSS />} />
-          <Route path="/xss/xss_lab" element={<XSS_lab />} />
-          <Route path="/xss/xss_lab/first_lab" element={<First_lab />} />
+          <Route path="/xss/xss_lab" element={<XSS_LAB />} />
+          <Route path="/xss/xss_lab/first_lab" element={<FIRST_LAB />} />
           {/* End XSS */}
           <Route path="/cookies" element={<Cookies />} />
-          <Route path="/cookies/cookies_lab" element={<Cookies_lab />} />
+          <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />
           <Route path="/cookies/cookies_lab/login" element={<CookiesLogin />} />
           <Route path="/cookies/cookies_lab/admin" element={<CookiesAdmin />} />
           <Route path="/cookies/cookies_lab/support" element={<CookiesSupport />} />
