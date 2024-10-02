@@ -21,6 +21,7 @@ export default function Login_page() {
   const [loading, setLoading] = useState(false);
   // Error state
   const [err, setErr] = useState("");
+  const [role, setRole] = useState(cookie.get("role") || ""); 
 
   // Handle Form Change
   function handleChange(e) {
@@ -34,23 +35,13 @@ export default function Login_page() {
     setLoading(true);
     setErr("");
     try {
-      // Make a POST request to the server with the form data
       const res = await axios.post("http://127.0.0.1:8080/api/cookie_login", form);
       console.log(res);
       setLoading(false);
 
-      // Retrieve the role from the response
-      const role = res.data.role;
-
-      // Set the role in a cookie
-      cookie.set("role", role);
-
-      // Check the role and redirect accordingly
-      if (role === "admin") {
-        window.location.pathname = `/cookies/cookies_lab/second/admin`;
-      } else if (role === "support") {
-        window.location.pathname = `/cookies/cookies_lab/second/support`;
-      }
+      const newRole = res.data.role;
+      cookie.set("role", newRole); // Set the role in the cookie
+      setRole(newRole); // Update state to trigger the useEffect below
     } catch (error) {
       setLoading(false);
       if (error.response) {
@@ -67,34 +58,14 @@ export default function Login_page() {
     }
   };
 
-  // Effect to monitor changes in the 'role' cookie and redirect
+  // Effect to monitor changes in the 'role' state and redirect accordingly
   useEffect(() => {
-    // Function to get the cookie value by name
-    const getCookieValue = (name) => {
-      const value = `; ${document.cookie}`;
-      const parts = value.split(`; ${name}=`);
-      if (parts.length === 2) return parts.pop().split(";").shift();
-      return null;
-    };
-
-    // Polling mechanism to check for cookie changes
-    let previousRole = getCookieValue("role");
-    const interval = setInterval(() => {
-      const currentRole = getCookieValue("role");
-      if (currentRole !== previousRole) {
-        previousRole = currentRole;
-        if (currentRole === "admin") {
-          window.location.pathname = `/cookies/cookies_lab/second/admin`;
-        } else if (currentRole === "support") {
-          window.location.pathname = `/cookies/cookies_lab/second/support`;
-        }
-      }
-    }, 500); // Poll every 500 milliseconds
-
-    // Cleanup interval on component unmount
-    return () => clearInterval(interval);
-  }, []);
-
+    if (role === "admin") {
+      window.location.pathname = `/cookies/cookies_lab/second/admin`;
+    } else if (role === "support") {
+      window.location.pathname = `/cookies/cookies_lab/second/support`;
+    }
+  }, [role]);
   return (
     <>
       {loading && <Loading />}
