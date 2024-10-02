@@ -264,7 +264,7 @@ export default function Lab3() {
               </dl>
             </div>
             <div className="go-to-section-lab3">
-              <Link to="" className="go-to-lab3">
+              <Link to="/cookies" className="go-to-lab3">
                 Go To Lab
               </Link>
             </div>

@@ -599,7 +599,7 @@ export default function Lab2() {
               </dl>
             </div>
             <div className="go-to-section-lab2">
-              <Link to="" className="go-to-lab2">
+              <Link to="/xss" className="go-to-lab2">
                 Go To Lab
               </Link>
             </div>
