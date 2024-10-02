@@ -1,11 +1,11 @@
 import React from "react";
-import "./XSS.css";
+import "./XSS_lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets/img/card_image.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
-export default function XSS() {
+export default function XSS_lab() {
   return (
     <>
       <Header />
@@ -37,7 +37,7 @@ export default function XSS() {
             <h2>XSS Lab</h2>
             <p class="section-p-XSS">Test Your Hacking skills</p>
             <div class="row-XSS">
-                <Link to="/XSS/first_lab" class="course-card-XSS">
+                <Link to="/xss/xss_lab/first_lab" class="course-card-XSS">
                     <div class="course-image-XSS">
                         <img src={image} alt="" />
                     </div>
