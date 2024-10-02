@@ -15,7 +15,6 @@ import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
 import Lab1 from "./Pages/Website/UserHome/Labs/Lab1/Lab1.jsx";
 import Lab2 from "./Pages/Website/UserHome/Labs/Lab2/Lab2.jsx";
 import Lab3 from "./Pages/Website/UserHome/Labs/Lab3/Lab3.jsx";
-import Practice from "./Pages/Website/UserHome/Labs/Practice/Practice.jsx";
 import Cookies from "./Pages/Website/UserHome/Labs/Lab3/Cookies.jsx";
 import CookiesLogin from "./Pages/Website/UserHome/Labs/Lab3/Login.jsx";
 import CookiesAdmin from "./Pages/Website/UserHome/Labs/Lab3/Admin.jsx";
@@ -39,24 +38,23 @@ function App() {
         <Route path="/*" element={<Error404 />} />
 
         {/* Home - Labs - Routes */}
-        <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
+        {/* <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}> */}
           <Route path="/home" element={<UserHome />} />
           {/* Start Lab1 Prepare */}
           <Route path="/lab1" element={<Lab1 />} />
           <Route path="/lab1/SqlInjectionLab" element={<SQLInjection />} />
-          <Route
+          {/* <Route
             path="/lab1/SqlInjectionLab/login"
             element={<LoginSqlInjection />}
-          />
+          /> */}
           {/* End Lab1 */}
           <Route path="/lab2" element={<Lab2 />} />
           <Route path="/lab3" element={<Lab3 />} />
           <Route path="/cookies" element={<Cookies />} />
-          <Route path="/practice" element={<Practice />} />
-          <Route path="/practice/cookies/login" element={<CookiesLogin />} />
-          <Route path="/practice/cookies/admin" element={<CookiesAdmin />} />
-          <Route path="/practice/cookies/support" element={<CookiesSupport />} />
-        </Route>
+          <Route path="/cookies/login" element={<CookiesLogin />} />
+          <Route path="/cookies/admin" element={<CookiesAdmin />} />
+          <Route path="/cookies/support" element={<CookiesSupport />} />
+        {/* </Route> */}
         {/* End Routes of Labs */}
 
         {/* Start Protected Routes */}
