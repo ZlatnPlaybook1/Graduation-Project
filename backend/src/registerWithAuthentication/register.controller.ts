@@ -27,7 +27,7 @@ class RegistrationController {
                 where: {email},
             });
 
-            if (existingEmail.isVerified) {
+            if (existingEmail && existingEmail.isVerified) {
                 return res.status(409).json({data: "Email already exists"});
             }
 
@@ -35,7 +35,7 @@ class RegistrationController {
                 where: {name}
             });
 
-            if (existingName.isVerified) {
+            if (existingEmail&& existingName.isVerified) {
                 return res.status(409).json({data: "Name already exists"});
             }
 
@@ -43,11 +43,12 @@ class RegistrationController {
                 await prisma.validationNumber.deleteMany({
                     where: {userId: existingEmail.id}
                 });
-            }
+
             // Delete the existing user
             await prisma.user.delete({
                 where: {email},
             });
+        }
 
 
             this.email = email;

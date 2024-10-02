@@ -7,6 +7,7 @@ import registerRouter from './registerWithAuthentication/register.router';
 import loginRouter from './login/login.router';
 import logoutRouter from "./logout/logout.router";
 import dashboardRouter from './dashboard/dashboard.router';
+import cookiesRouter from "./cookiesLab/lab1.router";
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use('/api', registerRouter);
 app.use('/api', loginRouter);
 app.use('/api', dashboardRouter)
 app.use('/api', logoutRouter)
+app.use('/api', cookiesRouter)
 
 
 dotenv.config()
