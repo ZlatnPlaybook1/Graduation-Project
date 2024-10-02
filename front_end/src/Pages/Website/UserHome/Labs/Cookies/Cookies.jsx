@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import "./Lab3.css";
+import "./Cookies.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/background.png";
 import image from "../../assets/img/course_image.png";
@@ -9,7 +9,7 @@ import inLab3 from "../../assets/img/inLab3.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
-export default function Lab3() {
+export default function Cookies() {
   const faqSectionRef = useRef(null);
 
   useEffect(() => {
@@ -264,7 +264,7 @@ export default function Lab3() {
               </dl>
             </div>
             <div className="go-to-section-lab3">
-              <Link to="/cookies" className="go-to-lab3">
+              <Link to="/cookies/cookies_lab" className="go-to-lab3">
                 Go To Lab
               </Link>
             </div>

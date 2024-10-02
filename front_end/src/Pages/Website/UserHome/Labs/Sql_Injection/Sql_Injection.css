@@ -421,7 +421,7 @@ a {
 }
 .go-to-section {
   display: flex !important;
-  justify-content: end !important;
+  justify-content: center !important;
   align-items: center !important;
   width: 100% !important;
 }
