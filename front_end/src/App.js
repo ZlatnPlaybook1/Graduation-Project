@@ -14,6 +14,8 @@ import Error404 from "./Pages/Auth/404.jsx";
 import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
 import Lab1 from "./Pages/Website/UserHome/Labs/Lab1/Lab1.jsx";
 import Lab2 from "./Pages/Website/UserHome/Labs/Lab2/Lab2.jsx";
+import XSS from "./Pages/Website/UserHome/Labs/Lab2/XSS.jsx";
+import First_lab from "./Pages/Website/UserHome/Labs/Lab2/Practical/First_lab.jsx";
 import Lab3 from "./Pages/Website/UserHome/Labs/Lab3/Lab3.jsx";
 import Cookies from "./Pages/Website/UserHome/Labs/Lab3/Cookies.jsx";
 import CookiesLogin from "./Pages/Website/UserHome/Labs/Lab3/Login.jsx";
@@ -49,6 +51,9 @@ function App() {
           /> */}
           {/* End Lab1 */}
           <Route path="/lab2" element={<Lab2 />} />
+          <Route path="/xss" element={<XSS />} />
+          <Route path="/xss/first_lab" element={<First_lab />} />
+          {/* End Lab2 */}
           <Route path="/lab3" element={<Lab3 />} />
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/login" element={<CookiesLogin />} />
