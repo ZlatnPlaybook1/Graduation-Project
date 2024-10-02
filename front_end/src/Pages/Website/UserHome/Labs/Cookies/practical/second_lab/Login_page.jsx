@@ -37,8 +37,8 @@ export default function Login_page() {
       const res = await axios.post("http://127.0.0.1:8080/api/cookie_login", form);
       console.log(res);
       setLoading(false);
-      const token = res.data.data.token;
-      cookie.set("CuberWeb", token);
+      // const token = res.data.data.token;
+      // cookie.set("CuberWeb", token);
       window.location.pathname = `/home`;
     } catch (error) {
       setLoading(false);
