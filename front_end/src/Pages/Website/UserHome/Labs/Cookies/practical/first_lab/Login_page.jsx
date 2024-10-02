@@ -39,7 +39,7 @@ export default function Login_page() {
       setLoading(false);
       // const token = res.data.data.token;
       // cookie.set("CuberWeb", token);
-      window.location.pathname = `/cookies/practical/second_lab/admin`;
+      window.location.pathname = `/cookies/practical/first_lab/support`;
     } catch (error) {
       setLoading(false);
       if (error.response) {
