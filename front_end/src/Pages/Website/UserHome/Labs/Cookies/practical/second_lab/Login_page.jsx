@@ -39,7 +39,9 @@ export default function Login_page() {
       setLoading(false);
       const role = res.data.role;
       cookie.set("role", role);
-      window.location.pathname = `/cookies/cookies_lab/second/support`;
+      if(role === "admin") window.location.pathname = `/cookies/cookies_lab/second/admin`;
+      else
+      window.location.pathname = `/cookies/cookies_lab/first/support`;
     } catch (error) {
       setLoading(false);
       if (error.response) {
