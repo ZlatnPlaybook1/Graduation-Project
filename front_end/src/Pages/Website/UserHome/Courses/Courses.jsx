@@ -17,7 +17,7 @@ const Courses = () => {
                 <img src={imagecourse} alt="Course" />
               </div>
               <div className="course-text">
-                <h3>Pre Security</h3>
+                <h3>SQL Injection</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
@@ -42,7 +42,31 @@ const Courses = () => {
                 <img src={imagecourse2} alt="Course" />
               </div>
               <div className="course-text">
-                <h3>Introduction to Cyber Security</h3>
+                <h3>Cross-Site Scripting</h3>
+                <p>
+                  Learn the core skills required to start a career in cyber
+                  security
+                </p>
+                <ul className="circled-order">
+                  <li>Learn about different careers in cyber</li>
+                  <li>Hack your first application</li>
+                  <li>Defend against a live cyber attack</li>
+                  <li>Explore security topics in the industry</li>
+                </ul>
+              </div>
+              <div className="easy">
+                <i className="fa-solid fa-signal"></i>
+                <p>Easy</p>
+              </div>
+            </a>
+          </div>
+          <div className="row-course">
+            <a href="/lab3" className="course-card">
+              <div className="course-image">
+                <img src={imagecourse2} alt="Course" />
+              </div>
+              <div className="course-text">
+                <h3>Cookies</h3>
                 <p>
                   Learn the core skills required to start a career in cyber
                   security

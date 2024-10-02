@@ -14,6 +14,11 @@ import Error404 from "./Pages/Auth/404.jsx";
 import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
 import Lab1 from "./Pages/Website/UserHome/Labs/Lab1/Lab1.jsx";
 import Lab2 from "./Pages/Website/UserHome/Labs/Lab2/Lab2.jsx";
+import Lab3 from "./Pages/Website/UserHome/Labs/Lab3/Lab3.jsx";
+import Cookies from "./Pages/Website/UserHome/Labs/Lab3/Cookies.jsx";
+import CookiesLogin from "./Pages/Website/UserHome/Labs/Lab3/Login.jsx";
+import CookiesAdmin from "./Pages/Website/UserHome/Labs/Lab3/Admin.jsx";
+import CookiesSupport from "./Pages/Website/UserHome/Labs/Lab3/Support.jsx";
 import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
@@ -33,18 +38,23 @@ function App() {
         <Route path="/*" element={<Error404 />} />
 
         {/* Home - Labs - Routes */}
-        <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
+        {/* <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}> */}
           <Route path="/home" element={<UserHome />} />
           {/* Start Lab1 Prepare */}
           <Route path="/lab1" element={<Lab1 />} />
           <Route path="/lab1/SqlInjectionLab" element={<SQLInjection />} />
-          <Route
+          {/* <Route
             path="/lab1/SqlInjectionLab/login"
             element={<LoginSqlInjection />}
-          />
+          /> */}
           {/* End Lab1 */}
           <Route path="/lab2" element={<Lab2 />} />
-        </Route>
+          <Route path="/lab3" element={<Lab3 />} />
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/cookies/login" element={<CookiesLogin />} />
+          <Route path="/cookies/admin" element={<CookiesAdmin />} />
+          <Route path="/cookies/support" element={<CookiesSupport />} />
+        {/* </Route> */}
         {/* End Routes of Labs */}
 
         {/* Start Protected Routes */}
