@@ -15,12 +15,15 @@ import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
 import SQL_INJECTION from "./Pages/Website/UserHome/Labs/Sql_Injection/Sql_Injection.jsx";
 import XSS from "./Pages/Website/UserHome/Labs/XSS/XSS.jsx";
 import XSS_LAB from "./Pages/Website/UserHome/Labs/XSS/XSS_lab.jsx";
-import FIRST_LAB from "./Pages/Website/UserHome/Labs/XSS/Practical/First_lab.jsx";
+import XSS_FIRST from "./Pages/Website/UserHome/Labs/XSS/Practical/First_lab.jsx";
 import Cookies from "./Pages/Website/UserHome/Labs/Cookies/Cookies.jsx";
 import COOKIES_LAB from "./Pages/Website/UserHome/Labs/Cookies/Cookies_lab.jsx";
-import CookiesLogin from "./Pages/Website/UserHome/Labs/Cookies/Login_page.jsx";
-import CookiesAdmin from "./Pages/Website/UserHome/Labs/Cookies/Admin.jsx";
-import CookiesSupport from "./Pages/Website/UserHome/Labs/Cookies/Support.jsx";
+import CookiesFirstLogin from "./Pages/Website/UserHome/Labs/Cookies/practical/first_lab/Login_page.jsx";
+import CookiesFirstAdmin from "./Pages/Website/UserHome/Labs/Cookies/practical/first_lab/Admin.jsx";
+import CookiesFirstSupport from "./Pages/Website/UserHome/Labs/Cookies/practical/first_lab/Support.jsx";
+import CookiesSecondlogin from "./Pages/Website/UserHome/Labs/Cookies/practical/second_lab/Login_page.jsx";
+import CookiesSecondAdmin from "./Pages/Website/UserHome/Labs/Cookies/practical/second_lab/Admin.jsx";
+import CookiesSecondSupport from "./Pages/Website/UserHome/Labs/Cookies/practical/second_lab/Support.jsx";
 import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
@@ -41,25 +44,49 @@ function App() {
 
         {/* Home - Labs - Routes */}
         {/* <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}> */}
-          <Route path="/home" element={<UserHome />} />
-          {/* Start Sql_Injection Prepare */}
-          <Route path="/sql_Injection" element={<SQL_INJECTION />} />
-          <Route path="/sql_Injection/sql_Injection_lab" element={<SQLInjection />} />
-          {/* <Route
+        <Route path="/home" element={<UserHome />} />
+        {/* Start Sql_Injection Prepare */}
+        <Route path="/sql_Injection" element={<SQL_INJECTION />} />
+        <Route
+          path="/sql_Injection/sql_Injection_lab"
+          element={<SQLInjection />}
+        />
+        {/* <Route
             path="/Sql_Injection/SqlInjectionLab/login"
             element={<LoginSqlInjection />}
           /> */}
-          {/* End Sql_Injection */}
-          <Route path="/xss" element={<XSS />} />
-          <Route path="/xss/xss_lab" element={<XSS_LAB />} />
-          <Route path="/xss/xss_lab/first_lab" element={<FIRST_LAB />} />
-          {/* End XSS */}
-          <Route path="/cookies" element={<Cookies />} />
-          <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />
-          <Route path="/cookies/cookies_lab/login" element={<CookiesLogin />} />
-          <Route path="/cookies/cookies_lab/admin" element={<CookiesAdmin />} />
-          <Route path="/cookies/cookies_lab/support" element={<CookiesSupport />} />
-          {/* Cookies */}
+        {/* End Sql_Injection */}
+        <Route path="/xss" element={<XSS />} />
+        <Route path="/xss/xss_lab" element={<XSS_LAB />} />
+        <Route path="/xss/xss_lab/first_lab" element={<XSS_FIRST />} />
+        {/* End XSS */}
+        <Route path="/cookies" element={<Cookies />} />
+        <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />
+        <Route
+          path="/cookies/cookies_lab/first/login"
+          element={<CookiesFirstLogin />}
+        />
+        <Route
+          path="/cookies/cookies_lab/first/admin"
+          element={<CookiesFirstAdmin />}
+        />
+        <Route
+          path="/cookies/cookies_lab/first/support"
+          element={<CookiesFirstSupport />}
+        />
+        <Route
+          path="/cookies/cookies_lab/second/login"
+          element={<CookiesSecondlogin />}
+        />
+        <Route
+          path="/cookies/cookies_lab/second/admin"
+          element={<CookiesSecondAdmin />}
+        />
+        <Route
+          path="/cookies/cookies_lab/second/support"
+          element={<CookiesSecondSupport />}
+        />
+        {/* Cookies */}
         {/* </Route> */}
         {/* End Routes of Labs */}
 

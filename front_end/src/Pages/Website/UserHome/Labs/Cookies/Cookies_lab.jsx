@@ -69,7 +69,7 @@ export default function Cookies_lab() {
             <h2>Cookies Lab</h2>
             <p class="section-p-cookies">Test Your Hacking skills</p>
             <div class="row-cookies">
-                <Link to="/cookies/cookies_lab/login" class="course-card-cookies">
+                <Link to="/cookies/cookies_lab/first/login" class="course-card-cookies">
                     <div class="course-image-cookies">
                         <img src={image} alt="" />
                     </div>
@@ -88,7 +88,7 @@ export default function Cookies_lab() {
                         <p>Easy</p>
                     </div>
                 </Link>
-                <Link to="/cookies/cookies_lab/login" class="course-card-cookies">
+                <Link to="/cookies/cookies_lab/second/login" class="course-card-cookies">
                     <div class="course-image-cookies">
                     <img src={image} alt="" />
                     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
 import "./Admin.css";
-import admin from "../../assets/img/admin.png";
+import admin from "../../../../assets/img/admin.png";
 import { Link } from "react-router-dom";
 
 export default function Admin() {

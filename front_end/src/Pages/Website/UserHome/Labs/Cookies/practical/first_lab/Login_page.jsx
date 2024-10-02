@@ -6,7 +6,7 @@ import "./Login_page.css";
 import axios from "axios";
 import React, { useState } from "react";
 import Cookie from "cookie-universal";
-import Loading from "../../../../../Components/Loading/Loading";
+import Loading from "../../../../../../../Components/Loading/Loading";
 
 export default function Login_page() {
   const [form, setForm] = useState({
