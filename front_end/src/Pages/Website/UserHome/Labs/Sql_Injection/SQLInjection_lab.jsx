@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "../../Header/Header";
-import "./SQLInjection.css";
+import "./SQLInjection_lab.css";
 import imagecourse from "../../assets/img/course_image_home.png";
 import { Link } from "react-router-dom";
 import Footer from "../../../Footer/Footer";
-export default function SQLInjection() {
+export default function SQLInjection_lab() {
   return (
     <>
       <Header />
@@ -43,7 +43,7 @@ export default function SQLInjection() {
           <p className="section-p-sql-injection">Test Your Hacking Skills</p>
           <div className="row-sql-injection">
             <Link
-              to="/lab1/SqlInjectionLab/login"
+              to="/sql_Injection/sql_Injection_lab/login"
               className="course-card-sql-injection"
             >
               <div className="course-image-sql-injection">

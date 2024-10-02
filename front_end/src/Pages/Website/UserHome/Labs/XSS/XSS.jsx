@@ -1,14 +1,14 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import "./Lab2.css";
+import "./XSS.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/background.png";
 import image from "../../assets/img/course_image.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
-export default function Lab2() {
+export default function XSS() {
   const faqSectionRef = useRef(null);
 
   useEffect(() => {
@@ -599,7 +599,7 @@ export default function Lab2() {
               </dl>
             </div>
             <div className="go-to-section-lab2">
-              <Link to="/xss" className="go-to-lab2">
+              <Link to="/xss/xss_lab" className="go-to-lab2">
                 Go To Lab
               </Link>
             </div>

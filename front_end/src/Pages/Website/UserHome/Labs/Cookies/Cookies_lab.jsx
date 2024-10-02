@@ -1,13 +1,13 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import "./Cookies.css";
+import "./Cookies_lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets/img/card_image.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
-export default function Cookies() {
+export default function Cookies_lab() {
   const faqSectionRef = useRef(null);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export default function Cookies() {
             <h2>Cookies Lab</h2>
             <p class="section-p-cookies">Test Your Hacking skills</p>
             <div class="row-cookies">
-                <Link to="/cookies/login" class="course-card-cookies">
+                <Link to="/cookies/cookies_lab/login" class="course-card-cookies">
                     <div class="course-image-cookies">
                         <img src={image} alt="" />
                     </div>
@@ -88,7 +88,7 @@ export default function Cookies() {
                         <p>Easy</p>
                     </div>
                 </Link>
-                <Link to="/cookies/login" class="course-card-cookies">
+                <Link to="/cookies/cookies_lab/login" class="course-card-cookies">
                     <div class="course-image-cookies">
                     <img src={image} alt="" />
                     </div>

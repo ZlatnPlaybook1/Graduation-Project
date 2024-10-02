@@ -2,16 +2,16 @@ import React, { useEffect, useRef } from "react";
 import $ from "jquery";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import "./Lab1.css";
+import "./Sql_Injection.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Lab1() {
+export default function Sql_Injection() {
   const faqSectionRef = useRef(null);
   const navigate = useNavigate();
   const handleGoToLab = () => {
-    navigate("/lab1/SqlInjectionLab");
+    navigate("/sql_Injection/sql_Injection_lab");
   };
   useEffect(() => {
     const $faqSection = $(faqSectionRef.current);
