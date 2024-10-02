@@ -1,11 +1,11 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import "./Support.css";
-import support from "../../assets/img/support.png";
+import "./Admin.css";
+import admin from "../../../../assets/img/admin.png";
 import { Link } from "react-router-dom";
 
-export default function Support() {
+export default function Admin() {
   const faqSectionRef = useRef(null);
 
   useEffect(() => {
@@ -38,10 +38,10 @@ export default function Support() {
   }, []);
   return (
     <>
-      <div class="container-support">
-        <div class="row-support">
-            <h1>We're Support, How Can I Help You?</h1>
-            <img src={support} alt="" />
+      <div class="container-admin">
+        <div class="row-admin">
+            <h1>Admin, Please Leave Me</h1>
+            <img src={admin} alt=""/>
         </div>
     </div>
     </>
