@@ -37,7 +37,7 @@ export default function Login_page() {
       const res = await axios.post("http://127.0.0.1:8080/api/cookie_login", form);
       console.log(res);
       setLoading(false);
-      const role = res.data.data.role;
+      const role = res.data.role;
       cookie.set("support", role);
       window.location.pathname = `/cookies/cookies_lab/first/support`;
     } catch (error) {
