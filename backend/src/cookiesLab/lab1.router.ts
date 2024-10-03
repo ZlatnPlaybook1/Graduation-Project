@@ -1,9 +1,9 @@
 import {Router} from "express";
 import {login} from "./lab1.controller";
 
-let cookiesRouter = Router();
+let lab1 = Router();
 
-cookiesRouter.post("/cookie_login", login);
+lab1.post("/cookie_login", login);
 
 
-export default cookiesRouter;
+export default lab1;

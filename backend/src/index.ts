@@ -7,8 +7,8 @@ import registerRouter from './registerWithAuthentication/register.router';
 import loginRouter from './login/login.router';
 import logoutRouter from "./logout/logout.router";
 import dashboardRouter from './dashboard/dashboard.router';
-import cookiesRouter from "./cookiesLab/lab1.router";
-
+import lab1 from "./cookiesLab/lab1.router";
+import lab2 from "./cookiesLab/lab2.router";
 const app = express();
 
 app.use(cors())
@@ -22,7 +22,8 @@ app.use('/api', registerRouter);
 app.use('/api', loginRouter);
 app.use('/api', dashboardRouter)
 app.use('/api', logoutRouter)
-app.use('/api', cookiesRouter)
+app.use('/api', lab1)
+app.use('/api', lab2)
 
 
 dotenv.config()
