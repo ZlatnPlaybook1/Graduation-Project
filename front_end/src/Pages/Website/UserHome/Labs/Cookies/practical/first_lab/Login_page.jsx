@@ -21,7 +21,7 @@ export default function Login_page() {
   const [loading, setLoading] = useState(false);
   // Error state
   const [err, setErr] = useState("");
-  const [role, setRole] = useState(cookie.get("role") || ""); 
+  const [role, setRole] = useState(cookie.get("role") || "");
 
   // Handle Form Change
   function handleChange(e) {
@@ -30,7 +30,7 @@ export default function Login_page() {
   }
 
   // Handle Form Submit
-  const handleSubmit = async (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     setErr("");
@@ -38,10 +38,8 @@ export default function Login_page() {
       const res = await axios.post("http://127.0.0.1:8080/api/cookie_login", form);
       console.log(res);
       setLoading(false);
-
-      const newRole = res.data.role;
-      cookie.set("role", newRole); // Set the role in the cookie
-      setRole(newRole); // Update state to trigger the useEffect below
+      const role = res.data.role;
+      cookie.set("role", role);
     } catch (error) {
       setLoading(false);
       if (error.response) {
@@ -56,14 +54,14 @@ export default function Login_page() {
         console.error(error);
       }
     }
-  };
+  }
 
   // Effect to monitor changes in the 'role' state and redirect accordingly
   useEffect(() => {
     if (role === "admin") {
-      window.location.pathname = `/cookies/cookies_lab/second/admin`;
+      window.location.href = `/cookies/cookies_lab/second/admin`;
     } else if (role === "support") {
-      window.location.pathname = `/cookies/cookies_lab/second/support`;
+      window.location.href = `/cookies/cookies_lab/second/support`;
     }
   }, [role]);
   return (
