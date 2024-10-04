@@ -1,5 +1,5 @@
 import React from "react";
-import  useEffect  from "react";
+import  { useEffect } from "react";
 import "./Admin.css";
 import admin from "../../../../assets/img/admin.png";
 import  { useState } from "react";
