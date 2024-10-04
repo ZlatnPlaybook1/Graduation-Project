@@ -335,13 +335,13 @@ const Header = () => {
                       </NavLink>
                     </li>
                   </ul>
-                  <ul>
+                  {/* <ul>
                     <li>
-                      <NavLink to="/" onClick={handleLogout}>
+                      <NavLink onClick={handleLogout}>
                         <i className="fas fa-right-from-bracket"></i> Log Out
                       </NavLink>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             </div>
@@ -368,23 +368,23 @@ const Header = () => {
                   <div className="profile_list">
                     <ul>
                       <li>
-                        <NavLink to="/dashboard">
+                        <NavLink to="/dashboard/personal-information">
                           <i className="fas fa-user"></i> View Profile
                         </NavLink>
                       </li>
                       <li>
-                        <NavLink to="/dashboard">
+                        <NavLink to="/dashboard/settings">
                           <i className="fas fa-gear"></i> Manage Account
                         </NavLink>
                       </li>
                     </ul>
-                    <ul>
+                    {/* <ul>
                       <li>
-                        <NavLink to="/" onClick={handleLogout}>
+                        <NavLink onClick={handleLogout}>
                           <i className="fas fa-right-from-bracket"></i> Log Out
                         </NavLink>
                       </li>
-                    </ul>
+                    </ul> */}
                   </div>
                 )}
               </div>

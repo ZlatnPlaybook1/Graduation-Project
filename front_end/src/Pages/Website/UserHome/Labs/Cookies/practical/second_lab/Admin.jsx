@@ -12,17 +12,19 @@ export default function Admin() {
 
   const cookie = Cookie();
   // Loading state
-  const [role, setRole] = useState(cookie.get("role") || "");
+  const [userId, setUserId] = useState(cookie.get("userId") || "");
 
 
-  // Effect to monitor changes in the 'role' state and redirect accordingly
+  // Effect to monitor changes in the 'userId' state and redirect accordingly
   useEffect(() => {
-    if (role === "admin") {
+    if (userId === "MQ==") {
       navigate(`/cookies/cookies_lab/second/admin`);
-    } else if (role === "support") {
+    } else if (userId === "OQ==") {
       navigate(`/cookies/cookies_lab/second/support`);
+    }else {
+      navigate(`/cookies/cookies_lab/second/login`);
     }
-  }, [role]);
+  }, [userId]);
   return (
     <>
       <div class="container-admin">

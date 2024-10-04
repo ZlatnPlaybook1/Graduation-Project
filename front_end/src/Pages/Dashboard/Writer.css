@@ -1,19 +1,35 @@
 .writer-form {
-  margin-top: 8rem;
-  width: 100%;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 80px;
+  width: 80%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
   background-color: #ffffff;
-  box-sizing: border-box;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.writer-form .margin-submit {
+  margin-top: 1rem;
+}
+
+.writer-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .writer-form label {
-  display: block;
-  margin-bottom: 5px;
+  margin: 16px 0;
   font-weight: bold;
-  font-family: "Montserrat", sans-serif;
+  color: #4a4a4a;
 }
 
 .writer-form input[type="text"],
@@ -22,39 +38,60 @@
 .writer-form input[type="tel"],
 .writer-form input[type="email"],
 .writer-form input[type="file"] {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 12px 15px;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  background-color: #f9f9f9;
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
+  color: #333;
+  width: 100%;
+  max-width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.writer-form input:hover {
+  border-color: #a1a1a1;
+}
+
+.writer-form input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.writer-form input[disabled] {
+  background-color: #e9ecef;
+  cursor: not-allowed;
 }
 
 .writer-form button {
-  width: 100%;
-  padding: 12px;
+  padding: 12px 20px;
   background-color: #007bff;
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
-  transition: background-color 0.3s;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .writer-form button:hover {
   background-color: #0056b3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .image-preview {
-  margin-top: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .image-preview img {
-  max-width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #d1d1d1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }

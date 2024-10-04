@@ -16,8 +16,11 @@ export default function Support() {
   useEffect(() => {
     if (role === "admin") {
       navigate(`/cookies/cookies_lab/first/admin`);
-      } else if (role === "support") {
+    } else if (role === "support") {
       navigate(`/cookies/cookies_lab/first/support`);
+    }
+    else  {
+      navigate(`/cookies/cookies_lab/first/login`);
     }
   }, [role]);
   return (

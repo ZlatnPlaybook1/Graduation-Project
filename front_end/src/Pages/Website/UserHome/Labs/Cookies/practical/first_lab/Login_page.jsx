@@ -19,14 +19,14 @@ export default function Login_page() {
   const [loading, setLoading] = useState(false);
   // Error state
   const [err, setErr] = useState("");
-  const [role, setRole] = useState(cookie.get("role") || "");
-
+  const [role,  setRole] = useState(cookie.get("role") || "");
+  
   // Handle Form Change
   function handleChange(e) {
     e.preventDefault();
     setForm({ ...form, [e.target.name]: e.target.value });
   }
-
+  
   // Handle Form Submit
   async function handleSubmit(e) {
     e.preventDefault();
@@ -34,10 +34,17 @@ export default function Login_page() {
     setErr("");
     try {
       const res = await axios.post("http://127.0.0.1:8080/api/cookie_login", form);
-      console.log(res);
       setLoading(false);
       const role = res.data.role;
       cookie.set("role", role);
+      if (role === "admin") {
+        navigate(`/cookies/cookies_lab/first/admin`);
+      } else if (role === "support") {
+        navigate(`/cookies/cookies_lab/first/support`);
+      }
+      else  {
+        navigate(`/cookies/cookies_lab/first/login`);
+      }
     } catch (error) {
       setLoading(false);
       if (error.response) {
@@ -53,7 +60,7 @@ export default function Login_page() {
       }
     }
   }
-
+  
   // Effect to monitor changes in the 'role' state and redirect accordingly
   useEffect(() => {
     if (role === "admin") {
@@ -61,7 +68,10 @@ export default function Login_page() {
     } else if (role === "support") {
       navigate(`/cookies/cookies_lab/first/support`);
     }
-  }, [role]);
+    else  {
+      navigate(`/cookies/cookies_lab/first/login`);
+    }
+  }, [role,navigate]);
   return (
     <>
       {loading && <Loading />}
@@ -92,7 +102,7 @@ export default function Login_page() {
                   placeholder="Enter Your Password.."/>
                 </div>
                 <div className="form-group">
-                    <button type="submit" className="btn-login">Login</button>
+                    <button type="submit" className="btn-login" onclick={useEffect}>Login</button>
                 </div>
                     {err !== "" && <span className="error">{err}</span>}
             </form>
