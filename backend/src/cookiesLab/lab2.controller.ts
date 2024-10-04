@@ -9,7 +9,7 @@ export const login = async (req: Request, res: Response) => {
             return res.status(400).send("Email and password are required");
         }
         if (req.body.email === email && req.body.password === password) {
-            return res.status(200).json({userid:"NTU="})
+            return res.status(200).json({userId:"OQ=="})
         }
     }
     catch (e) {

@@ -21,6 +21,9 @@ export default function Admin() {
     } else if (role === "support") {
       navigate(`/cookies/cookies_lab/first/support`);
     }
+    else  {
+      navigate(`/cookies/cookies_lab/first/login`);
+    }
   }, [role]);
 
   

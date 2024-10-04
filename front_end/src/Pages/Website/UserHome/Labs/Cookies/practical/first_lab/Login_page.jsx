@@ -42,6 +42,9 @@ export default function Login_page() {
       } else if (role === "support") {
         navigate(`/cookies/cookies_lab/first/support`);
       }
+      else  {
+        navigate(`/cookies/cookies_lab/first/login`);
+      }
     } catch (error) {
       setLoading(false);
       if (error.response) {
@@ -59,17 +62,16 @@ export default function Login_page() {
   }
   
   // Effect to monitor changes in the 'role' state and redirect accordingly
-  // useEffect(() => {
-  //   if (role === "admin") {
-  //     console.log(0);
-  //     navigate(`/cookies/cookies_lab/first/admin`);
-  //     window.location.reload();
-  //   } else if (role === "support") {
-  //     console.log(1);
-  //     navigate(`/cookies/cookies_lab/first/support`);
-  //     window.location.reload();
-  //   }
-  // }, [role,navigate]);
+  useEffect(() => {
+    if (role === "admin") {
+      navigate(`/cookies/cookies_lab/first/admin`);
+    } else if (role === "support") {
+      navigate(`/cookies/cookies_lab/first/support`);
+    }
+    else  {
+      navigate(`/cookies/cookies_lab/first/login`);
+    }
+  }, [role,navigate]);
   return (
     <>
       {loading && <Loading />}

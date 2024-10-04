@@ -19,7 +19,7 @@ export default function Login_page() {
   const [loading, setLoading] = useState(false);
   // Error state
   const [err, setErr] = useState("");
-  const [userid, setRole] = useState(cookie.get("userid") || "");
+  const [userId, setUserId] = useState(cookie.get("userId") || "");
 
   // Handle Form Change
   function handleChange(e) {
@@ -36,8 +36,15 @@ export default function Login_page() {
       const res = await axios.post("http://127.0.0.1:8080/api/cookie_login", form);
       console.log(res);
       setLoading(false);
-      const userid = res.data.userid;
-      cookie.set("userid", userid);
+      const userId = res.data.userId;
+      cookie.set("userId", userId);
+      if (userId === "MQ==") {
+        navigate(`/cookies/cookies_lab/second/admin`);
+      } else if (userId === "OQ==") {
+        navigate(`/cookies/cookies_lab/second/support`);
+      }else  {
+        navigate(`/cookies/cookies_lab/second/login`);
+      }
     } catch (error) {
       setLoading(false);
       if (error.response) {
@@ -56,12 +63,14 @@ export default function Login_page() {
 
   // Effect to monitor changes in the 'role' state and redirect accordingly
   useEffect(() => {
-    if (userid === "MQ==") {
+    if (userId === "MQ==") {
       navigate(`/cookies/cookies_lab/second/admin`);
-    } else if (userid === "OQ==") {
+    } else if (userId === "OQ==") {
       navigate(`/cookies/cookies_lab/second/support`);
+    }else  {
+      navigate(`/cookies/cookies_lab/second/login`);
     }
-  }, [userid]);
+  }, [userId]);
 
   return (
     <>
