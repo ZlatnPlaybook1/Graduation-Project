@@ -19,7 +19,7 @@ export default function Login_page() {
   const [loading, setLoading] = useState(false);
   // Error state
   const [err, setErr] = useState("");
-  const [role, setRole] = useState(cookie.get("role") || "");
+  const [userid, setRole] = useState(cookie.get("userid") || "");
 
   // Handle Form Change
   function handleChange(e) {
@@ -36,8 +36,8 @@ export default function Login_page() {
       const res = await axios.post("http://127.0.0.1:8080/api/cookie_login", form);
       console.log(res);
       setLoading(false);
-      const role = res.data.role;
-      cookie.set("role", role);
+      const userid = res.data.userid;
+      cookie.set("userid", userid);
     } catch (error) {
       setLoading(false);
       if (error.response) {
@@ -56,12 +56,12 @@ export default function Login_page() {
 
   // Effect to monitor changes in the 'role' state and redirect accordingly
   useEffect(() => {
-    if (role === "admin") {
+    if (userid === "MQ==") {
       navigate(`/cookies/cookies_lab/second/admin`);
-    } else if (role === "support") {
+    } else if (userid === "OQ==") {
       navigate(`/cookies/cookies_lab/second/support`);
     }
-  }, [role]);
+  }, [userid]);
 
   return (
     <>

@@ -1,18 +1,20 @@
 import {Request, Response} from "express";
 
-export const idFunction = async (req: Request, res: Response) => {
+export const login = async (req: Request, res: Response) => {
     try {
-        const id = "1";
+        const email = "support@cyberlap.com";
+        const password = "cyberlap";
 
-        if (!req.body.id) {
-            return res.status(400).send("Id is required");
+        if (!req.body.email || !req.body.password) {
+            return res.status(400).send("Email and password are required");
         }
-        if (req.body.id === id) {
-            return res.status(200).json({id:id})
+        if (req.body.email === email && req.body.password === password) {
+            return res.status(200).json({userid:"NTU="})
         }
     }
     catch (e) {
         console.error(e);
     }
-    return res.status(401).send("Invalid id");
+    return res.status(401).send("Invalid email or password");
 };
+;
