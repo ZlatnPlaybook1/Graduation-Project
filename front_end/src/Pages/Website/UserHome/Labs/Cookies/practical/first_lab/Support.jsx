@@ -15,8 +15,7 @@ export default function Support() {
   // Effect to monitor changes in the 'role' state and redirect accordingly
   useEffect(() => {
     if (role === "admin") {
-
-       navigate(`/cookies/cookies_lab/first/admin`);
+      navigate(`/cookies/cookies_lab/first/admin`);
       } else if (role === "support") {
       navigate(`/cookies/cookies_lab/first/support`);
     }

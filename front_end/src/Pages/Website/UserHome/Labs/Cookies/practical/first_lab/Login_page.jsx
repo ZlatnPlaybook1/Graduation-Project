@@ -1,12 +1,10 @@
-// import React from "react";
-import { useEffect, useRef } from "react";
-// import $ from "jquery";
+import { useEffect } from "react";
 import "./Login_page.css";
-// import { Link } from "react-router-dom";
 import axios from "axios";
 import React, { useState } from "react";
 import Cookie from "cookie-universal";
 import Loading from "../../../../../../../Components/Loading/Loading";
+import { useNavigate } from "react-router-dom";
 
 export default function Login_page() {
   const [form, setForm] = useState({
@@ -14,7 +12,7 @@ export default function Login_page() {
     password: "",
   });
   //  Navigate
-  //   const navigate = useNavigate();
+    const navigate = useNavigate();
   // Cookies
   const cookie = Cookie();
   // Loading state
@@ -59,9 +57,9 @@ export default function Login_page() {
   // Effect to monitor changes in the 'role' state and redirect accordingly
   useEffect(() => {
     if (role === "admin") {
-      window.location.href = `/cookies/cookies_lab/second/admin`;
+      navigate(`/cookies/cookies_lab/first/admin`);
     } else if (role === "support") {
-      window.location.href = `/cookies/cookies_lab/second/support`;
+      navigate(`/cookies/cookies_lab/first/support`);
     }
   }, [role]);
   return (

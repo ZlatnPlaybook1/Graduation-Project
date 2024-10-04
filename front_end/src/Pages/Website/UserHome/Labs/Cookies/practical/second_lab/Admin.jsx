@@ -1,41 +1,28 @@
-import React from "react";
-import { useEffect, useRef } from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import $ from "jquery";
 import "./Admin.css";
 import admin from "../../../../assets/img/admin.png";
-import { Link } from "react-router-dom";
+import Cookie from "cookie-universal";
+
+import {  useNavigate } from "react-router-dom";
 
 export default function Admin() {
-  const faqSectionRef = useRef(null);
+  const navigate = useNavigate();
 
+  const cookie = Cookie();
+  // Loading state
+  const [role, setRole] = useState(cookie.get("role") || "");
+
+
+  // Effect to monitor changes in the 'role' state and redirect accordingly
   useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
+    if (role === "admin") {
+      navigate(`/cookies/cookies_lab/second/admin`);
+    } else if (role === "support") {
+      navigate(`/cookies/cookies_lab/second/support`);
+    }
+  }, [role]);
   return (
     <>
       <div class="container-admin">
