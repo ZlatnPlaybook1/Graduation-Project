@@ -193,7 +193,7 @@ const Courses = () => {
               </div>
               {/* topic 8 */}
               <div className="course-text">
-                <h3>Regular expressions</h3>
+                <h3>Authentication</h3>
                 <p>
                   Learn the core skills required to start a career in cyber
                   security
@@ -218,7 +218,7 @@ const Courses = () => {
               </div>
               {/* topic 9 */}
               <div className="course-text">
-                <h3>Authentication</h3>
+                <h3>Regular expressions</h3>
                 <p>
                   Learn the core skills required to start a career in cyber
                   security
@@ -293,7 +293,7 @@ const Courses = () => {
               </div>
               {/* topic 12 */}
               <div className="course-text">
-                <h3>Information disclosure</h3>
+                <h3>Obfuscation</h3>
                 <p>
                   Learn the core skills required to start a career in cyber
                   security
@@ -393,7 +393,7 @@ const Courses = () => {
               </div>
               {/* topic 16 */}
               <div className="course-text">
-                <h3>16. </h3>
+                <h3>Information disclosure</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
@@ -418,7 +418,7 @@ const Courses = () => {
               </div>
               {/* topic 17 */}
               <div className="course-text">
-                <h3>17. </h3>
+                <h3>Burp Suite </h3>
                 <p>
                   Learn the core skills required to start a career in cyber
                   security
@@ -443,7 +443,7 @@ const Courses = () => {
               </div>
               {/* topic 18 */}
               <div className="course-text">
-                <h3>18. </h3>
+                <h3>wireshark</h3>
                 <p>
                   Learn the core skills required to start a career in cyber
                   security
@@ -468,7 +468,7 @@ const Courses = () => {
               </div>
               {/* topic 19 */}
               <div className="course-text">
-                <h3>19. </h3>
+                <h3>Audio Forensics</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
