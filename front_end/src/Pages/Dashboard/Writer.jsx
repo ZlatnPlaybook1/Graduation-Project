@@ -18,12 +18,28 @@ export default function Writer() {
   });
   const [imagePreview, setImagePreview] = useState("");
 
+  const calculateAge = (birthday) => {
+    const birthDate = new Date(birthday);
+    const difference = Date.now() - birthDate.getTime();
+    const ageDate = new Date(difference);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    if (name === "birthday") {
+      const age = calculateAge(value);
+      setFormData((prevData) => ({
+        ...prevData,
+        birthday: value,
+        age: age,
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
   };
 
   const handleImageChange = (e) => {
@@ -64,6 +80,11 @@ export default function Writer() {
 
   return (
     <div className="writer-form">
+      {imagePreview && (
+        <div className="image-preview">
+          <img src={imagePreview} alt="Preview" />
+        </div>
+      )}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Name:</label>
@@ -82,6 +103,7 @@ export default function Writer() {
             name="age"
             value={formData.age}
             onChange={handleChange}
+            disabled
             required
           />
         </div>
@@ -126,17 +148,13 @@ export default function Writer() {
           />
         </div>
         <div>
-          <label>Image:</label>
+          <label className="margin-image">Image:</label>
           <input type="file" onChange={handleImageChange} required />
         </div>
-        <button type="submit">Submit</button>
+        <button className="margin-submit" type="submit">
+          Submit
+        </button>
       </form>
-      {imagePreview && (
-        <div className="image-preview">
-          <h2>Image Preview:</h2>
-          <img src={imagePreview} alt="Preview" />
-        </div>
-      )}
     </div>
   );
 }

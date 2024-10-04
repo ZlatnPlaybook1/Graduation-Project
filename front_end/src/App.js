@@ -43,51 +43,51 @@ function App() {
         <Route path="/*" element={<Error404 />} />
 
         {/* Home - Labs - Routes */}
-        {/* <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}> */}
-        <Route path="/home" element={<UserHome />} />
-        {/* Start Sql_Injection Prepare */}
-        <Route path="/sql_Injection" element={<SQL_INJECTION />} />
-        <Route
-          path="/sql_Injection/sql_Injection_lab"
-          element={<SQLInjection />}
-        />
-        {/* <Route
+        <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
+          <Route path="/home" element={<UserHome />} />
+          {/* Start Sql_Injection Prepare */}
+          <Route path="/sql_Injection" element={<SQL_INJECTION />} />
+          <Route
+            path="/sql_Injection/sql_Injection_lab"
+            element={<SQLInjection />}
+          />
+          {/* <Route
             path="/Sql_Injection/SqlInjectionLab/login"
             element={<LoginSqlInjection />}
           /> */}
-        {/* End Sql_Injection */}
-        <Route path="/xss" element={<XSS />} />
-        <Route path="/xss/xss_lab" element={<XSS_LAB />} />
-        <Route path="/xss/xss_lab/first_lab" element={<XSS_FIRST />} />
-        {/* End XSS */}
-        <Route path="/cookies" element={<Cookies />} />
-        <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />
-        <Route
-          path="/cookies/cookies_lab/first/login"
-          element={<CookiesFirstLogin />}
-        />
-        <Route
-          path="/cookies/cookies_lab/first/admin"
-          element={<CookiesFirstAdmin />}
-        />
-        <Route
-          path="/cookies/cookies_lab/first/support"
-          element={<CookiesFirstSupport />}
-        />
-        <Route
-          path="/cookies/cookies_lab/second/login"
-          element={<CookiesSecondlogin />}
-        />
-        <Route
-          path="/cookies/cookies_lab/second/admin"
-          element={<CookiesSecondAdmin />}
-        />
-        <Route
-          path="/cookies/cookies_lab/second/support"
-          element={<CookiesSecondSupport />}
-        />
-        {/* Cookies */}
-        {/* </Route> */}
+          {/* End Sql_Injection */}
+          <Route path="/xss" element={<XSS />} />
+          <Route path="/xss/xss_lab" element={<XSS_LAB />} />
+          <Route path="/xss/xss_lab/first_lab" element={<XSS_FIRST />} />
+          {/* End XSS */}
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />
+          <Route
+            path="/cookies/cookies_lab/first/login"
+            element={<CookiesFirstLogin />}
+          />
+          <Route
+            path="/cookies/cookies_lab/first/admin"
+            element={<CookiesFirstAdmin />}
+          />
+          <Route
+            path="/cookies/cookies_lab/first/support"
+            element={<CookiesFirstSupport />}
+          />
+          <Route
+            path="/cookies/cookies_lab/second/login"
+            element={<CookiesSecondlogin />}
+          />
+          <Route
+            path="/cookies/cookies_lab/second/admin"
+            element={<CookiesSecondAdmin />}
+          />
+          <Route
+            path="/cookies/cookies_lab/second/support"
+            element={<CookiesSecondSupport />}
+          />
+          {/* Cookies */}
+        </Route>
         {/* End Routes of Labs */}
 
         {/* Start Protected Routes */}
@@ -99,7 +99,7 @@ function App() {
               <Route path="user/add" element={<AddUser />} />
             </Route>
             <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
-              <Route path="writer" element={<Writer />} />
+              <Route path="personal-information" element={<Writer />} />
               <Route path="settings" element={<Settings />} />
               <Route path="about" element={<Aboutus />} />
             </Route>

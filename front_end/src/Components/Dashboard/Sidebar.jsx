@@ -104,7 +104,7 @@ const Sidebar = () => {
             {user.role === "writer" && (
               <>
                 <NavLink
-                  to="/dashboard/writer"
+                  to="/dashboard/personal-information"
                   className="navlink active side-bar-link"
                 >
                   <FontAwesomeIcon
