@@ -2,8 +2,8 @@ import {Request, Response} from "express";
 
 export const login = async (req: Request, res: Response) => {
     try {
-        const email = "admin@gmail.com";
-        const password = "123456";
+        const email = "support@cyberlap.com";
+        const password = "cyberlap";
 
         if (!req.body.email || !req.body.password) {
             return res.status(400).send("Email and password are required");
