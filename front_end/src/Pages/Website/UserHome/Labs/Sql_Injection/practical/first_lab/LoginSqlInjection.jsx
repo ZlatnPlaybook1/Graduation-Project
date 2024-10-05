@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./LoginSqlInjection.css";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginSqlInjection() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,15 +16,27 @@ export default function LoginSqlInjection() {
     axios
       .post("http://127.0.0.1:8080/api/Loginsqlinjection", data)
       .then((response) => {
-        console.log("Login Successful", response.data);
+        navigate(`/Sql_Injection/sql_Injection_lab/Welcome`);
       })
       .catch((error) => {
-        console.error("Login Failed", error);
+        setLoading(false);
+        if (error.response) {
+          // if (error.response.status === 401) {
+          //   setErr("Wrong Email or Password");
+          // } else {
+          //   setErr("Internal server error");
+          // }
+          setErr(error.response.data);
+          console.error(error.response.data);
+        } else {
+          setErr("Network Error");
+          console.error(error);
+        }
       });
   };
 
   return (
-    <body className="sqlcolor">
+    <div className="sqlcolor">
       <div className="container-login">
         <div className="login-sql">
           <h1>Login</h1>
@@ -52,9 +68,11 @@ export default function LoginSqlInjection() {
                 Login
               </button>
             </div>
+            {err !== "" && <span className="error">{err}</span>}
+
           </form>
         </div>
       </div>
-    </body>
+    </div>
   );
 }

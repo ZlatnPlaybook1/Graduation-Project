@@ -42,20 +42,20 @@ export default function Cookies_lab() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div class="landing-cookies">
-        <div class="container-cookies">
-            <div class="course-info-cookies">
-                <div class="course-text-cookies">
+      <div className="landing-cookies">
+        <div className="container-cookies">
+            <div className="course-info-cookies">
+                <div className="course-text-cookies">
                     <h1>Practice</h1>
-                    <p class="brief-cookies"><i class="fa-solid fa-bullseye lab-cookies"></i> Reinforce what you're learning</p>
+                    <p className="brief-cookies"><i className="fa-solid fa-bullseye lab-cookies"></i> Reinforce what you're learning</p>
                     <p>Put your knowledge into practice with gamified cyber security challenges.</p>
                 </div>
-                <div class="course-icon-cookies">
-                    <div class="border-cookies">
-                        <div class="content-cookies">
-                            <i class="fas fa-book-open lab-cookies"></i>
+                <div className="course-icon-cookies">
+                    <div className="border-cookies">
+                        <div className="content-cookies">
+                            <i className="fas fa-book-open lab-cookies"></i>
                             <p>Practice</p>
-                            <i class="fas fa-bullseye lab-cookies"></i>
+                            <i className="fas fa-bullseye lab-cookies"></i>
                         </div>
                     </div>
                 </div>
@@ -64,13 +64,13 @@ export default function Cookies_lab() {
     </div>
       {/* End Landing  */}
       {/* Start Courses  */}
-      <div class="course-cookies">
-        <div class="container-cookies">
+      <div className="course-cookies">
+        <div className="container-cookies">
             <h2>Cookies Lab</h2>
-            <p class="section-p-cookies">Test Your Hacking skills</p>
-            <div class="row-cookies">
-                <Link to="/cookies/cookies_lab/first/login" class="course-card-cookies">
-                    <div class="course-image-cookies">
+            <p className="section-p-cookies">Test Your Hacking skills</p>
+            <div className="row-cookies">
+                <Link to="/cookies/cookies_lab/first/login" className="course-card-cookies">
+                    <div className="course-image-cookies">
                         <img src={image} alt="" />
                     </div>
                     <div class="course-text-cookies">

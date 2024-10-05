@@ -102,7 +102,7 @@ export default function Login_page() {
                   placeholder="Enter Your Password.."/>
                 </div>
                 <div className="form-group">
-                    <button type="submit" className="btn-login" onclick={useEffect}>Login</button>
+                    <button type="submit" className="btn-login">Login</button>
                 </div>
                     {err !== "" && <span className="error">{err}</span>}
             </form>
