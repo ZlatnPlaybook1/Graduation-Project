@@ -13,6 +13,8 @@ import Writer from "./Pages/Dashboard/Writer.jsx";
 import Error404 from "./Pages/Auth/404.jsx";
 import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
 import SQL_INJECTION from "./Pages/Website/UserHome/Labs/Sql_Injection/Sql_Injection.jsx";
+import LoginSqlInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/first_lab/LoginSqlInjection.jsx";
+import Welcome from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/first_lab/Welcome.jsx";
 import XSS from "./Pages/Website/UserHome/Labs/XSS/XSS.jsx";
 import XSS_LAB from "./Pages/Website/UserHome/Labs/XSS/XSS_lab.jsx";
 import XSS_FIRST from "./Pages/Website/UserHome/Labs/XSS/Practical/First_lab.jsx";
@@ -31,7 +33,6 @@ import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
 import SQLInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/SQLInjection_lab.jsx";
-import LoginSqlInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/LoginSqlInjection.jsx";
 function App() {
   return (
     <div className="App">
@@ -54,10 +55,14 @@ function App() {
             path="/sql_Injection/sql_Injection_lab"
             element={<SQLInjection />}
           />
-          {/* <Route
-            path="/Sql_Injection/SqlInjectionLab/login"
+          <Route
+            path="/Sql_Injection/sql_Injection_lab/login"
             element={<LoginSqlInjection />}
-          /> */}
+          />
+          <Route
+            path="/Sql_Injection/sql_Injection_lab/Welcome"
+            element={<Welcome />}
+          />
           {/* End Sql_Injection */}
           <Route path="/xss" element={<XSS />} />
           <Route path="/xss/xss_lab" element={<XSS_LAB />} />

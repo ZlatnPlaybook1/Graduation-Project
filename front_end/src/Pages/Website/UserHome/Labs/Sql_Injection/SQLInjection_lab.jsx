@@ -43,14 +43,14 @@ export default function SQLInjection_lab() {
           <p className="section-p-sql-injection">Test Your Hacking Skills</p>
           <div className="row-sql-injection">
             <Link
-              to="/sql_Injection/sql_Injection_lab/login"
+              to="/Sql_Injection/sql_Injection_lab/login"
               className="course-card-sql-injection"
             >
               <div className="course-image-sql-injection">
                 <img src={imagecourse} alt="" />
               </div>
               <div className="course-text-sql-injection">
-                <h3>Pre Security</h3>
+                <h3>First Lab</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
