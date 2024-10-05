@@ -1,9 +1,9 @@
 import {Router} from "express";
-import {hiddenDataController} from "./hiddenData.controller";
+import {finduser, hiddenDataController} from "./hiddenData.controller";
 
 let hiddenData = Router();
 
-hiddenData.post("/Loginsqlinjection", hiddenDataController);
+hiddenData.post("/Loginsqlinjection",finduser, hiddenDataController);
 
 
 export default hiddenData;
