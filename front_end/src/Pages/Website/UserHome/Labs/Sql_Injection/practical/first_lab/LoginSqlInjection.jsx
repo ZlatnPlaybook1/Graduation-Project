@@ -3,12 +3,12 @@ import axios from "axios";
 import "./LoginSqlInjection.css";
 
 export default function LoginSqlInjection() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = { email, password };
+    const data = { username, password };
     axios
       .post("http://127.0.0.1:8000/api/Loginsqlinjection", data)
       .then((response) => {
@@ -26,13 +26,13 @@ export default function LoginSqlInjection() {
           <h1>Login</h1>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="username">Username</label>
               <input
-                type="email"
-                name="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                name="username"
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required
               />
             </div>
