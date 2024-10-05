@@ -9,6 +9,7 @@ import logoutRouter from "./logout/logout.router";
 import dashboardRouter from './dashboard/dashboard.router';
 import lab1 from "./cookiesLab/lab1.router";
 import lab2 from "./cookiesLab/lab2.router";
+import hiddenData from "./sqlInjectionLabs/hiddenData.router";
 const app = express();
 
 app.use(cors())
@@ -24,7 +25,7 @@ app.use('/api', dashboardRouter)
 app.use('/api', logoutRouter)
 app.use('/api', lab1)
 app.use('/api', lab2)
-
+app.use('/api',hiddenData )
 
 dotenv.config()
 

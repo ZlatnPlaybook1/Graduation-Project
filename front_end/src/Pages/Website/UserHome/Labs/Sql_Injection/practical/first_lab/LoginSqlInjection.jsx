@@ -10,7 +10,7 @@ export default function LoginSqlInjection() {
     e.preventDefault();
     const data = { email, password };
     axios
-      .post("http://127.0.0.1:8000/api/Loginsqlinjection", data)
+      .post("http://127.0.0.1:8080/api/Loginsqlinjection", data)
       .then((response) => {
         console.log("Login Successful", response.data);
       })

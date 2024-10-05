@@ -41,3 +41,9 @@ enum Role {
   admin
   writer
 }
+
+model userForsqlInjection {
+  id       String @id @default(uuid())
+  email    String @unique
+  password String
+}
