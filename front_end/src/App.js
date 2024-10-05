@@ -16,6 +16,9 @@ import SQL_INJECTION from "./Pages/Website/UserHome/Labs/Sql_Injection/Sql_Injec
 import XSS from "./Pages/Website/UserHome/Labs/XSS/XSS.jsx";
 import XSS_LAB from "./Pages/Website/UserHome/Labs/XSS/XSS_lab.jsx";
 import XSS_FIRST from "./Pages/Website/UserHome/Labs/XSS/Practical/First_lab.jsx";
+import XSS_SECOND from "./Pages/Website/UserHome/Labs/XSS/Practical/Second_lab.jsx";
+import XSS_THIRD from "./Pages/Website/UserHome/Labs/XSS/Practical/Third_lab.jsx";
+import XSS_FOURTH from "./Pages/Website/UserHome/Labs/XSS/Practical/Fourth_lab.jsx";
 import Cookies from "./Pages/Website/UserHome/Labs/Cookies/Cookies.jsx";
 import COOKIES_LAB from "./Pages/Website/UserHome/Labs/Cookies/Cookies_lab.jsx";
 import CookiesFirstLogin from "./Pages/Website/UserHome/Labs/Cookies/practical/first_lab/Login_page.jsx";
@@ -59,6 +62,9 @@ function App() {
           <Route path="/xss" element={<XSS />} />
           <Route path="/xss/xss_lab" element={<XSS_LAB />} />
           <Route path="/xss/xss_lab/first_lab" element={<XSS_FIRST />} />
+          <Route path="/xss/xss_lab/second_lab" element={<XSS_SECOND />} />
+          <Route path="/xss/xss_lab/third_lab" element={<XSS_THIRD />} />
+          <Route path="/xss/xss_lab/fourth_lab" element={<XSS_FOURTH />} />
           {/* End XSS */}
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />

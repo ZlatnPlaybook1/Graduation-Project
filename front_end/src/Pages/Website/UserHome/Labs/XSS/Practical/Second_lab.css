@@ -1,0 +1,158 @@
+:root {
+  --main-color: #212c42;
+  --sec-main-color: #a3ea2a;
+  --alt-color: #151c2b;
+  --font-color: rgba(255, 255, 255, 0.5);
+  --font-color-hover: rgba(255, 255, 255, 0.75);
+  --main-transition: 0.5s;
+}
+
+.container-Second_lab {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Extra small */
+@media (min-width: 0px) {
+  .container-Second_lab {
+    max-width: 100%;
+  }
+}
+
+
+/* small */
+@media (min-width: 576px) {
+  .container-Second_lab {
+    max-width: 540px;
+  }
+}
+
+
+/*  Medium */
+@media (min-width: 768px) {
+  .container-Second_lab {
+    max-width: 750px;
+  }
+}
+
+/* Large */
+@media (min-width: 991px) {
+  .container-Second_lab {
+    max-width: 970px;
+  }
+}
+
+/* X-Large */
+@media (min-width: 1200px) {
+  .container-Second_lab {
+    max-width: 1170px;
+  }
+}
+
+/* Start Course  */
+.course-Second_lab {
+  padding: 50px 0;
+}
+
+.course-Second_lab .container-Second_lab {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-Second_lab .row-practice {
+  display: grid;
+  grid-template-columns: .9fr;
+  grid-template-rows: auto auto auto;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  gap: 20px;
+}
+
+.course-Second_lab .row-practice .card-Second_lab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.course-Second_lab .row-practice .card-Second_lab img {
+  width: 100%;
+  border-radius: 10px;
+  transition: var(--main-transition);
+}
+.course-Second_lab .row-practice .card-Second_lab img:hover {
+  transform: scale(1.01);
+}
+
+
+.course-Second_lab .row-practice .card-Second_lab .card-text-Second_lab {
+  padding: 20px 10px;
+}
+
+.course-Second_lab .row-practice .card-Second_lab .card-text-Second_lab p {
+  font-size: 16px;
+  font-weight: lighter;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.course-Second_lab .row-practice .card-Second_lab form {
+  width: 100%;
+}
+
+.course-Second_lab .row-practice .card-Second_lab textarea {
+  width: 100%;
+  height: 300px;
+}
+
+.course-Second_lab .row-practice .card-Second_lab button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  background: var(--sec-main-color);
+  color: white;
+  position: relative;
+}
+.course-Second_lab .row-practice .card-Second_lab button::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: var(--main-transition);
+}
+.course-Second_lab .row-practice .card-Second_lab button:hover::before {
+  top: 0;
+}
+.course-Second_lab .row-practice .card-Second_lab .comment-section {
+  margin-top: 50px;
+}
+.course-Second_lab .row-practice .card-Second_lab .comment-card:not(:last-of-type) {
+  border-bottom: 1px solid #666;
+}
+.course-Second_lab .row-practice .card-Second_lab .comment-card .comment-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+.course-Second_lab .row-practice .card-Second_lab .comment-card .icon {
+  width: 25px;
+}
+.course-Second_lab .row-practice .card-Second_lab .comment-card .name {
+  font-size: 12px;
+  margin-left: 10px;
+  margin-bottom: 0;
+  color: #666;
+}
+.course-Second_lab .row-practice .card-Second_lab .comment-card .comment-text {
+  font-size: 18px;
+  font-weight: lighter;
+  padding: 20px;
+}
+/* End Course  */

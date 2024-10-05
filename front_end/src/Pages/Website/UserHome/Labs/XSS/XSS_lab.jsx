@@ -42,7 +42,7 @@ export default function XSS_lab() {
                         <img src={image} alt="" />
                     </div>
                     <div class="course-text-XSS">
-                        <h3>Pre Security</h3>
+                        <h3>First Lab</h3>
                         <p>Before hacking something, you first need to understand the basics</p>
                         <ul class="circled-order-XSS">
                             <li>Cyber Security Basics</li>
@@ -56,12 +56,12 @@ export default function XSS_lab() {
                         <p>Easy</p>
                     </div>
                 </Link>
-                <Link to="/XSS/login" class="course-card-XSS">
+                <Link to="/XSS/xss_lab/second_lab" class="course-card-XSS">
                     <div class="course-image-XSS">
                     <img src={image} alt="" />
                     </div>
                     <div class="course-text-XSS">
-                        <h3>Pre Security</h3>
+                        <h3>Second Lab</h3>
                         <p>Before hacking something, you first need to understand the basics</p>
                         <ul class="circled-order-XSS">
                             <li>Cyber Security Basics</li>
@@ -75,12 +75,12 @@ export default function XSS_lab() {
                         <p>Easy</p>
                     </div>
                 </Link>
-                <Link to="/XSS/login" class="course-card-XSS">
+                <Link to="/XSS/xss_lab/third_lab" class="course-card-XSS">
                     <div class="course-image-XSS">
                     <img src={image} alt="" />
                     </div>
                     <div class="course-text-XSS">
-                        <h3>Pre Security</h3>
+                        <h3>Third Lab</h3>
                         <p>Before hacking something, you first need to understand the basics</p>
                         <ul class="circled-order-XSS">
                             <li>Cyber Security Basics</li>
@@ -94,12 +94,12 @@ export default function XSS_lab() {
                         <p>Easy</p>
                     </div>
                 </Link>
-                <Link to="/XSS/login" class="course-card-XSS">
+                <Link to="/XSS/xss_lab/fourth_lab" class="course-card-XSS">
                     <div class="course-image-XSS">
                     <img src={image} alt="" />
                     </div>
                     <div class="course-text-XSS">
-                        <h3>Pre Security</h3>
+                        <h3>Fourth Lab</h3>
                         <p>Before hacking something, you first need to understand the basics</p>
                         <ul class="circled-order-XSS">
                             <li>Cyber Security Basics</li>

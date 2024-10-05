@@ -7,8 +7,7 @@
   --main-transition: 0.5s;
 }
 
-
-.container-First_lab {
+.container-Fourth_lab {
   margin-left: auto;
   margin-right: auto;
 }
@@ -16,7 +15,7 @@
 
 /* Extra small */
 @media (min-width: 0px) {
-  .container-First_lab {
+  .container-Fourth_lab {
     max-width: 100%;
   }
 }
@@ -24,7 +23,7 @@
 
 /* small */
 @media (min-width: 576px) {
-  .container-First_lab {
+  .container-Fourth_lab {
     max-width: 540px;
   }
 }
@@ -32,56 +31,56 @@
 
 /*  Medium */
 @media (min-width: 768px) {
-  .container-First_lab {
+  .container-Fourth_lab {
     max-width: 750px;
   }
 }
 
 /* Large */
 @media (min-width: 991px) {
-  .container-First_lab {
+  .container-Fourth_lab {
     max-width: 970px;
   }
 }
 
 /* X-Large */
 @media (min-width: 1200px) {
-  .container-First_lab {
+  .container-Fourth_lab {
     max-width: 1170px;
   }
 }
 
 /* Start Course  */
-.course-First_lab {
+.course-Fourth_lab {
   padding: 70px 0;
 }
 
-.course-First_lab .container-First_lab {
+.course-Fourth_lab .container-Fourth_lab {
   display: flex;
   flex-direction: column;
 }
 
-.course-First_lab .container-First_lab .search {
+.course-Fourth_lab .container-Fourth_lab .search {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
 }
 
-.course-First_lab .container-First_lab .search input {
+.course-Fourth_lab .container-Fourth_lab .search input {
   padding: 5px 10px;
   border: 3px solid var(--sec-main-color);
   height: 50px;
   width: 450px;
 }
 
-.course-First_lab .container-First_lab .search button {
+.course-Fourth_lab .container-Fourth_lab .search button {
   border: none;
   height: 50px;
   padding: 0;
 }
 
-.course-First_lab .container-First_lab .search i {
+.course-Fourth_lab .container-Fourth_lab .search i {
   font-size: 20px;
   background-color: var(--sec-main-color);
   color: white;
@@ -94,7 +93,7 @@
   align-items: center;
 }
 
-.course-First_lab .row-practice {
+.course-Fourth_lab .row-practice {
   display: grid;
   grid-template-columns: .7fr;
   grid-template-rows: auto auto auto;
@@ -104,7 +103,7 @@
   gap: 20px;
 }
 
-.course-First_lab .row-practice .card-First_lab {
+.course-Fourth_lab .row-practice .card-Fourth_lab {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -115,24 +114,25 @@
   transition: var(--main-transition);
 }
 
-.course-First_lab .row-practice .card-First_lab img {
+.course-Fourth_lab .row-practice .card-Fourth_lab img {
   width: 100%;
   border-radius: 10px;
 }
 
-.course-First_lab .row-practice .card-First_lab:hover {
+.course-Fourth_lab .row-practice .card-Fourth_lab:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transform: scale(1.02);
 }
 
-.course-First_lab .row-practice .card-First_lab .card-text-First_lab {
+.course-Fourth_lab .row-practice .card-Fourth_lab .card-text-Fourth_lab {
   padding: 20px 10px;
 }
 
-.course-First_lab .row-practice .card-First_lab .card-text-First_lab p {
+.course-Fourth_lab .row-practice .card-Fourth_lab .card-text-Fourth_lab p {
   font-size: 16px;
   font-weight: lighter;
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
 /* End Course  */
