@@ -43,7 +43,7 @@ enum Role {
 }
 
 model userForsqlInjection {
-  id       String @id @default(uuid())
-  email    String @unique
+  id       String  @id @default(uuid())
+  username String? @unique
   password String
 }

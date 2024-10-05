@@ -4,7 +4,7 @@ import prisma from "../utilities/db";
 export const hiddenDataController = async (req: Request, res: Response) => {
     const user = await prisma.userForsqlInjection.findUnique({
         where: {
-            email: req.body.email
+            username: req.body.username
         },
     });
     if (!user) {
