@@ -14,15 +14,10 @@ export default function Second_lab_XSS() {
   });
   //  Navigate
   // const navigate = useNavigate();
-  // Cookies
-  // const cookie = Cookie();
   // Loading state
   const [loading, setLoading] = useState(false);
   // Error state
   const [err, setErr] = useState("");
-  const cookie = Cookie();
-  // Loading state
-  const [username, setUsername] = useState(cookie.get("username") || "");
 
   // Handle Form Change
   function handleChange(e) {
@@ -130,13 +125,20 @@ export default function Second_lab_XSS() {
               </div>
               <form onSubmit={handleSubmit}>
                 <textarea
-                  name="comment"
-                  id="comment"
-                  value={form.comment}
+                  name="content"
+                  id="content"
+                  value={form.content}
                   onChange={handleChange}
+                  placeholder="Write Your Comment......"
                   required
                 ></textarea>
-                <input type="hidden" name="username" value={username} />
+                <input 
+                type="email"
+                name="email"
+                placeholder="Write Your Email"
+                value={form.email}
+                onChange={handleChange}
+                className="form_input"/>
                 <button type="submit">Submit</button>
                 {err !== "" && <span className="error">{err}</span>}
               </form>
