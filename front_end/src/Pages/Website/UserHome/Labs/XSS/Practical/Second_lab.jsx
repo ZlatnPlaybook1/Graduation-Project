@@ -9,7 +9,7 @@ import Footer from "../../../Footer/Footer";
 
 export default function Second_lab_XSS() {
   const [form, setForm] = useState({
-    username: "",
+    email: "",
     password: "",
   });
   //  Navigate
