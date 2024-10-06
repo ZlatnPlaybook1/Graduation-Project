@@ -7,9 +7,10 @@ import registerRouter from './registerWithAuthentication/register.router';
 import loginRouter from './login/login.router';
 import logoutRouter from "./logout/logout.router";
 import dashboardRouter from './dashboard/dashboard.router';
-import lab1 from "./cookiesLab/lab1.router";
-import lab2 from "./cookiesLab/lab2.router";
-import hiddenData from "./sqlInjectionLabs/hiddenData.router";
+import lab1 from "./labs/cookiesLab/lab1.router";
+import lab2 from "./labs/cookiesLab/lab2.router";
+import hiddenData from "./labs/sqlInjectionLabs/hiddenData.router";
+import xssPostsRouter from "./labs/xss/xssPosts.router";
 const app = express();
 
 app.use(cors())
@@ -26,6 +27,7 @@ app.use('/api', logoutRouter)
 app.use('/api', lab1)
 app.use('/api', lab2)
 app.use('/api',hiddenData )
+app.use('/api', xssPostsRouter)
 
 dotenv.config()
 

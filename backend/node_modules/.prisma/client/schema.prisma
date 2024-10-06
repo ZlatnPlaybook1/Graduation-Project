@@ -47,3 +47,20 @@ model userForsqlInjection {
   username String? @unique
   password String
 }
+
+model userForXSS {
+  id       String  @id @default(uuid())
+  username String? @unique
+  email    String  @unique
+  password String
+  posts    Post[]
+}
+
+model Post {
+  id        String     @id @default(uuid())
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  content   String
+  user      userForXSS @relation(fields: [userId], references: [id])
+  userId    String
+}

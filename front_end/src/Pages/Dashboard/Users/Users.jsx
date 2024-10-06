@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
-import "./dashboard.css";
+import "../dashboard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Cookie from "cookie-universal";
+import "./Users.css";
 
 export default function Users() {
   const [userData, setUserData] = useState([]);

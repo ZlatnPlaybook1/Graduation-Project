@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
 
-export const login = async (req: Request, res: Response) => {
+export const lab2Controller = async (req: Request, res: Response) => {
     try {
         const email = "support@cyberlap.com";
         const password = "cyberlap";
