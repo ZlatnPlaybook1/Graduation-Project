@@ -6,8 +6,6 @@
   align-items: center;
   gap: 2px;
 }
-
-/* Modern Table Styling */
 .table-container {
   width: 100vw !important;
   max-width: 1500px;
