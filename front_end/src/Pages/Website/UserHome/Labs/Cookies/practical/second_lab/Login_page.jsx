@@ -6,7 +6,7 @@ import Cookie from "cookie-universal";
 import Loading from "../../../../../../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 
-export default function Login_page() {
+export default function Login_page_second() {
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -70,7 +70,7 @@ export default function Login_page() {
     }else  {
       navigate(`/cookies/cookies_lab/second/login`);
     }
-  }, [userId]);
+  }, [userId,navigate]);
 
   return (
     <>
