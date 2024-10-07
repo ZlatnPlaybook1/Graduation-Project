@@ -18,7 +18,7 @@ const Courses = () => {
               </div>
               {/* topic1 */}
               <div className="course-text">
-                <h3>1. SQL Injection</h3>
+                <h3>SQL Injection</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
@@ -43,7 +43,7 @@ const Courses = () => {
               </div>
               {/* topic2 */}
               <div className="course-text">
-                <h3>2. Cross-Site Scripting</h3>
+                <h3>Cross-Site Scripting</h3>
                 <p>
                   Learn the core skills required to start a career in cyber
                   security
@@ -68,7 +68,7 @@ const Courses = () => {
               </div>
               {/* topic3 */}
               <div className="course-text">
-                <h3>3. Cookies</h3>
+                <h3>Cookies</h3>
                 <p>
                   Learn the core skills required to start a career in cyber
                   security
@@ -643,7 +643,7 @@ const Courses = () => {
               </div>
               {/* topic 26 */}
               <div className="course-text">
-                <h3>Captcha Bypass</h3>
+                <h3>Path Traversal</h3>
                 <p>
                   Learn the core skills required to start a career in cyber
                   security
@@ -668,7 +668,7 @@ const Courses = () => {
               </div>
               {/* topic 27 */}
               <div className="course-text">
-                <h3>Path Traversal</h3>
+                <h3>Captcha Bypass</h3>
                 <p>
                   Learn the core skills required to start a career in cyber
                   security
