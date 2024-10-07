@@ -68,7 +68,7 @@ export default function SQLInjection_lab() {
               </div>
             </Link>
 
-            <Link to="/Sql_Injection/sql_Injection_lab/second_lab" className="course-card-sql-injection">
+            <Link to="/Sql_Injection/sql_Injection_lab/second_lab/our_store" className="course-card-sql-injection">
               <div className="course-image-sql-injection">
                 <img src={imagecourse} alt="" />
               </div>
