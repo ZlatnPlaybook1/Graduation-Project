@@ -24,7 +24,7 @@ export default function Our_Store() {
       <div className="container-Our_Store ">
       <h2>Click The Link To Go To T-Shirts In Our Store</h2>
           <div className="row-practice">
-              <Link to="/Sql_Injection/sql_Injection_lab/second_lab/in_store" className="store-link">Go</Link>
+              <Link to="/Sql_Injection/sql_Injection_lab/second_lab/in_store" className="store-link">T-Shirts</Link>
           </div>
       </div>
   </div>

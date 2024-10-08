@@ -75,7 +75,7 @@ function App() {
             element={<IN_STORE />}
           />
           <Route
-            path="/Sql_Injection/sql_Injection_lab/second_lab/with_stock"
+            path="/Sql_Injection/sql_Injection_lab/second_lab/in_store'+or+1=1--"
             element={<WITH_STOCK />}
           />
           {/* End Sql_Injection */}

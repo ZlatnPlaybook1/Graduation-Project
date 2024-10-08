@@ -70,7 +70,11 @@
   margin-bottom: 50px;
   gap: 20px;
 }
-
+@media (max-width: 992px) {
+  .course-In_Store .row-practice {
+    grid-template-columns: .5fr .5fr;
+  }
+}
 .course-In_Store .row-practice .card-In_Store {
   display: flex;
   flex-direction: column;
