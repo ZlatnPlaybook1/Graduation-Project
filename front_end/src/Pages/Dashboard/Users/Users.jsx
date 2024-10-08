@@ -11,7 +11,7 @@ import "./Users.css";
 export default function Users() {
   const [userData, setUserData] = useState([]);
   const [deleteUser, setDeleteUser] = useState(false);
-  const [currentUser, setCurrentUser] = useState("");
+  const [currentUser, setCurrentUser] = useState(null);
   const [NoUsers, setNoUsers] = useState(false);
 
   const cookie = Cookie();
@@ -46,7 +46,7 @@ export default function Users() {
       })
       .then((res) => {
         setUserData(res.data.data);
-        setNoUsers(true);
+        setNoUsers(res.data.data.length === 0);
       })
       .catch((err) => {
         console.log(err);
@@ -58,7 +58,11 @@ export default function Users() {
     <tr key={user.id}>
       <td>{key + 1}</td>
       <td>
-        {user.name === currentUser.name ? `${user.name} (You)` : user.name}
+        {user.role === "admin"
+          ? `${user.name} (Admin)`
+          : user.name === currentUser?.name
+          ? `${user.name} (You)`
+          : user.name}
       </td>
       <td>{user.email}</td>
       <td>{user.role === "admin" ? "Admin" : "Writer"}</td>
@@ -67,7 +71,7 @@ export default function Users() {
           <Link to={`/dashboard/user/edit/${user.id}`}>
             <FontAwesomeIcon fontSize={"19px"} icon={faPenToSquare} />
           </Link>
-          {currentUser.name !== user.name && (
+          {currentUser?.name !== user.name && (
             <FontAwesomeIcon
               onClick={() => handleDelete(user.id)}
               fontSize={"19px"}
@@ -85,7 +89,11 @@ export default function Users() {
   async function handleDelete(id) {
     if (currentUser.id !== id) {
       try {
-        await axios.delete(`http://127.0.0.1:8080/api/user/${id}`);
+        await axios.delete(`http://127.0.0.1:8080/api/user/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         setDeleteUser((prev) => !prev);
       } catch (err) {
         console.log(err);
@@ -118,7 +126,7 @@ export default function Users() {
                 Loading...
               </td>
             </tr>
-          ) : NoUsers && userData.length === 0 ? (
+          ) : NoUsers ? (
             <tr>
               <td colSpan={5} className="text-center">
                 No Users Found
