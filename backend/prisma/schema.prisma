@@ -46,6 +46,8 @@ model userForsqlInjection {
   id       String  @id @default(uuid())
   username String? @unique
   password String
+
+  @@map("userForSQLInjection")
 }
 
 model userForXSS {
