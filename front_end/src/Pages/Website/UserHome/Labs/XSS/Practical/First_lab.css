@@ -7,12 +7,17 @@
   --main-transition: 0.5s;
 }
 
+.search-result {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 18px;
+  color: #333;
+}
 
 .container-First_lab {
   margin-left: auto;
   margin-right: auto;
 }
-
 
 /* Extra small */
 @media (min-width: 0px) {
@@ -21,14 +26,12 @@
   }
 }
 
-
 /* small */
 @media (min-width: 576px) {
   .container-First_lab {
     max-width: 540px;
   }
 }
-
 
 /*  Medium */
 @media (min-width: 768px) {
@@ -96,7 +99,7 @@
 
 .course-First_lab .row-practice {
   display: grid;
-  grid-template-columns: .7fr;
+  grid-template-columns: 0.7fr;
   grid-template-rows: auto auto auto;
   justify-content: center;
   margin-top: 30px;
