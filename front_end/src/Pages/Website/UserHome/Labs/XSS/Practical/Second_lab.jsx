@@ -3,19 +3,17 @@ import "./Second_lab.css";
 import Header from "../../../Header/Header";
 import image_1 from "../../../assets/img/practical_lab2/image_1.png";
 import icon from "../../../assets/img/practical_lab2/icon.png";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import Cookie from "cookie-universal";
 import Footer from "../../../Footer/Footer";
 
-export default function Second_lab() {
+export default function Second_lab_XSS() {
   const [form, setForm] = useState({
     email: "",
-    password: "",
+    content: "",
   });
   //  Navigate
   // const navigate = useNavigate();
-  // Cookies
-  // const cookie = Cookie();
   // Loading state
   const [loading, setLoading] = useState(false);
   // Error state
@@ -127,19 +125,27 @@ export default function Second_lab() {
               </div>
               <form onSubmit={handleSubmit}>
                 <textarea
-                  name="comment"
-                  id="comment"
-                  value={form.comment}
+                  name="content"
+                  id="content"
+                  value={form.content}
                   onChange={handleChange}
+                  placeholder="Write Your Comment......"
                   required
                 ></textarea>
+                <input 
+                type="email"
+                name="email"
+                placeholder="Write Your Email"
+                value={form.email}
+                onChange={handleChange}
+                className="form_input"/>
                 <button type="submit">Submit</button>
                 {err !== "" && <span className="error">{err}</span>}
               </form>
               <div className="comment-section">
                 <div className="comment-card">
                   <div className="comment-header">
-                    <img src={icon} className="icon" />
+                    <img src={icon} className="icon"  alt="Card"/>
                     <p className="name">Ebrahiem Gamal</p>
                   </div>
                   <p className="comment-text">
@@ -152,7 +158,7 @@ export default function Second_lab() {
                 </div>
                 <div className="comment-card">
                   <div className="comment-header">
-                    <img src={icon} className="icon" />
+                    <img src={icon} className="icon" alt="Card" />
                     <p className="name">Ebrahiem Gamal</p>
                   </div>
                   <p className="comment-text">

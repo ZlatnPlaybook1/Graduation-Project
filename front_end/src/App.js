@@ -15,6 +15,9 @@ import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
 import SQL_INJECTION from "./Pages/Website/UserHome/Labs/Sql_Injection/Sql_Injection.jsx";
 import LoginSqlInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/first_lab/LoginSqlInjection.jsx";
 import Welcome from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/first_lab/Welcome.jsx";
+import OUR_STORE from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/second_lab/Our_Store.jsx";
+import IN_STORE from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/second_lab/In_Store.jsx";
+import WITH_STOCK from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/second_lab/With_Stock.jsx";
 import XSS from "./Pages/Website/UserHome/Labs/XSS/XSS.jsx";
 import XSS_LAB from "./Pages/Website/UserHome/Labs/XSS/XSS_lab.jsx";
 import XSS_FIRST from "./Pages/Website/UserHome/Labs/XSS/Practical/First_lab.jsx";
@@ -62,6 +65,18 @@ function App() {
           <Route
             path="/Sql_Injection/sql_Injection_lab/Welcome"
             element={<Welcome />}
+          />
+          <Route
+            path="/Sql_Injection/sql_Injection_lab/second_lab/our_store"
+            element={<OUR_STORE />}
+          />
+          <Route
+            path="/Sql_Injection/sql_Injection_lab/second_lab/in_store"
+            element={<IN_STORE />}
+          />
+          <Route
+            path="/Sql_Injection/sql_Injection_lab/second_lab/with_stock"
+            element={<WITH_STOCK />}
           />
           {/* End Sql_Injection */}
           <Route path="/xss" element={<XSS />} />

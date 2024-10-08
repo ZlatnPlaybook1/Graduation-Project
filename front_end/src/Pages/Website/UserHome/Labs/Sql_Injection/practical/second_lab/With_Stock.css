@@ -1,0 +1,107 @@
+:root {
+  --main-color: #212c42;
+  --sec-main-color: #a3ea2a;
+  --alt-color: #151c2b;
+  --font-color: rgba(255, 255, 255, 0.5);
+  --font-color-hover: rgba(255, 255, 255, 0.75);
+  --main-transition: 0.5s;
+}
+
+
+.container-With_Stock {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Extra small */
+@media (min-width: 0px) {
+  .container-With_Stock {
+    max-width: 100%;
+  }
+}
+
+
+/* small */
+@media (min-width: 576px) {
+  .container-With_Stock {
+    max-width: 540px;
+  }
+}
+
+
+/*  Medium */
+@media (min-width: 768px) {
+  .container-With_Stock {
+    max-width: 750px;
+  }
+}
+
+/* Large */
+@media (min-width: 991px) {
+  .container-With_Stock {
+    max-width: 970px;
+  }
+}
+
+/* X-Large */
+@media (min-width: 1200px) {
+  .container-With_Stock {
+    max-width: 1170px;
+  }
+}
+
+/* Start Course  */
+.course-With_Stock {
+  padding: 70px 0;
+}
+
+.course-With_Stock .container-With_Stock {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-With_Stock .row-practice {
+  display: grid;
+  grid-template-columns: .25fr .25fr .25fr .25fr;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  gap: 20px;
+}
+
+.course-With_Stock .row-practice .card-With_Stock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: var(--main-transition);
+}
+
+.course-With_Stock .row-practice .card-With_Stock img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.course-With_Stock .row-practice .card-With_Stock:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+}
+
+.course-With_Stock .row-practice .card-With_Stock .card-text-With_Stock {
+  padding: 20px 10px;
+}
+
+.course-With_Stock .row-practice .card-With_Stock .card-text-With_Stock p {
+  font-size: 16px;
+  font-weight: lighter;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* End Course  */

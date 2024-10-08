@@ -1,5 +1,5 @@
 import {Request, Response} from "express";
-import prisma from "../utilities/db";
+import prisma from "../../utilities/db";
 
 export const hiddenDataController = async (req: Request, res: Response) => {
     const user = await prisma.userForsqlInjection.findUnique({

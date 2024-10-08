@@ -22,7 +22,7 @@ export default function Support() {
     else  {
       navigate(`/cookies/cookies_lab/first/login`);
     }
-  }, [role]);
+  }, [role,navigate]);
   return (
     <>
       <div class="container-support">
