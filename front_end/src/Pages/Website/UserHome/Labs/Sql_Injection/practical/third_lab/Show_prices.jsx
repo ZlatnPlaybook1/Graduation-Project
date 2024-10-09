@@ -3,10 +3,6 @@
 import "./Show_prices.css";
 // import { useNavigate } from "react-router-dom";
 import Header from "../../../../Header/Header";
-import image_1 from "../../../../assets/img/SQL_2nd_Lab/image_1.png";
-import image_2 from "../../../../assets/img/SQL_2nd_Lab/image_2.png";
-import image_3 from "../../../../assets/img/SQL_2nd_Lab/image_3.png";
-import image_4 from "../../../../assets/img/SQL_2nd_Lab/image_4.png";
 import Footer from "../../../../../Footer/Footer";
 
 export default function Show_prices() {
