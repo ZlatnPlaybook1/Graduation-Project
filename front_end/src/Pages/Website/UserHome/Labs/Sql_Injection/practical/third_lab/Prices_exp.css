@@ -1,0 +1,265 @@
+:root {
+  --main-color: #212c42;
+  --sec-main-color: #a3ea2a;
+  --alt-color: #151c2b;
+  --font-color: rgba(255, 255, 255, 0.5);
+  --font-color-hover: rgba(255, 255, 255, 0.75);
+  --main-transition: 0.5s;
+}
+
+
+.container-Prices_exp {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Extra small */
+@media (min-width: 0px) {
+  .container-Prices_exp {
+    max-width: 100%;
+  }
+}
+
+
+/* small */
+@media (min-width: 576px) {
+  .container-Prices_exp {
+    max-width: 540px;
+  }
+}
+
+
+/*  Medium */
+@media (min-width: 768px) {
+  .container-Prices_exp {
+    max-width: 750px;
+  }
+}
+
+/* Large */
+@media (min-width: 991px) {
+  .container-Prices_exp {
+    max-width: 970px;
+  }
+}
+
+/* X-Large */
+@media (min-width: 1200px) {
+  .container-Prices_exp {
+    max-width: 1170px;
+  }
+}
+
+/* Start Course  */
+.course-Prices_exp {
+  padding: 70px 0;
+}
+
+.course-Prices_exp .container-Prices_exp {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.faq-section-Prices_exp {
+  margin-top: 75px !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+@media (max-width: 991px) {
+  .faq-section-Prices_exp .section-text-Prices_exp {
+    margin-left: 0 !important;
+  }
+
+  .faq-section-Prices_exp .image {
+    display: none !important;
+  }
+}
+
+.faq-item-Prices_exp {
+  margin-bottom: 30px !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-header-Prices_exp {
+  border-radius: 5px 5px 0 0 !important;
+  color: white !important;
+  background-color: #212c42 !important;
+  font-size: 18px !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  line-height: 20px !important;
+  padding: 10px 25px !important;
+  font-weight: lighter !important;
+  position: relative !important;
+  width: 100% !important;
+  margin-top: 20px !important;
+}
+
+@media (max-width: 991px) {
+  .faq-section-Prices_exp .section-text-Prices_exp .faq-header-Prices_exp {
+    font-size: 16px !important;
+  }
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-header-Prices_exp span {
+  color: red !important;
+  margin-right: 40px !important;
+  position: relative !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-header-Prices_exp span::after {
+  content: "" !important;
+  width: 10px !important;
+  height: 10px !important;
+  background-color: transparent !important;
+  border: 1px solid #777 !important;
+  border-radius: 50% !important;
+  position: absolute !important;
+  right: -45% !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp {
+  font-size: 18px !important;
+  padding: 15px 25px !important;
+  line-height: 1.9 !important;
+  border-left: 4px solid red !important;
+  box-shadow: 1px 2px rgb(0, 0, 0, 0.1) !important;
+  border-radius: 0 0 5px 5px !important;
+  background-color: white !important;
+  color: rgb(21, 28, 43) !important;
+}
+
+@media (max-width: 991px) {
+  .faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp {
+    font-size: 14px !important;
+  }
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp img {
+  width: 25% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: inherit !important;
+  margin-bottom: 30px !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp ul li {
+  list-style: "- " !important;
+  margin-bottom: 10px !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp ol li {
+  list-style: decimal !important;
+  margin-bottom: 10px !important;
+  font-size: 18px !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp ul li a {
+  color: #ff4747 !important;
+  text-decoration: underline !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp ul li span {
+  color: blue !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp li h2 {
+  color: #ff4747 !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp ul pre {
+  padding: 25px 20px !important;
+  margin: 15px 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  background-color: #272822 !important;
+  text-align: left !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp ul pre code {
+  display: flex !important;
+  align-items: start !important;
+  flex-direction: column !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp ul pre span {
+  color: green !important;
+  display: inline !important;
+  white-space: normal !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp form {
+  margin-top: 30px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-direction: row !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp form input {
+  flex: 3 1 0% !important;
+  padding: 7px 12px !important;
+  width: 100% !important;
+  height: auto !important;
+  font-size: 16px !important;
+  color: rgb(28, 37, 56) !important;
+  border-radius: 5px !important;
+  background-color: white !important;
+  outline: none !important;
+  border: 0.1rem solid rgb(212, 216, 223) !important;
+  margin-right: 20px !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp form button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 1 0% !important;
+  cursor: pointer !important;
+  gap: 6px !important;
+  height: 36px !important;
+  min-width: 300px !important;
+  border-radius: 5px !important;
+  max-width: 100% !important;
+  font-size: 16px !important;
+  padding: 7px 16px !important;
+  text-decoration: none !important;
+  pointer-events: initial !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  background-color: transparent !important;
+  color: rgb(21, 28, 43) !important;
+  border-color: rgb(163, 234, 42) !important;
+  transition: 0.2s ease-in-out !important;
+}
+
+.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp form button:hover:not(:disabled) {
+  background-color: rgb(163, 234, 42) !important;
+}
+
+.course-Prices_exp .row-practice {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  gap: 20px;
+}
+
+.course-Prices_exp .row-practice .store-link-sp {
+  background-color: var(--sec-main-color);
+  color: white;
+  text-align: center;
+  border-radius: 7px;
+  width: 150px;
+  padding: 10px 20px;
+}
+
+/* End Course  */

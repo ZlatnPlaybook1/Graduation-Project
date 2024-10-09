@@ -91,12 +91,12 @@ export default function SQLInjection_lab() {
               </div>
             </Link>
 
-            <Link to="#" className="course-card-sql-injection">
+            <Link to="/Sql_Injection/sql_Injection_lab/third_lab/prices-exp" className="course-card-sql-injection">
               <div className="course-image-sql-injection">
                 <img src={imagecourse} alt="" />
               </div>
               <div className="course-text-sql-injection">
-                <h3>Pre Security</h3>
+                <h3>Third Lab</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
