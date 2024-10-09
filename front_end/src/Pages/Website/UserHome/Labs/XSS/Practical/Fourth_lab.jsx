@@ -1,79 +1,179 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Fourth_lab.css";
 import Header from "../../../Header/Header";
 import image_1 from "../../../assets/img/practical_lab2/image_1.png";
-import image_2 from "../../../assets/img/practical_lab2/image_2.png";
-import image_3 from "../../../assets/img/practical_lab2/image_3.png";
-import image_4 from "../../../assets/img/practical_lab2/image_4.png";
-import image_5 from "../../../assets/img/practical_lab2/image_5.png";
-import { Link } from "react-router-dom";
+import icon from "../../../assets/img/practical_lab2/icon.png";
+import axios from "axios";
 import Footer from "../../../Footer/Footer";
 
 export default function Fourth_lab() {
+  const [form, setForm] = useState({
+    email: "",
+    content: "",
+  });
+  //  Navigate
+  // const navigate = useNavigate();
+  // Loading state
+  const [loading, setLoading] = useState(false);
+  // Error state
+  const [err, setErr] = useState("");
+
+  // Handle Form Change
+  function handleChange(e) {
+    e.preventDefault();
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
+
+  // Handle Form Submit
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setLoading(true);
+    setErr("");
+    try {
+      const res = await axios.post("http://127.0.0.1:8080/api/comment", form);
+      console.log(res);
+      setLoading(false);
+      // const userId = res.data.userId;
+      // cookie.set("userId", userId);
+    } catch (error) {
+      setLoading(false);
+      // if (error.response) {
+      //   if (error.response.status === 401) {
+      //     setErr("Wrong Email or Password");
+      //   } else {
+      //     setErr("Internal server error");
+      //   }
+      //   console.error(error.response.data);
+      // } else {
+      //   setErr("Network Error");
+      //   console.error(error);
+      // }
+    }
+  }
   return (
     <>
       <Header />
       {/* Start Courses  */}
-      <div className="course-Fourth_lab">
-        <div className="container-Fourth_lab">
-            <form className="search" action="" method="">
-                <input type="text" placeholder="Search for a practice"/>
-                <button type="submit"><i className="fa-solid fa-search"></i></button>
-            </form>
-            <div className="row-practice">
-                <div className="card-Fourth_lab">
-                    <img src={image_1} alt=""/>
-                    <div className="card-text-Fourth_lab">
-                        <h2>Robots in Our Lives</h2>
-                        <p>The development of robots has significantly transformed our daily lives, industries, and the
-                            global economy. Over the past century, robots have evolved from simple mechanical devices
-                            into highly sophisticated machines capable of performing complex tasks with precision and
-                            speed. The concept of robots dates back to ancient civilizations, with myths and stories
-                            about automated beings. However, modern robotics began in the 20th century, notably in the
-                            1950s when George Devol invented the Fourth programmable robot called "Unimate." This marked
-                            the beginning of robots being used in manufacturing, especially in the automotive industry.
-                        </p>
-                    </div>
+      <div className="course-Second_lab">
+        <div className="container-Second_lab">
+          <div className="row-practice">
+            <div className="card-Second_lab">
+              <img src={image_1} alt="" />
+              <div className="card-text-Second_lab">
+                <h2>Robots in Our Lives</h2>
+                <p>
+                  The development of robots has significantly transformed our
+                  daily lives, industries, and the global economy. Over the past
+                  century, robots have evolved from simple mechanical devices
+                  into highly sophisticated machines capable of performing
+                  complex tasks with precision and speed. The concept of robots
+                  dates back to ancient civilizations, with myths and stories
+                  about automated beings. However, modern robotics began in the
+                  20th century, notably in the 1950s when George Devol invented
+                  the Second programmable robot called "Unimate." This marked
+                  the beginning of robots being used in manufacturing,
+                  especially in the automotive industry.
+                </p>
+                <p>
+                  During the 1960s and 1970s, robots became an essential part of
+                  industrial automation. They were used to perform repetitive,
+                  dangerous, or labor-intensive tasks, improving efficiency and
+                  safety in factories. Industrial robots, such as robotic arms,
+                  revolutionized production lines, allowing for faster and more
+                  consistent manufacturing processes. In recent decades,
+                  robotics has entered the medical field. Robots like the Da
+                  Vinci Surgical System allow surgeons to perform minimally
+                  invasive surgeries with greater precision. These machines have
+                  reduced recovery times for patients and improved surgical
+                  outcomes. Medical robots are also used in diagnostics,
+                  rehabilitation, and even drug delivery.
+                </p>
+                <p>
+                  Beyond industry and healthcare, robots are increasingly used
+                  in everyday services. Automated vacuum cleaners, lawn mowers,
+                  and even robots that assist in customer service are becoming
+                  more common in households and businesses. Service robots help
+                  with tasks that were traditionally manual, saving time and
+                  effort. The integration of artificial intelligence (AI) has
+                  been a game-changer for robotics. AI allows robots to learn,
+                  adapt, and perform tasks with minimal human intervention.
+                  AI-driven robots are used in areas like autonomous vehicles,
+                  drone technology, and customer service bots. They can process
+                  large amounts of data, recognize patterns, and make decisions,
+                  making them increasingly valuable in various sectors.
+                </p>
+                <p>
+                  As robots become more advanced, they raise social and ethical
+                  questions. The impact on employment, for example, is a
+                  concern, as automation could replace jobs in certain
+                  industries. Additionally, ethical issues arise with the use of
+                  robots in warfare, law enforcement, and surveillance. Looking
+                  ahead, robots will likely play an even more significant role
+                  in society. We can expect advancements in humanoid robots,
+                  capable of interacting with humans in natural ways. Robots
+                  will continue to be integrated into smart homes, public
+                  infrastructure, and even space exploration. These innovations
+                  hold the promise of making life more convenient and efficient.
+                </p>
+                <p>
+                  In conclusion, the development of robots has brought immense
+                  progress, changing the way we work, heal, and live. As
+                  technology continues to advance, robots will undoubtedly play
+                  an even more integral role in our future.
+                </p>
+              </div>
+              <form onSubmit={handleSubmit}>
+                <textarea
+                  name="content"
+                  id="content"
+                  value={form.content}
+                  onChange={handleChange}
+                  placeholder="Write Your Comment......"
+                  required
+                ></textarea>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Write Your Email"
+                  value={form.email}
+                  onChange={handleChange}
+                  className="form_input"
+                />
+                <button type="submit">Submit</button>
+                {err !== "" && <span className="error">{err}</span>}
+              </form>
+              <div className="comment-section">
+                <div className="comment-card">
+                  <div className="comment-header">
+                    <img src={icon} className="icon" alt="Card" />
+                    <p className="name">Ebrahiem Gamal</p>
+                  </div>
+                  <p className="comment-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Consectetur, aliquid dolores totam rerum minus commodi enim
+                    non sed, aspernatur minima laudantium laboriosam ipsam
+                    incidunt. Numquam repudiandae expedita nobis! Accusamus,
+                    numquam.
+                  </p>
                 </div>
-                <div className="card-Fourth_lab">
-                    <img src={image_2} alt=""/>
-                    <div className="card-text-Fourth_lab">
-                        <h2>The Danger of Data Breaches and Stealing</h2>
-                        <p>In today's digital age, data has become one of the most valuable assets for both individuals and organizations. However, as our reliance on technology grows, so does the risk of data breaches and theft. A data breach occurs when sensitive, confidential, or protected information is accessed without authorization, potentially leading to devastating consequences for businesses and individuals alike.</p>
-                        <p>One of the main dangers of data breaches is the exposure of personal information. Hackers can steal sensitive data such as names, addresses, Social Security numbers, credit card details, and even medical records. With this information, cybercriminals can commit identity theft, which can result in financial loss, damaged reputations, and long-lasting emotional distress for victims.</p>
-                    </div>
+                <div className="comment-card">
+                  <div className="comment-header">
+                    <img src={icon} className="icon" alt="Card" />
+                    <p className="name">Ebrahiem Gamal</p>
+                  </div>
+                  <p className="comment-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Consectetur, aliquid dolores totam rerum minus commodi enim
+                    non sed, aspernatur minima laudantium laboriosam ipsam
+                    incidunt. Numquam repudiandae expedita nobis! Accusamus,
+                    numquam.
+                  </p>
                 </div>
-                <div className="card-Fourth_lab">
-                    <img src={image_3} alt=""/>
-                    <div className="card-text-Fourth_lab">
-                        <h2>The Power of Python Across Industries</h2>
-                        <p>Python has become one of the most widely used programming languages in the world due to its simplicity, versatility, and extensive range of applications. Since its creation by Guido van Rossum in 1991, Python’s use has expanded across various industries and fields, from web development to artificial intelligence, making it a favorite among developers and organizations alike. One of Python’s greatest strengths is its simplicity and readability. Python’s syntax is clean and easy to understand, making it accessible to beginners who are just starting their programming journey. The language’s design philosophy emphasizes code readability, allowing developers to write logical, easy-to-maintain code with fewer lines compared to other programming languages like Java or C++. This makes Python a great tool for rapid development, enabling teams to build and scale projects quickly.</p>
-                    </div>
-                </div>
-                <div className="card-Fourth_lab">
-                    <img src={image_4} alt=""/>
-                    <div className="card-text-Fourth_lab">
-                        <h2>Robots in Our Lives</h2>
-                        <p>The development of robots has significantly transformed our daily lives, industries, and the
-                            global economy. Over the past century, robots have evolved from simple mechanical devices
-                            into highly sophisticated machines capable of performing complex tasks with precision and
-                            speed. The concept of robots dates back to ancient civilizations, with myths and stories
-                            about automated beings. However, modern robotics began in the 20th century, notably in the
-                            1950s when George Devol invented the Fourth programmable robot called "Unimate." This marked
-                            the beginning of robots being used in manufacturing, especially in the automotive industry.
-                        </p>
-                    </div>
-                </div>
-                <div className="card-Fourth_lab">
-                    <img src={image_5} alt=""/>
-                    <div className="card-text-Fourth_lab">
-                        <h2>5G and the Future of Mobile Networks</h2>
-                        <p>The rollout of 5G technology marks a significant leap in the evolution of mobile networks. As the fifth generation of wireless technology, 5G promises faster speeds, lower latency, and greater capacity, revolutionizing how people connect and interact with technology. This development is set to transform industries, enable new applications, and change the way we live and work. 5G is the latest generation of mobile networks, succeeding 4G LTE. While 4G brought faster internet speeds and improved mobile connectivity, 5G is designed to be much faster, with speeds potentially reaching up to 100 times those of 4G. This improvement is largely due to the use of higher frequency bands, known as millimeter waves, which allow more data to be transferred at once.</p>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
       {/* End Course Content  */}
       <Footer />
     </>
