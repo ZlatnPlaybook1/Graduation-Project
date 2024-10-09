@@ -7,6 +7,7 @@ import image_3 from "../../../assets/img/practical_lab2/image_3.png";
 import image_4 from "../../../assets/img/practical_lab2/image_4.png";
 import image_5 from "../../../assets/img/practical_lab2/image_5.png";
 import Footer from "../../../Footer/Footer";
+import { faAlignCenter } from "@fortawesome/free-solid-svg-icons";
 
 export default function First_lab() {
   // Step 1: Define the card data in an array
@@ -52,32 +53,30 @@ export default function First_lab() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredCards, setFilteredCards] = useState(cards);
   const [scriptOutput, setScriptOutput] = useState("");
+  const [htmlOutput, setHtmlOutput] = useState(""); // New state to hold HTML output
 
-  // Step 3: Filter cards based on the search query
   const handleSearch = (event) => {
     event.preventDefault();
     setScriptOutput("");
+    setHtmlOutput("");
 
-    // Check if the input contains <script> tags
-    if (
-      searchQuery.trim().startsWith("<script>") &&
-      searchQuery.trim().endsWith("</script>")
-    ) {
+    // Check if the input contains <script> tags for JavaScript
+    if (searchQuery.trim().startsWith("<script>") && searchQuery.trim().endsWith("</script>")) {
       const code = searchQuery.replace("<script>", "").replace("</script>", "");
-
       try {
         // Use eval to run the script inside the <script> tags
         const result = eval(code);
-        setScriptOutput(
-          result !== undefined
-            ? result.toString()
-            : "Script executed without output."
-        );
+        setScriptOutput(result !== undefined ? result.toString() : "Script executed without output.");
       } catch (err) {
         setScriptOutput(`Error: ${err.message}`);
       }
-    } else {
-      // Normal search functionality
+    } 
+    // Check if the input contains HTML tags like <div> or <p> for HTML rendering
+    else if (searchQuery.trim().startsWith("<") && searchQuery.trim().endsWith(">")) {
+      setHtmlOutput(searchQuery);
+    } 
+    // Normal search functionality
+    else {
       const filtered = cards.filter(
         (card) =>
           card.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -85,9 +84,8 @@ export default function First_lab() {
       );
 
       setFilteredCards(filtered);
-      // If no cards matched, reset the script output
       if (filtered.length === 0) {
-        setScriptOutput("No data found");
+        setHtmlOutput("<h1>No data found</h1>");
       }
     }
   };
@@ -105,7 +103,7 @@ export default function First_lab() {
               placeholder="Search for a practice"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)} // Update search query on input change
-            />
+              />
             <button type="submit">
               <i className="fa-solid fa-search"></i>
             </button>
@@ -113,6 +111,10 @@ export default function First_lab() {
 
           {/* Render Cards or "No data found" message */}
           <div className="row-practice">
+              {/* Display rendered HTML if available */}
+              {htmlOutput && (
+                   <div className="html-output" dangerouslySetInnerHTML={{ __html: htmlOutput }}></div>
+                 )}
             {filteredCards.length > 0 ? (
               filteredCards.map((card) => (
                 <div className="card-First_lab" key={card.id}>
@@ -127,12 +129,12 @@ export default function First_lab() {
               <h1>No data found</h1>
             )}
           </div>
-          {scriptOutput && (
+          {/* {scriptOutput && (
             <div className="script-output">
               <h2>Script Output:</h2>
               <pre>{scriptOutput}</pre>
             </div>
-          )}
+          )} */}
         </div>
       </div>
       {/* End Course Content */}
