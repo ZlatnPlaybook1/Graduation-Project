@@ -16,28 +16,20 @@ export default function Show_prices() {
           <h1>Prices In Our Site</h1>
           <div className="row-practice">
             <div className="card-Show_prices ">
-              <div className="card-text-Show_prices ">
-                <h4>Robot Home Security Buddy</h4>
-                <p>$92.70</p>
-              </div>
+              <h4>Robot Home Security Buddy</h4>
+              <p>$92.70</p>
             </div>
             <div className="card-Show_prices ">
-              <div className="card-text-Show_prices ">
-                <h4>All-in-one Typewriter</h4>
-                <p>$33.61</p>
-              </div>
+              <h4>All-in-one Typewriter</h4>
+              <p>$33.61</p>
             </div>
             <div className="card-Show_prices ">
-              <div className="card-text-Show_prices ">
-                <h4>Photobomb Backdrops</h4>
-                <p>$46.21</p>
-              </div>
+              <h4>Photobomb Backdrops</h4>
+              <p>$46.21</p>
             </div>
             <div className="card-Show_prices ">
-              <div className="card-text-Show_prices ">
-                <h4>Grow Your Own Spy Kit</h4>
-                <p>$19.26</p>
-              </div>
+              <h4>Grow Your Own Spy Kit</h4>
+              <p>$19.26</p>
             </div>
           </div>
         </div>

@@ -63,33 +63,23 @@
 
 .course-Show_prices .row-practice {
   display: grid;
-  grid-template-columns: .25fr .25fr .25fr .25fr;
+  grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   justify-content: center;
   margin-top: 30px;
   margin-bottom: 50px;
   gap: 20px;
 }
-@media (max-width: 992px) {
-  .course-Show_prices .row-practice {
-    grid-template-columns: .5fr .5fr;
-  }
-}
+
 .course-Show_prices .row-practice .card-Show_prices {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: var(--main-transition);
-}
-
-.course-Show_prices .row-practice .card-Show_prices img {
-  width: 100%;
-  border-radius: 10px;
 }
 
 .course-Show_prices .row-practice .card-Show_prices:hover {
@@ -97,15 +87,15 @@
   transform: scale(1.02);
 }
 
-.course-Show_prices .row-practice .card-Show_prices .card-text-Show_prices {
-  padding: 20px 10px;
+
+.course-Show_prices .row-practice .card-Show_prices h4 {
+  margin-bottom: 0;
+  margin-right: 20px;
 }
 
-.course-Show_prices .row-practice .card-Show_prices .card-text-Show_prices p {
-  font-size: 16px;
+.course-Show_prices .row-practice .card-Show_prices p {
+  font-size: 24px;
   font-weight: lighter;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
-
 /* End Course  */

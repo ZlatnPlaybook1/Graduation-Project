@@ -90,7 +90,7 @@ function App() {
             element={<SHOW_PRICES />}
           />
           <Route
-            path="/Sql_Injection/sql_Injection_lab/third_lab/show-prices-finish"
+            path="/Sql_Injection/sql_Injection_lab/third_lab/show-prices'+union+select+null,+null,+null--"
             element={<FINISH_TEST />}
           />
           {/* End Sql_Injection */}
