@@ -98,15 +98,10 @@
 }
 
 .course-First_lab .row-practice .html-output {
-  display: flex;justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-.course-First_lab .row-practice .html-output h1 {
-  text-align: center;
-    background-color: var(--sec-main-color);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-}
+
 .course-First_lab .row-practice {
   display: grid;
   grid-template-columns: 0.7fr;
@@ -148,4 +143,5 @@
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
 /* End Course  */

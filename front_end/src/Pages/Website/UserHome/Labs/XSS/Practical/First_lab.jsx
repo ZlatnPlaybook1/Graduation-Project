@@ -61,20 +61,30 @@ export default function First_lab() {
     setHtmlOutput("");
 
     // Check if the input contains <script> tags for JavaScript
-    if (searchQuery.trim().startsWith("<script>") && searchQuery.trim().endsWith("</script>")) {
+    if (
+      searchQuery.trim().startsWith("<script>") &&
+      searchQuery.trim().endsWith("</script>")
+    ) {
       const code = searchQuery.replace("<script>", "").replace("</script>", "");
       try {
         // Use eval to run the script inside the <script> tags
         const result = eval(code);
-        setScriptOutput(result !== undefined ? result.toString() : "Script executed without output.");
+        setScriptOutput(
+          result !== undefined
+            ? result.toString()
+            : "Script executed without output."
+        );
       } catch (err) {
         setScriptOutput(`Error: ${err.message}`);
       }
-    } 
+    }
     // Check if the input contains HTML tags like <div> or <p> for HTML rendering
-    else if (searchQuery.trim().startsWith("<") && searchQuery.trim().endsWith(">")) {
+    else if (
+      searchQuery.trim().startsWith("<") &&
+      searchQuery.trim().endsWith(">")
+    ) {
       setHtmlOutput(searchQuery);
-    } 
+    }
     // Normal search functionality
     else {
       const filtered = cards.filter(
@@ -103,7 +113,7 @@ export default function First_lab() {
               placeholder="Search for a practice"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)} // Update search query on input change
-              />
+            />
             <button type="submit">
               <i className="fa-solid fa-search"></i>
             </button>
@@ -111,10 +121,15 @@ export default function First_lab() {
 
           {/* Render Cards or "No data found" message */}
           <div className="row-practice">
-              {/* Display rendered HTML if available */}
-              {htmlOutput && (
-                   <div className="html-output" dangerouslySetInnerHTML={{ __html: htmlOutput }}></div>
-                 )}
+            <h1
+              className="html-output"
+            >
+              Your Search Result: "
+              <span
+                dangerouslySetInnerHTML={{ __html: htmlOutput || searchQuery }}
+              ></span>
+              "{" "}
+            </h1>
             {filteredCards.length > 0 ? (
               filteredCards.map((card) => (
                 <div className="card-First_lab" key={card.id}>
@@ -129,12 +144,6 @@ export default function First_lab() {
               <h1>No data found</h1>
             )}
           </div>
-          {/* {scriptOutput && (
-            <div className="script-output">
-              <h2>Script Output:</h2>
-              <pre>{scriptOutput}</pre>
-            </div>
-          )} */}
         </div>
       </div>
       {/* End Course Content */}
