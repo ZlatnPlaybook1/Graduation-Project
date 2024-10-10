@@ -39,6 +39,7 @@ import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
 import SQLInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/SQLInjection_lab.jsx";
+import Robots from "./Pages/Website/UserHome/Labs/XSS/Practical/Robots.jsx";
 function App() {
   return (
     <div className="App">
@@ -100,6 +101,11 @@ function App() {
           <Route path="/xss/xss_lab/second_lab" element={<XSS_SECOND />} />
           <Route path="/xss/xss_lab/third_lab" element={<XSS_THIRD />} />
           <Route path="/xss/xss_lab/fourth_lab" element={<XSS_FOURTH />} />
+          <Route
+            path="/xss/xss_lab/fourth_lab/Robots_Details"
+            element={<Robots />}
+          />
+
           {/* End XSS */}
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />

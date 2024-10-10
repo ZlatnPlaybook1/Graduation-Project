@@ -12,7 +12,6 @@
   margin-right: auto;
 }
 
-
 /* Extra small */
 @media (min-width: 0px) {
   .container-Third_lab {
@@ -20,14 +19,12 @@
   }
 }
 
-
 /* small */
 @media (min-width: 576px) {
   .container-Third_lab {
     max-width: 540px;
   }
 }
-
 
 /*  Medium */
 @media (min-width: 768px) {
@@ -95,7 +92,7 @@
 
 .course-Third_lab .row-practice {
   display: grid;
-  grid-template-columns: .7fr;
+  grid-template-columns: 0.7fr;
   grid-template-rows: auto auto auto;
   justify-content: center;
   margin-top: 30px;
@@ -135,5 +132,28 @@
   margin-bottom: 20px;
 }
 
-
 /* End Course  */
+
+/* Button to back */
+.reload-container {
+  text-align: center;
+  margin-top: 20px;
+}
+.reload-button {
+  background-color: #a3ea2a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.reload-button:hover {
+  background-color: #90cd25;
+  transform: scale(1.05);
+}
+.reload-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}

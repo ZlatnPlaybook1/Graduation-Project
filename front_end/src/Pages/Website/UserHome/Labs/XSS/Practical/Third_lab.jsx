@@ -9,7 +9,6 @@ import image_5 from "../../../assets/img/practical_lab2/image_5.png";
 import Footer from "../../../Footer/Footer";
 
 export default function Third_lab() {
-  // Step 1: Define the card data in an array
   const cards = [
     {
       id: 1,
@@ -48,36 +47,24 @@ export default function Third_lab() {
     },
   ];
 
-  // Step 2: Create state for search query
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredCards, setFilteredCards] = useState(cards);
   const [scriptOutput, setScriptOutput] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [hasSearched, setHasSearched] = useState(false);
 
-  // Step 3: Filter cards based on the search query
   const handleSearch = (event) => {
     event.preventDefault();
     setScriptOutput("");
+    setErrorMessage("");
 
-    // Check if the input contains <script> tags
     if (
-      searchQuery.trim().startsWith("<script>") &&
-      searchQuery.trim().endsWith("</script>")
+      searchQuery.toLowerCase().includes("<script>") ||
+      searchQuery.toLowerCase().includes("</script>")
     ) {
-      const code = searchQuery.replace("<script>", "").replace("</script>", "");
-
-      try {
-        // Use eval to run the script inside the <script> tags
-        const result = eval(code);
-        setScriptOutput(
-          result !== undefined
-            ? result.toString()
-            : "Script executed without output."
-        );
-      } catch (err) {
-        setScriptOutput(`Error: ${err.message}`);
-      }
+      setErrorMessage("No search allowed for scripts or malicious inputs.");
+      setScriptOutput(searchQuery);
     } else {
-      // Normal search functionality
       const filtered = cards.filter(
         (card) =>
           card.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -85,33 +72,41 @@ export default function Third_lab() {
       );
 
       setFilteredCards(filtered);
-      // If no cards matched, reset the script output
+      setHasSearched(true);
+
       if (filtered.length === 0) {
-        setScriptOutput("No data found");
+        setScriptOutput(`No data found. "${searchQuery}"`);
       }
     }
+  };
+
+  const reloadPage = () => {
+    window.location.reload();
   };
 
   return (
     <>
       <Header />
-      {/* Start Courses */}
       <div className="course-First_lab">
         <div className="container-First_lab">
-          {/* Search Form */}
+          {errorMessage && (
+            <div className="error-message">
+              <p>{errorMessage}</p>
+            </div>
+          )}
+
           <form className="search" onSubmit={handleSearch}>
             <input
               type="text"
               placeholder="Search for a practice"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)} // Update search query on input change
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button type="submit">
               <i className="fa-solid fa-search"></i>
             </button>
           </form>
 
-          {/* Render Cards or "No data found" message */}
           <div className="row-practice">
             {filteredCards.length > 0 ? (
               filteredCards.map((card) => (
@@ -127,15 +122,23 @@ export default function Third_lab() {
               <h1>No data found</h1>
             )}
           </div>
+
           {scriptOutput && (
             <div className="script-output">
               <h2>Script Output:</h2>
               <pre>{scriptOutput}</pre>
             </div>
           )}
+
+          {hasSearched && (
+            <div className="reload-container">
+              <button onClick={reloadPage} className="reload-button">
+                Back
+              </button>
+            </div>
+          )}
         </div>
       </div>
-      {/* End Course Content */}
       <Footer />
     </>
   );
