@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Third_lab.css";
 import Header from "../../../Header/Header";
 import image_1 from "../../../assets/img/practical_lab2/image_1.png";
@@ -49,38 +49,49 @@ export default function Third_lab() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredCards, setFilteredCards] = useState(cards);
-  const [scriptOutput, setScriptOutput] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
 
   const handleSearch = (event) => {
     event.preventDefault();
-    setScriptOutput("");
     setErrorMessage("");
+    setAlertMessage("");
 
-    if (
-      searchQuery.toLowerCase().includes("<script>") ||
-      searchQuery.toLowerCase().includes("</script>")
-    ) {
-      setErrorMessage("No search allowed for scripts or malicious inputs.");
-      setScriptOutput(searchQuery);
-    } else {
-      const filtered = cards.filter(
-        (card) =>
-          card.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          card.content.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+    const newUrl = `?query=${encodeURIComponent(searchQuery)}`;
+    window.history.pushState(null, "", newUrl);
 
-      setFilteredCards(filtered);
-      setHasSearched(true);
+    const filtered = cards.filter(
+      (card) =>
+        card.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        card.content.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
-      if (filtered.length === 0) {
-        setScriptOutput(`No data found. "${searchQuery}"`);
-      }
+    setFilteredCards(filtered);
+    setHasSearched(true);
+
+    // if (filtered.length === 0) {
+    //   if (searchQuery.includes('"')) {
+    //     setAlertMessage(`Potential XSS: "${searchQuery}"`);
+    //   }
+    //   setErrorMessage(`No data found for: "${searchQuery}"`);
+    // }
+
+    // Check for XSS input
+    if (searchQuery.includes('"')) {
+      alert(`Alert triggered by input: "${searchQuery}"`);
     }
   };
 
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search).get("query");
+    if (query) {
+      setSearchQuery(query);
+    }
+  }, [hasSearched]);
+
   const reloadPage = () => {
+    window.history.replaceState({}, document.title, window.location.pathname);
     window.location.reload();
   };
 
@@ -92,6 +103,12 @@ export default function Third_lab() {
           {errorMessage && (
             <div className="error-message">
               <p>{errorMessage}</p>
+            </div>
+          )}
+
+          {alertMessage && (
+            <div className="alert-message">
+              <p>{alertMessage}</p>
             </div>
           )}
 
@@ -107,6 +124,17 @@ export default function Third_lab() {
             </button>
           </form>
 
+          {hasSearched && !errorMessage && (
+            <p className="search-result">You searched for: "{searchQuery}"</p>
+          )}
+
+          {/* Hidden XSS demonstration image */}
+          <img
+            src={`data:image/png;base64,${btoa('"><svg onload=alert(1)>')}`}
+            alt="XSS Demonstration"
+            style={{ display: "none" }}
+          />
+
           <div className="row-practice">
             {filteredCards.length > 0 ? (
               filteredCards.map((card) => (
@@ -119,16 +147,11 @@ export default function Third_lab() {
                 </div>
               ))
             ) : (
-              <h1>No data found</h1>
+              <h1 className="serached_text">
+                No data found for: "{searchQuery}"
+              </h1>
             )}
           </div>
-
-          {scriptOutput && (
-            <div className="script-output">
-              <h2>Script Output:</h2>
-              <pre>{scriptOutput}</pre>
-            </div>
-          )}
 
           {hasSearched && (
             <div className="reload-container">

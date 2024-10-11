@@ -157,3 +157,17 @@
   outline: none;
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
 }
+.search-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.serached_text {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hidden {
+  display: none;
+}

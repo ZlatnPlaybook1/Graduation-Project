@@ -35,7 +35,7 @@ import CookiesFirstSupport from "./Pages/Website/UserHome/Labs/Cookies/practical
 import CookiesSecondlogin from "./Pages/Website/UserHome/Labs/Cookies/practical/second_lab/Login_page.jsx";
 import CookiesSecondAdmin from "./Pages/Website/UserHome/Labs/Cookies/practical/second_lab/Admin.jsx";
 import CookiesSecondSupport from "./Pages/Website/UserHome/Labs/Cookies/practical/second_lab/Support.jsx";
-import RequireBack from "./Pages/Auth/RequireBack.jsx";
+// import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
 import SQLInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/SQLInjection_lab.jsx";
@@ -46,11 +46,11 @@ function App() {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
-        <Route element={<RequireBack />}>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/authenticate" element={<Authincate />} />
-        </Route>
+        {/* <Route element={<RequireBack />}> */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/authenticate" element={<Authincate />} />
+        {/* </Route> */}
         <Route path="/*" element={<Error404 />} />
 
         {/* Home - Labs - Routes */}
