@@ -51,12 +51,18 @@ export default function First_lab() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredCards, setFilteredCards] = useState(cards);
   const [scriptOutput, setScriptOutput] = useState("");
-  const [htmlOutput, setHtmlOutput] = useState(""); // New state to hold HTML output
+  const [htmlOutput, setHtmlOutput] = useState("");
+  const [hasSearched, setHasSearched] = useState(false);
+  const [isHTML, setIShtml] = useState(false);
 
+
+
+  
   const handleSearch = (event) => {
     event.preventDefault();
     setScriptOutput("");
     setHtmlOutput("");
+    setHasSearched(true);
 
     // Check if the input contains <script> tags for JavaScript
     if (
@@ -67,24 +73,27 @@ export default function First_lab() {
       try {
         // Use eval to run the script inside the <script> tags
         const result = eval(code);
+        console.log(result);
         setScriptOutput(
           result !== undefined
             ? result.toString()
-            : "Script executed without output."
+            : "Script executed"
         );
       } catch (err) {
         setScriptOutput(`Error: ${err.message}`);
       }
     }
-    // Check if the input contains HTML tags like <div> or <p> for HTML rendering
+    
     else if (
       searchQuery.trim().startsWith("<") &&
       searchQuery.trim().endsWith(">")
     ) {
       setHtmlOutput(searchQuery);
+      setIShtml(true);
     }
     // Normal search functionality
     else {
+      setIShtml(false);
       const filtered = cards.filter(
         (card) =>
           card.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -119,15 +128,23 @@ export default function First_lab() {
 
           {/* Render Cards or "No data found" message */}
           <div className="row-practice">
-            <h1
-              className="html-output"
-            >
+            {hasSearched &&(
+              <p className="html-output">
               Your Search Result: "
-              <span
-                dangerouslySetInnerHTML={{ __html: htmlOutput || searchQuery }}
-              ></span>
+              {scriptOutput ? (
+                <span>
+                  <span>{scriptOutput}</span>
+                </span>
+              ):isHTML ? (
+                <span
+                dangerouslySetInnerHTML={{ __html: htmlOutput }}
+                ></span>
+              ):(
+                <span>{searchQuery}</span>
+              )}
               "{" "}
-            </h1>
+            </p>
+              )}
             {filteredCards.length > 0 ? (
               filteredCards.map((card) => (
                 <div className="card-First_lab" key={card.id}>
