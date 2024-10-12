@@ -28,8 +28,8 @@ export async function getUserById(req: Request, res: Response): Promise<Response
 
         return res.status(200).json({
             msg: "User found",
-             data: {email: user.email, name: user.name, role: user.role}
-         });
+            data: {email: user.email, name: user.name, role: user.role}
+        });
 
     } catch (error) {
         console.error('Error getting user:', error);
@@ -47,7 +47,7 @@ export async function createNewUser(req: Request, res: Response): Promise<Respon
                 password: hashedPassword,
                 name,
                 role,
-                isVerified:true,
+                isVerified: true,
             }
         });
         return res.status(201).json({
@@ -142,7 +142,18 @@ export async function getUserByToken(req: Request, res: Response): Promise<Respo
 
         const user = await prisma.user.findUnique({
             where: {id: userId},
-            select: {email: true, name: true, role: true, id: true},
+            select: {
+                id: true,
+                email: true,
+                name: true,
+                role: true,
+                isVerified: true,
+                createdAt: true,
+                updatedAt: true,
+                birthday: true,
+                phoneNum: true,
+                address: true,
+            },
         });
 
         if (!user) {
@@ -158,4 +169,44 @@ export async function getUserByToken(req: Request, res: Response): Promise<Respo
         console.error('Error verifying token:', error);
         return res.status(401).json({error: "Invalid or expired token"});
     }
+}
+
+export async function personalInfo(req: Request, res: Response): Promise<Response> {
+    const token = req.headers.authorization?.split(' ')[1]; // Extract token from "Bearer <token>"
+
+    if (!token) {
+        return res.status(401).json({error: "Authorization token is required"});
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET) as { id: string };
+        const userId = decoded.id;
+
+        const existName = await prisma.user.findUnique({
+            where: {name: req.body.name},
+        });
+        if (existName) {
+            console.log(existName);
+            return res.status(422).json({error: "Name already exist"});
+        }
+
+        const user = await prisma.user.update({
+            where: {id: userId},
+            data: {
+                name: req.body.name,
+                birthday: req.body.birthday,
+                phoneNum: req.body.phone,
+                address: req.body.address,
+            },
+        });
+        return res.status(200).json({
+            msg: "User updated successfully",
+            data: user
+        });
+
+    } catch (error) {
+        console.error('Error getting user:', error);
+        return res.status(500).json({error: " server error"});
+    }
+
 }
