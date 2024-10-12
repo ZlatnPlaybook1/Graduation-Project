@@ -4,9 +4,11 @@ import Cookie from "cookie-universal";
 import "./Writer.css";
 
 export default function Writer() {
+  // Cookies
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
 
+  // Handle Form State
   const [formData, setFormData] = useState({
     name: "",
     age: "",
@@ -14,10 +16,14 @@ export default function Writer() {
     address: "",
     phone: "",
     email: "",
-    image: null,
+    image: "",
   });
-  const [imagePreview, setImagePreview] = useState("");
 
+  const [imagePreview, setImagePreview] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState("");
+
+  // Calculate Age from Birthday
   const calculateAge = (birthday) => {
     const birthDate = new Date(birthday);
     const difference = Date.now() - birthDate.getTime();
@@ -25,6 +31,7 @@ export default function Writer() {
     return Math.abs(ageDate.getUTCFullYear() - 1970);
   };
 
+  // Handle Change for Form Inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === "birthday") {
@@ -42,44 +49,50 @@ export default function Writer() {
     }
   };
 
+  // Convert Image to Base64
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setFormData((prevData) => ({
-        ...prevData,
-        image: file,
-      }));
-      setImagePreview(URL.createObjectURL(file));
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData((prevData) => ({
+          ...prevData,
+          image: reader.result, // Base64 encoded image
+        }));
+        setImagePreview(reader.result); // Preview the image
+      };
+      reader.readAsDataURL(file);
     }
   };
 
+  // Handle Form Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, age, birthday, address, phone, email, image } = formData;
-
-    const data = new FormData();
-    data.append("name", name);
-    data.append("age", age);
-    data.append("birthday", birthday);
-    data.append("address", address);
-    data.append("phone", phone);
-    data.append("email", email);
-    data.append("image", image);
+    setLoading(true);
+    setErr("");
 
     try {
-      await axios.post("http://127.0.0.1:8080/api/dataUser", data, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      alert("Data submitted successfully!");
+      const res = await axios.post(
+        "http://127.0.0.1:8080/api/dataUser",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log("Response:", res);
+      setLoading(false);
     } catch (error) {
-      console.error("Error submitting data:", error);
+      setLoading(false);
+      setErr("Error submitting data");
+      console.error("Error:", error);
     }
   };
 
   return (
     <div className="writer-form">
+      {loading && <p>Loading...</p>}
       {imagePreview && (
         <div className="image-preview">
           <img src={imagePreview} alt="Preview" />
@@ -148,12 +161,16 @@ export default function Writer() {
           />
         </div>
         <div>
-          <label className="margin-image">Image:</label>
-          <input type="file" onChange={handleImageChange} required />
+          <label>Image:</label>
+          <input
+            type="file"
+            name="image"
+            onChange={handleImageChange}
+            required
+          />
         </div>
-        <button className="margin-submit" type="submit">
-          Submit
-        </button>
+        <button type="submit">Submit</button>
+        {err && <p className="error">{err}</p>}
       </form>
     </div>
   );
