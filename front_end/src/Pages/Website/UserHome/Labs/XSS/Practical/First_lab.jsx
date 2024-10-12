@@ -7,8 +7,6 @@ import image_3 from "../../../assets/img/practical_lab2/image_3.png";
 import image_4 from "../../../assets/img/practical_lab2/image_4.png";
 import image_5 from "../../../assets/img/practical_lab2/image_5.png";
 import Footer from "../../../Footer/Footer";
-import { faAlignCenter } from "@fortawesome/free-solid-svg-icons";
-
 export default function First_lab() {
   // Step 1: Define the card data in an array
   const cards = [
