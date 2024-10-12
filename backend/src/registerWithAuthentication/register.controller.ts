@@ -35,7 +35,8 @@ class RegistrationController {
                 where: {name}
             });
 
-            if (existingEmail&& existingName.isVerified) {
+            if (existingName&& existingName.isVerified) {
+                console.log("Name already exists");
                 return res.status(409).json({data: "Name already exists"});
             }
 
