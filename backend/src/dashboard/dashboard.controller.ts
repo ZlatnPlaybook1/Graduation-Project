@@ -182,10 +182,21 @@ export async function personalInfo(req: Request, res: Response): Promise<Respons
         const decoded = jwt.verify(token, process.env.JWT_SECRET) as { id: string };
         const userId = decoded.id;
 
+        const existName = await prisma.user.findUnique({
+            where: {name: req.body.name},
+        });
+        if (existName) {
+            console.log(existName);
+            return res.status(422).json({error: "Name already exist"});
+        }
+
         const user = await prisma.user.update({
             where: {id: userId},
             data: {
-                ...req.body,
+                name: req.body.name,
+                birthday: req.body.birthday,
+                phoneNum: req.body.phone,
+                address: req.body.address,
             },
         });
         return res.status(200).json({
