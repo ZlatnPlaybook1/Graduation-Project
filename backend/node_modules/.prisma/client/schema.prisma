@@ -25,7 +25,7 @@ model User {
   role             Role              @default(writer)
   validationNumber ValidationNumber?
   token            String?
-  birthday         DateTime?
+  birthday         String?
   address          String?
   phoneNum         String?
 }

@@ -15,7 +15,6 @@ export default function Writer() {
     birthday: "",
     address: "",
     phone: "",
-    email: "",
     image: "",
   });
 
@@ -57,9 +56,9 @@ export default function Writer() {
       reader.onloadend = () => {
         setFormData((prevData) => ({
           ...prevData,
-          image: reader.result, // Base64 encoded image
+          image: reader.result,
         }));
-        setImagePreview(reader.result); // Preview the image
+        setImagePreview(reader.result);
       };
       reader.readAsDataURL(file);
     }
@@ -146,16 +145,6 @@ export default function Writer() {
             type="tel"
             name="phone"
             value={formData.phone}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Email Address:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
             onChange={handleChange}
             required
           />
