@@ -21,6 +21,7 @@ import WITH_STOCK from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/se
 import PRICES_EXP from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/third_lab/Prices_exp.jsx";
 import SHOW_PRICES from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/third_lab/Show_prices.jsx";
 import FINISH_TEST from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/third_lab/Finish_test.jsx";
+import FOURTH_LAB_SQL from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/fourth_lab/Prices_exp_fourth.jsx";
 import XSS from "./Pages/Website/UserHome/Labs/XSS/XSS.jsx";
 import XSS_LAB from "./Pages/Website/UserHome/Labs/XSS/XSS_lab.jsx";
 import XSS_FIRST from "./Pages/Website/UserHome/Labs/XSS/Practical/First_lab.jsx";
@@ -93,6 +94,10 @@ function App() {
           <Route
             path="/Sql_Injection/sql_Injection_lab/third_lab/show-prices'+union+select+null,+null,+null--"
             element={<FINISH_TEST />}
+          />
+          <Route
+            path="/Sql_Injection/sql_Injection_lab/fourth_lab"
+            element={<FOURTH_LAB_SQL />}
           />
           {/* End Sql_Injection */}
           <Route path="/xss" element={<XSS />} />

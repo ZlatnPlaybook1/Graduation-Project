@@ -8,7 +8,7 @@
 }
 
 
-.container-Prices_exp {
+.container-Prices_exp_fourth {
   margin-left: auto;
   margin-right: auto;
 }
@@ -16,7 +16,7 @@
 
 /* Extra small */
 @media (min-width: 0px) {
-  .container-Prices_exp {
+  .container-Prices_exp_fourth {
     max-width: 100%;
   }
 }
@@ -24,7 +24,7 @@
 
 /* small */
 @media (min-width: 576px) {
-  .container-Prices_exp {
+  .container-Prices_exp_fourth {
     max-width: 540px;
   }
 }
@@ -32,57 +32,57 @@
 
 /*  Medium */
 @media (min-width: 768px) {
-  .container-Prices_exp {
+  .container-Prices_exp_fourth {
     max-width: 750px;
   }
 }
 
 /* Large */
 @media (min-width: 991px) {
-  .container-Prices_exp {
+  .container-Prices_exp_fourth {
     max-width: 970px;
   }
 }
 
 /* X-Large */
 @media (min-width: 1200px) {
-  .container-Prices_exp {
+  .container-Prices_exp_fourth {
     max-width: 1170px;
   }
 }
 
 /* Start Course  */
-.course-Prices_exp {
+.course-Prices_exp_fourth {
   padding: 70px 0;
 }
 
-.course-Prices_exp .container-Prices_exp {
+.course-Prices_exp_fourth .container-Prices_exp_fourth {
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
 }
 
-.faq-section-Prices_exp {
+.faq-section-Prices_exp_fourth {
   margin-top: 75px !important;
   display: block !important;
   width: 100% !important;
 }
 
 @media (max-width: 991px) {
-  .faq-section-Prices_exp .section-text-Prices_exp {
+  .faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth {
     margin-left: 0 !important;
   }
 
-  .faq-section-Prices_exp .image {
+  .faq-section-Prices_exp_fourth .image {
     display: none !important;
   }
 }
 
-.faq-item-Prices_exp {
+.faq-item-Prices_exp_fourth {
   margin-bottom: 30px !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-header-Prices_exp {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-header-Prices_exp_fourth {
   border-radius: 5px 5px 0 0 !important;
   color: white !important;
   background-color: #212c42 !important;
@@ -98,18 +98,18 @@
 }
 
 @media (max-width: 991px) {
-  .faq-section-Prices_exp .section-text-Prices_exp .faq-header-Prices_exp {
+  .faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-header-Prices_exp_fourth {
     font-size: 16px !important;
   }
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-header-Prices_exp span {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-header-Prices_exp_fourth span {
   color: var(--sec-main-color) !important;
   margin-right: 40px !important;
   position: relative !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-header-Prices_exp span::after {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-header-Prices_exp_fourth span::after {
   content: "" !important;
   width: 10px !important;
   height: 10px !important;
@@ -122,7 +122,7 @@
   transform: translateY(-50%) !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth {
   font-size: 18px !important;
   padding: 15px 25px !important;
   line-height: 1.9 !important;
@@ -134,12 +134,12 @@
 }
 
 @media (max-width: 991px) {
-  .faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp {
+  .faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth {
     font-size: 14px !important;
   }
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp img {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth img {
   width: 25% !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -147,31 +147,31 @@
   margin-bottom: 30px !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp ul li {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth ul li {
   list-style: "- " !important;
   margin-bottom: 10px !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp ol li {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth ol li {
   list-style: decimal !important;
   margin-bottom: 10px !important;
   font-size: 18px !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp ul li a {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth ul li a {
   color: var(--sec-main-color) !important;
   text-decoration: underline !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp ul li span {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth ul li span {
   color: blue !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp li h2 {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth li h2 {
   color: var(--sec-main-color) !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp ul pre {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth ul pre {
   padding: 25px 20px !important;
   margin: 15px 0 !important;
   border-radius: 0 !important;
@@ -182,19 +182,19 @@
   word-wrap: break-word !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp ul pre code {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth ul pre code {
   display: flex !important;
   align-items: start !important;
   flex-direction: column !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp ul pre span {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth ul pre span {
   color: green !important;
   display: inline !important;
   white-space: normal !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp form {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth form {
   margin-top: 30px !important;
   display: flex !important;
   justify-content: space-between !important;
@@ -202,7 +202,7 @@
   flex-direction: row !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp form input {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth form input {
   flex: 3 1 0% !important;
   padding: 7px 12px !important;
   width: 100% !important;
@@ -216,7 +216,7 @@
   margin-right: 20px !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp form button {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth form button {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -239,11 +239,11 @@
   transition: 0.2s ease-in-out !important;
 }
 
-.faq-section-Prices_exp .section-text-Prices_exp .faq-body-Prices_exp form button:hover:not(:disabled) {
+.faq-section-Prices_exp_fourth .section-text-Prices_exp_fourth .faq-body-Prices_exp_fourth form button:hover:not(:disabled) {
   background-color: rgb(163, 234, 42) !important;
 }
 
-.course-Prices_exp .row-practice {
+.course-Prices_exp_fourth .row-practice {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto auto;
@@ -253,7 +253,7 @@
   gap: 20px;
 }
 
-.course-Prices_exp .row-practice .store-link-sp {
+.course-Prices_exp_fourth .row-practice .store-link-sp {
   background-color: var(--sec-main-color);
   color: white;
   text-align: center;
