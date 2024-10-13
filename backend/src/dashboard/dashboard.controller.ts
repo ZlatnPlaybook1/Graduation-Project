@@ -210,3 +210,26 @@ export async function personalInfo(req: Request, res: Response): Promise<Respons
     }
 
 }
+
+export async function resetPassword(req: Request, res: Response): Promise<Response> {
+    const userId = req.params.id;
+    try {
+
+        const hashedPassword = await hashPassword(req.body.password);
+        const user = await prisma.user.update({
+            where: {id: userId},
+            data: {
+                password: hashedPassword,
+            },
+        });
+        return res.status(200).json({
+            msg: "Password updated successfully",
+            data: user
+        });
+
+    } catch
+        (error) {
+        console.error('Error getting user:', error);
+        return res.status(500).json({error: " server error"});
+    }
+}

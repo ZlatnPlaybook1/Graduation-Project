@@ -1,13 +1,14 @@
 import {Router} from "express";
 import {isAuthenticated} from "../utilities/auth";
 import {
-    getAllUsers,
-    deleteUser,
-    getUserById,
     createNewUser,
-    updateUser,
+    deleteUser,
+    getAllUsers,
+    getUserById,
     getUserByToken,
-    personalInfo
+    personalInfo,
+    resetPassword,
+    updateUser
 } from "./dashboard.controller";
 
 let dashboardRouter = Router();
@@ -17,18 +18,19 @@ dashboardRouter.get("/users", isAuthenticated, getAllUsers)
 
 dashboardRouter.get("/user/:id", isAuthenticated, getUserById)
 
-dashboardRouter.post("/user/add",isAuthenticated, createNewUser)
+dashboardRouter.post("/user/add", isAuthenticated, createNewUser)
 
 dashboardRouter.get("/currentUser/:id", getUserById)
 
-dashboardRouter.put("/user/edit/:id",updateUser )
+dashboardRouter.put("/user/edit/:id", updateUser)
 
-dashboardRouter.delete("/user/:id",deleteUser)
+dashboardRouter.delete("/user/:id", deleteUser)
 
 //user
 dashboardRouter.get("/user", isAuthenticated, getUserByToken)
 
-dashboardRouter.post("/dataUser",isAuthenticated,personalInfo )
+dashboardRouter.post("/dataUser", isAuthenticated, personalInfo)
 
+dashboardRouter.post("/reset-password",isAuthenticated,resetPassword)
 
 export default dashboardRouter;
