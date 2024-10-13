@@ -3,8 +3,6 @@ import "./Second_lab.css";
 import Header from "../../../Header/Header";
 import image_1 from "../../../assets/img/practical_lab2/image_1.png";
 import icon from "../../../assets/img/practical_lab2/icon.png";
-import axios from "axios";
-import Cookie from "cookie-universal";
 import Footer from "../../../Footer/Footer";
 
 export default function Second_lab_XSS() {
@@ -12,45 +10,107 @@ export default function Second_lab_XSS() {
     email: "",
     content: "",
   });
-  //  Navigate
-  // const navigate = useNavigate();
-  // Loading state
-  const [loading, setLoading] = useState(false);
   // Error state
+  const [comments, setComments] = useState([]);
+  const [scriptOutput, setScriptOutput] = useState("");
+  const [htmlOutput, setHtmlOutput] = useState(""); // New state to hold HTML output
   const [err, setErr] = useState("");
 
-  // Handle Form Change
-  function handleChange(e) {
-    e.preventDefault();
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
   // Handle Form Submit
-  async function handleSubmit(e) {
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const content = e.target.content.value;
+  //   const email = e.target.email.value;
+
+  //   if (
+  //     content.trim().startsWith("<script>") &&
+  //     content.trim().endsWith("</script>")
+  //   ) {
+  //     const code = content.replace("<script>", "").replace("</script>", "");
+  //     try {
+  //       // Use eval to run the script inside the <script> tags
+  //       const result = eval(code);
+  //       setScriptOutput(
+  //         result !== undefined
+  //           ? result.toString()
+  //           : "Script executed without output."
+  //       );
+  //     } catch (err) {
+  //       setScriptOutput(`Error: ${err.message}`);
+  //     }
+  //   }
+  //   // Check if the input contains HTML tags like <div> or <p> for HTML rendering
+  //   else if (content.trim().startsWith("<") && content.trim().endsWith(">")) {
+  //     setHtmlOutput(content);
+  //   }
+  //   // Normal search functionality
+  //   else {
+  //     if (content) {
+  //       setComments([...comments, { email, content }]);
+  //       e.target.reset();
+  //       setErr("");
+  //     } else {
+  //       setErr("Please enter a comment.");
+  //     }
+  //   }
+  // };
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-    setErr("");
-    try {
-      const res = await axios.post("http://127.0.0.1:8080/api/comment", form);
-      console.log(res);
-      setLoading(false);
-      // const userId = res.data.userId;
-      // cookie.set("userId", userId);
-    } catch (error) {
-      setLoading(false);
-      // if (error.response) {
-      //   if (error.response.status === 401) {
-      //     setErr("Wrong Email or Password");
-      //   } else {
-      //     setErr("Internal server error");
-      //   }
-      //   console.error(error.response.data);
-      // } else {
-      //   setErr("Network Error");
-      //   console.error(error);
-      // }
+    const content = e.target.content.value;
+    const email = e.target.email.value;
+
+    // Allow scripts if the content contains <script> tags
+    if (content.includes("<script>") && content.includes("</script>")) {
+      const scriptContent = content
+        .replace("<script>", "")
+        .replace("</script>", "");
+        const newComment = {
+          id: Date.now(), // Unique ID for each comment
+          email: email || "Anonymous", // Default email
+          content: scriptContent, // Store raw HTML content
+          isScript: true, // Flag to indicate it's Script
+        };
+        setComments((prevComments) => [...prevComments, newComment]);
+      try {
+        // Run the script in a controlled environment
+        const result = eval(scriptContent);
+        setScriptOutput(
+          result !== undefined ? result.toString() : "Script executed."
+        );
+      } catch (err) {
+        setScriptOutput(`Error: ${err.message}`);
+      }
     }
-  }
+    else if (content.startsWith("<") && content.endsWith(">")) {
+      const newComment = {
+        id: Date.now(), // Unique ID for each comment
+        email: email || "Anonymous", // Default email
+        content: content, // Store raw HTML content
+        isHTML: true, // Flag to indicate it's HTML
+      };
+      setComments((prevComments) => [...prevComments, newComment]);
+    }
+    // Allow HTML rendering by setting it directly with dangerouslySetInnerHTML
+    else {
+      if (content) {
+        const newComment = {
+          id: Date.now(), // Unique ID for each comment
+          email: email || "Anonymous", // Default email
+          content: content, // Store plain text content
+          isHTML: false, // Flag to indicate it's plain text
+        };
+        setComments((prevComments) => [...prevComments, newComment]);
+        setErr("");
+      } else {
+        setErr("Please enter a comment.");
+      }
+    }
+  
+    // Reset the form after submission
+    setForm({ email: "", content: "" });
+  };
+
   return (
     <>
       <Header />
@@ -127,25 +187,22 @@ export default function Second_lab_XSS() {
                 <textarea
                   name="content"
                   id="content"
-                  value={form.content}
-                  onChange={handleChange}
                   placeholder="Write Your Comment......"
                   required
                 ></textarea>
-                <input 
-                type="email"
-                name="email"
-                placeholder="Write Your Email"
-                value={form.email}
-                onChange={handleChange}
-                className="form_input"/>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Write Your Email"
+                  className="form_input"
+                />
                 <button type="submit">Submit</button>
-                {err !== "" && <span className="error">{err}</span>}
+                {err && <span className="error">{err}</span>}
               </form>
               <div className="comment-section">
                 <div className="comment-card">
                   <div className="comment-header">
-                    <img src={icon} className="icon"  alt="Card"/>
+                    <img src={icon} className="icon" alt="Card" />
                     <p className="name">Ebrahiem Gamal</p>
                   </div>
                   <p className="comment-text">
@@ -169,6 +226,22 @@ export default function Second_lab_XSS() {
                     numquam.
                   </p>
                 </div>
+                {comments.map((comment) => (
+                  <div key={comment.id} className="comment-card">
+                    <div className="comment-header">
+                      <img src={icon} className="icon" alt="Card" />
+                      <p className="name">{comment.email || "Anonymous"}</p>
+                    </div>
+                    {comment.isHTML ? (
+                      <p
+                        className="comment-text"
+                        dangerouslySetInnerHTML={{ __html: comment.content }}
+                      ></p>
+                    ) : (
+                      <p className="comment-text">{comment.content||  scriptOutput}</p>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

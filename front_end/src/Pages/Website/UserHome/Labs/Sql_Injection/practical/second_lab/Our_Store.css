@@ -104,7 +104,7 @@
 }
 
 .faq-section-Our_Store .section-text-Our_Store .faq-header-Our_Store span {
-  color: red !important;
+  color: var(--sec-main-color) !important;
   margin-right: 40px !important;
   position: relative !important;
 }
@@ -126,7 +126,7 @@
   font-size: 18px !important;
   padding: 15px 25px !important;
   line-height: 1.9 !important;
-  border-left: 4px solid red !important;
+  border-left: 4px solid var(--sec-main-color) !important;
   box-shadow: 1px 2px rgb(0, 0, 0, 0.1) !important;
   border-radius: 0 0 5px 5px !important;
   background-color: white !important;
@@ -157,7 +157,7 @@
   font-size: 18px !important;
 }
 .faq-section-Our_Store .section-text-Our_Store .faq-body-Our_Store ul li a {
-  color: #ff4747 !important;
+  color: var(--sec-main-color) !important;
   text-decoration: underline !important;
 }
 
@@ -166,7 +166,7 @@
 }
 
 .faq-section-Our_Store .section-text-Our_Store .faq-body-Our_Store li h2 {
-  color: #ff4747 !important;
+  color: var(--sec-main-color) !important;
 }
 
 .faq-section-Our_Store .section-text-Our_Store .faq-body-Our_Store ul pre {

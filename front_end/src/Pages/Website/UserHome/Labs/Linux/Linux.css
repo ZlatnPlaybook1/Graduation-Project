@@ -1,0 +1,474 @@
+:root {
+  --main-color: #212c42;
+  --sec-main-color: #a3ea2a;
+  --alt-color: #151c2b;
+  --font-color: rgba(255, 255, 255, 0.5);
+  --font-color-hover: rgba(255, 255, 255, 0.75);
+  --main-transition: 0.5s;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 15px;
+}
+.container-Linux {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Extra small */
+@media (min-width: 0px) {
+  .container-Linux {
+      max-width: 100%;
+  }
+}
+
+
+/* small */
+@media (min-width: 576px) {
+  .container-Linux {
+      max-width: 540px;
+  }
+}
+
+
+/*  Medium */
+@media (min-width: 768px) {
+  .container-Linux {
+      max-width: 750px;
+  }
+}
+
+/* Large */
+@media (min-width: 992px) {
+  .container-Linux {
+      max-width: 970px;
+  }
+}
+
+/* X-Large */
+@media (min-width: 1200px) {
+  .container-Linux {
+      max-width: 1170px;
+  }
+}
+/* Start Landing */
+.landing-Linux {
+  height: auto;
+  position: relative;
+  background-color: var(--alt-color);
+  isolation: isolate;
+  z-index: 3;
+}
+
+.landing-Linux .banner-Linux {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.landing-Linux .banner-Linux::after {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  z-index: 1;
+  height: 100%;
+  background: linear-gradient(to right, var(--alt-color) 30%, rgba(21, 28, 43, 0.98) 50%, transparent 100%);
+}
+
+.landing-Linux .banner-Linux img {
+  position: absolute;
+  left: 30%;
+}
+
+.landing-Linux .container-Linux {
+  padding: 24px 12px;
+}
+
+.landing-Linux .breadcrumb-Linux ul {
+  display: flex;
+  gap: .5rem;
+
+}
+
+.landing-Linux .breadcrumb-Linux ul li:first-of-type::before {
+  content: "";
+}
+
+.landing-Linux .breadcrumb-Linux ul li::before {
+  content: ">";
+  color: rgb(184, 190, 201);
+  padding-right: 5px;
+}
+
+.landing-Linux .breadcrumb-Linux ul li a {
+  font-size: 12px;
+  color: rgb(184, 190, 201);
+  padding: 0;
+  margin: 0;
+}
+
+.landing-Linux .breadcrumb-Linux ul li span.active-breadcrumb-Linux {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  color: rgb(99, 110, 129);
+}
+
+.landing-Linux .breadcrumb-Linux ul li a:hover {
+  text-decoration: underline;
+}
+
+.landing-Linux .course-info-Linux {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.landing-Linux .course-info-Linux img {
+  width: 90px;
+}
+
+.landing-Linux .course-info-Linux .course-text-Linux {
+  margin-left: 20px;
+}
+
+.landing-Linux .course-info-Linux .course-text-Linux p {
+  margin-top: 5px;
+  font-size: 12px;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.landing-Linux .course-info-Linux .course-icons-Linux {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.landing-Linux .course-info-Linux .course-icons-Linux i.fa-signal.for-Linux {
+  color: green;
+}
+
+.landing .course-info .course-icons i.fa-signal+p {
+  display: inline-block;
+  color: green;
+}
+
+.landing-Linux .course-info-Linux .course-icons-Linux .diff-Linux,
+.landing-Linux .course-info-Linux .course-icons-Linux .duration-Linux {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.landing-Linux .course-info-Linux .course-icons-Linux i.fa-clock.for-Linux+p {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.landing-Linux .options-Linux {
+  display: flex;
+  justify-content: start;
+  gap: 12px;
+  align-items: center;
+  flex-direction: row;
+}
+
+.landing-Linux .options-Linux .like-Linux {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid rgb(62, 71, 90);
+  border-radius: 4px;
+}
+
+.landing-Linux .options-Linux button {
+  background-color: var(--alt-color);
+  border-color: rgb(62, 71, 90);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  max-width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  gap: 6px;
+  height: 36px;
+  padding: 9px 16px;
+  pointer-events: initial;
+  border-width: 1px;
+  border-style: solid;
+  transition: var(--main-transition);
+}
+
+.landing-Linux .options-Linux button:hover {
+  background-color: white;
+  color: var(--alt-color);
+}
+
+.landing-Linux .options-Linux .like.for-Linux button {
+  border-radius: 4px 0px 0px 4px;
+  border: none;
+}
+.landing-Linux .options-Linux button p{
+  margin: 0;
+}
+
+.landing-Linux .options-Linux .like-Linux button:first-of-type {
+  border-right: 1px solid rgb(62, 71, 90);
+}
+
+/* End Landing */
+/* Start Course Content */
+.course-Linux .row-Linux {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+
+
+.course-Linux .course-section-Linux {
+  background-color: inherit;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.faq-section-Linux {
+  margin-top: 75px;
+  display: block;
+  width: 100%;
+}
+
+
+@media (max-width: 991px) {
+  .faq-section-Linux .section-text-Linux {
+      margin-left: 0;
+  }
+
+  .faq-section-Linux .image-Linux {
+      display: none;
+  }
+}
+
+.faq-item-Linux {
+  margin-bottom: 30px;
+}
+
+.faq-section-Linux .section-text-Linux .faq-header-Linux {
+  border-radius: 5px 5px 0 0;
+  color: white;
+  background-color: #212c42;
+  font-size: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  line-height: 20px;
+  padding: 10px 25px;
+  font-weight: lighter;
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (max-width: 991px) {
+  .faq-section-Linux .section-text-Linux .faq-header-Linux {
+      font-size: 16px;
+  }
+}
+
+.faq-section-Linux .section-text-Linux .faq-header-Linux span {
+  color: var(--sec-main-color);
+  margin-right: 40px;
+  position: relative;
+}
+
+.faq-section-Linux .section-text-Linux .faq-header-Linux span::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 1px solid #777;
+  border-radius: 50%;
+  position: absolute;
+  right: -45%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.faq-section-Linux .section-text-Linux .faq-body-Linux {
+  font-size: 18px;
+  padding: 15px 25px;
+  line-height: 1.9;
+  border-left: 4px solid var(--sec-main-color);
+  box-shadow: 1px 2px rgb(0, 0, 0, .1);
+  border-radius: 0 0 5px 5px;
+  background-color: white;
+  color: rgb(21, 28, 43);
+}
+
+@media (max-width: 991px) {
+  .faq-section-Linux .section-text-Linux .faq-body-Linux {
+      font-size: 14px;
+  }
+}
+
+.faq-section-Linux .section-text-Linux .faq-body-Linux img {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  display: inherit;
+  margin-bottom: 30px;
+}
+
+.faq-section-Linux .section-text-Linux .faq-body-Linux ul li {
+  list-style: "- ";
+  margin-bottom: 10px;
+}
+
+.faq-section-Linux .section-text-Linux .faq-body-Linux ol li {
+  list-style: decimal;
+  margin-bottom: 10px;
+  font-size: 14px;
+  /* font-weight: lighter; */
+}
+
+.faq-section-Linux .section-text-Linux .faq-body-Linux ul li a {
+  color: var(--sec-main-color);
+  text-decoration: underline;
+}
+
+.faq-section-Linux .section-text-Linux .faq-body-Linux ul li span {
+  color: blue;
+}
+
+.faq-section-Linux .section-text-Linux .faq-body-Linux li h2 {
+  color: var(--sec-main-color);
+}
+
+.faq-section-Linux .section-text-Linux .faq-body-Linux ul pre {
+  padding: 25px 20px;
+  margin: 15px 0;
+  border-radius: 0;
+  border: none;
+  background-color: #272822;
+  text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.faq-section-Linux .section-text-Linux .faq-body-Linux ul pre code {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+.faq-section-Linux .section-text-Linux .faq-body-Linux ul pre span {
+  color: green;
+  display: inline;
+  white-space: normal;
+}
+
+.faq-section-Linux .section-text-Linux .faq-body-Linux .question {
+  border-top: 2px solid #ddd;
+  padding-top: 20px;
+}
+.faq-section-Linux .section-text-Linux .faq-body-Linux form {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.faq-section-Linux .section-text-Linux .faq-body-Linux form input {
+  flex: 3 1 0%;
+  padding: 7px 12px;
+  width: 100%;
+  height: auto;
+  font-size: 16px;
+  color: rgb(28, 37, 56);
+  border-radius: 5px;
+  background-color: white;
+  outline: none;
+  border: 0.1rem solid rgb(212, 216, 223);
+  margin-right: 20px;
+}
+
+.faq-section-Linux .section-text-Linux .faq-body-Linux form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0%;
+  cursor: pointer;
+  gap: 6px;
+  height: 36px;
+  min-width: 300px;
+  border-radius: 5px;
+  max-width: 100%;
+  font-size: 16px;
+  padding: 7px 16px;
+  text-decoration: none;
+  pointer-events: initial;
+  border-width: 1px;
+  border-style: solid;
+  background-color: transparent;
+  color: rgb(21, 28, 43);
+  border-color: rgb(163, 234, 42);
+  transition: 0.2s ease-in-out;
+}
+
+.faq-section-Linux .section-text-Linux .faq-body-Linux form button:hover:not(:disabled) {
+  background-color: rgb(163, 234, 42);
+}
+
+.go-to-section-Linux {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.go-to-Linux {
+  margin-top: 50px;
+  border-radius: 5px;
+  max-width: 100%;
+  font-size: 16px;
+  padding: 7px 16px;
+  background-color: transparent;
+  color: rgb(21, 28, 43);
+  border: 1px solid rgb(163, 234, 42);
+  transition: var(--main-transition);
+}
+
+.go-to-Linux:hover {
+  background-color: rgb(163, 234, 42);
+}
+
+/* End Course Content */
