@@ -36,6 +36,8 @@ import CookiesFirstSupport from "./Pages/Website/UserHome/Labs/Cookies/practical
 import CookiesSecondlogin from "./Pages/Website/UserHome/Labs/Cookies/practical/second_lab/Login_page.jsx";
 import CookiesSecondAdmin from "./Pages/Website/UserHome/Labs/Cookies/practical/second_lab/Admin.jsx";
 import CookiesSecondSupport from "./Pages/Website/UserHome/Labs/Cookies/practical/second_lab/Support.jsx";
+import Linux from "./Pages/Website/UserHome/Labs/Linux/Linux.jsx";
+import LINUX_LAB from "./Pages/Website/UserHome/Labs/Linux/Linux_lab.jsx";
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
@@ -137,6 +139,14 @@ function App() {
           <Route
             path="/cookies/cookies_lab/second/support"
             element={<CookiesSecondSupport />}
+          />
+          <Route
+            path="/linux"
+            element={<Linux />}
+          />
+          <Route
+            path="/linux/linux_lab"
+            element={<LINUX_LAB />}
           />
           {/* Cookies */}
         </Route>
