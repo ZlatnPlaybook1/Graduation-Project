@@ -21,6 +21,7 @@ import WITH_STOCK from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/se
 import PRICES_EXP from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/third_lab/Prices_exp.jsx";
 import SHOW_PRICES from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/third_lab/Show_prices.jsx";
 import FINISH_TEST from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/third_lab/Finish_test.jsx";
+import FOURTH_LAB_SQL from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/fourth_lab/Prices_exp_fourth.jsx";
 import XSS from "./Pages/Website/UserHome/Labs/XSS/XSS.jsx";
 import XSS_LAB from "./Pages/Website/UserHome/Labs/XSS/XSS_lab.jsx";
 import XSS_FIRST from "./Pages/Website/UserHome/Labs/XSS/Practical/First_lab.jsx";
@@ -35,6 +36,12 @@ import CookiesFirstSupport from "./Pages/Website/UserHome/Labs/Cookies/practical
 import CookiesSecondlogin from "./Pages/Website/UserHome/Labs/Cookies/practical/second_lab/Login_page.jsx";
 import CookiesSecondAdmin from "./Pages/Website/UserHome/Labs/Cookies/practical/second_lab/Admin.jsx";
 import CookiesSecondSupport from "./Pages/Website/UserHome/Labs/Cookies/practical/second_lab/Support.jsx";
+import Linux from "./Pages/Website/UserHome/Labs/Linux/Linux.jsx";
+import LINUX_LAB from "./Pages/Website/UserHome/Labs/Linux/Linux_lab.jsx";
+
+
+import Expression from "./Pages/Website/UserHome/Labs/Reg_expressions/Expression.jsx";
+import EXPRESSION_LAB from "./Pages/Website/UserHome/Labs/Reg_expressions/Expression_lab.jsx";
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
@@ -102,6 +109,10 @@ function App() {
             path="/Sql_Injection/sql_Injection_lab/third_lab/show-prices'+union+select+null,+null,+null--"
             element={<FINISH_TEST />}
           />
+          <Route
+            path="/Sql_Injection/sql_Injection_lab/fourth_lab"
+            element={<FOURTH_LAB_SQL />}
+          />
           {/* End Sql_Injection */}
           <Route path="/xss" element={<XSS />} />
           <Route path="/xss/xss_lab" element={<XSS_LAB />} />
@@ -166,7 +177,24 @@ function App() {
             path="/cookies/cookies_lab/second/support"
             element={<CookiesSecondSupport />}
           />
-          {/* Cookies */}
+          <Route
+            path="/linux"
+            element={<Linux />}
+          />
+          <Route
+            path="/linux/linux_lab"
+            element={<LINUX_LAB />}
+          />
+          {/* End Linux */}
+          <Route
+            path="/regular-expression"
+            element={<Expression />}
+          />
+          <Route
+            path="/regular-expression/expression_lab"
+            element={<EXPRESSION_LAB />}
+          />
+          {/* End Regular Expressions */}
         </Route>
         {/* End Routes of Labs */}
 

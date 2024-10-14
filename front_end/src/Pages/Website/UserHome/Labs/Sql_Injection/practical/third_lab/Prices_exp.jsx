@@ -45,56 +45,28 @@ export default function Prices_exp() {
             <div className="faq-section-Prices_exp" ref={faqSectionRef}>
               <dl className="section-text-Prices_exp">
                 <dt className="wave-Prices_exp fadeInUp faq-header-Prices_exp">
-                  <span>Task 1</span> SQL injection UNION attacks
+                  SQL injection UNION attacks
                 </dt>
                 <dd className="fadeInUp faq-body-Prices_exp">
                   <ul>
                     <li>
-                      When an application is vulnerable to SQL injection, and
-                      the results of the query are returned within the
-                      application's responses, you can use the{" "}
-                      <span>UNION</span> keyword to retrieve data from other
-                      tables within the database. This is commonly known as a
-                      SQL injection UNION attack.
+                      This lab contains an SQL injection vulnerability. The
+                      results of the SQL query are returned within the
+                      application's response, so you can use a UNION attack to
+                      retrieve data from other tables.
                     </li>
                     <li>
-                      The <span>UNION</span> keyword enables you to execute one
-                      or more additional <span>SELECT</span> queries and append
-                      the results to the original query. For example:
-                      <pre>
-                        <code>
-                          <span>
-                            The UNION keyword enables you to execute one or more
-                            additional SELECT queries and append the results to
-                            the original query. For example:
-                          </span>
-                        </code>
-                      </pre>
+                      The first step of such an attack is to determine the
+                      number of columns that are being returned by the query.
                     </li>
                     <li>
-                      This SQL query returns a single result set with two
-                      columns, containing values from columns <span>a</span> and{" "}
-                      <span>b</span> in table1 and columns <span>c</span> and{" "}
-                      <span>d</span> in <span>table2</span>.
+                      You will then use this technique in subsequent labs to
+                      construct the full attack.
                     </li>
-                  </ul>
-                </dd>
-                <dt className="wave-Prices_exp fadeInUp faq-header-Prices_exp">
-                  <span>Task 1</span> Determining the number of columns
-                </dt>
-                <dd className="fadeInUp faq-body-Prices_exp">
-                  <ul>
                     <li>
-                      The second method involves submitting a series of{" "}
-                      <span>UNION SELECT</span> payloads specifying a different
-                      number of null values:
-                      <pre>
-                        <code>
-                          <span>' UNION SELECT NULL--</span>
-                          <span>' UNION SELECT NULL,NULL--</span>
-                          <span>' UNION SELECT NULL,NULL,NULL--</span>
-                        </code>
-                      </pre>
+                      To solve the lab, determine the number of columns returned
+                      by the query by performing a SQL injection UNION attack
+                      that returns an additional row containing null values.
                     </li>
                   </ul>
                 </dd>

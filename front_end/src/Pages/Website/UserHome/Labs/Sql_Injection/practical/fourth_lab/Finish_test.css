@@ -1,0 +1,114 @@
+:root {
+  --main-color: #212c42;
+  --sec-main-color: #a3ea2a;
+  --alt-color: #151c2b;
+  --font-color: rgba(255, 255, 255, 0.5);
+  --font-color-hover: rgba(255, 255, 255, 0.75);
+  --main-transition: 0.5s;
+}
+
+
+.container-Finish_test {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Extra small */
+@media (min-width: 0px) {
+  .container-Finish_test {
+    max-width: 100%;
+  }
+}
+
+
+/* small */
+@media (min-width: 576px) {
+  .container-Finish_test {
+    max-width: 540px;
+  }
+}
+
+
+/*  Medium */
+@media (min-width: 768px) {
+  .container-Finish_test {
+    max-width: 750px;
+  }
+}
+
+/* Large */
+@media (min-width: 991px) {
+  .container-Finish_test {
+    max-width: 970px;
+  }
+}
+
+/* X-Large */
+@media (min-width: 1200px) {
+  .container-Finish_test {
+    max-width: 1170px;
+  }
+}
+
+/* Start Course  */
+.course-Finish_test {
+  padding: 70px 0;
+}
+
+.course-Finish_test .container-Finish_test {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.course-Finish_test .container-Finish_test .congrats {
+  margin-bottom: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 48px;
+  border: 5px solid blue;
+  width: max-content;
+  padding: 10px 20px;
+  background-color: blue;
+}
+
+.course-Finish_test .row-practice {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  gap: 20px;
+}
+
+.course-Finish_test .row-practice .card-Finish_test {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: var(--main-transition);
+}
+
+.course-Finish_test .row-practice .card-Finish_test:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+}
+
+
+.course-Finish_test .row-practice .card-Finish_test h4 {
+  margin-bottom: 0;
+  margin-right: 20px;
+}
+
+.course-Finish_test .row-practice .card-Finish_test p {
+  font-size: 24px;
+  font-weight: lighter;
+  margin-bottom: 0;
+}
+
+/* End Course  */

@@ -131,7 +131,51 @@ export default function XSS_lab() {
                 <p>Easy</p>
               </div>
             </Link>
-            <Link to="/xss/xss_lab/seven_lab" class="course-card-XSS">
+            <Link to="/XSS/xss_lab/fifth_lab" class="course-card-XSS">
+              <div class="course-image-XSS">
+                <img src={image} alt="" />
+              </div>
+              <div class="course-text-XSS">
+                <h3>Fifth Lab</h3>
+                <p>
+                  Before hacking something, you first need to understand the
+                  basics
+                </p>
+                <ul class="circled-order-XSS">
+                  <li>Cyber Security Basics</li>
+                  <li>Networking Basics and Weaknesses</li>
+                  <li>The Web And Common Attacks</li>
+                  <li>Learn to Use The Linux OS</li>
+                </ul>
+              </div>
+              <div class="easy-XSS">
+                <i class="fa-solid fa-signal lab-XSS"></i>
+                <p>Easy</p>
+              </div>
+            </Link>
+            <Link to="/XSS/xss_lab/sixth_lab" class="course-card-XSS">
+              <div class="course-image-XSS">
+                <img src={image} alt="" />
+              </div>
+              <div class="course-text-XSS">
+                <h3>Sixth Lab</h3>
+                <p>
+                  Before hacking something, you first need to understand the
+                  basics
+                </p>
+                <ul class="circled-order-XSS">
+                  <li>Cyber Security Basics</li>
+                  <li>Networking Basics and Weaknesses</li>
+                  <li>The Web And Common Attacks</li>
+                  <li>Learn to Use The Linux OS</li>
+                </ul>
+              </div>
+              <div class="easy-XSS">
+                <i class="fa-solid fa-signal lab-XSS"></i>
+                <p>Easy</p>
+              </div>
+            </Link>
+            <Link to="#" class="course-card-XSS">
               <div class="course-image-XSS">
                 <img src={image} alt="" />
               </div>

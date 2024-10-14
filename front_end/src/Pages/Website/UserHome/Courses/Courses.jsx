@@ -137,7 +137,7 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/lab3" className="course-card">
+            <a href="/linux" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
@@ -212,7 +212,7 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/lab3" className="course-card">
+            <a href="/regular-expression" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>

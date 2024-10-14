@@ -139,137 +139,207 @@ export default function Sql_Injection() {
                   </ul>
                 </dd>
                 <dt className="wave-lab1  fadeInUp faq-header-lab1">
-                  <span>Task 2</span> SQL in Web Pages
+                  <span>Task 2</span> Retrieving hidden data
                 </dt>
                 <dd className="faq-body-lab1">
                   <ul>
                     <li>
-                      SQL injection usually occurs when you ask a user for
-                      input, like their username/userid, and instead of a
-                      name/id, the user gives you an SQL statement that you will
-                      unknowingly run on your database.
+                      The single quote character <span>'</span> and look for
+                      errors or other anomalies.
                     </li>
                     <li>
-                      Look at the following example which creates a{" "}
-                      <span>SELECT</span> statement by adding a variable
-                      (txtUserId) to a select string. The variable is fetched
-                      from user input (getRequestString):
+                      Some SQL-specific syntax that evaluates to the base
+                      (original) value of the entry point, and to a different
+                      value, and look for systematic differences in the
+                      application responses.
                     </li>
                     <li>
-                      <h2>Example</h2>
+                      Boolean conditions such as <span>OR 1=1</span> and{" "}
+                      <span>OR 1=2</span>, and look for differences in the
+                      application's responses.
                     </li>
-                    <pre>
-                      <code>
-                        <span>txtUserId = getRequestString("UserId");</span>
-                        <span>
-                          txtSQL = "SELECT * FROM Users WHERE UserId = " +
-                          txtUserId;
-                        </span>
-                      </code>
-                    </pre>
+                    <li>
+                      Imagine a shopping application that displays products in
+                      different categories. When the user clicks on the{" "}
+                      <span>T-Shirts</span> their browser requests the URL:{" "}
+                      <br />
+                      <span>
+                        Localhost:3000/Sql_ingection/sql_ingection_lab/second_lab/in_store
+                      </span>
+                    </li>
+                    <li>
+                      This causes the application to make a SQL query to
+                      retrieve details of the relevant products from the
+                      database:
+                      <pre>
+                        <code>
+                          <span>
+                            SELECT * FROM products WHERE category = ' T-Shirts '
+                            AND released = 1
+                          </span>
+                        </code>
+                      </pre>
+                    </li>
+                    <li>
+                      The restriction <span>released = 1</span> is being used to
+                      hide products that are not released. We could assume for
+                      unreleased products, <span>released = 2</span>.
+                    </li>
+                    <li>
+                      This results in the SQL query:
+                      <pre>
+                        <code>
+                          <span>
+                            SELECT * FROM products WHERE category =
+                            'T-shirts'--' AND released = 1
+                          </span>
+                        </code>
+                      </pre>
+                    </li>
+                    <li>
+                      Crucially, note that <span>--</span> is a comment
+                      indicator in SQL. This means that the rest of the query is
+                      interpreted as a comment, effectively removing it. In this
+                      example, this means the query no longer includes{" "}
+                      <span>AND released = 1</span> . As a result, all products
+                      are displayed, including those that are not yet released.
+                    </li>
+                    <li>
+                      You can use a similar attack to cause the application to
+                      display all the products in any category, including
+                      categories that they don't know about: <br />{" "}
+                      <span>
+                        Localhost:3000/Sql_ingection/sql_ingection_lab/second_lab/in_store'+or+1=1--
+                      </span>
+                    </li>
+                    <li>
+                      This results in the SQL query:
+                      <pre>
+                        <code>
+                          <span>
+                            SELECT * FROM products WHERE category = T-Shirts OR
+                            1=1--' AND released = 1
+                          </span>
+                        </code>
+                      </pre>
+                    </li>
+                    <li>
+                      The modified query returns all items where either the
+                      <span> category</span> is <span>T-Shirts</span> , or{" "}
+                      <span>1</span> is equal to <span>1</span>. As{" "}
+                      <span>1=1</span> is always true, the query returns all
+                      items.
+                    </li>
                   </ul>
                 </dd>
                 <dt className="wave-lab1  fadeInUp faq-header-lab1">
-                  <span>Task 3</span> SQL Injection Based on 1=1 is Always True
+                  <span>Task 3</span> SQL injection UNION attacks
                 </dt>
                 <dd className="faq-body-lab1">
                   <ul>
-                    <li>SQL Injection Based on 1=1 is Always True</li>
                     <li>
-                      If there is nothing to prevent a user from entering
-                      "wrong" input, the user can enter some "smart" input like
-                      this:
+                      When an application is vulnerable to SQL injection, and
+                      the results of the query are returned within the
+                      application's responses, you can use the{" "}
+                      <span>UNION</span> keyword to retrieve data from other
+                      tables within the database. This is commonly known as a
+                      SQL injection UNION attack.
                     </li>
-                    <pre>
-                      <code>
-                        <span>UserId: 105 OR 1=1</span>
-                      </code>
-                    </pre>
-                    <li>Then, the SQL statement will look like this:</li>
-                    <pre>
-                      <code>
-                        <span>
-                          SELECT * FROM Users WHERE UserId = 105 OR 1=1;
-                        </span>
-                      </code>
-                    </pre>
                     <li>
-                      The SQL above is valid and will return ALL rows from the
-                      "Users" table, since OR 1=1 is always TRUE.
+                      The <span>UNION</span> keyword enables you to execute one
+                      or more additional <span>SELECT</span> queries and append
+                      the results to the original query. For example:
+                      <pre>
+                        <code>
+                          <span>
+                            The UNION keyword enables you to execute one or more
+                            additional SELECT queries and append the results to
+                            the original query. For example:
+                          </span>
+                        </code>
+                      </pre>
+                    </li>
+                    <li>
+                      This SQL query returns a single result set with two
+                      columns, containing values from columns <span>a</span> and{" "}
+                      <span>b</span> in table1 and columns <span>c</span> and{" "}
+                      <span>d</span> in <span>table2</span>.
+                    </li>
+                    <li>
+                      <h2>Determining the number of columns</h2>
+                    </li>
+                    <li>
+                      The second method involves submitting a series of{" "}
+                      <span>UNION SELECT</span> payloads specifying a different
+                      number of null values:
+                      <pre>
+                        <code>
+                          <span>' UNION SELECT NULL--</span>
+                          <span>' UNION SELECT NULL,NULL--</span>
+                          <span>' UNION SELECT NULL,NULL,NULL--</span>
+                        </code>
+                      </pre>
                     </li>
                   </ul>
                 </dd>
                 <dt className="wave-lab1  fadeInUp faq-header-lab1">
-                  <span>Task 4</span> SQL Injection Based on ""="" is Always
-                  True
+                  <span>Task 4</span> Finding columns with a useful data type
                 </dt>
                 <dd className="faq-body-lab1">
                   <ul>
-                    <li>Here is an example of a user login on a web site:</li>
-                    <div className="input">
-                      <label>Username: </label>
-                      <input type="text" placeholder="John Doe" disabled />
-                    </div>
-                    <div className="input">
-                      <label>Password: </label>
-                      <input type="text" placeholder="myPass" disabled />
-                    </div>
                     <li>
-                      <h2>Example</h2>
+                      A SQL injection UNION attack enables you to retrieve the
+                      results from an injected query.
+                    </li>
+                    <li>
+                      The interesting data that you want to retrieve is normally
+                      in string form.
+                    </li>
+                    <li>
+                      This means you need to find one or more columns in the
+                      original query results whose data type is, or is
+                      compatible with, string data.
+                    </li>
+                    <li>
+                      After you determine the number of required columns, you
+                      can probe each column to test whether it can hold string
+                      data.
+                    </li>
+                    <li>
+                      You can submit a series of<span> UNION SELECT </span>
+                      payloads that place a string value into each column in
+                      turn.
+                    </li>
+                    <li>
+                      For example, if the query returns four columns, you would
+                      submit:
                     </li>
                     <pre>
                       <code>
-                        <span>uName = getRequestString("username");</span>
-                        <span>uPass = getRequestString("userpassword");</span>
-                        <span>
-                          sql = 'SELECT * FROM Users WHERE Name ="' + uName + '"
-                          AND Pass ="' + uPass + '"'
-                        </span>
+                        <span>' UNION SELECT 'a',NULL,NULL,NULL--</span>
+                        <span>' UNION SELECT NULL,'a',NULL,NULL--</span>
+                        <span>' UNION SELECT NULL,NULL,'a',NULL--</span>
+                        <span>' UNION SELECT NULL,NULL,NULL,'a'--</span>
                       </code>
                     </pre>
                     <li>
-                      <h2>Result</h2>
-                    </li>
-                    <pre>
-                      <code>
-                        <span>
-                          SELECT * FROM Users WHERE Name ="John Doe" AND Pass
-                          ="myPass"
-                        </span>
-                      </code>
-                    </pre>
-                    <li>
-                      A hacker might get access to <span>user names</span> and{" "}
-                      <span>passwords</span> in a database by simply inserting{" "}
-                      <span>" OR ""="</span> into the user name or password text
-                      box:
-                    </li>
-                    <div className="input">
-                      <label>Username: </label>
-                      <input type="text" placeholder='" or ""="' disabled />
-                    </div>
-                    <div className="input">
-                      <label>Password: </label>
-                      <input type="text" placeholder='" or ""="' disabled />
-                    </div>
-                    <li>
-                      The code at the server will create a valid SQL statement
-                      like this:
-                    </li>
-                    <li>
-                      <h2>Result</h2>
+                      If the column data type is not compatible with string
+                      data, the injected query will cause a database error, such
+                      as:
                     </li>
                     <pre>
                       <code>
                         <span>
-                          SELECT * FROM Users WHERE Name ="" or ""="" AND Pass
-                          ="" or ""=""
+                          Conversion failed when converting the varchar value
+                          'a' to data type int.
                         </span>
                       </code>
                     </pre>
                     <li>
-                      The SQL above is valid and will return all rows from the
-                      "Users" table, since OR ""="" is always TRUE.
+                      If an error does not occur, and the application's response
+                      contains some additional content including the injected
+                      string value, then the relevant column is suitable for
+                      retrieving string data.
                     </li>
                   </ul>
                 </dd>
