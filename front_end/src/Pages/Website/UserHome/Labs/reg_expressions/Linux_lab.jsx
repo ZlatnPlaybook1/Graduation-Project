@@ -66,47 +66,9 @@ export default function Linux_lab() {
       {/* Start Courses  */}
       <div className="course-Linux-lab">
         <div className="container-Linux-lab">
-            <h2>Linux Lab</h2>
+            <h2>Linux-lab Lab</h2>
             <p className="section-p-Linux-lab">Test Your Hacking skills</p>
             <div className="row-Linux-lab">
-                <Link to="/Linux-lab/Linux-lab_lab/first/login" className="course-card-Linux-lab">
-                    <div className="course-image-Linux-lab">
-                        <img src={image} alt="" />
-                    </div>
-                    <div class="course-text-Linux-lab">
-                        <h3>Pre Security</h3>
-                        <p>Before hacking something, you first need to understand the basics</p>
-                        <ul class="circled-order-Linux-lab">
-                            <li>Cyber Security Basics</li>
-                            <li>Networking Basics and Weaknesses</li>
-                            <li>The Web And Common Attacks</li>
-                            <li>Learn to Use The Linux-lab OS</li>
-                        </ul>
-                    </div>
-                    <div class="easy-Linux-lab">
-                        <i class="fa-solid fa-signal lab-Linux-lab"></i>
-                        <p>Easy</p>
-                    </div>
-                </Link>
-                <Link to="/Linux-lab/Linux-lab_lab/first/login" className="course-card-Linux-lab">
-                    <div className="course-image-Linux-lab">
-                        <img src={image} alt="" />
-                    </div>
-                    <div class="course-text-Linux-lab">
-                        <h3>Pre Security</h3>
-                        <p>Before hacking something, you first need to understand the basics</p>
-                        <ul class="circled-order-Linux-lab">
-                            <li>Cyber Security Basics</li>
-                            <li>Networking Basics and Weaknesses</li>
-                            <li>The Web And Common Attacks</li>
-                            <li>Learn to Use The Linux-lab OS</li>
-                        </ul>
-                    </div>
-                    <div class="easy-Linux-lab">
-                        <i class="fa-solid fa-signal lab-Linux-lab"></i>
-                        <p>Easy</p>
-                    </div>
-                </Link>
                 <Link to="/Linux-lab/Linux-lab_lab/first/login" className="course-card-Linux-lab">
                     <div className="course-image-Linux-lab">
                         <img src={image} alt="" />

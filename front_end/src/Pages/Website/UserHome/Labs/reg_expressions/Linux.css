@@ -1,3 +1,28 @@
+:root {
+  --main-color: #212c42;
+  --sec-main-color: #a3ea2a;
+  --alt-color: #151c2b;
+  --font-color: rgba(255, 255, 255, 0.5);
+  --font-color-hover: rgba(255, 255, 255, 0.75);
+  --main-transition: 0.5s;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 15px;
+}
 .container-Linux {
   margin-left: auto;
   margin-right: auto;
@@ -7,7 +32,7 @@
 /* Extra small */
 @media (min-width: 0px) {
   .container-Linux {
-    max-width: 100%;
+      max-width: 100%;
   }
 }
 
@@ -15,7 +40,7 @@
 /* small */
 @media (min-width: 576px) {
   .container-Linux {
-    max-width: 540px;
+      max-width: 540px;
   }
 }
 
@@ -23,24 +48,23 @@
 /*  Medium */
 @media (min-width: 768px) {
   .container-Linux {
-    max-width: 750px;
+      max-width: 750px;
   }
 }
 
 /* Large */
 @media (min-width: 992px) {
   .container-Linux {
-    max-width: 970px;
+      max-width: 970px;
   }
 }
 
 /* X-Large */
 @media (min-width: 1200px) {
   .container-Linux {
-    max-width: 1170px;
+      max-width: 1170px;
   }
 }
-
 /* Start Landing */
 .landing-Linux {
   height: auto;
@@ -211,8 +235,7 @@
   border-radius: 4px 0px 0px 4px;
   border: none;
 }
-
-.landing-Linux .options-Linux button p {
+.landing-Linux .options-Linux button p{
   margin: 0;
 }
 
@@ -247,11 +270,11 @@
 
 @media (max-width: 991px) {
   .faq-section-Linux .section-text-Linux {
-    margin-left: 0;
+      margin-left: 0;
   }
 
   .faq-section-Linux .image-Linux {
-    display: none;
+      display: none;
   }
 }
 
@@ -276,7 +299,7 @@
 
 @media (max-width: 991px) {
   .faq-section-Linux .section-text-Linux .faq-header-Linux {
-    font-size: 16px;
+      font-size: 16px;
   }
 }
 
@@ -312,7 +335,7 @@
 
 @media (max-width: 991px) {
   .faq-section-Linux .section-text-Linux .faq-body-Linux {
-    font-size: 14px;
+      font-size: 14px;
   }
 }
 
@@ -372,14 +395,10 @@
   white-space: normal;
 }
 
-.faq-section-Linux .section-text-Linux .faq-body-Linux .question:first-of-type {
-  border-top: 2px solid #ddd;
-}
-
 .faq-section-Linux .section-text-Linux .faq-body-Linux .question {
+  border-top: 2px solid #ddd;
   padding-top: 20px;
 }
-
 .faq-section-Linux .section-text-Linux .faq-body-Linux form {
   margin-top: 30px;
   display: flex;
