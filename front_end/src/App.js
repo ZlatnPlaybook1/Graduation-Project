@@ -39,7 +39,6 @@ import CookiesSecondSupport from "./Pages/Website/UserHome/Labs/Cookies/practica
 import Linux from "./Pages/Website/UserHome/Labs/Linux/Linux.jsx";
 import LINUX_LAB from "./Pages/Website/UserHome/Labs/Linux/Linux_lab.jsx";
 
-
 import Expression from "./Pages/Website/UserHome/Labs/Reg_expressions/Expression.jsx";
 import EXPRESSION_LAB from "./Pages/Website/UserHome/Labs/Reg_expressions/Expression_lab.jsx";
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
@@ -177,19 +176,10 @@ function App() {
             path="/cookies/cookies_lab/second/support"
             element={<CookiesSecondSupport />}
           />
-          <Route
-            path="/linux"
-            element={<Linux />}
-          />
-          <Route
-            path="/linux/linux_lab"
-            element={<LINUX_LAB />}
-          />
+          <Route path="/linux" element={<Linux />} />
+          <Route path="/linux/linux_lab" element={<LINUX_LAB />} />
           {/* End Linux */}
-          <Route
-            path="/regular-expression"
-            element={<Expression />}
-          />
+          <Route path="/regular-expression" element={<Expression />} />
           <Route
             path="/regular-expression/expression_lab"
             element={<EXPRESSION_LAB />}
