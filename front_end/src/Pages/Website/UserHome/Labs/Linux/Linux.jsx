@@ -127,16 +127,6 @@ export default function Linux() {
                         (unless it has been installed). A large part of
                         interacting with these systems is using the "Terminal".
                       </p>
-                      <p>
-                        As we previously discussed, a large selling point of
-                        using OSs such as Ubuntu is how lightweight they can be.
-                        This, of course, doesn't come without its disadvantages,
-                        where for example, often there is no GUI (Graphical User
-                        Interface) or what is also known as a desktop
-                        environment that we can use to interact with the machine
-                        (unless it has been installed). A large part of
-                        interacting with these systems is using the "Terminal".
-                      </p>
                       <pre>
                         <code>
                           <span>Enter Your Code Here</span>
@@ -154,19 +144,28 @@ export default function Linux() {
                         Let's get started with two of the first commands which I
                         have broken down in the table below:
                       </p>
-                      <ol>
-                        <li>
-                          <h4>
-                            <span>echo: </span>Output any text that we provide
-                          </h4>
-                        </li>
-                        <li>
-                          <h4>
-                            <span>whoami: </span>Find out what user we're
-                            currently logged in as!
-                          </h4>
-                        </li>
-                      </ol>
+                      
+                      <table class="table table-bordered">
+                          <tbody>
+                              <tr>
+                                  <td>Command</td>
+                                  <td>Description</td>
+                              </tr>
+                              <tr>
+                                  <td>echo</td>
+                                  <td>Output any text that we provide
+              
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>whoami</td>
+                                  <td>Find out what user we're currently logged in as!
+                                    
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                    
                       <h2>
                         See the snippets below for an example of each command
                         being used...
