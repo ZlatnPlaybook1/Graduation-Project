@@ -40,6 +40,14 @@ import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
 import SQLInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/SQLInjection_lab.jsx";
 import Robots from "./Pages/Website/UserHome/Labs/XSS/Practical/Robots.jsx";
+import XSS_SEVEN from "./Pages/Website/UserHome/Labs/XSS/Practical/XSS_SEVEN.jsx";
+import PyramidsOfGiza from "./Pages/Website/UserHome/Labs/XSS/Practical/PyramidsOfGiza.jsx";
+import EiffelTower from "./Pages/Website/UserHome/Labs/XSS/Practical/EiffelTower.jsx";
+import ChichenItza from "./Pages/Website/UserHome/Labs/XSS/Practical/ChichenItza.jsx";
+import TajMahal from "./Pages/Website/UserHome/Labs/XSS/Practical/TajMahal.jsx";
+import ParadiseOfHawaii from "./Pages/Website/UserHome/Labs/XSS/Practical/ParadiseOfHawaii.jsx";
+import Colosseum from "./Pages/Website/UserHome/Labs/XSS/Practical/Colosseum.jsx";
+
 function App() {
   return (
     <div className="App">
@@ -104,6 +112,31 @@ function App() {
           <Route
             path="/xss/xss_lab/fourth_lab/Robots_Details"
             element={<Robots />}
+          />
+          <Route path="/xss/xss_lab/seven_lab" element={<XSS_SEVEN />} />
+          <Route
+            path="/xss/xss_lab/seven_lab/details/Pyramids-of-Giza"
+            element={<PyramidsOfGiza />}
+          />
+          <Route
+            path="/xss/xss_lab/seven_lab/details/The-Eiffel-Tower"
+            element={<EiffelTower />}
+          />
+          <Route
+            path="/xss/xss_lab/seven_lab/details/Pyramid-of-Chichén Itzá"
+            element={<ChichenItza />}
+          />
+          <Route
+            path="/xss/xss_lab/seven_lab/details/The-Taj-Mahal"
+            element={<TajMahal />}
+          />
+          <Route
+            path="/xss/xss_lab/seven_lab/details/Paradise-of-Hawaii"
+            element={<ParadiseOfHawaii />}
+          />
+          <Route
+            path="/xss/xss_lab/seven_lab/details/Colosseum"
+            element={<Colosseum />}
           />
 
           {/* End XSS */}

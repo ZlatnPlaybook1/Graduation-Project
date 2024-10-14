@@ -131,7 +131,7 @@ export default function XSS_lab() {
                 <p>Easy</p>
               </div>
             </Link>
-            <Link to="#" class="course-card-XSS">
+            <Link to="/xss/xss_lab/seven_lab" class="course-card-XSS">
               <div class="course-image-XSS">
                 <img src={image} alt="" />
               </div>
