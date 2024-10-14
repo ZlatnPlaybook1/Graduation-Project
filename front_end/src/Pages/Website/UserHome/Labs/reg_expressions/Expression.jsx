@@ -1,14 +1,14 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import "./Linux.css";
+import "./Expression.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/background.png";
 import image from "../../assets/img/course_image.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
-export default function Linux() {
+export default function Expression() {
   const faqSectionRef = useRef(null);
 
   useEffect(() => {
@@ -43,12 +43,12 @@ export default function Linux() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing-Linux">
-        <div className="banner-Linux">
+      <div className="landing-Expression">
+        <div className="banner-Expression">
           <img src={background} alt="bacground" />
         </div>
-        <div className="container-Linux">
-          <div className="breadcrumb-Linux">
+        <div className="container-Expression">
+          <div className="breadcrumb-Expression">
             <ul>
               <li>
                 <Link to="">Pre Security</Link>
@@ -57,46 +57,46 @@ export default function Linux() {
                 <Link to="">Introduction To Cyber Security</Link>
               </li>
               <li>
-                <span className="active-breadcrumb-Linux">
+                <span className="active-breadcrumb-Expression">
                   Intro To Offensive Security
                 </span>
               </li>
             </ul>
           </div>
-          <div className="course-info-Linux">
+          <div className="course-info-Expression">
             <img src={image} alt="logo" />
-            <div className="course-text-Linux">
+            <div className="course-text-Expression">
               <h1>Cross-Site Scripting</h1>
               <p>
                 Hack your first website (legally in a safe environment) and
                 experience an ethical hacker's job.
               </p>
-              <div className="course-icons-Linux">
-                <div className="diff-Linux">
-                  <div className="easy-Linux">
-                    <i className="fa-solid fa-signal for-Linux"></i>
+              <div className="course-icons-Expression">
+                <div className="diff-Expression">
+                  <div className="easy-Expression">
+                    <i className="fa-solid fa-signal for-Expression"></i>
                     <p>Easy</p>
                   </div>
                 </div>
-                <div className="duration-Linux">
-                  <i className="fa-solid fa-clock for-Linux"></i>
+                <div className="duration-Expression">
+                  <i className="fa-solid fa-clock for-Expression"></i>
                   <p className="time">15 min</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="options-Linux">
+          <div className="options-Expression">
             <button>
-              <i className="far fa-bookmark for-Linux"></i>
+              <i className="far fa-bookmark for-Expression"></i>
               <p>Save Room</p>
             </button>
-            <div className="like-Linux">
+            <div className="like-Expression">
               <button>
-                <i className="fas fa-thumbs-up for-Linux"></i>
+                <i className="fas fa-thumbs-up for-Expression"></i>
                 <p></p>
               </button>
               <button>
-                <i className="fas fa-thumbs-down for-Linux"></i>
+                <i className="fas fa-thumbs-down for-Expression"></i>
                 <p></p>
               </button>
             </div>
@@ -105,27 +105,27 @@ export default function Linux() {
       </div>
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-Linux">
-        <div className="container-Linux" ref={faqSectionRef}>
-          <div className="row-Linux">
-            <div className="faq-section-Linux">
-              <dl className="section-text-Linux">
+      <div className="course-Expression">
+        <div className="container-Expression" ref={faqSectionRef}>
+          <div className="row-Expression">
+            <div className="faq-section-Expression">
+              <dl className="section-text-Expression">
                 {/* Single FAQ Area  */}
-                <dt className="wave-Linux fadeInUp faq-header-Linux">
-                  <span>Task 1</span> A Bit of Background onn Linux
+                <dt className="wave-Expression fadeInUp faq-header-Expression">
+                  <span>Task 1</span> A Bit of Background on Expression
                 </dt>
-                <dd className="fadeInUp faq-body-Linux">
+                <dd className="fadeInUp faq-body-Expression">
                   <ul>
                     <li>
-                      <h2>Where is Linux Used?</h2>
+                      <h2>Where is Expression Used?</h2>
                       <p>
-                        It's fair to say that Linux is a lot more intimidating
+                        It's fair to say that Expression is a lot more intimidating
                         to approach than Operating System's (OSs) such as
                         Windows. Both variants have their own advantages and
-                        disadvantages. For example, Linux is considerably much
+                        disadvantages. For example, Expression is considerably much
                         more lightweight and you'd be surprised to know that
-                        there's a good chance you've used Linux in some form or
-                        another every day! Linux powers things such as:
+                        there's a good chance you've used Expression in some form or
+                        another every day! Expression powers things such as:
                       </p>
                       <ol>
                         <li>Websites that you visit</li>
@@ -141,17 +141,17 @@ export default function Linux() {
                       </ol>
                     </li>
                     <li>
-                      <h2>Flavours Of Linux</h2>
+                      <h2>Flavours Of Expression</h2>
                       <p>
-                        The name "Linux" is actually an umbrella term for
+                        The name "Expression" is actually an umbrella term for
                         multiple OS's that are based on UNIX (another operating
-                        system). Thanks to Linux being open-source, variants of
-                        Linux come in all shapes and sizes - suited best for
+                        system). Thanks to Expression being open-source, variants of
+                        Expression come in all shapes and sizes - suited best for
                         what the system is being used for.
                       </p>
                       <p>
                         For example, Ubuntu & Debian are some of the more
-                        commonplace distributions of Linux because it is so
+                        commonplace distributions of Expression because it is so
                         extensible. I.e. you can run Ubuntu as a server (such as
                         websites & web applications) or as a fully-fledged
                         desktop. For this series, we're going to be using
@@ -160,12 +160,12 @@ export default function Linux() {
                       <p>
                         Similar to how you have different versions Windows (7, 8
                         and 10), there are many different versions/distributions
-                        of Linux.
+                        of Expression.
                       </p>
                     </li>
                   </ul>
                     <p className="question">
-                      What year was the first release of a Linux operating
+                      What year was the first release of a Expression operating
                       system?
                     </p>
                   <form action="">
@@ -180,20 +180,20 @@ export default function Linux() {
                   </form>
                 </dd>
                 <dt>
-                  <span>Task 2</span> Interacting With Your First Linux Machine (In-Browser)
+                  <span>Task 2</span> Interacting With Your First Expression Machine (In-Browser)
                 </dt>
-                <dd className="fadeInUp faq-body-Linux">
+                <dd className="fadeInUp faq-body-Expression">
                   <ul>
                     <li>
-                      <h2>Where is Linux Used?</h2>
+                      <h2>Where is Expression Used?</h2>
                       <p>
-                        It's fair to say that Linux is a lot more intimidating
+                        It's fair to say that Expression is a lot more intimidating
                         to approach than Operating System's (OSs) such as
                         Windows. Both variants have their own advantages and
-                        disadvantages. For example, Linux is considerably much
+                        disadvantages. For example, Expression is considerably much
                         more lightweight and you'd be surprised to know that
-                        there's a good chance you've used Linux in some form or
-                        another every day! Linux powers things such as:
+                        there's a good chance you've used Expression in some form or
+                        another every day! Expression powers things such as:
                       </p>
                       <ol>
                         <li>Websites that you visit</li>
@@ -209,17 +209,17 @@ export default function Linux() {
                       </ol>
                     </li>
                     <li>
-                      <h2>Flavours Of Linux</h2>
+                      <h2>Flavours Of Expression</h2>
                       <p>
-                        The name "Linux" is actually an umbrella term for
+                        The name "Expression" is actually an umbrella term for
                         multiple OS's that are based on UNIX (another operating
-                        system). Thanks to Linux being open-source, variants of
-                        Linux come in all shapes and sizes - suited best for
+                        system). Thanks to Expression being open-source, variants of
+                        Expression come in all shapes and sizes - suited best for
                         what the system is being used for.
                       </p>
                       <p>
                         For example, Ubuntu & Debian are some of the more
-                        commonplace distributions of Linux because it is so
+                        commonplace distributions of Expression because it is so
                         extensible. I.e. you can run Ubuntu as a server (such as
                         websites & web applications) or as a fully-fledged
                         desktop. For this series, we're going to be using
@@ -228,12 +228,12 @@ export default function Linux() {
                       <p>
                         Similar to how you have different versions Windows (7, 8
                         and 10), there are many different versions/distributions
-                        of Linux.
+                        of Expression.
                       </p>
                     </li>
                   </ul>
                     <p className="question">
-                      What year was the first release of a Linux operating
+                      What year was the first release of a Expression operating
                       system?
                     </p>
                   <form action="">
@@ -249,8 +249,8 @@ export default function Linux() {
                 </dd>
               </dl>
             </div>
-            <div className="go-to-section-Linux">
-              <Link to="/linux/linux_lab" className="go-to-Linux">
+            <div className="go-to-section-Expression">
+              <Link to="/regular-expression/expression_lab" className="go-to-Expression">
                 Go To Lab
               </Link>
             </div>

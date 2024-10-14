@@ -38,6 +38,10 @@ import CookiesSecondAdmin from "./Pages/Website/UserHome/Labs/Cookies/practical/
 import CookiesSecondSupport from "./Pages/Website/UserHome/Labs/Cookies/practical/second_lab/Support.jsx";
 import Linux from "./Pages/Website/UserHome/Labs/Linux/Linux.jsx";
 import LINUX_LAB from "./Pages/Website/UserHome/Labs/Linux/Linux_lab.jsx";
+
+
+import Expression from "./Pages/Website/UserHome/Labs/Reg_expressions/Expression.jsx";
+import EXPRESSION_LAB from "./Pages/Website/UserHome/Labs/Reg_expressions/Expression_lab.jsx";
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
@@ -148,7 +152,16 @@ function App() {
             path="/linux/linux_lab"
             element={<LINUX_LAB />}
           />
-          {/* Cookies */}
+          {/* End Linux */}
+          <Route
+            path="/regular-expression"
+            element={<Expression />}
+          />
+          <Route
+            path="/regular-expression/expression_lab"
+            element={<EXPRESSION_LAB />}
+          />
+          {/* End Regular Expressions */}
         </Route>
         {/* End Routes of Labs */}
 

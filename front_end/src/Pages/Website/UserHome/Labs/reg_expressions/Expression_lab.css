@@ -1,30 +1,4 @@
-:root {
-  --main-color: #212c42;
-  --sec-main-color: #a3ea2a;
-  --alt-color: #151c2b;
-  --font-color: rgba(255, 255, 255, 0.5);
-  --font-color-hover: rgba(255, 255, 255, 0.75);
-  --main-transition: 0.5s;
-}
-* {
-  margin: 0;
-  box-sizing: border-box;
-  font-weight: 600;
-}
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-a {
-  text-decoration: none;
-  color: #333;
-  font-size: 18px;
-  margin: 0 10px;
-  padding: 15px;
-}
-
-.container-Linux-lab {
+.container-Expression-lab {
   margin-left: auto;
   margin-right: auto;
 }
@@ -32,7 +6,7 @@ a {
 
 /* Extra small */
 @media (min-width: 0px) {
-  .container-Linux-lab {
+  .container-Expression-lab {
       max-width: 100%;
   }
 }
@@ -40,7 +14,7 @@ a {
 
 /* small */
 @media (min-width: 576px) {
-  .container-Linux-lab {
+  .container-Expression-lab {
       max-width: 540px;
   }
 }
@@ -48,21 +22,21 @@ a {
 
 /*  Medium */
 @media (min-width: 768px) {
-  .container-Linux-lab {
+  .container-Expression-lab {
       max-width: 750px;
   }
 }
 
 /* Large */
 @media (min-width: 992px) {
-  .container-Linux-lab {
+  .container-Expression-lab {
       max-width: 970px;
   }
 }
 
 /* X-Large */
 @media (min-width: 1200px) {
-  .container-Linux-lab {
+  .container-Expression-lab {
       max-width: 1170px;
   }
 }
@@ -71,7 +45,7 @@ a {
 
 
 /* Start Landing */
-.landing-Linux-lab {
+.landing-Expression-lab {
   height: auto;
   background: linear-gradient(
     105deg,
@@ -82,16 +56,16 @@ a {
 }
 
 @media (max-width: 991px) {
-  .landing-Linux-lab {
+  .landing-Expression-lab {
     background: var(--sec-main-color);
   }
 }
 
-.landing-Linux-lab .container-Linux-lab {
+.landing-Expression-lab .container-Expression-lab {
   padding: 24px 12px;
 }
 
-.landing-Linux-lab .course-info-Linux-lab {
+.landing-Expression-lab .course-info-Expression-lab {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,33 +75,33 @@ a {
   color: white;
 }
 
-.landing-Linux-lab .course-info-Linux-lab .course-text-Linux-lab {
+.landing-Expression-lab .course-info-Expression-lab .course-text-Expression-lab {
   max-width: 60%;
 }
 
 @media (max-width: 991px) {
-  .landing-Linux-lab .course-info-Linux-lab .course-text-Linux-lab {
+  .landing-Expression-lab .course-info-Expression-lab .course-text-Expression-lab {
     max-width: 100%;
   }
 }
 
-.landing-Linux-lab
-  .course-info-Linux-lab
-  .course-text-Linux-lab
+.landing-Expression-lab
+  .course-info-Expression-lab
+  .course-text-Expression-lab
   h1 {
   font-size: 40px;
 }
 
-.landing-Linux-lab .course-info-Linux-lab .course-text-Linux-lab p {
+.landing-Expression-lab .course-info-Expression-lab .course-text-Expression-lab p {
   margin-top: 10px;
   font-size: 16px;
   font-weight: lighter;
 }
 
-.landing-Linux-lab
-  .course-info-Linux-lab
-  .course-text-Linux-lab
-  p.brief-Linux-lab {
+.landing-Expression-lab
+  .course-info-Expression-lab
+  .course-text-Expression-lab
+  p.brief-Expression-lab {
   background-color: var(--alt-color);
   padding: 10px;
   width: max-content;
@@ -135,15 +109,15 @@ a {
   border-radius: 8px;
 }
 
-.landing-Linux-lab
-  .course-info-Linux-lab
-  .course-text-Linux-lab
-  p.brief-Linux-lab
+.landing-Expression-lab
+  .course-info-Expression-lab
+  .course-text-Expression-lab
+  p.brief-Expression-lab
   i {
   margin-right: 10px;
 }
 
-.landing-Linux-lab .course-info-Linux-lab .course-icon-Linux-lab {
+.landing-Expression-lab .course-info-Expression-lab .course-icon-Expression-lab {
   display: flex;
   flex-basis: 30%;
   align-items: center;
@@ -152,15 +126,15 @@ a {
 }
 
 @media (max-width: 991px) {
-  .landing-Linux-lab .course-info-Linux-lab .course-icon-Linux-lab {
+  .landing-Expression-lab .course-info-Expression-lab .course-icon-Expression-lab {
     display: none;
   }
 }
 
-.landing-Linux-lab
-  .course-info-Linux-lab
-  .course-icon-Linux-lab
-  .border-Linux-lab {
+.landing-Expression-lab
+  .course-info-Expression-lab
+  .course-icon-Expression-lab
+  .border-Expression-lab {
   transform: rotateZ(-45deg);
   width: 230px;
   height: 230px;
@@ -174,10 +148,10 @@ a {
   align-items: center;
 }
 
-.landing-Linux-lab
-  .course-info-Linux-lab
-  .course-icon-Linux-lab
-  .content-Linux-lab {
+.landing-Expression-lab
+  .course-info-Expression-lab
+  .course-icon-Expression-lab
+  .content-Expression-lab {
   transform: rotateZ(45deg);
   width: 230px;
   height: 230px;
@@ -187,52 +161,52 @@ a {
   align-items: center;
 }
 
-.landing-Linux-lab .course-info-Linux-lab .course-icon-Linux-lab i {
+.landing-Expression-lab .course-info-Expression-lab .course-icon-Expression-lab i {
   border-radius: 50%;
   padding: 17px;
   font-size: 45px;
 }
 
-.landing-Linux-lab .course-info-Linux-lab .course-icon-Linux-lab p {
+.landing-Expression-lab .course-info-Expression-lab .course-icon-Expression-lab p {
   padding: 20px;
   font-size: 24px;
   font-weight: lighter;
   margin: 25px 0;
 }
 
-.landing-Linux-lab
-  .course-info-Linux-lab
-  .course-icon-Linux-lab
-  i.fa-book-open.lab-Linux-lab {
+.landing-Expression-lab
+  .course-info-Expression-lab
+  .course-icon-Expression-lab
+  i.fa-book-open.lab-Expression-lab {
   background-color: rgb(62, 71, 90);
 }
 
-.landing-Linux-lab
-  .course-info-Linux-lab
-  .course-icon-Linux-lab
-  i.fa-bullseye.lab-Linux-lab {
+.landing-Expression-lab
+  .course-info-Expression-lab
+  .course-icon-Expression-lab
+  i.fa-bullseye.lab-Expression-lab {
   background-color: var(--sec-main-color);
 }
 
 /* End Landing */
 
 /* Start Course  */
-.course-Linux-lab {
+.course-Expression-lab {
   padding: 70px 0;
 }
 
-.course-Linux-lab .container-Linux-lab {
+.course-Expression-lab .container-Expression-lab {
   display: flex;
   flex-direction: column;
 }
-.course-Linux-lab .container-Linux-lab > h2 {
+.course-Expression-lab .container-Expression-lab > h2 {
   border: 2px solid var(--sec-main-color);
   width: max-content;
   align-self: center;
   padding: 20px 10px;
 }
 
-.course-Linux-lab .section-p-Linux-lab {
+.course-Expression-lab .section-p-Expression-lab {
   color: #777;
   font-weight: lighter;
   margin-top: 15px;
@@ -240,7 +214,7 @@ a {
   font-size: 18px;
 }
 
-.course-Linux-lab .row-Linux-lab {
+.course-Expression-lab .row-Expression-lab {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto auto auto;
@@ -248,16 +222,16 @@ a {
   gap: 20px;
 }
 @media (max-width: 991px) {
-  .course-Linux-lab .row-Linux-lab {
+  .course-Expression-lab .row-Expression-lab {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 767px) {
-  .course-Linux-lab .row-Linux-lab {
+  .course-Expression-lab .row-Expression-lab {
     grid-template-columns: 1fr;
   }
 }
-.course-Linux-lab .row-Linux-lab .course-card-Linux-lab {
+.course-Expression-lab .row-Expression-lab .course-card-Expression-lab {
   position: relative;
   width: 100%;
   height: 350px;
@@ -270,29 +244,29 @@ a {
   transition: var(--main-transition);
 }
 
-.course-Linux-lab .row-Linux-lab .course-card-Linux-lab:hover {
+.course-Expression-lab .row-Expression-lab .course-card-Expression-lab:hover {
   transform: scale(1.05);
 
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 991px) {
-  .course-Linux-lab .row-Linux-lab .course-card-Linux-lab {
+  .course-Expression-lab .row-Expression-lab .course-card-Expression-lab {
     width: 100%;
     margin-bottom: 30px;
   }
 }
 
-.course-Linux-lab .row-Linux-lab .course-card-Linux-lab img {
+.course-Expression-lab .row-Expression-lab .course-card-Expression-lab img {
   width: 100%;
   object-fit: cover;
   margin-bottom: 10px;
 }
 
-.course-Linux-lab
-  .row-Linux-lab
-  .course-card-Linux-lab
-  .course-text-Linux-lab {
+.course-Expression-lab
+  .row-Expression-lab
+  .course-card-Expression-lab
+  .course-text-Expression-lab {
   padding: 20px;
   position: absolute;
   background-color: white;
@@ -302,50 +276,50 @@ a {
   transform: translateY(-10%);
 }
 @media (min-width: 992px) {
-  .course-Linux-lab
-    .row-Linux-lab
-    .course-card-Linux-lab
-    .course-text-Linux-lab {
+  .course-Expression-lab
+    .row-Expression-lab
+    .course-card-Expression-lab
+    .course-text-Expression-lab {
     transform: translateY(-15%);
   }
 }
 @media (max-width: 991px) {
-  .course-Linux-lab
-    .row-Linux-lab
-    .course-card-Linux-lab
-    .course-text-Linux-lab {
+  .course-Expression-lab
+    .row-Expression-lab
+    .course-card-Expression-lab
+    .course-text-Expression-lab {
     transform: translateY(-10%);
   }
 }
 @media (max-width: 767px) {
-  .course-Linux-lab
-    .row-Linux-lab
-    .course-card-Linux-lab
-    .course-text-Linux-lab {
+  .course-Expression-lab
+    .row-Expression-lab
+    .course-card-Expression-lab
+    .course-text-Expression-lab {
     transform: translateY(-60%);
   }
 }
 
-.course-Linux-lab
-  .row-Linux-lab
-  .course-card-Linux-lab:hover
-  .course-text-Linux-lab {
+.course-Expression-lab
+  .row-Expression-lab
+  .course-card-Expression-lab:hover
+  .course-text-Expression-lab {
   transform: translateY(-60%);
 }
 
-.course-Linux-lab .row-Linux-lab .course-card-Linux-lab h3 {
+.course-Expression-lab .row-Expression-lab .course-card-Expression-lab h3 {
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-.course-Linux-lab .row-Linux-lab .course-card-Linux-lab p {
+.course-Expression-lab .row-Expression-lab .course-card-Expression-lab p {
   font-size: 16px;
   font-weight: lighter;
   color: #777;
   margin-bottom: 20px;
 }
 
-.course-Linux-lab .row-Linux-lab .course-card-Linux-lab ul li {
+.course-Expression-lab .row-Expression-lab .course-card-Expression-lab ul li {
   list-style-type: disc;
   margin-left: 20px;
   font-size: 14px;
@@ -353,10 +327,10 @@ a {
   font-weight: lighter;
 }
 
-.course-Linux-lab
-  .row-Linux-lab
-  .course-card-Linux-lab
-  .easy-Linux-lab {
+.course-Expression-lab
+  .row-Expression-lab
+  .course-card-Expression-lab
+  .easy-Expression-lab {
   position: absolute;
   bottom: 0;
   left: 2%;
@@ -370,18 +344,18 @@ a {
   font-size: 16px;
 }
 
-.course-Linux-lab
-  .row-Linux-lab
-  .course-card-Linux-lab
-  .easy-Linux-lab
+.course-Expression-lab
+  .row-Expression-lab
+  .course-card-Expression-lab
+  .easy-Expression-lab
   i {
   margin-right: 5px;
 }
 
-.course-Linux-lab
-  .row-Linux-lab
-  .course-card-Linux-lab
-  .easy-Linux-lab
+.course-Expression-lab
+  .row-Expression-lab
+  .course-card-Expression-lab
+  .easy-Expression-lab
   p {
   margin-bottom: 0;
   color: green;

@@ -1,13 +1,13 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import "./Linux_lab.css";
+import "./Expression_lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets/img/card_image.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
-export default function Linux_lab() {
+export default function Expression_lab() {
   const faqSectionRef = useRef(null);
 
   useEffect(() => {
@@ -42,20 +42,20 @@ export default function Linux_lab() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing-Linux-lab">
-        <div className="container-Linux-lab">
-            <div className="course-info-Linux-lab">
-                <div className="course-text-Linux-lab">
+      <div className="landing-Expression-lab">
+        <div className="container-Expression-lab">
+            <div className="course-info-Expression-lab">
+                <div className="course-text-Expression-lab">
                     <h1>Practice</h1>
-                    <p className="brief-Linux-lab"><i className="fa-solid fa-bullseye lab-Linux-lab"></i> Reinforce what you're learning</p>
+                    <p className="brief-Expression-lab"><i className="fa-solid fa-bullseye lab-Expression-lab"></i> Reinforce what you're learning</p>
                     <p>Put your knowledge into practice with gamified cyber security challenges.</p>
                 </div>
-                <div className="course-icon-Linux-lab">
-                    <div className="border-Linux-lab">
-                        <div className="content-Linux-lab">
-                            <i className="fas fa-book-open lab-Linux-lab"></i>
+                <div className="course-icon-Expression-lab">
+                    <div className="border-Expression-lab">
+                        <div className="content-Expression-lab">
+                            <i className="fas fa-book-open lab-Expression-lab"></i>
                             <p>Practice</p>
-                            <i className="fas fa-bullseye lab-Linux-lab"></i>
+                            <i className="fas fa-bullseye lab-Expression-lab"></i>
                         </div>
                     </div>
                 </div>
@@ -64,46 +64,46 @@ export default function Linux_lab() {
     </div>
       {/* End Landing  */}
       {/* Start Courses  */}
-      <div className="course-Linux-lab">
-        <div className="container-Linux-lab">
-            <h2>Linux-lab Lab</h2>
-            <p className="section-p-Linux-lab">Test Your Hacking skills</p>
-            <div className="row-Linux-lab">
-                <Link to="/Linux-lab/Linux-lab_lab/first/login" className="course-card-Linux-lab">
-                    <div className="course-image-Linux-lab">
+      <div className="course-Expression-lab">
+        <div className="container-Expression-lab">
+            <h2>Expression Lab</h2>
+            <p className="section-p-Expression-lab">Test Your Hacking skills</p>
+            <div className="row-Expression-lab">
+                <Link to="/Expression-lab/Expression-lab_lab/first/login" className="course-card-Expression-lab">
+                    <div className="course-image-Expression-lab">
                         <img src={image} alt="" />
                     </div>
-                    <div class="course-text-Linux-lab">
+                    <div class="course-text-Expression-lab">
                         <h3>Pre Security</h3>
                         <p>Before hacking something, you first need to understand the basics</p>
-                        <ul class="circled-order-Linux-lab">
+                        <ul class="circled-order-Expression-lab">
                             <li>Cyber Security Basics</li>
                             <li>Networking Basics and Weaknesses</li>
                             <li>The Web And Common Attacks</li>
-                            <li>Learn to Use The Linux-lab OS</li>
+                            <li>Learn to Use The Expression-lab OS</li>
                         </ul>
                     </div>
-                    <div class="easy-Linux-lab">
-                        <i class="fa-solid fa-signal lab-Linux-lab"></i>
+                    <div class="easy-Expression-lab">
+                        <i class="fa-solid fa-signal lab-Expression-lab"></i>
                         <p>Easy</p>
                     </div>
                 </Link>
-                <Link to="/Linux-lab/Linux-lab_lab/second/login" class="course-card-Linux-lab">
-                    <div class="course-image-Linux-lab">
+                <Link to="/Expression-lab/Expression-lab_lab/second/login" class="course-card-Expression-lab">
+                    <div class="course-image-Expression-lab">
                     <img src={image} alt="" />
                     </div>
-                    <div class="course-text-Linux-lab">
+                    <div class="course-text-Expression-lab">
                         <h3>Pre Security</h3>
                         <p>Before hacking something, you first need to understand the basics</p>
-                        <ul class="circled-order-Linux-lab">
+                        <ul class="circled-order-Expression-lab">
                             <li>Cyber Security Basics</li>
                             <li>Networking Basics and Weaknesses</li>
                             <li>The Web And Common Attacks</li>
-                            <li>Learn to Use The Linux-lab OS</li>
+                            <li>Learn to Use The Expression-lab OS</li>
                         </ul>
                     </div>
-                    <div class="easy-Linux-lab">
-                        <i class="fa-solid fa-signal lab-Linux-lab"></i>
+                    <div class="easy-Expression-lab">
+                        <i class="fa-solid fa-signal lab-Expression-lab"></i>
                         <p>Easy</p>
                     </div>
                 </Link>
