@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import "./Linux.css";
+import styles from "./Linux.module.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/background.png";
 import image from "../../assets/img/course_image.png";
@@ -43,12 +43,12 @@ export default function Linux() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing-Linux">
-        <div className="banner-Linux">
+      <div className={styles.landing}>
+        <div className={styles.banner}>
           <img src={background} alt="bacground" />
         </div>
-        <div className="container-Linux">
-          <div className="breadcrumb-Linux">
+        <div className={styles.container}>
+          <div className={styles.breadcrumb}>
             <ul>
               <li>
                 <Link to="">Pre Security</Link>
@@ -57,46 +57,46 @@ export default function Linux() {
                 <Link to="">Introduction To Cyber Security</Link>
               </li>
               <li>
-                <span className="active-breadcrumb-Linux">
+                <span className={styles["active-breadcrumb"]}>
                   Intro To Offensive Security
                 </span>
               </li>
             </ul>
           </div>
-          <div className="course-info-Linux">
+          <div className={styles["course-info"]}>
             <img src={image} alt="logo" />
-            <div className="course-text-Linux">
+            <div className={styles["course-text"]}>
               <h1>Cross-Site Scripting</h1>
               <p>
                 Hack your first website (legally in a safe environment) and
                 experience an ethical hacker's job.
               </p>
-              <div className="course-icons-Linux">
-                <div className="diff-Linux">
-                  <div className="easy-Linux">
-                    <i className="fa-solid fa-signal for-Linux"></i>
+              <div className={styles["course-icons"]}>
+                <div className={styles.diff}>
+                  <div className={styles.easy}>
+                    <i className="fas fa-signal"></i>
                     <p>Easy</p>
                   </div>
                 </div>
-                <div className="duration-Linux">
-                  <i className="fa-solid fa-clock for-Linux"></i>
-                  <p className="time">15 min</p>
+                <div className={styles.duration}>
+                  <i className="fa-solid fa-clock"></i>
+                  <p className={styles.time}>15 min</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="options-Linux">
+          <div className={styles.options}>
             <button>
-              <i className="far fa-bookmark for-Linux"></i>
+              <i className="far fa-bookmark"></i>
               <p>Save Room</p>
             </button>
-            <div className="like-Linux">
+            <div className={styles.like}>
               <button>
-                <i className="fas fa-thumbs-up for-Linux"></i>
+                <i className="fas fa-thumbs-up"></i>
                 <p></p>
               </button>
               <button>
-                <i className="fas fa-thumbs-down for-Linux"></i>
+                <i className="fas fa-thumbs-down"></i>
                 <p></p>
               </button>
             </div>
@@ -105,16 +105,16 @@ export default function Linux() {
       </div>
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-Linux">
-        <div className="container-Linux" ref={faqSectionRef}>
-          <div className="row-Linux">
-            <div className="faq-section-Linux">
-              <dl className="section-text-Linux">
+      <div className={styles.course}>
+        <div className={styles.container} ref={faqSectionRef}>
+          <div className={styles.container}>
+            <div className={styles["faq-section"]}>
+              <dl className={styles["section-text"]}>
                 {/* Single FAQ Area  */}
-                <dt className="wave-Linux fadeInUp faq-header-Linux">
+                <dt className={`${styles["faq-header"]} wave fadeInUp`}>
                   <span>Task 1</span>Running Your First few Commands
                 </dt>
-                <dd className="fadeInUp faq-body-Linux">
+                <dd className={`${styles["faq-body"]} fadeInUp`}>
                   <ul>
                     <li>
                       <p>
@@ -127,11 +127,56 @@ export default function Linux() {
                         (unless it has been installed). A large part of
                         interacting with these systems is using the "Terminal".
                       </p>
-                      <pre>
-                        <code>
-                          <span>Enter Your Code Here</span>
-                        </code>
-                      </pre>
+                      <div className={styles["terminal-container"]}>
+                        <div className={styles["terminal-content"]}>
+                          <div className={styles["terminal-top"]}>
+                            This is what a terminal looks like
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token}  ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token}  ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token}  ${styles["shell-symbol"]} ${styles.important}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token}  ${styles["language-bash"]} ${styles.bash}`}
+                                >
+                                  <span className={styles.token}>
+                                    {" "}
+                                    enter commands here
+                                  </span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
                     </li>
                     <li>
                       <p>
@@ -144,64 +189,160 @@ export default function Linux() {
                         Let's get started with two of the first commands which I
                         have broken down in the table below:
                       </p>
-                      
-                      <table class="table table-bordered">
-                          <tbody>
-                              <tr>
-                                  <td>Command</td>
-                                  <td>Description</td>
-                              </tr>
-                              <tr>
-                                  <td>echo</td>
-                                  <td>Output any text that we provide
-              
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>whoami</td>
-                                  <td>Find out what user we're currently logged in as!
-                                    
-                                  </td>
-                              </tr>
-                          </tbody>
+
+                      <table
+                        className={`${styles.table} ${styles["table-bordered"]}`}
+                      >
+                        <tbody>
+                          <tr>
+                            <td>Command</td>
+                            <td>Description</td>
+                          </tr>
+                          <tr>
+                            <td>echo</td>
+                            <td>Output any text that we provide</td>
+                          </tr>
+                          <tr>
+                            <td>whoami</td>
+                            <td>
+                              Find out what user we're currently logged in as!
+                            </td>
+                          </tr>
+                        </tbody>
                       </table>
-                    
-                      <h2>
+
+                      <h2 className={styles.note}>
                         See the snippets below for an example of each command
                         being used...
                       </h2>
-                      <p>Using echo</p>
-                      <pre>
-                        <code>
-                          <span>echo "Hello Friend!"</span>
-                        </code>
-                      </pre>
-                      <p>
-                        Using whoami to find out the username of who we're
-                        logged in as
-                      </p>
-                      <pre>
-                        <code>
-                          <span>whoami</span>
-                        </code>
-                      </pre>
+                      <div className={styles["terminal-container"]}>
+                        <div className={styles["terminal-content"]}>
+                          <div className={styles["terminal-top"]}>
+                            Using echo
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles["shell-symbol"]} ${styles.important}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles["class-name"]}`}
+                                  >
+                                    {" "}
+                                    echo{" "}
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.string}`}
+                                  >
+                                    {" "}
+                                    "Hello Friend!"{" "}
+                                  </span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                      <div className={styles["terminal-container"]}>
+                        <div className={styles["terminal-content"]}>
+                          <div className={styles["terminal-top"]}>
+                            Using whoami to find out the username of who we're
+                            logged in as
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles["shell-symbol"]} ${styles.important}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.function}`}
+                                  >
+                                    {" "}
+                                    whoami{" "}
+                                  </span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
                     </li>
                   </ul>
-                  <p className="question">
+                  <p className={styles.question}>
                     If we wanted to output the text "TryHackMe", what would our
                     command be?
                   </p>
-                  <form action="">
+                  <form>
                     <input
                       type="text"
                       name="answer"
                       placeholder="Answer Format: **********"
                     />
                     <button>
-                      <i class="fa-regular fa-paper-plane"></i>Submit
+                      <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
                   </form>
-                  <p className="question">
+                  <p className={styles.question}>
                     What is the username of who you're logged in as on your
                     deployed Linux machine?
                   </p>
@@ -212,14 +353,14 @@ export default function Linux() {
                       placeholder="Answer Format: **********"
                     />
                     <button>
-                      <i class="fa-regular fa-paper-plane"></i>Submit
+                      <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
                   </form>
                 </dd>
-                <dt className="wave-Linux fadeInUp faq-header-Linux">
+                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
                   <span>Task 2</span>Interacting With the Filesystem!
                 </dt>
-                <dd className="fadeInUp faq-body-Linux">
+                <dd className={`fadeInUp ${styles["faq-body"]}`}>
                   <ul>
                     <li>
                       <p>
@@ -244,31 +385,32 @@ export default function Linux() {
                         desktop environment is pretty important. After all,
                         what's the point of logging in if we can't go anywhere?
                       </p>
-                      <h2>
-                        Now We'll disucss some commands and thier Full name
-                      </h2>
-                      <ol>
-                        <li>
-                          <h4>
-                            <span>ls: </span>Listing
-                          </h4>
-                        </li>
-                        <li>
-                          <h4>
-                            <span>cd: </span>Change Directory
-                          </h4>
-                        </li>
-                        <li>
-                          <h4>
-                            <span>cat: </span>concatenate
-                          </h4>
-                        </li>
-                        <li>
-                          <h4>
-                            <span>pwd: </span>print working directory
-                          </h4>
-                        </li>
-                      </ol>
+                      <table
+                        className={`${styles.table} ${styles["table-bordered"]}`}
+                      >
+                        <tbody>
+                          <tr>
+                            <td>Command</td>
+                            <td>Full Name</td>
+                          </tr>
+                          <tr>
+                            <td>ls</td>
+                            <td>listing</td>
+                          </tr>
+                          <tr>
+                            <td>cd</td>
+                            <td>change directory</td>
+                          </tr>
+                          <tr>
+                            <td>cat</td>
+                            <td>concatenate</td>
+                          </tr>
+                          <tr>
+                            <td>pwd</td>
+                            <td>print working directory</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </li>
                     <li>
                       <h2>Listing Files in Our Current Directory (ls)</h2>
@@ -282,15 +424,56 @@ export default function Linux() {
                         Using "ls" to to list the contents of the current
                         directory
                       </p>
-                      <pre>
-                        <code>
-                          <span>ls</span>
-                          <span>
-                            Using "ls" to to list the contents of the current
-                            directory
-                          </span>
-                        </code>
-                      </pre>
+                      <div className={`${styles["terminal-container"]}`}>
+                        <div className={`${styles["terminal-content"]}`}>
+                          <div className={`${styles["terminal-top"]}`}>
+                            This is what a terminal looks like
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span className={`${styles.token}`}>
+                                    {" "}
+                                    enter commands here
+                                  </span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
                       <p>
                         In the screenshot above, we can see there are the
                         following directories/folders:
@@ -396,8 +579,8 @@ export default function Linux() {
                         Pro tip: You can use <span>cat</span> to output the
                         contents of a file within directories without having to
                         navigate to it by using cat and the name of the
-                        directory. I.e.{" "}
-                        <span>cat /home/ubuntu/Documents/todo.txt</span>
+                        directory. I.e.
+                        <span> cat /home/ubuntu/Documents/todo.txt</span>
                       </h2>
                       <p>
                         Sometimes things like usernames, passwords (yes -
@@ -459,14 +642,14 @@ export default function Linux() {
                         </li>
                         <li>
                           Now in the future, if we find ourselves in a different
-                          location, we can just use{" "}
-                          <span>cd /home/ubuntu/Documents</span> to change our
+                          location, we can just use
+                          <span> cd /home/ubuntu/Documents</span> to change our
                           working directory to this "Documents" directory.
                         </li>
                       </ol>
                     </li>
                   </ul>
-                  <p className="question">
+                  <p className={styles.question}>
                     On the Linux machine that you deploy, how many folders are
                     there?
                   </p>
@@ -477,10 +660,12 @@ export default function Linux() {
                       placeholder="Answer Format: **********"
                     />
                     <button>
-                      <i class="fa-regular fa-paper-plane"></i>Submit
+                      <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
                   </form>
-                  <p className="question">Which directory contains a file?</p>
+                  <p className={styles.question}>
+                    Which directory contains a file?
+                  </p>
                   <form action="">
                     <input
                       type="text"
@@ -488,10 +673,12 @@ export default function Linux() {
                       placeholder="Answer Format: **********"
                     />
                     <button>
-                      <i class="fa-regular fa-paper-plane"></i>Submit
+                      <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
                   </form>
-                  <p className="question">What is the contents of this file?</p>
+                  <p className={styles.question}>
+                    What is the contents of this file?
+                  </p>
                   <form action="">
                     <input
                       type="text"
@@ -499,10 +686,10 @@ export default function Linux() {
                       placeholder="Answer Format: **********"
                     />
                     <button>
-                      <i class="fa-regular fa-paper-plane"></i>Submit
+                      <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
                   </form>
-                  <p className="question">
+                  <p className={styles.question}>
                     Use the cd command to navigate to this file and find out the
                     new current working directory. What is the path?
                   </p>
@@ -513,14 +700,14 @@ export default function Linux() {
                       placeholder="Answer Format: **********"
                     />
                     <button>
-                      <i class="fa-regular fa-paper-plane"></i>Submit
+                      <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
                   </form>
                 </dd>
-                <dt className="wave-Linux fadeInUp faq-header-Linux">
+                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
                   <span>Task 3</span>Searching for Files
                 </dt>
-                <dd className="fadeInUp faq-body-Linux">
+                <dd className={`fadeInUp ${styles["faq-body"]}`}>
                   <ul>
                     <li>
                       <p>
@@ -698,7 +885,7 @@ export default function Linux() {
                       </p>
                     </li>
                   </ul>
-                  <p className="question">
+                  <p className={styles.question}>
                     Use grep on "access.log" to find the flag that has a prefix
                     of "THM". What is the flag?
                   </p>
@@ -709,10 +896,10 @@ export default function Linux() {
                       placeholder="Answer Format: **********"
                     />
                     <button>
-                      <i class="fa-regular fa-paper-plane"></i>Submit
+                      <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
                   </form>
-                  <p className="question">
+                  <p className={styles.question}>
                     And I still haven't found what I'm looking for!
                   </p>
                   <form action="">
@@ -722,14 +909,14 @@ export default function Linux() {
                       placeholder="Answer Format: **********"
                     />
                     <button>
-                      <i class="fa-regular fa-paper-plane"></i>Submit
+                      <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
                   </form>
                 </dd>
-                <dt className="wave-Linux fadeInUp faq-header-Linux">
+                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
                   <span>Task 4</span>An Introduction to Shell Operators
                 </dt>
-                <dd className="fadeInUp faq-body-Linux">
+                <dd className={`fadeInUp ${styles["faq-body"]}`}>
                   <ul>
                     <li>
                       <p>
@@ -768,9 +955,9 @@ export default function Linux() {
                         <li>
                           <h4>
                             <span>&gt;&gt;: </span>This operator does the same
-                            function of the <span>&gt;</span> operator but appends
-                            the output rather than replacing (meaning nothing is
-                            overwritten).
+                            function of the <span>&gt;</span> operator but
+                            appends the output rather than replacing (meaning
+                            nothing is overwritten).
                           </h4>
                         </li>
                       </ol>
@@ -822,8 +1009,8 @@ export default function Linux() {
                       <p>
                         Let's say we wanted to create a file named "welcome"
                         with the message "hey". We can run
-                        <span> echo hey &gt; welcome</span> where we want the file
-                        created with the contents "hey" like so:
+                        <span> echo hey &gt; welcome</span> where we want the
+                        file created with the contents "hey" like so:
                       </p>
                       <p>Using the &gt; Operator</p>
                       <pre>
@@ -847,10 +1034,10 @@ export default function Linux() {
                       <h2>Operator "&gt;&gt;"</h2>
                       <p>
                         This operator is also an output redirector like in the
-                        previous operator <span>&gt;</span> we discussed. However,
-                        what makes this operator different is that rather than
-                        overwriting any contents within a file, for example, it
-                        instead just puts the output at the end.
+                        previous operator <span>&gt;</span> we discussed.
+                        However, what makes this operator different is that
+                        rather than overwriting any contents within a file, for
+                        example, it instead just puts the output at the end.
                       </p>
                       <p>
                         Following on with our previous example where we have the
@@ -860,9 +1047,9 @@ export default function Linux() {
                         "hello" and not "hey".
                       </p>
                       <p>
-                        The <span>&gt;&gt;</span> operator allows to append the output
-                        to the bottom of the file — rather than replacing the
-                        contents like so:
+                        The <span>&gt;&gt;</span> operator allows to append the
+                        output to the bottom of the file — rather than replacing
+                        the contents like so:
                       </p>
                       <p>Using the &gt;&gt; Operator</p>
                       <pre>
@@ -880,7 +1067,7 @@ export default function Linux() {
                       </pre>
                     </li>
                   </ul>
-                  <p className="question">
+                  <p className={styles.question}>
                     If we wanted to run a command in the background, what
                     operator would we want to use?
                   </p>
@@ -891,10 +1078,10 @@ export default function Linux() {
                       placeholder="Answer Format: **********"
                     />
                     <button>
-                      <i class="fa-regular fa-paper-plane"></i>Submit
+                      <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
                   </form>
-                  <p className="question">
+                  <p className={styles.question}>
                     If I wanted to replace the contents of a file named
                     "passwords" with the word "password123", what would my
                     command be?
@@ -906,10 +1093,10 @@ export default function Linux() {
                       placeholder="Answer Format: **********"
                     />
                     <button>
-                      <i class="fa-regular fa-paper-plane"></i>Submit
+                      <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
                   </form>
-                  <p className="question">
+                  <p className={styles.question}>
                     Now if I wanted to add "tryhackme" to this file named
                     "passwords" but also keep "passwords123", what would my
                     command be
@@ -921,10 +1108,10 @@ export default function Linux() {
                       placeholder="Answer Format: **********"
                     />
                     <button>
-                      <i class="fa-regular fa-paper-plane"></i>Submit
+                      <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
                   </form>
-                  <p className="question">
+                  <p className={styles.question}>
                     Now use the deployed Linux machine to put these into
                     practice
                   </p>
@@ -935,14 +1122,14 @@ export default function Linux() {
                       placeholder="Answer Format: **********"
                     />
                     <button>
-                      <i class="fa-regular fa-paper-plane"></i>Submit
+                      <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
                   </form>
                 </dd>
               </dl>
             </div>
-            <div className="go-to-section-Linux">
-              <Link to="/linux/linux_lab" className="go-to-Linux">
+            <div className={styles['go-to-section']}>
+              <Link to="/linux/linux_lab" className={styles["go-to"]}>
                 Go To Lab
               </Link>
             </div>

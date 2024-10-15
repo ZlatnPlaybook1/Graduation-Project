@@ -3,7 +3,7 @@ import Header from "../../Header/Header";
 import "./SQLInjection_lab.css";
 import imagecourse from "../../assets/img/course_image_home.png";
 import { Link } from "react-router-dom";
-import Footer from "../../../Footer/Footer";
+import Footer from "../../Footer/Footer";
 export default function SQLInjection_lab() {
   return (
     <>
