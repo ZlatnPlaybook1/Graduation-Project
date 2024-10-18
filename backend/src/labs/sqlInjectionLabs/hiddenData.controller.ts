@@ -11,7 +11,7 @@ const user: any = await prisma.$executeRawUnsafe(`
     WHERE username = '${username}' AND password = '${password}';
 `);
 
-    if (user.length === 0) {
+    if (user === 0) {
         return res.status(404).send("Not a user");
     }
 
