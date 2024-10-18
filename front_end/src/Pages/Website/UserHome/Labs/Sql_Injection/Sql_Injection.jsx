@@ -343,27 +343,53 @@ export default function Sql_Injection() {
                   </ul>
                 </dd>
                 <dt className="wave-lab1  fadeInUp faq-header-lab1">
-                  <span>Task 5</span> SQL Injection Based on Batched SQL
-                  Statements
+                  <span>Task 5</span>Using a SQL injection UNION attack to
+                  retrieve interesting data
                 </dt>
                 <dd className="faq-body-lab1">
                   <ul>
                     <li>
-                      A batch of SQL statements is a group of one or more SQL
-                      statements sent together as a single unit of work to the
-                      database.
+                      When you have determined the number of columns returned by
+                      the original query and found which columns can hold string
+                      data, you are in a position to retrieve interesting data.
                     </li>
                     <li>
-                      Consider the following SQL statement, the user input is
-                      appended after a semicolon:
+                      Suppose that:
+                      <ol>
+                        <li>
+                          The original query returns two columns, both of which
+                          can hold string data.
+                        </li>
+                        <li>
+                          The injection point is a quoted string within the{" "}
+                          <span>WHERE</span> clause.
+                        </li>
+                        <li>
+                          The database contains a table called
+                          <span> users</span> with the columns
+                          <span> username</span> and <span>password</span>.
+                        </li>
+                      </ol>
+                    </li>
+                    <li>
+                      In this example, you can retrieve the contents of the{" "}
+                      <span>users</span> table by submitting the input:
                     </li>
                     <pre>
                       <code>
-                        <span>DELETE FROM Users WHERE UserId = 105; --</span>
+                        <span>
+                          ' UNION SELECT username, password FROM users--
+                        </span>
                       </code>
                     </pre>
                     <li>
-                      The SQL above is valid and will delete a user with ID 105.
+                      In order to perform this attack, you need to know that
+                      there is a table called <span>users</span> with two columns called
+                      <span>username</span> and <span>password</span>. Without this information, you would
+                      have to guess the names of the tables and columns. All
+                      modern databases provide ways to examine the database
+                      structure, and determine what tables and columns they
+                      contain.
                     </li>
                   </ul>
                 </dd>
