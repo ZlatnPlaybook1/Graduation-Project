@@ -252,9 +252,8 @@ export default function Sql_Injection() {
                       <pre>
                         <code>
                           <span>
-                            The UNION keyword enables you to execute one or more
-                            additional SELECT queries and append the results to
-                            the original query. For example:
+                            SELECT a, b FROM table1 UNION SELECT c, d FROM
+                            table2
                           </span>
                         </code>
                       </pre>

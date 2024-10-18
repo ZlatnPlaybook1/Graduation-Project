@@ -332,6 +332,7 @@
   list-style: decimal;
   margin-bottom: 10px;
   font-size: 14px;
+  font-weight: 400;
 }
 
 .faq-section .section-text .faq-body ul li a {
@@ -394,6 +395,8 @@
   font-size: 14px;
   font-weight: 400;
   font-style: italic;
+  width: max-content;
+  padding: 10px 20px;
 }
 
 .faq-section .section-text .faq-body ul .terminal-container {
@@ -495,6 +498,8 @@
 
 .faq-section .section-text .faq-body .question {
   padding-top: 20px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .faq-section .section-text .faq-body form {

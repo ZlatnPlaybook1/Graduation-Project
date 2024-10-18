@@ -189,7 +189,6 @@ export default function Linux() {
                         Let's get started with two of the first commands which I
                         have broken down in the table below:
                       </p>
-
                       <table
                         className={`${styles.table} ${styles["table-bordered"]}`}
                       >
@@ -210,7 +209,6 @@ export default function Linux() {
                           </tr>
                         </tbody>
                       </table>
-
                       <h2 className={styles.note}>
                         See the snippets below for an example of each command
                         being used...
@@ -427,7 +425,8 @@ export default function Linux() {
                       <div className={`${styles["terminal-container"]}`}>
                         <div className={`${styles["terminal-content"]}`}>
                           <div className={`${styles["terminal-top"]}`}>
-                            This is what a terminal looks like
+                            Using "ls" to to list the contents of the current
+                            directory
                           </div>
                           <pre
                             className={`${styles["terminal-code"]} language-shell-session`}
@@ -464,9 +463,25 @@ export default function Linux() {
                                 <span
                                   className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
                                 >
-                                  <span className={`${styles.token}`}>
+                                  <span
+                                    className={`${styles.function} ${styles.token}`}
+                                  >
                                     {" "}
-                                    enter commands here
+                                    ls
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    'Important Files' 'My Documents' Notes
+                                    Pictures
                                   </span>
                                 </span>
                               </span>
@@ -488,7 +503,7 @@ export default function Linux() {
                         Great! You can probably take a guess as to what to
                         expect a folder to contain given by its name.
                       </p>
-                      <h2>
+                      <h2 className={styles.note}>
                         Pro tip: You can list the contents of a directory
                         without having to navigate to it by using ls and the
                         name of the directory. I.e. <span>ls Pictures</span>
@@ -505,16 +520,72 @@ export default function Linux() {
                         "Pictures" directory and to do so, we'd use{" "}
                         <span>ls</span> again:
                       </p>
-                      <p>Listing our new directory after we have used "cd"</p>
-                      <pre>
-                        <code>
-                          <span>ls</span>
-                          <span>
-                            dog_picture1.jpg dog_picture2.jpg dog_picture3.jpg
-                            dog_picture4.jpg
-                          </span>
-                        </code>
-                      </pre>
+                      <div className={`${styles["terminal-container"]}`}>
+                        <div className={`${styles["terminal-content"]}`}>
+                          <div className={`${styles["terminal-top"]}`}>
+                            Listing our new directory after we have used "cd"
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~/Pictures
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles.function} ${styles.token}`}
+                                  >
+                                    {" "}
+                                    ls
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    dog_picture1.jpg dog_picture2.jpg
+                                    dog_picture3.jpg dog_picture4.jpg
+                                  </span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
                       <p>
                         In this case, it looks like there are 4 pictures of
                         dogs!
@@ -544,20 +615,129 @@ export default function Linux() {
                         the use of <span>ls</span> to list the files within a
                         directory called "Documents":
                       </p>
-                      <p>
-                        Using <span>ls</span> to to list the contents of the
-                        current directory
-                      </p>
-                      <pre>
-                        <code>
-                          <span>ls</span>
-                          <span>todo.txt</span>
-                          <span>cat todo.txt</span>
-                          <span>
-                            Here's something important for me to do later!
-                          </span>
-                        </code>
-                      </pre>
+                      <div className={`${styles["terminal-container"]}`}>
+                        <div className={`${styles["terminal-content"]}`}>
+                          <div className={`${styles["terminal-top"]}`}>
+                            Using "ls" to to list the contents of the current
+                            directory
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~/Documents
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles.function} ${styles.token}`}
+                                  >
+                                    {" "}
+                                    ls
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    todo.txt
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~/Documents
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles.function} ${styles.token}`}
+                                  >
+                                    {" "}
+                                    cat{" "}
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    todo.txt
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    Here's something important for me to do
+                                    later!
+                                  </span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
                       <p>
                         We've applied some knowledge from earlier in this task
                         to do the following:
@@ -575,7 +755,7 @@ export default function Linux() {
                           important for me to do later!"
                         </li>
                       </ol>
-                      <h2>
+                      <h2 className={styles.note}>
                         Pro tip: You can use <span>cat</span> to output the
                         contents of a file within directories without having to
                         navigate to it by using cat and the name of the
@@ -611,17 +791,100 @@ export default function Linux() {
                         using this "pwd" command like within the screenshot
                         below:
                       </p>
-                      <p>
-                        Using <span>pwd</span> to list the full path of the
-                        current directory
-                      </p>
-                      <pre>
-                        <code>
-                          <span>~/Documents$ pwd</span>
-                          <span>/home/ubuntu/Documents</span>
-                          <span>~/Documents$</span>
-                        </code>
-                      </pre>
+                      <div className={`${styles["terminal-container"]}`}>
+                        <div className={`${styles["terminal-content"]}`}>
+                          <div className={`${styles["terminal-top"]}`}>
+                            Using "pwd" to list the full path of the current
+                            directory
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~/Documents
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles["class-name"]} ${styles.token}`}
+                                  >
+                                    {" "}
+                                    pwd
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    /home/ubuntu/Documents
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~/Documents
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
                       <p>Let's break this down:</p>
                       <ol>
                         <li>
@@ -747,16 +1010,100 @@ export default function Linux() {
                         Take the snippet below; we can see a list of directories
                         available to us:
                       </p>
-                      <p>
-                        Using <span>ls</span> to list the contents of the
-                        current directory
-                      </p>
-                      <pre>
-                        <code>
-                          <span>ls</span>
-                          <span>Desktop Documents Pictures folder1</span>
-                        </code>
-                      </pre>
+                      <div className={`${styles["terminal-container"]}`}>
+                        <div className={`${styles["terminal-content"]}`}>
+                          <div className={`${styles["terminal-top"]}`}>
+                            Using "ls" to list the contents of the current
+                            directory
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles.function} ${styles.token}`}
+                                  >
+                                    {" "}
+                                    ls
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    Desktop Documents Pictures folder1
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
                       <ol>
                         <li>Desktop</li>
                         <li>Documents</li>
@@ -782,16 +1129,105 @@ export default function Linux() {
                         will look through every folder in our current directory
                         for that specific file like so:
                       </p>
-                      <p>
-                        Using <span>find</span> to find a file with the name of
-                        "passwords.txt"
-                      </p>
-                      <pre>
-                        <code>
-                          <span>find -name passwords.txt</span>
-                          <span>./folder1/passwords.txt</span>
-                        </code>
-                      </pre>
+                      <div className={`${styles["terminal-container"]}`}>
+                        <div className={`${styles["terminal-content"]}`}>
+                          <div className={`${styles["terminal-top"]}`}>
+                            Using "find" to find a file with the name of
+                            "passwords.txt"
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles.function} ${styles.token}`}
+                                  >
+                                    {" "}
+                                    find -name{" "}
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    passwords.txt
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    ./folder1/passwords.txt
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
                       <p>
                         "Find" has managed to find the file — it turns out it is
                         located in folder1/passwords.txt — sweet. But let's say
@@ -808,17 +1244,118 @@ export default function Linux() {
                         able to find every .txt file and has then given us the
                         location of each one:
                       </p>
-                      <p>
-                        Using <span>find</span> to find any file with the
-                        extension of ".txt"
-                      </p>
-                      <pre>
-                        <code>
-                          <span>find -name *.txt</span>
-                          <span>./folder1/passwords.txt</span>
-                          <span>./Documents/todo.txt</span>
-                        </code>
-                      </pre>
+                      <div className={`${styles["terminal-container"]}`}>
+                        <div className={`${styles["terminal-content"]}`}>
+                          <div className={`${styles["terminal-top"]}`}>
+                            Using "find" to find any file with the extension of
+                            ".txt"
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles.function} ${styles.token}`}
+                                  >
+                                    {" "}
+                                    find -name{" "}
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    *.txt
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    ./folder1/passwords.txt
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    ./Documents/todo.txt
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
                       <p>Find has managed to find:</p>
                       <ol>
                         <li>"passwords.txt" located within "folder1"</li>
@@ -838,16 +1375,105 @@ export default function Linux() {
                         this case, the access.log of a web server has 244
                         entries.
                       </p>
-                      <p>
-                        Using <span>wc</span> to count the number of entries in
-                        "access.log"
-                      </p>
-                      <pre>
-                        <code>
-                          <span>wc -l access.log</span>
-                          <span>244 access.log</span>
-                        </code>
-                      </pre>
+                      <div className={`${styles["terminal-container"]}`}>
+                        <div className={`${styles["terminal-content"]}`}>
+                          <div className={`${styles["terminal-top"]}`}>
+                            Using "wc" to count the number of entries in
+                            "access.log"
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles.function} ${styles.token}`}
+                                  >
+                                    {" "}
+                                    wc -l{" "}
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    access.log
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    244 access.log
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
                       <p>
                         Using a command like <span>cat</span> isn't going to cut
                         it too well here. Let's say for example if we wanted to
@@ -864,20 +1490,112 @@ export default function Linux() {
                         IP address "81.143.211.90" has visited (note that this
                         is fictional)
                       </p>
-                      <p>
-                        Using "grep" to find any entries with the IP address of
-                        "81.143.211.90" in "access.log"
-                      </p>
-                      <pre>
-                        <code>
-                          <span>grep "81.143.211.90" access.log </span>
-                          <span>
-                            81.143.211.90 - - [25/Mar/2021:11:17 + 0000] "GET /
-                            HTTP/1.1" 200 417 "-" "Mozilla/5.0 (Linux; Android
-                            7.0; Moto G(4))"
-                          </span>
-                        </code>
-                      </pre>
+                      <div className={`${styles["terminal-container"]}`}>
+                        <div className={`${styles["terminal-content"]}`}>
+                          <div className={`${styles["terminal-top"]}`}>
+                            Using "grep" to find any entries with the IP address
+                            of "81.143.211.90" in "access.log"
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles.function} ${styles.token}`}
+                                  >
+                                    {" "}
+                                    grep{" "}
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.string}`}
+                                  >
+                                    "81.143.211.90"{" "}
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    access.log
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    81.143.211.90 - - [25/Mar/2021:11:17 + 0000]
+                                    "GET / HTTP/1.1" 200 417 "-" "Mozilla/5.0
+                                    (Linux; Android 7.0; Moto G(4))"
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
                       <p>
                         "Grep" has searched through this file and has shown us
                         any entries of what we've provided and that is contained
@@ -930,37 +1648,47 @@ export default function Linux() {
                         At an overview, I'm going to be showcasing the following
                         operators:
                       </p>
-                      <ol>
-                        <li>
-                          <h4>
-                            <span>&: </span>This operator allows you to run
-                            commands in the background of your terminal.
-                          </h4>
-                        </li>
-                        <li>
-                          <h4>
-                            <span>&&: </span>This operator allows you to combine
-                            multiple commands together in one line of your
-                            terminal.
-                          </h4>
-                        </li>
-                        <li>
-                          <h4>
-                            <span>&gt;: </span>This operator is a redirector -
-                            meaning that we can take the output from a command
-                            (such as using cat to output a file) and direct it
-                            elsewhere.
-                          </h4>
-                        </li>
-                        <li>
-                          <h4>
-                            <span>&gt;&gt;: </span>This operator does the same
-                            function of the <span>&gt;</span> operator but
-                            appends the output rather than replacing (meaning
-                            nothing is overwritten).
-                          </h4>
-                        </li>
-                      </ol>
+                      <table
+                        className={`${styles.table} ${styles["table-bordered"]}`}
+                      >
+                        <tbody>
+                          <tr>
+                            <td>Symbol / Operator </td>
+                            <td>Description</td>
+                          </tr>
+                          <tr>
+                            <td>&</td>
+                            <td>
+                              This operator allows you to run commands in the
+                              background of your terminal.
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>&&</td>
+                            <td>
+                              This operator allows you to combine multiple
+                              commands together in one line of your terminal.
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>&gt;</td>
+                            <td>
+                              This operator is a redirector - meaning that we
+                              can take the output from a command (such as using
+                              cat to output a file) and direct it elsewhere.
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>&gt;&gt;</td>
+                            <td>
+                              This operator does the same function of the{" "}
+                              <span>&gt;</span> operator but appends the output
+                              rather than replacing (meaning nothing is
+                              overwritten).
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                       <p>Let's cover these in a bit more detail.</p>
                     </li>
                     <li>
@@ -1012,20 +1740,144 @@ export default function Linux() {
                         <span> echo hey &gt; welcome</span> where we want the
                         file created with the contents "hey" like so:
                       </p>
-                      <p>Using the &gt; Operator</p>
-                      <pre>
-                        <code>
-                          <span>echo hey &gt; welcome</span>
-                        </code>
-                      </pre>
-                      <p>Using cat to output the "welcome" file</p>
-                      <pre>
-                        <code>
-                          <span>cat welcome</span>
-                          <span>hey</span>
-                        </code>
-                      </pre>
-                      <h2>
+                      <div className={`${styles["terminal-container"]}`}>
+                        <div className={`${styles["terminal-content"]}`}>
+                          <div className={`${styles["terminal-top"]}`}>
+                          Using the &gt; Operator
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles['class-name']} ${styles.token}`}
+                                    >
+                                    {" "}
+                                    echo
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                    >
+                                    {" "}hey{" "}
+                                  </span>
+                                  <span
+                                    className={`${styles['class-name']} ${styles.token}`}
+                                  >
+                                    &gt;{" "}
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                    >
+                                    welcome
+                                  </span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                      <div className={`${styles["terminal-container"]}`}>
+                        <div className={`${styles["terminal-content"]}`}>
+                          <div className={`${styles["terminal-top"]}`}>
+                          Using cat to output the "welcome" file
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles.function} ${styles.token}`}
+                                  >
+                                    {" "}
+                                    cat{" "}
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    welcome
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    hey
+                                  </span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                      <h2 className={styles.note}>
                         Note: If the file i.e. "welcome" already exists, the
                         contents will be overwritten!
                       </h2>
@@ -1051,20 +1903,156 @@ export default function Linux() {
                         output to the bottom of the file — rather than replacing
                         the contents like so:
                       </p>
-                      <p>Using the &gt;&gt; Operator</p>
-                      <pre>
-                        <code>
-                          <span>echo hello &gt;&gt; welcome</span>
-                        </code>
-                      </pre>
-                      <p>Using cat to output the "welcome" file</p>
-                      <pre>
-                        <code>
-                          <span>cat welcome</span>
-                          <span>hey</span>
-                          <span>hello</span>
-                        </code>
-                      </pre>
+                      <div className={`${styles["terminal-container"]}`}>
+                        <div className={`${styles["terminal-content"]}`}>
+                          <div className={`${styles["terminal-top"]}`}>
+                          Using the &gt;&gt; Operator
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles['class-name']} ${styles.token}`}
+                                    >
+                                    {" "}
+                                    echo
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                    >
+                                    {" "}hello{" "}
+                                  </span>
+                                  <span
+                                    className={`${styles['class-name']} ${styles.token}`}
+                                  >
+                                    &gt;&gt;{" "}
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                    >
+                                    welcome
+                                  </span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                      <div className={`${styles["terminal-container"]}`}>
+                        <div className={`${styles["terminal-content"]}`}>
+                          <div className={`${styles["terminal-top"]}`}>
+                          Using cat to output the "welcome" file
+                          </div>
+                          <pre
+                            className={`${styles["terminal-code"]} language-shell-session`}
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    tryhackme@linux1
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.punctuation}`}
+                                  >
+                                    :
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.path}`}
+                                  >
+                                    ~
+                                  </span>
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.important} ${styles["shell-symbol"]}`}
+                                >
+                                  $
+                                </span>
+                                <span
+                                  className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
+                                >
+                                  <span
+                                    className={`${styles.function} ${styles.token}`}
+                                  >
+                                    {" "}
+                                    cat{" "}
+                                  </span>
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    welcome
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    hey
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                className={`${styles.token} ${styles.command}`}
+                              >
+                                <span
+                                  className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                                >
+                                  <span
+                                    className={`${styles.token} ${styles.user}`}
+                                  >
+                                    hello
+                                  </span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
                     </li>
                   </ul>
                   <p className={styles.question}>
@@ -1128,7 +2116,7 @@ export default function Linux() {
                 </dd>
               </dl>
             </div>
-            <div className={styles['go-to-section']}>
+            <div className={styles["go-to-section"]}>
               <Link to="/linux/linux_lab" className={styles["go-to"]}>
                 Go To Lab
               </Link>
