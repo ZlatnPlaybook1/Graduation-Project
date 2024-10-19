@@ -66,7 +66,7 @@ export default function Expression_lab() {
       {/* Start Courses  */}
       <div className="course-Expression-lab">
         <div className="container-Expression-lab">
-            <h2>Expression Lab</h2>
+            <h2>Bash Scripting Lab</h2>
             <p className="section-p-Expression-lab">Test Your Hacking skills</p>
             <div className="row-Expression-lab">
                 <Link to="/Expression-lab/Expression-lab_lab/first/login" className="course-card-Expression-lab">
