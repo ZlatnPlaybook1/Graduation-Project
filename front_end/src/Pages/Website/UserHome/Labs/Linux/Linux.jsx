@@ -66,7 +66,7 @@ export default function Linux() {
           <div className={styles["course-info"]}>
             <img src={image} alt="logo" />
             <div className={styles["course-text"]}>
-              <h1>Cross-Site Scripting</h1>
+              <h1>Linux Fundamentals</h1>
               <p>
                 Hack your first website (legally in a safe environment) and
                 experience an ethical hacker's job.

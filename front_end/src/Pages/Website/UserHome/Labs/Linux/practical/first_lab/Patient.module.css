@@ -1,0 +1,291 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Extra small */
+@media (min-width: 0px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+
+/* small */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+
+/*  Medium */
+@media (min-width: 768px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+/* Large */
+@media (min-width: 992px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+/* X-Large */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+.course {
+    position: relative;
+}
+
+.message {
+    position: absolute;
+    color: white;
+    min-width: 200px;
+    height: 50px;
+    padding: 10px 20px;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+    transition: var(--main-transition);
+
+}
+
+.success {
+    background-color: var(--sec-main-color);
+    
+}
+
+.fail {
+    /* background-color: ; */
+    opacity: 0;
+}
+
+/* Start Course Content */
+.course .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 70px;
+}
+
+
+.course .course-section {
+    background-color: inherit;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.faq-section {
+    margin-top: 75px;
+    display: block;
+    width: 100%;
+}
+
+
+@media (max-width: 991px) {
+    .faq-section .section-text {
+        margin-left: 0;
+    }
+
+    .faq-section .image {
+        display: none;
+    }
+}
+
+.faq-item {
+    margin-bottom: 30px;
+}
+
+.faq-section .section-text .faq-header {
+    border-radius: 5px 5px 0 0;
+    color: white;
+    background-color: #212c42;
+    font-size: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    line-height: 20px;
+    padding: 10px 25px;
+    font-weight: lighter;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media (max-width: 991px) {
+    .faq-section .section-text .faq-header {
+        font-size: 16px;
+    }
+}
+
+.faq-section .section-text .faq-header span {
+    color: var(--sec-main-color);
+    margin-right: 40px;
+    position: relative;
+}
+
+.faq-section .section-text .faq-header span::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border: 1px solid #777;
+    border-radius: 50%;
+    position: absolute;
+    right: -45%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.faq-section .section-text .faq-body {
+    font-size: 18px;
+    padding: 15px 25px;
+    line-height: 1.9;
+    border-left: 4px solid var(--sec-main-color);
+    box-shadow: 1px 2px rgb(0, 0, 0, .1);
+    border-radius: 0 0 5px 5px;
+    background-color: white;
+    color: rgb(21, 28, 43);
+}
+
+@media (max-width: 991px) {
+    .faq-section .section-text .faq-body {
+        font-size: 14px;
+    }
+}
+
+.faq-section a {
+    color: var(--sec-main-color);
+    text-decoration: underline;
+}
+
+.faq-section p {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.faq-section span:not([class]) {
+    color: #eee;
+    background-color: rgb(33, 44, 66);
+    padding: 4px 5px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+.faq-section h2 {
+    color: var(--sec-main-color);
+    font-size: 20px;
+}
+
+.question-div {
+    margin: 50px 0;
+}
+
+.faq-section .question {
+    padding-top: 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.faq-section form {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.faq-section form input {
+    flex: 3 1 0%;
+    padding: 7px 12px;
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    color: rgb(28, 37, 56);
+    border-radius: 5px;
+    background-color: white;
+    outline: none;
+    border: 0.1rem solid rgb(212, 216, 223);
+    margin-right: 20px;
+}
+
+.faq-section form button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0%;
+    cursor: pointer;
+    gap: 6px;
+    height: 36px;
+    min-width: 300px;
+    border-radius: 5px;
+    max-width: 100%;
+    font-size: 16px;
+    padding: 7px 16px;
+    text-decoration: none;
+    pointer-events: initial;
+    border-width: 1px;
+    border-style: solid;
+    background-color: transparent;
+    color: rgb(21, 28, 43);
+    border-color: rgb(163, 234, 42);
+    transition: 0.2s ease-in-out;
+}
+
+.faq-section form button:hover:not(:disabled) {
+    background-color: rgb(163, 234, 42);
+}
+
+.fileViewer {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.fileViewer p {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: #333;
+}
+
+.downloadButton {
+    background-color: var(--sec-main-color);
+    /* Your specified color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.downloadButton:hover {
+    background-color: #92d51f;
+    /* A slightly darker shade for hover effect */
+}
+
+.downloadButton i {
+    margin-right: 5px;
+}
+
+
+/* End Course Content */
