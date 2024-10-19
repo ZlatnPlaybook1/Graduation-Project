@@ -168,7 +168,7 @@ const Courses = () => {
               </div>
               {/* topic 7 */}
               <div className="course-text">
-                <h3>Bash Scripting</h3>
+                <h3>Regular expressions</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
@@ -218,7 +218,7 @@ const Courses = () => {
               </div>
               {/* topic 9 */}
               <div className="course-text">
-                <h3>Regular expressions</h3>
+                <h3>Bash Scripting</h3>
                 <p>
                   Learn the core skills required to start a career in cyber
                   security

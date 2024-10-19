@@ -146,7 +146,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token}  ${styles.punctuation}`}
@@ -232,7 +232,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -291,7 +291,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -442,7 +442,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -539,7 +539,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -635,7 +635,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -686,7 +686,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -811,7 +811,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -862,7 +862,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -1030,7 +1030,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -1081,7 +1081,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -1149,7 +1149,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -1205,7 +1205,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -1264,7 +1264,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -1333,7 +1333,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -1395,7 +1395,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -1451,7 +1451,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -1510,7 +1510,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -1573,7 +1573,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -1759,7 +1759,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -1826,7 +1826,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -1922,7 +1922,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
@@ -1989,7 +1989,7 @@ export default function Linux() {
                                   <span
                                     className={`${styles.token} ${styles.user}`}
                                   >
-                                    tryhackme@linux1
+                                    CyberLabs@linux1
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.punctuation}`}
