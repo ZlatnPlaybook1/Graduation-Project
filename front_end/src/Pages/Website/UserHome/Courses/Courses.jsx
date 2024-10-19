@@ -3,6 +3,9 @@ import "./Courses.css";
 import imagecourse from "../assets/img/course_image_home.png";
 import imagecourse2 from "../assets/img/Lab2.jpg";
 import bash from "../assets/img/bash/bash_course_logo.png";
+import linux_logo from "../assets/img/linux/linux_logo.png";
+import Cookies_logo from "../assets/img/cookies/Cookies_logo.png";
+
 const Courses = () => {
   return (
     <div className="course">
@@ -65,7 +68,7 @@ const Courses = () => {
           <div className="row-course">
             <a href="/cookies" className="course-card">
               <div className="course-image">
-                <img src={imagecourse2} alt="Course" />
+                <img src={Cookies_logo} alt="Course" />
               </div>
               {/* topic3 */}
               <div className="course-text">
@@ -90,7 +93,7 @@ const Courses = () => {
           <div className="row-course">
             <a href="/lab1" className="course-card">
               <div className="course-image">
-                <img src={imagecourse} alt="Course" />
+                <img src={imagecourse2} alt="Course" />
               </div>
               {/* topic4 */}
               <div className="course-text">
@@ -140,7 +143,7 @@ const Courses = () => {
           <div className="row-course">
             <a href="/linux" className="course-card">
               <div className="course-image">
-                <img src={imagecourse2} alt="Course" />
+                <img src={linux_logo} alt="Course" />
               </div>
               {/* topic6 */}
               <div className="course-text">
