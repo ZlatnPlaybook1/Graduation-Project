@@ -1,4 +1,4 @@
-.container-Expression {
+.container-bash {
   margin-left: auto;
   margin-right: auto;
 }
@@ -6,7 +6,7 @@
 
 /* Extra small */
 @media (min-width: 0px) {
-  .container-Expression {
+  .container-bash {
       max-width: 100%;
   }
 }
@@ -14,7 +14,7 @@
 
 /* small */
 @media (min-width: 576px) {
-  .container-Expression {
+  .container-bash {
       max-width: 540px;
   }
 }
@@ -22,26 +22,26 @@
 
 /*  Medium */
 @media (min-width: 768px) {
-  .container-Expression {
+  .container-bash {
       max-width: 750px;
   }
 }
 
 /* Large */
 @media (min-width: 992px) {
-  .container-Expression {
+  .container-bash {
       max-width: 970px;
   }
 }
 
 /* X-Large */
 @media (min-width: 1200px) {
-  .container-Expression {
+  .container-bash {
       max-width: 1170px;
   }
 }
 /* Start Landing */
-.landing-Expression {
+.landing-bash {
   height: auto;
   position: relative;
   background-color: var(--alt-color);
@@ -49,7 +49,7 @@
   z-index: 3;
 }
 
-.landing-Expression .banner-Expression {
+.landing-bash .banner-bash {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -57,7 +57,7 @@
   overflow: hidden;
 }
 
-.landing-Expression .banner-Expression::after {
+.landing-bash .banner-bash::after {
   content: "";
   position: absolute;
   inset: 0px;
@@ -66,50 +66,50 @@
   background: linear-gradient(to right, var(--alt-color) 30%, rgba(21, 28, 43, 0.98) 50%, transparent 100%);
 }
 
-.landing-Expression .banner-Expression img {
+.landing-bash .banner-bash img {
   position: absolute;
   left: 30%;
 }
 
-.landing-Expression .container-Expression {
+.landing-bash .container-bash {
   padding: 24px 12px;
 }
 
-.landing-Expression .breadcrumb-Expression ul {
+.landing-bash .breadcrumb-bash ul {
   display: flex;
   gap: .5rem;
 
 }
 
-.landing-Expression .breadcrumb-Expression ul li:first-of-type::before {
+.landing-bash .breadcrumb-bash ul li:first-of-type::before {
   content: "";
 }
 
-.landing-Expression .breadcrumb-Expression ul li::before {
+.landing-bash .breadcrumb-bash ul li::before {
   content: ">";
   color: rgb(184, 190, 201);
   padding-right: 5px;
 }
 
-.landing-Expression .breadcrumb-Expression ul li a {
+.landing-bash .breadcrumb-bash ul li a {
   font-size: 12px;
   color: rgb(184, 190, 201);
   padding: 0;
   margin: 0;
 }
 
-.landing-Expression .breadcrumb-Expression ul li span.active-breadcrumb-Expression {
+.landing-bash .breadcrumb-bash ul li span.active-breadcrumb-bash {
   font-size: 12px;
   padding: 0;
   margin: 0;
   color: rgb(99, 110, 129);
 }
 
-.landing-Expression .breadcrumb-Expression ul li a:hover {
+.landing-bash .breadcrumb-bash ul li a:hover {
   text-decoration: underline;
 }
 
-.landing-Expression .course-info-Expression {
+.landing-bash .course-info-bash {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -119,22 +119,22 @@
   color: white;
 }
 
-.landing-Expression .course-info-Expression img {
+.landing-bash .course-info-bash img {
   width: 90px;
 }
 
-.landing-Expression .course-info-Expression .course-text-Expression {
+.landing-bash .course-info-bash .course-text-bash {
   margin-left: 20px;
 }
 
-.landing-Expression .course-info-Expression .course-text-Expression p {
+.landing-bash .course-info-bash .course-text-bash p {
   margin-top: 5px;
   font-size: 12px;
   display: inline-block;
   padding-left: 10px;
 }
 
-.landing-Expression .course-info-Expression .course-icons-Expression {
+.landing-bash .course-info-bash .course-icons-bash {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -144,7 +144,7 @@
   color: white;
 }
 
-.landing-Expression .course-info-Expression .course-icons-Expression i.fa-signal.for-Expression {
+.landing-bash .course-info-bash .course-icons-bash i.fa-signal.for-bash {
   color: green;
 }
 
@@ -153,18 +153,18 @@
   color: green;
 }
 
-.landing-Expression .course-info-Expression .course-icons-Expression .diff-Expression,
-.landing-Expression .course-info-Expression .course-icons-Expression .duration-Expression {
+.landing-bash .course-info-bash .course-icons-bash .diff-bash,
+.landing-bash .course-info-bash .course-icons-bash .duration-bash {
   display: inline-block;
   margin-right: 20px;
 }
 
-.landing-Expression .course-info-Expression .course-icons-Expression i.fa-clock.for-Expression+p {
+.landing-bash .course-info-bash .course-icons-bash i.fa-clock.for-bash+p {
   display: inline-block;
   padding-left: 10px;
 }
 
-.landing-Expression .options-Expression {
+.landing-bash .options-bash {
   display: flex;
   justify-content: start;
   gap: 12px;
@@ -172,7 +172,7 @@
   flex-direction: row;
 }
 
-.landing-Expression .options-Expression .like-Expression {
+.landing-bash .options-bash .like-bash {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -181,7 +181,7 @@
   border-radius: 4px;
 }
 
-.landing-Expression .options-Expression button {
+.landing-bash .options-bash button {
   background-color: var(--alt-color);
   border-color: rgb(62, 71, 90);
   color: white;
@@ -201,26 +201,26 @@
   transition: var(--main-transition);
 }
 
-.landing-Expression .options-Expression button:hover {
+.landing-bash .options-bash button:hover {
   background-color: white;
   color: var(--alt-color);
 }
 
-.landing-Expression .options-Expression .like.for-Expression button {
+.landing-bash .options-bash .like.for-bash button {
   border-radius: 4px 0px 0px 4px;
   border: none;
 }
-.landing-Expression .options-Expression button p{
+.landing-bash .options-bash button p{
   margin: 0;
 }
 
-.landing-Expression .options-Expression .like-Expression button:first-of-type {
+.landing-bash .options-bash .like-bash button:first-of-type {
   border-right: 1px solid rgb(62, 71, 90);
 }
 
 /* End Landing */
 /* Start Course Content */
-.course-Expression .row-Expression {
+.course-bash .row-bash {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -229,14 +229,14 @@
 }
 
 
-.course-Expression .course-section-Expression {
+.course-bash .course-section-bash {
   background-color: inherit;
   width: 100%;
   display: flex;
   align-items: center;
 }
 
-.faq-section-Expression {
+.faq-section-bash {
   margin-top: 75px;
   display: block;
   width: 100%;
@@ -244,20 +244,20 @@
 
 
 @media (max-width: 991px) {
-  .faq-section-Expression .section-text-Expression {
+  .faq-section-bash .section-text-bash {
       margin-left: 0;
   }
 
-  .faq-section-Expression .image-Expression {
+  .faq-section-bash .image-bash {
       display: none;
   }
 }
 
-.faq-item-Expression {
+.faq-item-bash {
   margin-bottom: 30px;
 }
 
-.faq-section-Expression .section-text-Expression .faq-header-Expression {
+.faq-section-bash .section-text-bash .faq-header-bash {
   border-radius: 5px 5px 0 0;
   color: white;
   background-color: #212c42;
@@ -273,18 +273,18 @@
 }
 
 @media (max-width: 991px) {
-  .faq-section-Expression .section-text-Expression .faq-header-Expression {
+  .faq-section-bash .section-text-bash .faq-header-bash {
       font-size: 16px;
   }
 }
 
-.faq-section-Expression .section-text-Expression .faq-header-Expression span {
+.faq-section-bash .section-text-bash .faq-header-bash span {
   color: var(--sec-main-color);
   margin-right: 40px;
   position: relative;
 }
 
-.faq-section-Expression .section-text-Expression .faq-header-Expression span::after {
+.faq-section-bash .section-text-bash .faq-header-bash span::after {
   content: "";
   width: 10px;
   height: 10px;
@@ -297,7 +297,7 @@
   transform: translateY(-50%);
 }
 
-.faq-section-Expression .section-text-Expression .faq-body-Expression {
+.faq-section-bash .section-text-bash .faq-body-bash {
   font-size: 18px;
   padding: 15px 25px;
   line-height: 1.9;
@@ -309,12 +309,12 @@
 }
 
 @media (max-width: 991px) {
-  .faq-section-Expression .section-text-Expression .faq-body-Expression {
+  .faq-section-bash .section-text-bash .faq-body-bash {
       font-size: 14px;
   }
 }
 
-.faq-section-Expression .section-text-Expression .faq-body-Expression img {
+.faq-section-bash .section-text-bash .faq-body-bash img {
   width: 25%;
   margin-left: auto;
   margin-right: auto;
@@ -322,32 +322,32 @@
   margin-bottom: 30px;
 }
 
-.faq-section-Expression .section-text-Expression .faq-body-Expression ul li {
+.faq-section-bash .section-text-bash .faq-body-bash ul li {
   list-style: "- ";
   margin-bottom: 10px;
 }
 
-.faq-section-Expression .section-text-Expression .faq-body-Expression ol li {
+.faq-section-bash .section-text-bash .faq-body-bash ol li {
   list-style: decimal;
   margin-bottom: 10px;
   font-size: 14px;
   /* font-weight: lighter; */
 }
 
-.faq-section-Expression .section-text-Expression .faq-body-Expression ul li a {
+.faq-section-bash .section-text-bash .faq-body-bash ul li a {
   color: var(--sec-main-color);
   text-decoration: underline;
 }
 
-.faq-section-Expression .section-text-Expression .faq-body-Expression ul li span {
+.faq-section-bash .section-text-bash .faq-body-bash ul li span {
   color: blue;
 }
 
-.faq-section-Expression .section-text-Expression .faq-body-Expression li h2 {
+.faq-section-bash .section-text-bash .faq-body-bash li h2 {
   color: var(--sec-main-color);
 }
 
-.faq-section-Expression .section-text-Expression .faq-body-Expression ul pre {
+.faq-section-bash .section-text-bash .faq-body-bash ul pre {
   padding: 25px 20px;
   margin: 15px 0;
   border-radius: 0;
@@ -358,23 +358,23 @@
   word-wrap: break-word;
 }
 
-.faq-section-Expression .section-text-Expression .faq-body-Expression ul pre code {
+.faq-section-bash .section-text-bash .faq-body-bash ul pre code {
   display: flex;
   align-items: start;
   flex-direction: column;
 }
 
-.faq-section-Expression .section-text-Expression .faq-body-Expression ul pre span {
+.faq-section-bash .section-text-bash .faq-body-bash ul pre span {
   color: green;
   display: inline;
   white-space: normal;
 }
 
-.faq-section-Expression .section-text-Expression .faq-body-Expression .question {
+.faq-section-bash .section-text-bash .faq-body-bash .question {
   border-top: 2px solid #ddd;
   padding-top: 20px;
 }
-.faq-section-Expression .section-text-Expression .faq-body-Expression form {
+.faq-section-bash .section-text-bash .faq-body-bash form {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
@@ -382,7 +382,7 @@
   flex-direction: row;
 }
 
-.faq-section-Expression .section-text-Expression .faq-body-Expression form input {
+.faq-section-bash .section-text-bash .faq-body-bash form input {
   flex: 3 1 0%;
   padding: 7px 12px;
   width: 100%;
@@ -396,7 +396,7 @@
   margin-right: 20px;
 }
 
-.faq-section-Expression .section-text-Expression .faq-body-Expression form button {
+.faq-section-bash .section-text-bash .faq-body-bash form button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -419,18 +419,18 @@
   transition: 0.2s ease-in-out;
 }
 
-.faq-section-Expression .section-text-Expression .faq-body-Expression form button:hover:not(:disabled) {
+.faq-section-bash .section-text-bash .faq-body-bash form button:hover:not(:disabled) {
   background-color: rgb(163, 234, 42);
 }
 
-.go-to-section-Expression {
+.go-to-section-bash {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
 
-.go-to-Expression {
+.go-to-bash {
   margin-top: 50px;
   border-radius: 5px;
   max-width: 100%;
@@ -442,7 +442,7 @@
   transition: var(--main-transition);
 }
 
-.go-to-Expression:hover {
+.go-to-bash:hover {
   background-color: rgb(163, 234, 42);
 }
 

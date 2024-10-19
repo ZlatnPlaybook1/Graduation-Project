@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import "./Expression.css";
+import "./Bash.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/background.png";
 import image from "../../assets/img/bash/full_colored_dark (1).png";
@@ -26,7 +26,7 @@ import exampleImage16  from "../../assets/img/bash/carbon-17.png";
 import exampleImage17  from "../../assets/img/bash/carbon-25.png";
 import exampleImage18  from "../../assets/img/bash/first.jpg";
 
-export default function Expression() {
+export default function Bash() {
   const faqSectionRef = useRef(null);
 
   useEffect(() => {
@@ -61,12 +61,12 @@ export default function Expression() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing-Expression">
-        <div className="banner-Expression">
+      <div className="landing-bash">
+        <div className="banner-bash">
           <img src={background} alt="bacground" />
         </div>
-        <div className="container-Expression">
-          <div className="breadcrumb-Expression">
+        <div className="container-bash">
+          <div className="breadcrumb-bash">
             <ul>
               <li>
                 <Link to="">Pre Security</Link>
@@ -75,45 +75,45 @@ export default function Expression() {
                 <Link to="">Introduction To Cyber Security</Link>
               </li>
               {/* <li>
-                <span className="active-breadcrumb-Expression">
+                <span className="active-breadcrumb-bash">
                   Intro To Offensive Security
                 </span>
               </li> */}
             </ul>
           </div>
-          <div className="course-info-Expression">
+          <div className="course-info-bash">
             <img src={image} alt="logo"  style={{ width: '130px' }}/>
-            <div className="course-text-Expression">
+            <div className="course-text-bash">
               <h1>Bash Scripting</h1>
               <p>
               A Walkthrough room to teach you the basics of bash scripting
               </p>
-              <div className="course-icons-Expression">
-                <div className="diff-Expression">
-                  <div className="easy-Expression">
-                    <i className="fa-solid fa-signal for-Expression"></i>
+              <div className="course-icons-bash">
+                <div className="diff-bash">
+                  <div className="easy-bash">
+                    <i className="fa-solid fa-signal for-bash"></i>
                     <p>Easy</p>
                   </div>
                 </div>
-                <div className="duration-Expression">
-                  <i className="fa-solid fa-clock for-Expression"></i>
+                <div className="duration-bash">
+                  <i className="fa-solid fa-clock for-bash"></i>
                   <p className="time">50 min</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="options-Expression">
+          <div className="options-bash">
             <button>
-              <i className="far fa-bookmark for-Expression"></i>
+              <i className="far fa-bookmark for-bash"></i>
               <p>Save Room</p>
             </button>
-            <div className="like-Expression">
+            <div className="like-bash">
               <button>
-                <i className="fas fa-thumbs-up for-Expression"></i>
+                <i className="fas fa-thumbs-up for-bash"></i>
                 <p></p>
               </button>
               <button>
-                <i className="fas fa-thumbs-down for-Expression"></i>
+                <i className="fas fa-thumbs-down for-bash"></i>
                 <p></p>
               </button>
             </div>
@@ -122,16 +122,16 @@ export default function Expression() {
       </div>
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-Expression">
-        <div className="container-Expression" ref={faqSectionRef}>
-          <div className="row-Expression">
-            <div className="faq-section-Expression">
-              <dl className="section-text-Expression">
+      <div className="course-bash">
+        <div className="container-bash" ref={faqSectionRef}>
+          <div className="row-bash">
+            <div className="faq-section-bash">
+              <dl className="section-text-bash">
                 {/* Single FAQ Area  */}
 
 
-                <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Lesson 1</span> Introduction</dt>
-                <dd className="fadeInUp faq-body-Expression">
+                <dt className="wave-bash fadeInUp faq-header-bash"><span>Lesson 1</span> Introduction</dt>
+                <dd className="fadeInUp faq-body-bash">
                   
                   <p><br></br></p> 
                   <span style={{ display: 'block', textAlign: 'center' }}><h1>Welcome to the introductory bash scripting room!</h1></span>
@@ -163,8 +163,8 @@ export default function Expression() {
 
 
 
-            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Lesson 2</span> Our first simple bash scripts </dt>
-                <dd className="fadeInUp faq-body-Expression">
+            <dt className="wave-bash fadeInUp faq-header-bash"><span>Lesson 2</span> Our first simple bash scripts </dt>
+                <dd className="fadeInUp faq-body-bash">
                 <p><br></br></p> 
                 <span style={{ display: 'block', textAlign: 'center' }}><h3>Ok now that we have had a brief introduction to what bash is and what it is used for let's jump right into some examples!</h3></span>
                       <p><br></br></p> 
@@ -194,8 +194,8 @@ export default function Expression() {
 
 
 
-            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Lesson 3</span> Variables </dt>
-                <dd className="fadeInUp faq-body-Expression">
+            <dt className="wave-bash fadeInUp faq-header-bash"><span>Lesson 3</span> Variables </dt>
+                <dd className="fadeInUp faq-body-bash">
                 <p><br></br></p> 
                 <span style={{ display: 'block', textAlign: 'center' }}><h3>Now we are moving onto variables,in bash these are quite simple and we create them</h3></span>      
                 <p><br></br></p> 
@@ -241,8 +241,8 @@ export default function Expression() {
 
             </dd>
 
-            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Lesson 4</span> Parameters </dt>
-                <dd className="fadeInUp faq-body-Expression">
+            <dt className="wave-bash fadeInUp faq-header-bash"><span>Lesson 4</span> Parameters </dt>
+                <dd className="fadeInUp faq-body-bash">
                 <p><br></br></p>
                 <span style={{ display: 'block', textAlign: 'center' }}><h3>We will now look at one of the main features of bash and that's using parameters.</h3></span>
                 <p><br></br></p>
@@ -271,8 +271,8 @@ export default function Expression() {
 
             </dd>
 
-            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Lesson 5</span> Arrays </dt>
-                <dd className="fadeInUp faq-body-Expression">
+            <dt className="wave-bash fadeInUp faq-header-bash"><span>Lesson 5</span> Arrays </dt>
+                <dd className="fadeInUp faq-body-bash">
                 <p><br></br></p>
                 <span style={{ display: 'block', textAlign: 'center' }}><h3>Arrays</h3></span>
                 <p><br></br></p>
@@ -331,8 +331,8 @@ export default function Expression() {
             </dd> 
 
 
-            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Lesson 6</span> Conditionals </dt>
-                <dd className="fadeInUp faq-body-Expression">
+            <dt className="wave-bash fadeInUp faq-header-bash"><span>Lesson 6</span> Conditionals </dt>
+                <dd className="fadeInUp faq-body-bash">
                 <p><br></br></p>
                 <img src={exampleImage13} alt="Example" style={{ width: '900px' }} />
                 <p><br></br></p>
@@ -424,8 +424,8 @@ export default function Expression() {
 
             # main slider
 
-            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Lesson 3</span> Variables </dt>
-                <dd className="fadeInUp faq-body-Expression">
+            <dt className="wave-bash fadeInUp faq-header-bash"><span>Lesson 3</span> Variables </dt>
+                <dd className="fadeInUp faq-body-bash">
                 <p><br></br></p>
 
 
@@ -435,8 +435,8 @@ export default function Expression() {
 
               </dl>
             </div>
-            <div className="go-to-section-Expression">
-              <Link to="/regular-expression/expression_lab" className="go-to-Expression">
+            <div className="go-to-section-bash">
+              <Link to="/bash-scripting/bash_lab" className="go-to-bash">
                 Go To Lab
               </Link>
             </div>

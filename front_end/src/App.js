@@ -39,9 +39,10 @@ import CookiesSecondAdmin from "./Pages/Website/UserHome/Labs/Cookies/practical/
 import CookiesSecondSupport from "./Pages/Website/UserHome/Labs/Cookies/practical/second_lab/Support.jsx";
 import Linux from "./Pages/Website/UserHome/Labs/Linux/Linux.jsx";
 import LINUX_LAB from "./Pages/Website/UserHome/Labs/Linux/Linux_lab.jsx";
+import LINUX_FIRST_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/first_lab/Patient.jsx";
 
-import Expression from "./Pages/Website/UserHome/Labs/reg_expressions/Expression.jsx";
-import EXPRESSION_LAB from "./Pages/Website/UserHome/Labs/reg_expressions/Expression_lab.jsx";
+import Bash from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash.jsx";
+import BASH_LAB from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_lab.jsx";
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
@@ -183,13 +184,14 @@ function App() {
           />
           <Route path="/linux" element={<Linux />} />
           <Route path="/linux/linux_lab" element={<LINUX_LAB />} />
+          <Route path="/linux/linux_lab/patient" element={<LINUX_FIRST_LAB />} />
           {/* End Linux */}
-          <Route path="/regular-expression" element={<Expression />} />
+          <Route path="/bash-scripting" element={<Bash />} />
           <Route
-            path="/regular-expression/expression_lab"
-            element={<EXPRESSION_LAB />}
+            path="/bash-scripting/bash_lab"
+            element={<BASH_LAB />}
           />
-          {/* End Regular Expressions */}
+          {/* End Bash Scripting */}
         </Route>
         {/* End Routes of Labs */}
 
