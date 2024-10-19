@@ -166,7 +166,7 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/lab1" className="course-card">
+            <a href="/regular-expression" className="course-card">
               <div className="course-image">
                 <img src={imagecourse} alt="Course" />
               </div>
@@ -191,7 +191,7 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/lab2" className="course-card">
+            <a href="/broken-auth" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
@@ -216,7 +216,7 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/regular-expression" className="course-card">
+            <a href="/bash-scripting" className="course-card">
               <div className="course-image">
                 <img src={bash} alt="Course" />
               </div>
