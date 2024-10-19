@@ -2,6 +2,7 @@ import React from "react";
 import "./Courses.css";
 import imagecourse from "../assets/img/course_image_home.png";
 import imagecourse2 from "../assets/img/Lab2.jpg";
+import bash from "../assets/img/bash/bash_course_logo.png";
 const Courses = () => {
   return (
     <div className="course">
@@ -214,7 +215,7 @@ const Courses = () => {
           <div className="row-course">
             <a href="/regular-expression" className="course-card">
               <div className="course-image">
-                <img src={imagecourse2} alt="Course" />
+                <img src={bash} alt="Course" />
               </div>
               {/* topic 9 */}
               <div className="course-text">

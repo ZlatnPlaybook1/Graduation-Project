@@ -4,7 +4,7 @@ import $ from "jquery";
 import "./Expression.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/background.png";
-import image from "../../assets/img/course_image.png";
+import image from "../../assets/img/bash/full_colored_dark (1).png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import exampleImage1  from "../../assets/img/bash/carbon-8.png";
@@ -24,6 +24,7 @@ import exampleImage14  from "../../assets/img/bash/carbon-15.png";
 import exampleImage15  from "../../assets/img/bash/carbon-16.png";
 import exampleImage16  from "../../assets/img/bash/carbon-17.png";
 import exampleImage17  from "../../assets/img/bash/carbon-25.png";
+import exampleImage18  from "../../assets/img/bash/first.jpg";
 
 export default function Expression() {
   const faqSectionRef = useRef(null);
@@ -73,20 +74,19 @@ export default function Expression() {
               <li>
                 <Link to="">Introduction To Cyber Security</Link>
               </li>
-              <li>
+              {/* <li>
                 <span className="active-breadcrumb-Expression">
                   Intro To Offensive Security
                 </span>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="course-info-Expression">
-            <img src={image} alt="logo" />
+            <img src={image} alt="logo"  style={{ width: '130px' }}/>
             <div className="course-text-Expression">
-              <h1>Cross-Site Scripting</h1>
+              <h1>Bash Scripting</h1>
               <p>
-                Hack your first website (legally in a safe environment) and
-                experience an ethical hacker's job.
+              A Walkthrough room to teach you the basics of bash scripting
               </p>
               <div className="course-icons-Expression">
                 <div className="diff-Expression">
@@ -97,7 +97,7 @@ export default function Expression() {
                 </div>
                 <div className="duration-Expression">
                   <i className="fa-solid fa-clock for-Expression"></i>
-                  <p className="time">15 min</p>
+                  <p className="time">50 min</p>
                 </div>
               </div>
             </div>
@@ -130,19 +130,20 @@ export default function Expression() {
                 {/* Single FAQ Area  */}
 
 
-                <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Task 1</span> Introduction</dt>
+                <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Lesson 1</span> Introduction</dt>
                 <dd className="fadeInUp faq-body-Expression">
                   
                   <p><br></br></p> 
                   <span style={{ display: 'block', textAlign: 'center' }}><h1>Welcome to the introductory bash scripting room!</h1></span>
                   <p><br></br></p>
+                  <img src={exampleImage18} alt="Example" style={{ width: '500px' }} />
 
                       
                       <h2>What is bash?</h2>
                       <p><br></br></p>                             {/* space */}
                       
                       <p>
-                      Bash is a scripting language that runs within the terminal on most Linux distros, as well as MacOS. Shell scripts are a sequence of bash commands within a file, combined together to achieve more complex tasks than simple one-liner and are especially useful when it comes to automating sysadmin tasks such as backups.
+                      Bash is a scripting language that runs within the terminal on most Linux distros, as well as MacOS. Shell scripts are a sequence of bash commands within a file, combined together to achieve more complex Lessons than simple one-liner and are especially useful when it comes to automating sysadmin Lessons such as backups.
                       </p>
 
 
@@ -150,7 +151,7 @@ export default function Expression() {
                         This is a few things among many that you will learn in this room:
                       </p>
                       
-                      <ol  style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+                      <ol  style={{ listStyleType: 'disc', paddingLeft: '30px' }}>
                       <li>Bash syntax</li>
                       <li>Variables</li>
                       <li>Using parameters</li>
@@ -162,7 +163,7 @@ export default function Expression() {
 
 
 
-            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Task 2</span> Our first simple bash scripts </dt>
+            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Lesson 2</span> Our first simple bash scripts </dt>
                 <dd className="fadeInUp faq-body-Expression">
                 <p><br></br></p> 
                 <span style={{ display: 'block', textAlign: 'center' }}><h3>Ok now that we have had a brief introduction to what bash is and what it is used for let's jump right into some examples!</h3></span>
@@ -170,16 +171,16 @@ export default function Expression() {
                       <p>First of all let’s lay out our structure.</p>
                       <p>A bash script always starts with the following line of code at the top of the script.</p>
                       <p><br></br></p> 
-                      <img src={exampleImage1} alt="Example" style={{ width: '300px' }} />
+                      <img src={exampleImage1} alt="Example" style={{ width: '900px' }} />
                       <p><br></br></p> 
                       <p>This is so your shell (whatever type of it) knows that it needs to run your file using bash in the terminal.</p>
                       <p>Lets get into some basic examples.</p>
-                      <img src={exampleImage2} alt="Example" style={{ width: '300px' }} />
+                      <img src={exampleImage2} alt="Example" style={{ width: '900px' }} />
                       <p><br></br></p> 
                       <p>This will return the string “Hello World”. The command “<code>"echo"</code>” is used to output text to the screen, the same way as “<code>print</code>” in python. I suggest you test this out in your terminal to get to grips with bash!</p>
                       You can also perform normal Linux commands inside your bash script and it will be executed if formatted right. For example we can run the command “<code>ls</code>” inside our bash script and we will see the output when we run the file. So lets make it do this!
                       <p><br></br></p>
-                      <img src={exampleImage3} alt="Example" style={{ width: '300px' }} />
+                      <img src={exampleImage3} alt="Example" style={{ width: '900px' }} />
                       <p><br></br></p>
                       <p>Now from here on I am going to assume that you have a basic understanding of Linux and its commands.</p>
                       <p>I'm also not going to include the<code>  #!/bin/bash </code>  at the start of my code snippets otherwise it will take up a lot of room so be aware that you need it always at the start of your files!</p>
@@ -193,20 +194,20 @@ export default function Expression() {
 
 
 
-            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Task 3</span> Variables </dt>
+            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Lesson 3</span> Variables </dt>
                 <dd className="fadeInUp faq-body-Expression">
                 <p><br></br></p> 
                 <span style={{ display: 'block', textAlign: 'center' }}><h3>Now we are moving onto variables,in bash these are quite simple and we create them</h3></span>      
                 <p><br></br></p> 
                 <strong>like so:</strong>
-                <img src={exampleImage4} alt="Example" style={{ width: '300px' }} />
+                <img src={exampleImage4} alt="Example" style={{ width: '900px' }} />
                 <p><br></br></p>
                 <p>Where we give the value of <code>Jammy</code> and assign it to the variable <code>name</code>.</p>
                 <p>Please note that for variables to work you cannot leave a space between the variable name, the ”=” and the value. They cannot have spaces in.</p>
                 <p>So how would we now use our variable? Well its also very simple.</p>
                 <p><br></br></p>
                 <p>We have to add a <code>$</code> onto front of our variable name in order to use it.</p>
-                <img src={exampleImage5} alt="Example" style={{ width: '300px' }} />
+                <img src={exampleImage5} alt="Example" style={{ width: '900px' }} />
                 <p><br></br></p>
                 <p>If we test this out in our own terminal we get something like this:</p>
 
@@ -224,30 +225,30 @@ export default function Expression() {
                 <p><code>bash -x ./file.sh</code></p>
                 <p>You can make a simple bash script(now you know some basic syntax) and make something completely wrong. Then step through your program with debug mode and see what it looks like when it throws errors!</p>
                 <p>This tells you which lines are working and which lines are not. If you want to debug at a certain point you can insert <strong>set -x</strong> into your script and <strong>set +x</strong> to end the section like the following:</p>
-                <img src={exampleImage6} alt="Example" style={{ width: '300px' }} />
+                <img src={exampleImage6} alt="Example" style={{ width: '900px' }} />
                 <p><br></br></p>
                 <p>So lets look at an example. This is our script from earlier being ran with <code>bash -x ./example.sh</code></p>
-                <img src={exampleImage7} alt="Example" style={{ width: '300px' }} />
+                <img src={exampleImage7} alt="Example" style={{ width: '900px' }} />
                 <p><br></br></p>
                 <p>You can see its outputting a + for the command and then the output of what that command executed. If there was an error it would output a - on that line this makes it easy to spot where you have gone wrong so you can fix them.</p>
                 <p><br></br></p>
                 <p>We can also use multiple variables in something like an echo statement. You aren't just limited to using 1!</p>
-                <img src={exampleImage8} alt="Example" style={{ width: '300px' }} />
+                <img src={exampleImage8} alt="Example" style={{ width: '900px' }} />
                 <p><br></br></p>
                 <p>Answer the following questions and use this piece of code to guide you.</p>
-                <img src={exampleImage9} alt="Example" style={{ width: '300px' }} />
+                <img src={exampleImage9} alt="Example" style={{ width: '900px' }} />
 
 
             </dd>
 
-            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Task 4</span> Parameters </dt>
+            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Lesson 4</span> Parameters </dt>
                 <dd className="fadeInUp faq-body-Expression">
                 <p><br></br></p>
                 <span style={{ display: 'block', textAlign: 'center' }}><h3>We will now look at one of the main features of bash and that's using parameters.</h3></span>
                 <p><br></br></p>
                 <p>We will firstly  look at parameters specified using the command line when running the file. These come in many forms but often have the "$" prefix because a parameter is still a variable.</p>
                 <p>Lets start by declaring a parameter that is going to be our first argument when running our bash script.</p>
-                <img src={exampleImage10} alt="Example" style={{ width: '300px' }} />
+                <img src={exampleImage10} alt="Example" style={{ width: '900px' }} />
                 <p><br></br></p>
                 <p>We now run our script with <code>./example.sh Alex</code></p> 
                 <p>And sure enough we get returned with “Alex”</p>
@@ -259,10 +260,10 @@ export default function Expression() {
                 <p><code>it would return "Tony".</code></p>
                 <p><br></br></p>
                 <p>What if we didn't want to supply them like this however, and instead it would let us type in our name in a more interactive way, we can do this using <code>read</code>.</p>
-                <img src={exampleImage11} alt="Example" style={{ width: '300px' }} />
+                <img src={exampleImage11} alt="Example" style={{ width: '900px' }} />
                 <p><br></br></p>
                 <p>This code will hang after its ran, this gives you the opportunity to type in your name.</p>
-                <img src={exampleImage12} alt="Example" style={{ width: '300px' }} />
+                <img src={exampleImage12} alt="Example" style={{ width: '900px' }} />
                 <p>And we can see that it worked!</p>
                 <p><br></br></p>
                 <p>Maybe try making a little biography maker, where you take the name, age, and job as parameters. Store them inside a variable and then output them to the screen inside a sentence.</p>
@@ -270,7 +271,7 @@ export default function Expression() {
 
             </dd>
 
-            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Task 5</span> Arrays </dt>
+            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Lesson 5</span> Arrays </dt>
                 <dd className="fadeInUp faq-body-Expression">
                 <p><br></br></p>
                 <span style={{ display: 'block', textAlign: 'center' }}><h3>Arrays</h3></span>
@@ -330,10 +331,10 @@ export default function Expression() {
             </dd> 
 
 
-            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Task 6</span> Conditionals </dt>
+            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Lesson 6</span> Conditionals </dt>
                 <dd className="fadeInUp faq-body-Expression">
                 <p><br></br></p>
-                <img src={exampleImage13} alt="Example" style={{ width: '300px' }} />
+                <img src={exampleImage13} alt="Example" style={{ width: '900px' }} />
                 <p><br></br></p>
                 <p>When we talk about conditionals it means that a certain piece of code relies on a condition being met, this is often determined with relational operators, such as equal to, greater than, and less than.</p>
                 <p><br></br></p>
@@ -341,10 +342,10 @@ export default function Expression() {
                 <p><br></br></p>
                 <p>First, we will discuss the basic syntax of an if statement.</p>
                 <p>All if statements look like so:</p>
-                <img src={exampleImage14} alt="Example" style={{ width: '300px' }} />
+                <img src={exampleImage14} alt="Example" style={{ width: '900px' }} />
                 <p><br></br></p>
                 <p>Let's look at an example:</p>
-                <img src={exampleImage15} alt="Example" style={{ width: '300px' }} />
+                <img src={exampleImage15} alt="Example" style={{ width: '900px' }} />
                 <p><br></br></p>
                 <p>If statements always use a pair of brackets and in the case of the [] we need to leave a space on both sides of the text(the bash syntax). We also always need to end the if statement with <code>fi</code></p>
                 <p><br></br></p>
@@ -387,7 +388,7 @@ export default function Expression() {
                 <p>These are some examples. ↑↑↑ </p>
                 <br></br>
                 <p>So now let's use this to make a little script that compares an input(a parameter) and checks it against a value to check if it's true or not. A guessing game if you will.</p>
-                <img src={exampleImage16} alt="Example" style={{ width: '300px' }} />
+                <img src={exampleImage16} alt="Example" style={{ width: '900px' }} />
                 <br></br>
                 <p>Now let's test this in our terminal.</p>
                 <p><code># ./example.sh guessme</code></p>
@@ -402,7 +403,7 @@ export default function Expression() {
                 <p>We want to make a script that we will perform on a file given by a <strong>parameter</strong>.</p>
                 <p>We then check if it exists and if it has <code>write permissions</code>. If it has write perms then we echo “hello” to it. If it is either non-accessible or doesn't exist we will create the file and echo <code>“hello”</code> to it. Let's begin!</p>
                 <br></br>
-                <img src={exampleImage17} alt="Example" style={{ width: '300px' }} />
+                <img src={exampleImage17} alt="Example" style={{ width: '900px' }} />
                 <br></br>
 
                 {/* add to terminal */}
@@ -414,7 +415,7 @@ export default function Expression() {
                 <p>The <strong>-f </strong>checked if the file existed.</p>
                 <p>The <strong> -w </strong> checked if the file was writable, without write permissions we wouldn't be able to output our text into the file.</p>
                 <br></br>
-                <p>To finish off our little project from the previous task. You can build on your script using an if/else statement. Test to see if the age is under 18, if it is then echo out their name with "You are not eligible for work" or something along these lines, if they are over 18 then ask them for their job, you can do this with <code>read</code></p>
+                <p>To finish off our little project from the previous Lesson. You can build on your script using an if/else statement. Test to see if the age is under 18, if it is then echo out their name with "You are not eligible for work" or something along these lines, if they are over 18 then ask them for their job, you can do this with <code>read</code></p>
                 <p>Feel free to add anything you like and make it as complicated as you wish and good luck with your project!</p>
                 <br></br>
             </dd> 
@@ -423,7 +424,7 @@ export default function Expression() {
 
             # main slider
 
-            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Task 3</span> Variables </dt>
+            <dt className="wave-Expression fadeInUp faq-header-Expression"><span>Lesson 3</span> Variables </dt>
                 <dd className="fadeInUp faq-body-Expression">
                 <p><br></br></p>
 
@@ -431,7 +432,7 @@ export default function Expression() {
             </dd> 
             
             */}
-            
+
               </dl>
             </div>
             <div className="go-to-section-Expression">
