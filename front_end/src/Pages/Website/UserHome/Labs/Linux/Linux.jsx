@@ -759,8 +759,13 @@ export default function Linux() {
                         Pro tip: You can use <span>cat</span> to output the
                         contents of a file within directories without having to
                         navigate to it by using cat and the name of the
-                        directory. I.e.
-                        <span> cat /home/ubuntu/Documents/todo.txt</span>
+                        directory. I.e. <br />
+                        <span
+                          style={{ display: "inline-block", marginTop: "15px" }}
+                        >
+                          {" "}
+                          cat /home/ubuntu/Documents/todo.txt
+                        </span>
                       </h2>
                       <p>
                         Sometimes things like usernames, passwords (yes -
@@ -1743,7 +1748,7 @@ export default function Linux() {
                       <div className={`${styles["terminal-container"]}`}>
                         <div className={`${styles["terminal-content"]}`}>
                           <div className={`${styles["terminal-top"]}`}>
-                          Using the &gt; Operator
+                            Using the &gt; Operator
                           </div>
                           <pre
                             className={`${styles["terminal-code"]} language-shell-session`}
@@ -1781,24 +1786,25 @@ export default function Linux() {
                                   className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
                                 >
                                   <span
-                                    className={`${styles['class-name']} ${styles.token}`}
-                                    >
+                                    className={`${styles["class-name"]} ${styles.token}`}
+                                  >
                                     {" "}
                                     echo
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.user}`}
-                                    >
-                                    {" "}hey{" "}
+                                  >
+                                    {" "}
+                                    hey{" "}
                                   </span>
                                   <span
-                                    className={`${styles['class-name']} ${styles.token}`}
+                                    className={`${styles["class-name"]} ${styles.token}`}
                                   >
                                     &gt;{" "}
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.user}`}
-                                    >
+                                  >
                                     welcome
                                   </span>
                                 </span>
@@ -1810,7 +1816,7 @@ export default function Linux() {
                       <div className={`${styles["terminal-container"]}`}>
                         <div className={`${styles["terminal-content"]}`}>
                           <div className={`${styles["terminal-top"]}`}>
-                          Using cat to output the "welcome" file
+                            Using cat to output the "welcome" file
                           </div>
                           <pre
                             className={`${styles["terminal-code"]} language-shell-session`}
@@ -1906,7 +1912,7 @@ export default function Linux() {
                       <div className={`${styles["terminal-container"]}`}>
                         <div className={`${styles["terminal-content"]}`}>
                           <div className={`${styles["terminal-top"]}`}>
-                          Using the &gt;&gt; Operator
+                            Using the &gt;&gt; Operator
                           </div>
                           <pre
                             className={`${styles["terminal-code"]} language-shell-session`}
@@ -1944,24 +1950,25 @@ export default function Linux() {
                                   className={`${styles.token} ${styles.bash} ${styles["language-bash"]}`}
                                 >
                                   <span
-                                    className={`${styles['class-name']} ${styles.token}`}
-                                    >
+                                    className={`${styles["class-name"]} ${styles.token}`}
+                                  >
                                     {" "}
                                     echo
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.user}`}
-                                    >
-                                    {" "}hello{" "}
+                                  >
+                                    {" "}
+                                    hello{" "}
                                   </span>
                                   <span
-                                    className={`${styles['class-name']} ${styles.token}`}
+                                    className={`${styles["class-name"]} ${styles.token}`}
                                   >
                                     &gt;&gt;{" "}
                                   </span>
                                   <span
                                     className={`${styles.token} ${styles.user}`}
-                                    >
+                                  >
                                     welcome
                                   </span>
                                 </span>
@@ -1973,7 +1980,7 @@ export default function Linux() {
                       <div className={`${styles["terminal-container"]}`}>
                         <div className={`${styles["terminal-content"]}`}>
                           <div className={`${styles["terminal-top"]}`}>
-                          Using cat to output the "welcome" file
+                            Using cat to output the "welcome" file
                           </div>
                           <pre
                             className={`${styles["terminal-code"]} language-shell-session`}

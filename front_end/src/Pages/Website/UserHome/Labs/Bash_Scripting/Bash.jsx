@@ -628,18 +628,64 @@ export default function Bash() {
                   </p>
                   <img src={exampleImage16} alt="Example" />
                   <p>Now let's test this in our terminal.</p>
-                  <p>
-                    <span># ./example.sh guessme</span>
-                  </p>
-                  <p>
-                    <span>"They are equal"</span>
-                  </p>
-                  <p>
-                    <span># ./example.sh hi</span>
-                  </p>
-                  <p>
-                    <span>"They are not equal"</span>
-                  </p>
+                  <div className={styles["terminal-container"]}>
+                    <div className={styles["terminal-content"]}>
+                      <div className={styles["terminal-top"]}>
+                        This is what a terminal looks like
+                      </div>
+                      <pre
+                        className={`${styles["terminal-code"]} language-shell-session`}
+                        tabIndex="0"
+                      >
+                        <code className="language-shell-session">
+                          <span className={`${styles.token} ${styles.command}`}>
+                            <span
+                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                            >
+                              <span
+                                className={`${styles.token} ${styles.user}`}
+                              >
+                                # ./example.sh guessme
+                              </span>
+                            </span>
+                          </span>
+                          <span className={`${styles.token} ${styles.command}`}>
+                            <span
+                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                            >
+                              <span
+                                className={`${styles.token} ${styles.user}`}
+                              >
+                                "They are equal"
+                              </span>
+                            </span>
+                          </span>
+                          <span className={`${styles.token} ${styles.command}`}>
+                            <span
+                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                            >
+                              <span
+                                className={`${styles.token} ${styles.user}`}
+                              >
+                                # ./example.sh hi
+                              </span>
+                            </span>
+                          </span>
+                          <span className={`${styles.token} ${styles.command}`}>
+                            <span
+                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                            >
+                              <span
+                                className={`${styles.token} ${styles.user}`}
+                              >
+                                "They are not equal"
+                              </span>
+                            </span>
+                          </span>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
                   <p>And we can see that it works!</p>
                   <p>
                     Feel free to play around with these and try making different
@@ -663,10 +709,53 @@ export default function Bash() {
                     <span>“hello”</span> to it. Let's begin!
                   </p>
                   <img src={exampleImage17} alt="Example" />
-                  {/* add to terminal */}
-                  <p>./example.sh hello.txt </p>
-                  <p> ─# cat hello.txt</p>
-                  <p>hello</p>
+                  <div className={styles["terminal-container"]}>
+                    <div className={styles["terminal-content"]}>
+                      <div className={styles["terminal-top"]}>
+                        This is what a terminal looks like
+                      </div>
+                      <pre
+                        className={`${styles["terminal-code"]} language-shell-session`}
+                        tabIndex="0"
+                      >
+                        <code className="language-shell-session">
+                          <span className={`${styles.token} ${styles.command}`}>
+                            <span
+                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                            >
+                              <span
+                                className={`${styles.token} ${styles.user}`}
+                              >
+                                ./example.sh hello.txt
+                              </span>
+                            </span>
+                          </span>
+                          <span className={`${styles.token} ${styles.command}`}>
+                            <span
+                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                            >
+                              <span
+                                className={`${styles.token} ${styles.user}`}
+                              >
+                                ─# cat hello.txt
+                              </span>
+                            </span>
+                          </span>
+                          <span className={`${styles.token} ${styles.command}`}>
+                            <span
+                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                            >
+                              <span
+                                className={`${styles.token} ${styles.user}`}
+                              >
+                                hello
+                              </span>
+                            </span>
+                          </span>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
                   <p>And we can see that it worked!!</p>
                   <p>
                     The <strong>-f </strong>checked if the file existed.

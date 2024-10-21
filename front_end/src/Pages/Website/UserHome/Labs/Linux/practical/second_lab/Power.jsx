@@ -1,13 +1,13 @@
 import Footer from "../../../../Footer/Footer";
 import Header from "../../../../Header/Header";
-import styles from "./Patient.module.css";
+import styles from "./Power.module.css";
 import React, { useEffect } from "react";
 
-export default function Patient() {
-  const fileUrl = "/be_patient_or_skillful.rar";
-  const fileName = "be_patient_or_skillful.rar";
+export default function Power() {
+  const fileUrl = "/power_of_comand.rar";
+  const fileName = "power_of_comand.rar";
   useEffect(() => {
-    document.title = "Be Patient or Skillful";
+    document.title = "Power of Command";
   }, []);
 
   return (

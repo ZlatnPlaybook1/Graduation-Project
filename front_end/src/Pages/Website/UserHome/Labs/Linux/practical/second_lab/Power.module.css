@@ -43,7 +43,7 @@
 
 .course {
     position: relative;
-    height: calc( 100vh - (102px + 93px));
+    height: calc(100vh - (102px + 93px));
     padding-top: 50px;
 }
 
@@ -62,7 +62,7 @@
 
 .success {
     background-color: var(--sec-main-color);
-    
+
 }
 
 .fail {
@@ -261,7 +261,6 @@
     align-items: center;
     flex-direction: row;
 }
-
 
 .downloadButton {
     background-color: var(--sec-main-color);

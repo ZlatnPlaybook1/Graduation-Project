@@ -40,6 +40,9 @@ import CookiesSecondSupport from "./Pages/Website/UserHome/Labs/Cookies/practica
 import Linux from "./Pages/Website/UserHome/Labs/Linux/Linux.jsx";
 import LINUX_LAB from "./Pages/Website/UserHome/Labs/Linux/Linux_lab.jsx";
 import LINUX_FIRST_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/first_lab/Patient.jsx";
+import LINUX_SECOND_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/second_lab/Power.jsx";
+import LINUX_THIRD_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/third_lab/Test.jsx";
+import LINUX_FOURTH_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/fourth_lab/Welcome.jsx";
 
 import Bash from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash.jsx";
 import BASH_LAB from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_lab.jsx";
@@ -184,13 +187,25 @@ function App() {
           />
           <Route path="/linux" element={<Linux />} />
           <Route path="/linux/linux_lab" element={<LINUX_LAB />} />
-          <Route path="/linux/linux_lab/patient" element={<LINUX_FIRST_LAB />} />
+          <Route
+            path="/linux/linux_lab/patient"
+            element={<LINUX_FIRST_LAB />}
+          />
+          <Route
+            path="/linux/linux_lab/power-of-command"
+            element={<LINUX_SECOND_LAB />}
+          />
+          <Route
+            path="/linux/linux_lab/Welcome"
+            element={<LINUX_THIRD_LAB />}
+          />
+          <Route
+            path="/linux/linux_lab/test-yourself"
+            element={<LINUX_FOURTH_LAB />}
+          />
           {/* End Linux */}
           <Route path="/bash-scripting" element={<Bash />} />
-          <Route
-            path="/bash-scripting/bash_lab"
-            element={<BASH_LAB />}
-          />
+          <Route path="/bash-scripting/bash_lab" element={<BASH_LAB />} />
           {/* End Bash Scripting */}
         </Route>
         {/* End Routes of Labs */}
