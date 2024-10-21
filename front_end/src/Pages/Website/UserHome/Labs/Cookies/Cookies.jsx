@@ -67,7 +67,7 @@ export default function Cookies() {
           <div className="course-info-lab3">
             <img src={image} alt="logo" />
             <div className="course-text-lab3">
-              <h1>Cross-Site Scripting</h1>
+              <h1>Cookies</h1>
               <p>
                 Hack your first website (legally in a safe environment) and
                 experience an ethical hacker's job.

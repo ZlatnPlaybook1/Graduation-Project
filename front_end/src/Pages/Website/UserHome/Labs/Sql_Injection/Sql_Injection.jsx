@@ -69,7 +69,7 @@ export default function Sql_Injection() {
           <div className="course-info">
             <img src={imagecourse} alt="" />
             <div className="course-text">
-              <h1>Intro to Offensive Security</h1>
+              <h1>SQL Injection</h1>
               <p>
                 Hack your first website (legally in a safe environment) and
                 experience an ethical hacker's job.

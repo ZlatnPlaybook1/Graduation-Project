@@ -3,7 +3,7 @@
 import "./Finish_test.css";
 // import { useNavigate } from "react-router-dom";
 import Header from "../../../../Header/Header";
-import Footer from "../../../../../Footer/Footer";
+import Footer from "../../../../Footer/Footer";
 
 export default function Finish_test() {
   // const [err, setErr] = useState("");

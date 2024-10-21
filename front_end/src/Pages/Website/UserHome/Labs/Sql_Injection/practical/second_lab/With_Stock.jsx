@@ -11,7 +11,7 @@ import image_5 from "../../../../assets/img/SQL_2nd_Lab/image_5.png";
 import image_6 from "../../../../assets/img/SQL_2nd_Lab/image_6.png";
 import image_7 from "../../../../assets/img/SQL_2nd_Lab/image_7.png";
 import image_8 from "../../../../assets/img/SQL_2nd_Lab/image_8.png";
-import Footer from "../../../../../Footer/Footer";
+import Footer from "../../../../Footer/Footer";
 
 export default function With_Stock() {
   // const [err, setErr] = useState("");

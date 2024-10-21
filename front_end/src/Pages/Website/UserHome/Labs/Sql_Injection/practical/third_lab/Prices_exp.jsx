@@ -3,7 +3,7 @@ import "./Prices_exp.css";
 import $ from "jquery";
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import Footer from "../../../../../Footer/Footer";
+import Footer from "../../../../Footer/Footer";
 
 export default function Prices_exp() {
   const faqSectionRef = useRef(null);

@@ -40,8 +40,11 @@
     }
 }
 
+
 .course {
     position: relative;
+    height: calc( 100vh - (102px + 93px));
+    padding-top: 50px;
 }
 
 .message {
