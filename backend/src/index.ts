@@ -11,7 +11,7 @@ import lab1 from "./labs/cookiesLab/lab1.router";
 import lab2 from "./labs/cookiesLab/lab2.router";
 import hiddenData from "./labs/sqlInjectionLabs/lab1/hiddenData.router";
 import xssPostsRouter from "./labs/xss/xssPosts.router";
-import lab3sql from "./labs/sqlInjectionLabs/lab3/lab3.router";
+import lab3sql from "./labs/sqlInjectionLabs/lab3,4/lab3.router";
 const app = express();
 
 app.use(cors())

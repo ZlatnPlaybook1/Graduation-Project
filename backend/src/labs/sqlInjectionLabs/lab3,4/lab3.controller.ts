@@ -8,7 +8,7 @@ export const findProduct = async (req: Request, res: Response) => {
 const products: any = await prisma.$executeRawUnsafe(`
     SELECT * 
     FROM "lab3sql" 
-    WHERE cotegory = '${category}';
+    WHERE category = '${category}';
 `);
 
     if (products === 0) {
