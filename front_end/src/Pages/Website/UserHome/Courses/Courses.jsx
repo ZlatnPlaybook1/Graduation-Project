@@ -74,14 +74,13 @@ const Courses = () => {
               <div className="course-text">
                 <h3>Cookies</h3>
                 <p>
-                  Learn the core skills required to start a career in cyber
-                  security
+                Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce.
                 </p>
                 <ul className="circled-order">
-                  <li>Learn about different careers in cyber</li>
-                  <li>Hack your first application</li>
-                  <li>Defend against a live cyber attack</li>
-                  <li>Explore security topics in the industry</li>
+                  <li> What Are Cookies?</li>
+                  <li>What are Cookies Used For?</li>
+                  <li>Where are Cookies Stored?</li>
+                  <li>Cookies Manipulation</li>
                 </ul>
               </div>
               <div className="easy">
@@ -149,14 +148,14 @@ const Courses = () => {
               <div className="course-text">
                 <h3>Linux Fundamentals</h3>
                 <p>
-                  Learn the core skills required to start a career in cyber
-                  security
+                Build a solid foundation in Linux, the operating system at the core of many 
+                cybersecurity tools and infrastructures.
                 </p>
                 <ul className="circled-order">
-                  <li>Learn about different careers in cyber</li>
-                  <li>Hack your first application</li>
-                  <li>Defend against a live cyber attack</li>
-                  <li>Explore security topics in the industry</li>
+                  <li>Running Your First few Commands</li>
+                  <li>Interacting With the Filesystem!</li>
+                  <li>Searching for Files</li>
+                  <li>An Introduction to Shell Operators</li>
                 </ul>
               </div>
               <div className="easy">
@@ -224,14 +223,14 @@ const Courses = () => {
               <div className="course-text">
                 <h3>Bash Scripting</h3>
                 <p>
-                  Learn the core skills required to start a career in cyber
-                  security
+                Master the basics of Bash scripting, a powerful tool for automating tasks 
+                and managing systems in cybersecurity environments.
                 </p>
                 <ul className="circled-order">
-                  <li>Learn about different careers in cyber</li>
-                  <li>Hack your first application</li>
-                  <li>Defend against a live cyber attack</li>
-                  <li>Explore security topics in the industry</li>
+                  <li>simple bash scripts</li>
+                  <li>Variables</li>
+                  <li>Parameters</li>
+                  <li> Arrays</li>
                 </ul>
               </div>
               <div className="easy">
