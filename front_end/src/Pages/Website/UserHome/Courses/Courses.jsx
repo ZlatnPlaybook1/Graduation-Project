@@ -24,14 +24,14 @@ const Courses = () => {
               <div className="course-text">
                 <h3>SQL Injection</h3>
                 <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                Learn how attackers exploit vulnerabilities in web applications using SQL 
+                injection and understand the techniques to detect and prevent them.
                 </p>
                 <ul className="circled-order">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
+                  <li>Retrieving hidden data</li>
+                  <li>SQL injection UNION attacks</li>
+                  <li> Finding columns with a useful data type</li>
+                  <li>Using a SQL injection UNION attack to retrieve interesting data</li>
                 </ul>
               </div>
               <div className="easy">

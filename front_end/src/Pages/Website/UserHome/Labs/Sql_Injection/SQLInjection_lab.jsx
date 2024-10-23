@@ -36,6 +36,8 @@ export default function SQLInjection_lab() {
         </div>
       </div>
       {/* End Landing */}
+
+      
       {/* Start Course */}
       <div className="course-sql-injection">
         <div className="container-sql-injection">
