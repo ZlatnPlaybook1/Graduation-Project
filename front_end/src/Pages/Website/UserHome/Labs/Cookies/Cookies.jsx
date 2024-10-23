@@ -3,11 +3,12 @@ import { useEffect, useRef } from "react";
 import $ from "jquery";
 import "./Cookies.css";
 import Header from "../../Header/Header";
-import background from "../../assets/img/background.png";
+import background from "../../assets/img/cookies/baner_lap.png";
 import image from "../../assets/img/course_image.png";
 import inLab3 from "../../assets/img/inLab3.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
+
 
 export default function Cookies() {
   const faqSectionRef = useRef(null);
