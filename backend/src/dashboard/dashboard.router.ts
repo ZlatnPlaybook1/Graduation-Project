@@ -18,7 +18,7 @@ dashboardRouter.get("/users", isAuthenticated, getAllUsers)
 
 dashboardRouter.get("/user/:id", isAuthenticated, getUserById)
 
-dashboardRouter.post("/user/add", isAuthenticated, createNewUser)
+dashboardRouter.post("/user/add", createNewUser)
 
 dashboardRouter.get("/currentUser/:id", getUserById)
 
