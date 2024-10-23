@@ -68,7 +68,10 @@ export default function SQLInjection_lab() {
               </div>
             </Link>
 
-            <Link to="/Sql_Injection/sql_Injection_lab/second_lab/our_store" className="course-card-sql-injection">
+            <Link
+              to="/Sql_Injection/sql_Injection_lab/second_lab/our_store"
+              className="course-card-sql-injection"
+            >
               <div className="course-image-sql-injection">
                 <img src={imagecourse} alt="" />
               </div>
@@ -91,7 +94,10 @@ export default function SQLInjection_lab() {
               </div>
             </Link>
 
-            <Link to="/Sql_Injection/sql_Injection_lab/third_lab/prices-exp" className="course-card-sql-injection">
+            <Link
+              to="/Sql_Injection/sql_Injection_lab/third_lab/prices-exp"
+              className="course-card-sql-injection"
+            >
               <div className="course-image-sql-injection">
                 <img src={imagecourse} alt="" />
               </div>
@@ -114,7 +120,10 @@ export default function SQLInjection_lab() {
               </div>
             </Link>
 
-            <Link to="/Sql_Injection/sql_Injection_lab/fourth_lab" className="course-card-sql-injection">
+            <Link
+              to="/Sql_Injection/sql_Injection_lab/fourth_lab"
+              className="course-card-sql-injection"
+            >
               <div className="course-image-sql-injection">
                 <img src={imagecourse} alt="" />
               </div>
@@ -137,35 +146,15 @@ export default function SQLInjection_lab() {
               </div>
             </Link>
 
-            <Link to="/Sql_Injection/sql_Injection_lab/fifth_lab" className="course-card-sql-injection">
+            <Link
+              to="/Sql_Injection/sql_Injection_lab/fifth_lab"
+              className="course-card-sql-injection"
+            >
               <div className="course-image-sql-injection">
                 <img src={imagecourse} alt="" />
               </div>
               <div className="course-text-sql-injection">
                 <h3>Fifth Lab</h3>
-                <p>
-                  Before hacking something, you first need to understand the
-                  basics
-                </p>
-                <ul className="circled-order-sql-injection">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
-                </ul>
-              </div>
-              <div className="easy-sql-injection">
-                <i className="fa-solid fa-signal lab-sql-injection"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-
-            <Link to="#" className="course-card-sql-injection">
-              <div className="course-image-sql-injection">
-                <img src={imagecourse} alt="" />
-              </div>
-              <div className="course-text-sql-injection">
-                <h3>Pre Security</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
