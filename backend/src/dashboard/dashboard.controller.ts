@@ -171,7 +171,7 @@ export async function getUserByToken(req: Request, res: Response): Promise<Respo
     }
 }
 
-export async function personalInfo(req: Request, res: Response): Promise<Response> {
+export async function addPersonalInfo(req: Request, res: Response): Promise<Response> {
     const token = req.headers.authorization?.split(' ')[1]; // Extract token from "Bearer <token>"
 
     if (!token) {
@@ -229,6 +229,30 @@ export async function resetPassword(req: Request, res: Response): Promise<Respon
 
     } catch
         (error) {
+        console.error('Error getting user:', error);
+        return res.status(500).json({error: " server error"});
+    }
+}
+
+export async function personalInfo(req: Request, res: Response): Promise<Response> {
+    const {id} = req.params;
+    try {
+        const user = await prisma.user.findUnique({
+            where: {id},
+            select: {email: true, name: true, role: true,birthday:true,phoneNum:true,address:true},
+
+        });
+
+        if (!user) {
+            return res.status(404).json({error: "User not found"});
+        }
+
+        return res.status(200).json({
+            msg: "User found",
+            data: {email: user.email, name: user.name, role: user.role,birthday:user.birthday,phoneNum:user.phoneNum,address:user.address}
+        });
+
+    } catch (error) {
         console.error('Error getting user:', error);
         return res.status(500).json({error: " server error"});
     }

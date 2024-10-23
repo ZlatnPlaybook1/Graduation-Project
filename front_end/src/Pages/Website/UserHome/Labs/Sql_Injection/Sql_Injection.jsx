@@ -54,16 +54,12 @@ export default function Sql_Injection() {
           <div className="breadcrumb">
             <ul>
               <li>
-                <Link to="">Pre Security</Link>
+                <Link to="">Home</Link>
               </li>
               <li>
-                <Link to="">Introduction To Cyber Security</Link>
+                <Link to="">SQL Injection</Link>
               </li>
-              <li>
-                <span className="active-breadcrumb">
-                  Intro To Offensive Security
-                </span>
-              </li>
+            
             </ul>
           </div>
           <div className="course-info">
@@ -71,19 +67,19 @@ export default function Sql_Injection() {
             <div className="course-text">
               <h1>SQL Injection</h1>
               <p>
-                Hack your first website (legally in a safe environment) and
-                experience an ethical hacker's job.
+              Learn how attackers exploit vulnerabilities in web applications using SQL 
+              injection and understand the techniques to detect and prevent them.
               </p>
               <div className="course-icons">
                 <div className="diff">
                   <div className="easy">
                     <i className="fa-solid fa-signal"></i>
-                    <p>Easy</p>
+                    <p> Easy</p>
                   </div>
                 </div>
                 <div className="duration">
                   <i className="fa-solid fa-clock"></i>
-                  <p className="time">15 min</p>
+                  <p className="time">20 min</p>
                 </div>
               </div>
             </div>
