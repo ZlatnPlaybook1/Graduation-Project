@@ -53,15 +53,10 @@ export default function Cookies() {
           <div className="breadcrumb-lab3">
             <ul>
               <li>
-                <Link to="">Pre Security</Link>
+                <Link to="">Home</Link>
               </li>
               <li>
-                <Link to="">Introduction To Cyber Security</Link>
-              </li>
-              <li>
-                <span className="active-breadcrumb-lab3">
-                  Intro To Offensive Security
-                </span>
+                <Link to="">Cookies</Link>
               </li>
             </ul>
           </div>
@@ -70,8 +65,8 @@ export default function Cookies() {
             <div className="course-text-lab3">
               <h1>Cookies</h1>
               <p>
-                Hack your first website (legally in a safe environment) and
-                experience an ethical hacker's job.
+              Understand the role of cookies in web security,
+              how they are used, and the potential privacy concerns they introduce.
               </p>
               <div className="course-icons-lab3">
                 <div className="diff-lab3">
