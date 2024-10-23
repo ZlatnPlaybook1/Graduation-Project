@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cookie from "cookie-universal";
+import { useParams } from "react-router-dom";
 import "./Writer.css";
 
-export default function Writer({ id }) {
+export default function Writer() {
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
+  const { id } = useParams();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -103,7 +105,7 @@ export default function Writer({ id }) {
         }
       );
 
-      const submittedData = res.data.data; // Access the submitted data
+      const submittedData = res.data.data;
       console.log("Response:", submittedData);
       setLoading(false);
       // Optionally reset the form
