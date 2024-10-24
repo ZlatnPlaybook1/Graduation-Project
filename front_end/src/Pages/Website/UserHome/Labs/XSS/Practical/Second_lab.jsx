@@ -16,45 +16,6 @@ export default function Second_lab_XSS() {
   const [htmlOutput, setHtmlOutput] = useState(""); // New state to hold HTML output
   const [err, setErr] = useState("");
 
-  // Handle Form Submit
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const content = e.target.content.value;
-  //   const email = e.target.email.value;
-
-  //   if (
-  //     content.trim().startsWith("<script>") &&
-  //     content.trim().endsWith("</script>")
-  //   ) {
-  //     const code = content.replace("<script>", "").replace("</script>", "");
-  //     try {
-  //       // Use eval to run the script inside the <script> tags
-  //       const result = eval(code);
-  //       setScriptOutput(
-  //         result !== undefined
-  //           ? result.toString()
-  //           : "Script executed without output."
-  //       );
-  //     } catch (err) {
-  //       setScriptOutput(`Error: ${err.message}`);
-  //     }
-  //   }
-  //   // Check if the input contains HTML tags like <div> or <p> for HTML rendering
-  //   else if (content.trim().startsWith("<") && content.trim().endsWith(">")) {
-  //     setHtmlOutput(content);
-  //   }
-  //   // Normal search functionality
-  //   else {
-  //     if (content) {
-  //       setComments([...comments, { email, content }]);
-  //       e.target.reset();
-  //       setErr("");
-  //     } else {
-  //       setErr("Please enter a comment.");
-  //     }
-  //   }
-  // };
   const handleSubmit = (e) => {
     e.preventDefault();
     const content = e.target.content.value;
@@ -200,32 +161,6 @@ export default function Second_lab_XSS() {
                 {err && <span className="error">{err}</span>}
               </form>
               <div className="comment-section">
-                <div className="comment-card">
-                  <div className="comment-header">
-                    <img src={icon} className="icon" alt="Card" />
-                    <p className="name">Ebrahiem Gamal</p>
-                  </div>
-                  <p className="comment-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Consectetur, aliquid dolores totam rerum minus commodi enim
-                    non sed, aspernatur minima laudantium laboriosam ipsam
-                    incidunt. Numquam repudiandae expedita nobis! Accusamus,
-                    numquam.
-                  </p>
-                </div>
-                <div className="comment-card">
-                  <div className="comment-header">
-                    <img src={icon} className="icon" alt="Card" />
-                    <p className="name">Ebrahiem Gamal</p>
-                  </div>
-                  <p className="comment-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Consectetur, aliquid dolores totam rerum minus commodi enim
-                    non sed, aspernatur minima laudantium laboriosam ipsam
-                    incidunt. Numquam repudiandae expedita nobis! Accusamus,
-                    numquam.
-                  </p>
-                </div>
                 {comments.map((comment) => (
                   <div key={comment.id} className="comment-card">
                     <div className="comment-header">
@@ -242,6 +177,32 @@ export default function Second_lab_XSS() {
                     )}
                   </div>
                 ))}
+                <div className="comment-card">
+                  <div className="comment-header">
+                    <img src={icon} className="icon" alt="Card" />
+                    <p className="name">Ebrahiem Gamal</p>
+                  </div>
+                  <p className="comment-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Consectetur, aliquid dolores totam rerum minus commodi enim
+                    non sed, aspernatur minima laudantium laboriosam ipsam
+                    incidunt. Numquam repudiandae expedita nobis! Accusamus,
+                    numquam.
+                  </p>
+                </div>
+                <div className="comment-card">
+                  <div className="comment-header">
+                    <img src={icon} className="icon" alt="Card" />
+                    <p className="name">Ebrahiem Gamal</p>
+                  </div>
+                  <p className="comment-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Consectetur, aliquid dolores totam rerum minus commodi enim
+                    non sed, aspernatur minima laudantium laboriosam ipsam
+                    incidunt. Numquam repudiandae expedita nobis! Accusamus,
+                    numquam.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

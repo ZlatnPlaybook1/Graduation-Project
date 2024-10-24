@@ -21,7 +21,7 @@ header .navbar {
   display: flex;
   gap: 12px;
   padding-right: 160px;
-  margin-left: 120px;
+  /* margin-left: 120px; */
 }
 
 .navbar .links .text {
@@ -275,6 +275,7 @@ header .icon {
 .navbar .profile {
   border: 2px solid rgba(82, 90, 106) !important;
   width: 56px;
+  background: transparent;
   height: 56px;
   padding: 0;
   border-radius: 50%;
@@ -314,5 +315,5 @@ header .icon {
 .navbar .profile img {
   background-color: rgba(44, 50, 62);
   width: 100%;
-  border-radius: 100%;
+  border-radius: 50%;
 }

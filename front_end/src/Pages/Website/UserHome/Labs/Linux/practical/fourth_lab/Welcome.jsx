@@ -21,6 +21,10 @@ export default function Welcome() {
         <div className={styles.container}>
           <div className={styles.container}>
             <div className={styles["faq-section"]}>
+            <div className={styles.caution}>
+                <p>Download This file and open it in your linux machine Linux</p>
+              <i className="fa-solid fa-triangle-exclamation"></i>
+              </div>
               <div className={styles.fileViewer}>
                 <a href={fileUrl} download={fileName}>
                   {/* <button onClick={download} className={styles.downloadButton}> */}

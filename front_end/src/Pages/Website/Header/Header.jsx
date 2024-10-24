@@ -4,7 +4,6 @@ import $ from "jquery";
 import "./header.css";
 import "./landing.css";
 import "../Preload/preload.css";
-import image1 from "../assets/img/core-img/shield.png";
 import image2 from "../assets/img/core-img/banner1.png";
 import logo from "../assets/img/core-img/logo.png";
 import pg from "../assets/img/bg-img/header-bg1.png";
@@ -503,7 +502,6 @@ const Header = () => {
               </div>
             </div>
             <div className="image">
-              <img src={image1} className="shield" alt="Shield" />
               <img src={image2} className="banner" alt="Banner" />
             </div>
           </div>

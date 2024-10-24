@@ -101,7 +101,7 @@ export default function Linux() {
       {/* Start Course Content  */}
       <div className={styles.course}>
         <div className={styles.container} ref={faqSectionRef}>
-          <div className={styles.container}>
+          {/* <div className={styles.container}> */}
             <div className={styles["faq-section"]}>
               <dl className={styles["section-text"]}>
                 {/* Single FAQ Area  */}
@@ -2124,7 +2124,7 @@ export default function Linux() {
             </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
       {/* End Course Content  */}
       <Footer />
     </>

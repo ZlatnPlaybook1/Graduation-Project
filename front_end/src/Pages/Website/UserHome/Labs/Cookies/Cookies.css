@@ -1,28 +1,4 @@
-:root {
-  --main-color: #212c42;
-  --sec-main-color: #a3ea2a;
-  --alt-color: #151c2b;
-  --font-color: rgba(255, 255, 255, 0.5);
-  --font-color-hover: rgba(255, 255, 255, 0.75);
-  --main-transition: 0.5s;
-}
-* {
-  margin: 0;
-  box-sizing: border-box;
-  font-weight: 600;
-}
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-a {
-  text-decoration: none;
-  color: #333;
-  font-size: 18px;
-  margin: 0 10px;
-  padding: 15px;
-}
+
 .container-lab3 {
   margin-left: auto;
   margin-right: auto;
@@ -80,6 +56,8 @@ a {
   width: 100%;
   z-index: -1;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .landing-lab3 .banner-lab3::after {
@@ -93,7 +71,17 @@ a {
 
 .landing-lab3 .banner-lab3 img {
   position: absolute;
-  left: 30%;
+  left: 32%;
+}
+@media (max-width: 1200px) {
+  .landing-lab3 .banner-lab3 img {
+      left: 15%;
+  }
+}
+@media (max-width: 991px) {
+  .landing-lab3 .banner-lab3 img {
+      display: none;
+  }
 }
 
 .landing-lab3 .container-lab3 {

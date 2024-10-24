@@ -1,64 +1,97 @@
 import Footer from "../../../../Footer/Footer";
 import Header from "../../../../Header/Header";
 import styles from "./Patient.module.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Patient() {
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showFail, setShowFail] = useState(false);
   const fileUrl = "/be_patient_or_skillful.rar";
   const fileName = "be_patient_or_skillful.rar";
+
   useEffect(() => {
     document.title = "Be Patient or Skillful";
   }, []);
+
+  const checkAnswer = (e) => {
+    e.preventDefault(); // Prevent form submission
+    const answer = e.target.answer.value; // Get answer from input
+    if (answer === "test") {
+      setShowSuccess(true);
+      launchFireworks();
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 1500); // Hide success message after 3 seconds
+    } else {
+      setShowFail(true);
+      setTimeout(() => {
+        setShowFail(false);
+      }, 1500); // Hide fail message after 3 seconds
+    }
+  };
+
+  const launchFireworks = () => {
+    const fireworkContainer = document.getElementById("firework");
+    const numParticles = window.innerWidth > 768 ? 100 : 50;
+    for (let i = 0; i < numParticles; i++) {
+      const particle = document.createElement("div");
+      particle.style.position = "absolute";
+      particle.style.width = "10px";
+      particle.style.height = "10px";
+      particle.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      particle.style.borderRadius = "50%";
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      particle.style.willcChange = "transform, opacity";
+      particle.style.animation = "explode 1.5s forwards";
+
+      fireworkContainer.appendChild(particle);
+      setTimeout(() => particle.remove(), 1600); // Match the animation duration to particle removal
+      particle.addEventListener("animationend", () => {
+        particle.remove(); // Remove particle after animation completes
+      });
+    }
+  };
 
   return (
     <>
       <Header />
       <div className={styles.course}>
-        {/* <div className={`${styles.message} ${styles.success}`}>
-          Right Answers
-        </div>
-        <div className={`${styles.message} ${styles.fail}`}>Wrong Answers</div> */}
+        <div className={styles.firework} id="firework"></div>
+        {showSuccess && (
+          <div className={`${styles.message} ${styles.success}`}>
+            Congratulations!
+          </div>
+        )}
+        {showFail && (
+          <div className={`${styles.message} ${styles.fail}`}>Wrong!</div>
+        )}
         <div className={styles.container}>
-          <div className={styles.container}>
-            <div className={styles["faq-section"]}>
-              <div className={styles.fileViewer}>
-                <a href={fileUrl} download={fileName}>
-                  {/* <button onClick={download} className={styles.downloadButton}> */}
-                  <button className={styles.downloadButton}>
-                    <i className="fas fa-download"></i>
-                    {fileName}
-                  </button>
-                </a>
-              </div>
-              <div className={styles["question-div"]}>
-                <h1 className={styles.question}>
-                check your answer here  :
-                </h1>
-                <form>
-                  <input
-                    type="text"
-                    name="answer"
-                    placeholder="Flag Format: flag{**********}" 
-                  />
-                  <button>
-                    <i className="fa-regular fa-paper-plane"></i>Submit
-                  </button>
-                </form>
-                {/* <p className={styles.question}>
-                  What is the username of who you're logged in as on your
-                  deployed Linux machine?
-                </p>
-                <form action="">
-                  <input
-                    type="text"
-                    name="answer"
-                    placeholder="Answer Format: **********"
-                  />
-                  <button>
-                    <i className="fa-regular fa-paper-plane"></i>Submit
-                  </button>
-                </form> */}
-              </div>
+          <div className={styles["faq-section"]}>
+            <div className={styles.caution}>
+              <p>Download this file and open it on your Linux machine</p>
+              <i className="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div className={styles.fileViewer}>
+              <a href={fileUrl} download={fileName}>
+                <button className={styles.downloadButton}>
+                  <i className="fas fa-download"></i>
+                  {fileName}
+                </button>
+              </a>
+            </div>
+            <div className={styles["question-div"]}>
+              <h1 className={styles.question}>Check your answer here:</h1>
+              <form onSubmit={checkAnswer}>
+                <input
+                  type="text"
+                  name="answer"
+                  placeholder="Flag Format: flag{**********}"
+                />
+                <button type="submit">
+                  <i className="fa-regular fa-paper-plane"></i> Submit
+                </button>
+              </form>
             </div>
           </div>
         </div>

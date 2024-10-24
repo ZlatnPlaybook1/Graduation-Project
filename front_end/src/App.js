@@ -197,11 +197,11 @@ function App() {
           />
           <Route
             path="/linux/linux_lab/Welcome"
-            element={<LINUX_THIRD_LAB />}
+            element={<LINUX_FOURTH_LAB />}
           />
           <Route
             path="/linux/linux_lab/test-yourself"
-            element={<LINUX_FOURTH_LAB />}
+            element={<LINUX_THIRD_LAB />}
           />
           {/* End Linux */}
           <Route path="/bash-scripting" element={<Bash />} />
