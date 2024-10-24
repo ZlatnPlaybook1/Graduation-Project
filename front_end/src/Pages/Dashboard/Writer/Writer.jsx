@@ -94,10 +94,16 @@ export default function Writer() {
     setLoading(true);
     setErr("");
 
+    // Create a copy of formData and remove the image field if not updated
+    const submissionData = { ...formData };
+    if (!formData.image) {
+      delete submissionData.image;
+    }
+
     try {
       const res = await axios.post(
         "http://127.0.0.1:8080/api/dataUser",
-        formData,
+        submissionData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -177,12 +183,7 @@ export default function Writer() {
         </div>
         <div>
           <label>Image:</label>
-          <input
-            type="file"
-            name="image"
-            onChange={handleImageChange}
-            required
-          />
+          <input type="file" name="image" onChange={handleImageChange} />
         </div>
         <button type="submit">Submit</button>
         {err && <p className="error">{err}</p>}
