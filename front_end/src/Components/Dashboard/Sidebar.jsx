@@ -65,6 +65,25 @@ const Sidebar = () => {
           <>
             {user.role === "admin" && (
               <>
+
+
+                
+<NavLink
+                  to="/dashboard/personal-information"
+                  className="navlink active side-bar-link"
+                >
+                  <FontAwesomeIcon
+                    icon={faPlus}
+                    style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 0px" }}
+                  />
+                  <span
+                    className="text"
+                    style={{ display: isOpen ? "block" : "none" }}
+                  >
+                    Personal Information
+                  </span>
+                </NavLink>
+                
                 <NavLink
                   to="/dashboard/users"
                   className="navlink active side-bar-link"
@@ -99,21 +118,7 @@ const Sidebar = () => {
                     Add User
                   </span>
                 </NavLink>
-                <NavLink
-                  to="/dashboard/personal-information"
-                  className="navlink active side-bar-link"
-                >
-                  <FontAwesomeIcon
-                    icon={faPlus}
-                    style={{ padding: isOpen ? "10px 8px 10px 30px" : "0 0px" }}
-                  />
-                  <span
-                    className="text"
-                    style={{ display: isOpen ? "block" : "none" }}
-                  >
-                    Personal Information
-                  </span>
-                </NavLink>
+             
                 <NavLink
                   to="/dashboard/settings"
                   className="navlink active side-bar-link"
