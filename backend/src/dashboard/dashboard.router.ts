@@ -8,7 +8,7 @@ import {
     getUserByToken,
     addPersonalInfo,
     resetPassword,
-    updateUser, personalInfo
+    updateUser
 } from "./dashboard.controller";
 
 let dashboardRouter = Router();
@@ -33,5 +33,5 @@ dashboardRouter.post("/dataUser", isAuthenticated, addPersonalInfo)
 
 dashboardRouter.post("/reset-password",isAuthenticated,resetPassword)
 
-dashboardRouter.get("/personalInfo/:id",personalInfo)
+dashboardRouter.get("/personalInfo",isAuthenticated,getUserByToken)
 export default dashboardRouter;
