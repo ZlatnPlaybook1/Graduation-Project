@@ -32,7 +32,6 @@ export default function Login() {
     setErr("");
     try {
       const res = await axios.post("http://127.0.0.1:8080/api/login", form);
-      console.log(res);
       setLoading(false);
       const token = res.data.data.token;
       cookie.set("CuberWeb", token);

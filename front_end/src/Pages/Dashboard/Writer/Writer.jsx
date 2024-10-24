@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cookie from "cookie-universal";
-import { useParams } from "react-router-dom";
 import "./Writer.css";
 
 export default function Writer() {
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
-  const { id } = useParams();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -32,9 +30,11 @@ export default function Writer() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(
-          `http://127.0.0.1:8080/api/personalInfo/${id}`
-        );
+        const res = await axios.get(`http://127.0.0.1:8080/api/personalInfo`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         console.log(res);
         const data = res.data.data;
 
@@ -55,7 +55,7 @@ export default function Writer() {
     };
 
     fetchData();
-  }, [id]);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
