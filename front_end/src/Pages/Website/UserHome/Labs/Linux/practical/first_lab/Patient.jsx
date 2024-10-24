@@ -31,10 +31,6 @@ export default function Patient() {
     `;
     document.head.appendChild(style); // Inject CSS into the head
   };
-
-
-
-
   const checkAnswer = (e) => {
     e.preventDefault(); // Prevent form submission
     const answer = e.target.answer.value; // Get answer from input

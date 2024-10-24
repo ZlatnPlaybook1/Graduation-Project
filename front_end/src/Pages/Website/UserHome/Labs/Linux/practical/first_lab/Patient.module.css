@@ -129,21 +129,6 @@
     z-index: 10;
 }
 
-@keyframes explode {
-    0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(3);
-        opacity: 0;
-    }
-}
-
-
-
-
 .faq-item {
     margin-bottom: 30px;
 }
