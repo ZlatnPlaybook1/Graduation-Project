@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import prisma from "../../../utilities/db";
 
 export const findProduct = async (req: Request, res: Response) => {
-    const category = req.body.category;
+    const category = "electronics";
 
 
 const products: any = await prisma.$executeRawUnsafe(`
