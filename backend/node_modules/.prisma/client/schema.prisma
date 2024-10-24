@@ -70,14 +70,10 @@ model Post {
   userId    String
 }
 
-model lab2sql {
+model lab3sql {
   id       String  @id @default(uuid())
   category String? @default("electronics")
+  name     String?
+  price    String?
   released String? @default("1")
-}
-
-model lab3sql {
-  id    String  @id @default(uuid())
-  name  String?
-  price String?
 }

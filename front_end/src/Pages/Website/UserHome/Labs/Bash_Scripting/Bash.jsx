@@ -69,10 +69,10 @@ export default function Bash() {
           <div className={styles.breadcrumb}>
             <ul>
               <li>
-                <Link to="">Pre Security</Link>
+                <Link to="">Home</Link>
               </li>
               <li>
-                <Link to="">Introduction To Cyber Security</Link>
+                <Link to="">Bash Scripting</Link>
               </li>
               {/* <li>
                 <span className="active-breadcrumb">
@@ -86,7 +86,7 @@ export default function Bash() {
             <div className={styles["course-text"]}>
               <h1>Bash Scripting</h1>
               <p>
-                A Walkthrough room to teach you the basics of bash scripting
+              Master the basics of Bash scripting, a powerful tool for automating tasks and managing systems in cybersecurity environments.
               </p>
               <div className={styles["course-icons"]}>
                 <div className={styles.diff}>
