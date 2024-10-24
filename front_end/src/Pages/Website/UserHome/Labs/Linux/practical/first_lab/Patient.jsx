@@ -11,7 +11,29 @@ export default function Patient() {
 
   useEffect(() => {
     document.title = "Be Patient or Skillful";
+    injectKeyframes();
   }, []);
+
+  const injectKeyframes = () => {
+    const style = document.createElement("style");
+    style.type = "text/css";
+    style.innerHTML = `
+      @keyframes explode {
+        0% {
+          transform: scale(0);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(3);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style); // Inject CSS into the head
+  };
+
+
+
 
   const checkAnswer = (e) => {
     e.preventDefault(); // Prevent form submission
