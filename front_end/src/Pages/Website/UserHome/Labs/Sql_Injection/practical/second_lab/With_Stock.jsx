@@ -22,64 +22,96 @@ export default function With_Stock() {
       <div className="course-With_Stock ">
         <div className="container-With_Stock ">
             <h1 className="congrats">Congratulations</h1>
-          <h1>T-Shirts In Our Store or 1=1</h1>
+          <h1>Featured Products or 1=1</h1>
           <div className="row-practice">
-            <div className="card-With_Stock ">
-              <img src={image_1} alt="" />
-              <div className="card-text-With_Stock ">
-                <h4>T-Shirt</h4>
-                <p>High Quality T-Shirt</p>
+              <div className="card-With_Stock ">
+                <div className="functions">
+                <i className="fa-solid fa-cart-plus"></i>
+                <i className="fa-regular fa-heart"></i>
+                </div>
+                  <img src={image_1} alt=""/>
+                  <div className="card-text-With_Stock ">
+                        <h4>T-Shirt</h4>
+                        <p className="price">$29.9</p>
+                  </div>
               </div>
-            </div>
-            <div className="card-With_Stock ">
-              <img src={image_2} alt="" />
-              <div className="card-text-With_Stock ">
-                <h4>T-Shirt</h4>
-                <p>High Quality T-Shirt</p>
+              <div className="card-With_Stock ">
+                <div className="functions">
+                <i className="fa-solid fa-cart-plus"></i>
+                <i className="fa-regular fa-heart"></i>
+                </div>
+                  <img src={image_2} alt=""/>
+                  <div className="card-text-With_Stock ">
+                        <h4>T-Shirt</h4>
+                        <p className="price">$29.9</p>
+                  </div>
               </div>
-            </div>
-            <div className="card-With_Stock ">
-              <img src={image_3} alt="" />
-              <div className="card-text-With_Stock ">
-                <h4>T-Shirt</h4>
-                <p>High Quality T-Shirt</p>
+              <div className="card-With_Stock ">
+                <div className="functions">
+                <i className="fa-solid fa-cart-plus"></i>
+                <i className="fa-regular fa-heart"></i>
+                </div>
+                  <img src={image_3} alt=""/>
+                  <div className="card-text-With_Stock ">
+                        <h4>T-Shirt</h4>
+                        <p className="price">$29.9</p>
+                  </div>
               </div>
-            </div>
-            <div className="card-With_Stock ">
-              <img src={image_4} alt="" />
-              <div className="card-text-With_Stock ">
-                <h4>T-Shirt</h4>
-                <p>High Quality T-Shirt</p>
+              <div className="card-With_Stock ">
+                <div className="functions">
+                <i className="fa-solid fa-cart-plus"></i>
+                <i className="fa-regular fa-heart"></i>
+                </div>
+                  <img src={image_4} alt=""/>
+                  <div className="card-text-With_Stock ">
+                        <h4>T-Shirt</h4>
+                        <p className="price">$29.9</p>
+                  </div>
               </div>
-            </div>
-            <div className="card-With_Stock ">
-              <img src={image_5} alt="" />
-              <div className="card-text-With_Stock ">
-                <h4>T-Shirt</h4>
-                <p>High Quality T-Shirt</p>
+              <div className="card-With_Stock ">
+                <div className="functions">
+                <i className="fa-solid fa-cart-plus"></i>
+                <i className="fa-regular fa-heart"></i>
+                </div>
+                  <img src={image_5} alt=""/>
+                  <div className="card-text-With_Stock ">
+                        <h4>T-Shirt</h4>
+                        <p className="price">$29.9</p>
+                  </div>
               </div>
-            </div>
-            <div className="card-With_Stock ">
-              <img src={image_6} alt="" />
-              <div className="card-text-With_Stock ">
-                <h4>T-Shirt</h4>
-                <p>High Quality T-Shirt</p>
+              <div className="card-With_Stock ">
+                <div className="functions">
+                <i className="fa-solid fa-cart-plus"></i>
+                <i className="fa-regular fa-heart"></i>
+                </div>
+                  <img src={image_6} alt=""/>
+                  <div className="card-text-With_Stock ">
+                        <h4>T-Shirt</h4>
+                        <p className="price">$29.9</p>
+                  </div>
               </div>
-            </div>
-            <div className="card-With_Stock ">
-              <img src={image_7} alt="" />
-              <div className="card-text-With_Stock ">
-                <h4>T-Shirt</h4>
-                <p>High Quality T-Shirt</p>
+              <div className="card-With_Stock ">
+                <div className="functions">
+                <i className="fa-solid fa-cart-plus"></i>
+                <i className="fa-regular fa-heart"></i>
+                </div>
+                  <img src={image_7} alt=""/>
+                  <div className="card-text-With_Stock ">
+                        <h4>T-Shirt</h4>
+                        <p className="price">$29.9</p>
+                  </div>
               </div>
-            </div>
-            <div className="card-With_Stock ">
-              <img src={image_8} alt="" />
-              <div className="card-text-With_Stock ">
-                <h4>T-Shirt</h4>
-                <p>High Quality T-Shirt</p>
+              <div className="card-With_Stock ">
+                <div className="functions">
+                <i className="fa-solid fa-cart-plus"></i>
+                <i className="fa-regular fa-heart"></i>
+                </div>
+                  <img src={image_8} alt=""/>
+                  <div className="card-text-With_Stock ">
+                        <h4>T-Shirt</h4>
+                        <p className="price">$29.9</p>
+                  </div>
               </div>
-            </div>
           </div>
         </div>
       </div>

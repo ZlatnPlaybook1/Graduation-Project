@@ -11,6 +11,7 @@
 .container-With_Stock {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 61px;
 }
 
 
@@ -61,21 +62,9 @@
   flex-direction: column;
 }
 
-
-.course-With_Stock .container-With_Stock .congrats {
-  margin-bottom: 30px;
-  color: white;
-  font-weight: bold;
-  font-size: 48px;
-  border: 5px solid blue;
-  width: max-content;
-  padding: 10px 20px;
-  background-color: blue;
-}
-
 .course-With_Stock .row-practice {
   display: grid;
-  grid-template-columns: .25fr .25fr .25fr .25fr;
+  grid-template-columns: .3fr .3fr .3fr;
   grid-template-rows: auto auto;
   justify-content: center;
   margin-top: 30px;
@@ -83,37 +72,86 @@
   gap: 20px;
 }
 
+@media (max-width: 992px) {
+  .course-With_Stock .row-practice {
+    grid-template-columns: .5fr .5fr;
+  }
+}
+
 .course-With_Stock .row-practice .card-With_Stock {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: var(--main-transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.course-With_Stock .row-practice .card-With_Stock .functions {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  gap: 15px;
+  padding: 0 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: .75s;
+  color: white;
+  background-color: var(--main-color);
+}
+
+.course-With_Stock .row-practice .card-With_Stock:hover .functions {
+  left: 0;
+}
+
+.course-With_Stock .row-practice .card-With_Stock .functions i {
+  cursor: pointer;
 }
 
 .course-With_Stock .row-practice .card-With_Stock img {
-  width: 100%;
+  width: 50%;
   border-radius: 10px;
 }
 
-.course-With_Stock .row-practice .card-With_Stock:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  transform: scale(1.02);
-}
 
 .course-With_Stock .row-practice .card-With_Stock .card-text-With_Stock {
   padding: 20px 10px;
 }
 
-.course-With_Stock .row-practice .card-With_Stock .card-text-With_Stock p {
+.course-With_Stock .row-practice .card-With_Stock .card-text-With_Stock p.price {
   font-size: 16px;
   font-weight: lighter;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  background-color: var(--main-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 25px;
+  position: relative;
+}
+
+.course-With_Stock .row-practice .card-With_Stock .card-text-With_Stock p.price::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.15);
+  z-index: 1;
+  transition: var(--main-transition);
+}
+
+.course-With_Stock .row-practice .card-With_Stock p.price:hover::after {
+  top: 0;
 }
 
 /* End Course  */

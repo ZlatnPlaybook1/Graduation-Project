@@ -77,7 +77,7 @@ export default function Fifth_lab_exp() {
             </div>
           </div>
 
-          <h2>Click The Link To Go To Prices Test</h2>
+          <h2>Click The Link To Go To Login Page</h2>
           <div className="row-practice">
             <Link
               to="/Sql_Injection/sql_Injection_lab/fifth_lab/login"
