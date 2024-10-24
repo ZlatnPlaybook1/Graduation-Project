@@ -51,15 +51,10 @@ export default function Linux() {
           <div className={styles.breadcrumb}>
             <ul>
               <li>
-                <Link to="">Pre Security</Link>
+                <Link to="">Home</Link>
               </li>
               <li>
-                <Link to="">Introduction To Cyber Security</Link>
-              </li>
-              <li>
-                <span className={styles["active-breadcrumb"]}>
-                  Intro To Offensive Security
-                </span>
+                <Link to="">Linux Fundamentals</Link>
               </li>
             </ul>
           </div>
@@ -68,8 +63,7 @@ export default function Linux() {
             <div className={styles["course-text"]}>
               <h1>Linux Fundamentals</h1>
               <p>
-                Hack your first website (legally in a safe environment) and
-                experience an ethical hacker's job.
+              Build a solid foundation in Linux, the operating system at the core of many cybersecurity tools and infrastructures.
               </p>
               <div className={styles["course-icons"]}>
                 <div className={styles.diff}>
@@ -326,7 +320,7 @@ export default function Linux() {
                       </div>
                     </li>
                   </ul>
-                  <p className={styles.question}>
+                  {/* <p className={styles.question}>
                     If we wanted to output the text "TryHackMe", what would our
                     command be?
                   </p>
@@ -353,7 +347,7 @@ export default function Linux() {
                     <button>
                       <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
-                  </form>
+                  </form> */}
                 </dd>
                 <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
                   <span>Task 2</span>Interacting With the Filesystem!
@@ -917,7 +911,7 @@ export default function Linux() {
                       </ol>
                     </li>
                   </ul>
-                  <p className={styles.question}>
+                  {/* <p className={styles.question}>
                     On the Linux machine that you deploy, how many folders are
                     there?
                   </p>
@@ -970,7 +964,7 @@ export default function Linux() {
                     <button>
                       <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
-                  </form>
+                  </form> */}
                 </dd>
                 <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
                   <span>Task 3</span>Searching for Files
@@ -1608,7 +1602,7 @@ export default function Linux() {
                       </p>
                     </li>
                   </ul>
-                  <p className={styles.question}>
+                  {/* <p className={styles.question}>
                     Use grep on "access.log" to find the flag that has a prefix
                     of "THM". What is the flag?
                   </p>
@@ -1634,7 +1628,7 @@ export default function Linux() {
                     <button>
                       <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
-                  </form>
+                  </form> */}
                 </dd>
                 <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
                   <span>Task 4</span>An Introduction to Shell Operators
@@ -2062,7 +2056,7 @@ export default function Linux() {
                       </div>
                     </li>
                   </ul>
-                  <p className={styles.question}>
+                  {/* <p className={styles.question}>
                     If we wanted to run a command in the background, what
                     operator would we want to use?
                   </p>
@@ -2119,7 +2113,7 @@ export default function Linux() {
                     <button>
                       <i className="fa-regular fa-paper-plane"></i>Submit
                     </button>
-                  </form>
+                  </form> */}
                 </dd>
               </dl>
             </div>

@@ -69,3 +69,11 @@ model Post {
   user      userForXSS @relation(fields: [userId], references: [id])
   userId    String
 }
+
+model lab3sql {
+  id       String  @id @default(uuid())
+  category String? @default("electronics")
+  name     String?
+  price    String?
+  released String? @default("1")
+}

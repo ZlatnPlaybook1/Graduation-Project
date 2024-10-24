@@ -31,21 +31,20 @@ export default function Patient() {
                 </a>
               </div>
               <div className={styles["question-div"]}>
-                <p className={styles.question}>
-                  If we wanted to output the text "TryHackMe", what would our
-                  command be?
-                </p>
+                <h1 className={styles.question}>
+                check your answer here  :
+                </h1>
                 <form>
                   <input
                     type="text"
                     name="answer"
-                    placeholder="Answer Format: **********"
+                    placeholder="Flag Format: flag{**********}" 
                   />
                   <button>
                     <i className="fa-regular fa-paper-plane"></i>Submit
                   </button>
                 </form>
-                <p className={styles.question}>
+                {/* <p className={styles.question}>
                   What is the username of who you're logged in as on your
                   deployed Linux machine?
                 </p>
@@ -58,7 +57,7 @@ export default function Patient() {
                   <button>
                     <i className="fa-regular fa-paper-plane"></i>Submit
                   </button>
-                </form>
+                </form> */}
               </div>
             </div>
           </div>
