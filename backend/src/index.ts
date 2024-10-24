@@ -24,14 +24,14 @@ app.use(cookieParser());
 
 app.use('/api', registerRouter);
 app.use('/api', loginRouter);
-app.use('/api', dashboardRouter)
-app.use('/api', logoutRouter)
+app.use('/api', dashboardRouter);
+app.use('/api', logoutRouter);
 app.use('/api', lab1)
-app.use('/api', lab2)
-app.use('/api',hiddenData )
-app.use('/api', xssPostsRouter)
-app.use('/api', lab2sql)
-app.use('/api', lab3sql)
+app.use('/api', lab2);
+app.use('/api',hiddenData );
+app.use('/api', xssPostsRouter);
+app.use('/api', lab2sql);
+app.use('/api', lab3sql);
 
 dotenv.config()
 
