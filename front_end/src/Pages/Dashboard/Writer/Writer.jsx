@@ -5,6 +5,7 @@ import "./Writer.css";
 
 export default function Writer() {
   const cookie = Cookie();
+  // Get cookie
   const token = cookie.get("CuberWeb");
 
   const [formData, setFormData] = useState({
