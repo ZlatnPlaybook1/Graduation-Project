@@ -12,7 +12,7 @@ export default function Writer() {
     age: "",
     birthday: "",
     address: "",
-    phone: "",
+    phoneNum: "",
     image: "",
   });
 
@@ -35,7 +35,6 @@ export default function Writer() {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log(res);
         const data = res.data.data;
 
         setFormData((prevData) => ({
@@ -44,7 +43,7 @@ export default function Writer() {
           age: calculateAge(data.birthday),
           birthday: data.birthday,
           address: data.address,
-          phone: data.phone,
+          phoneNum: data.phoneNum,
           image: data.image,
         }));
 
@@ -108,15 +107,6 @@ export default function Writer() {
       const submittedData = res.data.data;
       console.log("Response:", submittedData);
       setLoading(false);
-      // Optionally reset the form
-      // setFormData({
-      //   name: "",
-      //   age: "",
-      //   birthday: "",
-      //   address: "",
-      //   phone: "",
-      //   image: "",
-      // });
     } catch (error) {
       setLoading(false);
       setErr("Error submitting data");
@@ -178,8 +168,8 @@ export default function Writer() {
           <label>Phone Number:</label>
           <input
             type="tel"
-            name="phone"
-            value={formData.phone}
+            name="phoneNum"
+            value={formData.phoneNum}
             onChange={handleChange}
             required
           />
