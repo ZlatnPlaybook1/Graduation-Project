@@ -22,7 +22,8 @@ import PRICES_EXP from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/th
 import SHOW_PRICES from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/third_lab/Show_prices.jsx";
 import FINISH_TEST from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/third_lab/Finish_test.jsx";
 import FOURTH_LAB_SQL from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/fourth_lab/Prices_exp_fourth.jsx";
-import FIFTH_LAB_SQL from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/fifth_lab/Prices_exp_fifth.jsx";
+import FIFTH_LAB_SQL from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/fifth_lab/fifth_lab_exp.jsx";
+import FIFTH_LOGIN_SQL from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/fifth_lab/fifth_lab_login.jsx";
 import XSS from "./Pages/Website/UserHome/Labs/XSS/XSS.jsx";
 import XSS_LAB from "./Pages/Website/UserHome/Labs/XSS/XSS_lab.jsx";
 import XSS_FIRST from "./Pages/Website/UserHome/Labs/XSS/Practical/First_lab.jsx";
@@ -120,6 +121,10 @@ function App() {
           <Route
             path="/Sql_Injection/sql_Injection_lab/fifth_lab"
             element={<FIFTH_LAB_SQL />}
+          />
+          <Route
+            path="/Sql_Injection/sql_Injection_lab/fifth_lab/login"
+            element={<FIFTH_LOGIN_SQL />}
           />
           {/* End Sql_Injection */}
           <Route path="/xss" element={<XSS />} />

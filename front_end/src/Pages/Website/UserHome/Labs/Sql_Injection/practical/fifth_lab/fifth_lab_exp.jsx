@@ -1,11 +1,11 @@
 import Header from "../../../../Header/Header";
-import "./Prices_exp_fifth.css";
+import "./fifth_lab_exp.css";
 import $ from "jquery";
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import Footer from "../../../../Footer/Footer";
 
-export default function Prices_exp_fifth() {
+export default function Fifth_lab_exp() {
   const faqSectionRef = useRef(null);
   useEffect(() => {
     const $faqSection = $(faqSectionRef.current);
@@ -80,10 +80,10 @@ export default function Prices_exp_fifth() {
           <h2>Click The Link To Go To Prices Test</h2>
           <div className="row-practice">
             <Link
-              to="/Sql_Injection/sql_Injection_lab/third_lab/show-prices"
+              to="/Sql_Injection/sql_Injection_lab/fifth_lab/login"
               className="store-link-sp"
             >
-              Prices
+              Login
             </Link>
           </div>
         </div>
