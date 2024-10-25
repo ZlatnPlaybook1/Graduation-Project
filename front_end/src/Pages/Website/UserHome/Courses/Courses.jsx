@@ -1,6 +1,7 @@
 import React from "react";
 import "./Courses.css";
 import imagecourse from "../assets/img/course_image_home.png";
+import Sql_InjectionImg from "../assets/img/SQL_Injection/landing3.png";
 import imagecourse2 from "../assets/img/Lab2.jpg";
 import bash from "../assets/img/bash/bash_course_logo.png";
 import linux_logo from "../assets/img/linux/linux_logo.png";
@@ -18,20 +19,24 @@ const Courses = () => {
           <div className="row-course">
             <a href="/sql_Injection" className="course-card">
               <div className="course-image">
-                <img src={imagecourse} alt="Course" />
+                <img src={Sql_InjectionImg} alt="Course" />
               </div>
               {/* topic1 */}
               <div className="course-text">
                 <h3>SQL Injection</h3>
                 <p>
-                Learn how attackers exploit vulnerabilities in web applications using SQL 
-                injection and understand the techniques to detect and prevent them.
+                  Learn how attackers exploit vulnerabilities in web
+                  applications using SQL injection and understand the techniques
+                  to detect and prevent them.
                 </p>
                 <ul className="circled-order">
                   <li>Retrieving hidden data</li>
                   <li>SQL injection UNION attacks</li>
                   <li> Finding columns with a useful data type</li>
-                  <li>Using a SQL injection UNION attack to retrieve interesting data</li>
+                  <li>
+                    Using a SQL injection UNION attack to retrieve interesting
+                    data
+                  </li>
                 </ul>
               </div>
               <div className="easy">
@@ -74,7 +79,8 @@ const Courses = () => {
               <div className="course-text">
                 <h3>Cookies</h3>
                 <p>
-                Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce.
+                  Understand the role of cookies in web security, how they are
+                  used, and the potential privacy concerns they introduce.
                 </p>
                 <ul className="circled-order">
                   <li> What Are Cookies?</li>
@@ -148,8 +154,8 @@ const Courses = () => {
               <div className="course-text">
                 <h3>Linux Fundamentals</h3>
                 <p>
-                Build a solid foundation in Linux, the operating system at the core of many 
-                cybersecurity tools and infrastructures.
+                  Build a solid foundation in Linux, the operating system at the
+                  core of many cybersecurity tools and infrastructures.
                 </p>
                 <ul className="circled-order">
                   <li>Running Your First few Commands</li>
@@ -223,8 +229,9 @@ const Courses = () => {
               <div className="course-text">
                 <h3>Bash Scripting</h3>
                 <p>
-                Master the basics of Bash scripting, a powerful tool for automating tasks 
-                and managing systems in cybersecurity environments.
+                  Master the basics of Bash scripting, a powerful tool for
+                  automating tasks and managing systems in cybersecurity
+                  environments.
                 </p>
                 <ul className="circled-order">
                   <li>simple bash scripts</li>

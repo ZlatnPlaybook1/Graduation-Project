@@ -59,7 +59,6 @@ export default function Sql_Injection() {
               <li>
                 <Link to="">SQL Injection</Link>
               </li>
-            
             </ul>
           </div>
           <div className="course-info">
@@ -67,8 +66,9 @@ export default function Sql_Injection() {
             <div className="course-text">
               <h1>SQL Injection</h1>
               <p>
-              Learn how attackers exploit vulnerabilities in web applications using SQL 
-              injection and understand the techniques to detect and prevent them.
+                Learn how attackers exploit vulnerabilities in web applications
+                using SQL injection and understand the techniques to detect and
+                prevent them.
               </p>
               <div className="course-icons">
                 <div className="diff">
@@ -380,12 +380,13 @@ export default function Sql_Injection() {
                     </pre>
                     <li>
                       In order to perform this attack, you need to know that
-                      there is a table called <span>users</span> with two columns called
-                      <span>username</span> and <span>password</span>. Without this information, you would
-                      have to guess the names of the tables and columns. All
-                      modern databases provide ways to examine the database
-                      structure, and determine what tables and columns they
-                      contain.
+                      there is a table called <span>users</span> with two
+                      columns called
+                      <span>username</span> and <span>password</span>. Without
+                      this information, you would have to guess the names of the
+                      tables and columns. All modern databases provide ways to
+                      examine the database structure, and determine what tables
+                      and columns they contain.
                     </li>
                   </ul>
                 </dd>

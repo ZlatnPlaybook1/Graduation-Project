@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../node_modules/.prisma/client"
@@ -21,28 +15,23 @@ model User {
   name             String            @unique
   email            String            @unique
   password         String
-  isVerified       Boolean           @default(false) @map("is_verified") @db.Boolean
+  isVerified       Boolean           @default(false) @map("is_verified")
   role             Role              @default(writer)
-  validationNumber ValidationNumber?
   token            String?
-  birthday         String?
   address          String?
+  birthday         String?
   phoneNum         String?
+  validationNumber ValidationNumber?
 }
 
 model ValidationNumber {
   id         String   @id @default(uuid())
   number     String
   createdAt  DateTime @default(now())
-  expiration BigInt   @db.BigInt
-  isVerified Boolean  @default(false) @map("is_verified") @db.Boolean
-  user       User     @relation(fields: [userId], references: [id])
+  expiration BigInt
+  isVerified Boolean  @default(false) @map("is_verified")
   userId     String   @unique
-}
-
-enum Role {
-  admin
-  writer
+  user       User     @relation(fields: [userId], references: [id])
 }
 
 model userForsqlInjection {
@@ -56,8 +45,8 @@ model userForsqlInjection {
 model userForXSS {
   id       String  @id @default(uuid())
   username String? @unique
-  email    String  @unique
   password String
+  email    String  @unique
   posts    Post[]
 }
 
@@ -66,21 +55,24 @@ model Post {
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
   content   String
-  user      userForXSS @relation(fields: [userId], references: [id])
   userId    String
+  user      userForXSS @relation(fields: [userId], references: [id])
 }
 
 model lab2sql {
   id       String  @id @default(uuid())
   category String? @default("electronics")
-  name     String?
-  price    String?
   released String? @default("1")
 }
 
 model lab3sql {
   id       String  @id @default(uuid())
-  category String? @default("electronics")
   name     String?
   price    String?
+  category String? @default("electronics")
+}
+
+enum Role {
+  admin
+  writer
 }
