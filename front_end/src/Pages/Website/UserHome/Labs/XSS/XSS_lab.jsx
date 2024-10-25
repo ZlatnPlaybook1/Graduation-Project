@@ -1,7 +1,7 @@
 import React from "react";
 import "./XSS_lab.css";
 import Header from "../../Header/Header";
-import image from "../../assets/img/card_image.png";
+import lab_Cover from "../../assets/img/Cross_Site_Scripting/labs_cover.jpg";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
@@ -40,15 +40,16 @@ export default function XSS_lab() {
       {/* Start Courses  */}
       <div class="course-XSS">
         <div class="container-XSS">
-          <h2>XSS Lab</h2>
+          <h2>XSS Labs</h2>
           <p class="section-p-XSS">Test Your Hacking skills</p>
           <div class="row-XSS">
+            {/* lab1 */}
             <Link to="/xss/xss_lab/first_lab" class="course-card-XSS">
               <div class="course-image-XSS">
-                <img src={image} alt="" />
+                <img src={lab_Cover} alt="" />
               </div>
               <div class="course-text-XSS">
-                <h3>First Lab</h3>
+                <h3>Reflected XSS into HTML context</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
@@ -65,12 +66,13 @@ export default function XSS_lab() {
                 <p>Easy</p>
               </div>
             </Link>
+            {/* lab2 */}
             <Link to="/XSS/xss_lab/second_lab" class="course-card-XSS">
               <div class="course-image-XSS">
-                <img src={image} alt="" />
+                <img src={lab_Cover} alt="" />
               </div>
               <div class="course-text-XSS">
-                <h3>Second Lab</h3>
+                <h3>Stored XSS into HTML context</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
@@ -87,12 +89,13 @@ export default function XSS_lab() {
                 <p>Easy</p>
               </div>
             </Link>
+            {/* lab3 */}
             <Link to="/XSS/xss_lab/third_lab" class="course-card-XSS">
               <div class="course-image-XSS">
-                <img src={image} alt="" />
+                <img src={lab_Cover} alt="" />
               </div>
               <div class="course-text-XSS">
-                <h3>Third Lab</h3>
+                <h3>DOM XSS</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
@@ -109,12 +112,15 @@ export default function XSS_lab() {
                 <p>Easy</p>
               </div>
             </Link>
+            {/* lab4 */}
             <Link to="/XSS/xss_lab/fourth_lab" class="course-card-XSS">
               <div class="course-image-XSS">
-                <img src={image} alt="" />
+                <img src={lab_Cover} alt="" />
               </div>
               <div class="course-text-XSS">
-                <h3>Fourth Lab</h3>
+                <h3>
+                  Stored XSS in anchor <q>href</q>
+                </h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
@@ -131,12 +137,13 @@ export default function XSS_lab() {
                 <p>Easy</p>
               </div>
             </Link>
+            {/* lab5 */}
             <Link to="/XSS/xss_lab/fifth_lab" class="course-card-XSS">
               <div class="course-image-XSS">
-                <img src={image} alt="" />
+                <img src={lab_Cover} alt="" />
               </div>
               <div class="course-text-XSS">
-                <h3>Fifth Lab</h3>
+                <h3>DOM XSS inside Selected Element</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
@@ -153,9 +160,10 @@ export default function XSS_lab() {
                 <p>Easy</p>
               </div>
             </Link>
+            {/* lab6 */}
             <Link to="/XSS/xss_lab/sixth_lab" class="course-card-XSS">
               <div class="course-image-XSS">
-                <img src={image} alt="" />
+                <img src={lab_Cover} alt="" />
               </div>
               <div class="course-text-XSS">
                 <h3>Sixth Lab</h3>
@@ -175,9 +183,10 @@ export default function XSS_lab() {
                 <p>Easy</p>
               </div>
             </Link>
+            {/* lab7 */}
             <Link to="/xss/xss_lab/seven_lab" class="course-card-XSS">
               <div class="course-image-XSS">
-                <img src={image} alt="" />
+                <img src={lab_Cover} alt="" />
               </div>
               <div class="course-text-XSS">
                 <h3>Seven Lab</h3>
@@ -197,9 +206,10 @@ export default function XSS_lab() {
                 <p>Easy</p>
               </div>
             </Link>
+
             <Link to="#" class="course-card-XSS">
               <div class="course-image-XSS">
-                <img src={image} alt="" />
+                <img src={lab_Cover} alt="" />
               </div>
               <div class="course-text-XSS">
                 <h3>Eighth Lab</h3>

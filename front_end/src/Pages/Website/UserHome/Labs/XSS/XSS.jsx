@@ -600,7 +600,7 @@ export default function XSS() {
             </div>
             <div className="go-to-section-lab2">
               <Link to="/xss/xss_lab" className="go-to-lab2">
-                Go To Lab
+                Go To Labs
               </Link>
             </div>
           </div>

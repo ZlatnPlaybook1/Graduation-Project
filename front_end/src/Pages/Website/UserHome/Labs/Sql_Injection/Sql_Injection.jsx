@@ -394,7 +394,7 @@ export default function Sql_Injection() {
             </div>
             <div className="go-to-section">
               <button onClick={handleGoToLab} className="go-to">
-                Go To Lab
+                Go To Labs
               </button>
             </div>
           </div>

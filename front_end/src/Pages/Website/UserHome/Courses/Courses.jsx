@@ -2,6 +2,7 @@ import React from "react";
 import "./Courses.css";
 import imagecourse from "../assets/img/course_image_home.png";
 import Sql_InjectionImg from "../assets/img/SQL_Injection/landing3.png";
+import Cross_Site_ScriptingImg from "../assets/img/Cross_Site_Scripting/xss.jpeg.jpg";
 import imagecourse2 from "../assets/img/Lab2.jpg";
 import bash from "../assets/img/bash/bash_course_logo.png";
 import linux_logo from "../assets/img/linux/linux_logo.png";
@@ -48,7 +49,7 @@ const Courses = () => {
           <div className="row-course">
             <a href="/xss" className="course-card">
               <div className="course-image">
-                <img src={imagecourse2} alt="Course" />
+                <img src={Cross_Site_ScriptingImg} alt="Course" />
               </div>
               {/* topic2 */}
               <div className="course-text">
