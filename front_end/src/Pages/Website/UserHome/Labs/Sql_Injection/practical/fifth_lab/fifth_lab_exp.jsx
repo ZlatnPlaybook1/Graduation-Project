@@ -1,5 +1,5 @@
 import Header from "../../../../Header/Header";
-import "./fifth_lab_exp.css";
+import styles from"./fifth_lab_exp.module.css";
 import $ from "jquery";
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
@@ -39,15 +39,23 @@ export default function Fifth_lab_exp() {
     <>
       <Header />
       {/* Start Courses  */}
-      <div className="course-Prices_exp_fifth ">
-        <div className="container-Prices_exp_fifth ">
-          <div className="row">
-            <div className="faq-section-Prices_exp_fifth" ref={faqSectionRef}>
-              <dl className="section-text-Prices_exp_fifth">
-                <dt className="wave-Prices_exp_fifth fadeInUp faq-header-Prices_exp_fifth">
+      <div className={styles.course}>
+        <div className={styles.container}>
+          <div className={styles.row}>
+            <div className={styles["row-practice"]}>
+              <Link
+                to="/Sql_Injection/sql_Injection_lab/fifth_lab/login"
+                className={styles["acc-link-sp"]}
+              >
+                My Account
+              </Link>
+            </div>
+            <div className={styles["faq-section"]} ref={faqSectionRef}>
+              <dl className={styles["section-text"]}>
+                <dt className={`${styles.wave} ${styles.fadeInUp} ${styles["faq-header"]}`}>
                   SQL injection UNION attacks
                 </dt>
-                <dd className="fadeInUp faq-body-Prices_exp_fifth">
+                <dd className={`${styles.fadeInUp} ${styles["faq-body"]}`}>
                   <ul>
                     <li>
                       This lab contains a SQL injection vulnerability in the
@@ -75,16 +83,6 @@ export default function Fifth_lab_exp() {
                 </dd>
               </dl>
             </div>
-          </div>
-
-          <h2>Click The Link To Go To Login Page</h2>
-          <div className="row-practice">
-            <Link
-              to="/Sql_Injection/sql_Injection_lab/fifth_lab/login"
-              className="store-link-sp"
-            >
-              Login
-            </Link>
           </div>
         </div>
       </div>
