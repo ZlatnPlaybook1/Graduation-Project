@@ -33,7 +33,7 @@ export default function Power() {
   const checkAnswer = (e) => {
     e.preventDefault(); // Prevent form submission
     const answer = e.target.answer.value; // Get answer from input
-    if (answer === "test") {
+    if (answer === "FLAG{Grep_Are_Very_Useful}") {
       setShowSuccess(true);
       launchFireworks();
       setTimeout(() => {
@@ -101,7 +101,7 @@ export default function Power() {
               </div>
               <div className={styles["question-div"]}>
               <h1 className={styles.question}>
-                check your answer here  :
+              Check your Flag here:
                 </h1>
                 <form onSubmit={checkAnswer}>
                   <input

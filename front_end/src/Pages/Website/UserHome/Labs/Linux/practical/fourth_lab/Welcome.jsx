@@ -33,7 +33,7 @@ export default function Welcome() {
   const checkAnswer = (e) => {
     e.preventDefault(); // Prevent form submission
     const answer = e.target.answer.value; // Get answer from input
-    if (answer === "test") {
+    if (answer === "flag{Welcome_to_cyber_lap}") {
       setShowSuccess(true);
       launchFireworks();
       setTimeout(() => {
@@ -102,7 +102,7 @@ export default function Welcome() {
                 </a>
               </div>
               <div className={styles["question-div"]}>
-                <h1 className={styles.question}>check your answer here :</h1>
+                <h1 className={styles.question}>Check your Flag here:</h1>
                 <form onSubmit={checkAnswer}>
                   <input
                     type="text"

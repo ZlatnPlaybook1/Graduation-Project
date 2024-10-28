@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Linux_lab.css";
 import Header from "../../Header/Header";
-import image from "../../assets/img/card_image.png";
+import image from "../../assets/img/linux/linux_logo.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
@@ -54,16 +54,13 @@ export default function Linux_lab() {
                 <img src={image} alt="" />
               </div>
               <div className="course-text-Linux-lab">
-                <h3>Patient</h3>
+                <h3>be Patient</h3>
                 <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                  Try to Capture the Flag 
                 </p>
                 <ul className="circled-order-Linux-lab">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux-lab OS</li>
+                  <li>Download this file and open it on your Linux machine</li>
+                  {/* <li>use waht you learn and try to find the flag</li> */}
                 </ul>
               </div>
               <div className="easy-Linux-lab">
@@ -81,14 +78,11 @@ export default function Linux_lab() {
               <div className="course-text-Linux-lab">
                 <h3>Power Of Command</h3>
                 <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                  Try to Capture the Flag 
                 </p>
                 <ul className="circled-order-Linux-lab">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux-lab OS</li>
+                  <li>Download this file and open it on your Linux machine</li>
+                 
                 </ul>
               </div>
               <div className="easy-Linux-lab">
@@ -106,14 +100,11 @@ export default function Linux_lab() {
               <div className="course-text-Linux-lab">
                 <h3>Welcome</h3>
                 <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                  Try to Capture the Flag 
                 </p>
                 <ul className="circled-order-Linux-lab">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux-lab OS</li>
+                  <li>Download this file and open it on your Linux machine</li>
+                  
                 </ul>
               </div>
               <div className="easy-Linux-lab">
@@ -131,14 +122,10 @@ export default function Linux_lab() {
               <div className="course-text-Linux-lab">
                 <h3>Test YourSelf</h3>
                 <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                  Try to Capture the Flag 
                 </p>
                 <ul className="circled-order-Linux-lab">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux-lab OS</li>
+                  <li>Download this file and open it on your Linux machine</li>
                 </ul>
               </div>
               <div className="easy-Linux-lab">

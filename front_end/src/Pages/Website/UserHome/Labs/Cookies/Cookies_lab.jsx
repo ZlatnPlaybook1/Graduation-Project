@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import $ from "jquery";
 import "./Cookies_lab.css";
 import Header from "../../Header/Header";
-import image from "../../assets/img/card_image.png";
+import image from "../../assets/img/cookies/Cookies_logo.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
@@ -74,14 +74,14 @@ export default function Cookies_lab() {
                         <img src={image} alt="" />
                     </div>
                     <div class="course-text-cookies">
-                        <h3>Pre Security</h3>
-                        <p>Before hacking something, you first need to understand the basics</p>
-                        <ul class="circled-order-cookies">
+                        <h3>Admin has the power</h3>
+                        <p>try to login as admin</p>
+                        {/* <ul class="circled-order-cookies">
                             <li>Cyber Security Basics</li>
                             <li>Networking Basics and Weaknesses</li>
                             <li>The Web And Common Attacks</li>
                             <li>Learn to Use The Linux OS</li>
-                        </ul>
+                        </ul> */}
                     </div>
                     <div class="easy-cookies">
                         <i class="fa-solid fa-signal lab-cookies"></i>
@@ -93,14 +93,14 @@ export default function Cookies_lab() {
                     <img src={image} alt="" />
                     </div>
                     <div class="course-text-cookies">
-                        <h3>Pre Security</h3>
-                        <p>Before hacking something, you first need to understand the basics</p>
-                        <ul class="circled-order-cookies">
+                        <h3>Hashing</h3>
+                        <p>try to login as admin</p>
+                        {/* <ul class="circled-order-cookies">
                             <li>Cyber Security Basics</li>
                             <li>Networking Basics and Weaknesses</li>
                             <li>The Web And Common Attacks</li>
                             <li>Learn to Use The Linux OS</li>
-                        </ul>
+                        </ul> */}
                     </div>
                     <div class="easy-cookies">
                         <i class="fa-solid fa-signal lab-cookies"></i>

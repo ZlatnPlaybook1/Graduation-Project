@@ -51,15 +51,10 @@ export default function XSS() {
           <div className="breadcrumb-lab2">
             <ul>
               <li>
-                <Link to="">Pre Security</Link>
+                <Link to="">Home</Link>
               </li>
               <li>
-                <Link to="">Introduction To Cyber Security</Link>
-              </li>
-              <li>
-                <span className="active-breadcrumb-lab2">
-                  Intro To Offensive Security
-                </span>
+                <Link to="">Cross-Site Scripting</Link>
               </li>
             </ul>
           </div>

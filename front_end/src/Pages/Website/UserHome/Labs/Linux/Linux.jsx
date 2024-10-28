@@ -3,8 +3,8 @@ import { useEffect, useRef } from "react";
 import $ from "jquery";
 import styles from "./Linux.module.css";
 import Header from "../../Header/Header";
-import background from "../../assets/img/background.png";
-import image from "../../assets/img/course_image.png";
+// import background from "../../assets/img/background.png";
+import image from "../../assets/img/linux/linux_logo.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
@@ -45,7 +45,7 @@ export default function Linux() {
       {/* Start Landing  */}
       <div className={styles.landing}>
         <div className={styles.banner}>
-          <img src={background} alt="bacground" />
+          {/* <img src={background} alt="bacground" /> */}
         </div>
         <div className={styles.container}>
           <div className={styles.breadcrumb}>

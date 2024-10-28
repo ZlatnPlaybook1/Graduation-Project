@@ -34,7 +34,7 @@ export default function Patient() {
   const checkAnswer = (e) => {
     e.preventDefault(); // Prevent form submission
     const answer = e.target.answer.value; // Get answer from input
-    if (answer === "test") {
+    if (answer === "FLAG{cyber_lab :)}") {
       setShowSuccess(true);
       launchFireworks();
       setTimeout(() => {
@@ -99,7 +99,7 @@ export default function Patient() {
               </a>
             </div>
             <div className={styles["question-div"]}>
-              <h1 className={styles.question}>Check your answer here:</h1>
+              <h1 className={styles.question}>Check your Flag here:</h1>
               <form onSubmit={checkAnswer}>
                 <input
                   type="text"

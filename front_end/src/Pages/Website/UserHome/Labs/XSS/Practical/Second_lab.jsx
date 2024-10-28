@@ -183,11 +183,7 @@ export default function Second_lab_XSS() {
                     <p className="name">Ebrahiem Gamal</p>
                   </div>
                   <p className="comment-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Consectetur, aliquid dolores totam rerum minus commodi enim
-                    non sed, aspernatur minima laudantium laboriosam ipsam
-                    incidunt. Numquam repudiandae expedita nobis! Accusamus,
-                    numquam.
+                    comment 1
                   </p>
                 </div>
                 <div className="comment-card">
@@ -196,11 +192,7 @@ export default function Second_lab_XSS() {
                     <p className="name">Ebrahiem Gamal</p>
                   </div>
                   <p className="comment-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Consectetur, aliquid dolores totam rerum minus commodi enim
-                    non sed, aspernatur minima laudantium laboriosam ipsam
-                    incidunt. Numquam repudiandae expedita nobis! Accusamus,
-                    numquam.
+                    comment 2
                   </p>
                 </div>
               </div>

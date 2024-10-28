@@ -3,8 +3,8 @@ import { useEffect, useRef } from "react";
 import $ from "jquery";
 import "./Cookies.css";
 import Header from "../../Header/Header";
-import background from "../../assets/img/cookies/baner_lap.png";
-import image from "../../assets/img/course_image.png";
+// import background from "../../assets/img/cookies/baner_lap.png";
+import image from "../../assets/img/cookies/Cookies_logo.png";
 import inLab3 from "../../assets/img/inLab3.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
@@ -47,7 +47,7 @@ export default function Cookies() {
       {/* Start Landing  */}
       <div className="landing-lab3">
         <div className="banner-lab3">
-          <img src={background} alt="bacground" />
+          {/* <img src={background} alt="bacground" /> */}
         </div>
         <div className="container-lab3">
           <div className="breadcrumb-lab3">
