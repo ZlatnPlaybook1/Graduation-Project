@@ -6,7 +6,7 @@ import Cross_Site_ScriptingImg from "../assets/img/Cross_Site_Scripting/xss.jpeg
 import imagecourse2 from "../assets/img/Lab2.jpg";
 import bash from "../assets/img/bash/bash_course_logo.png";
 import linux_logo from "../assets/img/linux/linux_logo.png";
-import Cookies_logo from "../assets/img/cookies/Cookies_logo.png";
+import Cookies_logo from "../assets/img/cookies/Cookies_transparent.png";
 
 const Courses = () => {
   return (
