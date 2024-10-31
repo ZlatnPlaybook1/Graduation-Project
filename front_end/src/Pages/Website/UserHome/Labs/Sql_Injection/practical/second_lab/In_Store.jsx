@@ -1,7 +1,4 @@
-// import React, { useState } from "react";
-// import axios from "axios";
 import "./In_Store.css";
-// import { useNavigate } from "react-router-dom";
 import Header from "../../../../Header/Header";
 import image_1 from "../../../../assets/img/SQL_2nd_Lab/image_1.png";
 import image_2 from "../../../../assets/img/SQL_2nd_Lab/image_2.png";
@@ -10,7 +7,6 @@ import image_4 from "../../../../assets/img/SQL_2nd_Lab/image_4.png";
 import Footer from "../../../../Footer/Footer";
 
 export default function In_Store() {
-  // const [err, setErr] = useState("");
   return (
     <>
     <Header />

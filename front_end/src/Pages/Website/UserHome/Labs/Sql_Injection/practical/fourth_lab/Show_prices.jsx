@@ -1,12 +1,27 @@
-// import React, { useState } from "react";
-// import axios from "axios";
+import React, { useState } from "react";
+import axios from "axios";
 import "./Show_prices.css";
-// import { useNavigate } from "react-router-dom";
 import Header from "../../../../Header/Header";
 import Footer from "../../../../Footer/Footer";
 
 export default function Show_prices() {
-  // const [err, setErr] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState("");
+  axios
+      .post("http://127.0.0.1:8080/api/Show_Prices_Fourth",)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        setLoading(false);
+        if (error.response) {
+          setErr(error.response.data);
+          console.error(error.response.data);
+        } else {
+          setErr("Network Error");
+          console.error(error);
+        }
+      });
   return (
     <>
       <Header />

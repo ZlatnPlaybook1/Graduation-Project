@@ -1,20 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Second_lab.css";
 import Header from "../../../Header/Header";
 import image_1 from "../../../assets/img/practical_lab2/image_1.png";
 import icon from "../../../assets/img/practical_lab2/icon.png";
 import Footer from "../../../Footer/Footer";
+import axios from "axios";
 
 export default function Second_lab_XSS() {
   const [form, setForm] = useState({
     email: "",
     content: "",
   });
-  // Error state
+  const [data, setData] = useState([]);
   const [comments, setComments] = useState([]);
   const [scriptOutput, setScriptOutput] = useState("");
   const [htmlOutput, setHtmlOutput] = useState(""); // New state to hold HTML output
   const [err, setErr] = useState("");
+  const [loading, setLoading] = useState(false);
+  const fetchData = () => {
+    try {
+      const respone = axios.get("http://127.0.0.1:8080/api/comment");
+      console.log("Done")
+      setData(respone.data);
+    } catch (err) {
+      setLoading(false);
+      if (err.response) {
+        setErr(err.response.data);
+        console.error(err.response.data);
+      } else {
+        setErr("Network Error");
+        console.error(err);
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,13 +46,13 @@ export default function Second_lab_XSS() {
       const scriptContent = content
         .replace("<script>", "")
         .replace("</script>", "");
-        const newComment = {
-          id: Date.now(), // Unique ID for each comment
-          email: email || "Anonymous", // Default email
-          content: scriptContent, // Store raw HTML content
-          isScript: true, // Flag to indicate it's Script
-        };
-        setComments((prevComments) => [...prevComments, newComment]);
+      const newComment = {
+        id: Date.now(), // Unique ID for each comment
+        email: email || "Anonymous", // Default email
+        content: scriptContent, // Store raw HTML content
+        isScript: true, // Flag to indicate it's Script
+      };
+      setComments((prevComments) => [...prevComments, newComment]);
       try {
         // Run the script in a controlled environment
         const result = eval(scriptContent);
@@ -42,8 +62,7 @@ export default function Second_lab_XSS() {
       } catch (err) {
         setScriptOutput(`Error: ${err.message}`);
       }
-    }
-    else if (content.startsWith("<") && content.endsWith(">")) {
+    } else if (content.startsWith("<") && content.endsWith(">")) {
       const newComment = {
         id: Date.now(), // Unique ID for each comment
         email: email || "Anonymous", // Default email
@@ -67,10 +86,31 @@ export default function Second_lab_XSS() {
         setErr("Please enter a comment.");
       }
     }
-  
+    // try {
+    //   const respone = axios.post("http://127.0.0.1:8080/api/comment",form);
+    //   setData((prevData) => [...prevData, respone.data]);
+    //   setForm({ email: "", content: "" });
+    // } catch (err) {
+    //   setLoading(false);
+    //   if (err.response) {
+    //     setErr(err.response.data);
+    //     console.error(err.response.data);
+    //   } else {
+    //     setErr("Network Error");
+    //     console.error(err);
+    //   }
+    // } finally {
+    //   setLoading(false);
+    // }
+
+
     // Reset the form after submission
     setForm({ email: "", content: "" });
+    
   };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -173,27 +213,34 @@ export default function Second_lab_XSS() {
                         dangerouslySetInnerHTML={{ __html: comment.content }}
                       ></p>
                     ) : (
-                      <p className="comment-text">{comment.content||  scriptOutput}</p>
+                      <p className="comment-text">
+                        {comment.content || scriptOutput}
+                      </p>
                     )}
                   </div>
+                ))}
+                {data.map(item => (
+                  <div key={item.id} className="comment-card">
+                    <div className="comment-header">
+                      <img src={icon} className="icon" alt="Card" />
+                      <p className="name">{item.username}</p>
+                    </div>
+                    <p className="comment-text">{item.posts}</p>
+                  </div> // Adjust according to your data structure
                 ))}
                 <div className="comment-card">
                   <div className="comment-header">
                     <img src={icon} className="icon" alt="Card" />
                     <p className="name">Ebrahiem Gamal</p>
                   </div>
-                  <p className="comment-text">
-                    comment 1
-                  </p>
+                  <p className="comment-text">comment 1</p>
                 </div>
                 <div className="comment-card">
                   <div className="comment-header">
                     <img src={icon} className="icon" alt="Card" />
                     <p className="name">Ebrahiem Gamal</p>
                   </div>
-                  <p className="comment-text">
-                    comment 2
-                  </p>
+                  <p className="comment-text">comment 2</p>
                 </div>
               </div>
             </div>
