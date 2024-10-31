@@ -4,7 +4,7 @@ import $ from "jquery";
 import "./Cookies.css";
 import Header from "../../Header/Header";
 // import background from "../../assets/img/cookies/baner_lap.png";
-import image from "../../assets/img/cookies/Cookies_logo.png";
+import image from "../../assets/img/cookies/Cookies_transparent.png";
 import inLab3 from "../../assets/img/inLab3.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
