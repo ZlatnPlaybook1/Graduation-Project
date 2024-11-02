@@ -13,9 +13,10 @@ export default function Robots() {
     e.preventDefault();
     const content = e.target.content.value;
     const email = e.target.email.value;
+    const website = e.target.website.value;
 
     if (content) {
-      setComments([...comments, { email, content }]);
+      setComments([...comments, { email, website, content }]);
       e.target.reset();
       setErr("");
     } else {
@@ -108,6 +109,12 @@ export default function Robots() {
                   placeholder="Write Your Email"
                   className="form_input"
                 />
+                <input
+                  type="text"
+                  name="website"
+                  placeholder="Write Your Website"
+                  className="form_input"
+                />
                 <button type="submit">Submit</button>
                 {err && <span className="error">{err}</span>}
               </form>
@@ -117,6 +124,9 @@ export default function Robots() {
                     <div className="comment-header">
                       <img src={icon} className="icon" alt="Card" />
                       <p className="name">{comment.email || "Anonymous"}</p>
+                      {comment.website && (
+                        <p className="website">{comment.website}</p>
+                      )}
                     </div>
                     <p className="comment-text">{comment.content}</p>
                   </div>
