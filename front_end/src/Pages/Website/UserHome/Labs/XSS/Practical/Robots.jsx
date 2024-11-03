@@ -5,34 +5,50 @@ import image_1 from "../../../assets/img/practical_lab2/image_1.png";
 import icon from "../../../assets/img/practical_lab2/icon.png";
 import Footer from "../../../Footer/Footer";
 
+// Helper function to validate email
+const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
 export default function Robots() {
   const [comments, setComments] = useState([]);
   const [err, setErr] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const content = e.target.content.value;
-    const email = e.target.email.value;
-    const website = e.target.website.value;
+    const content = e.target.content.value.trim();
+    const email = e.target.email.value.trim();
+    const website = e.target.website.value.trim();
 
-    if (content) {
-      setComments([...comments, { email, website, content }]);
-      e.target.reset();
-      setErr("");
-    } else {
+    if (!content) {
       setErr("Please enter a comment.");
+      return;
     }
+
+    if (!isValidEmail(email)) {
+      setErr("Please enter a valid email address.");
+      return;
+    }
+
+    const isJavaScriptLink = website.toLowerCase().startsWith("javascript:");
+
+    setComments([...comments, { email, content, website, isJavaScriptLink }]);
+    e.target.reset();
+    setErr("");
+    setSuccess(true);
+
+    // Hide success message after 3 seconds
+    setTimeout(() => setSuccess(false), 3000);
   };
 
   return (
     <>
       <Header />
-      {/* Start Courses  */}
+      {/* Start Course Content */}
       <div className="course-Second_lab">
         <div className="container-Second_lab">
           <div className="row-practice">
             <div className="card-Second_lab">
-              <img src={image_1} alt="" />
+              <img src={image_1} alt="Robotics" />
               <div className="card-text-Second_lab">
                 <h2>Robots in Our Lives</h2>
                 <p>
@@ -108,6 +124,7 @@ export default function Robots() {
                   name="email"
                   placeholder="Write Your Email"
                   className="form_input"
+                  required
                 />
                 <input
                   type="text"
@@ -117,16 +134,31 @@ export default function Robots() {
                 />
                 <button type="submit">Submit</button>
                 {err && <span className="error">{err}</span>}
+                {success && (
+                  <div className="success-message">
+                    Comment submitted successfully!
+                  </div>
+                )}
               </form>
               <div className="comment-section">
                 {comments.map((comment, index) => (
                   <div key={index} className="comment-card">
                     <div className="comment-header">
-                      <img src={icon} className="icon" alt="Card" />
-                      <p className="name">{comment.email || "Anonymous"}</p>
-                      {comment.website && (
-                        <p className="website">{comment.website}</p>
-                      )}
+                      <img src={icon} className="icon" alt="User Icon" />
+                      <a
+                        href={comment.website || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="name"
+                        onClick={(e) => {
+                          if (comment.isJavaScriptLink) {
+                            e.preventDefault(); // Prevent navigation
+                            alert("Alert triggered from JavaScript URL!"); // Custom alert
+                          }
+                        }}
+                      >
+                        {comment.email || "Anonymous"}
+                      </a>
                     </div>
                     <p className="comment-text">{comment.content}</p>
                   </div>
@@ -136,7 +168,7 @@ export default function Robots() {
           </div>
         </div>
       </div>
-      {/* End Course Content  */}
+      {/* End Course Content */}
       <Footer />
     </>
   );

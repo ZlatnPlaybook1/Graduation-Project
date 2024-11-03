@@ -137,82 +137,13 @@ export default function XSS_lab() {
                 <p>Easy</p>
               </div>
             </Link>
-            {/* lab5 */}
-            <Link to="/XSS/xss_lab/fifth_lab" class="course-card-XSS">
-              <div class="course-image-XSS">
-                <img src={lab_Cover} alt="" />
-              </div>
-              <div class="course-text-XSS">
-                <h3>DOM XSS inside Selected Element</h3>
-                <p>
-                  Before hacking something, you first need to understand the
-                  basics
-                </p>
-                <ul class="circled-order-XSS">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
-                </ul>
-              </div>
-              <div class="easy-XSS">
-                <i class="fa-solid fa-signal lab-XSS"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-            {/* lab6 */}
-            <Link to="/XSS/xss_lab/sixth_lab" class="course-card-XSS">
-              <div class="course-image-XSS">
-                <img src={lab_Cover} alt="" />
-              </div>
-              <div class="course-text-XSS">
-                <h3>Sixth Lab</h3>
-                <p>
-                  Before hacking something, you first need to understand the
-                  basics
-                </p>
-                <ul class="circled-order-XSS">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
-                </ul>
-              </div>
-              <div class="easy-XSS">
-                <i class="fa-solid fa-signal lab-XSS"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
             {/* lab7 */}
             <Link to="/xss/xss_lab/seven_lab" class="course-card-XSS">
               <div class="course-image-XSS">
                 <img src={lab_Cover} alt="" />
               </div>
               <div class="course-text-XSS">
-                <h3>Seven Lab</h3>
-                <p>
-                  Before hacking something, you first need to understand the
-                  basics
-                </p>
-                <ul class="circled-order-XSS">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
-                </ul>
-              </div>
-              <div class="easy-XSS">
-                <i class="fa-solid fa-signal lab-XSS"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-
-            <Link to="#" class="course-card-XSS">
-              <div class="course-image-XSS">
-                <img src={lab_Cover} alt="" />
-              </div>
-              <div class="course-text-XSS">
-                <h3>Eighth Lab</h3>
+                <h3>DOM XSS inside Selected Element</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
