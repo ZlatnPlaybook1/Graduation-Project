@@ -86,7 +86,9 @@ export default function Bash() {
             <div className={styles["course-text"]}>
               <h1>Bash Scripting</h1>
               <p>
-              Master the basics of Bash scripting, a powerful tool for automating tasks and managing systems in cybersecurity environments.
+                Master the basics of Bash scripting, a powerful tool for
+                automating tasks and managing systems in cybersecurity
+                environments.
               </p>
               <div className={styles["course-icons"]}>
                 <div className={styles.diff}>
@@ -206,6 +208,14 @@ export default function Bash() {
                   <p>
                     And then we run it using <span>./</span>
                   </p>
+                  <div className={styles["go-to-section"]}>
+                  <Link
+                    to="/bash-scripting/bash_quiz#Our first simple bash scripts"
+                    className={styles["go-to"]}
+                  >
+                    Go To Lab
+                  </Link>
+                  </div>
                 </dd>
                 <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
                   <span>Lesson 3</span> Variables
@@ -364,6 +374,14 @@ export default function Bash() {
                     guide you.
                   </p>
                   <img src={exampleImage9} alt="Example" />
+                  <div className={styles["go-to-section"]}>
+                  <Link
+                    to="/bash-scripting/bash_quiz#Variables"
+                    className={styles["go-to"]}
+                  >
+                    Go To Lab
+                  </Link>
+                  </div>
                 </dd>
                 <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
                   <span>Lesson 4</span> Parameters
@@ -423,6 +441,14 @@ export default function Bash() {
                     parameters and I advice you to play around with them, after
                     all practice is what makes you better!
                   </p>
+                  <div className={styles["go-to-section"]}>
+                  <Link
+                    to="/bash-scripting/bash_quiz#Parameters"
+                    className={styles["go-to"]}
+                  >
+                    Go To Lab
+                  </Link>
+                  </div>
                 </dd>
                 <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
                   <span>Lesson 5</span> Arrays
@@ -525,6 +551,14 @@ export default function Bash() {
                     So we successfully managed to swap out an element in our
                     array!
                   </p>
+                  <div className={styles["go-to-section"]}>
+                  <Link
+                    to="/bash-scripting/bash_quiz#Arrays"
+                    className={styles["go-to"]}
+                  >
+                    Go To Lab
+                  </Link>
+                  </div>
                 </dd>
                 <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
                   <span>Lesson 6</span> Conditionals
@@ -777,6 +811,14 @@ export default function Bash() {
                     Feel free to add anything you like and make it as
                     complicated as you wish and good luck with your project!
                   </p>
+                  <div className={styles["go-to-section"]}>
+                    <Link
+                      to="/bash-scripting/bash_quiz#Conditionals"
+                      className={styles["go-to"]}
+                    >
+                      Go To Lab
+                    </Link>
+                  </div>
                 </dd>
                 {/* 
             # main slider
@@ -792,8 +834,8 @@ export default function Bash() {
               </dl>
             </div>
             <div className={styles["go-to-section"]}>
-              <Link to="/bash-scripting/bash_lab" className={styles["go-to"]}>
-                Go To Lab
+              <Link to="/bash-scripting/bash_quiz" className={styles["go-to"]}>
+                Go To Quiz
               </Link>
             </div>
           </div>
