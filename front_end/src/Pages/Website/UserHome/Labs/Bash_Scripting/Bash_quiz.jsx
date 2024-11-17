@@ -167,7 +167,8 @@ export default function Bash_Quiz() {
       updatedInputDisabled[index] = true;
       setInputDisabled(updatedInputDisabled);
     } else {
-      updatedFeedback[index] = `Incorrect! The correct answer is: ${currentQuestion.correctAnswer}`;
+      updatedFeedback[index] = `Incorrect!`;
+      // updatedFeedback[index] = `Incorrect! The correct answer is: ${currentQuestion.correctAnswer}`;
     }
 
     setFeedback(updatedFeedback);

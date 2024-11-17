@@ -333,7 +333,7 @@
   font-weight: 400;
 }
 
-.faq-section .section-text .faq-body a {
+.faq-section .section-text .faq-body a:not(.go-to) {
   color: var(--sec-main-color);
   text-decoration: underline;
 }
@@ -577,6 +577,7 @@
 
 .go-to:hover {
   background-color: rgb(163, 234, 42);
+  color: white;
 }
 
 /* End Course Content */
