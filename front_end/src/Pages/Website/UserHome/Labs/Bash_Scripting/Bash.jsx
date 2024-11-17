@@ -379,7 +379,7 @@ export default function Bash() {
                     to="/bash-scripting/bash_quiz#Variables"
                     className={styles["go-to"]}
                   >
-                    Test your self
+                    Go To Variables Questions
                   </Link>
                   </div>
                 </dd>
@@ -446,7 +446,7 @@ export default function Bash() {
                     to="/bash-scripting/bash_quiz#Parameters"
                     className={styles["go-to"]}
                   >
-                    Test your self
+                    Go To Parameters Questions
                   </Link>
                   </div>
                 </dd>
@@ -557,6 +557,7 @@ export default function Bash() {
                     className={styles["go-to"]}
                   >
                     Test your self
+                    Go To Arrays Questions
                   </Link>
                   </div>
                 </dd>
@@ -817,6 +818,7 @@ export default function Bash() {
                       className={styles["go-to"]}
                     >
                       Test your self
+                      Go To Conditionals Questions
                     </Link>
                   </div>
                 </dd>
