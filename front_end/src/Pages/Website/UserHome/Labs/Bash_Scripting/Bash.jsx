@@ -208,14 +208,14 @@ export default function Bash() {
                   <p>
                     And then we run it using <span>./</span>
                   </p>
-                  <div className={styles["go-to-section"]}>
+                  {/* <div className={styles["go-to-section"]}>
                   <Link
                     to="/bash-scripting/bash_quiz#Our first simple bash scripts"
                     className={styles["go-to"]}
                   >
                     Go To Lab
                   </Link>
-                  </div>
+                  </div> */}
                 </dd>
                 <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
                   <span>Lesson 3</span> Variables
