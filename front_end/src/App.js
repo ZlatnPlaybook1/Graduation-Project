@@ -47,6 +47,8 @@ import LINUX_FOURTH_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/four
 
 import Bash from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash.jsx";
 import BASH_LAB from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_lab.jsx";
+import Obfuscation from "./Pages/Website/UserHome/Labs/Obfuscation/Obfuscation.jsx";
+import OBFUSCATION_LAB from "./Pages/Website/UserHome/Labs/Obfuscation/Obfuscation_lab.jsx";
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
@@ -212,6 +214,9 @@ function App() {
           <Route path="/bash-scripting" element={<Bash />} />
           <Route path="/bash-scripting/bash_lab" element={<BASH_LAB />} />
           {/* End Bash Scripting */}
+          <Route path="/obfuscation" element={<Obfuscation />} />
+          <Route path="/Obfuscation/obfuscation_lab" element={<OBFUSCATION_LAB />} />
+          {/* End Obfuscation */}
         </Route>
         {/* End Routes of Labs */}
 

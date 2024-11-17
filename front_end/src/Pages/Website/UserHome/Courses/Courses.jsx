@@ -298,7 +298,7 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/lab3" className="course-card">
+            <a href="/obfuscation" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
