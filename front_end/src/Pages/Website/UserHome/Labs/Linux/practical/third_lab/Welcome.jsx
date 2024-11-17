@@ -35,6 +35,8 @@ export default function Welcome() {
     const answer = e.target.answer.value; // Get answer from input
     if (answer === "flag{Welcome_to_cyber_lap}") {
       setShowSuccess(true);
+      document.getElementById("check").disabled = true;
+      document.getElementById("check").innerHTML = '<i class="fa-solid fa-check"></i> Correct Answer';
       launchFireworks();
       setTimeout(() => {
         setShowSuccess(false);
@@ -46,6 +48,7 @@ export default function Welcome() {
       }, 1500); // Hide fail message after 3 seconds
     }
   };
+
 
   const launchFireworks = () => {
     const fireworkContainer = document.getElementById("firework");
@@ -109,7 +112,7 @@ export default function Welcome() {
                     name="answer"
                     placeholder="Flag Format: flag{**********}"
                   />
-                  <button type="submit">
+                  <button type="submit" id="check">
                     <i className="fa-regular fa-paper-plane"></i>Submit
                   </button>
                 </form>

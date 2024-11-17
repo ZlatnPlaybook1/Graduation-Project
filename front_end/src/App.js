@@ -42,8 +42,8 @@ import Linux from "./Pages/Website/UserHome/Labs/Linux/Linux.jsx";
 import LINUX_LAB from "./Pages/Website/UserHome/Labs/Linux/Linux_lab.jsx";
 import LINUX_FIRST_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/first_lab/Patient.jsx";
 import LINUX_SECOND_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/second_lab/Power.jsx";
-import LINUX_THIRD_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/third_lab/Test.jsx";
-import LINUX_FOURTH_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/fourth_lab/Welcome.jsx";
+import LINUX_THIRD_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/fourth_lab/Test.jsx";
+import LINUX_FOURTH_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/third_lab/Welcome.jsx";
 
 import Bash from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash.jsx";
 import BASH_LAB from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_lab.jsx";
