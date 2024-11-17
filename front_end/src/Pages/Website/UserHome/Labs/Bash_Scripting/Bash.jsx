@@ -556,7 +556,6 @@ export default function Bash() {
                     to="/bash-scripting/bash_quiz#Arrays"
                     className={styles["go-to"]}
                   >
-                    Test your self
                     Go To Arrays Questions
                   </Link>
                   </div>
@@ -817,7 +816,6 @@ export default function Bash() {
                       to="/bash-scripting/bash_quiz#Conditionals"
                       className={styles["go-to"]}
                     >
-                      Test your self
                       Go To Conditionals Questions
                     </Link>
                   </div>
