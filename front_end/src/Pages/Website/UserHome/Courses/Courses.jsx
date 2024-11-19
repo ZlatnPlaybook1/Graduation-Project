@@ -8,7 +8,7 @@ import bash from "../assets/img/bash/bash_course_logo.png";
 import linux_logo from "../assets/img/linux/linux_logo.png";
 import Cookies_logo from "../assets/img/cookies/Cookies_transparent.png";
 import Obfuscation from "../assets/img/Obfuscation/card_image.png";
-import unrestrictedFile from "../Labs/Unrestricted File Upload/Photos/fileuplode.png";
+import unrestrictedFile from "../assets/img/Unrestricted File Upload/card_image.png";
 
 const Courses = () => {
   return (
