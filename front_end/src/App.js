@@ -42,11 +42,14 @@ import Linux from "./Pages/Website/UserHome/Labs/Linux/Linux.jsx";
 import LINUX_LAB from "./Pages/Website/UserHome/Labs/Linux/Linux_lab.jsx";
 import LINUX_FIRST_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/first_lab/Patient.jsx";
 import LINUX_SECOND_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/second_lab/Power.jsx";
-import LINUX_THIRD_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/third_lab/Test.jsx";
-import LINUX_FOURTH_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/fourth_lab/Welcome.jsx";
+import LINUX_THIRD_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/fourth_lab/Test.jsx";
+import LINUX_FOURTH_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/third_lab/Welcome.jsx";
 
 import Bash from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash.jsx";
 import BASH_LAB from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_lab.jsx";
+import BASH_QUIZ from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_quiz.jsx";
+import Obfuscation from "./Pages/Website/UserHome/Labs/Obfuscation/Obfuscation.jsx";
+import OBFUSCATION_LAB from "./Pages/Website/UserHome/Labs/Obfuscation/Obfuscation_lab.jsx";
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
@@ -218,7 +221,11 @@ function App() {
           {/* End Linux */}
           <Route path="/bash-scripting" element={<Bash />} />
           <Route path="/bash-scripting/bash_lab" element={<BASH_LAB />} />
+          <Route path="/bash-scripting/bash_quiz" element={<BASH_QUIZ />} />
           {/* End Bash Scripting */}
+          <Route path="/obfuscation" element={<Obfuscation />} />
+          <Route path="/Obfuscation/obfuscation_lab" element={<OBFUSCATION_LAB />} />
+          {/* End Obfuscation */}
         </Route>
         {/* End Routes of Labs */}
 

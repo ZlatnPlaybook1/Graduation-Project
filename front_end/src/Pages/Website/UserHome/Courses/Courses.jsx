@@ -298,22 +298,23 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/lab3" className="course-card">
+            <a href="/obfuscation" className="course-card">
               <div className="course-image">
-                <img src={imagecourse2} alt="Course" />
+                <img src={Obfuscation} alt="Course" />
               </div>
               {/* topic 12 */}
               <div className="course-text">
                 <h3>Obfuscation</h3>
                 <p>
-                  Learn the core skills required to start a career in cyber
-                  security
+                  Master the basics of obfuscation, a powerful technique for
+                  securing code and protecting intellectual property in
+                  cybersecurity environments
                 </p>
                 <ul className="circled-order">
-                  <li>Learn about different careers in cyber</li>
-                  <li>Hack your first application</li>
-                  <li>Defend against a live cyber attack</li>
-                  <li>Explore security topics in the industry</li>
+                  <li>What are Obfuscation & Deobfuscation?</li>
+                  <li>Why do we use Obfuscation?</li>
+                  <li>Javascript Obfuscation</li>
+                  <li>JS Deobfuscation Tools</li>
                 </ul>
               </div>
               <div className="easy">

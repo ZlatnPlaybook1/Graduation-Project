@@ -35,6 +35,8 @@ export default function Power() {
     const answer = e.target.answer.value; // Get answer from input
     if (answer === "FLAG{Grep_Are_Very_Useful}") {
       setShowSuccess(true);
+      document.getElementById("check").disabled = true;
+      document.getElementById("check").innerHTML = '<i class="fa-solid fa-check"></i> Correct Answer';
       launchFireworks();
       setTimeout(() => {
         setShowSuccess(false);
@@ -109,7 +111,7 @@ export default function Power() {
                     name="answer"
                     placeholder="Flag Format: flag{**********}" 
                   />
-                  <button type="submit">
+                  <button type="submit" id="check">
                     <i className="fa-regular fa-paper-plane"></i>Submit
                   </button>
                 </form>

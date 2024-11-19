@@ -34,6 +34,8 @@ export default function Test() {
     const answer = e.target.answer.value; // Get answer from input
     if (answer === "flag{y0u_h4v3_d0n3_1t}") {
       setShowSuccess(true);
+      document.getElementById("check").disabled = true;
+      document.getElementById("check").innerHTML = '<i class="fa-solid fa-check"></i> Correct Answer';
       launchFireworks();
       setTimeout(() => {
         setShowSuccess(false);
@@ -108,7 +110,7 @@ export default function Test() {
                     name="answer"
                     placeholder="Flag Format: flag{**********}"
                   />
-                  <button type="submit">
+                  <button type="submit" id="check">
                     <i className="fa-regular fa-paper-plane"></i>Submit
                   </button>
                 </form>
