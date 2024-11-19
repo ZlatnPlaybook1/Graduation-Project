@@ -7,7 +7,7 @@ import imagecourse2 from "../assets/img/Lab2.jpg";
 import bash from "../assets/img/bash/bash_course_logo.png";
 import linux_logo from "../assets/img/linux/linux_logo.png";
 import Cookies_logo from "../assets/img/cookies/Cookies_transparent.png";
-
+import unrestrictedFile from "../Labs/Unrestricted File Upload/Photos/fileuplode.png";
 const Courses = () => {
   return (
     <div className="course">
@@ -122,13 +122,13 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/lab2" className="course-card">
+            <a href="/Unrestricted File Upload" className="course-card">
               <div className="course-image">
-                <img src={imagecourse2} alt="Course" />
+                <img src={unrestrictedFile} alt="Course" />
               </div>
               {/* topic5 */}
               <div className="course-text">
-                <h3>Cross-origin resource sharing (CORS)</h3>
+                <h3>Unrestricted File Upload</h3>
                 <p>
                   Learn the core skills required to start a career in cyber
                   security

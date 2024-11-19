@@ -59,6 +59,7 @@ import ChichenItza from "./Pages/Website/UserHome/Labs/XSS/Practical/ChichenItza
 import TajMahal from "./Pages/Website/UserHome/Labs/XSS/Practical/TajMahal.jsx";
 import ParadiseOfHawaii from "./Pages/Website/UserHome/Labs/XSS/Practical/ParadiseOfHawaii.jsx";
 import Colosseum from "./Pages/Website/UserHome/Labs/XSS/Practical/Colosseum.jsx";
+import UnrestrictedFileUpload from "./Pages/Website/UserHome/Labs/Unrestricted File Upload/UnrestrictedFileUpload.jsx";
 
 function App() {
   return (
@@ -162,8 +163,14 @@ function App() {
             path="/xss/xss_lab/seven_lab/details/Colosseum"
             element={<Colosseum />}
           />
-
           {/* End XSS */}
+          {/* Start Unrestricted File Upload_ */}
+          <Route
+            path="/Unrestricted File Upload"
+            element={<UnrestrictedFileUpload />}
+          />
+
+          {/* End Unrestricted File Upload_ */}
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />
           <Route
