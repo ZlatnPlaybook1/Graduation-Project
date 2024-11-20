@@ -11,7 +11,7 @@ export default function Sql_Injection() {
   const faqSectionRef = useRef(null);
   const navigate = useNavigate();
   const handleGoToLab = () => {
-    navigate("/sql_Injection/sql_Injection_lab");
+    navigate("/sql_Injection/sql_Injection_labs");
   };
   useEffect(() => {
     const $faqSection = $(faqSectionRef.current);

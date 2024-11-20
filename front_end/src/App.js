@@ -45,6 +45,12 @@ import LINUX_SECOND_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/seco
 import LINUX_THIRD_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/fourth_lab/Test.jsx";
 import LINUX_FOURTH_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/third_lab/Welcome.jsx";
 
+// Access Control Vulnerability
+import AC_VULN from "./Pages/Website/UserHome/Labs/AC-Vuln/AC_Vuln.jsx";
+import AC_VULN_LABS from "./Pages/Website/UserHome/Labs/AC-Vuln/AC_Vuln_labs.jsx";
+import AC_VULN_First_LAB from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/first_lab/ProductList.jsx";
+// End Access Control Vulnerability
+
 import Bash from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash.jsx";
 import BASH_LAB from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_lab.jsx";
 import BASH_QUIZ from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_quiz.jsx";
@@ -129,6 +135,13 @@ function App() {
           <Route
             path="/Sql_Injection/sql_Injection_lab/fifth_lab/login"
             element={<FIFTH_LOGIN_SQL />}
+          />
+          {/* AC_Vuln */}
+          <Route path="/AC_Vuln" element={<AC_VULN />} />
+          <Route path="/AC-Vuln/AC_Vuln_labs" element={<AC_VULN_LABS />} />
+          <Route
+            path="/AC-Vuln/AC_Vuln_labs/first_lab"
+            element={<AC_VULN_First_LAB />}
           />
           {/* End Sql_Injection */}
           <Route path="/xss" element={<XSS />} />
@@ -224,7 +237,10 @@ function App() {
           <Route path="/bash-scripting/bash_quiz" element={<BASH_QUIZ />} />
           {/* End Bash Scripting */}
           <Route path="/obfuscation" element={<Obfuscation />} />
-          <Route path="/Obfuscation/obfuscation_lab" element={<OBFUSCATION_LAB />} />
+          <Route
+            path="/Obfuscation/obfuscation_lab"
+            element={<OBFUSCATION_LAB />}
+          />
           {/* End Obfuscation */}
         </Route>
         {/* End Routes of Labs */}
