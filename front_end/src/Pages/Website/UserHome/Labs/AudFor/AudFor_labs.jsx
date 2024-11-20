@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import "./AudFor_labs.css";
-import labImg from "../../assets/img/ACV/lab.jpeg";
+import labImg from "../../assets/img/AudFor/lab1.jpeg";
 
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
@@ -68,7 +68,7 @@ export default function AudFor_labs() {
               </div>
               <div className="easy-AudFor">
                 <i className="fa-solid fa-signal lab-AudFor"></i>
-                <p>Medium</p>
+                <p>Easy</p>
               </div>
             </Link>
 
@@ -97,7 +97,7 @@ export default function AudFor_labs() {
               </div>
               <div className="easy-AudFor">
                 <i className="fa-solid fa-signal lab-AudFor"></i>
-                <p>Hard</p>
+                <p>Easy</p>
               </div>
             </Link>
 
