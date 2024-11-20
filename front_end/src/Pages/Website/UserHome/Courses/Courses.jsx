@@ -10,6 +10,9 @@ import Cookies_logo from "../assets/img/cookies/Cookies_transparent.png";
 import Obfuscation from "../assets/img/Obfuscation/card_image.png";
 import unrestrictedFile from "../assets/img/Unrestricted File Upload/card_image.png";
 import acvulnimg from "../assets/img/ACV/landing.jpeg";
+import CSRFImg from "../assets/img/CSRF/landing.jpg";
+import blvImg from "../assets/img/BLV/landing.avif";
+import regexImg from "../assets/img/Regex/landing.jpeg";
 
 const Courses = () => {
   return (
@@ -100,9 +103,9 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/lab1" className="course-card">
+            <a href="/CSRF" className="course-card">
               <div className="course-image">
-                <img src={imagecourse2} alt="Course" />
+                <img src={CSRFImg} alt="Course" />
               </div>
               {/* topic4 */}
               <div className="course-text">
@@ -175,9 +178,9 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/regular-expression" className="course-card">
+            <a href="/Regex" className="course-card">
               <div className="course-image">
-                <img src={imagecourse} alt="Course" />
+                <img src={regexImg} alt="Course" />
               </div>
               {/* topic 7 */}
               <div className="course-text">
@@ -327,9 +330,9 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/lab1" className="course-card">
+            <a href="/BL_Vuln" className="course-card">
               <div className="course-image">
-                <img src={imagecourse} alt="Course" />
+                <img src={blvImg} alt="Course" />
               </div>
               {/* topic 13 */}
               <div className="course-text">

@@ -51,6 +51,21 @@ import AC_VULN_LABS from "./Pages/Website/UserHome/Labs/AC-Vuln/AC_Vuln_labs.jsx
 import AC_VULN_First_LAB from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/first_lab/ProductList.jsx";
 // End Access Control Vulnerability
 
+// Cross-Site Request Forgery
+import CSRF from "./Pages/Website/UserHome/Labs/CSRF/CSRF.jsx";
+import CSRF_LABS from "./Pages/Website/UserHome/Labs/CSRF/CSRF_labs.jsx";
+// End Cross-Site Request Forgery
+
+// Regular Expression
+import REGEX from "./Pages/Website/UserHome/Labs/Regex/Regex.jsx";
+import REGEX_LABS from "./Pages/Website/UserHome/Labs/Regex/Regex_labs.jsx";
+// End Regular Expression
+
+// Business Logic Vulnerability
+import BL_VULN from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln.jsx";
+import BL_VULN_LABS from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln_labs.jsx";
+// End Business Logic Vulnerability
+
 import Bash from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash.jsx";
 import BASH_LAB from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_lab.jsx";
 import BASH_QUIZ from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_quiz.jsx";
@@ -143,6 +158,21 @@ function App() {
             path="/AC-Vuln/AC_Vuln_labs/first_lab"
             element={<AC_VULN_First_LAB />}
           />
+          {/* End AC_Vuln */}
+
+          {/* CSRF */}
+          <Route path="/CSRF" element={<CSRF />} />
+          <Route path="/CSRF/CSRF_labs" element={<CSRF_LABS />} />
+          {/* End CSRF */}
+
+          {/* Regex */}
+          <Route path="/Regex" element={<REGEX />} />
+          <Route path="/Regex/Regex_labs" element={<REGEX_LABS />} />
+          {/* End Regex */}
+          {/* BL_Vuln*/}
+          <Route path="/BL_Vuln" element={<BL_VULN />} />
+          <Route path="/BL-Vuln/BL_Vuln_labs" element={<BL_VULN_LABS />} />
+
           {/* End Sql_Injection */}
           <Route path="/xss" element={<XSS />} />
           <Route path="/xss/xss_lab" element={<XSS_LAB />} />
