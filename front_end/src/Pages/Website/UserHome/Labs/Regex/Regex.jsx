@@ -11,7 +11,7 @@ export default function Regex() {
   const faqSectionRef = useRef(null);
   const navigate = useNavigate();
   const handleGoToLab = () => {
-    navigate("/AC-Vuln/Regex_labs");
+    navigate("/Regex/Regex_labs");
   };
   useEffect(() => {
     const $faqSection = $(faqSectionRef.current);
@@ -57,19 +57,22 @@ export default function Regex() {
                 <Link to="">Home</Link>
               </li>
               <li>
-                <Link to="">Access control vulnerability</Link>
+                <Link to="">Regular Expressions</Link>
               </li>
             </ul>
           </div>
           <div className="course-info">
             <img src={imagecourse} alt="" />
             <div className="course-text">
-              <h1>Access control vulnerability</h1>
+              <h1>Regular Expressions</h1>
               <p>
-                Learn how attackers exploit access control vulnerabilities in
-                web applications, gaining unauthorized access to sensitive areas
-                or data, and the techniques used to detect and prevent these
-                attacks.
+                Learn how attackers leverage regular expressions (regex) for
+                pattern matching in malicious scripts, data exfiltration, and
+                crafting payloads. Explore how security professionals use regex
+                to identify vulnerabilities, analyze logs, detect threats, and
+                filter malicious inputs. Master techniques to create robust
+                regex patterns to safeguard applications from injection attacks
+                and unauthorized access.
               </p>
               <div className="course-icons">
                 <div className="diff">
@@ -112,82 +115,81 @@ export default function Regex() {
               <dl className="section-text-lab1">
                 {/* Task 1 */}
                 <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 1</span> Unprotected Admin Functionality
+                  <span>Task 1</span> Identifying Malicious Patterns
                 </dt>
                 <dd className="fadeInUp faq-body-lab1">
                   <ul>
                     <li>
                       <p>
-                        Admin panels that are not properly secured can lead to
-                        unauthorized access by attackers.
+                        Regular expressions can be used to identify malicious
+                        patterns in files, logs, or user inputs, helping detect
+                        potential threats.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Attackers may exploit weak authentication mechanisms to
-                        bypass access control and take over admin functionality.
+                        Attackers often use crafted patterns to bypass
+                        detection; well-constructed regex can counteract these
+                        attempts by pinpointing anomalies.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Ensure proper role-based access control is in place to
-                        restrict admin functionalities to authorized users only.
+                        Ensure that regex-based detection systems are updated to
+                        recognize evolving attack patterns.
                       </p>
                     </li>
                   </ul>
                 </dd>
                 {/* Task 2 */}
                 <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 2</span> Insecure Direct Object References (IDOR)
+                  <span>Task 2</span> Preventing Injection Attacks
                 </dt>
                 <dd className="fadeInUp faq-body-lab1">
                   <ul>
                     <li>
                       <p>
-                        IDOR vulnerabilities occur when an application allows
-                        users to access objects (files, data) by providing
-                        direct input, such as an ID, without proper
-                        authorization checks.
+                        Regex can validate user input, ensuring it conforms to
+                        expected formats and preventing injection attacks.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Attackers can modify the object ID in the URL or request
-                        to gain unauthorized access to other users' data.
+                        Attackers may exploit regex flaws to craft payloads;
+                        robust patterns help mitigate these risks.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Protect sensitive objects by implementing proper access
-                        control checks before allowing access to objects.
+                        Use server-side input validation as an additional layer
+                        of defense when employing regex in input handling.
                       </p>
                     </li>
                   </ul>
                 </dd>
                 {/* Task 3 */}
                 <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 3</span> Lack of Secure Session Management
+                  <span>Task 3</span> Analyzing Log Files
                 </dt>
                 <dd className="fadeInUp faq-body-lab1">
                   <ul>
                     <li>
                       <p>
-                        Insufficient session management can allow attackers to
-                        hijack or impersonate legitimate users, gaining
-                        unauthorized access to protected resources.
+                        Regex simplifies parsing large log files, enabling
+                        security analysts to search for specific events or
+                        indicators of compromise.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Weak session IDs or improper session expiration can be
-                        exploited to steal a user's session.
+                        Attackers may leave traces that follow a predictable
+                        pattern; regex helps quickly locate these patterns.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Ensure that secure session handling mechanisms are in
-                        place, such as using HTTPS, rotating session IDs, and
-                        implementing proper session expiration.
+                        Regularly refine regex patterns to align with the latest
+                        security incidents and logging standards.
                       </p>
                     </li>
                   </ul>

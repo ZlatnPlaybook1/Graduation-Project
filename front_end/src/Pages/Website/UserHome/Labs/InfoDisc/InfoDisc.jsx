@@ -2,16 +2,16 @@ import React, { useEffect, useRef } from "react";
 import $ from "jquery";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import "./BL_Vuln.css";
+import "./InfoDisc.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function BL_Vuln() {
+export default function InfoDisc() {
   const faqSectionRef = useRef(null);
   const navigate = useNavigate();
   const handleGoToLab = () => {
-    navigate("/BL-Vuln/BL_Vuln_labs");
+    navigate("/infoDisc/InfoDisc_labs");
   };
   useEffect(() => {
     const $faqSection = $(faqSectionRef.current);
@@ -57,19 +57,21 @@ export default function BL_Vuln() {
                 <Link to="">Home</Link>
               </li>
               <li>
-                <Link to="">Business logic vulnerabilities</Link>
+                <Link to="">Information Disclosure</Link>
               </li>
             </ul>
           </div>
           <div className="course-info">
             <img src={imagecourse} alt="" />
             <div className="course-text">
-              <h1>Business logic vulnerabilities</h1>
+              <h1>Information Disclosure</h1>
               <p>
-                Learn how attackers exploit access control vulnerabilities in
-                web applications, gaining unauthorized access to sensitive areas
-                or data, and the techniques used to detect and prevent these
-                attacks.
+                Learn how audio forensics is used to investigate and analyze
+                manipulated audio files, uncover hidden messages or tampered
+                content, and verify the authenticity of recordings. Discover the
+                techniques and tools used to detect alterations in audio,
+                extract concealed data, and ensure the integrity of audio
+                evidence in forensic investigations.
               </p>
               <div className="course-icons">
                 <div className="diff">
@@ -136,7 +138,6 @@ export default function BL_Vuln() {
                     </li>
                   </ul>
                 </dd>
-
                 {/* Task 2 */}
                 <dt className="wave-lab1 fadeInUp faq-header-lab1">
                   <span>Task 2</span> Insecure Direct Object References (IDOR)
@@ -165,7 +166,6 @@ export default function BL_Vuln() {
                     </li>
                   </ul>
                 </dd>
-
                 {/* Task 3 */}
                 <dt className="wave-lab1 fadeInUp faq-header-lab1">
                   <span>Task 3</span> Lack of Secure Session Management

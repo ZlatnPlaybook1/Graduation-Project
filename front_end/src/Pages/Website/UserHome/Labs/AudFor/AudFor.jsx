@@ -2,16 +2,16 @@ import React, { useEffect, useRef } from "react";
 import $ from "jquery";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import "./BL_Vuln.css";
+import "./AudFor.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function BL_Vuln() {
+export default function AudFor() {
   const faqSectionRef = useRef(null);
   const navigate = useNavigate();
   const handleGoToLab = () => {
-    navigate("/BL-Vuln/BL_Vuln_labs");
+    navigate("/AudFor/AudFor_labs");
   };
   useEffect(() => {
     const $faqSection = $(faqSectionRef.current);
@@ -57,19 +57,21 @@ export default function BL_Vuln() {
                 <Link to="">Home</Link>
               </li>
               <li>
-                <Link to="">Business logic vulnerabilities</Link>
+                <Link to="">Audio Forensics</Link>
               </li>
             </ul>
           </div>
           <div className="course-info">
             <img src={imagecourse} alt="" />
             <div className="course-text">
-              <h1>Business logic vulnerabilities</h1>
+              <h1>Audio Forensics</h1>
               <p>
-                Learn how attackers exploit access control vulnerabilities in
-                web applications, gaining unauthorized access to sensitive areas
-                or data, and the techniques used to detect and prevent these
-                attacks.
+                Learn how audio forensics is used to investigate and analyze
+                manipulated audio files, uncover hidden messages or tampered
+                content, and verify the authenticity of recordings. Discover the
+                techniques and tools used to detect alterations in audio,
+                extract concealed data, and ensure the integrity of audio
+                evidence in forensic investigations.
               </p>
               <div className="course-icons">
                 <div className="diff">
@@ -112,26 +114,27 @@ export default function BL_Vuln() {
               <dl className="section-text-lab1">
                 {/* Task 1 */}
                 <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 1</span> Unprotected Admin Functionality
+                  <span>Task 1</span> Audio Authentication and Identification
                 </dt>
                 <dd className="fadeInUp faq-body-lab1">
                   <ul>
                     <li>
                       <p>
-                        Admin panels that are not properly secured can lead to
-                        unauthorized access by attackers.
+                        Audio authentication and identification are critical for
+                        verifying the origin and authenticity of audio
+                        recordings.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Attackers may exploit weak authentication mechanisms to
-                        bypass access control and take over admin functionality.
+                        Use audio fingerprinting techniques to uniquely identify
+                        and track specific audio files.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Ensure proper role-based access control is in place to
-                        restrict admin functionalities to authorized users only.
+                        Apply machine learning models to detect manipulations or
+                        alterations in audio data.
                       </p>
                     </li>
                   </ul>
@@ -139,28 +142,28 @@ export default function BL_Vuln() {
 
                 {/* Task 2 */}
                 <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 2</span> Insecure Direct Object References (IDOR)
+                  <span>Task 2</span> Detecting Audio Manipulations
                 </dt>
                 <dd className="fadeInUp faq-body-lab1">
                   <ul>
                     <li>
                       <p>
-                        IDOR vulnerabilities occur when an application allows
-                        users to access objects (files, data) by providing
-                        direct input, such as an ID, without proper
-                        authorization checks.
+                        Audio manipulation detection focuses on identifying
+                        alterations such as splicing, looping, or changing audio
+                        pitch.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Attackers can modify the object ID in the URL or request
-                        to gain unauthorized access to other users' data.
+                        Implement techniques like spectrogram analysis to detect
+                        inconsistencies that may suggest manipulation.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Protect sensitive objects by implementing proper access
-                        control checks before allowing access to objects.
+                        Investigate the use of deep learning models to classify
+                        manipulated audio and distinguish it from genuine
+                        recordings.
                       </p>
                     </li>
                   </ul>
@@ -168,28 +171,28 @@ export default function BL_Vuln() {
 
                 {/* Task 3 */}
                 <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 3</span> Lack of Secure Session Management
+                  <span>Task 3</span> Acoustic Analysis and Audio Source
+                  Attribution
                 </dt>
                 <dd className="fadeInUp faq-body-lab1">
                   <ul>
                     <li>
                       <p>
-                        Insufficient session management can allow attackers to
-                        hijack or impersonate legitimate users, gaining
-                        unauthorized access to protected resources.
+                        Acoustic analysis helps determine the origin and
+                        authenticity of an audio file based on characteristics
+                        like recording equipment and environment.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Weak session IDs or improper session expiration can be
-                        exploited to steal a user's session.
+                        Use techniques such as waveform analysis and signal
+                        processing to trace audio sources.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Ensure that secure session handling mechanisms are in
-                        place, such as using HTTPS, rotating session IDs, and
-                        implementing proper session expiration.
+                        Analyze frequency patterns and audio signatures to
+                        attribute a recording to a specific source.
                       </p>
                     </li>
                   </ul>

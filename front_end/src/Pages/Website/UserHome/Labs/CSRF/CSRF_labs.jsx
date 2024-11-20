@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import "./CSRF_labs.css";
-import labImg from "../../assets/img/ACV/lab.jpeg";
+import labImg from "../../assets/img/CSRF/lab1.jpeg";
 
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
@@ -41,27 +41,26 @@ export default function CSRF_labs() {
       {/* Start Course */}
       <div className="course-CSRF">
         <div className="container-CSRF">
-          <h2>Access control vulnerability Labs</h2>
+          <h2>Cross-Site Request Forgery (CSRF)</h2>
           <p className="section-p-CSRF">Test Your Hacking Skills</p>
           <div className="row-CSRF">
-            {/* lab1 */}
+            {/* Lab1 */}
             <Link to="/CSRF/CSRF_labs/first_lab" className="course-card-CSRF">
               <div className="course-image-CSRF">
-                <img src={labImg} alt="" />
+                <img src={labImg} alt="Lab 1 Image" />
               </div>
               <div className="course-text-CSRF">
-                <h3>vulnerability allowing login bypass</h3>
+                <h3>Exploiting CSRF Vulnerability for Login Bypass</h3>
                 <p>
-                  Go to the lab and view <mark>robots.txt</mark> by appending{" "}
-                  <code>/robots.txt</code> to the lab URL. Notice that the{" "}
-                  <mark>Disallow</mark> line discloses the path to the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  In the URL bar, replace <code>/robots.txt</code> with{" "}
-                  <code>/administrator-panel</code> to load the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  Once logged in, delete the user <mark>Carlos</mark>.
+                  Explore how attackers can bypass login mechanisms using CSRF
+                  vulnerabilities. In this lab, you will:
+                  <br />- Learn to exploit unprotected paths like{" "}
+                  <code>/robots.txt</code> to find sensitive areas.
+                  <br />- Understand how manipulating URLs, such as replacing{" "}
+                  <code>/robots.txt</code> with{" "}
+                  <code>/administrator-panel</code>, grants unauthorized access.
+                  <br />- Practice logging in as an admin and performing
+                  malicious actions, like deleting user accounts.
                 </p>
               </div>
               <div className="easy-CSRF">
@@ -69,30 +68,23 @@ export default function CSRF_labs() {
                 <p>Easy</p>
               </div>
             </Link>
-            {/* lab2 */}
-            <Link
-              to="/CSRF/CSRF_labs/first_lab/ProductList"
-              className="course-card-CSRF"
-            >
+
+            {/* Lab2 */}
+            <Link to="/CSRF/CSRF_labs/second_lab" className="course-card-CSRF">
               <div className="course-image-CSRF">
-                <img src={labImg} alt="" />
+                <img src={labImg} alt="Lab 2 Image" />
               </div>
               <div className="course-text-CSRF">
-                <h3>
-                  vulnerability in WHERE clause allowing retrieval of hidden
-                  data
-                </h3>
+                <h3>CSRF Exploiting SQL Injection via WHERE Clause</h3>
                 <p>
-                  Go to the lab and view <mark>robots.txt</mark> by appending{" "}
-                  <code>/robots.txt</code> to the lab URL. Notice that the{" "}
-                  <mark>Disallow</mark> line discloses the path to the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  In the URL bar, replace <code>/robots.txt</code> with{" "}
-                  <code>/administrator-panel</code> to load the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  Once logged in, delete the user <mark>Carlos</mark>.
+                  Learn how attackers can exploit poorly implemented SQL queries
+                  through CSRF attacks. This lab covers:
+                  <br />- Crafting input to manipulate SQL queries and retrieve
+                  hidden data.
+                  <br />- Understanding how CSRF tokens help secure sensitive
+                  actions.
+                  <br />- Implementing input validation and protection
+                  mechanisms to prevent unauthorized data access.
                 </p>
               </div>
               <div className="easy-CSRF">
@@ -100,27 +92,23 @@ export default function CSRF_labs() {
                 <p>Easy</p>
               </div>
             </Link>
+
             {/* Lab3 */}
-            <Link to="/CSRF/CSRF_labs/" className="course-card-CSRF">
+            <Link to="/CSRF/CSRF_labs/third_lab" className="course-card-CSRF">
               <div className="course-image-CSRF">
-                <img src={labImg} alt="" />
+                <img src={labImg} alt="Lab 3 Image" />
               </div>
               <div className="course-text-CSRF">
-                <h3>
-                  vulnerability in WHERE clause allowing retrieval of hidden
-                  data
-                </h3>
+                <h3>Preventing CSRF Attacks on Sensitive Actions</h3>
                 <p>
-                  Go to the lab and view <mark>robots.txt</mark> by appending{" "}
-                  <code>/robots.txt</code> to the lab URL. Notice that the{" "}
-                  <mark>Disallow</mark> line discloses the path to the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  In the URL bar, replace <code>/robots.txt</code> with{" "}
-                  <code>/administrator-panel</code> to load the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  Once logged in, delete the user <mark>Carlos</mark>.
+                  Investigate how CSRF attacks can target authenticated users to
+                  perform malicious actions. In this lab, you will:
+                  <br />- Analyze the injection of malicious forms that exploit
+                  CSRF vulnerabilities.
+                  <br />- Implement anti-CSRF tokens to prevent unauthorized
+                  requests from being executed.
+                  <br />- Apply the SameSite cookie attribute for additional
+                  protection against cross-site request forgery.
                 </p>
               </div>
               <div className="easy-CSRF">

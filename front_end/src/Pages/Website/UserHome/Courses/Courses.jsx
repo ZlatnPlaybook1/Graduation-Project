@@ -13,6 +13,8 @@ import acvulnimg from "../assets/img/ACV/landing.jpeg";
 import CSRFImg from "../assets/img/CSRF/landing.jpg";
 import blvImg from "../assets/img/BLV/landing.avif";
 import regexImg from "../assets/img/Regex/landing.jpeg";
+import infoDiscImg from "../assets/img/InfoDisc/landing.jpg";
+import AudForImg from "../assets/img/AudFor/landing.png";
 
 const Courses = () => {
   return (
@@ -405,13 +407,13 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/lab1" className="course-card">
+            <a href="/infoDisc" className="course-card">
               <div className="course-image">
-                <img src={imagecourse} alt="Course" />
+                <img src={infoDiscImg} alt="Course" />
               </div>
               {/* topic 16 */}
               <div className="course-text">
-                <h3>Information disclosure</h3>
+                <h3>Information Disclosure</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
@@ -480,9 +482,9 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/lab1" className="course-card">
+            <a href="/AudFor" className="course-card">
               <div className="course-image">
-                <img src={imagecourse} alt="Course" />
+                <img src={AudForImg} alt="Course" />
               </div>
               {/* topic 19 */}
               <div className="course-text">

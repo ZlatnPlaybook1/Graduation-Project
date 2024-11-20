@@ -66,6 +66,15 @@ import BL_VULN from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln.jsx";
 import BL_VULN_LABS from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln_labs.jsx";
 // End Business Logic Vulnerability
 
+// Audio Forensics
+import AUDFOR from "./Pages/Website/UserHome/Labs/AudFor/AudFor.jsx";
+import AUDFOR_LABS from "./Pages/Website/UserHome/Labs/AudFor/AudFor_labs.jsx";
+// End Audio Forensics
+// Information disclosure
+import INFODISC from "./Pages/Website/UserHome/Labs/InfoDisc/InfoDisc.jsx";
+import INFODISC_LABS from "./Pages/Website/UserHome/Labs/InfoDisc/InfoDisc_labs.jsx";
+// End Information disclosure
+
 import Bash from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash.jsx";
 import BASH_LAB from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_lab.jsx";
 import BASH_QUIZ from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_quiz.jsx";
@@ -74,7 +83,7 @@ import OBFUSCATION_LAB from "./Pages/Website/UserHome/Labs/Obfuscation/Obfuscati
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
-import SQLInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/SQLInjection_lab.jsx";
+import SQLInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/SQLInjection_labs.jsx";
 import Robots from "./Pages/Website/UserHome/Labs/XSS/Practical/Robots.jsx";
 import XSS_SEVEN from "./Pages/Website/UserHome/Labs/XSS/Practical/XSS_SEVEN.jsx";
 import PyramidsOfGiza from "./Pages/Website/UserHome/Labs/XSS/Practical/PyramidsOfGiza.jsx";
@@ -104,7 +113,7 @@ function App() {
           {/* Start Sql_Injection Prepare */}
           <Route path="/sql_Injection" element={<SQL_INJECTION />} />
           <Route
-            path="/sql_Injection/sql_Injection_lab"
+            path="/sql_Injection/sql_Injection_labs"
             element={<SQLInjection />}
           />
           <Route
@@ -172,6 +181,17 @@ function App() {
           {/* BL_Vuln*/}
           <Route path="/BL_Vuln" element={<BL_VULN />} />
           <Route path="/BL-Vuln/BL_Vuln_labs" element={<BL_VULN_LABS />} />
+          {/* End BL_Vuln */}
+
+          {/* AudFor */}
+          <Route path="/AudFor" element={<AUDFOR />} />
+          <Route path="/AudFor/AudFor_lab" element={<AUDFOR_LABS />} />
+          {/* End AudFor */}
+
+          {/*InfoDisc */}
+          <Route path="/InfoDisc" element={<INFODISC />} />
+          <Route path="/InfoDisc/InfoDisc_labs" element={<INFODISC_LABS />} />
+          {/* End InfoDisc */}
 
           {/* End Sql_Injection */}
           <Route path="/xss" element={<XSS />} />

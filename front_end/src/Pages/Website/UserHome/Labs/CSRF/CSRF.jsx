@@ -11,7 +11,7 @@ export default function CSRF() {
   const faqSectionRef = useRef(null);
   const navigate = useNavigate();
   const handleGoToLab = () => {
-    navigate("/AC-Vuln/CSRF_labs");
+    navigate("/CSRF/CSRF_labs");
   };
   useEffect(() => {
     const $faqSection = $(faqSectionRef.current);
@@ -57,19 +57,20 @@ export default function CSRF() {
                 <Link to="">Home</Link>
               </li>
               <li>
-                <Link to="">Access control vulnerability</Link>
+                <Link to="">Cross-Site Request Forgery (CSRF)</Link>
               </li>
             </ul>
           </div>
           <div className="course-info">
             <img src={imagecourse} alt="" />
             <div className="course-text">
-              <h1>Access control vulnerability</h1>
+              <h1>Cross-Site Request Forgery (CSRF)</h1>
               <p>
-                Learn how attackers exploit access control vulnerabilities in
-                web applications, gaining unauthorized access to sensitive areas
-                or data, and the techniques used to detect and prevent these
-                attacks.
+                Discover how attackers exploit CSRF vulnerabilities to perform
+                unauthorized actions on behalf of authenticated users without
+                their consent. Learn the strategies to detect, mitigate, and
+                safeguard web applications against such attacks, ensuring robust
+                protection for your users.
               </p>
               <div className="course-icons">
                 <div className="diff">
@@ -112,82 +113,87 @@ export default function CSRF() {
               <dl className="section-text-lab1">
                 {/* Task 1 */}
                 <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 1</span> Unprotected Admin Functionality
+                  <span>Task 1</span> Exploiting CSRF Vulnerabilities
                 </dt>
                 <dd className="fadeInUp faq-body-lab1">
                   <ul>
                     <li>
                       <p>
-                        Admin panels that are not properly secured can lead to
-                        unauthorized access by attackers.
+                        CSRF vulnerabilities occur when a web application
+                        processes unauthorized actions on behalf of an
+                        authenticated user.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Attackers may exploit weak authentication mechanisms to
-                        bypass access control and take over admin functionality.
+                        Attackers can trick users into executing malicious
+                        requests by embedding hidden forms, links, or scripts
+                        into trusted websites or emails.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Ensure proper role-based access control is in place to
-                        restrict admin functionalities to authorized users only.
+                        Implement anti-CSRF tokens in all forms and sensitive
+                        actions, and validate their presence and authenticity on
+                        the server side.
                       </p>
                     </li>
                   </ul>
                 </dd>
+
                 {/* Task 2 */}
                 <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 2</span> Insecure Direct Object References (IDOR)
+                  <span>Task 2</span> Lack of CSRF Protection in Forms
                 </dt>
                 <dd className="fadeInUp faq-body-lab1">
                   <ul>
                     <li>
                       <p>
-                        IDOR vulnerabilities occur when an application allows
-                        users to access objects (files, data) by providing
-                        direct input, such as an ID, without proper
-                        authorization checks.
+                        Forms without CSRF protection are highly vulnerable to
+                        exploitation by attackers.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Attackers can modify the object ID in the URL or request
-                        to gain unauthorized access to other users' data.
+                        Attackers can create malicious forms that mimic
+                        legitimate ones, tricking users into submitting them
+                        unknowingly.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Protect sensitive objects by implementing proper access
-                        control checks before allowing access to objects.
+                        Ensure that all forms handling sensitive data include
+                        CSRF tokens, and use proper referrer checks to verify
+                        request sources.
                       </p>
                     </li>
                   </ul>
                 </dd>
+
                 {/* Task 3 */}
                 <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 3</span> Lack of Secure Session Management
+                  <span>Task 3</span> Insufficient Validation of HTTP Requests
                 </dt>
                 <dd className="fadeInUp faq-body-lab1">
                   <ul>
                     <li>
                       <p>
-                        Insufficient session management can allow attackers to
-                        hijack or impersonate legitimate users, gaining
-                        unauthorized access to protected resources.
+                        Improper validation of incoming HTTP requests can make a
+                        web application susceptible to CSRF attacks.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Weak session IDs or improper session expiration can be
-                        exploited to steal a user's session.
+                        Attackers can execute unauthorized requests by
+                        exploiting the victim’s active session and the lack of
+                        request validation.
                       </p>
                     </li>
                     <li>
                       <p>
-                        Ensure that secure session handling mechanisms are in
-                        place, such as using HTTPS, rotating session IDs, and
-                        implementing proper session expiration.
+                        Implement SameSite cookie attributes, enforce CSRF
+                        tokens in requests, and use strong authentication
+                        mechanisms to validate the origin of requests.
                       </p>
                     </li>
                   </ul>

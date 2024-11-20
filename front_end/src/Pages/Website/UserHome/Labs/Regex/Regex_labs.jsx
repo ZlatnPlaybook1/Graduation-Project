@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import "./Regex_labs.css";
-import labImg from "../../assets/img/ACV/lab.jpeg";
+import labImg from "../../assets/img/Regex/lab1.jpeg";
 
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
@@ -41,30 +41,25 @@ export default function Regex_labs() {
       {/* Start Course */}
       <div className="course-Regex">
         <div className="container-Regex">
-          <h2>Access control vulnerability Labs</h2>
+          <h2>Regular Expressions Labs</h2>
           <p className="section-p-Regex">Test Your Hacking Skills</p>
           <div className="row-Regex">
-            {/* lab1 */}
+            {/* Lab1 */}
             <Link
               to="/Regex/Regex_labs/first_lab"
               className="course-card-Regex"
             >
               <div className="course-image-Regex">
-                <img src={labImg} alt="" />
+                <img src={labImg} alt="Lab 1 Image" />
               </div>
               <div className="course-text-Regex">
-                <h3>vulnerability allowing login bypass</h3>
+                <h3>Detecting Malicious Patterns</h3>
                 <p>
-                  Go to the lab and view <mark>robots.txt</mark> by appending{" "}
-                  <code>/robots.txt</code> to the lab URL. Notice that the{" "}
-                  <mark>Disallow</mark> line discloses the path to the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  In the URL bar, replace <code>/robots.txt</code> with{" "}
-                  <code>/administrator-panel</code> to load the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  Once logged in, delete the user <mark>Carlos</mark>.
+                  Learn how to use Regular Expressions (Regex) to identify
+                  harmful inputs in web applications. Explore: <br />- Crafting
+                  regex patterns to detect SQL injection attempts. <br />
+                  - Analyzing logs for suspicious access patterns. <br />-
+                  Preventing exploitation by filtering malicious payloads.
                 </p>
               </div>
               <div className="easy-Regex">
@@ -72,30 +67,25 @@ export default function Regex_labs() {
                 <p>Easy</p>
               </div>
             </Link>
-            {/* lab2 */}
+
+            {/* Lab2 */}
             <Link
-              to="/Regex/Regex_labs/first_lab/ProductList"
+              to="/Regex/Regex_labs/second_lab"
               className="course-card-Regex"
             >
               <div className="course-image-Regex">
-                <img src={labImg} alt="" />
+                <img src={labImg} alt="Lab 2 Image" />
               </div>
               <div className="course-text-Regex">
-                <h3>
-                  vulnerability in WHERE clause allowing retrieval of hidden
-                  data
-                </h3>
+                <h3>Securing Input Fields</h3>
                 <p>
-                  Go to the lab and view <mark>robots.txt</mark> by appending{" "}
-                  <code>/robots.txt</code> to the lab URL. Notice that the{" "}
-                  <mark>Disallow</mark> line discloses the path to the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  In the URL bar, replace <code>/robots.txt</code> with{" "}
-                  <code>/administrator-panel</code> to load the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  Once logged in, delete the user <mark>Carlos</mark>.
+                  Understand how to use Regex for input validation to mitigate
+                  security risks. Dive into: <br />
+                  - Constructing patterns for secure email and password
+                  validation. <br />
+                  - Preventing cross-site scripting (XSS) by filtering dangerous
+                  characters. <br />- Testing your Regex for edge cases and
+                  vulnerabilities.
                 </p>
               </div>
               <div className="easy-Regex">
@@ -103,27 +93,24 @@ export default function Regex_labs() {
                 <p>Easy</p>
               </div>
             </Link>
+
             {/* Lab3 */}
-            <Link to="/Regex/Regex_labs/" className="course-card-Regex">
+            <Link
+              to="/Regex/Regex_labs/third_lab"
+              className="course-card-Regex"
+            >
               <div className="course-image-Regex">
-                <img src={labImg} alt="" />
+                <img src={labImg} alt="Lab 3 Image" />
               </div>
               <div className="course-text-Regex">
-                <h3>
-                  vulnerability in WHERE clause allowing retrieval of hidden
-                  data
-                </h3>
+                <h3>Analyzing Threat Patterns in Logs</h3>
                 <p>
-                  Go to the lab and view <mark>robots.txt</mark> by appending{" "}
-                  <code>/robots.txt</code> to the lab URL. Notice that the{" "}
-                  <mark>Disallow</mark> line discloses the path to the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  In the URL bar, replace <code>/robots.txt</code> with{" "}
-                  <code>/administrator-panel</code> to load the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  Once logged in, delete the user <mark>Carlos</mark>.
+                  Utilize Regex to parse and analyze logs for security
+                  monitoring. Practice: <br />
+                  - Identifying brute-force login attempts through repeated
+                  patterns. <br />
+                  - Highlighting unauthorized access events in log files. <br />
+                  - Building efficient Regex patterns for quick data extraction.
                 </p>
               </div>
               <div className="easy-Regex">
