@@ -185,7 +185,7 @@ function App() {
 
           {/* AudFor */}
           <Route path="/AudFor" element={<AUDFOR />} />
-          <Route path="/AudFor/AudFor_lab" element={<AUDFOR_LABS />} />
+          <Route path="/AudFor/AudFor_labs" element={<AUDFOR_LABS />} />
           {/* End AudFor */}
 
           {/*InfoDisc */}
