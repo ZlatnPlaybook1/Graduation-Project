@@ -9,6 +9,7 @@ import linux_logo from "../assets/img/linux/linux_logo.png";
 import Cookies_logo from "../assets/img/cookies/Cookies_transparent.png";
 import Obfuscation from "../assets/img/Obfuscation/card_image.png";
 import unrestrictedFile from "../assets/img/Unrestricted File Upload/card_image.png";
+import acvulnimg from "../assets/img/ACV/landing.jpeg";
 
 const Courses = () => {
   return (
@@ -250,9 +251,9 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/lab1" className="course-card">
+            <a href="/AC_Vuln" className="course-card">
               <div className="course-image">
-                <img src={imagecourse} alt="Course" />
+                <img src={acvulnimg} alt="Course" />
               </div>
               {/* topic 10 */}
               <div className="course-text">
