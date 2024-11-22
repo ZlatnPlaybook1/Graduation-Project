@@ -92,7 +92,11 @@ import ChichenItza from "./Pages/Website/UserHome/Labs/XSS/Practical/ChichenItza
 import TajMahal from "./Pages/Website/UserHome/Labs/XSS/Practical/TajMahal.jsx";
 import ParadiseOfHawaii from "./Pages/Website/UserHome/Labs/XSS/Practical/ParadiseOfHawaii.jsx";
 import Colosseum from "./Pages/Website/UserHome/Labs/XSS/Practical/Colosseum.jsx";
-import UnrestrictedFileUpload from "./Pages/Website/UserHome/Labs/Unrestricted File Upload/UnrestrictedFileUpload.jsx";
+import UnrestrictedFileUpload from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/UnrestrictedFileUpload.jsx";
+import UnrestrictedFileUploadLabs from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/UnrestrictedFileUploadLabs.jsx";
+import UnrestrictedFirstlab from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/Practical/Unrestricted_Lab1.jsx";
+import UnrestrictedSecondlab from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/Practical/Unrestricted_Lab2.jsx";
+import UnrestrictedThirdlab from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/Practical/Unrestricted_Lab3.jsx";
 
 function App() {
   return (
@@ -232,10 +236,25 @@ function App() {
           {/* End XSS */}
           {/* Start Unrestricted File Upload_ */}
           <Route
-            path="/Unrestricted File Upload"
+            path="/UnrestrictedFileUpload"
             element={<UnrestrictedFileUpload />}
           />
-
+          <Route
+            path="/Unrestricted File Upload/lab_Unrestricted_File_Uplode"
+            element={<UnrestrictedFileUploadLabs />}
+          />
+          <Route
+            path="/Unrestricted File Upload/lab_Unrestricted_File_Uplode/first_lab"
+            element={<UnrestrictedFirstlab />}
+          />
+          <Route
+            path="/Unrestricted File Upload/lab_Unrestricted_File_Uplode/second_lab"
+            element={<UnrestrictedSecondlab />}
+          />
+          <Route
+            path="/Unrestricted File Upload/lab_Unrestricted_File_Uplode/third_lab"
+            element={<UnrestrictedThirdlab />}
+          />
           {/* End Unrestricted File Upload_ */}
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />

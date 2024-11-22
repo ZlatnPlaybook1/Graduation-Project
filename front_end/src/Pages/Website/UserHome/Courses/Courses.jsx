@@ -130,7 +130,7 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/Unrestricted File Upload" className="course-card">
+            <a href="/UnrestrictedFileUpload" className="course-card">
               <div className="course-image">
                 <img src={unrestrictedFile} alt="Course" />
               </div>
