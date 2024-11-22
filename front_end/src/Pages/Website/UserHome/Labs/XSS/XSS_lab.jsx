@@ -138,7 +138,7 @@ export default function XSS_lab() {
               </div>
             </Link>
             {/* lab7 */}
-            <Link to="/xss/xss_lab/seven_lab" class="course-card-XSS">
+            {/* <Link to="/xss/xss_lab/seven_lab" class="course-card-XSS">
               <div class="course-image-XSS">
                 <img src={lab_Cover} alt="" />
               </div>
@@ -159,7 +159,7 @@ export default function XSS_lab() {
                 <i class="fa-solid fa-signal lab-XSS"></i>
                 <p>Easy</p>
               </div>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
