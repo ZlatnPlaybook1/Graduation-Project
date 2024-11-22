@@ -6,15 +6,6 @@ body {
   color: #333;
 }
 
-/* Go Back Styles */
-.back {
-  position: fixed;
-  top: 3%;
-  left: 1%;
-  background-color: var(--sec-main-color);
-  color: white;
-}
-
 /* Container for the quiz */
 .quizContainer {
   max-width: 900px;
@@ -60,10 +51,8 @@ body {
 
 /* Array topic-specific styling */
 .topicSection {
-  background-color: #f0f8ff;
-  /* Light background for array topic */
-  border-left: 5px solid #2a9d8f;
-  /* Green accent for array topic */
+  background-color: #f0f8ff; /* Light background for array topic */
+  border-left: 5px solid #2a9d8f; /* Green accent for array topic */
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 40px;
@@ -82,8 +71,7 @@ body {
 
 /* Question container */
 .questionContainer {
-  margin-bottom: 30px;
-  /* Space between questions */
+  margin-bottom: 30px; /* Space between questions */
   padding: 10px;
   border-radius: 5px;
 }
@@ -149,8 +137,7 @@ body {
 
 /* Ensures questions, answers, and feedback are spaced and responsive */
 .questionContainer input:focus {
-  border-color: #2a9d8f;
-  /* Focus effect on the input field */
+  border-color: #2a9d8f; /* Focus effect on the input field */
 }
 
 .questionContainer .submitBtn {
@@ -188,22 +175,4 @@ body {
   font-weight: bold;
   margin-bottom: 10px;
   color: #2a9d8f;
-}
-
-/* Top Link  */
-.top {
-  display: none;
-  position: fixed;
-  bottom: 3%;
-  right: 1%;
-  background-color: var(--sec-main-color);
-  color: white;
-  border-radius: 50%;
-  border: none;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
 }

@@ -45,6 +45,36 @@ import LINUX_SECOND_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/seco
 import LINUX_THIRD_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/fourth_lab/Test.jsx";
 import LINUX_FOURTH_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/third_lab/Welcome.jsx";
 
+// Access Control Vulnerability
+import AC_VULN from "./Pages/Website/UserHome/Labs/AC-Vuln/AC_Vuln.jsx";
+import AC_VULN_LABS from "./Pages/Website/UserHome/Labs/AC-Vuln/AC_Vuln_labs.jsx";
+import AC_VULN_First_LAB from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/first_lab/ProductList.jsx";
+// End Access Control Vulnerability
+
+// Cross-Site Request Forgery
+import CSRF from "./Pages/Website/UserHome/Labs/CSRF/CSRF.jsx";
+import CSRF_LABS from "./Pages/Website/UserHome/Labs/CSRF/CSRF_labs.jsx";
+// End Cross-Site Request Forgery
+
+// Regular Expression
+import REGEX from "./Pages/Website/UserHome/Labs/Regex/Regex.jsx";
+import REGEX_LABS from "./Pages/Website/UserHome/Labs/Regex/Regex_labs.jsx";
+// End Regular Expression
+
+// Business Logic Vulnerability
+import BL_VULN from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln.jsx";
+import BL_VULN_LABS from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln_labs.jsx";
+// End Business Logic Vulnerability
+
+// Audio Forensics
+import AUDFOR from "./Pages/Website/UserHome/Labs/AudFor/AudFor.jsx";
+import AUDFOR_LABS from "./Pages/Website/UserHome/Labs/AudFor/AudFor_labs.jsx";
+// End Audio Forensics
+// Information disclosure
+import INFODISC from "./Pages/Website/UserHome/Labs/InfoDisc/InfoDisc.jsx";
+import INFODISC_LABS from "./Pages/Website/UserHome/Labs/InfoDisc/InfoDisc_labs.jsx";
+// End Information disclosure
+
 import Bash from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash.jsx";
 import BASH_LAB from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_lab.jsx";
 import BASH_QUIZ from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_quiz.jsx";
@@ -53,7 +83,7 @@ import OBFUSCATION_LAB from "./Pages/Website/UserHome/Labs/Obfuscation/Obfuscati
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
-import SQLInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/SQLInjection_lab.jsx";
+import SQLInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/SQLInjection_labs.jsx";
 import Robots from "./Pages/Website/UserHome/Labs/XSS/Practical/Robots.jsx";
 import XSS_SEVEN from "./Pages/Website/UserHome/Labs/XSS/Practical/XSS_SEVEN.jsx";
 import PyramidsOfGiza from "./Pages/Website/UserHome/Labs/XSS/Practical/PyramidsOfGiza.jsx";
@@ -63,10 +93,6 @@ import TajMahal from "./Pages/Website/UserHome/Labs/XSS/Practical/TajMahal.jsx";
 import ParadiseOfHawaii from "./Pages/Website/UserHome/Labs/XSS/Practical/ParadiseOfHawaii.jsx";
 import Colosseum from "./Pages/Website/UserHome/Labs/XSS/Practical/Colosseum.jsx";
 import UnrestrictedFileUpload from "./Pages/Website/UserHome/Labs/Unrestricted File Upload/UnrestrictedFileUpload.jsx";
-import UnrestrictedFileUploadLabs from "./Pages/Website/UserHome/Labs/Unrestricted File Upload/UnrestrictedFileUploadLabs.jsx";
-import UnrestrictedLab1 from "./Pages/Website/UserHome/Labs/Unrestricted File Upload/Practical/Unrestricted_Lab1.jsx";
-import UnrestrictedLab2 from "./Pages/Website/UserHome/Labs/Unrestricted File Upload/Practical/Unrestricted_Lab2.jsx";
-import UnrestrictedLab3 from "./Pages/Website/UserHome/Labs/Unrestricted File Upload/Practical/Unrestricted_Lab3.jsx";
 
 function App() {
   return (
@@ -87,7 +113,7 @@ function App() {
           {/* Start Sql_Injection Prepare */}
           <Route path="/sql_Injection" element={<SQL_INJECTION />} />
           <Route
-            path="/sql_Injection/sql_Injection_lab"
+            path="/sql_Injection/sql_Injection_labs"
             element={<SQLInjection />}
           />
           <Route
@@ -134,6 +160,39 @@ function App() {
             path="/Sql_Injection/sql_Injection_lab/fifth_lab/login"
             element={<FIFTH_LOGIN_SQL />}
           />
+          {/* AC_Vuln */}
+          <Route path="/AC_Vuln" element={<AC_VULN />} />
+          <Route path="/AC-Vuln/AC_Vuln_labs" element={<AC_VULN_LABS />} />
+          <Route
+            path="/AC-Vuln/AC_Vuln_labs/first_lab"
+            element={<AC_VULN_First_LAB />}
+          />
+          {/* End AC_Vuln */}
+
+          {/* CSRF */}
+          <Route path="/CSRF" element={<CSRF />} />
+          <Route path="/CSRF/CSRF_labs" element={<CSRF_LABS />} />
+          {/* End CSRF */}
+
+          {/* Regex */}
+          <Route path="/Regex" element={<REGEX />} />
+          <Route path="/Regex/Regex_labs" element={<REGEX_LABS />} />
+          {/* End Regex */}
+          {/* BL_Vuln*/}
+          <Route path="/BL_Vuln" element={<BL_VULN />} />
+          <Route path="/BL-Vuln/BL_Vuln_labs" element={<BL_VULN_LABS />} />
+          {/* End BL_Vuln */}
+
+          {/* AudFor */}
+          <Route path="/AudFor" element={<AUDFOR />} />
+          <Route path="/AudFor/AudFor_labs" element={<AUDFOR_LABS />} />
+          {/* End AudFor */}
+
+          {/*InfoDisc */}
+          <Route path="/InfoDisc" element={<INFODISC />} />
+          <Route path="/InfoDisc/InfoDisc_labs" element={<INFODISC_LABS />} />
+          {/* End InfoDisc */}
+
           {/* End Sql_Injection */}
           <Route path="/xss" element={<XSS />} />
           <Route path="/xss/xss_lab" element={<XSS_LAB />} />
@@ -176,22 +235,7 @@ function App() {
             path="/Unrestricted File Upload"
             element={<UnrestrictedFileUpload />}
           />
-          <Route
-            path="/Unrestricted File Upload/lab_Unrestricted_File_Uplode"
-            element={<UnrestrictedFileUploadLabs />}
-          />
-          <Route
-            path="/Unrestricted File Upload/lab_Unrestricted_File_Uplode/first_lab"
-            element={<UnrestrictedLab1 />}
-          />
-          <Route
-            path="/Unrestricted File Upload/lab_Unrestricted_File_Uplode/second_lab"
-            element={<UnrestrictedLab2 />}
-          />
-          <Route
-            path="/Unrestricted File Upload/lab_Unrestricted_File_Uplode/third_lab"
-            element={<UnrestrictedLab3 />}
-          />
+
           {/* End Unrestricted File Upload_ */}
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import Cookie from "cookie-universal";
 import "./Settings.css";
 
 export default function Settings() {
@@ -10,13 +9,6 @@ export default function Settings() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  const [token, setToken] = useState("");
-
-  useEffect(() => {
-    const cookie = Cookie(); // Get cookies instance
-    const retrievedToken = cookie.get("CuberWeb"); // Retrieve the token from cookies
-    setToken(retrievedToken); // Set the token state
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,11 +29,6 @@ export default function Settings() {
           oldPassword,
           newPassword,
           confirmPassword,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`, // Use token from cookies
-          },
         }
       );
 

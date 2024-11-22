@@ -216,9 +216,10 @@
   transform: translateY(-50%, -50%);
 }
 .modern-title {
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
-  color: #eee;
+  font-weight: 600;
+  color: #333;
   background: linear-gradient(90deg, #4caf50, #2196f3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -230,10 +231,6 @@
   border-radius: 8px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.modern-title:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .highlight {
   font-weight: bold;
@@ -256,41 +253,41 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .UnrestrictedContent .imageUnrest {
-    max-width: 350px;
-    left: 20%;
+    max-width: 350px; /* Slightly smaller image for tablets */
+    left: 20%; /* Adjusted for better positioning */
   }
 }
 
 @media (max-width: 768px) {
   .UnrestrictedContent .imageUnrest {
-    max-width: 100%;
-    left: 0%;
+    max-width: 100%; /* Image takes full width on smaller screens */
+    left: 0%; /* Center the image */
   }
 }
 
 @media (max-width: 480px) {
   .UnrestrictedContent .imageUnrest {
-    max-width: 90%;
-    left: 5%;
+    max-width: 90%; /* A bit smaller image for very small screens */
+    left: 5%; /* Slight adjustment for alignment */
   }
 }
 /* Style for the code image */
 .faq-body-lab2 .code1 {
   width: 100%;
-  max-width: 600px;
-  margin: 20px 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: block;
+  max-width: 600px; /* Adjust based on your layout */
+  margin: 20px 0; /* Adds space above and below the image */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  display: block; /* Ensures the image is displayed as a block element */
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; /* Centers the image horizontally */
 }
 
 /* Responsive Image Style */
 @media (max-width: 768px) {
   .faq-body-lab2 .code1 {
-    max-width: 100%;
-    margin: 15px 0;
+    max-width: 100%; /* Image takes full width on smaller screens */
+    margin: 15px 0; /* Slightly reduced margin for smaller screens */
   }
 }
 /* General Styling */
@@ -327,7 +324,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 8px 12px;
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Courier New", Courier, monospace;
   font-size: 0.95rem;
   color: #333;
   word-wrap: break-word;
@@ -350,7 +347,7 @@
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 4px 8px;
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Courier New", Courier, monospace;
   font-size: 1rem;
   color: #444;
   margin-left: 10px;
@@ -367,85 +364,85 @@
 }
 /* Style for the Unordered List */
 .styled-list {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 20px 0;
-  font-family: "Poppins", sans-serif !important;
+  list-style-type: none; /* Remove default bullet points */
+  padding-left: 0; /* Remove default padding */
+  margin: 20px 0; /* Space above and below the list */
+  font-family: Arial, sans-serif; /* Set font for readability */
 }
 
 /* Style for List Items */
 .styled-list li {
-  font-size: 1rem;
-  padding: 10px 15px;
-  margin: 8px 0;
-  background-color: #f9f9f9;
-  border-left: 4px solid #3498db;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  font-size: 1rem; /* Default font size */
+  padding: 10px 15px; /* Padding inside each list item */
+  margin: 8px 0; /* Space between list items */
+  background-color: #f9f9f9; /* Light gray background */
+  border-left: 4px solid #3498db; /* Blue left border for emphasis */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition on hover */
 }
 
 /* Hover effect for List Items */
 .styled-list li:hover {
-  background-color: #e3f2fd;
-  border-left-color: #2980b9;
-  transform: translateX(5px);
+  background-color: #e3f2fd; /* Light blue background on hover */
+  border-left-color: #2980b9; /* Darker blue left border on hover */
+  transform: translateX(5px); /* Slight move to the right on hover */
 }
 
 /* Responsive Design for smaller screens */
 @media (max-width: 768px) {
   .styled-list li {
-    font-size: 0.9rem;
-    padding: 8px 12px;
+    font-size: 0.9rem; /* Slightly smaller font size for mobile */
+    padding: 8px 12px; /* Adjust padding for smaller screens */
   }
 }
 /* Style for the Unordered List */
 .security-measures-list {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 20px 0;
-  font-family: "Poppins", sans-serif !important;
-  font-size: 1rem;
-  line-height: 1.6;
+  list-style-type: none; /* Remove default bullet points */
+  padding-left: 0; /* Remove default padding */
+  margin: 20px 0; /* Add vertical spacing */
+  font-family: Arial, sans-serif; /* Set readable font */
+  font-size: 1rem; /* Default font size */
+  line-height: 1.6; /* Spacing between lines for readability */
 }
 
 /* Style for List Items */
 .security-measures-list li {
-  padding: 12px 20px;
-  margin-bottom: 12px;
-  background-color: #f4f4f9;
-  border-left: 5px solid #27ae60;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  padding: 12px 20px; /* Padding inside each item */
+  margin-bottom: 12px; /* Space between items */
+  background-color: #f4f4f9; /* Light background color */
+  border-left: 5px solid #27ae60; /* Green left border for emphasis */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
 /* Hover effect for List Items */
 .security-measures-list li:hover {
-  background-color: #e9f7ef;
-  border-left-color: #2ecc71;
-  transform: translateX(5px);
+  background-color: #e9f7ef; /* Light greenish background on hover */
+  border-left-color: #2ecc71; /* Brighter green border on hover */
+  transform: translateX(5px); /* Slight movement on hover */
 }
 
 /* Add a checkmark icon before each list item for visual emphasis */
 .security-measures-list li::before {
-  content: "\2022";
-  color: #2ecc71;
-  font-size: 1.5rem;
-  margin-right: 10px;
+  content: "\2022"; /* Unicode for bullet point */
+  color: #2ecc71; /* Green color for the bullet */
+  font-size: 1.5rem; /* Larger size for the bullet */
+  margin-right: 10px; /* Space between bullet and text */
   display: inline-block;
-  font-weight: bold;
+  font-weight: bold; /* Make the bullet bold */
 }
 
 /* Responsive Design for smaller screens */
 @media (max-width: 768px) {
   .security-measures-list {
-    font-size: 0.9rem;
-    padding-left: 10px;
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+    padding-left: 10px; /* Add padding on smaller screens */
   }
 
   .security-measures-list li {
-    padding: 10px 15px;
+    padding: 10px 15px; /* Adjust padding for smaller screens */
   }
 }
 
@@ -666,4 +663,4 @@
   background-color: rgb(163, 234, 42);
 }
 
-/* /* End Course Content */
+/* End Course Content */
