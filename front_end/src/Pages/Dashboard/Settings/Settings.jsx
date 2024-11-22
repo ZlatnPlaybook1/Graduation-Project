@@ -22,6 +22,9 @@ export default function Settings() {
     setErrorMessage("");
     setSuccessMessage("");
 
+    // Assuming the token is stored in localStorage
+    const token = localStorage.getItem("token");
+
     try {
       const response = await axios.post(
         "http://127.0.0.1:8080/api/reset-password",
@@ -29,6 +32,11 @@ export default function Settings() {
           oldPassword,
           newPassword,
           confirmPassword,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
 
