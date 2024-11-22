@@ -3,12 +3,12 @@ import "./UnrestrictedFileUpload.css";
 import Header from "../../Header/Header";
 import $ from "jquery";
 import { Link } from "react-router-dom";
-import photo2 from "./Photos/Picture3.png";
-import code1 from "./Photos/screenshot.png";
-import code2 from "./Photos/screenshot(1).png";
-import code3 from "./Photos/screenshot(2).png";
+import photo2 from "../../assets/img/Unrestricted File Upload/Picture3.png";
+import code1 from "../../assets/img/Unrestricted File Upload/screenshot.png";
+import code2 from "../../assets/img/Unrestricted File Upload/screenshot(1).png";
+import code3 from "../../assets/img/Unrestricted File Upload/screenshot(2).png";
 import Footer from "../../Footer/Footer";
-import uplode from "./Photos/images.png";
+import uplode from "../../assets/img/Unrestricted File Upload/images.png";
 export default function UnrestrictedFileUpload() {
   const faqSectionRef = useRef(null);
 
@@ -346,7 +346,10 @@ export default function UnrestrictedFileUpload() {
               </dl>
             </div>
             <div className="go-to-section-lab2">
-              <Link to="" className="go-to-lab2">
+              <Link
+                to="/Unrestricted File Upload/lab_Unrestricted_File_Uplode"
+                className="go-to-lab2"
+              >
                 Go To Lab
               </Link>
             </div>

@@ -63,6 +63,10 @@ import TajMahal from "./Pages/Website/UserHome/Labs/XSS/Practical/TajMahal.jsx";
 import ParadiseOfHawaii from "./Pages/Website/UserHome/Labs/XSS/Practical/ParadiseOfHawaii.jsx";
 import Colosseum from "./Pages/Website/UserHome/Labs/XSS/Practical/Colosseum.jsx";
 import UnrestrictedFileUpload from "./Pages/Website/UserHome/Labs/Unrestricted File Upload/UnrestrictedFileUpload.jsx";
+import UnrestrictedFileUploadLabs from "./Pages/Website/UserHome/Labs/Unrestricted File Upload/UnrestrictedFileUploadLabs.jsx";
+import UnrestrictedLab1 from "./Pages/Website/UserHome/Labs/Unrestricted File Upload/Practical/Unrestricted_Lab1.jsx";
+import UnrestrictedLab2 from "./Pages/Website/UserHome/Labs/Unrestricted File Upload/Practical/Unrestricted_Lab2.jsx";
+import UnrestrictedLab3 from "./Pages/Website/UserHome/Labs/Unrestricted File Upload/Practical/Unrestricted_Lab3.jsx";
 
 function App() {
   return (
@@ -172,7 +176,22 @@ function App() {
             path="/Unrestricted File Upload"
             element={<UnrestrictedFileUpload />}
           />
-
+          <Route
+            path="/Unrestricted File Upload/lab_Unrestricted_File_Uplode"
+            element={<UnrestrictedFileUploadLabs />}
+          />
+          <Route
+            path="/Unrestricted File Upload/lab_Unrestricted_File_Uplode/first_lab"
+            element={<UnrestrictedLab1 />}
+          />
+          <Route
+            path="/Unrestricted File Upload/lab_Unrestricted_File_Uplode/second_lab"
+            element={<UnrestrictedLab2 />}
+          />
+          <Route
+            path="/Unrestricted File Upload/lab_Unrestricted_File_Uplode/third_lab"
+            element={<UnrestrictedLab3 />}
+          />
           {/* End Unrestricted File Upload_ */}
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />
@@ -224,7 +243,10 @@ function App() {
           <Route path="/bash-scripting/bash_quiz" element={<BASH_QUIZ />} />
           {/* End Bash Scripting */}
           <Route path="/obfuscation" element={<Obfuscation />} />
-          <Route path="/Obfuscation/obfuscation_lab" element={<OBFUSCATION_LAB />} />
+          <Route
+            path="/Obfuscation/obfuscation_lab"
+            element={<OBFUSCATION_LAB />}
+          />
           {/* End Obfuscation */}
         </Route>
         {/* End Routes of Labs */}
