@@ -1,13 +1,28 @@
 import React, { useState } from "react";
 import "./FileUplode.css";
 import Header from "../../../Header/Header";
+import Cookie from "cookie-universal";
 
 const UnrestrictedLab1 = () => {
   const [file, setFile] = useState(null);
   const [status, setStatus] = useState("");
 
   const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
+    const selectedFile = event.target.files[0];
+
+    // Validate file type (Only allow images: gif, jpg, jpeg, png)
+    if (
+      selectedFile &&
+      (selectedFile.type === "image/gif" ||
+        selectedFile.type === "image/jpeg" ||
+        selectedFile.type === "image/jpg" ||
+        selectedFile.type === "image/png")
+    ) {
+      setFile(selectedFile);
+    } else {
+      setStatus("invalidFile");
+      setFile(null);
+    }
   };
 
   const handleSubmit = async (event) => {
@@ -21,11 +36,20 @@ const UnrestrictedLab1 = () => {
     const formData = new FormData();
     formData.append("input_image", file);
 
+    const cookie = Cookie();
+    const token = cookie.get("CuberWeb"); // Assuming the token is stored in cookies
+
     try {
-      const response = await fetch("/api/upload", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "http://127.0.0.1:8080/api/UnrestrictedFileUplodeLab2",
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            Authorization: `Bearer ${token}`, // Include token in Authorization header
+          },
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -79,7 +103,7 @@ const UnrestrictedLab1 = () => {
             <div className="col-md-6">
               <div className="card border-primary mb-4">
                 <div className="card-header text-primary">
-                  Supported Formats: <b>JPG, PNG, PDF</b>
+                  Supported Formats: <b>GIF, JPG, JPEG, PNG</b>
                 </div>
               </div>
               <h3 className="mb-3">Upload Your Files</h3>
@@ -99,11 +123,19 @@ const UnrestrictedLab1 = () => {
                   <b>No file selected. Please upload a file.</b>
                 </div>
               )}
+              {status === "invalidFile" && (
+                <div className="alert alert-danger" role="alert">
+                  <b>
+                    Invalid file type. Please upload an image (GIF, JPG, JPEG,
+                    PNG).
+                  </b>
+                </div>
+              )}
 
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="input_image" className="form-label">
-                    Choose a file
+                    Choose an image file
                   </label>
                   <input
                     className="form-control"

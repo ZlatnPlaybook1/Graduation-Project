@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Cookie from "cookie-universal";
 import "./Settings.css";
 
 export default function Settings() {
@@ -9,6 +10,13 @@ export default function Settings() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    const cookie = Cookie(); // Get cookies instance
+    const retrievedToken = cookie.get("CuberWeb"); // Retrieve the token from cookies
+    setToken(retrievedToken); // Set the token state
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,9 +30,6 @@ export default function Settings() {
     setErrorMessage("");
     setSuccessMessage("");
 
-    // Assuming the token is stored in localStorage
-    const token = localStorage.getItem("token");
-
     try {
       const response = await axios.post(
         "http://127.0.0.1:8080/api/reset-password",
@@ -35,7 +40,7 @@ export default function Settings() {
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${token}`, // Use token from cookies
           },
         }
       );

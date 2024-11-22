@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Cookie from "cookie-universal";
 import "./FileUplode.css";
 import Header from "../../../Header/Header";
 
 const UnrestrictedLab1 = () => {
   const [file, setFile] = useState(null);
   const [status, setStatus] = useState("");
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    const cookie = Cookie();
+    const retrievedToken = cookie.get("CuberWeb"); // Retrieve the token from cookies
+    setToken(retrievedToken);
+  }, []);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -19,13 +27,19 @@ const UnrestrictedLab1 = () => {
     }
 
     const formData = new FormData();
-    formData.append("input_image", file);
+    formData.append("input_file", file); // Change the name to "input_file" for better clarity
 
     try {
-      const response = await fetch("/api/upload", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "http://127.0.0.1:8080/api/UnrestrictedFileUplodeLab1",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -79,7 +93,7 @@ const UnrestrictedLab1 = () => {
             <div className="col-md-6">
               <div className="card border-primary mb-4">
                 <div className="card-header text-primary">
-                  Supported Formats: <b>JPG, PNG, PDF</b>
+                  Supported Formats: <b>GIF, JPG, JPEG, PNG</b>
                 </div>
               </div>
               <h3 className="mb-3">Upload Your Files</h3>
@@ -102,13 +116,13 @@ const UnrestrictedLab1 = () => {
 
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                  <label htmlFor="input_image" className="form-label">
+                  <label htmlFor="input_file" className="form-label">
                     Choose a file
                   </label>
                   <input
                     className="form-control"
                     type="file"
-                    id="input_image"
+                    id="input_file"
                     onChange={handleFileChange}
                   />
                 </div>
