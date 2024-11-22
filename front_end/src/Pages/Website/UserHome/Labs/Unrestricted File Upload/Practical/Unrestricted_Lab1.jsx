@@ -10,7 +10,7 @@ const UnrestrictedLab1 = () => {
 
   useEffect(() => {
     const cookie = Cookie();
-    const retrievedToken = cookie.get("CuberWeb"); // Retrieve the token from cookies
+    const retrievedToken = cookie.get("CuberWeb");
     setToken(retrievedToken);
   }, []);
 
@@ -27,7 +27,7 @@ const UnrestrictedLab1 = () => {
     }
 
     const formData = new FormData();
-    formData.append("input_file", file); // Change the name to "input_file" for better clarity
+    formData.append("input_file", file);
 
     try {
       const response = await fetch(
@@ -50,6 +50,13 @@ const UnrestrictedLab1 = () => {
     } catch (error) {
       setStatus("unsuccess");
     }
+  };
+
+  const handleDelete = () => {
+    setFile(null);
+    setStatus("");
+    document.getElementById("input_file").value = "";
+    window.location.reload();
   };
 
   return (
@@ -80,11 +87,13 @@ const UnrestrictedLab1 = () => {
                 Would you like to share a photo related to your cybersecurity
                 journey? 😊 Please upload your photo!
               </p>
-              <a href="/delete">
-                <button type="button" className="btn btn-secondary btn-sm">
-                  Delete Files
-                </button>
-              </a>
+              <button
+                type="button"
+                className="btn btn-secondary btn-sm"
+                onClick={handleDelete}
+              >
+                Delete Files
+              </button>
             </div>
             <div className="col-md-3"></div>
           </div>
