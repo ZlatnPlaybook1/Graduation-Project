@@ -38,13 +38,13 @@ body {
 }
 
 /* Headings with Modern Font and Color */
-h1 {
+/* h1 {
   text-align: center;
   color: #4a90e2;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 2.2rem;
-}
+} */
 
 /* Cards */
 .card {
