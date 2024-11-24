@@ -1,20 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
 /* Modern Unique Container */
 .unique-container {
   margin: 0 auto;
   padding: 20px;
-  max-width: 800px;
+  width: 75%;
+  max-width: 1200px;
 }
+
 body {
   font-family: "Poppins" !important;
 }
 
-.unique-container-wrapper h1,
-.unique-container-wrapper p,
-.unique-container-wrapper button {
-  font-family: "Poppins" !important;
-  font-weight: 400;
-}
 /* Modern Wrapper with Gradient and Elevated Shadow */
 .unique-container-wrapper {
   background: linear-gradient(145deg, #ffffff, #f1f3f6);
@@ -29,6 +26,13 @@ body {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
+.unique-container-wrapper h1,
+.unique-container-wrapper p,
+.unique-container-wrapper button {
+  font-family: "Poppins" !important;
+  font-weight: 400;
+}
+
 /* Centered Rows */
 .row {
   display: flex;
@@ -36,15 +40,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
-
-/* Headings with Modern Font and Color */
-/* h1 {
-  text-align: center;
-  color: #4a90e2;
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-size: 2.2rem;
-} */
 
 /* Cards */
 .card {

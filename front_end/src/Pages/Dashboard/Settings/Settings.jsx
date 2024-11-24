@@ -10,12 +10,13 @@ export default function Settings() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [token, setToken] = useState("");
 
   useEffect(() => {
-    const cookie = Cookie(); // Get cookies instance
-    const retrievedToken = cookie.get("CuberWeb"); // Retrieve the token from cookies
-    setToken(retrievedToken); // Set the token state
+    const cookie = Cookie();
+    const retrievedToken = cookie.get("CuberWeb");
+    setToken(retrievedToken);
   }, []);
 
   const handleSubmit = async (e) => {
@@ -29,8 +30,10 @@ export default function Settings() {
     setLoading(true);
     setErrorMessage("");
     setSuccessMessage("");
+    setShowSuccessMessage(false);
 
     try {
+      console.log("Sending password reset request...");
       const response = await axios.post(
         "http://127.0.0.1:8080/api/reset-password",
         {
@@ -40,18 +43,25 @@ export default function Settings() {
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`, // Use token from cookies
+            Authorization: `Bearer ${token}`,
           },
         }
       );
 
-      if (response.data.success) {
+      console.log("API Response:", response.data);
+
+      if (response?.data?.success) {
         setSuccessMessage("Password reset successfully!");
+        setShowSuccessMessage(true);
       } else {
-        setErrorMessage(response.data.message || "Something went wrong!");
+        setErrorMessage(response?.data?.message);
       }
     } catch (error) {
-      setErrorMessage("Failed to reset password. Please try again.");
+      console.error("Error resetting password:", error);
+      setErrorMessage(
+        error.response?.data?.message ||
+          "Failed to reset password. Please try again."
+      );
     } finally {
       setLoading(false);
     }
@@ -59,11 +69,20 @@ export default function Settings() {
 
   return (
     <div className="settings-container">
+      {/* Success Message */}
+      {showSuccessMessage && (
+        <div className="success-message-box">
+          <p>{successMessage}</p>
+          <button onClick={() => setShowSuccessMessage(false)}>Dismiss</button>
+        </div>
+      )}
+
+      {/* Reset Password Form */}
       <form className="reset-password-form" onSubmit={handleSubmit}>
         <h2>Reset Password</h2>
 
+        {/* Error Message */}
         {errorMessage && <p className="error-message">{errorMessage}</p>}
-        {successMessage && <p className="success-message">{successMessage}</p>}
 
         <div className="form-group">
           <label>Old Password</label>
