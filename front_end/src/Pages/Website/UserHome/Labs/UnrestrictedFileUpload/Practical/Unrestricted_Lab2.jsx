@@ -41,7 +41,7 @@ const UnrestrictedLab1 = () => {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8080/api/UnrestrictedFileUplodeLab2",
+        "http://127.0.0.1:8080/api/unrestrictedFileUploadLab2",
         {
           method: "POST",
           body: formData,
