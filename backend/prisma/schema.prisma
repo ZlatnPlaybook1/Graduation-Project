@@ -22,6 +22,7 @@ model User {
   birthday         String?
   phoneNum         String?
   validationNumber ValidationNumber?
+  File             File[]
 }
 
 model ValidationNumber {
@@ -48,6 +49,16 @@ model userForXSS {
   password String
   email    String  @unique
   posts    Post[]
+}
+
+model File {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  name      String
+  path      String
+  mimetype  String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 model Post {

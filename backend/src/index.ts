@@ -14,6 +14,8 @@ import xssPostsRouter from "./labs/xss/xssPosts.router";
 import lab3sql from "./labs/sqlInjectionLabs/lab3,4/lab3.router";
 import lab2sql from "./labs/sqlInjectionLabs/lab2/lab2.router";
 import lab7xss from "./labs/xss/lab7/lab7router";
+import lab1xss from "./labs/xss/lab1/lab1.router";
+import lab2xss from "./labs/xss/lab2/lab2.router";
 const app = express();
 
 app.use(cors())
@@ -34,6 +36,9 @@ app.use('/api', xssPostsRouter);
 app.use('/api', lab2sql);
 app.use('/api', lab3sql);
 app.use('/api', lab7xss);
+app.use('/api', lab1xss);
+app.use('/api', lab2xss);
+
 
 dotenv.config()
 
