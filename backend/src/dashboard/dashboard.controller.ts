@@ -215,7 +215,7 @@ export async function resetPassword(req: Request, res: Response): Promise<Respon
     const userId = req.params.id;
     try {
 
-        const hashedPassword = await hashPassword(req.body.password);
+        const hashedPassword = await hashPassword(req.body.newPassword);
         const user = await prisma.user.update({
             where: {id: userId},
             data: {
