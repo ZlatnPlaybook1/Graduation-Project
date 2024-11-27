@@ -1,9 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link
+import { Link } from "react-router-dom";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-
-// Replace this with the actual image import or URL
 import lab_Cover from "../../assets/img/Unrestricted File Upload/file-upload-vector.jpg";
 export default function UnrestrictedFileUploadLabs() {
   return (

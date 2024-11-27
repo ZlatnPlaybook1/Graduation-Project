@@ -1,0 +1,200 @@
+/* Start Landing */
+.landing-landing {
+  height: auto !important;
+  position: relative !important;
+  background-color: var(--alt-color) !important;
+  isolation: isolate !important;
+  z-index: 3 !important;
+  padding: 0 120px;
+  overflow: hidden;
+}
+
+.landing-landing .banner-landing {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.landing-landing .banner-landing::after {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  z-index: 1;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    var(--alt-color) 30%,
+    rgba(21, 28, 43, 0.98) 50%,
+    transparent 100%
+  );
+}
+
+.landing-landing .banner-landing img {
+  position: absolute !important;
+  left: 10% !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+  max-width: 80%;
+  height: auto;
+}
+
+.landing-landing .container-landing {
+  padding: 24px 12px;
+}
+
+.landing-landing .breadcrumb-landing ul {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.landing-landing .breadcrumb-landing ul li:first-of-type::before {
+  content: "";
+}
+
+.landing-landing .breadcrumb-landing ul li::before {
+  content: ">";
+  color: rgb(184, 190, 201);
+  padding-right: 5px;
+}
+
+.landing-landing .breadcrumb-landing ul li a {
+  font-size: 12px;
+  color: rgb(184, 190, 201);
+  padding: 0;
+  margin: 0;
+}
+
+.landing-landing .breadcrumb-landing ul li span.active-breadcrumb-landing {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  color: rgb(99, 110, 129);
+}
+
+.landing-landing .breadcrumb-landing ul li a:hover {
+  text-decoration: underline;
+}
+
+.landing-landing .course-info-landing {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.landing-landing .course-info-landing img {
+  width: 90px;
+}
+
+.landing-landing .course-info-landing .course-text-landing {
+  margin-left: 20px;
+}
+
+.landing-landing .course-info-landing .course-text-landing p {
+  margin-top: 5px;
+  font-size: 12px;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.landing-landing .course-info-landing .course-icons-landing {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.landing-landing
+  .course-info-landing
+  .course-icons-landing
+  i.fa-signal.for-landing {
+  color: green;
+}
+
+.landing .course-info .course-icons i.fa-signal + p {
+  display: inline-block;
+  color: green;
+}
+
+.landing-landing .course-info-landing .course-icons-landing .diff-landing,
+.landing-landing .course-info-landing .course-icons-landing .duration-landing {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.landing-landing
+  .course-info-landing
+  .course-icons-landing
+  i.fa-clock.for-landing
+  + p {
+  display: inline-block;
+}
+
+.landing-landing .course-info-landing .course-icons-landing .time {
+  padding-left: 10px !important;
+}
+
+.landing-landing .options-landing {
+  display: flex;
+  justify-content: start;
+  gap: 12px;
+  align-items: center;
+  flex-direction: row;
+}
+
+.landing-landing .options-landing .like-landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid rgb(62, 71, 90);
+  border-radius: 4px;
+}
+
+.landing-landing .options-landing p {
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.landing-landing .options-landing button {
+  background-color: var(--alt-color);
+  border-color: rgb(62, 71, 90);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  max-width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  gap: 6px;
+  height: 36px;
+  padding: 9px 16px;
+  pointer-events: initial;
+  border-width: 1px;
+  border-style: solid;
+  transition: var(--main-transition);
+}
+
+.landing-landing .options-landing button:hover {
+  background-color: white;
+  color: var(--alt-color);
+}
+
+.landing-landing .options-landing .like.for-landing button {
+  border-radius: 4px 0px 0px 4px;
+  border: none;
+}
+
+.landing-landing .options-landing .like-landing button:first-of-type {
+  border-right: 1px solid rgb(62, 71, 90);
+}
+/* End Landing */

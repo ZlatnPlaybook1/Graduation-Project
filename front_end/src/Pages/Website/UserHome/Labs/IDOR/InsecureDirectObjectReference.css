@@ -1,0 +1,228 @@
+/* Start Course Content */
+.SecureUploadContent .secure-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+.SecureUploadContent .course-section .arrow {
+  background-color: inherit !important;
+  float: right !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
+.secure-faq-section {
+  margin-top: 75px;
+  display: block;
+  width: 70%;
+  margin: auto;
+  margin-top: 15px;
+}
+@media (max-width: 991px) {
+  .secure-faq-section .secure-section-text {
+    margin-left: 0;
+  }
+}
+.secure-faq-section .secure-section-text .secure-faq-header {
+  border-radius: 5px 5px 0 0;
+  color: white;
+  background-color: #212c42;
+  font-size: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  line-height: 20px;
+  padding: 10px 25px;
+  font-weight: lighter;
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+@media (max-width: 991px) {
+  .secure-faq-section .secure-section-text .secure-faq-header {
+    font-size: 16px;
+  }
+}
+.secure-faq-section .secure-section-text .secure-faq-header span {
+  color: red;
+  margin-right: 40px;
+  position: relative;
+}
+.secure-faq-section .secure-section-text .secure-faq-header span::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 1px solid #777;
+  border-radius: 50%;
+  position: absolute;
+  right: -45%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.secure-faq-section .secure-section-text .secure-faq-body {
+  font-size: 18px;
+  padding: 15px 25px;
+  line-height: 1.9;
+  border-left: 4px solid red;
+  box-shadow: 1px 2px rgb(0, 0, 0, 0.1);
+  border-radius: 0 0 5px 5px;
+  background-color: white;
+  color: rgb(21, 28, 43);
+}
+@media (max-width: 991px) {
+  .secure-faq-section .secure-section-text .secure-faq-body {
+    font-size: 14px;
+  }
+}
+.go-to-section-lab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.go-to-lab {
+  margin-top: 50px;
+  border-radius: 5px;
+  max-width: 100%;
+  font-size: 16px;
+  padding: 7px 16px;
+  background-color: transparent;
+  color: rgb(21, 28, 43);
+  border: 1px solid rgb(163, 234, 42);
+  transition: var(--main-transition);
+}
+.go-to-lab:hover {
+  background-color: rgb(163, 234, 42);
+}
+/* End Course Content */
+
+/* 
+Here Styling the content at every tasks 
+          -------------Good Luck--------------
+ */
+.secure-faq-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.secure-list li {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #2c3e50;
+}
+
+.secure-list li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  color: #3498db;
+  font-size: 22px;
+  top: 6px;
+}
+
+.secure-highlight {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.secure-link {
+  color: #2980b9;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.secure-link:hover {
+  color: #1abc9c;
+  text-decoration: underline;
+}
+
+.secure-faq-body li p {
+  margin: 0;
+  color: #7f8c8d;
+  font-size: 16px;
+}
+
+.secure-faq-body li span {
+  font-style: italic;
+  color: #95a5a6;
+  font-size: 14px;
+}
+
+.secure-faq-body li a {
+  font-size: 16px;
+}
+
+.secure-list li:hover {
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  padding-left: 35px;
+  transition: all 0.3s ease;
+}
+
+.secure-faq-body ul li p {
+  font-size: 16px;
+  color: #34495e;
+}
+.secure-faq-content {
+  margin-bottom: 20px;
+  background-color: #f9fafb;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.secure-faq-actions {
+  margin-top: 20px;
+  background-color: #ecf0f1;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.secure-faq-actions p {
+  font-size: 16px;
+  color: #34495e;
+  font-weight: bold;
+}
+
+.secure-faq-actions ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.secure-faq-actions ul li {
+  font-size: 16px;
+  color: #34495e;
+  line-height: 1.6;
+}
+.secure-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.secure-link {
+  color: #2980b9;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.secure-link:hover {
+  text-decoration: underline;
+  color: #1abc9c;
+}
+
+.secure-highlight {
+  font-weight: bold;
+  color: #e74c3c;
+}

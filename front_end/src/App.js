@@ -97,6 +97,7 @@ import UnrestrictedFileUploadLabs from "./Pages/Website/UserHome/Labs/Unrestrict
 import UnrestrictedFirstlab from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/Practical/Unrestricted_Lab1.jsx";
 import UnrestrictedSecondlab from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/Practical/Unrestricted_Lab2.jsx";
 import UnrestrictedThirdlab from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/Practical/Unrestricted_Lab3.jsx";
+import InsecureDirectObjectReference from "./Pages/Website/UserHome/Labs/IDOR/InsecureDirectObjectReference.jsx";
 
 function App() {
   return (
@@ -256,6 +257,12 @@ function App() {
             element={<UnrestrictedThirdlab />}
           />
           {/* End Unrestricted File Upload_ */}
+          {/* Start Insecure_Direct_Object_Reference */}
+          <Route
+            path="/Insecure_Direct_Object_Reference(IDOR)"
+            element={<InsecureDirectObjectReference />}
+          />
+          {/* End Insecure_Direct_Object_Reference */}
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />
           <Route

@@ -1,14 +1,15 @@
 import React, { useEffect, useRef } from "react";
-import "./UnrestrictedFileUpload.css";
-import Header from "../../Header/Header";
 import $ from "jquery";
+import "./UnrestrictedFileUpload.css";
 import { Link } from "react-router-dom";
-import photo2 from "../../assets/img/Unrestricted File Upload/Picture3.png";
-import code1 from "../../assets/img/Unrestricted File Upload/screenshot.png";
-import code2 from "../../assets/img/Unrestricted File Upload/screenshot(1).png";
-import code3 from "../../assets/img/Unrestricted File Upload/screenshot(2).png";
+import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import uplode from "../../assets/img/Unrestricted File Upload/images.png";
+import CourseInfo from "../../Courses/CourseInfo";
+import photo2 from "../../assets/img/Unrestricted File Upload/Post&GetImage.png";
+import code1 from "../../assets/img/Unrestricted File Upload/code1FileUpload.png";
+import code2 from "../../assets/img/Unrestricted File Upload/code2FileUpload.png";
+import code3 from "../../assets/img/Unrestricted File Upload/code3FileUpload.png";
+import uplode from "../../assets/img/Unrestricted File Upload/FileUploadIcon.png";
 export default function UnrestrictedFileUpload() {
   const faqSectionRef = useRef(null);
 
@@ -52,35 +53,18 @@ export default function UnrestrictedFileUpload() {
           <div className="breadcrumb-landing">
             <ul>
               <li>
-                <Link to="">Home</Link>
+                <Link to="/home">Home</Link>
               </li>
               <li>
                 <Link to="">Unrestricted File Upload</Link>
               </li>
             </ul>
           </div>
-          <div className="course-info-landing">
-            <img src={uplode} alt="logo" />
-            <div className="course-text-landing">
-              <h1>Unrestricted File Upload</h1>
-              <p>
-                Understand the role of cookies in web security, how they are
-                used, and the potential privacy concerns they introduce.
-              </p>
-              <div className="course-icons-landing">
-                <div className="diff-landing">
-                  <div className="easy-landing">
-                    <i className="fa-solid fa-signal for-landing"></i>
-                    <p>Easy</p>
-                  </div>
-                </div>
-                <div className="duration-landing">
-                  <i className="fa-solid fa-clock for-landing"></i>
-                  <p className="time">15 min</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <CourseInfo
+            imgSrc={uplode}
+            title="Unrestricted File Upload"
+            description="Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce."
+          />
           <div className="options-landing">
             <button>
               <i className="far fa-bookmark for-landing"></i>
@@ -99,8 +83,8 @@ export default function UnrestrictedFileUpload() {
           </div>
         </div>
       </div>
-      {/* End Landing */}
 
+      {/* End Landing */}
       {/* Start Content */}
       <div className="UnrestrictedContent">
         <div className="container-lab2" ref={faqSectionRef}>
@@ -113,12 +97,12 @@ export default function UnrestrictedFileUpload() {
                 </dt>
                 <dd className="fadeInUp faq-body-lab2">
                   <ul>
+                    <img
+                      className="imageUnrest"
+                      src={photo2}
+                      alt="unrestricted"
+                    />
                     <li>
-                      <img
-                        className="imageUnrest"
-                        src={photo2}
-                        alt="unrestricted"
-                      />
                       <p>
                         <div class="modern-title">
                           Unrestricted File Upload{" "}

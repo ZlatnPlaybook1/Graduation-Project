@@ -15,7 +15,7 @@ import blvImg from "../assets/img/BLV/landing.avif";
 import regexImg from "../assets/img/Regex/landing.jpeg";
 import infoDiscImg from "../assets/img/InfoDisc/landing.jpg";
 import AudForImg from "../assets/img/AudFor/landing.png";
-
+import IDOR from "../assets/img/IDOR/Insecure_Direct_Object_Reference.png";
 const Courses = () => {
   return (
     <div className="course">
@@ -281,13 +281,16 @@ const Courses = () => {
             </a>
           </div>
           <div className="row-course">
-            <a href="/lab2" className="course-card">
+            <a
+              href="/Insecure_Direct_Object_Reference(IDOR)"
+              className="course-card"
+            >
               <div className="course-image">
-                <img src={imagecourse2} alt="Course" />
+                <img src={IDOR} alt="Course" />
               </div>
               {/* topic 11 */}
               <div className="course-text">
-                <h3>Cryptography</h3>
+                <h3>Insecure Direct Object Reference(IDOR)</h3>
                 <p>
                   Learn the core skills required to start a career in cyber
                   security
