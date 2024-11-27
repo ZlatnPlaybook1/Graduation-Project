@@ -74,12 +74,16 @@ import AUDFOR_LABS from "./Pages/Website/UserHome/Labs/AudFor/AudFor_labs.jsx";
 import INFODISC from "./Pages/Website/UserHome/Labs/InfoDisc/InfoDisc.jsx";
 import INFODISC_LABS from "./Pages/Website/UserHome/Labs/InfoDisc/InfoDisc_labs.jsx";
 // End Information disclosure
-
+// Bash Scripting
 import Bash from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash.jsx";
 import BASH_LAB from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_lab.jsx";
 import BASH_QUIZ from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_quiz.jsx";
+// End Bash Scripting
+// Obfuscation
 import Obfuscation from "./Pages/Website/UserHome/Labs/Obfuscation/Obfuscation.jsx";
 import OBFUSCATION_LAB from "./Pages/Website/UserHome/Labs/Obfuscation/Obfuscation_lab.jsx";
+import OBFUSCATION_LOGIN from "./Pages/Website/UserHome/Labs/Obfuscation/Practical/Lab_1/Login.jsx";
+// End Obfuscation
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
@@ -199,6 +203,7 @@ function App() {
           {/* End InfoDisc */}
 
           {/* End Sql_Injection */}
+          {/* Start XSS */}
           <Route path="/xss" element={<XSS />} />
           <Route path="/xss/xss_lab" element={<XSS_LAB />} />
           <Route path="/xss/xss_lab/first_lab" element={<XSS_FIRST />} />
@@ -263,6 +268,7 @@ function App() {
             element={<InsecureDirectObjectReference />}
           />
           {/* End Insecure_Direct_Object_Reference */}
+          {/* Start Cookies */}
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />
           <Route
@@ -289,6 +295,8 @@ function App() {
             path="/cookies/cookies_lab/second/support"
             element={<CookiesSecondSupport />}
           />
+          {/* End Cookies */}
+          {/* Start Linux */}
           <Route path="/linux" element={<Linux />} />
           <Route path="/linux/linux_lab" element={<LINUX_LAB />} />
           <Route
@@ -308,14 +316,20 @@ function App() {
             element={<LINUX_THIRD_LAB />}
           />
           {/* End Linux */}
+          {/* Start Bash Scripting */}
           <Route path="/bash-scripting" element={<Bash />} />
           <Route path="/bash-scripting/bash_lab" element={<BASH_LAB />} />
           <Route path="/bash-scripting/bash_quiz" element={<BASH_QUIZ />} />
           {/* End Bash Scripting */}
+          {/* Start Obfuscation */}
           <Route path="/obfuscation" element={<Obfuscation />} />
           <Route
             path="/Obfuscation/obfuscation_lab"
             element={<OBFUSCATION_LAB />}
+          />
+          <Route
+            path="/Obfuscation/obfuscation_lab/login"
+            element={<OBFUSCATION_LOGIN />}
           />
           {/* End Obfuscation */}
         </Route>

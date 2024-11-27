@@ -69,7 +69,7 @@ export default function Bash_lab() {
             <h2>Obfuscation Lab</h2>
             <p className={styles["section-p"]}>Test Your Hacking skills</p>
             <div className={styles.row}>
-                <Link to="#" className={styles["course-card"]}>
+                <Link to="/Obfuscation/obfuscation_lab/login" className={styles["course-card"]}>
                     <div className={styles["course-image"]}>
                         <img src={image} alt="" />
                     </div>
