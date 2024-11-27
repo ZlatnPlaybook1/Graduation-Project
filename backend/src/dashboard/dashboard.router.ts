@@ -8,7 +8,7 @@ import {
     getUserByToken,
     addPersonalInfo,
     resetPassword,
-    updateUser
+    updateUser, upload, saveImage
 } from "./dashboard.controller";
 
 let dashboardRouter = Router();
@@ -29,7 +29,7 @@ dashboardRouter.delete("/user/:id", deleteUser)
 //user
 dashboardRouter.get("/user", isAuthenticated, getUserByToken)
 
-dashboardRouter.post("/dataUser", isAuthenticated, addPersonalInfo)
+dashboardRouter.post("/dataUser", isAuthenticated, upload.single("image"),saveImage,addPersonalInfo)
 
 dashboardRouter.post("/reset-password",isAuthenticated,resetPassword)
 

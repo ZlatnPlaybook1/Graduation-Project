@@ -1,5 +1,6 @@
 import {Request, Response} from "express";
 import jwt from 'jsonwebtoken';
+import multer from 'multer';
 import prisma from "../utilities/db";
 import {hashPassword} from "../utilities/auth";
 
@@ -153,6 +154,7 @@ export async function getUserByToken(req: Request, res: Response): Promise<Respo
                 birthday: true,
                 phoneNum: true,
                 address: true,
+                image: true
             },
         });
 
@@ -192,11 +194,15 @@ export async function addPersonalInfo(req: Request, res: Response): Promise<Resp
 
         const user = await prisma.user.update({
             where: {id: userId},
+            include: {image: true},
             data: {
                 name: req.body.name,
                 birthday: req.body.birthday,
                 phoneNum: req.body.phone,
                 address: req.body.address,
+                image: {
+                    connect: { id: req.body.imageId }, // Link the uploaded image
+                },
             },
         });
         return res.status(200).json({
@@ -239,7 +245,7 @@ export async function personalInfo(req: Request, res: Response): Promise<Respons
     try {
         const user = await prisma.user.findUnique({
             where: {id},
-            select: {email: true, name: true, role: true,birthday:true,phoneNum:true,address:true},
+            select: {email: true, name: true, role: true, birthday: true, phoneNum: true, address: true},
 
         });
 
@@ -249,11 +255,88 @@ export async function personalInfo(req: Request, res: Response): Promise<Respons
 
         return res.status(200).json({
             msg: "User found",
-            data: {email: user.email, name: user.name, role: user.role,birthday:user.birthday,phoneNum:user.phoneNum,address:user.address}
+            data: {
+                email: user.email,
+                name: user.name,
+                role: user.role,
+                birthday: user.birthday,
+                phoneNum: user.phoneNum,
+                address: user.address
+            }
         });
 
     } catch (error) {
         console.error('Error getting user:', error);
         return res.status(500).json({error: " server error"});
+    }
+}
+
+
+// for user photo
+export const upload = multer({
+    storage: multer.diskStorage({
+        destination: (req, file, cb) => {
+            cb(null, 'uploads/'); // Directory where files will be stored
+        },
+        filename: (req, file, cb) => {
+            cb(null, `${Date.now()}-${file.originalname}`); // Unique filename
+        },
+    }),
+    fileFilter: (req, file, cb) => {
+        // Check the file type
+        const allowedMimeTypes = ['image/jpeg','image/jpg', 'image/png', 'image/gif'];
+        if (allowedMimeTypes.includes(file.mimetype)) {
+            cb(null, true); // Accept the file
+        } else {
+            cb(new Error('Only image files are allowed!'), false); // Reject the file
+        }
+    },
+});
+
+// Save the file details to the database
+export async function saveImage(req, res, next) {
+    try {
+        const file = req.file;
+        const userId = req.params.id;
+
+        if (!userId) {
+            return res.status(400).json({ error: 'User ID is missing' });
+        }
+
+        if (!file) {
+            return res.status(400).send('No file uploaded or unsupported file type.');
+        }
+
+        // Check if a user already has an image
+        const existingImage = await prisma.image.findFirst({
+            where: { userId },
+        });
+
+        if (existingImage) {
+            // Delete the existing image file from the file system (optional)
+            const fs = require('fs');
+            fs.unlinkSync(existingImage.path); // Delete the old file
+
+            // Delete the old image record from the database
+            await prisma.image.delete({
+                where: { id: existingImage.id },
+            });
+        }
+
+        // Save the new image
+        const savedFile = await prisma.image.create({
+            data: {
+                name: file.originalname,
+                mimetype: file.mimetype,
+                path: file.path,
+                user: { connect: { id: userId } },
+            },
+        });
+
+        req.body.imageId = savedFile.id; // Attach image ID to the request body
+        next();
+    } catch (error) {
+        console.error(error);
+        res.status(500).send(error.message || 'Error uploading file.');
     }
 }
