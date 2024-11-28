@@ -5,9 +5,10 @@ import "./ShowHint_Btn.css";
 export default function ShowHint_Btn({ hintText }) {
   const showHint = () => {
     Swal.fire({
+      title: "Hint",
+      html: hintText,
       icon: "info",
-      title: "Here's a hint!",
-      text: hintText,
+      confirmButtonText: "Got it!",
     });
   };
 
