@@ -54,8 +54,11 @@ import AC_VULN_First_LAB from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/f
 // Cross-Site Request Forgery
 import CSRF from "./Pages/Website/UserHome/Labs/CSRF/CSRF.jsx";
 import CSRF_LABS from "./Pages/Website/UserHome/Labs/CSRF/CSRF_labs.jsx";
+import CSRF_FIRST_LAB from "./Pages/Website/UserHome/Labs/CSRF/practical/first_lab/First_Lab.jsx";
+import CSRF_SECOND_LAB from "./Pages/Website/UserHome/Labs/CSRF/practical/second_lab/Second_Lab.jsx";
 // End Cross-Site Request Forgery
-
+// ProductDetails
+import ProductDetails from "./Pages/Website/UserHome/Labs/CSRF/practical/first_lab/ProductDetails.jsx";
 // Regular Expression
 import REGEX from "./Pages/Website/UserHome/Labs/Regex/Regex.jsx";
 import REGEX_LABS from "./Pages/Website/UserHome/Labs/Regex/Regex_labs.jsx";
@@ -181,8 +184,22 @@ function App() {
           {/* CSRF */}
           <Route path="/CSRF" element={<CSRF />} />
           <Route path="/CSRF/CSRF_labs" element={<CSRF_LABS />} />
-          {/* End CSRF */}
+          <Route
+            path="/CSRF/CSRF_labs/first_lab"
+            element={<CSRF_FIRST_LAB />}
+          />
+          <Route
+            path="/CSRF/CSRF_labs/second_lab"
+            element={<CSRF_SECOND_LAB />}
+          />
 
+          {/* End CSRF */}
+          {/* ProductDetails */}
+          <Route
+            path="/CSRF/CSRF_labs/first_lab/productdetails/:id"
+            element={<ProductDetails />}
+          />
+          {/* End ProductDetails */}
           {/* Regex */}
           <Route path="/Regex" element={<REGEX />} />
           <Route path="/Regex/Regex_labs" element={<REGEX_LABS />} />

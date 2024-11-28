@@ -48,10 +48,6 @@ const Courses = () => {
                   </li>
                 </ul>
               </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal"></i>
-                <p>Easy</p>
-              </div>
             </a>
           </div>
           <div className="row-course">
@@ -122,10 +118,6 @@ const Courses = () => {
                   <li>The Web And Common Attacks</li>
                   <li>Learn to Use The Linux OS</li>
                 </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal"></i>
-                <p>Easy</p>
               </div>
             </a>
           </div>
@@ -198,10 +190,6 @@ const Courses = () => {
                   <li>Learn to Use The Linux OS</li>
                 </ul>
               </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal"></i>
-                <p>Easy</p>
-              </div>
             </a>
           </div>
           <div className="row-course">
@@ -273,10 +261,6 @@ const Courses = () => {
                   <li>The Web And Common Attacks</li>
                   <li>Learn to Use The Linux OS</li>
                 </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal"></i>
-                <p>Easy</p>
               </div>
             </a>
           </div>
@@ -353,10 +337,6 @@ const Courses = () => {
                   <li>Learn to Use The Linux OS</li>
                 </ul>
               </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal"></i>
-                <p>Easy</p>
-              </div>
             </a>
           </div>
           <div className="row-course">
@@ -428,10 +408,6 @@ const Courses = () => {
                   <li>Learn to Use The Linux OS</li>
                 </ul>
               </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal"></i>
-                <p>Easy</p>
-              </div>
             </a>
           </div>
           <div className="row-course">
@@ -502,10 +478,6 @@ const Courses = () => {
                   <li>The Web And Common Attacks</li>
                   <li>Learn to Use The Linux OS</li>
                 </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal"></i>
-                <p>Easy</p>
               </div>
             </a>
           </div>

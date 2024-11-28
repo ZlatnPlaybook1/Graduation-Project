@@ -1,0 +1,36 @@
+.product-details {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+}
+
+.product-details__image img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.product-details__content {
+  max-width: 600px;
+}
+
+.product-details__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-details__price {
+  font-size: 20px;
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+.product-details__rating {
+  font-size: 16px;
+  color: #f39c12;
+}
+.lab1-header {
+  text-align: center;
+}

@@ -1,0 +1,43 @@
+/* Go to Top Button - Base Styles */
+.go-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px 15px;
+  border-radius: 50%;
+  background-color: #3f72af;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden;
+}
+
+.go-to-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.go-to-top-btn .go-to-top-btn-icon {
+  font-size: 20px;
+}
+
+/* Hover effect */
+.go-to-top-btn:hover {
+  background-color: #2d56a3;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Focus effect */
+.go-to-top-btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(63, 114, 175, 0.8);
+}

@@ -27,7 +27,7 @@
 .course .row-course .course-card {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 380px; /* We Can Change it again */
   background-color: white;
   border-radius: 5px;
   padding: 0;

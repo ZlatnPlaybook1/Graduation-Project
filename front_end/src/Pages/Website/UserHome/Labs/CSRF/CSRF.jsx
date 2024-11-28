@@ -54,7 +54,7 @@ export default function CSRF() {
           <div className="breadcrumb">
             <ul>
               <li>
-                <Link to="">Home</Link>
+                <Link to="/home">Home</Link>
               </li>
               <li>
                 <Link to="">Cross-Site Request Forgery (CSRF)</Link>
@@ -111,90 +111,322 @@ export default function CSRF() {
           <div className="row">
             <div className="faq-section-lab1" ref={faqSectionRef}>
               <dl className="section-text-lab1">
-                {/* Task 1 */}
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 1</span> Exploiting CSRF Vulnerabilities
+                {/* Intro */}
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Introduction </span> Introduction to CSRF
                 </dt>
-                <dd className="fadeInUp faq-body-lab1">
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <h3>
+                    Welcome to the Cross-Site Request Forgery (CSRF) Learning
+                    Room!
+                  </h3>
+                  <div className="desc">
+                    <h4>What is CSRF?</h4>
+                    <p>
+                      Cross-Site Request Forgery (CSRF) is a web security
+                      vulnerability that forces a user’s browser to execute
+                      unwanted actions on a trusted website where the user is
+                      currently authenticated. By leveraging the user’s
+                      credentials (such as cookies or tokens), attackers can
+                      make malicious requests appear as if they originated from
+                      the victim. CSRF often targets state-changing requests,
+                      such as fund transfers, password changes, or sensitive
+                      data updates.
+                    </p>
+                  </div>
+                  <h4>Key Topics Covered:</h4>
+                  <ol>
+                    <li>
+                      <b>Understanding CSRF</b>: Overview of how CSRF attacks
+                      work and their impact.
+                    </li>
+                    <li>
+                      <b>How CSRF Attacks Work</b>: Detailed mechanics and
+                      common techniques used in CSRF exploitation.
+                    </li>
+                    <li>
+                      <b>CSRF vs. XSS</b>: The differences between CSRF and
+                      Cross-Site Scripting (XSS) attacks.
+                    </li>
+                    <li>
+                      <b>Real-World CSRF Examples</b>: Practical examples
+                      demonstrating the impact of CSRF vulnerabilities.
+                    </li>
+                    <li>
+                      <b>CSRF Prevention Techniques</b>: Best practices to
+                      secure applications, such as CSRF tokens and SameSite
+                      cookies.
+                    </li>
+                  </ol>
+                </dd>
+                {/* Topic 1 */}
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Topic 1</span> Understanding CSRF
+                </dt>
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <ul>
                     <li>
-                      <p>
-                        CSRF vulnerabilities occur when a web application
-                        processes unauthorized actions on behalf of an
-                        authenticated user.
-                      </p>
+                      <b>Definition:</b>CSRF exploits the trust a web
+                      application has in the user’s browser by sending
+                      unauthorized requests to a site while the user is logged
+                      in.
                     </li>
                     <li>
-                      <p>
-                        Attackers can trick users into executing malicious
-                        requests by embedding hidden forms, links, or scripts
-                        into trusted websites or emails.
-                      </p>
+                      <b>Why It Matters:</b>CSRF attacks can bypass
+                      authentication mechanisms by tricking the victim into
+                      unknowingly executing harmful actions.
                     </li>
                     <li>
-                      <p>
-                        Implement anti-CSRF tokens in all forms and sensitive
-                        actions, and validate their presence and authenticity on
-                        the server side.
-                      </p>
+                      <b>Impact:</b>Although the attacker cannot see the
+                      response, they can modify sensitive information or trigger
+                      critical actions on the victim’s behalf.
                     </li>
                   </ul>
                 </dd>
-
-                {/* Task 2 */}
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 2</span> Lack of CSRF Protection in Forms
+                {/* Topic 2 */}
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Topic 2</span> How CSRF Attacks Work
                 </dt>
-                <dd className="fadeInUp faq-body-lab1">
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <ul>
                     <li>
-                      <p>
-                        Forms without CSRF protection are highly vulnerable to
-                        exploitation by attackers.
-                      </p>
+                      <b>Step-by-Step Breakdown:</b>
+                      <ol>
+                        <li>
+                          The user logs into a trusted website (e.g., a bank).
+                        </li>
+                        <li>
+                          The attacker tricks the user into clicking a malicious
+                          link or visiting an attacker-controlled page.
+                        </li>
+                        <li>
+                          The browser sends an authenticated request to the
+                          trusted site (using the user’s session cookies).
+                        </li>
+                        <li>
+                          The server processes the request because it assumes it
+                          is from the user.
+                        </li>
+                      </ol>
                     </li>
+
                     <li>
-                      <p>
-                        Attackers can create malicious forms that mimic
-                        legitimate ones, tricking users into submitting them
-                        unknowingly.
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Ensure that all forms handling sensitive data include
-                        CSRF tokens, and use proper referrer checks to verify
-                        request sources.
-                      </p>
+                      <b>Common Techniques Used:</b>
+                      <ol>
+                        <li>
+                          Hidden forms ( <mark>&lt;form &gt; </mark> with
+                          auto-submit).
+                        </li>
+                        <li>
+                          Malicious image tags (e.g.,{" "}
+                          <mark>
+                            &lt; img
+                            src="https://bank.com/transfer?amount=1000&to=attacker"&gt;
+                          </mark>
+                          ).
+                        </li>
+                        <li>JavaScript-based automated requests.</li>
+                        <li>Links disguised as legitimate content.</li>
+                      </ol>
                     </li>
                   </ul>
                 </dd>
-
-                {/* Task 3 */}
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 3</span> Insufficient Validation of HTTP Requests
+                {/* Topic 3 */}
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Topic 3</span> CSRF vs. XSS
                 </dt>
-                <dd className="fadeInUp faq-body-lab1">
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <table border={3}>
+                    <caption>
+                      Simple Comparison between <b>CSRF</b> & <b>XSS</b>
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th>
+                          <b>CSRF</b> (Cross-Site Request Forgery)
+                        </th>
+                        <th>
+                          <b>XSS </b>(Cross-Site Scripting)
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          Exploits the trust between the website and the
+                          authenticated user.
+                        </td>
+                        <td>
+                          Exploits the trust between the user and the website.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Typically used to execute actions on behalf of the
+                          user without their consent.
+                        </td>
+                        <td>
+                          Allows the attacker to inject malicious scripts into
+                          web pages viewed by users.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          No need for the attacker to inject malicious scripts
+                          into the trusted site.
+                        </td>
+                        <td>
+                          Often used to steal sensitive data (e.g., cookies,
+                          session tokens) or perform actions via the script.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </dd>
+                {/* Topic 4 */}
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Topic 4</span> Real-World CSRF Examples
+                </dt>
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <ul>
                     <li>
-                      <p>
-                        Improper validation of incoming HTTP requests can make a
-                        web application susceptible to CSRF attacks.
-                      </p>
+                      <b>Unauthorized Fund Transfers:</b> Example: A user logged
+                      into their banking account unknowingly clicks a link
+                      crafted by the attacker, transferring funds to the
+                      attacker’s account.
+                    </li>
+
+                    <li>
+                      <b>Changing Account Settings:</b> Example: CSRF requests
+                      change the victim’s email address or password on a trusted
+                      site.
                     </li>
                     <li>
-                      <p>
-                        Attackers can execute unauthorized requests by
-                        exploiting the victim’s active session and the lack of
-                        request validation.
-                      </p>
+                      <b>Social Media Spam:</b>Example: Posting spam content or
+                      sending friend requests on behalf of the victim.
                     </li>
                     <li>
-                      <p>
-                        Implement SameSite cookie attributes, enforce CSRF
-                        tokens in requests, and use strong authentication
-                        mechanisms to validate the origin of requests.
-                      </p>
+                      <b>Deleting or Modifying Data:</b> Example: CSRF attacks
+                      delete files, cancel orders, or change critical
+                      configuration settings.
+                    </li>
+                  </ul>
+                </dd>
+                {/* Topic 5 */}
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Topic 5</span> CSRF Prevention Techniques
+                </dt>
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <ul>
+                    <li>
+                      <b>CSRF Tokens (Synchronizer Token Pattern):</b>
+                      <ol>
+                        <li>
+                          Each form or state-changing request includes a unique,
+                          unpredictable token generated by the server.
+                        </li>
+                        <li>
+                          The server validates the token before processing the
+                          request.
+                        </li>
+                        <li>
+                          If the token is missing or incorrect, the request is
+                          rejected.
+                        </li>
+                      </ol>
+                    </li>
+
+                    <li>
+                      <b>SameSite Cookies:</b>
+
+                      <ol>
+                        <li>
+                          The <mark>SameSite</mark> attribute prevents cookies
+                          from being sent with cross-origin requests.
+                        </li>
+                        <li>
+                          <b>Policies:</b>
+                          <ul>
+                            <li>
+                              <mark>Strict</mark>: Cookies are sent only for
+                              same-origin requests.
+                            </li>
+                            <li>
+                              <mark>Lax</mark>: Cookies are sent for same-site
+                              GET requests.
+                            </li>
+                            <li>
+                              <mark>None</mark>: Cookies are sent regardless of
+                              origin (requires <mark>Secure</mark> flag for
+                              HTTPS).
+                            </li>
+                          </ul>
+                        </li>
+                      </ol>
+                    </li>
+                    <li>
+                      <b>Referer and Origin Header Validation:</b>
+                      <ol>
+                        <li>
+                          The server checks the <mark>Referer</mark> or
+                          <mark>Origin</mark> header of incoming requests.
+                        </li>
+                        <li>
+                          Ensures the request originates from a trusted domain.
+                        </li>
+                      </ol>
+                    </li>
+                    <li>
+                      <b>Custom Headers:</b>
+                      <ol>
+                        <li>
+                          Require requests to include a custom header (e.g.,
+                          <mark>X-CSRF-Token</mark> ), which browsers don’t send
+                          by default.
+                        </li>
+                        <li>
+                          Ensures that only requests crafted by the client’s
+                          front-end are processed.
+                        </li>
+                      </ol>
+                    </li>
+                    <li>
+                      <b>Secure Request Methods:</b>
+                      <ol>
+                        <li>
+                          Avoid using GET requests for state-changing actions.
+                        </li>
+                        <li>
+                          Use POST, PUT, or DELETE with proper validation.
+                        </li>
+                      </ol>
+                    </li>
+                    <li>
+                      <b>User Education:</b>
+                      <ol>
+                        <li>
+                          Warn users about clicking untrusted links, especially
+                          while logged into sensitive applications.
+                        </li>
+                      </ol>
                     </li>
                   </ul>
                 </dd>

@@ -280,7 +280,7 @@ a {
 }
 
 .faq-section-lab1 .section-text-lab1 .faq-header-lab1 span {
-  color: red !important;
+  color: #a3ea2a !important;
   margin-right: 40px !important;
   position: relative !important;
 }
@@ -302,7 +302,7 @@ a {
   font-size: 18px !important;
   padding: 15px 25px !important;
   line-height: 1.9 !important;
-  border-left: 4px solid red !important;
+  border-left: 4px solid #a3ea2a !important;
   box-shadow: 1px 2px rgb(0, 0, 0, 0.1) !important;
   border-radius: 0 0 5px 5px !important;
   background-color: white !important;
@@ -333,7 +333,7 @@ a {
   font-size: 18px !important;
 }
 .faq-section-lab1 .section-text-lab1 .faq-body-lab1 ul li a {
-  color: #ff4747 !important;
+  color: #a3ea2a !important;
   text-decoration: underline !important;
 }
 
@@ -342,7 +342,7 @@ a {
 }
 
 .faq-section-lab1 .section-text-lab1 .faq-body-lab1 li h2 {
-  color: #ff4747 !important;
+  color: #a3ea2a !important;
 }
 
 .faq-section-lab1 .section-text-lab1 .faq-body-lab1 ul pre {
@@ -441,3 +441,56 @@ a {
   background-color: rgb(163, 234, 42) !important;
 }
 /* End Course Content */
+
+/*Table*/
+dt.wave-lab1.fadeInUp.faq-header-lab1 span {
+  color: #a3ea2a !important;
+}
+.faq-section-lab1
+  .section-text-lab1
+  .faq-body-lab1
+  dt.wave-lab1.fadeInUp.faq-header-lab1.m,
+#border-left,
+dd {
+  border-left: 4px solid #a3ea2a !important;
+}
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 3px solid #333;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+caption {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+thead th {
+  background-color: #79b01c;
+  color: white;
+  padding: 10px;
+  border: 2px solid #333;
+  text-align: center;
+}
+
+tbody td {
+  padding: 8px 10px;
+  border: 2px solid #333;
+  text-align: left;
+}
+tr {
+  transition: all 0.3s ease-in-out;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #a8e08e;
+}
