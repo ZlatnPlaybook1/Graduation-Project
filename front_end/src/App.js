@@ -105,6 +105,10 @@ import UnrestrictedFirstlab from "./Pages/Website/UserHome/Labs/UnrestrictedFile
 import UnrestrictedSecondlab from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/Practical/Unrestricted_Lab2.jsx";
 import UnrestrictedThirdlab from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/Practical/Unrestricted_Lab3.jsx";
 import InsecureDirectObjectReference from "./Pages/Website/UserHome/Labs/IDOR/InsecureDirectObjectReference.jsx";
+import InsecureDirectObjectReferenceLabs from "./Pages/Website/UserHome/Labs/IDOR/InsecureDirectObjectReferenceLabs.jsx";
+import IDORLab1 from "./Pages/Website/UserHome/Labs/IDOR/practical/IDOR_Lab1.jsx";
+import IDORLab2 from "./Pages/Website/UserHome/Labs/IDOR/practical/IDOR_Lab2.jsx";
+import IDORLab3 from "./Pages/Website/UserHome/Labs/IDOR/practical/IDOR_Lab3.jsx";
 
 function App() {
   return (
@@ -283,6 +287,22 @@ function App() {
           <Route
             path="/Insecure_Direct_Object_Reference(IDOR)"
             element={<InsecureDirectObjectReference />}
+          />
+          <Route
+            path="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs"
+            element={<InsecureDirectObjectReferenceLabs />}
+          />
+          <Route
+            path="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab1"
+            element={<IDORLab1 />}
+          />
+          <Route
+            path="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab2"
+            element={<IDORLab2 />}
+          />
+          <Route
+            path="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab3"
+            element={<IDORLab3 />}
           />
           {/* End Insecure_Direct_Object_Reference */}
           {/* Start Cookies */}

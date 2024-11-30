@@ -5,7 +5,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 120px;
 }
 
 .page_404 img {
@@ -20,6 +19,7 @@
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  margin-left: 120px;
 }
 
 .four_zero_four_bg h1 {
