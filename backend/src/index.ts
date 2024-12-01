@@ -18,12 +18,13 @@ import lab7xss from "./labs/xss/lab7/lab7router";
 import lab1UnrestrictedFile from "./labs/unrestrictedFileUpload/lab1/lab1.router";
 import lab2UnrestrictedFile from "./labs/unrestrictedFileUpload/lab2/lab2.router";
 import lab3UnrestrictedFile from "./labs/unrestrictedFileUpload/lab3/lab3.router";
+import lab1IDORSRouter from "./labs/IDORS/lab1/lab1.router";
 const app = express();
 
 app.use(cors())
 app.use(morgan('dev')); // morgan: HTTP request logger middleware,
                         // dev: predefined format string that Morgan will use to log requests
-app.use(bodyParser.json({ limit: '10mb' })); // Adjust size as needed
+app.use(bodyParser.json({ limit: '10mb' })); 
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
@@ -43,6 +44,7 @@ app.use('/api', lab7xss);
 app.use('/api', lab1UnrestrictedFile);
 app.use('/api', lab2UnrestrictedFile);
 app.use('/api', lab3UnrestrictedFile);
+app.use('/api', lab1IDORSRouter);
 
 
 dotenv.config()
