@@ -36,6 +36,7 @@ export default function Writer() {
             Authorization: `Bearer ${token}`,
           },
         });
+        console.log(res);
         const data = res.data.data;
 
         setFormData((prevData) => ({

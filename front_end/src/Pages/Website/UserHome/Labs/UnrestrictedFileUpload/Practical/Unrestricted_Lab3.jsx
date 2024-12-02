@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./FileUplode.css";
-import Header from "../../../Header/Header";
 import Cookie from "cookie-universal";
+import GOBack from "../../../GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 
 const UnrestrictedLab1 = () => {
   const [file, setFile] = useState(null);
@@ -74,7 +75,8 @@ const UnrestrictedLab1 = () => {
 
   return (
     <>
-      <Header />
+      <GOBack />
+      <ShowHint />
       <div className="unique-container">
         <div className="unique-container-wrapper">
           <div className="row pt-5 mt-5 mb-3">

@@ -1,91 +1,78 @@
-// import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import Cookie from "cookie-universal";
+import "./First_Lab.css";
 
-// const UserList = () => {
-//   const [users, setUsers] = useState([]);
-//   const [error, setError] = useState("");
-//   const [loading, setLoading] = useState(false);
+export default function UserList() {
+  const [users, setUsers] = useState([]);
+  const [token, setToken] = useState("");
 
-//   // Fetch users from the server
-//   const fetchUsers = async () => {
-//     setLoading(true);
-//     try {
-//       const response = await fetch("http://127.0.0.1:8080/api/users");
+  // Fetch token from cookies on component mount
+  useEffect(() => {
+    const cookie = Cookie();
+    const retrievedToken = cookie.get("CuberWeb");
+    setToken(retrievedToken);
+  }, []);
 
-//       if (!response.ok) {
-//         if (response.status === 401) {
-//           setError("Unauthorized: Invalid or expired token.");
-//         } else {
-//           setError(`Error: ${response.status}`);
-//         }
-//         setLoading(false);
-//         return;
-//       }
+  // Fetch user list from the API
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await fetch("http://localhost:8080/api/vulnUsers", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (response.ok) {
+          const data = await response.json();
+          setUsers(data); // Assuming API returns an array of objects with id and name
+        } else {
+          console.error("Failed to fetch users.");
+        }
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    };
 
-//       const data = await response.json();
-//       setUsers(data);
-//       setLoading(false);
-//     } catch (err) {
-//       setError("Failed to fetch users. Please try again later.");
-//       setLoading(false);
-//       console.error(err);
-//     }
-//   };
+    if (token) {
+      fetchUsers();
+    }
+  }, [token]);
 
-//   // Handle user deletion
-//   const deleteUser = async (id) => {
-//     if (window.confirm("Are you sure you want to delete this user?")) {
-//       try {
-//         const response = await fetch(`http://127.0.0.1:8080/api/users/${id}`, {
-//           method: "DELETE",
-//         });
+  // Delete a user
+  const deleteUser = async (id) => {
+    try {
+      const response = await fetch(
+        `http://localhost:8080/api/vulnUsers/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
-//         if (!response.ok) {
-//           setError(`Error: ${response.status}`);
-//           return;
-//         }
+      if (response.ok) {
+        setUsers(users.filter((user) => user.id !== id)); // Update UI
+      } else {
+        console.error("Failed to delete user.");
+      }
+    } catch (error) {
+      console.error("Error deleting user:", error);
+    }
+  };
 
-//         // Remove the deleted user from the state
-//         setUsers(users.filter((user) => user.id !== id));
-//       } catch (err) {
-//         setError("Failed to delete user. Please try again later.");
-//         console.error(err);
-//       }
-//     }
-//   };
-
-//   useEffect(() => {
-//     fetchUsers(); // Fetch users when the component mounts
-//   }, []);
-
-//   return (
-//     <div>
-//       <h1>Users</h1>
-//       {error && <p style={{ color: "red" }}>{error}</p>}{" "}
-//       {/* Display error messages */}
-//       {loading ? (
-//         <p>Loading...</p>
-//       ) : (
-//         <ul>
-//           {users.map((user) => (
-//             <li key={user.id}>
-//               {user.name} -{" "}
-//               <button
-//                 style={{
-//                   color: "blue",
-//                   cursor: "pointer",
-//                   border: "none",
-//                   background: "none",
-//                 }}
-//                 onClick={() => deleteUser(user.id)}
-//               >
-//                 Delete
-//               </button>
-//             </li>
-//           ))}
-//         </ul>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default UserList;
+  return (
+    <div className="users-container">
+      <h2>Users</h2>
+      {users.map((user) => (
+        <div className="user-item" key={user.id}>
+          <h2 className="user-name">{user.name}</h2>
+          <button className="delete-btn" onClick={() => deleteUser(user.id)}>
+            Delete
+          </button>
+        </div>
+      ))}
+    </div>
+  );
+}

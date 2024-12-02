@@ -21,6 +21,7 @@ import lab3UnrestrictedFile from "./labs/unrestrictedFileUpload/lab3/lab3.router
 import lab1IDORSRouter from "./labs/IDORS/lab1/lab1.router";
 import userRouter from "./labs/AC-Vuln/Lab1/user.router";
 const app = express();
+app.use("/uploads", express.static("uploads"));
 
 app.use(cors());
 app.use(morgan("dev")); // morgan: HTTP request logger middleware,
