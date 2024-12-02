@@ -1,91 +1,56 @@
-// import React, { useEffect, useState } from "react";
+import React from "react";
+import "../Lab_Style.css";
+import ProductList from "../../../../ProductList/ProductList";
+import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
+import products from "../data.json";
+import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
 
-// const UserList = () => {
-//   const [users, setUsers] = useState([]);
-//   const [error, setError] = useState("");
-//   const [loading, setLoading] = useState(false);
+export default function Second_Lab() {
+  const hintMessage = `
+  <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
+    <li>1.
+      Review the lab home page's source using Burp Suite or your web browser's developer tools.
+    </li>
+    \n
+    <li>2.
+      Observe that it contains some JavaScript that discloses the URL of the admin panel.
+    </li>
+    \n
+    <li>3.
+      Load the admin panel and delete <mark>carlos</mark>.
+    </li>
+  </ul>
+`;
 
-//   // Fetch users from the server
-//   const fetchUsers = async () => {
-//     setLoading(true);
-//     try {
-//       const response = await fetch("http://127.0.0.1:8080/api/users");
+  const scriptContent = `
+    var isAdmin = false;
+    if (isAdmin) {
+      var topLinksTag = document.getElementsByClassName("top-links")[0];
+      var adminPanelTag = document.createElement('a');
+      adminPanelTag.setAttribute('href', '/admin-qfn717');
+      adminPanelTag.innerText = 'Admin panel';
+      topLinksTag.append(adminPanelTag);
+      var pTag = document.createElement('p');
+      pTag.innerText = '|';
+      topLinksTag.appendChild(pTag);
+    }
+  `;
 
-//       if (!response.ok) {
-//         if (response.status === 401) {
-//           setError("Unauthorized: Invalid or expired token.");
-//         } else {
-//           setError(`Error: ${response.status}`);
-//         }
-//         setLoading(false);
-//         return;
-//       }
-
-//       const data = await response.json();
-//       setUsers(data);
-//       setLoading(false);
-//     } catch (err) {
-//       setError("Failed to fetch users. Please try again later.");
-//       setLoading(false);
-//       console.error(err);
-//     }
-//   };
-
-//   // Handle user deletion
-//   const deleteUser = async (id) => {
-//     if (window.confirm("Are you sure you want to delete this user?")) {
-//       try {
-//         const response = await fetch(`http://127.0.0.1:8080/api/users/${id}`, {
-//           method: "DELETE",
-//         });
-
-//         if (!response.ok) {
-//           setError(`Error: ${response.status}`);
-//           return;
-//         }
-
-//         // Remove the deleted user from the state
-//         setUsers(users.filter((user) => user.id !== id));
-//       } catch (err) {
-//         setError("Failed to delete user. Please try again later.");
-//         console.error(err);
-//       }
-//     }
-//   };
-
-//   useEffect(() => {
-//     fetchUsers(); // Fetch users when the component mounts
-//   }, []);
-
-//   return (
-//     <div>
-//       <h1>Users</h1>
-//       {error && <p style={{ color: "red" }}>{error}</p>}{" "}
-//       {/* Display error messages */}
-//       {loading ? (
-//         <p>Loading...</p>
-//       ) : (
-//         <ul>
-//           {users.map((user) => (
-//             <li key={user.id}>
-//               {user.name} -{" "}
-//               <button
-//                 style={{
-//                   color: "blue",
-//                   cursor: "pointer",
-//                   border: "none",
-//                   background: "none",
-//                 }}
-//                 onClick={() => deleteUser(user.id)}
-//               >
-//                 Delete
-//               </button>
-//             </li>
-//           ))}
-//         </ul>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default UserList;
+  return (
+    <>
+      <GoBack_Btn />
+      <ShowHint_Btn hintText={hintMessage} />
+      <div className="container">
+        <h2 className="lab-header">Products</h2>
+        <ProductList products={products} />
+        <Go2TopBtn />
+      </div>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `<script>${scriptContent}</script>`,
+        }}
+      />
+    </>
+  );
+}

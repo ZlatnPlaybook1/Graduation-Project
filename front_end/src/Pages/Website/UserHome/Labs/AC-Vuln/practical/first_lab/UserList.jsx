@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Cookie from "cookie-universal";
-import "./First_Lab.css";
+import "../Lab_Style.css";
 
 export default function UserList() {
   const [users, setUsers] = useState([]);
