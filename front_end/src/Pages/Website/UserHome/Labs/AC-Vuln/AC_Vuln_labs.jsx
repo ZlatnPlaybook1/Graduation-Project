@@ -46,7 +46,7 @@ export default function AC_Vuln_labs() {
           <div className="row-ac-vuln">
             {/* lab1 */}
             <Link
-              to="/AC-Vuln/AC_Vuln_labs/first_lab/ProductList"
+              to="/AC-Vuln/AC_Vuln_labs/first_lab"
               className="course-card-ac-vuln"
             >
               <div className="course-image-ac-vuln">

@@ -1,5 +1,5 @@
-import {Router} from "express";
-import {loginController} from "./login.controller";
+import { Router } from "express";
+import { loginController } from "./login.controller";
 
 let loginRouter = Router();
 

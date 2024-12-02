@@ -103,3 +103,7 @@ enum Role {
   admin
   writer
 }
+model ACUser {
+  id    Int    @id @default(autoincrement())
+  name  String
+}
