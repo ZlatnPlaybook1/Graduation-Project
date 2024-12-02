@@ -47,7 +47,7 @@ app.use("/api", lab1UnrestrictedFile);
 app.use("/api", lab2UnrestrictedFile);
 app.use("/api", lab3UnrestrictedFile);
 app.use("/api", lab1IDORSRouter);
-app.use("/users", userRouter);
+app.use("/api", userRouter);
 
 dotenv.config();
 

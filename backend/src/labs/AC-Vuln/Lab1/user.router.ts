@@ -1,9 +1,9 @@
 import express from "express";
 import { getUsers, deleteUser } from "./user.controller";
 
-const router = express.Router();
+const userRouter = express.Router();
 
-router.get("/", getUsers);
-router.delete("/:id", deleteUser);
+userRouter.get("/vulnUsers", getUsers);
+userRouter.delete("/vulnUsers/:id", deleteUser);
 
-export default router;
+export default userRouter;
