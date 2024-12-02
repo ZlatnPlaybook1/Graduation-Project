@@ -69,7 +69,7 @@ export default function InsecureDirectObjectReferenceLabs() {
             </Link>
             {/* lab2 */}
             <Link
-              to="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab1"
+              to="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab2"
               className="course-card-XSS"
             >
               <div className="course-image-XSS">
@@ -95,7 +95,7 @@ export default function InsecureDirectObjectReferenceLabs() {
             </Link>
             {/* lab3 */}
             <Link
-              to="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab1"
+              to="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab3"
               className="course-card-XSS"
             >
               <div className="course-image-XSS">
