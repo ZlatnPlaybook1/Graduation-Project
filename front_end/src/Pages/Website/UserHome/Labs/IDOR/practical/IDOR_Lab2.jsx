@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./IDOR_Lab2.css";
 import GoBack_Btn from "../../../GoBack_Btn/GoBack_Btn";
+import GoBack from "../../../GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 
 const IDOR_Lab2 = () => {
   const [amount, setAmount] = useState("");
@@ -70,7 +72,8 @@ const IDOR_Lab2 = () => {
 
   return (
     <>
-      <GoBack_Btn />
+      <GoBack />
+      <ShowHint />
       <div className="unique-ticket-container">
         <div className="unique-ticket-header">
           <h1>Buy Tickets</h1>

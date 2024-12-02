@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./IDOR_LAB1.css";
-import GoBack_Btn from "../../../GoBack_Btn/GoBack_Btn";
-
+import GoBack from "../../../GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 export default function IDOR_Lab1() {
   const strings = {
     title: "Invoice Viewer",
@@ -74,7 +74,8 @@ export default function IDOR_Lab1() {
 
   return (
     <>
-      <GoBack_Btn />
+      <GoBack />
+      <ShowHint />
       <div className="idor-container">
         <div className="idor-container-wrapper">
           <div className="idor-row idor-pt-5 idor-mt-5 idor-mb-3">
