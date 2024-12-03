@@ -1,0 +1,7 @@
+-- CreateTable
+CREATE TABLE "Lab2IDORS" (
+    "id" INTEGER NOT NULL DEFAULT 1,
+    "balance" INTEGER NOT NULL DEFAULT 1000,
+
+    CONSTRAINT "Lab2IDORS_pkey" PRIMARY KEY ("id")
+);
