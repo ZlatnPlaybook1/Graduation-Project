@@ -11,22 +11,10 @@ export default function Third_Lab() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
-  // Utility function to get a cookie by name
-  const getCookie = (name) => {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(";").shift();
-    return null;
-  };
-
   useEffect(() => {
-    const loggedInStatus = getCookie("isLoggedIn");
-    const adminStatus = getCookie("Admin");
-
-    if (loggedInStatus === "true" && adminStatus === "true") {
+    const loggedInStatus = localStorage.getItem("isLoggedIn");
+    if (loggedInStatus === "true") {
       setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
     }
   }, []);
 
@@ -46,7 +34,7 @@ export default function Third_Lab() {
       <GoBack_Btn />
       <ShowHint_Btn hintText={hintMessage} />
       <div className="container">
-        <h2 className="lab-header">Products2</h2>
+        {/* <h2 className="lab-header">Products</h2> */}
         <Link to={`/AC-Vuln/AC_Vuln_labs/third_lab/login`}>Login</Link>
         {isLoggedIn && (
           <Link to={`/AC-Vuln/AC_Vuln_labs/third_lab/admin`}>Go to Admin</Link>

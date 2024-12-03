@@ -54,7 +54,7 @@ export default function AC_Vuln() {
           <div className="breadcrumb">
             <ul>
               <li>
-                <Link to="">Home</Link>
+                <Link to="/home">Home</Link>
               </li>
               <li>
                 <Link to="">Access control vulnerability</Link>
@@ -112,83 +112,147 @@ export default function AC_Vuln() {
               <dl className="section-text-lab1">
                 {/* Task 1 */}
                 <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 1</span> Unprotected Admin Functionality
+                  <span>Introduction</span> Introduction to Access Control
+                  Vulnerabilities
                 </dt>
                 <dd className="fadeInUp faq-body-lab1">
+                  <h3>
+                    Welcome to the Access Control Vulnerability Learning Room!
+                  </h3>
+                  <div className="desc">
+                    <h4>What is an Access Control Vulnerability?</h4>
+                    <p>
+                      Access control vulnerabilities occur when an application
+                      fails to properly restrict what authenticated users can
+                      do. These issues allow attackers to perform actions or
+                      access resources beyond their intended permissions,
+                      compromising sensitive data or system integrity.
+                    </p>
+                  </div>
+                  <h4>Key Topics Covered:</h4>
+                  <ol>
+                    <li>
+                      <b>Understanding Access Control</b>: Overview of access
+                      control mechanisms and their importance.
+                    </li>
+                    <li>
+                      <b>Types of Access Control Flaws</b>: Common
+                      vulnerabilities, such as horizontal and vertical privilege
+                      escalation.
+                    </li>
+                    <li>
+                      <b>Examples of Exploits</b>: Real-world scenarios
+                      showcasing access control weaknesses.
+                    </li>
+                    <li>
+                      <b>Access Control Best Practices</b>: Strategies to
+                      prevent access control vulnerabilities in applications.
+                    </li>
+                  </ol>
+                </dd>
+                {/* Topic 1 */}
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Topic 1</span> Understanding Access Control
+                </dt>
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <ul>
                     <li>
-                      <p>
-                        Admin panels that are not properly secured can lead to
-                        unauthorized access by attackers.
-                      </p>
+                      <b>Definition:</b> Access control ensures users can only
+                      perform permitted actions and access authorized resources.
                     </li>
                     <li>
-                      <p>
-                        Attackers may exploit weak authentication mechanisms to
-                        bypass access control and take over admin functionality.
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Ensure proper role-based access control is in place to
-                        restrict admin functionalities to authorized users only.
-                      </p>
+                      <b>Types:</b>
+                      <ol>
+                        <li>
+                          <b>Discretionary Access Control (DAC):</b> Resource
+                          owners define access rules.
+                        </li>
+                        <li>
+                          <b>Mandatory Access Control (MAC):</b> Predefined
+                          rules control access based on classifications.
+                        </li>
+                        <li>
+                          <b>Role-Based Access Control (RBAC):</b> Permissions
+                          assigned based on roles.
+                        </li>
+                      </ol>
                     </li>
                   </ul>
                 </dd>
-                {/* Task 2 */}
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 2</span> Insecure Direct Object References (IDOR)
+                {/* Topic 2 */}
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Topic 2</span> Types of Access Control Flaws
                 </dt>
-                <dd className="fadeInUp faq-body-lab1">
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <ul>
                     <li>
-                      <p>
-                        IDOR vulnerabilities occur when an application allows
-                        users to access objects (files, data) by providing
-                        direct input, such as an ID, without proper
-                        authorization checks.
-                      </p>
+                      <b>Horizontal Privilege Escalation:</b> A user accesses
+                      resources belonging to another user at the same permission
+                      level.
                     </li>
                     <li>
-                      <p>
-                        Attackers can modify the object ID in the URL or request
-                        to gain unauthorized access to other users' data.
-                      </p>
+                      <b>Vertical Privilege Escalation:</b> A user performs
+                      actions requiring higher privileges than they possess.
                     </li>
                     <li>
-                      <p>
-                        Protect sensitive objects by implementing proper access
-                        control checks before allowing access to objects.
-                      </p>
+                      <b>Unauthenticated Access:</b> Resources accessible
+                      without proper authentication.
                     </li>
                   </ul>
                 </dd>
-                {/* Task 3 */}
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 3</span> Lack of Secure Session Management
+                {/* Topic 3 */}
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Topic 3</span> Examples of Exploits
                 </dt>
-                <dd className="fadeInUp faq-body-lab1">
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <ul>
                     <li>
-                      <p>
-                        Insufficient session management can allow attackers to
-                        hijack or impersonate legitimate users, gaining
-                        unauthorized access to protected resources.
-                      </p>
+                      <b>Accessing Other Users' Data:</b> Viewing or modifying
+                      another user's account details.
                     </li>
                     <li>
-                      <p>
-                        Weak session IDs or improper session expiration can be
-                        exploited to steal a user's session.
-                      </p>
+                      <b>Admin Function Misuse:</b> Performing admin-level
+                      actions, like changing roles or deleting data.
                     </li>
                     <li>
-                      <p>
-                        Ensure that secure session handling mechanisms are in
-                        place, such as using HTTPS, rotating session IDs, and
-                        implementing proper session expiration.
-                      </p>
+                      <b>Bypassing Login:</b> Using direct object references to
+                      access restricted areas.
+                    </li>
+                  </ul>
+                </dd>
+                {/* Topic 4 */}
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Topic 4</span> Access Control Best Practices
+                </dt>
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <ul>
+                    <li>
+                      <b>Principle of Least Privilege:</b> Grant users only the
+                      access necessary for their roles.
+                    </li>
+                    <li>
+                      <b>Regular Access Reviews:</b> Audit permissions to remove
+                      unnecessary access rights.
+                    </li>
+                    <li>
+                      <b>Use Centralized Access Controls:</b> Ensure consistent
+                      access enforcement through centralized mechanisms.
+                    </li>
+                    <li>
+                      <b>Test for Vulnerabilities:</b> Use tools and manual
+                      testing to identify and address access control issues.
                     </li>
                   </ul>
                 </dd>

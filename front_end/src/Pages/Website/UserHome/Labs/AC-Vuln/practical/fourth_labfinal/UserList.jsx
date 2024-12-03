@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Cookie from "cookie-universal";
 import "../Lab_Style.css";
 
 export default function UserList() {
+  const [isLoggedIn, setIsLoggedIn] = useState(null);
   const [users, setUsers] = useState([]);
   const [token, setToken] = useState("");
-
-  // Fetch token from cookies on component mount
-  useEffect(() => {
-    const cookie = Cookie();
-    const retrievedToken = cookie.get("CuberWeb");
-    setToken(retrievedToken);
-  }, []);
 
   // Fetch user list from the API
   useEffect(() => {
@@ -39,7 +32,6 @@ export default function UserList() {
     }
   }, [token]);
 
-  // Delete a user
   const deleteUser = async (id) => {
     try {
       const response = await fetch(
@@ -61,6 +53,14 @@ export default function UserList() {
       console.error("Error deleting user:", error);
     }
   };
+
+  if (isLoggedIn === null) {
+    return (
+      <h2 style={{ textAlign: "center", margin: "50px 0" }}>
+        Admin interface only available if logged in as an administrator
+      </h2>
+    );
+  }
 
   return (
     <div className="users-container">

@@ -10,16 +10,17 @@ export default function Third_Lab_LoginForm() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const correctUsername = "wiener";
-    const correctPassword = "peter";
+    const correctUsername = "ahmed";
+    const correctPassword = "ahmed";
 
     if (username === correctUsername && password === correctPassword) {
-      localStorage.setItem("isLoggedIn", true);
+      localStorage.setItem("isLoggedIn", "true");
       navigate("/AC-Vuln/AC_Vuln_labs/third_lab/admin");
     } else {
       setError("Invalid username or password.");
     }
   };
+
   return (
     <div className="lab-container">
       <h2>Login Form</h2>

@@ -1,45 +1,29 @@
 import React, { useState, useEffect } from "react";
-import Cookie from "cookie-universal";
 import "../Lab_Style.css";
 
 export default function UserList() {
+  const [isLoggedIn, setIsLoggedIn] = useState(null);
   const [users, setUsers] = useState([]);
   const [token, setToken] = useState("");
 
-  // Fetch token from cookies on component mount
+  // Utility function to get a cookie by name
+  const getCookie = (name) => {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(";").shift();
+    return null;
+  };
+
   useEffect(() => {
-    const cookie = Cookie();
-    const retrievedToken = cookie.get("CuberWeb");
-    setToken(retrievedToken);
+    const adminStatus = getCookie("Admin");
+
+    if (adminStatus === "true") {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
   }, []);
 
-  // Fetch user list from the API
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await fetch("http://localhost:8080/api/vulnUsers", {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setUsers(data); // Assuming API returns an array of objects with id and name
-        } else {
-          console.error("Failed to fetch users.");
-        }
-      } catch (error) {
-        console.error("Error fetching users:", error);
-      }
-    };
-
-    if (token) {
-      fetchUsers();
-    }
-  }, [token]);
-
-  // Delete a user
   const deleteUser = async (id) => {
     try {
       const response = await fetch(
@@ -61,6 +45,14 @@ export default function UserList() {
       console.error("Error deleting user:", error);
     }
   };
+
+  if (isLoggedIn === null) {
+    return (
+      <h2 style={{ textAlign: "center", margin: "50px 0" }}>
+        Admin interface only available if logged in as an administrator
+      </h2>
+    );
+  }
 
   return (
     <div className="users-container">

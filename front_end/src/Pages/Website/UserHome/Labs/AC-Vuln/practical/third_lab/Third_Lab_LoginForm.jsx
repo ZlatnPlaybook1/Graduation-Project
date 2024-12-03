@@ -8,18 +8,27 @@ export default function Third_Lab_LoginForm() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  // Utility function to set a cookie
+  const setCookie = (name, value, days) => {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+  };
+
   const handleLogin = (e) => {
     e.preventDefault();
-    const correctUsername = "wiener";
-    const correctPassword = "peter";
+    const correctUsername = "ahmed";
+    const correctPassword = "ahmed";
 
     if (username === correctUsername && password === correctPassword) {
-      localStorage.setItem("isLoggedIn", true);
+      setCookie("isLoggedIn", "true", 7); // Set login cookie for 7 days
+      setCookie("Admin", "false", 7); // Initially set Admin cookie to false
       navigate("/AC-Vuln/AC_Vuln_labs/third_lab/admin");
     } else {
       setError("Invalid username or password.");
     }
   };
+
   return (
     <div className="lab-container">
       <h2>Login Form</h2>
