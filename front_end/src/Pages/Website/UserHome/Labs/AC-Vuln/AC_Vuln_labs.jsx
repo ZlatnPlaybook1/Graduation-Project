@@ -46,7 +46,7 @@ export default function AC_Vuln_labs() {
           <div className="row-ac-vuln">
             {/* lab1 */}
             <Link
-              to="/AC-Vuln/AC_Vuln_labs/first_lab/ProductList"
+              to="/AC-Vuln/AC_Vuln_labs/first_lab"
               className="course-card-ac-vuln"
             >
               <div className="course-image-ac-vuln">
@@ -55,16 +55,8 @@ export default function AC_Vuln_labs() {
               <div className="course-text-ac-vuln">
                 <h3>vulnerability allowing login bypass</h3>
                 <p>
-                  Go to the lab and view <mark>robots.txt</mark> by appending{" "}
-                  <code>/robots.txt</code> to the lab URL. Notice that the{" "}
-                  <mark>Disallow</mark> line discloses the path to the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  In the URL bar, replace <code>/robots.txt</code> with{" "}
-                  <code>/administrator-panel</code> to load the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  Once logged in, delete the user <mark>Carlos</mark>.
+                  This lab has an unprotected admin panel. Solve the lab by
+                  deleting the user <mark>carlos</mark>.
                 </p>
               </div>
               <div className="easy-ac-vuln">
@@ -74,7 +66,30 @@ export default function AC_Vuln_labs() {
             </Link>
             {/* lab2 */}
             <Link
-              to="/AC-Vuln/AC_Vuln_labs/first_lab/ProductList"
+              to="/AC-Vuln/AC_Vuln_labs/second_lab"
+              className="course-card-ac-vuln"
+            >
+              <div className="course-image-ac-vuln">
+                <img src={labImg} alt="" />
+              </div>
+              <div className="course-text-ac-vuln">
+                <h3>Unprotected admin functionality with unpredictable URL</h3>
+                <p>
+                  This lab has an unprotected admin panel. It's located at an
+                  unpredictable location, but the location is disclosed
+                  somewhere in the application. Solve the lab by accessing the
+                  admin panel, and using it to delete the user
+                  <mark>Carlos</mark>.
+                </p>
+              </div>
+              <div className="easy-ac-vuln">
+                <i className="fa-solid fa-signal lab-ac-vuln"></i>
+                <p>Easy</p>
+              </div>
+            </Link>
+            {/* Lab3 */}
+            <Link
+              to="/AC-Vuln/AC_Vuln_labs/third_lab"
               className="course-card-ac-vuln"
             >
               <div className="course-image-ac-vuln">
@@ -86,44 +101,11 @@ export default function AC_Vuln_labs() {
                   data
                 </h3>
                 <p>
-                  Go to the lab and view <mark>robots.txt</mark> by appending{" "}
-                  <code>/robots.txt</code> to the lab URL. Notice that the{" "}
-                  <mark>Disallow</mark> line discloses the path to the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  In the URL bar, replace <code>/robots.txt</code> with{" "}
-                  <code>/administrator-panel</code> to load the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  Once logged in, delete the user <mark>Carlos</mark>.
-                </p>
-              </div>
-              <div className="easy-ac-vuln">
-                <i className="fa-solid fa-signal lab-ac-vuln"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-            {/* Lab3 */}
-            <Link to="/AC-Vuln/AC_Vuln_labs/" className="course-card-ac-vuln">
-              <div className="course-image-ac-vuln">
-                <img src={labImg} alt="" />
-              </div>
-              <div className="course-text-ac-vuln">
-                <h3>
-                  vulnerability in WHERE clause allowing retrieval of hidden
-                  data
-                </h3>
-                <p>
-                  Go to the lab and view <mark>robots.txt</mark> by appending{" "}
-                  <code>/robots.txt</code> to the lab URL. Notice that the{" "}
-                  <mark>Disallow</mark> line discloses the path to the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  In the URL bar, replace <code>/robots.txt</code> with{" "}
-                  <code>/administrator-panel</code> to load the{" "}
-                  <mark>admin panel</mark>.
-                  <br />
-                  Once logged in, delete the user <mark>Carlos</mark>.
+                  This lab has an admin panel at /admin, which identifies
+                  administrators using a forgeable cookie. Solve the lab by
+                  accessing the admin panel and using it to delete the user
+                  carlos. You can log in to your own account using the following
+                  credentials: <code>wiener:peter</code>
                 </p>
               </div>
               <div className="easy-ac-vuln">

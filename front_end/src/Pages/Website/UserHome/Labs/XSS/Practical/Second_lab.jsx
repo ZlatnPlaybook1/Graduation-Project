@@ -87,7 +87,7 @@ export default function Second_lab_XSS() {
       }
     }
     // try {
-    //   const respone = axios.post("http://127.0.0.1:8080/api/comment",form);
+    //   const respone = axios.post("http://127.0.0.1:8080/api/new_comment",form);
     //   setData((prevData) => [...prevData, respone.data]);
     //   setForm({ email: "", content: "" });
     // } catch (err) {
@@ -201,25 +201,25 @@ export default function Second_lab_XSS() {
                 {err && <span className="error">{err}</span>}
               </form>
               <div className="comment-section">
-                {comments.map((comment) => (
-                  <div key={comment.id} className="comment-card">
+                  {comments?.map((comment) => (
+                    <div key={comment.id} className="comment-card">
                     <div className="comment-header">
-                      <img src={icon} className="icon" alt="Card" />
-                      <p className="name">{comment.email || "Anonymous"}</p>
+                    <img src={icon} className="icon" alt="Card" />
+                    <p className="name">{comment.email || "Anonymous"}</p>
                     </div>
                     {comment.isHTML ? (
                       <p
-                        className="comment-text"
-                        dangerouslySetInnerHTML={{ __html: comment.content }}
+                      className="comment-text"
+                      dangerouslySetInnerHTML={{ __html: comment.content }}
                       ></p>
                     ) : (
                       <p className="comment-text">
                         {comment.content || scriptOutput}
                       </p>
                     )}
-                  </div>
-                ))}
-                {data.map(item => (
+                    </div>
+                  ))}
+                {data?.map(item => (
                   <div key={item.id} className="comment-card">
                     <div className="comment-header">
                       <img src={icon} className="icon" alt="Card" />

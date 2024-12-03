@@ -1,0 +1,55 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../Lab_Style.css";
+
+export default function Third_Lab_LoginForm() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  // Utility function to set a cookie
+  const setCookie = (name, value, days) => {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const correctUsername = "ahmed";
+    const correctPassword = "ahmed";
+
+    if (username === correctUsername && password === correctPassword) {
+      setCookie("isLoggedIn", "true", 7); // Set login cookie for 7 days
+      setCookie("Admin", "false", 7); // Initially set Admin cookie to false
+      navigate("/AC-Vuln/AC_Vuln_labs/third_lab/admin");
+    } else {
+      setError("Invalid username or password.");
+    }
+  };
+
+  return (
+    <div className="lab-container">
+      <h2>Login Form</h2>
+      <form onSubmit={handleLogin}>
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <input type="submit" value="Log in" />
+      </form>
+      {error && <p className="error-message">{error}</p>}
+    </div>
+  );
+}
