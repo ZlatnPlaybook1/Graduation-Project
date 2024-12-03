@@ -56,8 +56,6 @@ model userForsqlInjection {
 
 model userForXSS {
   id       String  @id @default(uuid())
-  username String? @unique
-  password String
   email    String  @unique
   posts    Post[]
 }
