@@ -46,23 +46,19 @@ export default function BL_Vuln_labs() {
           <div className="row-bl-vuln">
             {/* lab1 */}
             <Link
-              to="/bl-vuln/BL_Vuln_labs/first_lab/ProductList"
+              to="/BL-Vuln/BL_Vuln_labs/first_lab"
               className="course-card-bl-vuln"
             >
               <div className="course-image-bl-vuln">
                 <img src={labImg} alt="Lab 1 Image" />
               </div>
               <div className="course-text-bl-vuln">
-                <h3>Business Logic Vulnerability Allowing Login Bypass</h3>
+                <h3>Inconsistent security controls</h3>
                 <p>
-                  Go to the lab and view <mark>robots.txt</mark> by appending{" "}
-                  <code>/robots.txt</code> to the lab URL. Notice that the{" "}
-                  <mark>Disallow</mark> line discloses the path to the{" "}
-                  <mark>admin panel</mark>. <br />
-                  In the URL bar, replace <code>/robots.txt</code> with{" "}
-                  <code>/administrator-panel</code> to load the{" "}
-                  <mark>admin panel</mark>. <br />
-                  Once logged in, delete the user <mark>Carlos</mark>.
+                  This lab's flawed logic allows arbitrary users to access
+                  administrative functionality that should only be available to
+                  company employees. To solve the lab, access the admin panel
+                  and delete the user <code>carlos</code>.
                 </p>
               </div>
               <div className="easy-bl-vuln">
@@ -73,26 +69,20 @@ export default function BL_Vuln_labs() {
 
             {/* lab2 */}
             <Link
-              to="/bl-vuln/BL_Vuln_labs/first_lab/ProductList"
+              to="/BL-Vuln/BL_Vuln_labs/second_lab"
               className="course-card-bl-vuln"
             >
               <div className="course-image-bl-vuln">
                 <img src={labImg} alt="Lab 2 Image" />
               </div>
               <div className="course-text-bl-vuln">
-                <h3>
-                  Business Logic Vulnerability in WHERE Clause Allowing
-                  Retrieval of Hidden Data
-                </h3>
+                <h3>Excessive trust in client-side controls</h3>
                 <p>
-                  Go to the lab and view <mark>robots.txt</mark> by appending{" "}
-                  <code>/robots.txt</code> to the lab URL. Notice that the{" "}
-                  <mark>Disallow</mark> line discloses the path to the{" "}
-                  <mark>admin panel</mark>. <br />
-                  In the URL bar, replace <code>/robots.txt</code> with{" "}
-                  <code>/administrator-panel</code> to load the{" "}
-                  <mark>admin panel</mark>. <br />
-                  Once logged in, delete the user <mark>Carlos</mark>.
+                  This lab doesn't adequately validate user input. You can
+                  exploit a logic flaw in its purchasing workflow to buy items
+                  for an unintended price. To solve the lab, buy a "Lightweight
+                  l33t leather jacket". You can log in to your own account using
+                  the following credentials: <code>wiener:peter</code>.
                 </p>
               </div>
               <div className="easy-bl-vuln">
@@ -102,24 +92,21 @@ export default function BL_Vuln_labs() {
             </Link>
 
             {/* Lab3 */}
-            <Link to="/bl-vuln/BL_Vuln_labs/" className="course-card-bl-vuln">
+            <Link
+              to="/BL-Vuln/BL_Vuln_labs/third_lab"
+              className="course-card-bl-vuln"
+            >
               <div className="course-image-bl-vuln">
                 <img src={labImg} alt="Lab 3 Image" />
               </div>
               <div className="course-text-bl-vuln">
-                <h3>
-                  Business Logic Vulnerability in WHERE Clause Allowing
-                  Retrieval of Hidden Data
-                </h3>
+                <h3>High-level logic vulnerability</h3>
                 <p>
-                  Go to the lab and view <mark>robots.txt</mark> by appending{" "}
-                  <code>/robots.txt</code> to the lab URL. Notice that the{" "}
-                  <mark>Disallow</mark> line discloses the path to the{" "}
-                  <mark>admin panel</mark>. <br />
-                  In the URL bar, replace <code>/robots.txt</code> with{" "}
-                  <code>/administrator-panel</code> to load the{" "}
-                  <mark>admin panel</mark>. <br />
-                  Once logged in, delete the user <mark>Carlos</mark>.
+                  This lab doesn't adequately validate user input. You can
+                  exploit a logic flaw in its purchasing workflow to buy items
+                  for an unintended price. To solve the lab, buy a "Lightweight
+                  l33t leather jacket". You can log in to your own account using
+                  the following credentials: <code>wiener:peter</code>.
                 </p>
               </div>
               <div className="easy-bl-vuln">

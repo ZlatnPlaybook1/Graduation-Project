@@ -75,6 +75,9 @@ import REGEX_LABS from "./Pages/Website/UserHome/Labs/Regex/Regex_labs.jsx";
 // Business Logic Vulnerability
 import BL_VULN from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln.jsx";
 import BL_VULN_LABS from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln_labs.jsx";
+import BL_VULN_First_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/First_Lab.jsx";
+import BL_VULN_SECOND_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/second_lab/Second_Lab.jsx";
+import BL_VULN_THIRD_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/third_lab/Third_Lab.jsx";
 // End Business Logic Vulnerability
 
 // Audio Forensics
@@ -247,6 +250,18 @@ function App() {
           {/* BL_Vuln*/}
           <Route path="/BL_Vuln" element={<BL_VULN />} />
           <Route path="/BL-Vuln/BL_Vuln_labs" element={<BL_VULN_LABS />} />
+          <Route
+            path="/BL-Vuln/BL_Vuln_labs/first_lab"
+            element={<BL_VULN_First_LAB />}
+          />
+          <Route
+            path="/BL-Vuln/BL_Vuln_labs/second_lab"
+            element={<BL_VULN_SECOND_LAB />}
+          />
+          <Route
+            path="/BL-Vuln/BL_Vuln_labs/third_lab"
+            element={<BL_VULN_THIRD_LAB />}
+          />
           {/* End BL_Vuln */}
 
           {/* AudFor */}
