@@ -223,7 +223,7 @@ export default function Second_lab_XSS() {
                   <div key={item.id} className="comment-card">
                     <div className="comment-header">
                       <img src={icon} className="icon" alt="Card" />
-                      <p className="name">{item.username}</p>
+                      <p className="name">{item.email}</p>
                     </div>
                     <p className="comment-text">{item.posts}</p>
                   </div> // Adjust according to your data structure
@@ -231,14 +231,14 @@ export default function Second_lab_XSS() {
                 <div className="comment-card">
                   <div className="comment-header">
                     <img src={icon} className="icon" alt="Card" />
-                    <p className="name">Ebrahiem Gamal</p>
+                    <p className="name">anonymous</p>
                   </div>
                   <p className="comment-text">comment 1</p>
                 </div>
                 <div className="comment-card">
                   <div className="comment-header">
                     <img src={icon} className="icon" alt="Card" />
-                    <p className="name">Ebrahiem Gamal</p>
+                    <p className="name">anonymous</p>
                   </div>
                   <p className="comment-text">comment 2</p>
                 </div>
