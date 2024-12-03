@@ -441,3 +441,46 @@ a {
   background-color: rgb(163, 234, 42) !important;
 }
 /* End Course Content */
+dt.wave-lab1.fadeInUp.faq-header-lab1 span {
+  color: #a3ea2a !important;
+}
+.faq-section-lab1
+  .section-text-lab1
+  .faq-body-lab1
+  dt.wave-lab1.fadeInUp.faq-header-lab1.m,
+#border-left,
+dd {
+  border-left: 4px solid #a3ea2a !important;
+}
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 img,
+#explain-img {
+  width: 90% !important;
+  margin: 30px auto;
+}
+/* .go-labsbtn {
+} */
+.go-labs {
+  background: radial-gradient(
+    circle,
+    rgb(31, 48, 2) 25%,
+    rgb(68, 101, 6) 100%
+  ) !important;
+  color: #a3ea2a !important;
+
+  border-color: #233504 !important;
+  font-weight: 400 !important;
+  font-size: 1.2rem !important;
+  cursor: pointer !important;
+  padding: 0.3rem 1rem !important;
+  border-radius: 0.5rem !important;
+  pointer-events: initial !important;
+  transition: var(--main-transition) !important;
+}
+.go-labs:hover {
+  background: radial-gradient(
+    circle,
+    rgb(92, 136, 14) 25%,
+    rgb(41, 61, 5) 100%
+  ) !important;
+  color: #ffffff !important;
+}
