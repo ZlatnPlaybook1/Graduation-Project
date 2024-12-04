@@ -50,7 +50,7 @@ export default function BL_Vuln_labs() {
               className="course-card-bl-vuln"
             >
               <div className="course-image-bl-vuln">
-                <img src={labImg} alt="Lab 1 Image" />
+                <img src={labImg} alt="Lab 1 img" />
               </div>
               <div className="course-text-bl-vuln">
                 <h3>Excessive trust in client-side controls</h3>
@@ -75,7 +75,7 @@ export default function BL_Vuln_labs() {
               className="course-card-bl-vuln"
             >
               <div className="course-image-bl-vuln">
-                <img src={labImg} alt="Lab 2 Image" />
+                <img src={labImg} alt="Lab 2 img" />
               </div>
               <div className="course-text-bl-vuln">
                 <h3>High-level logic vulnerability</h3>
@@ -99,7 +99,7 @@ export default function BL_Vuln_labs() {
               className="course-card-bl-vuln"
             >
               <div className="course-image-bl-vuln">
-                <img src={labImg} alt="Lab 3 Image" />
+                <img src={labImg} alt="Lab 3 img" />
               </div>
               <div className="course-text-bl-vuln">
                 <h3>Inconsistent security controls</h3>

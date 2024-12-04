@@ -4,7 +4,7 @@ import "../Lab_Style.css";
 export default function UserList() {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
   const [users, setUsers] = useState([]);
-  const [token, setToken] = useState("");
+  const [token] = useState("");
 
   // Utility function to get a cookie by name
   const getCookie = (name) => {
