@@ -50,17 +50,19 @@ export default function BL_Vuln_labs() {
               className="course-card-bl-vuln"
             >
               <div className="course-image-bl-vuln">
-                <img src={labImg} alt="Lab 1 Image" />
+                <img src={labImg} alt="Lab 1 img" />
               </div>
               <div className="course-text-bl-vuln">
-                <h3>Inconsistent security controls</h3>
+                <h3>Excessive trust in client-side controls</h3>
                 <p>
-                  This lab's flawed logic allows arbitrary users to access
-                  administrative functionality that should only be available to
-                  company employees. To solve the lab, access the admin panel
-                  and delete the user <code>carlos</code>.
+                  This lab doesn't adequately validate user input. You can
+                  exploit a logic flaw in its purchasing workflow to buy items
+                  for an unintended price. To solve the lab, buy a "Lightweight
+                  l33t leather jacket". You can log in to your own account using
+                  the following credentials: <code>wiener:peter</code>.
                 </p>
               </div>
+
               <div className="easy-bl-vuln">
                 <i className="fa-solid fa-signal lab-bl-vuln"></i>
                 <p>Easy</p>
@@ -73,10 +75,10 @@ export default function BL_Vuln_labs() {
               className="course-card-bl-vuln"
             >
               <div className="course-image-bl-vuln">
-                <img src={labImg} alt="Lab 2 Image" />
+                <img src={labImg} alt="Lab 2 img" />
               </div>
               <div className="course-text-bl-vuln">
-                <h3>Excessive trust in client-side controls</h3>
+                <h3>High-level logic vulnerability</h3>
                 <p>
                   This lab doesn't adequately validate user input. You can
                   exploit a logic flaw in its purchasing workflow to buy items
@@ -97,16 +99,15 @@ export default function BL_Vuln_labs() {
               className="course-card-bl-vuln"
             >
               <div className="course-image-bl-vuln">
-                <img src={labImg} alt="Lab 3 Image" />
+                <img src={labImg} alt="Lab 3 img" />
               </div>
               <div className="course-text-bl-vuln">
-                <h3>High-level logic vulnerability</h3>
+                <h3>Inconsistent security controls</h3>
                 <p>
-                  This lab doesn't adequately validate user input. You can
-                  exploit a logic flaw in its purchasing workflow to buy items
-                  for an unintended price. To solve the lab, buy a "Lightweight
-                  l33t leather jacket". You can log in to your own account using
-                  the following credentials: <code>wiener:peter</code>.
+                  This lab's flawed logic allows arbitrary users to access
+                  administrative functionality that should only be available to
+                  company employees. To solve the lab, access the admin panel
+                  and delete the user <code>carlos</code>.
                 </p>
               </div>
               <div className="easy-bl-vuln">
