@@ -177,45 +177,52 @@ export async function addPersonalInfo(req: Request, res: Response): Promise<Resp
     const token = req.headers.authorization?.split(' ')[1]; // Extract token from "Bearer <token>"
 
     if (!token) {
-        return res.status(401).json({error: "Authorization token is required"});
+        return res.status(401).json({ error: "Authorization token is required" });
     }
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET) as { id: string };
         const userId = decoded.id;
 
+        // Check if the name already exists
         const existName = await prisma.user.findUnique({
-            where: {name: req.body.name},
+            where: { name: req.body.name },
         });
         if (existName) {
-            console.log(existName);
-            return res.status(422).json({error: "Name already exist"});
+            return res.status(422).json({ error: "Name already exists" });
         }
 
+        // Build the update data dynamically
+        const updateData: any = {
+            name: req.body.name,
+            birthday: req.body.birthday,
+            phoneNum: req.body.phone,
+            address: req.body.address,
+        };
+
+        if (req.body.imageId) {
+            updateData.image = {
+                connect: { id: req.body.imageId },
+            };
+        }
+
+        // Update the user
         const user = await prisma.user.update({
-            where: {id: userId},
-            include: {image: true},
-            data: {
-                name: req.body.name,
-                birthday: req.body.birthday,
-                phoneNum: req.body.phone,
-                address: req.body.address,
-                image: {
-                    connect: { id: req.body.imageId }, // Link the uploaded image
-                },
-            },
+            where: { id: userId },
+            include: { image: true },
+            data: updateData,
         });
+
         return res.status(200).json({
             msg: "User updated successfully",
-            data: user
+            data: user,
         });
-
     } catch (error) {
-        console.error('Error getting user:', error);
-        return res.status(500).json({error: " server error"});
+        console.error("Error updating user:", error);
+        return res.status(500).json({ error: "Server error" });
     }
-
 }
+
 
 export async function resetPassword(req: Request, res: Response): Promise<Response> {
     const userId = req.params.id;
@@ -294,36 +301,42 @@ export const upload = multer({
 });
 
 // Save the file details to the database
-export async function saveImage(req, res, next) {
+export async function saveImage(req, res: Response, next) {
+    const fs = require('fs').promises; // Use promises for asynchronous file operations
+
     try {
-        const file = req.file;
-        const userId = req.params.id;
+        const file = req.file; // File sent with the request
+        const userId = req.params.id; // User ID from the request parameters
 
         if (!userId) {
             return res.status(400).json({ error: 'User ID is missing' });
         }
 
         if (!file) {
-            return res.status(400).send('No file uploaded or unsupported file type.');
+            return next(); // No image provided, proceed to the next middleware
         }
 
-        // Check if a user already has an image
+        // Check if the user already has an associated image
         const existingImage = await prisma.image.findFirst({
             where: { userId },
         });
 
         if (existingImage) {
-            // Delete the existing image file from the file system (optional)
-            const fs = require('fs');
-            fs.unlinkSync(existingImage.path); // Delete the old file
+            // Delete the existing image file from the file system
+            try {
+                await fs.unlink(existingImage.path);
+                console.log(`Old image deleted: ${existingImage.path}`);
+            } catch (err) {
+                console.warn(`Failed to delete old image: ${existingImage.path}. Error: ${err.message}`);
+            }
 
-            // Delete the old image record from the database
+            // Remove the existing image record from the database
             await prisma.image.delete({
                 where: { id: existingImage.id },
             });
         }
 
-        // Save the new image
+        // Save the new image in the database
         const savedFile = await prisma.image.create({
             data: {
                 name: file.originalname,
@@ -333,10 +346,13 @@ export async function saveImage(req, res, next) {
             },
         });
 
-        req.body.imageId = savedFile.id; // Attach image ID to the request body
+        // Attach the new image ID to the request body for further processing
+        req.body.imageId = savedFile.id;
+
+        // Proceed to the next middleware
         next();
     } catch (error) {
-        console.error(error);
-        res.status(500).send(error.message || 'Error uploading file.');
+        console.error('Error handling image upload:', error);
+        res.status(500).json({ error: error.message || 'Error uploading file.' });
     }
 }
