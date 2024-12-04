@@ -46,6 +46,12 @@ export async function transfer(req: Request, res: Response) {
         const receiverId = Number(req.body.recipientId);
         const transferAmount = Number(req.body.transferAmount);
 
+        if (senderId === receiverId) {
+            return res.status(400).json({
+                message: 'Invalid operation',
+            });
+        }
+
     
         if (!transferAmount || isNaN(transferAmount) || transferAmount <= 0) {
             return res.status(400).json({
