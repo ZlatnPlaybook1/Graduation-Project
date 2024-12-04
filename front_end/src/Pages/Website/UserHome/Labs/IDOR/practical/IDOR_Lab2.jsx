@@ -1,25 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "./IDOR_Lab2.css";
-import GoBack_Btn from "../../../GoBack_Btn/GoBack_Btn";
 import GoBack from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 
 const IDOR_Lab2 = () => {
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
-  const [accountBalance, setAccountBalance] = useState(500); // Default balance set to 500
+  const [accountBalance, setAccountBalance] = useState(0); // Default balance set to 0
   const ticketPrice = 10;
 
   // Fetch the account balance when the component mounts
   useEffect(() => {
     const fetchAccountBalance = async () => {
       try {
-        const response = await fetch(
-          "http://127.0.0.1:8080/api/accountbalance"
-        );
+        const response = await fetch("http://127.0.0.1:8080/api/IDORSlab2");
         if (response.ok) {
           const data = await response.json();
-          setAccountBalance(data.accountBalance);
+          setAccountBalance(data.balance);
         } else {
           setMessage("Failed to fetch account balance.");
         }
@@ -34,14 +31,14 @@ const IDOR_Lab2 = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const ticketAmount = Number(amount);
+    const numOfTickets = Number(amount);
 
-    if (ticketAmount <= 0) {
+    if (numOfTickets <= 0) {
       setMessage("The number of tickets must be greater than 0.");
       return;
     }
 
-    const totalCost = ticketPrice * ticketAmount;
+    const totalCost = ticketPrice * numOfTickets;
 
     if (accountBalance < totalCost) {
       setMessage("Insufficient funds to purchase the tickets.");
@@ -49,18 +46,18 @@ const IDOR_Lab2 = () => {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:8080/api/ticketsales", {
+      const response = await fetch("http://127.0.0.1:8080/api/IDORSlab2", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ amount: ticketAmount }),
+        body: JSON.stringify({ ticketPrice, numOfTickets }),
       });
 
       if (response.ok) {
         setAccountBalance(accountBalance - totalCost);
         setMessage(
-          `Successfully purchased ${ticketAmount} tickets for $${totalCost}.`
+          `Successfully purchased ${numOfTickets} tickets for $${totalCost}.`
         );
       } else {
         setMessage("Failed to process the purchase. Please try again.");
@@ -81,7 +78,15 @@ const IDOR_Lab2 = () => {
           <p>Amount of money in your account: ${accountBalance}</p>
         </div>
 
-        {message && <div className="unique-ticket-alert">{message}</div>}
+        {message && (
+          <div
+            className={`unique-ticket-alert ${
+              message.startsWith("Successfully") ? "success" : "error"
+            }`}
+          >
+            {message}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="unique-ticket-form">
           <label htmlFor="amount" className="unique-ticket-label">
