@@ -1,6 +1,5 @@
 import e, { Response, Request } from "express";
 import prisma from "../../../utilities/db";
-import { Decimal } from "@prisma/client/runtime/library";
 
 export async function getAccounts(req: Request, res: Response) {
     try {
@@ -97,5 +96,20 @@ export async function transfer(req: Request, res: Response) {
     } catch (error) {
         console.error(error);
         res.status(500).send(error.message || 'Error transferring funds.');
+    }
+}
+
+export async function resetAccounts(req: Request, res: Response) {
+    try {
+        await prisma.lab3IDORS.updateMany({
+            data: { balance: 1000 },
+        });
+
+        return res.status(200).json({
+            message: 'Accounts reset successfully',
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send(error.message || 'Error resetting accounts.');
     }
 }
