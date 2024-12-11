@@ -8,10 +8,8 @@
 
 .login-page {
   font-family: 'poppins', 'sans-serif';
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
+  overflow-y: hidden;
   background-color: var(--alt-color);
   color: white;
 }

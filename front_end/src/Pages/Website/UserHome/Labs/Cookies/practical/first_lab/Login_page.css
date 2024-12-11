@@ -15,9 +15,7 @@
 
 .login-page {
   font-family: 'poppins', 'sans-serif';
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow-y: hidden;
   height: 100vh;
   background-color: var(--alt-color);
   color: white;
@@ -111,7 +109,13 @@ a {
   color: black;
 }
 
-.login-form button {
+.login-form .form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form button.btn-login {
   width: 60%;
   padding: 10px;
   margin: 10px 0;
