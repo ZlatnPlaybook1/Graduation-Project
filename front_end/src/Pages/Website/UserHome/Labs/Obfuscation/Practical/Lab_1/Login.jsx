@@ -86,7 +86,9 @@ export default function Obfuscation_login() {
     <>
       <div className={styles.body}>
         <GoBack_Btn />
-        <ShowHint_Btn />
+        <ShowHint_Btn hintText={
+          '<p>click inspect  and try to beautify and Deobfuscate  script use this : </p> <a href="https://filipemgs.github.io/poisonjs/">De-obfuscate</a> <a href="https://beautifier.io/">beautifier.io</a>' 
+          } />
         <div className={styles.obfuscation_lab_body}>
           <div className={styles.container}>
             <div className={styles.card}>

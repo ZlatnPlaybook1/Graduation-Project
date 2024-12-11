@@ -83,7 +83,7 @@ export default function Login_page_second() {
       {/* test comment */}
       <div className="login-page">
         <GoBack_Btn />
-        <ShowHint_Btn />
+        <ShowHint_Btn  hintText={'<p>click inspect and cheak cookies value</p>' } />
         <div className="container-login">
           <div className="login-form">
             <h1>Login</h1>

@@ -63,6 +63,8 @@ export default function Login_page() {
     }
   }
   
+
+
   // Effect to monitor changes in the 'role' state and redirect accordingly
   useEffect(() => {
     if (role === "admin") {
@@ -79,7 +81,11 @@ export default function Login_page() {
       {loading && <Loading />}
     <div className="login-page">
       <GoBack_Btn/>
-      <ShowHint_Btn/>
+        
+
+  
+      <ShowHint_Btn hintText={'<p>click inspect and cheak cookies value</p>' }/>
+
       <div className="container-login">
         <div className="login-form">
             <h1>Login</h1>
