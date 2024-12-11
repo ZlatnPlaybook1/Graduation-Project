@@ -20,6 +20,7 @@ import lab2UnrestrictedFile from "./labs/unrestrictedFileUpload/lab2/lab2.router
 import lab3UnrestrictedFile from "./labs/unrestrictedFileUpload/lab3/lab3.router";
 import lab1IDORSRouter from "./labs/IDORS/lab1/lab1.router";
 import lab2IDORSRouter from "./labs/IDORS/lab2/lab2.router";
+import lab3IDORSRouter from "./labs/IDORS/lab3/lab3.router";
 import userRouter from "./labs/AC-Vuln/Lab1/user.router";
 const app = express();
 app.use("/uploads", express.static("uploads"));
@@ -49,6 +50,7 @@ app.use("/api", lab2UnrestrictedFile);
 app.use("/api", lab3UnrestrictedFile);
 app.use("/api", lab1IDORSRouter);
 app.use("/api", lab2IDORSRouter);
+app.use("/api", lab3IDORSRouter);
 app.use("/api", userRouter);
 
 dotenv.config();

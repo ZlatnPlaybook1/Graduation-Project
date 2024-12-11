@@ -76,8 +76,14 @@ model Lab1IDORS {
 }
 
 model Lab2IDORS {
-  id       Int  @id @default(1)
-  balance Int   @default(1000)
+  id       Int   @id @default(1)
+  balance  Int   @default(1000)
+}
+
+model Lab3IDORS {
+  id      Int   @id @default(autoincrement())
+  name    String    @default("user")
+  balance Int  @default(1000)
 }
 
 model Post {

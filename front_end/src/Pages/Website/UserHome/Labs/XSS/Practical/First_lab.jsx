@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./First_lab.css";
-import Header from "../../../Header/Header";
 import image_1 from "../../../assets/img/practical_lab2/image_1.png";
 import image_2 from "../../../assets/img/practical_lab2/image_2.png";
 import image_3 from "../../../assets/img/practical_lab2/image_3.png";
 import image_4 from "../../../assets/img/practical_lab2/image_4.png";
 import image_5 from "../../../assets/img/practical_lab2/image_5.png";
 import Footer from "../../../Footer/Footer";
+import GoBack from "../../../GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 export default function First_lab() {
   // Step 1: Define the card data in an array
   const cards = [
@@ -55,9 +56,6 @@ export default function First_lab() {
   const [hasSearched, setHasSearched] = useState(false);
   const [isHTML, setIShtml] = useState(false);
 
-
-
-  
   const handleSearch = (event) => {
     event.preventDefault();
     setScriptOutput("");
@@ -75,16 +73,12 @@ export default function First_lab() {
         const result = eval(code);
         console.log(result);
         setScriptOutput(
-          result !== undefined
-            ? result.toString()
-            : "Script executed"
+          result !== undefined ? result.toString() : "Script executed"
         );
       } catch (err) {
         setScriptOutput(`Error: ${err.message}`);
       }
-    }
-    
-    else if (
+    } else if (
       searchQuery.trim().startsWith("<") &&
       searchQuery.trim().endsWith(">")
     ) {
@@ -109,7 +103,8 @@ export default function First_lab() {
 
   return (
     <>
-      <Header />
+      <GoBack />
+      <ShowHint />
       {/* Start Courses */}
       <div className="course-First_lab">
         <div className="container-First_lab">
@@ -128,23 +123,21 @@ export default function First_lab() {
 
           {/* Render Cards or "No data found" message */}
           <div className="row-practice">
-            {hasSearched &&(
+            {hasSearched && (
               <p className="html-output">
-              Your Search Result: "
-              {scriptOutput ? (
-                <span>
-                  <span>{scriptOutput}</span>
-                </span>
-              ):isHTML ? (
-                <span
-                dangerouslySetInnerHTML={{ __html: htmlOutput }}
-                ></span>
-              ):(
-                <span>{searchQuery}</span>
-              )}
-              "{" "}
-            </p>
-              )}
+                Your Search Result: "
+                {scriptOutput ? (
+                  <span>
+                    <span>{scriptOutput}</span>
+                  </span>
+                ) : isHTML ? (
+                  <span dangerouslySetInnerHTML={{ __html: htmlOutput }}></span>
+                ) : (
+                  <span>{searchQuery}</span>
+                )}
+                "{" "}
+              </p>
+            )}
             {filteredCards.length > 0 ? (
               filteredCards.map((card) => (
                 <div className="card-First_lab" key={card.id}>
