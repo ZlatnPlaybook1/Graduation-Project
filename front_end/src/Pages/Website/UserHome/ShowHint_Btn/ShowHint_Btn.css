@@ -1,7 +1,6 @@
 .show-hint-btn {
   position: fixed;
   top: 30px;
-  left: calc(80% - 100px);
   right: 30px;
   outline: none;
   padding: 12px 25px;
@@ -12,7 +11,6 @@
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
-  position: relative;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
   border: none;
