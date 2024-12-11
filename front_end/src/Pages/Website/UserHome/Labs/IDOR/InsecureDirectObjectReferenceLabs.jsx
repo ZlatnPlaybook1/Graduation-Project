@@ -50,10 +50,9 @@ export default function InsecureDirectObjectReferenceLabs() {
                 <img src={Idor_cover} alt="Lab Cover" />
               </div>
               <div className="course-text-XSS">
-                <h3>Reflected XSS into HTML context</h3>
-                <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                <h3>Invoices.</h3>
+                <p className="modern-p-XSS">
+                  Gain unauthorized access to other users' invoices.
                 </p>
                 <ul className="circled-order-XSS">
                   <li>Cyber Security Basics</li>
@@ -76,10 +75,9 @@ export default function InsecureDirectObjectReferenceLabs() {
                 <img src={Idor_cover} alt="Lab Cover" />
               </div>
               <div className="course-text-XSS">
-                <h3>Reflected XSS into HTML context</h3>
-                <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                <h3>Ticket Sales</h3>
+                <p className="modern-p-XSS">
+                  Buy tickets for less than the regular price.
                 </p>
                 <ul className="circled-order-XSS">
                   <li>Cyber Security Basics</li>
@@ -102,10 +100,10 @@ export default function InsecureDirectObjectReferenceLabs() {
                 <img src={Idor_cover} alt="Lab Cover" />
               </div>
               <div className="course-text-XSS">
-                <h3>Reflected XSS into HTML context</h3>
-                <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                <h3>Money Transfer</h3>
+                <p className="modern-p-XSS">
+                  Transfer money from another user's account to your own account
+                  without any permission.
                 </p>
                 <ul className="circled-order-XSS">
                   <li>Cyber Security Basics</li>
@@ -122,6 +120,7 @@ export default function InsecureDirectObjectReferenceLabs() {
           </div>
         </div>
       </div>
+
       {/* End Courses */}
       <Footer />
     </>

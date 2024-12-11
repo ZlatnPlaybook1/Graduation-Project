@@ -9,6 +9,30 @@ import Footer from "../../../Footer/Footer";
 import GoBack from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 export default function First_lab() {
+  const hintMessage = `
+    <div
+      style={{
+        textAlign: "left",
+        fontSize: "1rem",
+        lineHeight: "1.5",
+        color: "#333",
+      }}
+    >
+      <p>Copy and paste the following into the search box:</p>
+      <code
+        style={{
+          display: "block",
+          background: "#f8f9fa",
+          padding: "10px",
+          borderRadius: "5px",
+          color: "#d63384",
+        }}
+      >
+        &lt;script&gt;alert(1)&lt;/script&gt;
+      </code>
+      <p>Click "Search".</p>
+    </div>
+  `;
   // Step 1: Define the card data in an array
   const cards = [
     {
@@ -104,7 +128,7 @@ export default function First_lab() {
   return (
     <>
       <GoBack />
-      <ShowHint />
+      <ShowHint hintText={hintMessage} />
       {/* Start Courses */}
       <div className="course-First_lab">
         <div className="container-First_lab">

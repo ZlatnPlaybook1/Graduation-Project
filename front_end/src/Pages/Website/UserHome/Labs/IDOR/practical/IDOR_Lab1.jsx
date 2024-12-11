@@ -4,6 +4,36 @@ import "./IDOR_LAB1.css";
 import GoBack from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 export default function IDOR_Lab1() {
+  const hintMessage = `
+        <style>
+        .invoice-info {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .invoice-info h2 {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+        .invoice-info p {
+            font-size: 16px;
+            color: #555555;
+            line-height: 1.5;
+        }
+        .invoice-info .highlight {
+            font-weight: bold;
+            color: #0066cc;
+        }
+    </style>
+      <div class="invoice-info">
+        <h2>Invoice Information</h2>
+        <p>Look at the parameter that indicates the unique <span class="highlight">ID</span> of each invoice. We can modify this ID to view information from other customers.</p>
+      </div>
+  `;
   const strings = {
     title: "Invoice Viewer",
     card_alert: "Invoice Alert",
@@ -75,7 +105,7 @@ export default function IDOR_Lab1() {
   return (
     <>
       <GoBack />
-      <ShowHint />
+      <ShowHint hintText={hintMessage} />
       <div className="center-idor">
         <div className="idor-container">
           <div className="idor-container-wrapper">

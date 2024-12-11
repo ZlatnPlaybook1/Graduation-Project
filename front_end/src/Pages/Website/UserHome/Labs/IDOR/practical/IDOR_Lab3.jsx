@@ -5,6 +5,13 @@ import GoBack from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function IDORLabComponent() {
+  const hintMessage = `
+      <div class="info-container">
+          <p>Open <span class="highlight">Burp Suite</span> and intercept any order. We can manipulate the sender, receiver, and the amount of money transferred.</p>
+      </div>
+
+  `;
+
   const [account, setAccount] = useState({ name: "", balance: 0 });
   const [users, setUsers] = useState([]);
   const [transferAmount, setTransferAmount] = useState("");
@@ -72,7 +79,7 @@ export default function IDORLabComponent() {
   return (
     <>
       <GoBack />
-      <ShowHint />
+      <ShowHint hintText={hintMessage} />
       <div className="idorlab-container">
         <div className="idorlab-header">
           <h1>Money Transfer</h1>

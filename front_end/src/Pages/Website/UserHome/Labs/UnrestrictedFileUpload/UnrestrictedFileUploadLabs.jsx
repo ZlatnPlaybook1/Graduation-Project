@@ -50,11 +50,8 @@ export default function UnrestrictedFileUploadLabs() {
                 <img src={lab_Cover} alt="Lab Cover" />
               </div>
               <div className="course-text-XSS">
-                <h3>Reflected XSS into HTML context</h3>
-                <p>
-                  Before hacking something, you first need to understand the
-                  basics
-                </p>
+                <h3>Unrestricted:</h3>
+                <p>Upload disallowed file type.</p>
                 <ul className="circled-order-XSS">
                   <li>Cyber Security Basics</li>
                   <li>Networking Basics and Weaknesses</li>
@@ -76,10 +73,9 @@ export default function UnrestrictedFileUploadLabs() {
                 <img src={lab_Cover} alt="Lab Cover" />
               </div>
               <div className="course-text-XSS">
-                <h3>Reflected XSS into HTML context</h3>
+                <h3>MIME Type:</h3>
                 <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                  Upload disallowed file type, bypassing MIME type checking.
                 </p>
                 <ul className="circled-order-XSS">
                   <li>Cyber Security Basics</li>
@@ -102,10 +98,9 @@ export default function UnrestrictedFileUploadLabs() {
                 <img src={lab_Cover} alt="Lab Cover" />
               </div>
               <div className="course-text-XSS">
-                <h3>Reflected XSS into HTML context</h3>
+                <h3>Blacklist :</h3>
                 <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                  Upload disallowed file type, bypassing the blacklist check.
                 </p>
                 <ul className="circled-order-XSS">
                   <li>Cyber Security Basics</li>

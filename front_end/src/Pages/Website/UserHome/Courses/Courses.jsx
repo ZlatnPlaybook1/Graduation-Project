@@ -59,14 +59,24 @@ const Courses = () => {
               <div className="course-text">
                 <h3>Cross-Site Scripting</h3>
                 <p>
-                  Learn the core skills required to start a career in cyber
-                  security
+                  Learn the fundamentals of Cross-Site Scripting (XSS), one of
+                  the most common vulnerabilities in web applications. Gain
+                  insights into identifying, exploiting, and mitigating XSS in
+                  various contexts.
                 </p>
                 <ul className="circled-order">
-                  <li>Learn about different careers in cyber</li>
-                  <li>Hack your first application</li>
-                  <li>Defend against a live cyber attack</li>
-                  <li>Explore security topics in the industry</li>
+                  <li>What is Cross-Site Scripting?</li>
+                  <li>Types of XSS:</li>
+                  <li>Exploitation Techniques</li>
+                  <li>Mitigation Strategies</li>
+                  <li>
+                    Perform a Reflected XSS attack in a search functionality.
+                  </li>
+                  <li>Exploit Stored XSS through a comment feature.</li>
+                  <li>
+                    Identify and execute a DOM-based XSS payload in search query
+                    tracking.
+                  </li>
                 </ul>
               </div>
               <div className="easy">
@@ -130,14 +140,25 @@ const Courses = () => {
               <div className="course-text">
                 <h3>Unrestricted File Upload</h3>
                 <p>
-                  Learn the core skills required to start a career in cyber
-                  security
+                  Understand the risks and exploitation of unrestricted file
+                  upload vulnerabilities, a critical security issue in web
+                  applications. Learn how attackers can leverage this
+                  vulnerability to execute malicious code or compromise a
+                  server.
                 </p>
                 <ul className="circled-order">
-                  <li>Learn about different careers in cyber</li>
-                  <li>Hack your first application</li>
-                  <li>Defend against a live cyber attack</li>
-                  <li>Explore security topics in the industry</li>
+                  <li>What is Unrestricted File Upload?</li>
+                  <li>Why is it Dangerous?</li>
+                  <li>Attack Techniques</li>
+                  <li>Exploitation Scenarios</li>
+                  <li>
+                    Validate file types on the server-side using whitelists
+                    (e.g., allow only .jpg, .png).
+                  </li>
+                  <li>
+                    Use random file names and directories for uploaded files to
+                    prevent direct access.
+                  </li>
                 </ul>
               </div>
               <div className="easy">
@@ -250,7 +271,7 @@ const Courses = () => {
               <div className="course-image">
                 <img src={acvulnimg} alt="Course" />
               </div>
-              
+
               {/* topic 10 */}
               <div className="course-text">
                 <h3>Access control vulnerabilities</h3>
@@ -279,14 +300,17 @@ const Courses = () => {
               <div className="course-text">
                 <h3>Insecure Direct Object Reference(IDOR)</h3>
                 <p>
-                  Learn the core skills required to start a career in cyber
-                  security
+                  Delve into Insecure Direct Object Reference (IDOR)
+                  vulnerabilities, a common security issue in web applications.
+                  Learn how attackers exploit weak access controls to gain
+                  unauthorized access to sensitive resources.
                 </p>
                 <ul className="circled-order">
-                  <li>Learn about different careers in cyber</li>
-                  <li>Hack your first application</li>
-                  <li>Defend against a live cyber attack</li>
-                  <li>Explore security topics in the industry</li>
+                  <li>What is IDOR?</li>
+                  <li>Why is it Dangerous?</li>
+                  <li>Common Examples.</li>
+                  <li>Exploitation Techniques.</li>
+                  <li>Mitigation Strategies.</li>
                 </ul>
               </div>
               <div className="easy">
