@@ -14,6 +14,14 @@ export default function IDORLabComponent() {
   const apiUrl = "http://127.0.0.1:8080/api"; // Base API URL
 
   useEffect(() => {
+    // PATCH request to update accounts
+    axios
+      .patch(`${apiUrl}/accounts`, { updated: true }) // Replace `{ updated: true }` with the appropriate data for your API
+      .then(() => console.log("PATCH request successful"))
+      .catch((error) =>
+        console.error("Failed to execute PATCH request:", error)
+      );
+
     // Fetch account information for the current user
     axios
       .get(`${apiUrl}/account/${userId}`)
