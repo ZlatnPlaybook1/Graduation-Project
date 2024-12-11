@@ -188,15 +188,13 @@ export async function addPersonalInfo(req: Request, res: Response): Promise<Resp
         const existName = await prisma.user.findUnique({
             where: { name: req.body.name },
         });
-        if (existName) {
-            return res.status(422).json({ error: "Name already exists" });
-        }
+        
 
         // Build the update data dynamically
         const updateData: any = {
             name: req.body.name,
             birthday: req.body.birthday,
-            phoneNum: req.body.phone,
+            phoneNum: req.body.phoneNum,
             address: req.body.address,
         };
 
