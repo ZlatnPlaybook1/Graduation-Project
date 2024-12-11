@@ -12,6 +12,51 @@ import GoBack from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function XSS_FOURTH() {
+  const hintMessage = `
+  <div
+  style={{
+    textAlign: "left",
+    fontSize: "1rem",
+    lineHeight: "1.5",
+    color: "#333",
+    padding: "15px",
+    background: "#f1f1f1",
+    borderRadius: "8px",
+    boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+  }}
+>
+  <p>Enter a random alphanumeric string into the "Website" input field.</p>
+  <p>
+    After posting the comment, intercept the request with Burp Suite, modify it to include a
+    <code>javascript:alert(1)</code> payload in the "Website" input, and submit it again.
+  </p>
+  <p>
+    Right-click the link, select <strong>Copy URL</strong>, and paste it into your browser.
+  </p>
+
+  <p>When you click the name above the comment, it should trigger an alert.</p>
+
+  <div
+    style={{
+      display: "block",
+      background: "#eaf7ff",
+      padding: "10px",
+      borderRadius: "5px",
+      color: "#0056b3",
+      marginTop: "10px",
+      fontFamily: "monospace",
+    }}
+  >
+    <code>javascript:alert(1)</code>
+  </div>
+
+  <p style={{ marginTop: "20px" }}>
+    This technique demonstrates how Cross-Site Scripting (XSS) can be used to execute malicious
+    JavaScript in a browser when reflected user input is improperly handled by a web application.
+  </p>
+</div>
+
+  `;
   const cards = [
     {
       id: 1,
@@ -90,7 +135,7 @@ export default function XSS_FOURTH() {
   return (
     <>
       <GoBack />
-      <ShowHint />
+      <ShowHint hintText={hintMessage} />
       <div className="course-First_lab">
         <div className="container-First_lab">
           {errorMessage && (

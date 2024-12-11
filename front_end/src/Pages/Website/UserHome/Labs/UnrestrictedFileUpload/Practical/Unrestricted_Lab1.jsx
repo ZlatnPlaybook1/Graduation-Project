@@ -4,6 +4,9 @@ import "./FileUplode.css";
 import GOBack from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 const UnrestrictedLab1 = () => {
+  const hintMessage = `
+  <p>Any file you will upload will be accepted; there is no constraint.</p>
+  `;
   const [file, setFile] = useState(null);
   const [status, setStatus] = useState("");
   const [token, setToken] = useState("");
@@ -62,7 +65,7 @@ const UnrestrictedLab1 = () => {
   return (
     <>
       <GOBack />
-      <ShowHint />
+      <ShowHint hintText={hintMessage} />
       <div className="unique-container">
         <div className="unique-container-wrapper">
           <div className="row pt-5 mt-5 mb-3">

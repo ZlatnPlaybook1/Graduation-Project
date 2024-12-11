@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Third_lab.css";
-import Header from "../../../Header/Header";
 import image_1 from "../../../assets/img/practical_lab2/image_1.png";
 import image_2 from "../../../assets/img/practical_lab2/image_2.png";
 import image_3 from "../../../assets/img/practical_lab2/image_3.png";
@@ -11,6 +10,38 @@ import GoBack from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function Third_lab() {
+  const hintMessage = `
+  <div
+      style={{
+        textAlign: "left",
+        fontSize: "1rem",
+        lineHeight: "1.5",
+        color: "#333",
+        padding: "15px",
+        background: "#f1f1f1",
+        borderRadius: "8px",
+        boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+      }}
+    >
+      <p>Enter a random alphanumeric string into the search box.</p>
+      <p>
+        Right-click and inspect the element, and observe that your random
+        string has been placed inside an <code>img</code> <code>src</code> attribute.
+      </p>
+      <p>Break out of the <code>img</code> attribute by searching for:</p>
+      <code
+        style={{
+          display: "block",
+          background: "#eaf7ff",
+          padding: "10px",
+          borderRadius: "5px",
+          color: "#0056b3",
+        }}
+      >
+        &quot;&gt;&lt;svg onload=alert(1)&gt;
+      </code>
+    </div>
+  `;
   const cards = [
     {
       id: 1,
@@ -100,7 +131,7 @@ export default function Third_lab() {
   return (
     <>
       <GoBack />
-      <ShowHint />
+      <ShowHint hintText={hintMessage} />
       <div className="course-First_lab">
         <div className="container-First_lab">
           {errorMessage && (

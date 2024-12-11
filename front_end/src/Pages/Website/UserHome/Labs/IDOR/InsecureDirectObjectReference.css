@@ -226,3 +226,30 @@ Here Styling the content at every tasks
   font-weight: bold;
   color: #e74c3c;
 }
+.modern-p-XSS {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.modern-p-XSS:hover {
+  color: #007bff; /* Change to a modern color */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.course-card-XSS {
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.course-card-XSS:hover {
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
+}

@@ -4,6 +4,36 @@ import GoBack from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 
 const IDOR_Lab2 = () => {
+  const hintMessage = `
+      <style>
+        .info-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .info-container h2 {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+        .info-container p {
+            font-size: 16px;
+            color: #555555;
+            line-height: 1.5;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #0066cc;
+        }
+    </style>
+      <div class="info-container">
+          <h2>Ticket Purchase Information</h2>
+          <p>The purchase price for 1 ticket is $10, but we can manipulate this price using <span class="highlight">Burpsuite</span>.</p>
+      </div>
+  `;
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
   const [accountBalance, setAccountBalance] = useState(0); // Default balance set to 0
@@ -70,7 +100,7 @@ const IDOR_Lab2 = () => {
   return (
     <>
       <GoBack />
-      <ShowHint />
+      <ShowHint hintText={hintMessage} />
       <div className="unique-ticket-container">
         <div className="unique-ticket-header">
           <h1>Buy Tickets</h1>

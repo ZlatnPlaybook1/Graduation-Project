@@ -5,6 +5,43 @@ import GOBack from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 
 const UnrestrictedLab1 = () => {
+  const hintMessage = `
+  <div class="hint-message">
+  <p><strong>Open Burp Suite and intercept the upload of the backdoor file.
+</strong></p>
+  <p>change the Content-Type based on the allowed filters only.
+ <code>image/png</code></p>
+</div>
+
+<style>
+  .hint-message {
+    background-color: #f9f9f9;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .hint-message p {
+    margin: 10px 0;
+  }
+
+  .hint-message code {
+    font-family: 'Courier New', monospace;
+    background-color: #e1e1e1;
+    padding: 3px 6px;
+    border-radius: 4px;
+  }
+
+  .hint-message strong {
+    font-weight: bold;
+  }
+</style>
+
+  `;
   const [file, setFile] = useState(null);
   const [status, setStatus] = useState("");
 
@@ -73,7 +110,7 @@ const UnrestrictedLab1 = () => {
   return (
     <>
       <GOBack />
-      <ShowHint />
+      <ShowHint hintText={hintMessage} />
       <div className="unique-container">
         <div className="unique-container-wrapper">
           <div className="row pt-5 mt-5 mb-3">

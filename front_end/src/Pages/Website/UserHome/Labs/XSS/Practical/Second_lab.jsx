@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "./Second_lab.css";
-import Header from "../../../Header/Header";
 import image_1 from "../../../assets/img/practical_lab2/image_1.png";
 import icon from "../../../assets/img/practical_lab2/icon.png";
 import Footer from "../../../Footer/Footer";
 import axios from "axios";
 import GoBack_Btn from "../../../GoBack_Btn/GoBack_Btn";
-import ShowHint_Btn from "../../../ShowHint_Btn/ShowHint_Btn";
+import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function Second_lab_XSS() {
+  const hintMessage = `
+  <div style={{ textAlign: "left", fontSize: "1rem", lineHeight: "1.5", color: "#333" }}>
+      <p>Enter the following into the comment box:</p>
+      <code style={{ display: "block", background: "#f8f9fa", padding: "10px", borderRadius: "5px", color: "#d63384" }}>
+        &lt;script&gt;alert(1)&lt;/script&gt;
+      </code>
+      <p>Enter a name, email, and website.</p>
+      <p>Click "Post comment".</p>
+      <p>Go back to the blog.</p>
+    </div>
+  `;
   const [form, setForm] = useState({
     email: "",
     content: "",
@@ -98,11 +108,10 @@ export default function Second_lab_XSS() {
 
   return (
     <>
-      <Header />
       {/* Start Courses  */}
       <div className="course-Second_lab">
         <GoBack_Btn />
-        <ShowHint_Btn />
+        <ShowHint hintText={hintMessage} />
         <div className="container-Second_lab">
           <div className="row-practice">
             <div className="card-Second_lab">

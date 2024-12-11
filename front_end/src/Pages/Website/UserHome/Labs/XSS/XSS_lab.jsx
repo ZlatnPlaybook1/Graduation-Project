@@ -51,8 +51,13 @@ export default function XSS_lab() {
               <div class="course-text-XSS">
                 <h3>Reflected XSS into HTML context</h3>
                 <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                  This lab contains a{" "}
+                  <span class="highlight">
+                    simple reflected cross-site scripting vulnerability
+                  </span>{" "}
+                  in the search functionality. To solve the lab, perform a
+                  cross-site scripting attack that calls the{" "}
+                  <span class="highlight">alert function</span>.
                 </p>
                 <ul class="circled-order-XSS">
                   <li>Cyber Security Basics</li>
@@ -74,8 +79,14 @@ export default function XSS_lab() {
               <div class="course-text-XSS">
                 <h3>Stored XSS into HTML context</h3>
                 <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                  This lab contains a{" "}
+                  <span class="highlight">
+                    stored cross-site scripting vulnerability
+                  </span>{" "}
+                  in the comment functionality. To solve this lab, submit a
+                  comment that calls the{" "}
+                  <span class="highlight">alert function</span> when the blog
+                  post is viewed.
                 </p>
                 <ul class="circled-order-XSS">
                   <li>Cyber Security Basics</li>
@@ -97,8 +108,19 @@ export default function XSS_lab() {
               <div class="course-text-XSS">
                 <h3>DOM XSS</h3>
                 <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                  This lab contains a{" "}
+                  <span class="highlight">
+                    DOM-based cross-site scripting vulnerability
+                  </span>{" "}
+                  in the search query tracking functionality. It uses the
+                  JavaScript <span class="highlight">document.write</span>{" "}
+                  function, which writes data out to the page. The{" "}
+                  <span class="highlight">document.write</span> function is
+                  called with data from{" "}
+                  <span class="highlight">location.search</span>, which you can
+                  control using the website URL. To solve this lab, perform a
+                  cross-site scripting attack that calls the{" "}
+                  <span class="highlight">alert function</span>.
                 </p>
                 <ul class="circled-order-XSS">
                   <li>Cyber Security Basics</li>
@@ -122,8 +144,14 @@ export default function XSS_lab() {
                   Stored XSS in anchor <q>href</q>
                 </h3>
                 <p>
-                  Before hacking something, you first need to understand the
-                  basics
+                  This lab contains a{" "}
+                  <span class="highlight">
+                    stored cross-site scripting vulnerability
+                  </span>{" "}
+                  in the comment functionality. To solve this lab, submit a
+                  comment that calls the{" "}
+                  <span class="highlight">alert function</span> when the comment
+                  author name is clicked.
                 </p>
                 <ul class="circled-order-XSS">
                   <li>Cyber Security Basics</li>
@@ -137,6 +165,7 @@ export default function XSS_lab() {
                 <p>Easy</p>
               </div>
             </Link>
+
             {/* lab7 */}
             {/* <Link to="/xss/xss_lab/seven_lab" class="course-card-XSS">
               <div class="course-image-XSS">
