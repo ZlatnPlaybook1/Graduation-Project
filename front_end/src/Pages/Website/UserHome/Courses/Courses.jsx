@@ -16,6 +16,8 @@ import regexImg from "../assets/img/Regex/landing.jpeg";
 import infoDiscImg from "../assets/img/InfoDisc/landing.jpg";
 import AudForImg from "../assets/img/AudFor/landing.png";
 import IDOR from "../assets/img/IDOR/Insecure_Direct_Object_Reference.png";
+import BrokenAuthentication from "../assets/img/Broken Authentication/card_image.png";
+
 const Courses = () => {
   return (
     <div className="course">
@@ -195,7 +197,7 @@ const Courses = () => {
           <div className="row-course">
             <a href="/broken-auth" className="course-card">
               <div className="course-image">
-                <img src={imagecourse2} alt="Course" />
+                <img src={BrokenAuthentication} alt="Course" />
               </div>
 
               {/* topic 8 */}
