@@ -1,4 +1,4 @@
-import prisma from "../../utilities/db";
+import prisma from "../../../utilities/db";
 import e, {Request, Response} from "express";
 
 
