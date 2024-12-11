@@ -197,6 +197,7 @@ const Courses = () => {
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
+
               {/* topic 8 */}
               <div className="course-text">
                 <h3>Broken Authentication</h3>
@@ -222,6 +223,7 @@ const Courses = () => {
               <div className="course-image">
                 <img src={bash} alt="Course" />
               </div>
+
               {/* topic 9 */}
               <div className="course-text">
                 <h3>Bash Scripting</h3>
@@ -248,6 +250,7 @@ const Courses = () => {
               <div className="course-image">
                 <img src={acvulnimg} alt="Course" />
               </div>
+              
               {/* topic 10 */}
               <div className="course-text">
                 <h3>Access control vulnerabilities</h3>

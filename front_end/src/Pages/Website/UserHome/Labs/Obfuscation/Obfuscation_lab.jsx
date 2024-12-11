@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import $ from "jquery";
 import styles from"./Obfuscation_lab.module.css";
 import Header from "../../Header/Header";
-import image from "../../assets/img/card_image.png";
+import image from "../../assets//img/Obfuscation/card_image.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
@@ -74,13 +74,12 @@ export default function Bash_lab() {
                         <img src={image} alt="" />
                     </div>
                     <div className={styles["course-text"]}>
-                        <h3>Pre Security</h3>
-                        <p>Before hacking something, you first need to understand the basics</p>
+                        <h3>Legendary Process</h3>
+                        <p>Master the basics of obfuscation, a powerful technique for
+                  securing code and protecting intellectual property in
+                  cybersecurity environments</p>
                         <ul className={styles["circled-order"]}>
-                            <li>Cyber Security Basics</li>
-                            <li>Networking Basics and Weaknesses</li>
-                            <li>The Web And Common Attacks</li>
-                            <li>Learn to Use The bash-lab OS</li>
+                           
                         </ul>
                     </div>
                     <div className={styles.easy}>

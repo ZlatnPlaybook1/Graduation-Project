@@ -5,6 +5,8 @@ import image_1 from "../../../assets/img/practical_lab2/image_1.png";
 import icon from "../../../assets/img/practical_lab2/icon.png";
 import Footer from "../../../Footer/Footer";
 import axios from "axios";
+import GoBack_Btn from "../../../GoBack_Btn/GoBack_Btn";
+import ShowHint_Btn from "../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function Second_lab_XSS() {
   const [form, setForm] = useState({
@@ -19,8 +21,8 @@ export default function Second_lab_XSS() {
   const [loading, setLoading] = useState(false);
   const fetchData = () => {
     try {
-      const respone = axios.get("http://127.0.0.1:8080/api/comment");
-      console.log("Done")
+      const respone = axios.delete("http://127.0.0.1:8080/api/comment");
+      console.log("Done");
       setData(respone.data);
     } catch (err) {
       setLoading(false);
@@ -37,6 +39,7 @@ export default function Second_lab_XSS() {
   };
 
   const handleSubmit = (e) => {
+    const respone = axios.delete("http://127.0.0.1:8080/api/comment");
     e.preventDefault();
     const content = e.target.content.value;
     const email = e.target.email.value;
@@ -86,27 +89,8 @@ export default function Second_lab_XSS() {
         setErr("Please enter a comment.");
       }
     }
-    // try {
-    //   const respone = axios.post("http://127.0.0.1:8080/api/new_comment",form);
-    //   setData((prevData) => [...prevData, respone.data]);
-    //   setForm({ email: "", content: "" });
-    // } catch (err) {
-    //   setLoading(false);
-    //   if (err.response) {
-    //     setErr(err.response.data);
-    //     console.error(err.response.data);
-    //   } else {
-    //     setErr("Network Error");
-    //     console.error(err);
-    //   }
-    // } finally {
-    //   setLoading(false);
-    // }
-
-
     // Reset the form after submission
     setForm({ email: "", content: "" });
-    
   };
   useEffect(() => {
     fetchData();
@@ -117,6 +101,8 @@ export default function Second_lab_XSS() {
       <Header />
       {/* Start Courses  */}
       <div className="course-Second_lab">
+        <GoBack_Btn />
+        <ShowHint_Btn />
         <div className="container-Second_lab">
           <div className="row-practice">
             <div className="card-Second_lab">
@@ -201,25 +187,25 @@ export default function Second_lab_XSS() {
                 {err && <span className="error">{err}</span>}
               </form>
               <div className="comment-section">
-                  {comments?.map((comment) => (
-                    <div key={comment.id} className="comment-card">
+                {comments?.map((comment) => (
+                  <div key={comment.id} className="comment-card">
                     <div className="comment-header">
-                    <img src={icon} className="icon" alt="Card" />
-                    <p className="name">{comment.email || "Anonymous"}</p>
+                      <img src={icon} className="icon" alt="Card" />
+                      <p className="name">{comment.email || "Anonymous"}</p>
                     </div>
                     {comment.isHTML ? (
                       <p
-                      className="comment-text"
-                      dangerouslySetInnerHTML={{ __html: comment.content }}
+                        className="comment-text"
+                        dangerouslySetInnerHTML={{ __html: comment.content }}
                       ></p>
                     ) : (
                       <p className="comment-text">
                         {comment.content || scriptOutput}
                       </p>
                     )}
-                    </div>
-                  ))}
-                {data?.map(item => (
+                  </div>
+                ))}
+                {data?.map((item) => (
                   <div key={item.id} className="comment-card">
                     <div className="comment-header">
                       <img src={icon} className="icon" alt="Card" />

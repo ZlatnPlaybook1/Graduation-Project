@@ -1,5 +1,7 @@
 import Footer from "../../../../Footer/Footer";
+import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
 import Header from "../../../../Header/Header";
+import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import styles from "./Test.module.css";
 import React, { useEffect, useState } from "react";
 
@@ -75,6 +77,8 @@ export default function Test() {
     <>
       <Header />
       <div className={styles.course}>
+      <GoBack_Btn/>
+      <ShowHint_Btn/>
         <div className={styles.firework} id="firework"></div>
         {showSuccess && (
           <div className={`${styles.message} ${styles.success}`}>

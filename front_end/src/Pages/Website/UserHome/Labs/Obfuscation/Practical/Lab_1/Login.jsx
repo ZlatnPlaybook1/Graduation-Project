@@ -4,6 +4,8 @@ import $ from "jquery";
 import styles from "./Login.module.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
 
 export default function Obfuscation_login() {
   const faqSectionRef = useRef(null);
@@ -82,58 +84,56 @@ export default function Obfuscation_login() {
 
   return (
     <>
-      <div className={styles.obfuscation_lab_body}>
-        <div className={styles.container}>
-          <div className={`${styles.card_field} ${styles.hint}`}>
-            <button className={styles.source}>View Hint</button>
-          </div>
-          <div className={`${styles.card_field} ${styles.back}`}>
-            <Link className={styles.source} to="/Obfuscation/obfuscation_lab">
-              Go Back
-            </Link>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.card_content}>
-              <div className={styles.card_title}>Login</div>
-              <form className={styles.card_form} onSubmit={submitLogin}>
-                <div className={styles.card_field}>
-                  <label htmlFor="username">Username</label>
-                  <div className={styles.input}>
-                    <i className={`fa-solid fa-user fa-2x`}></i>
-                    <input
-                      type="text"
-                      id="username"
-                      name="username"
-                      placeholder="Username"
-                      value={form.username}
-                      required
-                      autoComplete="off"
-                      onChange={handleChange}
-                    />
+      <div className={styles.body}>
+        <GoBack_Btn />
+        <ShowHint_Btn />
+        <div className={styles.obfuscation_lab_body}>
+          <div className={styles.container}>
+            <div className={styles.card}>
+              <div className={styles.card_content}>
+                <div className={styles.card_title}>Login</div>
+                <form className={styles.card_form} onSubmit={submitLogin}>
+                  <div className={styles.card_field}>
+                    <label htmlFor="username">Username</label>
+                    <div className={styles.input}>
+                      <i className={`fa-solid fa-user fa-2x`}></i>
+                      <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Username"
+                        value={form.username}
+                        required
+                        autoComplete="off"
+                        onChange={handleChange}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className={styles.card_field}>
-                  <label htmlFor="password">Password</label>
-                  <div className={styles.input}>
-                    <i className={`fa-solid fa-lock fa-2x`}></i>
-                    <input
-                      type="password"
-                      id="password"
-                      name="password"
-                      placeholder="Password"
-                      value={form.password}
-                      required
-                      autoComplete="off"
-                      onChange={handleChange}
-                    />
+                  <div className={styles.card_field}>
+                    <label htmlFor="password">Password</label>
+                    <div className={styles.input}>
+                      <i className={`fa-solid fa-lock fa-2x`}></i>
+                      <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Password"
+                        value={form.password}
+                        required
+                        autoComplete="off"
+                        onChange={handleChange}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className={styles.card_field}>
-                  <button type="submit">Login</button>
-                </div>
-                {err !== "" && <span className={styles.error}>{err}</span>}
-                {right !== `` && <span className={styles.right}>{right}</span>}
-              </form>
+                  <div className={styles.card_field}>
+                    <button type="submit">Login</button>
+                  </div>
+                  {err !== "" && <span className={styles.error}>{err}</span>}
+                  {right !== `` && (
+                    <span className={styles.right}>{right}</span>
+                  )}
+                </form>
+              </div>
             </div>
           </div>
         </div>

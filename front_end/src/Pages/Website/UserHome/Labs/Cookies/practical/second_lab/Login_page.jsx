@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import Cookie from "cookie-universal";
 import Loading from "../../../../../../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
+import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function Login_page_second() {
   const [form, setForm] = useState({
@@ -12,7 +14,7 @@ export default function Login_page_second() {
     password: "",
   });
   //  Navigate
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   // Cookies
   const cookie = Cookie();
   // Loading state
@@ -33,7 +35,10 @@ export default function Login_page_second() {
     setLoading(true);
     setErr("");
     try {
-      const res = await axios.post("http://127.0.0.1:8080/api/cookie_login_second", form);
+      const res = await axios.post(
+        "http://127.0.0.1:8080/api/cookie_login_second",
+        form
+      );
       console.log(res);
       setLoading(false);
       const userId = res.data.userId;
@@ -42,7 +47,7 @@ export default function Login_page_second() {
         navigate(`/cookies/cookies_lab/second/admin`);
       } else if (userId === "OQ==") {
         navigate(`/cookies/cookies_lab/second/support`);
-      }else  {
+      } else {
         navigate(`/cookies/cookies_lab/second/login`);
       }
     } catch (error) {
@@ -67,49 +72,57 @@ export default function Login_page_second() {
       navigate(`/cookies/cookies_lab/second/admin`);
     } else if (userId === "OQ==") {
       navigate(`/cookies/cookies_lab/second/support`);
-    }else  {
+    } else {
       navigate(`/cookies/cookies_lab/second/login`);
     }
-  }, [userId,navigate]);
+  }, [userId, navigate]);
 
   return (
     <>
       {loading && <Loading />}
       {/* test comment */}
-    <div className="login-page">
-      <div className="container-login">
-        <div className="login-form">
+      <div className="login-page">
+        <GoBack_Btn />
+        <ShowHint_Btn />
+        <div className="container-login">
+          <div className="login-form">
             <h1>Login</h1>
-            <form  onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input type="email"
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
                   id="email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
                   required
-                  placeholder="Enter Your Email.."/>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input type="password"
+                  placeholder="Enter Your Email.."
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
                   id="password"
                   name="password"
                   value={form.password}
                   onChange={handleChange}
                   required
                   minLength={6}
-                  placeholder="Enter Your Password.."/>
-                </div>
-                <div className="form-group">
-                    <button type="submit" className="btn-login">Login</button>
-                </div>
-                    {err !== "" && <span className="error">{err}</span>}
+                  placeholder="Enter Your Password.."
+                />
+              </div>
+              <div className="form-group">
+                <button type="submit" className="btn-login">
+                  Login
+                </button>
+              </div>
+              {err !== "" && <span className="error">{err}</span>}
             </form>
+          </div>
         </div>
-    </div>
-    </div>
+      </div>
     </>
   );
 }

@@ -7,6 +7,8 @@ import image_3 from "../../../assets/img/practical_lab2/image_3.png";
 import image_4 from "../../../assets/img/practical_lab2/image_4.png";
 import image_5 from "../../../assets/img/practical_lab2/image_5.png";
 import Footer from "../../../Footer/Footer";
+import GoBack from "../../../GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function Third_lab() {
   const cards = [
@@ -97,7 +99,8 @@ export default function Third_lab() {
 
   return (
     <>
-      <Header />
+      <GoBack />
+      <ShowHint />
       <div className="course-First_lab">
         <div className="container-First_lab">
           {errorMessage && (
