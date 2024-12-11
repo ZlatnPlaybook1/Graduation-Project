@@ -3,6 +3,7 @@ import styles from "./Bash_quiz.module.css";
 import variables from "../../assets/img/bash/Quiz_img/variables.png"; // Example image import
 import ShowHint_Btn from "../../ShowHint_Btn/ShowHint_Btn";
 import GoBack_Btn from "../../GoBack_Btn/GoBack_Btn";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn";
 
 export default function Bash_Quiz() {
   useEffect(() => {
@@ -180,6 +181,7 @@ export default function Bash_Quiz() {
     <div className={styles.body}>
       <GoBack_Btn/>
       <ShowHint_Btn/>
+      <Go2TopBtn/>
     <div className={styles.quizContainer}>
       <h1 className={styles.title}>Bash Scripting Quiz</h1>
       <div className={styles.quiz}>
