@@ -1,92 +1,81 @@
-import Header from "../../../../Header/Header";
 import "./Our_Store.css";
-import $ from "jquery";
-import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
-import Footer from "../../../../Footer/Footer";
-
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import "./In_Store.css";
+import image_1 from "../../../../assets/img/SQL_2nd_Lab/image_1.png";
+import image_2 from "../../../../assets/img/SQL_2nd_Lab/image_2.png";
+import image_3 from "../../../../assets/img/SQL_2nd_Lab/image_3.png";
+import image_4 from "../../../../assets/img/SQL_2nd_Lab/image_4.png";
 export default function Our_Store() {
-  const faqSectionRef = useRef(null);
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
+  const hintMessage = `
+    <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
+      <li>1. Use Burp Suite to intercept and modify the request that sets the product category filter.
+      </li>
+      \n
+      <li>2. 
+     Modify the <mark><code>category </code></mark> parameter, giving it the value <mark><code>'+OR+1=1--</code></mark>
+      </li>\n
+      <li>3. Submit the request, and verify that the response now contains one or more unreleased products.
+      </li>
+    </ul>
+  `;
   return (
     <>
-      <Header />
-      {/* Start Courses  */}
-      <div className="course-Our_Store ">
-        <div className="container-Our_Store ">
-          <div className="row">
-            <div className="faq-section-Our_Store" ref={faqSectionRef}>
-              <dl className="section-text-Our_Store">
-                <dt className="wave-Our_Store fadeInUp faq-header-Our_Store">
-                  Retrieving hidden data
-                </dt>
-                <dd className="fadeInUp faq-body-Our_Store">
-                  <ul>
-                    <li>
-                      This lab contains a SQL injection vulnerability in the
-                      product category filter. When the user selects a category,
-                      the application carries out a SQL query like the
-                      following:
-                    </li>
-                    <pre>
-                      <code>
-                        <span>
-                          SELECT * FROM products WHERE category = 'T-shirts' AND
-                          released = 1
-                        </span>
-                      </code>
-                    </pre>
-                    <li>
-                      To solve the lab, perform a SQL injection attack that
-                      causes the application to display one or more unreleased
-                      products.
-                    </li>
-                  </ul>
-                </dd>
-              </dl>
+      <div className="container">
+        <GoBackBtn />
+        <ShowHintBtn hintText={hintMessage} />
+        <div className="course-In_Store ">
+          <div className="container-In_Store ">
+            <h1 style={{ textAlign: "center" }}>Featured Products</h1>
+            <div className="row-practice">
+              <div className="card-In_Store ">
+                <div className="functions">
+                  <i className="fa-solid fa-cart-plus"></i>
+                  <i className="fa-regular fa-heart"></i>
+                </div>
+                <img src={image_1} alt="" />
+                <div className="card-text-In_Store ">
+                  <h4>T-Shirt</h4>
+                  <p className="price">$29.9</p>
+                </div>
+              </div>
+              <div className="card-In_Store ">
+                <div className="functions">
+                  <i className="fa-solid fa-cart-plus"></i>
+                  <i className="fa-regular fa-heart"></i>
+                </div>
+                <img src={image_2} alt="" />
+                <div className="card-text-In_Store ">
+                  <h4>T-Shirt</h4>
+                  <p className="price">$29.9</p>
+                </div>
+              </div>
+              <div className="card-In_Store ">
+                <div className="functions">
+                  <i className="fa-solid fa-cart-plus"></i>
+                  <i className="fa-regular fa-heart"></i>
+                </div>
+                <img src={image_3} alt="" />
+                <div className="card-text-In_Store ">
+                  <h4>T-Shirt</h4>
+                  <p className="price">$29.9</p>
+                </div>
+              </div>
+              <div className="card-In_Store ">
+                <div className="functions">
+                  <i className="fa-solid fa-cart-plus"></i>
+                  <i className="fa-regular fa-heart"></i>
+                </div>
+                <img src={image_4} alt="" />
+                <div className="card-text-In_Store ">
+                  <h4>T-Shirt</h4>
+                  <p className="price">$29.9</p>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <h2>Click The Link To Go To T-Shirts In Our Store</h2>
-          <div className="row-practice">
-            <Link
-              to="/Sql_Injection/sql_Injection_lab/second_lab/in_store"
-              className="store-link"
-            >
-              T-Shirts
-            </Link>
           </div>
         </div>
       </div>
-      {/* End Course Content  */}
-      <Footer />
     </>
   );
 }

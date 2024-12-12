@@ -1,37 +1,61 @@
-// import React, { useState } from "react";
-// import axios from "axios";
 import "./Show_prices.css";
-// import { useNavigate } from "react-router-dom";
-import Header from "../../../../Header/Header";
-import Footer from "../../../../Footer/Footer";
 import { useState } from "react";
 import axios from "axios";
-
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 export default function Show_prices() {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
   axios
-      .post("http://127.0.0.1:8080/api/Show_Prices",)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        setLoading(false);
-        if (error.response) {
-          setErr(error.response.data);
-          console.error(error.response.data);
-        } else {
-          setErr("Network Error");
-          console.error(error);
-        }
-      });
+    .post("http://127.0.0.1:8080/api/Show_Prices")
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      setLoading(false);
+      if (error.response) {
+        setErr(error.response.data);
+        console.error(error.response.data);
+      } else {
+        setErr("Network Error");
+        console.error(error);
+      }
+    });
+  const hintMessage = `
+    <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
+      <li>1.
+ Use Burp Suite to intercept and modify the request that sets the product category filter.
+      </li>\n
+      <li>2.
+Modify the <mark><code>category</code></mark> parameter, giving it the value <mark><code>'+UNION+SELECT+NULL--.</code></mark> Observe that an error occurs.
+</li>\n
+
+
+      <li>3.
+Modify the <mark><code>category</code></mark> parameter to add an additional column containing a null value:\n
+      <mark><code> '+UNION+SELECT+NULL,NULL--.</code></mark>
+</li>\n
+      <li>4.
+Continue adding null values until the error disappears and the response includes additional content containing the null values.
+</li>\n
+      <li>5.
+      <mark><code> '+union+select+null,+null,+null--.</code></mark>
+</li>\n
+    </ul>
+    
+
+
+  `;
   return (
     <>
-      <Header />
+      <GoBackBtn />
+      <ShowHintBtn hintText={hintMessage} />
       {/* Start Courses  */}
       <div className="course-Show_prices ">
         <div className="container-Show_prices ">
-          <h1>Prices In Our Site</h1>
+          <h1 style={{ textAlign: "center", marginBlock: "15px" }}>
+            Prices In Our Site
+          </h1>
           <div className="row-practice">
             <div className="card-Show_prices ">
               <h4>Robot Home Security Buddy</h4>
@@ -53,7 +77,6 @@ export default function Show_prices() {
         </div>
       </div>
       {/* End Course Content  */}
-      <Footer />
     </>
   );
 }

@@ -103,7 +103,7 @@ export default function SQLInjection_lab() {
             </Link>
             {/* lab3 */}
             <Link
-              to="/Sql_Injection/sql_Injection_lab/third_lab/prices-exp"
+              to="/Sql_Injection/sql_Injection_lab/third_lab/show-prices"
               className="course-card-sql-injection"
             >
               <div className="course-image-sql-injection">
@@ -128,7 +128,7 @@ export default function SQLInjection_lab() {
             </Link>
             {/* lab4 */}
             <Link
-              to="/Sql_Injection/sql_Injection_lab/fourth_lab"
+              to="/Sql_Injection/sql_Injection_lab/fourth_lab/show_prices"
               className="course-card-sql-injection"
             >
               <div className="course-image-sql-injection">
@@ -151,36 +151,6 @@ export default function SQLInjection_lab() {
               <div className="easy-sql-injection">
                 <i className="fa-solid fa-signal lab-sql-injection"></i>
                 <p>Medium</p>
-              </div>
-            </Link>
-            {/* lab5 */}
-            <Link
-              to="/Sql_Injection/sql_Injection_lab/fifth_lab"
-              className="course-card-sql-injection"
-            >
-              <div className="course-image-sql-injection">
-                <img src={labImg} alt="" />
-              </div>
-              <div className="course-text-sql-injection">
-                <h3>UNION attack, retrieving data from other tables</h3>
-                <p>
-                  The database contains a different table called{" "}
-                  <mark>users</mark> with columns called <mark>username</mark>{" "}
-                  and <mark>password</mark>. <br /> <b>To solve the lab:</b>{" "}
-                  perform a SQL injection <mark>UNION</mark> attack that
-                  retrieves all usernames and passwords, and use the information
-                  to log in as the <mark>administrator</mark> user.
-                </p>
-                {/* <ul className="circled-order-sql-injection">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
-                </ul> */}
-              </div>
-              <div className="easy-sql-injection">
-                <i className="fa-solid fa-signal lab-sql-injection"></i>
-                <p>Hard</p>
               </div>
             </Link>
           </div>

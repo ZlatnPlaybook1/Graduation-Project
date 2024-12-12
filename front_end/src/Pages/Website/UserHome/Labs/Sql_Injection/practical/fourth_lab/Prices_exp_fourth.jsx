@@ -3,7 +3,6 @@ import "./Prices_exp_fourth.css";
 import $ from "jquery";
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import Footer from "../../../../Footer/Footer";
 
 export default function Prices_exp_fourth() {
   const faqSectionRef = useRef(null);
@@ -37,7 +36,6 @@ export default function Prices_exp_fourth() {
   }, []);
   return (
     <>
-      <Header />
       {/* Start Courses  */}
       <div className="course-Prices_exp_fourth ">
         <div className="container-Prices_exp_fourth ">
@@ -45,7 +43,7 @@ export default function Prices_exp_fourth() {
             <div className="faq-section-Prices_exp_fourth" ref={faqSectionRef}>
               <dl className="section-text-Prices_exp_fourth">
                 <dt className="wave-Prices_exp_fourth fadeInUp faq-header-Prices_exp_fourth">
-                  SQL injection UNION attacks
+                  SQL injection UNION attacks ffffffffffff
                 </dt>
                 <dd className="fadeInUp faq-body-Prices_exp_fourth">
                   <ul>
@@ -92,7 +90,7 @@ export default function Prices_exp_fourth() {
           <h2>Click The Link To Go To Prices Test</h2>
           <div className="row-practice">
             <Link
-              to="/Sql_Injection/sql_Injection_lab/third_lab/show-prices"
+              to="/Sql_Injection/sql_Injection_lab/fourth_lab/show_prices"
               className="store-link-sp"
             >
               Prices
@@ -101,7 +99,6 @@ export default function Prices_exp_fourth() {
         </div>
       </div>
       {/* End Course Content  */}
-      <Footer />
     </>
   );
 }

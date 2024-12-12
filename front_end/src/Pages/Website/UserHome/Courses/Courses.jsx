@@ -112,14 +112,15 @@ const Courses = () => {
               </div>
             </a>
           </div>
+          {/* topic4 */}
           <div className="row-course">
-            <a href="/CSRF" className="course-card">
+            <a href="/AC_Vuln" className="course-card">
               <div className="course-image">
-                <img src={CSRFImg} alt="Course" />
+                <img src={acvulnimg} alt="Course" />
               </div>
-              {/* topic4 */}
+
               <div className="course-text">
-                <h3>Cross Site Request Forgery (CSRF)</h3>
+                <h3>Access control vulnerabilities</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
@@ -194,14 +195,15 @@ const Courses = () => {
               </div>
             </a>
           </div>
+          {/* topic 7 */}
           <div className="row-course">
-            <a href="/Regex" className="course-card">
+            <a href="/BL_Vuln" className="course-card">
               <div className="course-image">
-                <img src={regexImg} alt="Course" />
+                <img src={blvImg} alt="Course" />
               </div>
-              {/* topic 7 */}
+
               <div className="course-text">
-                <h3>Regular expressions</h3>
+                <h3>Business logic vulnerabilities</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
@@ -215,6 +217,7 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
           <div className="row-course">
             <a href="/broken-auth" className="course-card">
               <div className="course-image">
@@ -268,15 +271,15 @@ const Courses = () => {
               </div>
             </a>
           </div>
+          {/* topic 10 */}
           <div className="row-course">
-            <a href="/AC_Vuln" className="course-card">
+            <a href="/CSRF" className="course-card">
               <div className="course-image">
-                <img src={acvulnimg} alt="Course" />
+                <img src={CSRFImg} alt="Course" />
               </div>
 
-              {/* topic 10 */}
               <div className="course-text">
-                <h3>Access control vulnerabilities</h3>
+                <h3>Cross Site Request Forgery (CSRF)</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics
@@ -290,6 +293,7 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
           <div className="row-course">
             <a
               href="/Insecure_Direct_Object_Reference(IDOR)"
@@ -347,14 +351,15 @@ const Courses = () => {
               </div>
             </a>
           </div>
+          {/* topic 13 */}
           <div className="row-course">
-            <a href="/BL_Vuln" className="course-card">
+            <a href="/Regex" className="course-card">
               <div className="course-image">
-                <img src={blvImg} alt="Course" />
+                <img src={regexImg} alt="Course" />
               </div>
-              {/* topic 13 */}
+
               <div className="course-text">
-                <h3>Business logic vulnerabilities</h3>
+                <h3>Regular expressions</h3>
                 <p>
                   Before hacking something, you first need to understand the
                   basics

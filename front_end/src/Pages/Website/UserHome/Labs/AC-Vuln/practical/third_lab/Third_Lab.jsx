@@ -46,7 +46,7 @@ export default function Third_Lab() {
       <GoBack_Btn />
       <ShowHint_Btn hintText={hintMessage} />
       <div className="container">
-        <h2 className="lab-header">Products2</h2>
+        <h1 style={{ textAlign: "center", marginBlock: "50px" }}>Products </h1>
         <Link to={`/AC-Vuln/AC_Vuln_labs/third_lab/login`}>Login</Link>
         {isLoggedIn && (
           <Link to={`/AC-Vuln/AC_Vuln_labs/third_lab/admin`}>Go to Admin</Link>

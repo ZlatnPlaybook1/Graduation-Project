@@ -1,20 +1,15 @@
-// import React, { useState } from "react";
-// import axios from "axios";
 import "./Finish_test.css";
-// import { useNavigate } from "react-router-dom";
-import Header from "../../../../Header/Header";
-import Footer from "../../../../Footer/Footer";
-
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
 export default function Finish_test() {
-  // const [err, setErr] = useState("");
   return (
     <>
-      <Header />
+      <GoBackBtn />
       {/* Start Courses  */}
       <div className="course-Finish_test ">
         <div className="container-Finish_test ">
-          <h1 className="congrats">Congratulations</h1>
-          <h1>Prices In Our Site Union Select Null, Null, Null</h1>
+          <h1 style={{ textAlign: "center", marginBlock: "15px" }}>
+            Congratulations
+          </h1>
           <div className="row-practice">
             <div className="card-Finish_test ">
               <h4>Robot Home Security Buddy</h4>
@@ -36,7 +31,6 @@ export default function Finish_test() {
         </div>
       </div>
       {/* End Course Content  */}
-      <Footer />
     </>
   );
 }
