@@ -68,13 +68,6 @@ const IDOR_Lab2 = () => {
       return;
     }
 
-    const totalCost = ticketPrice * numOfTickets;
-
-    if (accountBalance < totalCost) {
-      setMessage("Insufficient funds to purchase the tickets.");
-      return;
-    }
-
     try {
       const response = await fetch("http://127.0.0.1:8080/api/IDORSlab2", {
         method: "POST",
@@ -85,10 +78,9 @@ const IDOR_Lab2 = () => {
       });
 
       if (response.ok) {
-        setAccountBalance(accountBalance - totalCost);
-        setMessage(
-          `Successfully purchased ${numOfTickets} tickets for $${totalCost}.`
-        );
+        const result = await response.json();
+        setAccountBalance(result.balance);
+        setMessage(result.message);
       } else {
         setMessage("Failed to process the purchase. Please try again.");
       }
