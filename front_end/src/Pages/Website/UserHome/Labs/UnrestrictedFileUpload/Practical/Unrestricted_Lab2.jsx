@@ -40,27 +40,14 @@ const UnrestrictedLab1 = () => {
     font-weight: bold;
   }
 </style>
-
   `;
+
   const [file, setFile] = useState(null);
   const [status, setStatus] = useState("");
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
-
-    // Validate file type (Only allow images: gif, jpg, jpeg, png)
-    if (
-      selectedFile &&
-      (selectedFile.type === "image/gif" ||
-        selectedFile.type === "image/jpeg" ||
-        selectedFile.type === "image/jpg" ||
-        selectedFile.type === "image/png")
-    ) {
-      setFile(selectedFile);
-    } else {
-      setStatus("invalidFile");
-      setFile(null);
-    }
+    setFile(selectedFile);
   };
 
   const handleSubmit = async (event) => {
@@ -169,14 +156,6 @@ const UnrestrictedLab1 = () => {
               {status === "empty" && (
                 <div className="alert alert-danger" role="alert">
                   <b>No file selected. Please upload a file.</b>
-                </div>
-              )}
-              {status === "invalidFile" && (
-                <div className="alert alert-danger" role="alert">
-                  <b>
-                    Invalid file type. Please upload an image (GIF, JPG, JPEG,
-                    PNG).
-                  </b>
                 </div>
               )}
 
