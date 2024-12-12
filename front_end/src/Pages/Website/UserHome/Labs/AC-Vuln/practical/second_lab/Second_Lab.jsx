@@ -42,7 +42,7 @@ export default function Second_Lab() {
       <GoBack_Btn />
       <ShowHint_Btn hintText={hintMessage} />
       <div className="container">
-        <h2 className="lab-header">Products</h2>
+        <h1 style={{ textAlign: "center", marginBlock: "50px" }}>Products</h1>
         <ProductList products={products} />
         <Go2TopBtn />
       </div>

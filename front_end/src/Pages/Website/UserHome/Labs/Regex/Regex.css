@@ -441,3 +441,14 @@ a {
   background-color: rgb(163, 234, 42) !important;
 }
 /* End Course Content */
+dt.wave-lab1.fadeInUp.faq-header-lab1 span {
+  color: #a3ea2a !important;
+}
+.faq-section-lab1
+  .section-text-lab1
+  .faq-body-lab1
+  dt.wave-lab1.fadeInUp.faq-header-lab1.m,
+#border-left,
+dd {
+  border-left: 4px solid #a3ea2a !important;
+}

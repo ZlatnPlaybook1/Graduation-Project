@@ -7,12 +7,10 @@ import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 const UnrestrictedLab1 = () => {
   const hintMessage = `
   <div class="hint-message">
-  <p>Open Burp Suite and intercept the upload of the backdoor file.
-</p>
-  <p><strong>It is check the disallowed  file type like "php ,txt , ...".</strong></p>
-  <p>
-  Bypassing the blacklist check  by modify the filename in the packet.
-</p><code>Black.php7 </code>
+  <p>Open Burp Suite and intercept the upload of the backdoor file.</p>
+  <p><strong>It is check the disallowed file type like "php, txt, ...".</strong></p>
+  <p>Bypass the blacklist check by modifying the filename in the packet.</p>
+  <code>Black.php7</code>
 </div>
 
 <style>
@@ -26,18 +24,15 @@ const UnrestrictedLab1 = () => {
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
   }
-
   .hint-message p {
     margin: 10px 0;
   }
-
   .hint-message code {
     font-family: 'Courier New', monospace;
     background-color: #e1e1e1;
     padding: 3px 6px;
     border-radius: 4px;
   }
-
   .hint-message strong {
     font-weight: bold;
   }
@@ -48,23 +43,9 @@ const UnrestrictedLab1 = () => {
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
-
     if (selectedFile) {
-      const fileName = selectedFile.name.toLowerCase();
-      const validImageExtensions = /\.(jpg|jpeg|png|gif|bmp|webp)$/;
-      const isPhpFile = fileName.endsWith(".php");
-      const isPhpVariant = fileName.match(/\.php\d+$/);
-
-      if (
-        (isPhpFile && !isPhpVariant) ||
-        (!validImageExtensions.test(fileName) && !fileName.match(/\.php\d+$/))
-      ) {
-        setStatus("invalidFile");
-        setFile(null);
-      } else {
-        setFile(selectedFile);
-        setStatus("");
-      }
+      setFile(selectedFile);
+      setStatus("");
     }
   };
 
@@ -158,11 +139,6 @@ const UnrestrictedLab1 = () => {
               {status === "empty" && (
                 <div className="alert alert-danger" role="alert">
                   <b>No file selected. Please upload a file.</b>
-                </div>
-              )}
-              {status === "invalidFile" && (
-                <div className="alert alert-danger" role="alert">
-                  <b>Invalid file type. .php files are not allowed.</b>
                 </div>
               )}
 
