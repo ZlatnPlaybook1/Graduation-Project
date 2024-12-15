@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import "./Bash_lab.css";
+import styles from "../Page_Styles/Lab.module.css";
 import Header from "../../Header/Header";
 import image from "../../assets/img/card_image.png";
 import { Link } from "react-router-dom";
@@ -42,20 +42,20 @@ export default function Bash_lab() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing-bash-lab">
-        <div className="container-bash-lab">
-            <div className="course-info-bash-lab">
-                <div className="course-text-bash-lab">
+      <div className={styles.landing}>
+        <div className={styles.container}>
+            <div className={styles["course-info"]}>
+                <div className={styles["course-text"]}>
                     <h1>Practice</h1>
-                    <p className="brief-bash-lab"><i className="fa-solid fa-bullseye lab-bash-lab"></i> Reinforce what you're learning</p>
+                    <p className={styles.brief}><i className={`fa-solid fa-bullseye ${styles.lab}"`}></i> Reinforce what you're learning</p>
                     <p>Put your knowledge into practice with gamified cyber security challenges.</p>
                 </div>
-                <div className="course-icon-bash-lab">
-                    <div className="border-bash-lab">
-                        <div className="content-bash-lab">
-                            <i className="fas fa-book-open lab-bash-lab"></i>
+                <div className={styles["course-icon"]}>
+                    <div className={styles.border}>
+                        <div className={styles.content}>
+                            <i className={`fas fa-book-open ${styles.lab}`}></i>
                             <p>Practice</p>
-                            <i className="fas fa-bullseye lab-bash-lab"></i>
+                            <i className={`fas fa-bullseye ${styles.lab}`}></i>
                         </div>
                     </div>
                 </div>
@@ -64,32 +64,32 @@ export default function Bash_lab() {
     </div>
       {/* End Landing  */}
       {/* Start Courses  */}
-      <div className="course-bash-lab">
-        <div className="container-bash-lab">
+      <div className={styles.course}>
+        <div className={styles.container}>
             <h2>Bash Scripting Lab</h2>
-            <p className="section-p-bash-lab">Test Your Hacking skills</p>
-            <div className="row-bash-lab">
-                <Link to="/bash-lab/bash-lab_lab/first/login" className="course-card-bash-lab">
-                    <div className="course-image-bash-lab">
+            <p className={styles["section-p"]}>Test Your Hacking skills</p>
+            <div className={styles.row}>
+                <Link to="/bash-lab/bash-lab_lab/first/login" className={styles["course-card"]}>
+                    <div className={styles["course-image"]}>
                         <img src={image} alt="" />
                     </div>
-                    <div class="course-text-bash-lab">
+                    <div class={styles["course-text"]}>
                         <h3>Pre Security</h3>
                         <p>Before hacking something, you first need to understand the basics</p>
-                        <ul class="circled-order-bash-lab">
+                        <ul class={styles["circled-order"]}>
                             <li>Cyber Security Basics</li>
                             <li>Networking Basics and Weaknesses</li>
                             <li>The Web And Common Attacks</li>
                             <li>Learn to Use The bash-lab OS</li>
                         </ul>
                     </div>
-                    <div class="easy-bash-lab">
-                        <i class="fa-solid fa-signal lab-bash-lab"></i>
+                    <div class={styles.easy}>
+                        <i class={`fa-solid fa-signal ${styles.lab}`}></i>
                         <p>Easy</p>
                     </div>
                 </Link>
-                <Link to="/bash-lab/bash-lab_lab/second/login" class="course-card-bash-lab">
-                    <div class="course-image-bash-lab">
+                <Link to="/bash-lab/bash-lab_lab/second/login" class={styles["course-card"]}>
+                    <div class={styles["course-image"]}>
                     <img src={image} alt="" />
                     </div>
                     <div class="course-text-bash-lab">

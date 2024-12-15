@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import "./Cookies_lab.css";
+import styles from "../Page_Styles/Lab.module.css";
 import Header from "../../Header/Header";
 import image from "../../assets/img/cookies/Cookies_logo.png";
 import { Link } from "react-router-dom";
@@ -42,20 +42,20 @@ export default function Cookies_lab() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing-cookies">
-        <div className="container-cookies">
-            <div className="course-info-cookies">
-                <div className="course-text-cookies">
+      <div className={styles.landing}>
+        <div className={styles.container}>
+            <div className={styles["course-info"]}>
+                <div className={styles["course-text"]}>
                     <h1>Practice</h1>
-                    <p className="brief-cookies"><i className="fa-solid fa-bullseye lab-cookies"></i> Reinforce what you're learning</p>
+                    <p className={styles.brief}><i className={`fa-solid fa-bullseye ${styles.lab}`}></i> Reinforce what you're learning</p>
                     <p>Put your knowledge into practice with gamified cyber security challenges.</p>
                 </div>
-                <div className="course-icon-cookies">
-                    <div className="border-cookies">
-                        <div className="content-cookies">
-                            <i className="fas fa-book-open lab-cookies"></i>
+                <div className={styles["course-icon"]}>
+                    <div className={styles.border}>
+                        <div className={styles.content}>
+                            <i className={`fas fa-book-open ${styles.lab}`}></i>
                             <p>Practice</p>
-                            <i className="fas fa-bullseye lab-cookies"></i>
+                            <i className={`fas fa-bullseye ${styles.lab}`}></i>
                         </div>
                     </div>
                 </div>
@@ -64,46 +64,46 @@ export default function Cookies_lab() {
     </div>
       {/* End Landing  */}
       {/* Start Courses  */}
-      <div className="course-cookies">
-        <div className="container-cookies">
+      <div className={styles.course}>
+        <div className={styles.container}>
             <h2>Cookies Lab</h2>
-            <p className="section-p-cookies">Test Your Hacking skills</p>
-            <div className="row-cookies">
-                <Link to="/cookies/cookies_lab/first/login" className="course-card-cookies">
-                    <div className="course-image-cookies">
+            <p className={styles["section-p"]}>Test Your Hacking skills</p>
+            <div className={styles.row}>
+                <Link to="/cookies/cookies_lab/first/login" className={styles["course-card"]}>
+                    <div className={styles["course-image"]}>
                         <img src={image} alt="" />
                     </div>
-                    <div class="course-text-cookies">
+                    <div className={styles["course-text"]}>
                         <h3>Admin has the power</h3>
                         <p>try to login as admin</p>
-                        {/* <ul class="circled-order-cookies">
+                        {/* <ul className="circled-order-cookies">
                             <li>Cyber Security Basics</li>
                             <li>Networking Basics and Weaknesses</li>
                             <li>The Web And Common Attacks</li>
                             <li>Learn to Use The Linux OS</li>
                         </ul> */}
                     </div>
-                    <div class="easy-cookies">
-                        <i class="fa-solid fa-signal lab-cookies"></i>
+                    <div className={styles.easy}>
+                        <i className={`fa-solid fa-signal ${styles.lab}`}></i>
                         <p>Easy</p>
                     </div>
                 </Link>
-                <Link to="/cookies/cookies_lab/second/login" class="course-card-cookies">
-                    <div class="course-image-cookies">
+                <Link to="/cookies/cookies_lab/second/login" className={styles["course-card"]}>
+                    <div className={styles["course-image"]}>
                     <img src={image} alt="" />
                     </div>
-                    <div class="course-text-cookies">
+                    <div className={styles["course-text"]}>
                         <h3>Hashing</h3>
                         <p>try to login as admin</p>
-                        {/* <ul class="circled-order-cookies">
+                        {/* <ul className="circled-order-cookies">
                             <li>Cyber Security Basics</li>
                             <li>Networking Basics and Weaknesses</li>
                             <li>The Web And Common Attacks</li>
                             <li>Learn to Use The Linux OS</li>
                         </ul> */}
                     </div>
-                    <div class="easy-cookies">
-                        <i class="fa-solid fa-signal lab-cookies"></i>
+                    <div className={styles.easy}>
+                        <i className={`fa-solid fa-signal ${styles.lab}`}></i>
                         <p>Easy</p>
                     </div>
                 </Link>
