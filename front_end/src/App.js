@@ -56,10 +56,7 @@ import AC_VULN_TXT_FILE from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/fi
 import AC_VULN_USERS from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/first_lab/UserList.jsx";
 import AC_VULN_USERS2 from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/second_lab/UserList.jsx";
 import AC_VULN_USERS3 from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/third_lab/UserList.jsx";
-
 // End Access Control Vulnerability
-// test
-import TEST from "./Pages/Website/UserHome/Labs/Test/Test.jsx";
 // Cross-Site Request Forgery
 import CSRF from "./Pages/Website/UserHome/Labs/CSRF/CSRF.jsx";
 import CSRF_LABS from "./Pages/Website/UserHome/Labs/CSRF/CSRF_labs.jsx";
@@ -72,6 +69,18 @@ import ProductDetails from "./Pages/Website/UserHome/Labs/CSRF/practical/first_l
 import REGEX from "./Pages/Website/UserHome/Labs/Regex/Regex.jsx";
 import REGEX_LABS from "./Pages/Website/UserHome/Labs/Regex/Regex_labs.jsx";
 // End Regular Expression
+//Path Traversal
+import PATH_TRAVERSAL from "./Pages/Website/UserHome/Labs/Path-Traversal/Path_Traversal.jsx";
+import PATH_TRAVERSAL_LABS from "./Pages/Website/UserHome/Labs/Path-Traversal/Path_Traversal_labs.jsx";
+// End Path Traversal
+// Api Hacking
+import API_HACKING from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking.jsx";
+import API_HACKING_LABS from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking_labs.jsx";
+// End Api Hacking
+// Click Jacking
+import CLICK_JACKING from "./Pages/Website/UserHome/Labs/Click-Jacking/Click_Jacking.jsx";
+import CLICK_JACKING_LABS from "./Pages/Website/UserHome/Labs/Click-Jacking/Click_Jacking_labs.jsx";
+// End Click Jacking
 
 // Business Logic Vulnerability
 import BL_VULN from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln.jsx";
@@ -228,9 +237,6 @@ function App() {
             element={<AC_VULN_THIRD_LAB_LOGIN />}
           />
           {/* End AC_Vuln */}
-          {/* Test */}
-          <Route path="/Test" element={<TEST />} />
-          {/* End Test */}
           {/* CSRF */}
           <Route path="/CSRF" element={<CSRF />} />
           <Route path="/CSRF/CSRF_labs" element={<CSRF_LABS />} />
@@ -275,6 +281,27 @@ function App() {
           <Route path="/AudFor" element={<AUDFOR />} />
           <Route path="/AudFor/AudFor_labs" element={<AUDFOR_LABS />} />
           {/* End AudFor */}
+          {/* Path Traversal */}
+          <Route path="/Path_Traversal" element={<PATH_TRAVERSAL />} />
+          <Route
+            path="/Path_Traversal/Path_Traversal_labs"
+            element={<PATH_TRAVERSAL_LABS />}
+          />
+          {/* End Path Traversal */}
+          {/* Api Hacking */}
+          <Route path="/Api_Hacking" element={<API_HACKING />} />
+          <Route
+            path="/Api_Hacking/Api_Hacking_labs"
+            element={<API_HACKING_LABS />}
+          />
+          {/* End Api Hacking */}
+          {/* Click Jacking */}
+          <Route path="/Click_Jacking" element={<CLICK_JACKING />} />
+          <Route
+            path="/Click_Jacking/Click_Jacking_labs"
+            element={<CLICK_JACKING_LABS />}
+          />
+          {/* End Click Jacking */}
 
           {/*InfoDisc */}
           <Route path="/InfoDisc" element={<INFODISC />} />

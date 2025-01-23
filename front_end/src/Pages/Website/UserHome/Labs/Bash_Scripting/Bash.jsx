@@ -98,7 +98,7 @@ export default function Bash() {
                   </div>
                 </div>
                 <div className={styles.duration}>
-                  <i className="fa-solid fa-clock"></i>
+                  <i className="fa-solid fa-clock "></i>
                   <p className={styles.time}>50 min</p>
                 </div>
               </div>

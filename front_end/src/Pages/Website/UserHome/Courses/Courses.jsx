@@ -1,6 +1,5 @@
 import React from "react";
 import "./Courses.css";
-import imagecourse from "../assets/img/course_image_home.png";
 import Sql_InjectionImg from "../assets/img/SQL_Injection/landing3.png";
 import Cross_Site_ScriptingImg from "../assets/img/Cross_Site_Scripting/xss.jpeg.jpg";
 import imagecourse2 from "../assets/img/Lab2.jpg";
@@ -17,6 +16,9 @@ import infoDiscImg from "../assets/img/InfoDisc/landing.jpg";
 import AudForImg from "../assets/img/AudFor/landing.png";
 import IDOR from "../assets/img/IDOR/Insecure_Direct_Object_Reference.png";
 import BrokenAuthentication from "../assets/img/Broken Authentication/card_image.png";
+import ApiHackingImg from "../assets/img/Api_Hacking/landing.png";
+import ClickJackingImg from "../assets/img/Click_Jacking/landing.jpeg";
+import PathTraversalImg from "../assets/img/Path_Traversal/landing.jpeg";
 
 const Courses = () => {
   return (
@@ -27,12 +29,12 @@ const Courses = () => {
           Work your way through a structured learning path
         </p>
         <div className="row-center">
+          {/* topic1 */}
           <div className="row-course">
             <a href="/sql_Injection" className="course-card">
               <div className="course-image">
                 <img src={Sql_InjectionImg} alt="Course" />
               </div>
-              {/* topic1 */}
               <div className="course-text">
                 <h3>SQL Injection</h3>
                 <p>
@@ -52,12 +54,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic2 */}
           <div className="row-course">
             <a href="/xss" className="course-card">
               <div className="course-image">
                 <img src={Cross_Site_ScriptingImg} alt="Course" />
               </div>
-              {/* topic2 */}
               <div className="course-text">
                 <h3>Cross-Site Scripting</h3>
                 <p>
@@ -87,12 +90,14 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic3 */}
           <div className="row-course">
             <a href="/cookies" className="course-card">
               <div className="course-image">
                 <img src={Cookies_logo} alt="Course" />
               </div>
-              {/* topic3 */}
+
               <div className="course-text">
                 <h3>Cookies</h3>
                 <p>
@@ -112,6 +117,7 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
           {/* topic4 */}
           <div className="row-course">
             <a href="/AC_Vuln" className="course-card">
@@ -134,12 +140,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic5 */}
           <div className="row-course">
             <a href="/UnrestrictedFileUpload" className="course-card">
               <div className="course-image">
                 <img src={unrestrictedFile} alt="Course" />
               </div>
-              {/* topic5 */}
               <div className="course-text">
                 <h3>Unrestricted File Upload</h3>
                 <p>
@@ -170,12 +177,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic6 */}
           <div className="row-course">
             <a href="/linux" className="course-card">
               <div className="course-image">
                 <img src={linux_logo} alt="Course" />
               </div>
-              {/* topic6 */}
               <div className="course-text">
                 <h3>Linux Fundamentals</h3>
                 <p>
@@ -195,6 +203,7 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
           {/* topic 7 */}
           <div className="row-course">
             <a href="/BL_Vuln" className="course-card">
@@ -218,13 +227,13 @@ const Courses = () => {
             </a>
           </div>
 
+          {/* topic 8 */}
+
           <div className="row-course">
             <a href="/broken-auth" className="course-card">
               <div className="course-image">
                 <img src={BrokenAuthentication} alt="Course" />
               </div>
-
-              {/* topic 8 */}
               <div className="course-text">
                 <h3>Broken Authentication</h3>
                 <p>
@@ -244,13 +253,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 9 */}
           <div className="row-course">
             <a href="/bash-scripting" className="course-card">
               <div className="course-image">
                 <img src={bash} alt="Course" />
               </div>
-
-              {/* topic 9 */}
               <div className="course-text">
                 <h3>Bash Scripting</h3>
                 <p>
@@ -271,6 +280,7 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
           {/* topic 10 */}
           <div className="row-course">
             <a href="/CSRF" className="course-card">
@@ -294,6 +304,7 @@ const Courses = () => {
             </a>
           </div>
 
+          {/* topic 11 */}
           <div className="row-course">
             <a
               href="/Insecure_Direct_Object_Reference(IDOR)"
@@ -302,7 +313,6 @@ const Courses = () => {
               <div className="course-image">
                 <img src={IDOR} alt="Course" />
               </div>
-              {/* topic 11 */}
               <div className="course-text">
                 <h3>Insecure Direct Object Reference(IDOR)</h3>
                 <p>
@@ -325,12 +335,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 12 */}
           <div className="row-course">
             <a href="/obfuscation" className="course-card">
               <div className="course-image">
                 <img src={Obfuscation} alt="Course" />
               </div>
-              {/* topic 12 */}
               <div className="course-text">
                 <h3>Obfuscation</h3>
                 <p>
@@ -351,6 +362,7 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
           {/* topic 13 */}
           <div className="row-course">
             <a href="/Regex" className="course-card">
@@ -373,12 +385,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 14 */}
           <div className="row-course">
             <a href="/lab2" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
-              {/* topic 14 */}
               <div className="course-text">
                 <h3>???</h3>
                 <p>
@@ -398,12 +411,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 15 */}
           <div className="row-course">
             <a href="/lab3" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
-              {/* topic 15 */}
               <div className="course-text">
                 <h3>Cryptography</h3>
                 <p>
@@ -423,12 +437,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 16 */}
           <div className="row-course">
             <a href="/infoDisc" className="course-card">
               <div className="course-image">
                 <img src={infoDiscImg} alt="Course" />
               </div>
-              {/* topic 16 */}
               <div className="course-text">
                 <h3>Hashing</h3>
                 <p>
@@ -444,12 +459,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 17 */}
           <div className="row-course">
             <a href="/lab2" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
-              {/* topic 17 */}
               <div className="course-text">
                 <h3>Burp Suite </h3>
                 <p>
@@ -469,12 +485,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 18 */}
           <div className="row-course">
             <a href="/lab3" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
-              {/* topic 18 */}
               <div className="course-text">
                 <h3>wireshark</h3>
                 <p>
@@ -494,12 +511,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 19 */}
           <div className="row-course">
             <a href="/AudFor" className="course-card">
               <div className="course-image">
                 <img src={AudForImg} alt="Course" />
               </div>
-              {/* topic 19 */}
               <div className="course-text">
                 <h3>Digital Forensics</h3>
                 <p>
@@ -515,12 +533,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 20 */}
           <div className="row-course">
             <a href="/lab2" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
-              {/* topic 20 */}
               <div className="course-text">
                 <h3>Command Injection</h3>
                 <p>
@@ -540,12 +559,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 21 */}
           <div className="row-course">
             <a href="/lab3" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
-              {/* topic 21 */}
               <div className="course-text">
                 <h3>File Inclusion</h3>
                 <p>
@@ -565,12 +585,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 22 */}
           <div className="row-course">
-            <a href="/lab1" className="course-card">
+            <a href="/Path_Traversal" className="course-card">
               <div className="course-image">
-                <img src={imagecourse} alt="Course" />
+                <img src={PathTraversalImg} alt="Course" />
               </div>
-              {/* topic 22 */}
               <div className="course-text">
                 <h3>Path Traversal</h3>
                 <p>
@@ -590,12 +611,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 23 */}
           <div className="row-course">
             <a href="/lab2" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
-              {/* topic 23 */}
               <div className="course-text">
                 <h3>Insecure Deserialization</h3>
                 <p>
@@ -615,12 +637,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 24 */}
           <div className="row-course">
             <a href="/lab3" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
-              {/* topic 24 */}
               <div className="course-text">
                 <h3>Server Side Template Injection (SSTI)</h3>
                 <p>
@@ -640,12 +663,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 25 */}
           <div className="row-course">
-            <a href="/lab1" className="course-card">
+            <a href="/Api_Hacking" className="course-card">
               <div className="course-image">
-                <img src={imagecourse} alt="Course" />
+                <img src={ApiHackingImg} alt="Course" />
               </div>
-              {/* topic 25 */}
               <div className="course-text">
                 <h3>API Hacking</h3>
                 <p>
@@ -665,12 +689,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 26 */}
           <div className="row-course">
             <a href="/lab2" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
-              {/* topic 26 */}
               <div className="course-text">
                 <h3>?????</h3>
                 <p>
@@ -690,12 +715,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 27 */}
           <div className="row-course">
             <a href="/lab3" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
-              {/* topic 27 */}
               <div className="course-text">
                 <h3>Captcha Bypass</h3>
                 <p>
@@ -715,12 +741,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 28 */}
           <div className="row-course">
-            <a href="/lab1" className="course-card">
+            <a href="/Click_Jacking" className="course-card">
               <div className="course-image">
-                <img src={imagecourse} alt="Course" />
+                <img src={ClickJackingImg} alt="Course" />
               </div>
-              {/* topic 28 */}
               <div className="course-text">
                 <h3>click jacking</h3>
                 <p>
@@ -740,12 +767,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 29 */}
           <div className="row-course">
             <a href="/lab2" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
-              {/* topic 29 */}
               <div className="course-text">
                 <h3>29. </h3>
                 <p>
@@ -765,12 +793,13 @@ const Courses = () => {
               </div>
             </a>
           </div>
+
+          {/* topic 30 */}
           <div className="row-course">
             <a href="/Test" className="course-card">
               <div className="course-image">
                 <img src={imagecourse2} alt="Course" />
               </div>
-              {/* topic 30 */}
               <div className="course-text">
                 <h3>JWT attacks</h3>
                 <p>
