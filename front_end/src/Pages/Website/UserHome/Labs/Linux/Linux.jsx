@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import styles from "./Linux.module.css";
+import styles from "../Page_Styles/Content.module.css";
 import Header from "../../Header/Header";
 // import background from "../../assets/img/background.png";
 import image from "../../assets/img/linux/linux_logo.png";

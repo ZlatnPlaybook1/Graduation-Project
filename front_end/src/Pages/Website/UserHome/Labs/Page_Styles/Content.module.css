@@ -317,49 +317,54 @@
 }
 
 .faq-section .section-text .faq-body img {
-  width: 25%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   display: inherit;
   margin-bottom: 30px;
 }
 
-.faq-section .section-text .faq-body ul li {
-  margin-bottom: 10px;
-}
 
 .faq-section .section-text .faq-body ol li {
   list-style: decimal;
   margin-bottom: 10px;
+  padding-left: 30px;
   font-size: 14px;
   font-weight: 400;
 }
 
-.faq-section .section-text .faq-body ul li a {
+.faq-section .section-text .faq-body a:not(.go-to) {
   color: var(--sec-main-color);
   text-decoration: underline;
 }
 
-.faq-section .section-text .faq-body ul li p {
+.faq-section .section-text .faq-body p {
   font-weight: 400;
   font-size: 16px;
 }
 
-.faq-section .section-text .faq-body ul li span:not([class]) {
+.faq-section .section-text .faq-body span:not([class]) {
   color: #eee;
   background-color: rgb(33, 44, 66);
   padding: 4px 5px;
   border-radius: 5px;
-  margin: 0 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   font-size: 15px;
 }
 
-.faq-section .section-text .faq-body li h2 {
+.faq-section .section-text .faq-body h1 {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.faq-section .section-text .faq-body h2 {
   color: var(--sec-main-color);
   font-size: 20px;
 }
 
-.faq-section .section-text .faq-body li .table-bordered {
+.faq-section .section-text .faq-body .table-bordered {
   border: 1px solid #ddd;
   text-align: center;
   width: 100%;
@@ -370,25 +375,26 @@
   border-collapse: unset;
 }
 
-.faq-section .section-text .faq-body li .table-bordered tr {
+.faq-section .section-text .faq-body .table-bordered tr {
   text-align: center;
 }
 
-.faq-section .section-text .faq-body li .table-bordered td,
-.faq-section .section-text .faq-body li .table-bordered th {
+.faq-section .section-text .faq-body .table-bordered td,
+.faq-section .section-text .faq-body .table-bordered th {
   border: 1px solid #ddd;
 }
 
-.faq-section .section-text .faq-body li .table-bordered td {
+.faq-section .section-text .faq-body .table-bordered td {
   padding: 10px;
   font-size: 15px;
   font-weight: 400;
 }
 
-.faq-section .section-text .faq-body li .note {
+.faq-section .section-text .faq-body .note {
   background: #f9f9f9;
   border-left: 10px solid #FFBC49;
   margin: 15px 10px;
+  padding: 5px 10px;
   color: rgb(21, 28, 43);
   font-size: 14px;
   font-weight: 400;
@@ -397,15 +403,15 @@
   padding: 10px 20px;
 }
 
-.faq-section .section-text .faq-body ul .terminal-container {
+.faq-section .section-text .faq-body .terminal-container {
   margin-bottom: 20px;
 }
 
-.faq-section .section-text .faq-body ul .terminal-content {
+.faq-section .section-text .faq-body .terminal-content {
   position: relative;
 }
 
-.faq-section .section-text .faq-body ul .terminal-top {
+.faq-section .section-text .faq-body .terminal-top {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   background: rgb(62, 69, 82);
@@ -418,7 +424,7 @@
   font-weight: 400;
 }
 
-.faq-section .section-text .faq-body ul .terminal-top::after {
+.faq-section .section-text .faq-body .terminal-top::after {
   display: block;
   position: absolute;
   content: "";
@@ -431,12 +437,12 @@
   box-shadow: rgb(255, 68, 68) 0px 0px 0px 2px, rgb(178, 224, 40) 1.5rem 0px 0px 2px, rgb(255, 156, 7) 3rem 0px 0px 2px;
 }
 
-.faq-section .section-text .faq-body ul .terminal-code {
+.faq-section .section-text .faq-body .terminal-code {
   display: flex;
 }
 
-.faq-section .section-text .faq-body ul pre[class*="language-"],
-.faq-section .section-text .faq-body ul code[class*="language-"] {
+.faq-section .section-text .faq-body pre[class*="language-"],
+.faq-section .section-text .faq-body code[class*="language-"] {
   color: rgb(186, 200, 212);
   background: rgb(40, 44, 51);
   flex-grow: 1;
@@ -458,7 +464,7 @@
   flex-direction: column;
 }
 
-.faq-section .section-text .faq-body ul .token {
+.faq-section .section-text .faq-body .token {
   color: rgb(186, 200, 212);
   font-weight: 600;
   font-size: 16px;
@@ -466,27 +472,27 @@
   white-space: pre-wrap;
 }
 
-.faq-section .section-text .faq-body ul .token.punctuation {
+.faq-section .section-text .faq-body .token.punctuation {
   color: rgb(153, 153, 153);
 }
 
-.faq-section .section-text .faq-body ul .token.user {
+.faq-section .section-text .faq-body .token.user {
   color: rgb(186, 200, 212);
 }
 
-.faq-section .section-text .faq-body ul .token.important {
+.faq-section .section-text .faq-body .token.important {
   color: rgb(238, 153, 0);
 }
 
-.faq-section .section-text .faq-body ul .token.function {
+.faq-section .section-text .faq-body .token.function {
   color: rgb(255, 175, 0);
 }
 
-.faq-section .section-text .faq-body ul .token.class-name {
+.faq-section .section-text .faq-body .token.class-name {
   color: rgb(221, 74, 104);
 }
 
-.faq-section .section-text .faq-body ul .token.string {
+.faq-section .section-text .faq-body .token.string {
   color: rgb(102, 153, 0);
 }
 
@@ -554,11 +560,11 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 50px;
 }
 
 .go-to {
   margin-top: 50px;
+  margin-bottom: 50px;
   border-radius: 5px;
   max-width: 100%;
   font-size: 16px;
@@ -571,6 +577,7 @@
 
 .go-to:hover {
   background-color: rgb(163, 234, 42);
+  color: white;
 }
 
 /* End Course Content */
