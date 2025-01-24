@@ -128,38 +128,12 @@ const courseData = [
     link: "/broken-auth",
   },
   {
-<<<<<<< HEAD
-    id: 7,
-    category: "Web Vulnerabilities",
-    title: "Business Logic Vulnerabilities",
-    description:
-      "Understand the risks and exploitation of unrestricted file upload vulnerabilities, a critical security issue in web applications. Learn how attackers can leverage this vulnerability to execute malicious code or compromise a server.",
-    topics: [
-      "What is Unrestricted File Upload?",
-      "Why is it Dangerous?",
-      "Attack Techniques",
-      "Exploitation Scenarios",
-    ],
-    difficulty: "Easy",
-    image: require("../assets/img/Unrestricted File Upload/card_image.png"),
-    link: "/BL_Vuln",
-  },
-
-  {
-    id: 8,
-=======
     id: 9,
->>>>>>> cb3c2b3aa31cbec37eea243e14cb463808a731db
     category: "Server-Side Exploits",
     title: "Bash Scripting",
     description:
       " Master the basics of Bash scripting, a powerful tool for automating tasks and managing systems in cybersecurity environments.",
-    topics: [
-      "simple bash scripts",
-      "Variables",
-      "Parameters",
-      "Arrays",
-    ],
+    topics: ["simple bash scripts", "Variables", "Parameters", "Arrays"],
     difficulty: "Easy",
     image: require("../assets/img/bash/bash_course_logo.png"),
     link: "/bash-scripting",
@@ -170,7 +144,12 @@ const courseData = [
     title: "Cross Site Request Forgery (CSRF)",
     description:
       "Before hacking something, you first need to understand the basics",
-    topics: ["Cyber Security Basics", "Networking Basics and Weaknesses", "The Web And Common Attacks", "Learn to Use The Linux OS"],
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
     difficulty: "Easy",
     image: require("../assets/img/CSRF/landing.jpg"),
     link: "/CSRF",
@@ -496,7 +475,6 @@ const courseData = [
     image: require("../assets/img/Lab2.jpg"),
     link: "/infoDisc",
   },
-
 ];
 
 export default courseData;
