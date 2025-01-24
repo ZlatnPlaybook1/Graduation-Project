@@ -77,15 +77,10 @@ export default function Regex_labs() {
                 <img src={labImg} alt="Lab 2 Image" />
               </div>
               <div className="course-text-Regex">
-                <h3>Securing Input Fields</h3>
+                <h3>MCQ Question Review</h3>
                 <p>
-                  Understand how to use Regex for input validation to mitigate
-                  security risks. Dive into: <br />
-                  - Constructing patterns for secure email and password
-                  validation. <br />
-                  - Preventing cross-site scripting (XSS) by filtering dangerous
-                  characters. <br />- Testing your Regex for edge cases and
-                  vulnerabilities.
+                  These are multiple choice questions that are designed to be a
+                  review for the exam.
                 </p>
               </div>
               <div className="easy-Regex">

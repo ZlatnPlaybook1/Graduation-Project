@@ -56,7 +56,8 @@ const MCQQuiz = ({ questionsData }) => {
     } else {
       Swal.fire({
         title: "Try again!",
-        text: `You failed. Final score: ${finalScore}.\n Please try again.`,
+        text: `You failed. Final score: ${finalScore}.
+        \n\n Please try again.`,
         icon: "error",
         confirmButtonText: "OK",
       });

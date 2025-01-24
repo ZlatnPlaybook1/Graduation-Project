@@ -55,8 +55,8 @@ export default function AC_Vuln_labs() {
               <div className="course-text-ac-vuln">
                 <h3>MCQ Question Review</h3>
                 <p>
-                  This lab has an unprotected admin panel. Solve the lab by
-                  deleting the user <mark>carlos</mark>.
+                  These are multiple choice questions that are designed to be a
+                  review for the exam.
                 </p>
               </div>
               <div className="easy-ac-vuln">
