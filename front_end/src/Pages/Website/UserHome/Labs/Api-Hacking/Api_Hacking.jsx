@@ -112,72 +112,61 @@ export default function Api_Hacking() {
               <dl className="section-text-lab1">
                 {/* Task 1 */}
                 <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Introduction</span> Introduction to Access Control
-                  Vulnerabilities
+                  <span>Introduction</span> Intro to API Testing
                 </dt>
                 <dd className="fadeInUp faq-body-lab1">
                   <h3>
-                    Welcome to the Access Control Vulnerability Learning Room!
+                    Welcome to the API Testing Learning Room! logic flaw img
                   </h3>
                   <div className="desc">
                     <h4>What is an Access Control Vulnerability?</h4>
                     <p>
-                      Access control vulnerabilities occur when an application
-                      fails to properly restrict what authenticated users can
-                      do. These issues allow attackers to perform actions or
-                      access resources beyond their intended permissions,
-                      compromising sensitive data or system integrity.
+                      In this section, we'll introduce the concept of API
+                      testing, focusing on how APIs enable communication between
+                      different software systems and why testing them is crucial
+                      for identifying vulnerabilities. We'll dive into API
+                      recon, the importance of understanding API documentation,
+                      and how to identify potential weaknesses in APIs,
+                      especially RESTful and JSON APIs. Lastly, we’ll give you
+                      the opportunity to practice with our interactive labs,
+                      simulating real-world API testing scenarios.
                     </p>
                   </div>
-                  <h4>Key Topics Covered:</h4>
-                  <ol>
-                    <li>
-                      <b>Understanding Access Control</b>: Overview of access
-                      control mechanisms and their importance.
-                    </li>
-                    <li>
-                      <b>Types of Access Control Flaws</b>: Common
-                      vulnerabilities, such as horizontal and vertical privilege
-                      escalation.
-                    </li>
-                    <li>
-                      <b>Examples of Exploits</b>: Real-world scenarios
-                      showcasing access control weaknesses.
-                    </li>
-                    <li>
-                      <b>Access Control Best Practices</b>: Strategies to
-                      prevent access control vulnerabilities in applications.
-                    </li>
-                  </ol>
+                  <h4>Labs:</h4>
+                  <p>
+                    If you already understand the basics of API testing and want
+                    to apply your knowledge to vulnerable targets, you can
+                    access all the labs in this topic through the link below.
+                  </p>
                 </dd>
                 {/* Topic 1 */}
                 <dt
                   className="wave-lab1 fadeInUp faq-header-lab1"
                   id="border-left"
                 >
-                  <span>Topic 1</span> Understanding Access Control
+                  <span>Topic 1</span> What is API Testing?
                 </dt>
                 <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <ul>
                     <li>
-                      <b>Definition:</b> Access control ensures users can only
-                      perform permitted actions and access authorized resources.
+                      <b>API testing</b> is a critical aspect of ensuring the
+                      security and functionality of modern web applications.
+                      APIs (Application Programming Interfaces) allow systems to
+                      communicate and share data, but flawed APIs can lead to
+                      vulnerabilities that compromise a website's security. APIs
+                      are often used in dynamic websites, and testing them
+                      ensures that common vulnerabilities like SQL injection or
+                      parameter pollution are prevented. This section will help
+                      you understand the role of API testing in maintaining the
+                      confidentiality, integrity, and availability of web
+                      applications.
                     </li>
                     <li>
-                      <b>Types:</b>
+                      <b>Key Areas Covered:</b>
                       <ol>
-                        <li>
-                          <b>Discretionary Access Control (DAC):</b> Resource
-                          owners define access rules.
-                        </li>
-                        <li>
-                          <b>Mandatory Access Control (MAC):</b> Predefined
-                          rules control access based on classifications.
-                        </li>
-                        <li>
-                          <b>Role-Based Access Control (RBAC):</b> Permissions
-                          assigned based on roles.
-                        </li>
+                        <li>RESTful API testing</li>
+                        <li>JSON API testing</li>
+                        <li>Server-side parameter pollution vulnerabilities</li>
                       </ol>
                     </li>
                   </ul>
@@ -187,74 +176,115 @@ export default function Api_Hacking() {
                   className="wave-lab1 fadeInUp faq-header-lab1"
                   id="border-left"
                 >
-                  <span>Topic 2</span> Types of Access Control Flaws
+                  <span>Topic 2</span> How Do APIs Work?
                 </dt>
                 <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <p>
+                    To begin testing an API, you need to understand how it
+                    functions and how to interact with it. This includes:
+                  </p>
                   <ul>
                     <li>
-                      <b>Horizontal Privilege Escalation:</b> A user accesses
-                      resources belonging to another user at the same permission
-                      level.
+                      <b>Identifying Endpoints:</b> These are the locations
+                      where an API receives requests, such as{" "}
+                      <code>/api/books</code> for retrieving books from a
+                      library.
                     </li>
                     <li>
-                      <b>Vertical Privilege Escalation:</b> A user performs
-                      actions requiring higher privileges than they possess.
+                      <b>Understanding Input Data:</b> Knowing both mandatory
+                      and optional parameters helps in constructing valid
+                      requests.
                     </li>
                     <li>
-                      <b>Unauthenticated Access:</b> Resources accessible
-                      without proper authentication.
+                      <b>HTTP Methods:</b> APIs accept specific methods like
+                      <code>GET</code>, <code>POST</code>, <code>PUT</code>, and
+                      <code>DELETE</code> to perform different operations.
+                    </li>
+                    <li>
+                      <b>Rate Limits and Authentication: </b> APIs may restrict
+                      access to certain actions based on factors like the number
+                      of requests or the type of user authentication.
                     </li>
                   </ul>
+                  <p>
+                    <i>
+                      In this section, you'll learn how to identify these
+                      elements and understand how they impact API behavior
+                      during testing.
+                    </i>
+                  </p>
                 </dd>
                 {/* Topic 3 */}
                 <dt
                   className="wave-lab1 fadeInUp faq-header-lab1"
                   id="border-left"
                 >
-                  <span>Topic 3</span> Examples of Exploits
+                  <span>Topic 3</span>Discovering API Documentation
                 </dt>
                 <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <p>
+                    API documentation provides developers with the information
+                    needed to interact with the API. This documentation can be
+                    human-readable (for developers) or machine-readable (for
+                    automated tasks). Even if API documentation is not publicly
+                    available, you can use tools to uncover hidden documentation
+                    by crawling through the application.
+                  </p>
                   <ul>
+                    <b>Where to Look:</b>
                     <li>
-                      <b>Accessing Other Users' Data:</b> Viewing or modifying
-                      another user's account details.
+                      Endpoints like <code>/api</code>,{" "}
+                      <code>/swagger/index.html</code>, or{" "}
+                      <code>/openapi.json</code>
+                      often provide documentation.
                     </li>
                     <li>
-                      <b>Admin Function Misuse:</b> Performing admin-level
-                      actions, like changing roles or deleting data.
-                    </li>
-                    <li>
-                      <b>Bypassing Login:</b> Using direct object references to
-                      access restricted areas.
+                      Burp Suite and other tools can help in identifying hidden
+                      endpoints.
                     </li>
                   </ul>
+                  <p>
+                    <i>
+                      By discovering the documentation, you can start
+                      constructing test cases and simulate realistic API
+                      requests.
+                    </i>
+                  </p>
                 </dd>
                 {/* Topic 4 */}
                 <dt
                   className="wave-lab1 fadeInUp faq-header-lab1"
                   id="border-left"
                 >
-                  <span>Topic 4</span> Access Control Best Practices
+                  <span>Topic 4</span> Common API Vulnerabilities
                 </dt>
                 <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <p>
+                    APIs can be vulnerable to a variety of attacks if not
+                    properly tested. These include:
+                  </p>
                   <ul>
                     <li>
-                      <b>Principle of Least Privilege:</b> Grant users only the
-                      access necessary for their roles.
+                      <b>SQL Injection: </b> Attacks that exploit input
+                      validation flaws to manipulate database queries.
                     </li>
                     <li>
-                      <b>Regular Access Reviews:</b> Audit permissions to remove
-                      unnecessary access rights.
+                      <b>Parameter Pollution: </b> When attackers introduce
+                      additional parameters that the server doesn't expect,
+                      leading to unintended behaviors.
                     </li>
                     <li>
-                      <b>Use Centralized Access Controls:</b> Ensure consistent
-                      access enforcement through centralized mechanisms.
-                    </li>
-                    <li>
-                      <b>Test for Vulnerabilities:</b> Use tools and manual
-                      testing to identify and address access control issues.
+                      <b>Authentication Flaws:</b> If authentication mechanisms
+                      (like API keys or tokens) are improperly configured, they
+                      can be bypassed by attackers.
                     </li>
                   </ul>
+                  <p>
+                    <i>
+                      In this section, we'll walk you through common API
+                      vulnerabilities and how to test for them.
+                    </i>
+                  </p>
                 </dd>
               </dl>
             </div>

@@ -125,7 +125,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/Unrestricted File Upload/card_image.png"),
-    link: "/UnrestrictedFileUpload",
+    link: "/BL_Vuln",
   },
 
   {
