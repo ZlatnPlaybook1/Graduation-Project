@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Courses.css";
 import courseData from "./courseData"; // Assuming you move course data to a separate file
-
+import AchievementAlert from "../AchievementAlert/AchievementAlert";
 const Courses = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Courses");
   const [searchTerm, setSearchTerm] = useState("");
@@ -57,7 +57,7 @@ const Courses = () => {
             </button>
           </div>
         </div>
-
+        {/* <AchievementAlert /> */}
         {/* Courses */}
         <div className="row-center">
           {filteredCourses.map((course) => (
