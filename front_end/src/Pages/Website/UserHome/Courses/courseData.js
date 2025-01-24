@@ -382,7 +382,7 @@ const courseData = [
   {
     id: 25,
     category: "Temporary Category",
-    title: "API Hacking",
+    title: "API Hacking & Testing",
     description:
       " Before hacking something, you first need to understand the basics",
     topics: [

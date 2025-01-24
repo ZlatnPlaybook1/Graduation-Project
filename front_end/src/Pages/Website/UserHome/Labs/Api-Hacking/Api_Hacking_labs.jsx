@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import "./Api_Hacking.css";
-import labImg from "../../assets/img/ACV/lab.jpeg";
+import labImg from "../../assets/img/Api_Hacking/lab.jpg";
 
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
@@ -53,7 +53,7 @@ export default function AC_Vuln_labs() {
                 <img src={labImg} alt="" />
               </div>
               <div className="course-text-ac-vuln">
-                <h3>vulnerability allowing login bypass</h3>
+                <h3>MCQ Question Review</h3>
                 <p>
                   This lab has an unprotected admin panel. Solve the lab by
                   deleting the user <mark>carlos</mark>.

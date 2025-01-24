@@ -5,6 +5,8 @@ import Footer from "../../Footer/Footer";
 import "./Api_Hacking.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
+import logicflaw from "../../assets/img/Api_Hacking/apiImg1.svg";
+import ExplainImg from "../../assets/img/Api_Hacking/apiImg2.svg";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Api_Hacking() {
@@ -57,19 +59,19 @@ export default function Api_Hacking() {
                 <Link to="/home">Home</Link>
               </li>
               <li>
-                <Link to="">Access control vulnerability</Link>
+                <Link to="">API Hacking & Testing</Link>
               </li>
             </ul>
           </div>
           <div className="course-info">
             <img src={imagecourse} alt="" />
             <div className="course-text">
-              <h1>Access control vulnerability</h1>
+              <h1>API Hacking & Testing</h1>
               <p>
-                Learn how attackers exploit access control vulnerabilities in
-                web applications, gaining unauthorized access to sensitive areas
-                or data, and the techniques used to detect and prevent these
-                attacks.
+                Learn how attackers exploit vulnerabilities in APIs to access
+                sensitive data, manipulate functionality, or bypass security
+                measures, and discover techniques to identify and mitigate these
+                attacks effectively.
               </p>
               <div className="course-icons">
                 <div className="diff">
@@ -110,16 +112,17 @@ export default function Api_Hacking() {
           <div className="row">
             <div className="faq-section-lab1" ref={faqSectionRef}>
               <dl className="section-text-lab1">
-                {/* Task 1 */}
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Introduction</span> Intro to API Testing
+                {/*Intro*/}
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Introduction</span>Intro to API Testing
                 </dt>
                 <dd className="fadeInUp faq-body-lab1">
-                  <h3>
-                    Welcome to the API Testing Learning Room! logic flaw img
-                  </h3>
+                  <h3>Welcome to the API Testing Learning Room!</h3>
+                  <img src={logicflaw} alt="logic flaw img" id="explain-img" />
                   <div className="desc">
-                    <h4>What is an Access Control Vulnerability?</h4>
                     <p>
                       In this section, we'll introduce the concept of API
                       testing, focusing on how APIs enable communication between
@@ -161,6 +164,7 @@ export default function Api_Hacking() {
                       confidentiality, integrity, and availability of web
                       applications.
                     </li>
+
                     <li>
                       <b>Key Areas Covered:</b>
                       <ol>
@@ -179,6 +183,7 @@ export default function Api_Hacking() {
                   <span>Topic 2</span> How Do APIs Work?
                 </dt>
                 <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <img src={ExplainImg} alt="logic flaw img" id="explain-img" />
                   <p>
                     To begin testing an API, you need to understand how it
                     functions and how to interact with it. This includes:
@@ -284,6 +289,90 @@ export default function Api_Hacking() {
                       In this section, we'll walk you through common API
                       vulnerabilities and how to test for them.
                     </i>
+                  </p>
+                </dd>
+                {/* Topic 5 */}
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Topic 5</span> How to Test APIs
+                </dt>
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <p>
+                    To test an API effectively, you must simulate real-world
+                    interactions. This involves:
+                  </p>
+                  <ul>
+                    <li>
+                      <b>Request Construction:</b> Crafting different HTTP
+                      requests based on identified endpoints, parameters, and
+                      methods.
+                    </li>
+                    <li>
+                      <b>Testing Data Validation: </b> Ensure that only valid
+                      data is processed by the API.
+                    </li>
+                    <li>
+                      <b>Exploring Rate Limits and Authentication:</b> Check
+                      whether the API enforces limits and restricts unauthorized
+                      access.
+                    </li>
+                  </ul>
+                </dd>
+                {/* Topic 6 */}
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Topic 6:</span> Best Practices for API Testing
+                </dt>
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <p>
+                    To prevent vulnerabilities, adhere to these best practices:
+                  </p>
+                  <ul>
+                    <li>
+                      <b>Validate Input: </b> Always ensure that input data is
+                      sanitized to avoid security flaws like SQL injection.
+                    </li>
+                    <li>
+                      <b>Enforce Authentication and Authorization:</b> Properly
+                      configure authentication and enforce access controls.
+                    </li>
+                    <li>
+                      <b>Use Secure Development Practices: </b> Follow secure
+                      coding guidelines to minimize the risk of API
+                      vulnerabilities.
+                    </li>
+                    <li>
+                      <b>Test Thoroughly:</b> Conduct both automated and manual
+                      tests to detect any weaknesses in the API.
+                    </li>
+                    <li>
+                      <b>Monitor APIs:</b> Continuously monitor API traffic for
+                      abnormal patterns that could signal exploitation attempts.
+                    </li>
+                  </ul>
+                </dd>
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Topic 7: </span>Conclusion
+                </dt>
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <p>
+                    API testing is essential for securing web applications and
+                    preventing unauthorized access to sensitive data. By
+                    understanding API behavior, identifying vulnerabilities, and
+                    following best practices, you can safeguard your
+                    applications against potential attacks. Remember to always
+                    review API documentation, simulate requests, test for common
+                    vulnerabilities, and apply security measures to protect your
+                    system. If you're ready to put your knowledge to the test,
+                    you can access all of the labs in this topic from the link
+                    below.
                   </p>
                 </dd>
               </dl>
