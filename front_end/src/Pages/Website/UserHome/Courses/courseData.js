@@ -65,19 +65,35 @@ const courseData = [
   },
   {
     id: 5,
-    category: "Web Vulnerabilities",
-    title: "Business Logic Vulnerabilities",
+    category: "Server-Side Exploits",
+    title: "Unrestricted File Upload",
     description:
-      "Understand how attackers exploit flaws in business logic to compromise web applications and learn strategies for prevention.",
+      "Understand the risks and exploitation of unrestricted file upload vulnerabilities, a critical security issue in web applications.",
     topics: [
-      "Understanding Business Logic",
-      "Examples of Exploitation",
-      "Preventive Measures",
-      "Real-world Case Studies",
+      "What is Unrestricted File Upload?",
+      "Why is it Dangerous?",
+      "Attack Techniques",
+      "Exploitation Scenarios",
     ],
     difficulty: "Easy",
-    image: require("../assets/img/BLV/landing.avif"),
-    link: "/BL_Vuln",
+    image: require("../assets/img/Unrestricted File Upload/card_image.png"),
+    link: "/UnrestrictedFileUpload",
+  },
+  {
+    id: 7,
+    category: "Fundamentals",
+    title: "Linux Fundamentals",
+    description:
+      "Build a solid foundation in Linux, the operating system at the core of many cybersecurity tools and infrastructures.",
+    topics: [
+      "Running Your First Few Commands",
+      "Interacting with the Filesystem",
+      "Searching for Files",
+      "Introduction to Shell Operators",
+    ],
+    difficulty: "Easy",
+    image: require("../assets/img/linux/linux_logo.png"),
+    link: "/linux",
   },
   {
     id: 6,
@@ -97,10 +113,10 @@ const courseData = [
   },
   {
     id: 7,
-    category: "Server-Side Exploits",
-    title: "Unrestricted File Upload",
+    category: "Web Vulnerabilities",
+    title: "Business Logic Vulnerabilities",
     description:
-      "Understand the risks and exploitation of unrestricted file upload vulnerabilities, a critical security issue in web applications.",
+      "Understand the risks and exploitation of unrestricted file upload vulnerabilities, a critical security issue in web applications. Learn how attackers can leverage this vulnerability to execute malicious code or compromise a server.",
     topics: [
       "What is Unrestricted File Upload?",
       "Why is it Dangerous?",
@@ -111,6 +127,7 @@ const courseData = [
     image: require("../assets/img/Unrestricted File Upload/card_image.png"),
     link: "/UnrestrictedFileUpload",
   },
+
   {
     id: 8,
     category: "Server-Side Exploits",
@@ -127,22 +144,7 @@ const courseData = [
     image: require("../assets/img/Path_Traversal/landing.jpeg"),
     link: "/Path_Traversal",
   },
-  {
-    id: 9,
-    category: "Fundamentals",
-    title: "Linux Fundamentals",
-    description:
-      "Build a solid foundation in Linux, the operating system at the core of many cybersecurity tools and infrastructures.",
-    topics: [
-      "Running Your First Few Commands",
-      "Interacting with the Filesystem",
-      "Searching for Files",
-      "Introduction to Shell Operators",
-    ],
-    difficulty: "Easy",
-    image: require("../assets/img/linux/linux_logo.png"),
-    link: "/linux",
-  },
+
   {
     id: 10,
     category: "Fundamentals",

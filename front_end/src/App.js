@@ -68,18 +68,26 @@ import ProductDetails from "./Pages/Website/UserHome/Labs/CSRF/practical/first_l
 // Regular Expression
 import REGEX from "./Pages/Website/UserHome/Labs/Regex/Regex.jsx";
 import REGEX_LABS from "./Pages/Website/UserHome/Labs/Regex/Regex_labs.jsx";
+import REGEX_FIRST_LAB from "./Pages/Website/UserHome/Labs/Regex/practical/first_lab/First_Lab.jsx";
+import REGEX_SECOND_LAB from "./Pages/Website/UserHome/Labs/Regex/practical/second_lab/Second_Lab.jsx";
 // End Regular Expression
 //Path Traversal
 import PATH_TRAVERSAL from "./Pages/Website/UserHome/Labs/Path-Traversal/Path_Traversal.jsx";
 import PATH_TRAVERSAL_LABS from "./Pages/Website/UserHome/Labs/Path-Traversal/Path_Traversal_labs.jsx";
+import PATH_TRAVERSAL_FIRST_LAB from "./Pages/Website/UserHome/Labs/Path-Traversal/practical/first_lab/First_Lab.jsx";
+import PATH_TRAVERSAL_SECOND_LAB from "./Pages/Website/UserHome/Labs/Path-Traversal/practical/second_lab/Second_Lab.jsx";
 // End Path Traversal
 // Api Hacking
 import API_HACKING from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking.jsx";
 import API_HACKING_LABS from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking_labs.jsx";
+import API_HACKING_FIRST_LAB from "./Pages/Website/UserHome/Labs/Api-Hacking/practical/first_lab/First_Lab.jsx";
+import API_HACKING_SECOND_LAB from "./Pages/Website/UserHome/Labs/Api-Hacking/practical/second_lab/Second_Lab.jsx";
 // End Api Hacking
 // Click Jacking
 import CLICK_JACKING from "./Pages/Website/UserHome/Labs/Click-Jacking/Click_Jacking.jsx";
 import CLICK_JACKING_LABS from "./Pages/Website/UserHome/Labs/Click-Jacking/Click_Jacking_labs.jsx";
+import CLICK_JACKING_FIRST_LAB from "./Pages/Website/UserHome/Labs/Click-Jacking/practical/first_lab/First_Lab.jsx";
+import CLICK_JACKING_SECOND_LAB from "./Pages/Website/UserHome/Labs/Click-Jacking/practical/second_lab/Second_Lab.jsx";
 // End Click Jacking
 
 // Business Logic Vulnerability
@@ -259,6 +267,14 @@ function App() {
           {/* Regex */}
           <Route path="/Regex" element={<REGEX />} />
           <Route path="/Regex/Regex_labs" element={<REGEX_LABS />} />
+          <Route
+            path="/Regex/Regex_labs/first_lab"
+            element={<REGEX_FIRST_LAB />}
+          />
+          <Route
+            path="/Regex/Regex_labs/second_lab"
+            element={<REGEX_SECOND_LAB />}
+          />
           {/* End Regex */}
           {/* BL_Vuln*/}
           <Route path="/BL_Vuln" element={<BL_VULN />} />
@@ -287,12 +303,29 @@ function App() {
             path="/Path_Traversal/Path_Traversal_labs"
             element={<PATH_TRAVERSAL_LABS />}
           />
+          <Route
+            path="/Path_Traversal/Path_Traversal_labs/lab1"
+            element={<PATH_TRAVERSAL_FIRST_LAB />}
+          />
+          <Route
+            path="/Path_Traversal/Path_Traversal_labs/lab2"
+            element={<PATH_TRAVERSAL_SECOND_LAB />}
+          />
           {/* End Path Traversal */}
+
           {/* Api Hacking */}
           <Route path="/Api_Hacking" element={<API_HACKING />} />
           <Route
             path="/Api_Hacking/Api_Hacking_labs"
             element={<API_HACKING_LABS />}
+          />
+          <Route
+            path="/Api_Hacking/Api_Hacking_labs/lab1"
+            element={<API_HACKING_FIRST_LAB />}
+          />
+          <Route
+            path="/Api_Hacking/Api_Hacking_labs/lab2"
+            element={<API_HACKING_SECOND_LAB />}
           />
           {/* End Api Hacking */}
           {/* Click Jacking */}
@@ -300,6 +333,14 @@ function App() {
           <Route
             path="/Click_Jacking/Click_Jacking_labs"
             element={<CLICK_JACKING_LABS />}
+          />
+          <Route
+            path="/Click_Jacking/Click_Jacking_labs/lab1"
+            element={<CLICK_JACKING_FIRST_LAB />}
+          />
+          <Route
+            path="/Click_Jacking/Click_Jacking_labs/lab2"
+            element={<CLICK_JACKING_SECOND_LAB />}
           />
           {/* End Click Jacking */}
 
