@@ -80,7 +80,7 @@ const courseData = [
     link: "/UnrestrictedFileUpload",
   },
   {
-    id: 7,
+    id: 6,
     category: "Fundamentals",
     title: "Linux Fundamentals",
     description:
@@ -96,22 +96,39 @@ const courseData = [
     link: "/linux",
   },
   {
-    id: 6,
+    id: 7,
+    category: "Web Vulnerabilities",
+    title: "Business Logic Vulnerabilities",
+    description:
+      "Before hacking something, you first need to understand the basics",
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
+    difficulty: "Easy",
+    image: require("../assets/img/BLV/landing.avif"),
+    link: "/BL_Vuln",
+  },
+  {
+    id: 8,
     category: "Web Vulnerabilities",
     title: "Broken Authentication",
     description:
-      "Learn how attackers exploit vulnerabilities in authentication mechanisms and understand how to secure them.",
+      "Learn the core skills required to start a career in cyber security",
     topics: [
-      "Common Authentication Flaws",
-      "Session Management Issues",
-      "Mitigation Strategies",
-      "Real-world Examples",
+      "Learn about different careers in cyber",
+      "Hack your first application",
+      "Defend against a live cyber attack",
+      "Explore security topics in the industry",
     ],
     difficulty: "Easy",
     image: require("../assets/img/Broken Authentication/card_image.png"),
     link: "/broken-auth",
   },
   {
+<<<<<<< HEAD
     id: 7,
     category: "Web Vulnerabilities",
     title: "Business Logic Vulnerabilities",
@@ -130,99 +147,85 @@ const courseData = [
 
   {
     id: 8,
+=======
+    id: 9,
+>>>>>>> cb3c2b3aa31cbec37eea243e14cb463808a731db
     category: "Server-Side Exploits",
-    title: "Path Traversal",
-    description:
-      "Learn how attackers exploit path traversal vulnerabilities to access unauthorized files on a server.",
-    topics: [
-      "Understanding Path Traversal",
-      "Exploitation Examples",
-      "Mitigation Strategies",
-      "Real-world Case Studies",
-    ],
-    difficulty: "Easy",
-    image: require("../assets/img/Path_Traversal/landing.jpeg"),
-    link: "/Path_Traversal",
-  },
-
-  {
-    id: 10,
-    category: "Fundamentals",
     title: "Bash Scripting",
     description:
-      "Master the basics of Bash scripting, a powerful tool for automating tasks and managing systems in cybersecurity environments.",
-    topics: ["Simple Bash Scripts", "Variables", "Parameters", "Arrays"],
+      " Master the basics of Bash scripting, a powerful tool for automating tasks and managing systems in cybersecurity environments.",
+    topics: [
+      "simple bash scripts",
+      "Variables",
+      "Parameters",
+      "Arrays",
+    ],
     difficulty: "Easy",
     image: require("../assets/img/bash/bash_course_logo.png"),
     link: "/bash-scripting",
   },
   {
+    id: 10,
+    category: "Fundamentals",
+    title: "Cross Site Request Forgery (CSRF)",
+    description:
+      "Before hacking something, you first need to understand the basics",
+    topics: ["Cyber Security Basics", "Networking Basics and Weaknesses", "The Web And Common Attacks", "Learn to Use The Linux OS"],
+    difficulty: "Easy",
+    image: require("../assets/img/CSRF/landing.jpg"),
+    link: "/CSRF",
+  },
+  {
     id: 11,
     category: "Specialized Topics",
-    title: "Regex",
+    title: "Insecure Direct Object Reference(IDOR)",
     description:
-      "Explore the power of regular expressions for pattern matching and text manipulation in various contexts.",
+      "Delve into Insecure Direct Object Reference (IDOR) vulnerabilities, a common security issue in web applications. Learn how attackers exploit weak access controls to gain unauthorized access to sensitive resources.",
     topics: [
-      "Introduction to Regex",
-      "Basic Syntax",
-      "Advanced Techniques",
-      "Practical Examples",
+      "What is IDOR?",
+      "Why is it Dangerous?",
+      "Common Examples.",
+      "Exploitation Techniques.",
+      "Mitigation Strategies.",
     ],
     difficulty: "Easy",
-    image: require("../assets/img/Regex/landing.jpeg"),
-    link: "/Regex",
+    image: require("../assets/img/IDOR/Insecure_Direct_Object_Reference.png"),
+    link: "/Insecure_Direct_Object_Reference(IDOR)",
   },
   {
     id: 12,
     category: "Specialized Topics",
-    title: "API Hacking",
-    description:
-      "Understand the vulnerabilities and testing techniques for securing APIs in modern web applications.",
-    topics: [
-      "What is API Hacking?",
-      "Common API Vulnerabilities",
-      "Testing Tools and Techniques",
-      "Case Studies",
-    ],
-    difficulty: "Easy",
-    image: require("../assets/img/Api_Hacking/landing.png"),
-    link: "/Api_Hacking",
-  },
-  {
-    id: 13,
-    category: "Specialized Topics",
     title: "Obfuscation",
     description:
-      "Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property.",
+      "Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments",
     topics: [
       "What are Obfuscation & Deobfuscation?",
-      "Why Use Obfuscation?",
-      "JavaScript Obfuscation",
-      "Deobfuscation Tools",
+      "Why do we use Obfuscation?",
+      "Javascript Obfuscation",
+      "JS Deobfuscation Tools",
     ],
     difficulty: "Easy",
     image: require("../assets/img/Obfuscation/card_image.png"),
     link: "/obfuscation",
   },
   {
-    id: 14,
+    id: 13,
     category: "Specialized Topics",
-    title: "Clickjacking",
+    title: "Regular expressions",
     description:
-      "Learn how attackers exploit clickjacking vulnerabilities and understand the techniques to detect and prevent them.",
+      " Before hacking something, you first need to understand the basics",
     topics: [
-      "What is Clickjacking?",
-      "Real-world Examples",
-      "Detection Methods",
-      "Prevention Strategies",
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
     ],
     difficulty: "Easy",
-    image: require("../assets/img/Click_Jacking/landing.jpeg"),
-    link: "/Click_Jacking",
+    image: require("../assets/img/Regex/landing.jpeg"),
+    link: "/Regex",
   },
-  // Temporary placeholder topics
   {
-    id: 15,
+    id: 14,
     category: "Temporary Category",
     title: "Temporary Topic",
     description:
@@ -238,9 +241,9 @@ const courseData = [
     link: "/temp_topic_15",
   },
   {
-    id: 16,
+    id: 15,
     category: "Temporary Category",
-    title: "Temporary Topic",
+    title: "Cryptography",
     description:
       "This is a temporary placeholder topic to meet the required number of 30 topics.",
     topics: [
@@ -256,36 +259,244 @@ const courseData = [
   {
     id: 16,
     category: "Temporary Category",
-    title: "Temporary Topic",
+    title: "Hashing",
     description:
-      "This is a temporary placeholder topic to meet the required number of 30 topics.",
+      "Before hacking something, you first need to understand the basics",
     topics: [
-      "Placeholder Topic 1",
-      "Placeholder Topic 2",
-      "Placeholder Topic 3",
-      "Placeholder Topic 4",
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/Lab2.jpg"),
-    link: "/temp_topic_16",
+    image: require("../assets/img/InfoDisc/landing.jpg"),
+    link: "/infoDisc",
   },
-  // Repeat for remaining temporary topics until ID 30
-  ...Array.from({ length: 14 }, (_, i) => ({
-    id: 17 + i,
+  {
+    id: 17,
     category: "Temporary Category",
-    title: `Temporary Topic ${17 + i}`,
+    title: "Burp Suite",
     description:
-      "This is a temporary placeholder topic to meet the required number of 30 topics.",
+      " Learn the core skills required to start a career in cyber security",
     topics: [
-      "Placeholder Topic 1",
-      "Placeholder Topic 2",
-      "Placeholder Topic 3",
-      "Placeholder Topic 4",
+      "Learn about different careers in cyber",
+      "Hack your first application",
+      "Defend against a live cyber attack",
+      "Explore security topics in the industry",
     ],
     difficulty: "Medium",
     image: require("../assets/img/Lab2.jpg"),
-    link: `/temp_topic_${17 + i}`,
-  })),
+    link: "/lab2",
+  },
+  {
+    id: 18,
+    category: "Temporary Category",
+    title: "wireshark",
+    description:
+      "Before hacking something, you first need to understand the basics",
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
+    difficulty: "Medium",
+    image: require("../assets/img/Lab2.jpg"),
+    link: "/infoDisc",
+  },
+  {
+    id: 19,
+    category: "Temporary Category",
+    title: "Digital Forensics",
+    description:
+      " Before hacking something, you first need to understand the basics",
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
+    difficulty: "Medium",
+    image: require("../assets/img/AudFor/landing.png"),
+    link: "/AudFor",
+  },
+  {
+    id: 20,
+    category: "Temporary Category",
+    title: "Command Injection",
+    description:
+      "Before hacking something, you first need to understand the basics",
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
+    difficulty: "Medium",
+    image: require("../assets/img/Lab2.jpg"),
+    link: "/infoDisc",
+  },
+  {
+    id: 21,
+    category: "Temporary Category",
+    title: "File Inclusion",
+    description:
+      "Before hacking something, you first need to understand the basics",
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
+    difficulty: "Medium",
+    image: require("../assets/img/Lab2.jpg"),
+    link: "/infoDisc",
+  },
+  {
+    id: 22,
+    category: "Temporary Category",
+    title: "Path Traversal",
+    description:
+      "Before hacking something, you first need to understand the basics",
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
+    difficulty: "Medium",
+    image: require("../assets/img/Path_Traversal/landing.jpeg"),
+    link: "/Path_Traversal",
+  },
+  {
+    id: 23,
+    category: "Temporary Category",
+    title: "Insecure Deserialization",
+    description:
+      "Before hacking something, you first need to understand the basics",
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
+    difficulty: "Medium",
+    image: require("../assets/img/Lab2.jpg"),
+    link: "/infoDisc",
+  },
+  {
+    id: 24,
+    category: "Temporary Category",
+    title: "Server Side Template Injection (SSTI)",
+    description:
+      "Before hacking something, you first need to understand the basics",
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
+    difficulty: "Medium",
+    image: require("../assets/img/Lab2.jpg"),
+    link: "/infoDisc",
+  },
+  {
+    id: 25,
+    category: "Temporary Category",
+    title: "API Hacking",
+    description:
+      " Before hacking something, you first need to understand the basics",
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
+    difficulty: "Medium",
+    image: require("../assets/img/Api_Hacking/landing.png"),
+    link: "/Api_Hacking",
+  },
+  {
+    id: 26,
+    category: "Temporary Category",
+    title: "?????",
+    description:
+      "Before hacking something, you first need to understand the basics",
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
+    difficulty: "Medium",
+    image: require("../assets/img/Lab2.jpg"),
+    link: "/infoDisc",
+  },
+  {
+    id: 27,
+    category: "Temporary Category",
+    title: "Captcha Bypass",
+    description:
+      "Before hacking something, you first need to understand the basics",
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
+    difficulty: "Medium",
+    image: require("../assets/img/Lab2.jpg"),
+    link: "/infoDisc",
+  },
+  {
+    id: 28,
+    category: "Temporary Category",
+    title: "click jacking",
+    description:
+      "Before hacking something, you first need to understand the basics",
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
+    difficulty: "Medium",
+    image: require("../assets/img/Click_Jacking/landing.jpeg"),
+    link: "/Click_Jacking",
+  },
+  {
+    id: 29,
+    category: "Temporary Category",
+    title: "29.",
+    description:
+      "Before hacking something, you first need to understand the basics",
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
+    difficulty: "Medium",
+    image: require("../assets/img/Lab2.jpg"),
+    link: "/infoDisc",
+  },
+  {
+    id: 30,
+    category: "Temporary Category",
+    title: "JWT attacks",
+    description:
+      "Before hacking something, you first need to understand the basics",
+    topics: [
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
+    ],
+    difficulty: "Medium",
+    image: require("../assets/img/Lab2.jpg"),
+    link: "/infoDisc",
+  },
+
 ];
 
 export default courseData;
