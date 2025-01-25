@@ -1,7 +1,7 @@
-import React from "react";
-
-const MCQQuiz = () => {
-  return <h1>Hello</h1>;
-};
-
-export default MCQQuiz;
+export default function Second_Lab() {
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1>Hello</h1>
+    </div>
+  );
+}

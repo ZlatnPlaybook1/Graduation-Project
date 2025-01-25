@@ -3,18 +3,13 @@
   <head>
     <!-- Meta tags -->
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link
-      rel="shortcut icon"
-      href="./icons8-cyber-security-64.svg"
-      type="image/svg-xml"
-    />
+    <link rel="shortcut icon" href="./favIcon.svg" type="image/x-icon">
 <!--  user name = support@cyberlap.com  password = cyberlap   use this for login --> 
 
     <!-- Google Fonts -->
@@ -41,5 +36,23 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    
+      <script>
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === "visible") {
+            document.title = "Cyber Security";
+            document.querySelector("link[rel*='icon']").setAttribute("href", "./favIcon.svg");
+        } else {
+            document.title = "Come Back Please";
+            document.querySelector("link[rel*='icon']").setAttribute("href", "./favhand.png");
+        }
+      });
+    </script>
+     <script
+      src="https://app.livechatai.com/embed.js"
+      data-id="cm6clkym10001l40a2nu45w2s"
+      async
+      defer>
+    </script>
   </body>
 </html>
