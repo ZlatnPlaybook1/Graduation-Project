@@ -102,10 +102,12 @@ import BL_VULN_THIRD_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/t
 import AUDFOR from "./Pages/Website/UserHome/Labs/AudFor/AudFor.jsx";
 import AUDFOR_LABS from "./Pages/Website/UserHome/Labs/AudFor/AudFor_labs.jsx";
 // End Audio Forensics
-// Information disclosure
-import INFODISC from "./Pages/Website/UserHome/Labs/InfoDisc/InfoDisc.jsx";
-import INFODISC_LABS from "./Pages/Website/UserHome/Labs/InfoDisc/InfoDisc_labs.jsx";
-// End Information disclosure
+// Hashing
+import HASHING from "./Pages/Website/UserHome/Labs/Hashing/Hashing.jsx";
+import HASHING_LABS from "./Pages/Website/UserHome/Labs/Hashing/Hashing_labs.jsx";
+import HASHING_FIRST_LAB from "./Pages/Website/UserHome/Labs/Hashing/practical/first_lab/First_Lab.jsx";
+import HASHING_SECOND_LAB from "./Pages/Website/UserHome/Labs/Hashing/practical/second_lab/Second_Lab.jsx";
+// End Hashing
 // Bash Scripting
 import Bash from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash.jsx";
 import BASH_LAB from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_lab.jsx";
@@ -348,10 +350,18 @@ function App() {
           />
           {/* End Click Jacking */}
 
-          {/*InfoDisc */}
-          <Route path="/InfoDisc" element={<INFODISC />} />
-          <Route path="/InfoDisc/InfoDisc_labs" element={<INFODISC_LABS />} />
-          {/* End InfoDisc */}
+          {/*Hashing */}
+          <Route path="/Hashing" element={<HASHING />} />
+          <Route path="/Hashing/Hashing_labs" element={<HASHING_LABS />} />
+          <Route
+            path="/Hashing/Hashing_labs/lab1"
+            element={<HASHING_FIRST_LAB />}
+          />
+          <Route
+            path="/Hashing/Hashing_labs/lab2"
+            element={<HASHING_SECOND_LAB />}
+          />
+          {/* End Hashing */}
 
           {/* End Sql_Injection */}
           {/* Start XSS */}
