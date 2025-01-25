@@ -1,5 +1,5 @@
 import CompleteQuestion from "./CompleteQuestion";
-import Data from "./Data.json";
+import Data from "./second_Data.json";
 
 export default function Second_Lab() {
   return (

@@ -98,10 +98,12 @@ import BL_VULN_SECOND_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/
 import BL_VULN_THIRD_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/third_lab/Third_Lab.jsx";
 // End Business Logic Vulnerability
 
-// Audio Forensics
-import AUDFOR from "./Pages/Website/UserHome/Labs/AudFor/AudFor.jsx";
-import AUDFOR_LABS from "./Pages/Website/UserHome/Labs/AudFor/AudFor_labs.jsx";
-// End Audio Forensics
+// Digital Forensics
+import DIGITAL_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/Digital_Forensics.jsx";
+import DIGITAL_FORENSICS_LABS from "./Pages/Website/UserHome/Labs/Digital_Forensics/Digital_Forensics_Labs.jsx";
+import DIGITAL_FORENSICS_FIRST_LAB from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/first_lab/First_Lab.jsx";
+import DIGITAL_FORENSICS_SECOND_LAB from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/second_lab/Second_Lab.jsx";
+// End Digital Forensics
 // Hashing
 import HASHING from "./Pages/Website/UserHome/Labs/Hashing/Hashing.jsx";
 import HASHING_LABS from "./Pages/Website/UserHome/Labs/Hashing/Hashing_labs.jsx";
@@ -299,10 +301,22 @@ function App() {
           />
           {/* End BL_Vuln */}
 
-          {/* AudFor */}
-          <Route path="/AudFor" element={<AUDFOR />} />
-          <Route path="/AudFor/AudFor_labs" element={<AUDFOR_LABS />} />
-          {/* End AudFor */}
+          {/*Digital Forensics*/}
+          <Route path="/Digital_Forensics" element={<DIGITAL_FORENSICS />} />
+          <Route
+            path="/Digital_Forensics/Digital_Forensics_labs"
+            element={<DIGITAL_FORENSICS_LABS />}
+          />
+          <Route
+            path="/Digital_Forensics/Digital_Forensics_labs/lab1"
+            element={<DIGITAL_FORENSICS_FIRST_LAB />}
+          />
+          <Route
+            path="/Digital_Forensics/Digital_Forensics_labs/lab2"
+            element={<DIGITAL_FORENSICS_SECOND_LAB />}
+          />
+
+          {/* End Digital Forensics */}
           {/* Path Traversal */}
           <Route path="/Path_Traversal" element={<PATH_TRAVERSAL />} />
           <Route

@@ -297,7 +297,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/AudFor/landing.png"),
-    link: "/AudFor",
+    link: "/Digital_Forensics",
   },
   {
     id: 20,
