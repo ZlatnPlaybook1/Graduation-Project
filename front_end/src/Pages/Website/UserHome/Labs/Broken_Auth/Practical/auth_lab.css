@@ -1,0 +1,83 @@
+/* auth_lab.css */
+.lab1-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+.lab1-login-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.lab1-login-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.lab1-login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.lab1-input-section {
+  margin-bottom: 20px;
+}
+
+.lab1-input-label {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: bold;
+}
+
+.lab1-input-field {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.lab1-input-field:focus {
+  border-color: #2575fc;
+}
+
+.lab1-submit-btn {
+  background-color: #2575fc;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lab1-submit-btn:hover {
+  background-color: #6a11cb;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .lab1-login-card {
+    padding: 30px;
+    max-width: 350px;
+  }
+
+  .lab1-login-title {
+    font-size: 24px;
+  }
+}

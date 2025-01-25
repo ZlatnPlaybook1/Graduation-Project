@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import styles from "../Page_Styles/Content.module.css";
+import "../Page_Styles/Content.css";
 import Header from "../../Header/Header";
 // import background from "../../assets/img/background.png";
 import image from "../../assets/img/Obfuscation/course_image.png";
@@ -49,12 +49,12 @@ export default function Obfuscation() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className={styles.landing}>
-        <div className={styles.banner}>
+      <div className="landing">
+        <div className="banner">
           {/* <img src={background} alt="bacground" /> */}
         </div>
-        <div className={styles.container}>
-          <div className={styles.breadcrumb}>
+        <div className="container">
+          <div className="breadcrumb">
             <ul>
               <li>
                 <Link to="">Home</Link>
@@ -69,33 +69,33 @@ export default function Obfuscation() {
               </li> */}
             </ul>
           </div>
-          <div className={styles["course-info"]}>
+          <div className="course-info">
             <img src={image} alt="logo" />
-            <div className={styles["course-text"]}>
+            <div className="course-text">
               <h1>Obfuscation</h1>
               <p>
               Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments.
               </p>
-              <div className={styles["course-icons"]}>
-                <div className={styles.diff}>
-                  <div className={styles.easy}>
+              <div className="course-icons">
+                <div className="diff">
+                  <div className="easy">
                     <i className="fa-solid fa-signal"></i>
                     <p>Easy</p>
                   </div>
                 </div>
-                <div className={styles.duration}>
+                <div className="duration">
                   <i className="fa-solid fa-clock"></i>
-                  <p className={styles.time}>50 min</p>
+                  <p className="time">50 min</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className={styles.options}>
+          <div className="options">
             <button>
               <i className="far fa-bookmark"></i>
               <p>Save Room</p>
             </button>
-            <div className={styles.like}>
+            <div className="like">
               <button>
                 <i className="fas fa-thumbs-up"></i>
                 <p></p>
@@ -110,15 +110,15 @@ export default function Obfuscation() {
       </div>
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className={styles.course}>
-        <div className={styles.container} ref={faqSectionRef}>
-          <div className={styles.row}>
-            <div className={styles["faq-section"]}>
-              <dl className={styles["section-text"]}>
+      <div className="course">
+        <div className="container" ref={faqSectionRef}>
+          <div className="row">
+            <div className="faq-section">
+              <dl className="section-text">
                 {/* Single FAQ Area  */}
-                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
+                <dt className="wave fadeInUp faq-header">
                   <span>step 1</span> Introduction</dt>
-                <dd className={`fadeInUp ${styles["faq-body"]}`}>
+                <dd className="fadeInUp faq-body">
                   <h1>Welcome to  Obfuscation</h1>
                   
                   <h2>What will you learn?</h2>
@@ -129,20 +129,14 @@ export default function Obfuscation() {
                     <li>JS Deobfuscation Tools</li>
                   </ol>
                 </dd>
-                
-                      
-            
 
 
 
-
-                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
+                <dt className="wave fadeInUp faq-header">
                   <span> step 2</span> What are Obfuscation & Deobfuscation ?</dt>
-                  <dd className={`fadeInUp ${styles["faq-body"]}`}>
+                  <dd className="fadeInUp faq-body">
                 <p><br></br></p>
-
                 <h1>What are Obfuscation & Deobfuscation?</h1>
-
                 <h4>Obfuscation </h4>
                 <p>The process of modifying the script to convert it to a difficult, harder-to-understand format, but will return the same result. There are several obfuscation methods hence that there are many tools for it.</p>
                 <br></br>
@@ -177,9 +171,9 @@ export default function Obfuscation() {
 
 
 
-            <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
+            <dt className="wave fadeInUp faq-header">
                   <span> step 3</span>Javascript Obfuscation </dt>
-                  <dd className={`fadeInUp ${styles["faq-body"]}`}>
+                  <dd className="fadeInUp faq-body">
                 <br></br>
                 <h1>Javascript Obfuscation </h1>
                 <p>There are several methods in JS obfuscation, one of them is to remove spaces, this method is called code minify, usually developers use this method as it reduces script file size.</p>
@@ -217,9 +211,9 @@ export default function Obfuscation() {
                 {/* 
             # main slider
 
-            <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
+            <dt className="wave fadeInUp faq-header">
                   <span> step 2</span> What are Obfuscation & Deobfuscation ?</dt>
-                  <dd className={`fadeInUp ${styles["faq-body"]}`}>
+                  <dd className="fadeInUp faq-body">
                 <p><br></br></p>
 
 
@@ -228,8 +222,8 @@ export default function Obfuscation() {
             */}
               </dl>
             </div>
-            <div className={styles["go-to-section"]}>
-              <Link to="/obfuscation/obfuscation_lab" className={styles["go-to"]}>
+            <div className="go-to-section">
+              <Link to="/obfuscation/obfuscation_lab" className="go-to">
                 Go To Lab
               </Link>
             </div>

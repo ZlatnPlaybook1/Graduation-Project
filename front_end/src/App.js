@@ -102,10 +102,12 @@ import BL_VULN_THIRD_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/t
 import AUDFOR from "./Pages/Website/UserHome/Labs/AudFor/AudFor.jsx";
 import AUDFOR_LABS from "./Pages/Website/UserHome/Labs/AudFor/AudFor_labs.jsx";
 // End Audio Forensics
-// Information disclosure
-import INFODISC from "./Pages/Website/UserHome/Labs/InfoDisc/InfoDisc.jsx";
-import INFODISC_LABS from "./Pages/Website/UserHome/Labs/InfoDisc/InfoDisc_labs.jsx";
-// End Information disclosure
+// Hashing
+import HASHING from "./Pages/Website/UserHome/Labs/Hashing/Hashing.jsx";
+import HASHING_LABS from "./Pages/Website/UserHome/Labs/Hashing/Hashing_labs.jsx";
+import HASHING_FIRST_LAB from "./Pages/Website/UserHome/Labs/Hashing/practical/first_lab/First_Lab.jsx";
+import HASHING_SECOND_LAB from "./Pages/Website/UserHome/Labs/Hashing/practical/second_lab/Second_Lab.jsx";
+// End Hashing
 // Bash Scripting
 import Bash from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash.jsx";
 import BASH_LAB from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_lab.jsx";
@@ -138,6 +140,10 @@ import InsecureDirectObjectReferenceLabs from "./Pages/Website/UserHome/Labs/IDO
 import IDORLab1 from "./Pages/Website/UserHome/Labs/IDOR/practical/IDOR_Lab1.jsx";
 import IDORLab2 from "./Pages/Website/UserHome/Labs/IDOR/practical/IDOR_Lab2.jsx";
 import IDORLab3 from "./Pages/Website/UserHome/Labs/IDOR/practical/IDOR_Lab3.jsx";
+import BrokenAuthentication from "./Pages/Website/UserHome/Labs/Broken_Auth/BrokenAuthentication.jsx";
+import BrokenAuthenticationLab from "./Pages/Website/UserHome/Labs/Broken_Auth/BrokenAuthenticationLab.jsx";
+import AuthLab1 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab1.jsx";
+import AuthLab2 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab2.jsx";
 
 function App() {
   return (
@@ -344,10 +350,18 @@ function App() {
           />
           {/* End Click Jacking */}
 
-          {/*InfoDisc */}
-          <Route path="/InfoDisc" element={<INFODISC />} />
-          <Route path="/InfoDisc/InfoDisc_labs" element={<INFODISC_LABS />} />
-          {/* End InfoDisc */}
+          {/*Hashing */}
+          <Route path="/Hashing" element={<HASHING />} />
+          <Route path="/Hashing/Hashing_labs" element={<HASHING_LABS />} />
+          <Route
+            path="/Hashing/Hashing_labs/lab1"
+            element={<HASHING_FIRST_LAB />}
+          />
+          <Route
+            path="/Hashing/Hashing_labs/lab2"
+            element={<HASHING_SECOND_LAB />}
+          />
+          {/* End Hashing */}
 
           {/* End Sql_Injection */}
           {/* Start XSS */}
@@ -431,6 +445,21 @@ function App() {
             element={<IDORLab3 />}
           />
           {/* End Insecure_Direct_Object_Reference */}
+          {/* Start Broken Authentication */}
+          <Route path="/broken-auth" element={<BrokenAuthentication />} />
+          <Route
+            path="/broken-auth/Broken_Authentication_Lab"
+            element={<BrokenAuthenticationLab />}
+          />
+          <Route
+            path="/broken-auth/Broken_Authentication_Lab/lab1"
+            element={<AuthLab1 />}
+          />
+          <Route
+            path="/broken-auth/Broken_Authentication_Lab/lab2"
+            element={<AuthLab2 />}
+          />
+          {/* End Broken Authentication */}
           {/* Start Cookies */}
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />

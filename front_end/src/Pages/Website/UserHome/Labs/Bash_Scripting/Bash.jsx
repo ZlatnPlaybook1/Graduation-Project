@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import styles from "../Page_Styles/Content.module.css";
+import "../Page_Styles/Content.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/background.png";
 import image from "../../assets/img/bash/full_colored_dark (1).png";
@@ -61,12 +61,12 @@ export default function Bash() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className={styles.landing}>
-        <div className={styles.banner}>
+      <div className="landing">
+        <div className="banner">
           <img src={background} alt="bacground" />
         </div>
-        <div className={styles.container}>
-          <div className={styles.breadcrumb}>
+        <div className="container">
+          <div className="breadcrumb">
             <ul>
               <li>
                 <Link to="">Home</Link>
@@ -81,35 +81,35 @@ export default function Bash() {
               </li> */}
             </ul>
           </div>
-          <div className={styles["course-info"]}>
+          <div className="course-info">
             <img src={image} alt="logo" />
-            <div className={styles["course-text"]}>
+            <div className="course-text">
               <h1>Bash Scripting</h1>
               <p>
                 Master the basics of Bash scripting, a powerful tool for
                 automating tasks and managing systems in cybersecurity
                 environments.
               </p>
-              <div className={styles["course-icons"]}>
-                <div className={styles.diff}>
-                  <div className={styles.easy}>
+              <div className="course-icons">
+                <div className="diff">
+                  <div className="easy">
                     <i className="fa-solid fa-signal"></i>
                     <p>Easy</p>
                   </div>
                 </div>
-                <div className={styles.duration}>
+                <div className="duration">
                   <i className="fa-solid fa-clock "></i>
-                  <p className={styles.time}>50 min</p>
+                  <p className="time">50 min</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className={styles.options}>
+          <div className="options">
             <button>
               <i className="far fa-bookmark"></i>
               <p>Save Room</p>
             </button>
-            <div className={styles.like}>
+            <div className="like">
               <button>
                 <i className="fas fa-thumbs-up"></i>
                 <p></p>
@@ -124,16 +124,16 @@ export default function Bash() {
       </div>
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className={styles.course}>
-        <div className={styles.container} ref={faqSectionRef}>
-          <div className={styles.row}>
-            <div className={styles["faq-section"]}>
-              <dl className={styles["section-text"]}>
+      <div className="course">
+        <div className="container" ref={faqSectionRef}>
+          <div className="row">
+            <div className="faq-section">
+              <dl className="section-text">
                 {/* Single FAQ Area  */}
-                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
+                <dt className="wave fadeInUp faq-header">
                   <span>Lesson 1</span> Introduction
                 </dt>
-                <dd className={`fadeInUp ${styles["faq-body"]}`}>
+                <dd className="fadeInUp faq-body">
                   <h1>Welcome to the introductory bash scripting room!</h1>
                   <img src={exampleImage18} alt="Example" />
                   <h2>What is bash?</h2>
@@ -157,10 +157,10 @@ export default function Bash() {
                     <li>Conditionals</li>
                   </ol>
                 </dd>
-                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
+                <dt className="wave fadeInUp faq-header">
                   <span>Lesson 2</span> Our first simple bash scripts
                 </dt>
-                <dd className={`fadeInUp ${styles["faq-body"]}`}>
+                <dd className="fadeInUp faq-body">
                   <h1>
                     Ok now that we have had a brief introduction to what bash is
                     and what it is used for let's jump right into some examples!
@@ -217,10 +217,10 @@ export default function Bash() {
                   </Link>
                   </div> */}
                 </dd>
-                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
+                <dt className="wave fadeInUp faq-header">
                   <span>Lesson 3</span> Variables
                 </dt>
-                <dd className={`fadeInUp ${styles["faq-body"]}`}>
+                <dd className="fadeInUp faq-body">
                   <h1>
                     Now we are moving onto variables,in bash these are quite
                     simple and we create them
@@ -249,44 +249,44 @@ export default function Bash() {
                     If we test this out in our own terminal we get something
                     like this:
                   </p>
-                  <div className={styles["terminal-container"]}>
-                    <div className={styles["terminal-content"]}>
-                      <div className={styles["terminal-top"]}>
+                  <div className="terminal-container">
+                    <div className="terminal-content">
+                      <div className="terminal-top">
                         This is what a terminal looks like
                       </div>
                       <pre
-                        className={`${styles["terminal-code"]} language-shell-session`}
+                        className="terminal-codelanguage-shell-session"
                         tabIndex="0"
                       >
                         <code className="language-shell-session">
-                          <span className={`${styles.token} ${styles.command}`}>
+                          <span className="token command">
                             <span
-                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                              className="token info punctuation"
                             >
                               <span
-                                className={`${styles.token} ${styles.user}`}
+                                className="token user"
                               >
                                 $ name = "Jammy"
                               </span>
                             </span>
                           </span>
-                          <span className={`${styles.token} ${styles.command}`}>
+                          <span className="token command">
                             <span
-                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                              className="token info punctuation"
                             >
                               <span
-                                className={`${styles.token} ${styles.user}`}
+                                className="token user"
                               >
                                 $ echo $name
                               </span>
                             </span>
                           </span>
-                          <span className={`${styles.token} ${styles.command}`}>
+                          <span className="token command">
                             <span
-                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                              className="token info punctuation"
                             >
                               <span
-                                className={`${styles.token} ${styles.user}`}
+                                className="token user"
                               >
                                 Jammy
                               </span>
@@ -314,22 +314,22 @@ export default function Bash() {
                     make our life simple.
                   </p>
                   <p>When running at the command line you can do:</p>
-                  <div className={styles["terminal-container"]}>
-                    <div className={styles["terminal-content"]}>
-                      <div className={styles["terminal-top"]}>
+                  <div className="terminal-container">
+                    <div className="terminal-content">
+                      <div className="terminal-top">
                         This is what a terminal looks like
                       </div>
                       <pre
-                        className={`${styles["terminal-code"]} language-shell-session`}
+                        className="terminal-code language-shell-session"
                         tabIndex="0"
                       >
                         <code className="language-shell-session">
-                          <span className={`${styles.token} ${styles.command}`}>
+                          <span className="token command">
                             <span
-                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                              className="token info punctuation"
                             >
                               <span
-                                className={`${styles.token} ${styles.user}`}
+                                className="token user"
                               >
                                 bash -x ./file.sh
                               </span>
@@ -374,19 +374,19 @@ export default function Bash() {
                     guide you.
                   </p>
                   <img src={exampleImage9} alt="Example" />
-                  <div className={styles["go-to-section"]}>
-                  <Link
-                    to="/bash-scripting/bash_quiz#Variables"
-                    className={styles["go-to"]}
-                  >
-                    Go To Variables Questions
-                  </Link>
+                  <div className="go-to-section">
+                    <Link
+                      to="/bash-scripting/bash_quiz#Variables"
+                      className="go-to"
+                    >
+                      Go To Variables Questions
+                    </Link>
                   </div>
                 </dd>
-                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
+                <dt className="wave fadeInUp faq-header">
                   <span>Lesson 4</span> Parameters
                 </dt>
-                <dd className={`fadeInUp ${styles["faq-body"]}`}>
+                <dd className="fadeInUp faq-body">
                   <h1>
                     We will now look at one of the main features of bash and
                     that's using parameters.
@@ -441,19 +441,19 @@ export default function Bash() {
                     parameters and I advice you to play around with them, after
                     all practice is what makes you better!
                   </p>
-                  <div className={styles["go-to-section"]}>
-                  <Link
-                    to="/bash-scripting/bash_quiz#Parameters"
-                    className={styles["go-to"]}
-                  >
-                    Go To Parameters Questions
-                  </Link>
+                  <div className="go-to-section">
+                    <Link
+                      to="/bash-scripting/bash_quiz#Parameters"
+                      className="go-to"
+                    >
+                      Go To Parameters Questions
+                    </Link>
                   </div>
                 </dd>
-                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
+                <dt className="wave fadeInUp faq-header">
                   <span>Lesson 5</span> Arrays
                 </dt>
-                <dd className={`fadeInUp ${styles["faq-body"]}`}>
+                <dd className="fadeInUp faq-body">
                   <h1>Arrays</h1>
                   <p>
                     For this module i suggest you follow along in a standard
@@ -474,7 +474,7 @@ export default function Bash() {
                     position 0
                   </p>
                   <table
-                    className={`${styles.table} ${styles["table-bordered"]}`}
+                    className="table table-bordered"
                   >
                     <tbody>
                       <tr>
@@ -551,19 +551,19 @@ export default function Bash() {
                     So we successfully managed to swap out an element in our
                     array!
                   </p>
-                  <div className={styles["go-to-section"]}>
-                  <Link
-                    to="/bash-scripting/bash_quiz#Arrays"
-                    className={styles["go-to"]}
-                  >
-                    Go To Arrays Questions
-                  </Link>
+                  <div className="go-to-section">
+                    <Link
+                      to="/bash-scripting/bash_quiz#Arrays"
+                      className="go-to"
+                    >
+                      Go To Arrays Questions
+                    </Link>
                   </div>
                 </dd>
-                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
+                <dt className="wave fadeInUp faq-header">
                   <span>Lesson 6</span> Conditionals
                 </dt>
-                <dd className={`fadeInUp ${styles["faq-body"]}`}>
+                <dd className="fadeInUp faq-body">
                   <img src={exampleImage13} alt="Example" />
                   <p>
                     When we talk about conditionals it means that a certain
@@ -607,7 +607,7 @@ export default function Bash() {
                     also use <span>“=”</span>
                   </p>
                   <table
-                    className={`${styles.table} ${styles["table-bordered"]}`}
+                    className="table table-bordered"
                   >
                     <thead>
                       <tr>
@@ -662,55 +662,55 @@ export default function Bash() {
                   </p>
                   <img src={exampleImage16} alt="Example" />
                   <p>Now let's test this in our terminal.</p>
-                  <div className={styles["terminal-container"]}>
-                    <div className={styles["terminal-content"]}>
-                      <div className={styles["terminal-top"]}>
+                  <div className="terminal-container">
+                    <div className="terminal-content">
+                      <div className="terminal-top">
                         This is what a terminal looks like
                       </div>
                       <pre
-                        className={`${styles["terminal-code"]} language-shell-session`}
+                        className="terminal-code language-shell-session"
                         tabIndex="0"
                       >
                         <code className="language-shell-session">
-                          <span className={`${styles.token} ${styles.command}`}>
+                          <span className="token command">
                             <span
-                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                              className="token info punctuation"
                             >
                               <span
-                                className={`${styles.token} ${styles.user}`}
+                                className="token user"
                               >
                                 # ./example.sh guessme
                               </span>
                             </span>
                           </span>
-                          <span className={`${styles.token} ${styles.command}`}>
+                          <span className="token command">
                             <span
-                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                              className="token info punctuation"
                             >
                               <span
-                                className={`${styles.token} ${styles.user}`}
+                                className="token user"
                               >
                                 "They are equal"
                               </span>
                             </span>
                           </span>
-                          <span className={`${styles.token} ${styles.command}`}>
+                          <span className="token command">
                             <span
-                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                              className="token info punctuation"
                             >
                               <span
-                                className={`${styles.token} ${styles.user}`}
+                                className="token user"
                               >
                                 # ./example.sh hi
                               </span>
                             </span>
                           </span>
-                          <span className={`${styles.token} ${styles.command}`}>
+                          <span className="token command">
                             <span
-                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                              className="token info punctuation"
                             >
                               <span
-                                className={`${styles.token} ${styles.user}`}
+                                className="token user"
                               >
                                 "They are not equal"
                               </span>
@@ -743,44 +743,44 @@ export default function Bash() {
                     <span>“hello”</span> to it. Let's begin!
                   </p>
                   <img src={exampleImage17} alt="Example" />
-                  <div className={styles["terminal-container"]}>
-                    <div className={styles["terminal-content"]}>
-                      <div className={styles["terminal-top"]}>
+                  <div className="terminal-container">
+                    <div className="terminal-content">
+                      <div className="terminal-top">
                         This is what a terminal looks like
                       </div>
                       <pre
-                        className={`${styles["terminal-code"]} language-shell-session`}
+                        className="terminal-code language-shell-session"
                         tabIndex="0"
                       >
                         <code className="language-shell-session">
-                          <span className={`${styles.token} ${styles.command}`}>
+                          <span className="token command">
                             <span
-                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                              className="token info punctuation"
                             >
                               <span
-                                className={`${styles.token} ${styles.user}`}
+                                className="token user"
                               >
                                 ./example.sh hello.txt
                               </span>
                             </span>
                           </span>
-                          <span className={`${styles.token} ${styles.command}`}>
+                          <span className="token command">
                             <span
-                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                              className="token info punctuation"
                             >
                               <span
-                                className={`${styles.token} ${styles.user}`}
+                                className="token user"
                               >
                                 ─# cat hello.txt
                               </span>
                             </span>
                           </span>
-                          <span className={`${styles.token} ${styles.command}`}>
+                          <span className="token command">
                             <span
-                              className={`${styles.token} ${styles.info} ${styles.punctuation}`}
+                              className="token info punctuation"
                             >
                               <span
-                                className={`${styles.token} ${styles.user}`}
+                                className="token user"
                               >
                                 hello
                               </span>
@@ -811,10 +811,10 @@ export default function Bash() {
                     Feel free to add anything you like and make it as
                     complicated as you wish and good luck with your project!
                   </p>
-                  <div className={styles["go-to-section"]}>
+                  <div className="go-to-section">
                     <Link
                       to="/bash-scripting/bash_quiz#Conditionals"
-                      className={styles["go-to"]}
+                      className="go-to"
                     >
                       Go To Conditionals Questions
                     </Link>
@@ -833,8 +833,8 @@ export default function Bash() {
             */}
               </dl>
             </div>
-            <div className={styles["go-to-section"]}>
-              <Link to="/bash-scripting/bash_quiz" className={styles["go-to"]}>
+            <div className="go-to-section">
+              <Link to="/bash-scripting/bash_quiz" className="go-to">
                 Go To Quiz
               </Link>
             </div>

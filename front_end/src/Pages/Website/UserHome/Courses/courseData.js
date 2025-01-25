@@ -232,7 +232,7 @@ const courseData = [
       "Placeholder Topic 4",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/Lab2.jpg"),
+    image: require("../assets/img/Cryptography/card_image.png"),
     link: "/temp_topic_16",
   },
   {
@@ -280,7 +280,7 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/Lab2.jpg"),
+    image: require("../assets/img/wireshark/card_image.png"),
     link: "/infoDisc",
   },
   {
@@ -328,7 +328,7 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/Lab2.jpg"),
+    image: require("../assets/img/File Inclusion/card_image.png"),
     link: "/infoDisc",
   },
   {
@@ -376,7 +376,7 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/Lab2.jpg"),
+    image: require("../assets/img/Server Side Template Injection/card_image.png"),
     link: "/infoDisc",
   },
   {
@@ -424,7 +424,7 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/Lab2.jpg"),
+    image: require("../assets/img/Captcha Bypass/card_image.png"),
     link: "/infoDisc",
   },
   {
@@ -472,7 +472,7 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/Lab2.jpg"),
+    image: require("../assets/img/JWT attacks/card_image.png"),
     link: "/infoDisc",
   },
 ];
