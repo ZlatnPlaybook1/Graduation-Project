@@ -5,8 +5,8 @@ import Footer from "../../Footer/Footer";
 import "./Api_Hacking.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
-import logicflaw from "../../assets/img/Api_Hacking/apiImg1.svg";
-import ExplainImg from "../../assets/img/Api_Hacking/apiImg2.svg";
+//import logicflaw from "../../assets/img/Api_Hacking/apiImg1.svg";
+//import ExplainImg from "../../assets/img/Api_Hacking/apiImg2.svg";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Api_Hacking() {
@@ -121,7 +121,7 @@ export default function Api_Hacking() {
                 </dt>
                 <dd className="fadeInUp faq-body-lab1">
                   <h3>Welcome to the API Testing Learning Room!</h3>
-                  <img src={logicflaw} alt="logic flaw img" id="explain-img" />
+                  {/* <img src={logicflaw} alt="logic flaw img" id="explain-img" /> */}
                   <div className="desc">
                     <p>
                       In this section, we'll introduce the concept of API
@@ -183,7 +183,7 @@ export default function Api_Hacking() {
                   <span>Topic 2</span> How Do APIs Work?
                 </dt>
                 <dd className="fadeInUp faq-body-lab1" id="border-left">
-                  <img src={ExplainImg} alt="logic flaw img" id="explain-img" />
+                  {/* <img src={ExplainImg} alt="logic flaw img" id="explain-img" /> */}
                   <p>
                     To begin testing an API, you need to understand how it
                     functions and how to interact with it. This includes:
