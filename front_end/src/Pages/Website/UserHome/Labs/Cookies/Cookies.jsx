@@ -1,8 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import styles from "../Page_Styles/Content.module.css";
-import styles_2nd from "./Cookies.css";
+import "../Page_Styles/Content.css";
 import Header from "../../Header/Header";
 // import background from "../../assets/img/cookies/baner_lap.png";
 import image from "../../assets/img/cookies/Cookies_transparent.png";
@@ -45,12 +44,12 @@ export default function Cookies() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className={styles.landing}>
-        <div className={styles.banner}>
+      <div className="landing">
+        <div className="banner">
           {/* <img src={background} alt="bacground" /> */}
         </div>
-        <div className={styles.container}>
-          <div className={styles.breadcrumb}>
+        <div className="container">
+          <div className="breadcrumb">
             <ul>
               <li>
                 <Link to="">Home</Link>
@@ -60,40 +59,40 @@ export default function Cookies() {
               </li>
             </ul>
           </div>
-          <div className={styles["course-info"]}>
+          <div className="course-info">
             <img src={image} alt="logo" />
-            <div className={styles["course-text"]}>
+            <div className="course-text">
               <h1>Cookies</h1>
               <p>
                 Understand the role of cookies in web security, how they are
                 used, and the potential privacy concerns they introduce.
               </p>
-              <div className={styles["course-icons"]}>
-                <div className={styles.diff}>
-                  <div className={styles.easy}>
-                    <i className={`fa-solid fa-signal`}></i>
+              <div className="course-icons">
+                <div className="diff">
+                  <div className="easy">
+                    <i className="fa-solid fa-signal"></i>
                     <p>Easy</p>
                   </div>
                 </div>
-                <div className={styles.duration}>
-                  <i className={`fa-solid fa-clock`}></i>
-                  <p className={styles.time}>15 min</p>
+                <div className="duration">
+                  <i className="fa-solid fa-clock"></i>
+                  <p className="time">15 min</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className={styles.options}>
+          <div className="options">
             <button>
-              <i className={`far fa-bookmark`}></i>
+              <i className="far fa-bookmark"></i>
               <p>Save Room</p>
             </button>
-            <div className={styles.like}>
+            <div className="like">
               <button>
-                <i className={`fas fa-thumbs-up`}></i>
+                <i className="fas fa-thumbs-up"></i>
                 <p></p>
               </button>
               <button>
-                <i className={`fas fa-thumbs-down`}></i>
+                <i className="fas fa-thumbs-down"></i>
                 <p></p>
               </button>
             </div>
@@ -102,16 +101,16 @@ export default function Cookies() {
       </div>
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className={styles.course}>
-        <div className={styles.container} ref={faqSectionRef}>
-          <div className={styles.row}>
-            <div className={styles["faq-section"]}>
-              <dl className={styles["section-text"]}>
+      <div className="course">
+        <div className="container" ref={faqSectionRef}>
+          <div className="row">
+            <div className="faq-section">
+              <dl className="section-text">
                 {/* Single FAQ Area  */}
-                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
+                <dt className="wave fadeInUp faq-header">
                   <span>Task 1</span> What Are Cookies?
                 </dt>
-                <dd className={`fadeInUp ${styles["faq-body"]}`}>
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li>
                       <p>
@@ -154,10 +153,10 @@ export default function Cookies() {
                             </form>  */}
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
+                <dt className="wave fadeInUp faq-header">
                   <span>Task 2</span>What are Cookies Used For?
                 </dt>
-                <dd className={styles["faq-body"]}>
+                <dd className="faq-body">
                   <ul>
                     <li>
                       <h2>Session Management:</h2> Cookies store things like
@@ -190,10 +189,10 @@ export default function Cookies() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
+                <dt className="wave fadeInUp faq-header">
                   <span>Task 3</span>Where are Cookies Stored?
                 </dt>
-                <dd className={styles["faq-body"]}>
+                <dd className="faq-body">
                   <ul>
                     <li>
                       Cookies are stored on your device in special folders or
@@ -222,10 +221,10 @@ export default function Cookies() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className={`wave fadeInUp ${styles["faq-header"]}`}>
+                <dt className="wave fadeInUp faq-header">
                   <span>Task 4</span>Cookies Manipulation
                 </dt>
-                <dd className={styles["faq-body"]}>
+                <dd className="faq-body">
                   <ul>
                     <li>
                       <h2>Create a Cookie With JavaScript:</h2>
@@ -333,8 +332,8 @@ export default function Cookies() {
                 </dd>
               </dl>
             </div>
-            <div className={styles["go-to-section"]}>
-              <Link to="/cookies/cookies_lab" className={styles["go-to"]}>
+            <div className="go-to-section">
+              <Link to="/cookies/cookies_lab" className="go-to">
                 Go To Lab
               </Link>
             </div>

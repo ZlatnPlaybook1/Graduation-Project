@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import styles from "./Login.module.css";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import "./Login.css";
 import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
 
@@ -84,21 +82,21 @@ export default function Obfuscation_login() {
 
   return (
     <>
-      <div className={styles.body}>
+      <div className="body">
         <GoBack_Btn />
         <ShowHint_Btn hintText={
           '<p>click inspect  and try to beautify and Deobfuscate  script use this : </p> <a href="https://filipemgs.github.io/poisonjs/">De-obfuscate</a> <a href="https://beautifier.io/">beautifier.io</a>' 
           } />
-        <div className={styles.obfuscation_lab_body}>
-          <div className={styles.container}>
-            <div className={styles.card}>
-              <div className={styles.card_content}>
-                <div className={styles.card_title}>Login</div>
-                <form className={styles.card_form} onSubmit={submitLogin}>
-                  <div className={styles.card_field}>
+        <div className="obfuscation_lab_body">
+          <div className="container">
+            <div className="card">
+              <div className="card_content">
+                <div className="card_title">Login</div>
+                <form className="card_form" onSubmit={submitLogin}>
+                  <div className="card_field">
                     <label htmlFor="username">Username</label>
-                    <div className={styles.input}>
-                      <i className={`fa-solid fa-user fa-2x`}></i>
+                    <div className="input">
+                      <i className="fa-solid fa-user fa-2x"></i>
                       <input
                         type="text"
                         id="username"
@@ -111,10 +109,10 @@ export default function Obfuscation_login() {
                       />
                     </div>
                   </div>
-                  <div className={styles.card_field}>
+                  <div className="card_field">
                     <label htmlFor="password">Password</label>
-                    <div className={styles.input}>
-                      <i className={`fa-solid fa-lock fa-2x`}></i>
+                    <div className="input">
+                      <i className="fa-solid fa-lock fa-2x"></i>
                       <input
                         type="password"
                         id="password"
@@ -127,12 +125,12 @@ export default function Obfuscation_login() {
                       />
                     </div>
                   </div>
-                  <div className={styles.card_field}>
+                  <div className="card_field">
                     <button type="submit">Login</button>
                   </div>
-                  {err !== "" && <span className={styles.error}>{err}</span>}
+                  {err !== "" && <span className="error">{err}</span>}
                   {right !== `` && (
-                    <span className={styles.right}>{right}</span>
+                    <span className="right">{right}</span>
                   )}
                 </form>
               </div>
