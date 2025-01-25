@@ -181,7 +181,7 @@ export default function Digital_Forensics() {
                     section explores both traditional and emerging types of
                     digital forensics:
                   </p>
-                  <ol>
+                  <ul>
                     <li>
                       <b>Computer Forensics:</b>
                       <ul>
@@ -374,7 +374,7 @@ export default function Digital_Forensics() {
                         </li>
                       </ul>
                     </li>
-                  </ol>
+                  </ul>
                   <p>
                     <i>
                       In this section, you'll learn how to identify these
