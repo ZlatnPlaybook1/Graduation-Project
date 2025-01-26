@@ -1,13 +1,13 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import "../Page_Styles/Lab.css";
+import  "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets//img/Obfuscation/card_image.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
-export default function Obfuscation_lab() {
+export default function FileInclusion_lab() {
   const faqSectionRef = useRef(null);
 
   useEffect(() => {

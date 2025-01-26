@@ -136,6 +136,30 @@ import Obfuscation from "./Pages/Website/UserHome/Labs/Obfuscation/Obfuscation.j
 import OBFUSCATION_LAB from "./Pages/Website/UserHome/Labs/Obfuscation/Obfuscation_lab.jsx";
 import OBFUSCATION_LOGIN from "./Pages/Website/UserHome/Labs/Obfuscation/Practical/Lab_1/Login.jsx";
 // End Obfuscation
+// CryptoGraphy
+import CryptoGraphy from "./Pages/Website/UserHome/Labs/CryptoGraphy/CryptoGraphy.jsx";
+import CRYPTOGRAPHY_LAB from "./Pages/Website/UserHome/Labs/CryptoGraphy/CryptoGraphy_lab.jsx";
+// End CryptoGraphy
+// WireShark
+import WireShark from "./Pages/Website/UserHome/Labs/WireShark/WireShark.jsx";
+import WIRESHARK_LAB from "./Pages/Website/UserHome/Labs/WireShark/WireShark_lab.jsx";
+// End WireShark
+// File Inclusion
+import FileInclusion from "./Pages/Website/UserHome/Labs/FileInclusion/FileInclusion.jsx";
+import FILEINCLUSION_LAB from "./Pages/Website/UserHome/Labs/FileInclusion/FileInclusion_lab.jsx";
+// End FileInclusion
+// SSTI
+import SSTI from "./Pages/Website/UserHome/Labs/SSTI/SSTI.jsx";
+import SSTI_LAB from "./Pages/Website/UserHome/Labs/SSTI/SSTI_lab.jsx";
+// End SSTI
+// CaptchaBypass
+import CaptchaBypass from "./Pages/Website/UserHome/Labs/CaptchaBypass/CaptchaBypass.jsx";
+import CAPTCHABYPASS_LAB from "./Pages/Website/UserHome/Labs/CaptchaBypass/CaptchaBypass_lab.jsx";
+// End CaptchaBypass
+// JWT Attacks
+import JWTAttacks from "./Pages/Website/UserHome/Labs/JWTAttacks/JWTAttacks.jsx";
+import JWTATTACKS_LAB from "./Pages/Website/UserHome/Labs/JWTAttacks/JWTAttacks_lab.jsx";
+// End JWT Attacks
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
@@ -163,6 +187,8 @@ import BrokenAuthenticationLab from "./Pages/Website/UserHome/Labs/Broken_Auth/B
 import AuthLab1 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab1.jsx";
 import AuthLab2 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab2.jsx";
 import WordsList from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/WordsList.js";
+import CryptoGraphy_lab from "./Pages/Website/UserHome/Labs/CryptoGraphy/CryptoGraphy_lab.jsx";
+import WireShark_lab from "./Pages/Website/UserHome/Labs/WireShark/WireShark_lab.jsx";
 
 function App() {
   return (
@@ -616,6 +642,48 @@ function App() {
             element={<OBFUSCATION_LOGIN />}
           />
           {/* End Obfuscation */}
+          {/* Start CryptoGraphy */}
+          <Route path="/cryptography" element={<CryptoGraphy />} />
+          <Route
+            path="/cryptography/cryptography_lab"
+            element={<CRYPTOGRAPHY_LAB />}
+          />
+          {/* End CryptoGraphy */}
+          {/* Start WireShark */}
+          <Route path="/wireshark" element={<WireShark />} />
+          <Route
+            path="/wireshark/wireshark_lab"
+            element={<WIRESHARK_LAB />}
+          />
+          {/* End WireShark */}
+          {/* Start FileInclusion */}
+          <Route path="/fileinclusion" element={<FileInclusion />} />
+          <Route
+            path="/fileinclusion/fileinclusion_lab"
+            element={<FILEINCLUSION_LAB />}
+          />
+          {/* End FileInclusion */}
+          {/* Start SSTI */}
+          <Route path="/SSTI" element={<SSTI />} />
+          <Route
+            path="/SSTI/SSTI_lab"
+            element={<SSTI_LAB />}
+          />
+          {/* End SSTI */}
+          {/* Start CaptchaBypass */}
+          <Route path="/captchabypass" element={<CaptchaBypass />} />
+          <Route
+            path="/captchabypass/captchabypass_lab"
+            element={<CAPTCHABYPASS_LAB />}
+          />
+          {/* End CaptchaBypass */}
+          {/* Start JWTAttacks */}
+          <Route path="/jwtattacks" element={<JWTAttacks />} />
+          <Route
+            path="/jwtattacks/jwtattacks_lab"
+            element={<JWTATTACKS_LAB />}
+          />
+          {/* End JWTAttacks */}
         </Route>
         {/* End Routes of Labs */}
 

@@ -7,7 +7,7 @@ import image from "../../assets//img/Obfuscation/card_image.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
-export default function Obfuscation_lab() {
+export default function WireShark_lab() {
   const faqSectionRef = useRef(null);
 
   useEffect(() => {
