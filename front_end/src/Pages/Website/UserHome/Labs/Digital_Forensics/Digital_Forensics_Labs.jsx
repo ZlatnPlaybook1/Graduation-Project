@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "../../Header/Header";
 import "./Digital_Forensics.css";
+import mcqData from "./MCQCards";
 import labImg from "../../assets/img/AudFor/lab1.jpeg";
-
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 export default function Digital_Forensics_labs() {
@@ -87,7 +87,21 @@ export default function Digital_Forensics_labs() {
                 <p>Easy</p>
               </div>
             </Link>
-            {/* Lab3 */}
+            {mcqData.map((mcq) => (
+              <Link to={mcq.link} className="course-card-ac-vuln" key={mcq.id}>
+                <div className="course-image-ac-vuln">
+                  <img src={mcq.image} alt={mcq.title} />
+                </div>
+                <div className="course-text-ac-vuln">
+                  <h3>{mcq.title}</h3>
+                  <p>{mcq.description}</p>
+                </div>
+                <div className="easy-ac-vuln">
+                  <i className="fa-solid fa-signal lab-ac-vuln"></i>
+                  <p>{mcq.difficulty}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

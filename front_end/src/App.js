@@ -103,6 +103,22 @@ import DIGITAL_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/D
 import DIGITAL_FORENSICS_LABS from "./Pages/Website/UserHome/Labs/Digital_Forensics/Digital_Forensics_Labs.jsx";
 import DIGITAL_FORENSICS_FIRST_LAB from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/first_lab/First_Lab.jsx";
 import DIGITAL_FORENSICS_SECOND_LAB from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/second_lab/Second_Lab.jsx";
+import BLOCKCHIN_AND_CRYPTOCURRENCY from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/BlockchainAndCryptocurrency.jsx";
+import COMPUTER_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Computer.jsx";
+import CLOUD_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Cloud.jsx";
+import DATABASE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Database.jsx";
+import DATARECOVERY_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/DataRecovery.jsx";
+import DRONE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Drone.jsx";
+import EMAIL_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Email.jsx";
+import GAMING_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Gaming.jsx";
+import IOT_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/IoT.jsx";
+import MALWARE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Malware.jsx";
+import MOBILE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Mobile.jsx";
+import MULTIMEDIA_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Multimedia.jsx";
+import NETWORK_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Network.jsx";
+import SOCIALMEDIA_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/SocialMedia.jsx";
+import VEHICLE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Vehicle.jsx";
+
 // End Digital Forensics
 // Hashing
 import HASHING from "./Pages/Website/UserHome/Labs/Hashing/Hashing.jsx";
@@ -314,6 +330,66 @@ function App() {
           <Route
             path="/Digital_Forensics/Digital_Forensics_labs/lab2"
             element={<DIGITAL_FORENSICS_SECOND_LAB />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/BlockChain"
+            element={<BLOCKCHIN_AND_CRYPTOCURRENCY />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/Computer"
+            element={<COMPUTER_FORENSICS />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/Cloud"
+            element={<CLOUD_FORENSICS />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/Database"
+            element={<DATABASE_FORENSICS />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/DataRecovery"
+            element={<DATARECOVERY_FORENSICS />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/Drone"
+            element={<DRONE_FORENSICS />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/Email"
+            element={<EMAIL_FORENSICS />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/Gaming"
+            element={<GAMING_FORENSICS />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/Iot"
+            element={<IOT_FORENSICS />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/Malware"
+            element={<MALWARE_FORENSICS />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/Mobile"
+            element={<MOBILE_FORENSICS />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/Multimedia"
+            element={<MULTIMEDIA_FORENSICS />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/Network"
+            element={<NETWORK_FORENSICS />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/SocialMedia"
+            element={<SOCIALMEDIA_FORENSICS />}
+          />
+          <Route
+            path="/Digital_Forensics/MCQ/Vehicle"
+            element={<VEHICLE_FORENSICS />}
           />
 
           {/* End Digital Forensics */}
