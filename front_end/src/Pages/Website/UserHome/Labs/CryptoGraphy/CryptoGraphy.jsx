@@ -110,6 +110,7 @@ export default function CryptoGraphy() {
         </div>
       </div>
       {/* End Landing  */}
+      {/* End Landing  */}
       {/* Start Course Content  */}
       <div className="course-lab1">
         <div className="container" ref={faqSectionRef}>
@@ -117,9 +118,10 @@ export default function CryptoGraphy() {
             <div className="faq-section-lab1">
               <dl className="section-text-lab1">
                 {/* Single FAQ Area  */}
-                <dt className="wave fadeInUp faq-header">
-                  <span>step 1</span> Introduction to Cryptography</dt>
-                <dd className="fadeInUp faq-body">
+
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <span>step 1</span> Introduction to Cryptography</dt>
+                <dd className="fadeInUp faq-body-lab1" id="border-left"> 
                   <h1>Welcome to  Introduction to Cryptography</h1>
                   <br></br>
                   <h2>What will you learn?</h2>
@@ -135,9 +137,9 @@ export default function CryptoGraphy() {
 
 
 
-                <dt className="wave fadeInUp faq-header">
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
                   <span> step 2</span> What is Cryptography?</dt>
-                  <dd className="fadeInUp faq-body">
+                  <dd className="fadeInUp faq-body-lab1" id="border-left"> 
                 <p><br></br></p>
                 <h1>What is Cryptography?</h1>
                 <h4>Cryptography? </h4>
@@ -157,9 +159,9 @@ export default function CryptoGraphy() {
 
 
 
-            <dt className="wave fadeInUp faq-header">
+            <dt className="wave-lab1 fadeInUp faq-header-lab1">
                   <span> step 3</span> What is Steganography? </dt>
-                  <dd className="fadeInUp faq-body">
+                  <dd className="fadeInUp faq-body-lab1" id="border-left"> 
                 <br></br>
                 <h1>What is Steganography?</h1>
                 <p>Steganography is the art and science of embedding secret messages in a cover message in such a way that, no one apart from the sender and intended recipient, suspects the existence of the message.</p>
