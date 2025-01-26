@@ -1,47 +1,14 @@
-import React, { useEffect, useRef } from "react";
-import $ from "jquery";
+import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import "./BL_Vuln.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
 import logicflaw from "../../assets/img/BLV/logic-flaws.jpg";
-import { Link, useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 export default function BL_Vuln() {
-  const faqSectionRef = useRef(null);
-  const navigate = useNavigate();
-  const handleGoToLab = () => {
-    navigate("/BL-Vuln/BL_Vuln_labs");
-  };
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
+  const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
   return (
     <>
@@ -154,7 +121,10 @@ export default function BL_Vuln() {
                         vulnerable targets, you can access all of the labs in
                         this topic from the link below. View all business logic
                         vulnerabilities labs. <br />
-                        <button onClick={handleGoToLab} className="go-labs">
+                        <button
+                          onClick={() => handleGoToLab("/BL-Vuln/BL_Vuln_labs")}
+                          className="go-labs"
+                        >
                           Go To Labs
                         </button>
                       </b>
@@ -188,7 +158,10 @@ export default function BL_Vuln() {
                         vulnerabilities are also known as "application logic
                         vulnerabilities" or simply "logic flaws".
                         <br />
-                        <button onClick={handleGoToLab} className="go-labs">
+                        <button
+                          onClick={() => handleGoToLab("/BL-Vuln/BL_Vuln_labs")}
+                          className="go-labs"
+                        >
                           Go To Labs
                         </button>
                       </b>
@@ -405,7 +378,10 @@ export default function BL_Vuln() {
                         link below. View all business logic vulnerabilities
                         labs.
                         <br />
-                        <button onClick={handleGoToLab} className="go-labs">
+                        <button
+                          onClick={() => handleGoToLab("/BL-Vuln/BL_Vuln_labs")}
+                          className="go-labs"
+                        >
                           Go To Labs
                         </button>
                       </b>
@@ -415,7 +391,10 @@ export default function BL_Vuln() {
               </dl>
             </div>
             <div className="go-to-section">
-              <button onClick={handleGoToLab} className="go-to">
+              <button
+                onClick={() => handleGoToLab("/BL-Vuln/BL_Vuln_labs")}
+                className="go-to"
+              >
                 Go To Labs
               </button>
             </div>

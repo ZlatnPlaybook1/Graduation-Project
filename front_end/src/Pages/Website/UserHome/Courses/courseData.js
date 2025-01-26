@@ -249,7 +249,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/InfoDisc/landing.jpg"),
-    link: "/infoDisc",
+    link: "/Hashing",
   },
   {
     id: 17,

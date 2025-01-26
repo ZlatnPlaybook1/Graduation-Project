@@ -1,48 +1,13 @@
-import React, { useEffect, useRef } from "react";
-import $ from "jquery";
+import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import "./Digital_Forensics.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
-//import logicflaw from "../../assets/img/Api_Hacking/apiImg1.svg";
-//import ExplainImg from "../../assets/img/Api_Hacking/apiImg2.svg";
-import { Link, useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 export default function Digital_Forensics() {
-  const faqSectionRef = useRef(null);
-  const navigate = useNavigate();
-  const handleGoToLab = () => {
-    navigate("/Digital_Forensics/Digital_Forensics_labs");
-  };
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
+  const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
   return (
     <>
@@ -537,7 +502,12 @@ export default function Digital_Forensics() {
               </dl>
             </div>
             <div className="go-to-section">
-              <button onClick={handleGoToLab} className="go-to">
+              <button
+                onClick={() =>
+                  handleGoToLab("/Digital_Forensics/Digital_Forensics_labs")
+                }
+                className="go-to"
+              >
                 Go To Labs
               </button>
             </div>
