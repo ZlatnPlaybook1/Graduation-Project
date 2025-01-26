@@ -8,8 +8,8 @@ import registerRouter from "./registerWithAuthentication/register.router";
 import loginRouter from "./login/login.router";
 import logoutRouter from "./logout/logout.router";
 import dashboardRouter from "./dashboard/dashboard.router";
-import lab1 from "./labs/cookiesLab/lab1.router";
-import lab2 from "./labs/cookiesLab/lab2.router";
+import lab1 from "./labs/cookiesLab/lab1/lab1.router";
+import lab2 from "./labs/cookiesLab/lab2/lab2.router";
 import hiddenData from "./labs/sqlInjectionLabs/lab1/hiddenData.router";
 import lab2xss from "./labs/xss/lab2&4/lab2.router";
 import lab3sql from "./labs/sqlInjectionLabs/lab3,4/lab3.router";
@@ -21,6 +21,9 @@ import lab1IDORSRouter from "./labs/IDORS/lab1/lab1.router";
 import lab2IDORSRouter from "./labs/IDORS/lab2/lab2.router";
 import lab3IDORSRouter from "./labs/IDORS/lab3/lab3.router";
 import userRouter from "./labs/AC-Vuln/Lab1/user.router";
+import lab1BrokenAuthRouter from "./labs/brokenAuth/lab1/lab1.router";
+import lab2BrokenAuthRouter from "./labs/brokenAuth/lab2/lab2.router";
+import lab3BrokenAuthRouter from "./labs/brokenAuth/lab3/lab3.router";
 const app = express();
 app.use("/uploads", express.static("uploads"));
 
@@ -50,6 +53,9 @@ app.use("/api", lab1IDORSRouter);
 app.use("/api", lab2IDORSRouter);
 app.use("/api", lab3IDORSRouter);
 app.use("/api", userRouter);
+app.use("/api", lab1BrokenAuthRouter);
+app.use("/api", lab2BrokenAuthRouter);
+app.use("/api", lab3BrokenAuthRouter);
 
 dotenv.config();
 

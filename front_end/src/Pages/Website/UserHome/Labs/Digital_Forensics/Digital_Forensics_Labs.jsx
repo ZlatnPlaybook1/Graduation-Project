@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "../../Header/Header";
 import "./Digital_Forensics.css";
+import mcqData from "./MCQCards";
 import labImg from "../../assets/img/AudFor/lab1.jpeg";
-
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 export default function Digital_Forensics_labs() {
@@ -64,30 +64,28 @@ export default function Digital_Forensics_labs() {
                 <p>Easy</p>
               </div>
             </Link>
-            {/* lab2 */}
-            <Link
-              to="/Digital_Forensics/Digital_Forensics_labs/lab2"
-              className="course-card-ac-vuln"
-            >
-              <div className="course-image-ac-vuln">
-                <img src={labImg} alt="" />
-              </div>
-              <div className="course-text-ac-vuln">
-                <h3>Unprotected admin functionality with unpredictable URL</h3>
-                <p>
-                  This lab has an unprotected admin panel. It's located at an
-                  unpredictable location, but the location is disclosed
-                  somewhere in the application. Solve the lab by accessing the
-                  admin panel, and using it to delete the user
-                  <mark>Carlos</mark>.
-                </p>
-              </div>
-              <div className="easy-ac-vuln">
-                <i className="fa-solid fa-signal lab-ac-vuln"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-            {/* Lab3 */}
+
+            {mcqData.map((mcq) => (
+              <Link to={mcq.link} className="course-card-ac-vuln" key={mcq.id}>
+                <div className="course-image-ac-vuln">
+                  <img
+                    src={mcq.image}
+                    alt={mcq.title}
+                    style={{
+                      height: "70%",
+                    }}
+                  />
+                </div>
+                <div className="course-text-ac-vuln">
+                  <h3>{mcq.title}</h3>
+                  <p>{mcq.description}</p>
+                </div>
+                <div className="easy-ac-vuln">
+                  <i className="fa-solid fa-signal lab-ac-vuln"></i>
+                  <p>{mcq.difficulty}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

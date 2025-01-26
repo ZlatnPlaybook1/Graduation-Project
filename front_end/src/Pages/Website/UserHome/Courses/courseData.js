@@ -233,7 +233,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Cryptography/card_image.png"),
-    link: "/temp_topic_16",
+    link: "/cryptography",
   },
   {
     id: 16,
@@ -281,7 +281,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/wireshark/card_image.png"),
-    link: "/infoDisc",
+    link: "/wireshark",
   },
   {
     id: 19,
@@ -329,7 +329,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/File Inclusion/card_image.png"),
-    link: "/infoDisc",
+    link: "/fileinclusion",
   },
   {
     id: 22,
@@ -377,7 +377,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Server Side Template Injection/card_image.png"),
-    link: "/infoDisc",
+    link: "/SSTI",
   },
   {
     id: 25,
@@ -425,7 +425,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Captcha Bypass/card_image.png"),
-    link: "/infoDisc",
+    link: "/captchabypass",
   },
   {
     id: 28,
@@ -473,7 +473,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/JWT attacks/card_image.png"),
-    link: "/infoDisc",
+    link: "/jwtattacks",
   },
 ];
 
