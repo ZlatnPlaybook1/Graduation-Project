@@ -286,7 +286,7 @@ const courseData = [
   {
     id: 19,
     category: "Temporary Category",
-    title: "Digital Forensics",
+    title: "Digital Forensics✅",
     description:
       " Before hacking something, you first need to understand the basics",
     topics: [

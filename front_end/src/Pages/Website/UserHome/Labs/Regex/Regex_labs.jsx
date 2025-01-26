@@ -45,30 +45,9 @@ export default function Regex_labs() {
           <p className="section-p">Test Your Hacking Skills</p>
           <div className="row">
             {/* Lab1 */}
-            <Link to="/Regex/Regex_labs/first_lab" className="course-card">
+            <Link to="/Regex/Regex_labs/MCQReview" className="course-card">
               <div className="course-image">
                 <img src={labImg} alt="Lab 1 Image" />
-              </div>
-              <div className="course-text">
-                <h3>Detecting Malicious Patterns</h3>
-                <p>
-                  Learn how to use Regular Expressions (Regex) to identify
-                  harmful inputs in web applications. Explore: <br />- Crafting
-                  regex patterns to detect SQL injection attempts. <br />
-                  - Analyzing logs for suspicious access patterns. <br />-
-                  Preventing exploitation by filtering malicious payloads.
-                </p>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-
-            {/* Lab2 */}
-            <Link to="/Regex/Regex_labs/second_lab" className="course-card">
-              <div className="course-image">
-                <img src={labImg} alt="Lab 2 Image" />
               </div>
               <div className="course-text">
                 <h3>MCQ Question Review</h3>
@@ -83,20 +62,16 @@ export default function Regex_labs() {
               </div>
             </Link>
 
-            {/* Lab3 */}
-            <Link to="/Regex/Regex_labs/third_lab" className="course-card">
+            {/* Lab2 */}
+            <Link to="/Regex/Regex_labs/CompleteReview" className="course-card">
               <div className="course-image">
-                <img src={labImg} alt="Lab 3 Image" />
+                <img src={labImg} alt="Lab 2 Image" />
               </div>
               <div className="course-text">
-                <h3>Analyzing Threat Patterns in Logs</h3>
+                <h3>Complete Question Review</h3>
                 <p>
-                  Utilize Regex to parse and analyze logs for security
-                  monitoring. Practice: <br />
-                  - Identifying brute-force login attempts through repeated
-                  patterns. <br />
-                  - Highlighting unauthorized access events in log files. <br />
-                  - Building efficient Regex patterns for quick data extraction.
+                  These are Complete questions that are designed to be a review
+                  for the exam.
                 </p>
               </div>
               <div className="easy">

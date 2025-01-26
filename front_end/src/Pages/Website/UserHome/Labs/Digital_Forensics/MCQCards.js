@@ -5,7 +5,7 @@ const MCQCards = [
     description:
       "These are multiple choice questions that are designed to be a review for the exam.",
     difficulty: "Easy",
-    image: require("../../assets/img/DigitalForensics/BlockchainandCryptocurrency.jpg"),
+    image: require("../../assets/img/DigitalForensics/Email.jpg"),
     link: "/Digital_Forensics/MCQ/BlockChain",
   },
   {
@@ -14,7 +14,7 @@ const MCQCards = [
     description:
       "Test your knowledge of computer forensics with these review questions.",
     difficulty: "Medium",
-    image: require("../../assets/img/DigitalForensics/Computer.jpg"),
+    image: require("../../assets/img/DigitalForensics/Email.jpg"),
     link: "/Digital_Forensics/MCQ/Computer",
   },
   {
@@ -23,7 +23,7 @@ const MCQCards = [
     description:
       "Prepare for cloud forensics challenges with this set of questions.",
     difficulty: "Hard",
-    image: require("../../assets/img/DigitalForensics/Cloud.jpg"),
+    image: require("../../assets/img/DigitalForensics/Email.jpg"),
     link: "/Digital_Forensics/MCQ/Cloud",
   },
   {
@@ -32,7 +32,7 @@ const MCQCards = [
     description:
       "Enhance your knowledge of database forensics with these targeted questions.",
     difficulty: "Medium",
-    image: require("../../assets/img/DigitalForensics/Database.jpg"),
+    image: require("../../assets/img/DigitalForensics/Email.jpg"),
     link: "/Digital_Forensics/MCQ/Database",
   },
   {
@@ -41,7 +41,7 @@ const MCQCards = [
     description:
       "These questions cover data recovery techniques and their forensic applications.",
     difficulty: "Easy",
-    image: require("../../assets/img/DigitalForensics/DataRecovery.jpg"),
+    image: require("../../assets/img/DigitalForensics/Email.jpg"),
     link: "/Digital_Forensics/MCQ/DataRecovery",
   },
   {
@@ -50,7 +50,7 @@ const MCQCards = [
     description:
       "Learn about drone forensics through these specialized questions.",
     difficulty: "Hard",
-    image: require("../../assets/img/DigitalForensics/Drone.jpg"),
+    image: require("../../assets/img/DigitalForensics/Email.jpg"),
     link: "/Digital_Forensics/MCQ/Drone",
   },
   {
@@ -68,7 +68,7 @@ const MCQCards = [
     description:
       "Test your knowledge of gaming forensics with these unique questions.",
     difficulty: "Easy",
-    image: require("../../assets/img/DigitalForensics/Gaming.jpg"),
+    image: require("../../assets/img/DigitalForensics/Email.jpg"),
     link: "/Digital_Forensics/MCQ/Gaming",
   },
   {
@@ -76,7 +76,7 @@ const MCQCards = [
     title: "MCQ on IoT Forensics",
     description: "Explore IoT forensics with these challenging questions.",
     difficulty: "Hard",
-    image: require("../../assets/img/DigitalForensics/IoT.jpg"),
+    image: require("../../assets/img/DigitalForensics/Email.jpg"),
     link: "/Digital_Forensics/MCQ/Iot",
   },
   {
@@ -85,7 +85,7 @@ const MCQCards = [
     description:
       "Prepare for malware forensics scenarios with these multiple-choice questions.",
     difficulty: "Medium",
-    image: require("../../assets/img/DigitalForensics/Malware.jpg"),
+    image: require("../../assets/img/DigitalForensics/Email.jpg"),
     link: "/Digital_Forensics/MCQ/Malware",
   },
   {
@@ -94,7 +94,7 @@ const MCQCards = [
     description:
       "Get ready for mobile forensics challenges with these targeted questions.",
     difficulty: "Easy",
-    image: require("../../assets/img/DigitalForensics/Mobile.jpg"),
+    image: require("../../assets/img/DigitalForensics/Email.jpg"),
     link: "/Digital_Forensics/MCQ/Mobile",
   },
   {
@@ -103,7 +103,7 @@ const MCQCards = [
     description:
       "Dive into multimedia forensics with these specialized questions.",
     difficulty: "Medium",
-    image: require("../../assets/img/DigitalForensics/Multimedia.jpg"),
+    image: require("../../assets/img/DigitalForensics/Email.jpg"),
     link: "/Digital_Forensics/MCQ/Multimedia",
   },
   {
@@ -112,7 +112,7 @@ const MCQCards = [
     description:
       "Understand network forensics through these detailed questions.",
     difficulty: "Hard",
-    image: require("../../assets/img/DigitalForensics/Network.jpg"),
+    image: require("../../assets/img/DigitalForensics/Email.jpg"),
     link: "/Digital_Forensics/MCQ/Network",
   },
   {
@@ -121,7 +121,7 @@ const MCQCards = [
     description:
       "Learn about social media forensics with this set of questions.",
     difficulty: "Easy",
-    image: require("../../assets/img/DigitalForensics/SocialMedia.jpg"),
+    image: require("../../assets/img/DigitalForensics/Email.jpg"),
     link: "/Digital_Forensics/MCQ/SocialMedia",
   },
   {
@@ -130,7 +130,7 @@ const MCQCards = [
     description:
       "Prepare for vehicle forensics with these insightful questions.",
     difficulty: "Medium",
-    image: require("../../assets/img/DigitalForensics/Vehicle.jpg"),
+    image: require("../../assets/img/DigitalForensics/Email.jpg"),
     link: "/Digital_Forensics/MCQ/Vehicle",
   },
 ];

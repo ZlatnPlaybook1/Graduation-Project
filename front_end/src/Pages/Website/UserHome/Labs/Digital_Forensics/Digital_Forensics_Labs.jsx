@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../Header/Header";
 import "./Digital_Forensics.css";
 import mcqData from "./MCQCards";
-import labImg from "../../assets/img/AudFor/lab1.jpeg";
+import labImg from "../../assets/img/DigitalForensics/Email.jpg";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 export default function Digital_Forensics_labs() {
@@ -53,10 +53,9 @@ export default function Digital_Forensics_labs() {
                 <img src={labImg} alt="" />
               </div>
               <div className="course-text">
-                <h3>MCQ Question Review</h3>
+                <h3>Audio Forensics</h3>
                 <p>
-                  These are multiple choice questions that are designed to be a
-                  review for the exam.
+                  Analyze audio files to extract information and solve the case.
                 </p>
               </div>
               <div className="easy">
@@ -68,10 +67,7 @@ export default function Digital_Forensics_labs() {
             {mcqData.map((mcq) => (
               <Link to={mcq.link} className="course-card" key={mcq.id}>
                 <div className="course-image">
-                  <img
-                    src={mcq.image}
-                    alt={mcq.title}
-                  />
+                  <img src={mcq.image} alt={mcq.title} />
                 </div>
                 <div className="course-text">
                   <h3>{mcq.title}</h3>
