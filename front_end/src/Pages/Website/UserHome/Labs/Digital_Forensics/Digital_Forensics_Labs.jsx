@@ -71,9 +71,6 @@ export default function Digital_Forensics_labs() {
                   <img
                     src={mcq.image}
                     alt={mcq.title}
-                    style={{
-                      height: "70%",
-                    }}
                   />
                 </div>
                 <div className="course-text">
