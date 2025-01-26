@@ -44,11 +44,11 @@ export default function Cookies() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing">
+      <div className="landing-lab1">
         <div className="banner">
           {/* <img src={background} alt="bacground" /> */}
         </div>
-        <div className="container">
+        <div className="container-lab1">
           <div className="breadcrumb">
             <ul>
               <li>
@@ -101,16 +101,16 @@ export default function Cookies() {
       </div>
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course">
+      <div className="course-lab1">
         <div className="container" ref={faqSectionRef}>
           <div className="row">
-            <div className="faq-section">
-              <dl className="section-text">
+            <div className="faq-section-lab1">
+              <dl className="section-text-lab1">
                 {/* Single FAQ Area  */}
-                <dt className="wave fadeInUp faq-header">
-                  <span>Task 1</span> What Are Cookies?
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span>Topic 1</span> What Are Cookies?
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <ul>
                     <li>
                       <p>
@@ -153,10 +153,10 @@ export default function Cookies() {
                             </form>  */}
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="wave fadeInUp faq-header">
-                  <span>Task 2</span>What are Cookies Used For?
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span>Topic 2</span>What are Cookies Used For?
                 </dt>
-                <dd className="faq-body">
+                <dd className="faq-body-lab1" id="border-left">
                   <ul>
                     <li>
                       <h2>Session Management:</h2> Cookies store things like
@@ -189,10 +189,10 @@ export default function Cookies() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="wave fadeInUp faq-header">
-                  <span>Task 3</span>Where are Cookies Stored?
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span>Topic 3</span>Where are Cookies Stored?
                 </dt>
-                <dd className="faq-body">
+                <dd className="faq-body-lab1" id="border-left">
                   <ul>
                     <li>
                       Cookies are stored on your device in special folders or
@@ -221,10 +221,10 @@ export default function Cookies() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="wave fadeInUp faq-header">
-                  <span>Task 4</span>Cookies Manipulation
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span>Topic 4</span>Cookies Manipulation
                 </dt>
-                <dd className="faq-body">
+                <dd className="faq-body-lab1" id="border-left">
                   <ul>
                     <li>
                       <h2>Create a Cookie With JavaScript:</h2>
