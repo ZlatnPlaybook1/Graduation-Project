@@ -46,7 +46,7 @@ export default function Regex() {
     <>
       <Header />
       {/* Start Landing */}
-      <div className="landing-lab1 landing">
+      <div className="landing-lab1">
         <div className="banner">
           <img src={background} alt="" />
         </div>

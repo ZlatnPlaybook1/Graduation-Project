@@ -67,7 +67,15 @@ export default function Digital_Forensics() {
             <img src={imagecourse} alt="" />
             <div className="course-text">
               <h1>Digital Forensics</h1>
-              <p>..</p>
+              <p>
+                Learn how experts leverage digital forensics to investigate
+                cybercrimes, uncover evidence, and analyze digital footprints.
+                Explore the tools and techniques used to recover deleted data,
+                trace unauthorized access, and reconstruct malicious activities.
+                Master the skills needed to identify breaches, secure digital
+                evidence, and present findings in legal contexts to ensure
+                justice and organizational security.
+              </p>
               <div className="course-icons">
                 <div className="diff">
                   <div className="easy">

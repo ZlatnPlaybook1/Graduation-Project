@@ -102,7 +102,6 @@ import BL_VULN_THIRD_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/t
 import DIGITAL_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/Digital_Forensics.jsx";
 import DIGITAL_FORENSICS_LABS from "./Pages/Website/UserHome/Labs/Digital_Forensics/Digital_Forensics_Labs.jsx";
 import DIGITAL_FORENSICS_FIRST_LAB from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/first_lab/First_Lab.jsx";
-import DIGITAL_FORENSICS_SECOND_LAB from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/second_lab/Second_Lab.jsx";
 import BLOCKCHIN_AND_CRYPTOCURRENCY from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/BlockchainAndCryptocurrency.jsx";
 import COMPUTER_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Computer.jsx";
 import CLOUD_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Cloud.jsx";
@@ -319,11 +318,11 @@ function App() {
           <Route path="/Regex" element={<REGEX />} />
           <Route path="/Regex/Regex_labs" element={<REGEX_LABS />} />
           <Route
-            path="/Regex/Regex_labs/first_lab"
+            path="/Regex/Regex_labs/MCQReview"
             element={<REGEX_FIRST_LAB />}
           />
           <Route
-            path="/Regex/Regex_labs/second_lab"
+            path="/Regex/Regex_labs/CompleteReview"
             element={<REGEX_SECOND_LAB />}
           />
           {/* End Regex */}
@@ -353,10 +352,6 @@ function App() {
           <Route
             path="/Digital_Forensics/Digital_Forensics_labs/lab1"
             element={<DIGITAL_FORENSICS_FIRST_LAB />}
-          />
-          <Route
-            path="/Digital_Forensics/Digital_Forensics_labs/lab2"
-            element={<DIGITAL_FORENSICS_SECOND_LAB />}
           />
           <Route
             path="/Digital_Forensics/MCQ/BlockChain"
