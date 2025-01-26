@@ -388,64 +388,41 @@ export default function Digital_Forensics() {
                   className="wave-lab1 fadeInUp faq-header-lab1"
                   id="border-left"
                 >
-                  <span>Topic 3</span>Discovering API Documentation
+                  <span>Topic 3</span>Metadata Analysis
                 </dt>
                 <dd className="fadeInUp faq-body-lab1" id="border-left">
-                  <p>
-                    API documentation provides developers with the information
-                    needed to interact with the API. This documentation can be
-                    human-readable (for developers) or machine-readable (for
-                    automated tasks). Even if API documentation is not publicly
-                    available, you can use tools to uncover hidden documentation
-                    by crawling through the application.
-                  </p>
                   <ul>
-                    <b>Where to Look:</b>
+                    <b>What You’ll Learn::</b>
+
                     <li>
-                      Endpoints like <code>/api</code>,{" "}
-                      <code>/swagger/index.html</code>, or{" "}
-                      <code>/openapi.json</code>
-                      often provide documentation.
+                      Extracting metadata to uncover file history (creation,
+                      modifications).
                     </li>
-                    <li>
-                      Burp Suite and other tools can help in identifying hidden
-                      endpoints.
-                    </li>
+                    <li>Identifying tampered files or hidden information.</li>
+                    <li>Tools: ExifTool for metadata analysis.</li>
                   </ul>
-                  <p>
-                    <i>
-                      By discovering the documentation, you can start
-                      constructing test cases and simulate realistic API
-                      requests.
-                    </i>
-                  </p>
                 </dd>
                 {/* Topic 4 */}
                 <dt
                   className="wave-lab1 fadeInUp faq-header-lab1"
                   id="border-left"
                 >
-                  <span>Topic 4</span> Common API Vulnerabilities
+                  <span>Topic 4</span> Network Traffic Analysis
                 </dt>
                 <dd className="fadeInUp faq-body-lab1" id="border-left">
-                  <p>
-                    APIs can be vulnerable to a variety of attacks if not
-                    properly tested. These include:
-                  </p>
+                  <p>Focus:</p>
                   <ul>
                     <li>
-                      <b>SQL Injection: </b> Attacks that exploit input
-                      validation flaws to manipulate database queries.
+                      Analyzing network packets to detect suspicious activity or
+                      attacks.
                     </li>
                     <li>
-                      <b>Parameter Pollution: </b> When attackers introduce
-                      additional parameters that the server doesn't expect,
-                      leading to unintended behaviors.
+                      Use tools like Scapy and Tshark for network data
+                      inspection.
                     </li>
                     <li>
-                      <b>Authentication Flaws:</b> If authentication mechanisms
-                      (like API keys or tokens) are improperly configured, they
-                      can be bypassed by attackers.
+                      <b>Practical Focus:</b> Identifying network threats,
+                      unauthorized access, and data breaches.
                     </li>
                   </ul>
                   <p>
@@ -460,27 +437,28 @@ export default function Digital_Forensics() {
                   className="wave-lab1 fadeInUp faq-header-lab1"
                   id="border-left"
                 >
-                  <span>Topic 5</span> How to Test APIs
+                  <span>Topic 5</span> Common Digital Forensic Tools
                 </dt>
                 <dd className="fadeInUp faq-body-lab1" id="border-left">
-                  <p>
-                    To test an API effectively, you must simulate real-world
-                    interactions. This involves:
-                  </p>
+                  <p>Key Tools:</p>
                   <ul>
                     <li>
-                      <b>Request Construction:</b> Crafting different HTTP
-                      requests based on identified endpoints, parameters, and
-                      methods.
+                      <b>FTK (Forensic Toolkit):</b>
+                      Comprehensive investigation software.
                     </li>
                     <li>
-                      <b>Testing Data Validation: </b> Ensure that only valid
-                      data is processed by the API.
+                      <b>Volatility Framework:</b> Memory analysis and malware
+                      detection.
                     </li>
                     <li>
-                      <b>Exploring Rate Limits and Authentication:</b> Check
-                      whether the API enforces limits and restricts unauthorized
-                      access.
+                      <b>Autopsy:</b>Open-source forensic tool.
+                    </li>
+                    <li>
+                      <b>Wireshark:</b>Network packet analysis.
+                    </li>
+                    <li>
+                      <b>Focus:</b>Selecting and using the right tools based on
+                      the forensic scenario.
                     </li>
                   </ul>
                 </dd>
@@ -489,33 +467,22 @@ export default function Digital_Forensics() {
                   className="wave-lab1 fadeInUp faq-header-lab1"
                   id="border-left"
                 >
-                  <span>Topic 6:</span> Best Practices for API Testing
+                  <span>Topic 6:</span> Detecting Hidden Data (Steganography)
                 </dt>
                 <dd className="fadeInUp faq-body-lab1" id="border-left">
-                  <p>
-                    To prevent vulnerabilities, adhere to these best practices:
-                  </p>
                   <ul>
                     <li>
-                      <b>Validate Input: </b> Always ensure that input data is
-                      sanitized to avoid security flaws like SQL injection.
+                      <b>Concept:</b> Hiding data within other media (images,
+                      videos, audio).
                     </li>
                     <li>
-                      <b>Enforce Authentication and Authorization:</b> Properly
-                      configure authentication and enforce access controls.
-                    </li>
-                    <li>
-                      <b>Use Secure Development Practices: </b> Follow secure
-                      coding guidelines to minimize the risk of API
-                      vulnerabilities.
-                    </li>
-                    <li>
-                      <b>Test Thoroughly:</b> Conduct both automated and manual
-                      tests to detect any weaknesses in the API.
-                    </li>
-                    <li>
-                      <b>Monitor APIs:</b> Continuously monitor API traffic for
-                      abnormal patterns that could signal exploitation attempts.
+                      <b>Hands-On:</b>{" "}
+                      <ul>
+                        <li>Detecting steganographic traces in files.</li>
+                        <li>
+                          Using tools to extract or embed hidden messages.
+                        </li>
+                      </ul>
                     </li>
                   </ul>
                 </dd>
@@ -523,20 +490,40 @@ export default function Digital_Forensics() {
                   className="wave-lab1 fadeInUp faq-header-lab1"
                   id="border-left"
                 >
-                  <span>Topic 7: </span>Conclusion
+                  <span>Topic 7:</span> Best Practices in Digital Forensics
+                </dt>
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <p></p>
+                  <ul>
+                    <li>
+                      <b>Chain of Custody: </b>Preserve evidence integrity.
+                    </li>
+
+                    <li>
+                      <b>Tool Validation: </b>Use reliable and validated
+                      forensic tools.
+                    </li>
+                    <li>
+                      <b>Documentation: </b>Record every step for credibility.
+                    </li>
+                    <li>
+                      <b>Legal Compliance:</b>Ensure evidence is admissible in
+                      court.
+                    </li>
+                  </ul>
+                </dd>
+                <dt
+                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  id="border-left"
+                >
+                  <span>Topic 8:</span> Conclusion
                 </dt>
                 <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <p>
-                    API testing is essential for securing web applications and
-                    preventing unauthorized access to sensitive data. By
-                    understanding API behavior, identifying vulnerabilities, and
-                    following best practices, you can safeguard your
-                    applications against potential attacks. Remember to always
-                    review API documentation, simulate requests, test for common
-                    vulnerabilities, and apply security measures to protect your
-                    system. If you're ready to put your knowledge to the test,
-                    you can access all of the labs in this topic from the link
-                    below.
+                    <b>Summary:</b>Mastering digital forensics methodologies,
+                    tools, and best practices allows for effective cybercrime
+                    investigation. Engage with practical labs to hone your
+                    skills in real-world scenarios.
                   </p>
                 </dd>
               </dl>
