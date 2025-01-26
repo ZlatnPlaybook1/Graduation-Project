@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Courses.css";
 import courseData from "./courseData"; // Assuming you move course data to a separate file
-import AchievementAlert from "../AchievementAlert/AchievementAlert";
+import ChatWidget from "../../AiChatWidget/ChatWidget";
 const Courses = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Courses");
   const [searchTerm, setSearchTerm] = useState("");
@@ -28,63 +28,66 @@ const Courses = () => {
     return matchesSearchTerm && matchesCategory;
   });
   return (
-    <div className="course">
-      <div className="container">
-        {/* Category Buttons and Search Bar */}
-        <div className="category-search-bar">
-          <div className="categories-menu">
-            {categories.map((category) => (
-              <button
-                key={category}
-                className={`category-btn ${
-                  selectedCategory === category ? "active" : ""
-                }`}
-                onClick={() => setSelectedCategory(category)}
-              >
-                {category}
+    <>
+      <div className="course">
+        <div className="container">
+          {/* Category Buttons and Search Bar */}
+          <div className="category-search-bar">
+            <div className="categories-menu">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  className={`category-btn ${
+                    selectedCategory === category ? "active" : ""
+                  }`}
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+            <div className="search-container">
+              <input
+                type="text"
+                placeholder="Search here"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <button className="search-btn">
+                <i className="fa-solid fa-search"></i>
               </button>
+            </div>
+          </div>
+          {/* <AchievementAlert /> */}
+          {/* Courses */}
+          <div className="row-center">
+            {filteredCourses.map((course) => (
+              <div className="row-course" key={course.id}>
+                <a href={course.link} className="course-card">
+                  <div className="course-image">
+                    <img src={course.image} alt={course.title} />
+                  </div>
+                  <div className="course-text">
+                    <h3>{course.title}</h3>
+                    <p>{course.description}</p>
+                    <ul className="circled-order">
+                      {course.topics.map((topic, index) => (
+                        <li key={index}>{topic}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="easy">
+                    <i className="fa-solid fa-signal"></i>
+                    <p>{course.difficulty}</p>
+                  </div>
+                </a>
+              </div>
             ))}
           </div>
-          <div className="search-container">
-            <input
-              type="text"
-              placeholder="Search here"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <button className="search-btn">
-              <i className="fa-solid fa-search"></i>
-            </button>
-          </div>
-        </div>
-        {/* <AchievementAlert /> */}
-        {/* Courses */}
-        <div className="row-center">
-          {filteredCourses.map((course) => (
-            <div className="row-course" key={course.id}>
-              <a href={course.link} className="course-card">
-                <div className="course-image">
-                  <img src={course.image} alt={course.title} />
-                </div>
-                <div className="course-text">
-                  <h3>{course.title}</h3>
-                  <p>{course.description}</p>
-                  <ul className="circled-order">
-                    {course.topics.map((topic, index) => (
-                      <li key={index}>{topic}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="easy">
-                  <i className="fa-solid fa-signal"></i>
-                  <p>{course.difficulty}</p>
-                </div>
-              </a>
-            </div>
-          ))}
         </div>
       </div>
-    </div>
+      <ChatWidget />
+    </>
   );
 };
 
