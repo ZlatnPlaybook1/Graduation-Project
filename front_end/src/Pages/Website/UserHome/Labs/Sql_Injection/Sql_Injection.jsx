@@ -1,107 +1,31 @@
-import React, { useEffect, useRef } from "react";
-import $ from "jquery";
+import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import "./Sql_Injection.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
-import { Link, useNavigate } from "react-router-dom";
-
+import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function Sql_Injection() {
-  const faqSectionRef = useRef(null);
-  const navigate = useNavigate();
-  const handleGoToLab = () => {
-    navigate("/sql_Injection/sql_Injection_labs");
-  };
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
+  const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <div className="landing-lab1">
-        <div className="banner">
-          <img src={background} alt="" />
-        </div>
-        <div className="container-lab1">
-          <div className="breadcrumb">
-            <ul>
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="">SQL Injection</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="course-info">
-            <img src={imagecourse} alt="" />
-            <div className="course-text">
-              <h1>SQL Injection</h1>
-              <p>
-                Learn how attackers exploit vulnerabilities in web applications
+      <LandingLab
+        background={background}
+        imagecourse={imagecourse}
+        courseTitle="SQL Injection"
+        courseDescription="Learn how attackers exploit vulnerabilities in web applications
                 using SQL injection and understand the techniques to detect and
-                prevent them.
-              </p>
-              <div className="course-icons">
-                <div className="diff">
-                  <div className="easy">
-                    <i className="fa-solid fa-signal"></i>
-                    <p> Easy</p>
-                  </div>
-                </div>
-                <div className="duration">
-                  <i className="fa-solid fa-clock"></i>
-                  <p className="time">20 min</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="options">
-            <button>
-              <i className="far fa-bookmark"></i>
-              <p>Save Room</p>
-            </button>
-            <div className="like">
-              <button>
-                <i className="fas fa-thumbs-up"></i>
-                <p></p>
-              </button>
-              <button>
-                <i className="fas fa-thumbs-down"></i>
-                <p></p>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+                prevent them."
+        difficulty="Intermediate"
+        duration="30 min"
+        onSaveRoom={() => console.log("Room Saved!")}
+        onLike={() => console.log("Liked!")}
+        onDislike={() => console.log("Disliked!")}
+      />
       {/* End Landing */}
       {/* Start Course */}
       <div className="course-lab1">
@@ -393,7 +317,12 @@ export default function Sql_Injection() {
               </dl>
             </div>
             <div className="go-to-section">
-              <button onClick={handleGoToLab} className="go-to">
+              <button
+                onClick={() =>
+                  handleGoToLab("/sql_Injection/sql_Injection_labs")
+                }
+                className="go-to"
+              >
                 Go To Labs
               </button>
             </div>

@@ -4,8 +4,8 @@ import Footer from "../../Footer/Footer";
 import "./Digital_Forensics.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
-import { Link } from "react-router-dom";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function Digital_Forensics() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -13,66 +13,23 @@ export default function Digital_Forensics() {
     <>
       <Header />
       {/* Start Landing */}
-      <div className="landing-lab1">
-        <div className="banner">
-          <img src={background} alt="" />
-        </div>
-        <div className="container-lab1">
-          <div className="breadcrumb">
-            <ul>
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="">Digital Forensics</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="course-info">
-            <img src={imagecourse} alt="" />
-            <div className="course-text">
-              <h1>Digital Forensics</h1>
-              <p>
-                Learn how experts leverage digital forensics to investigate
+      <LandingLab
+        background={background}
+        imagecourse={imagecourse}
+        courseTitle="Digital Forensics"
+        courseDescription="Learn how experts leverage digital forensics to investigate
                 cybercrimes, uncover evidence, and analyze digital footprints.
                 Explore the tools and techniques used to recover deleted data,
                 trace unauthorized access, and reconstruct malicious activities.
                 Master the skills needed to identify breaches, secure digital
                 evidence, and present findings in legal contexts to ensure
-                justice and organizational security.
-              </p>
-              <div className="course-icons">
-                <div className="diff">
-                  <div className="easy">
-                    <i className="fa-solid fa-signal"></i>
-                    <p> Easy</p>
-                  </div>
-                </div>
-                <div className="duration">
-                  <i className="fa-solid fa-clock"></i>
-                  <p className="time">20 min</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="options">
-            <button>
-              <i className="far fa-bookmark"></i>
-              <p>Save Room</p>
-            </button>
-            <div className="like">
-              <button>
-                <i className="fas fa-thumbs-up"></i>
-                <p></p>
-              </button>
-              <button>
-                <i className="fas fa-thumbs-down"></i>
-                <p></p>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+                justice and organizational security."
+        difficulty="Intermediate"
+        duration="30 min"
+        onSaveRoom={() => console.log("Room Saved!")}
+        onLike={() => console.log("Liked!")}
+        onDislike={() => console.log("Disliked!")}
+      />
       {/* End Landing */}
       {/* Start Course */}
       <div className="course-lab1">
