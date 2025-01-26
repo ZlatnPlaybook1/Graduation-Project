@@ -8,13 +8,13 @@ export default function InsecureDirectObjectReferenceLabs() {
     <>
       <Header />
       {/* Start Landing */}
-      <div className="landing-XSS">
-        <div className="container-XSS">
-          <div className="course-info-XSS">
-            <div className="course-text-XSS">
+      <div className="landing">
+        <div className="container">
+          <div className="course-info">
+            <div className="course-text">
               <h1>Practice</h1>
-              <p className="brief-XSS">
-                <i className="fa-solid fa-bullseye lab-XSS"></i> Reinforce what
+              <p className="brief">
+                <i className="fa-solid fa-bullseye lab"></i> Reinforce what
                 you're learning
               </p>
               <p>
@@ -22,12 +22,12 @@ export default function InsecureDirectObjectReferenceLabs() {
                 challenges.
               </p>
             </div>
-            <div className="course-icon-XSS">
-              <div className="border-XSS">
-                <div className="content-XSS">
-                  <i className="fas fa-book-open lab-XSS"></i>
+            <div className="course-icon">
+              <div className="border">
+                <div className="content">
+                  <i className="fas fa-book-open lab"></i>
                   <p>Practice</p>
-                  <i className="fas fa-bullseye lab-XSS"></i>
+                  <i className="fas fa-bullseye lab"></i>
                 </div>
               </div>
             </div>
@@ -36,84 +36,84 @@ export default function InsecureDirectObjectReferenceLabs() {
       </div>
       {/* End Landing */}
       {/* Start Courses */}
-      <div className="course-XSS">
-        <div className="container-XSS">
+      <div className="course">
+        <div className="container">
           <h2>Insecure Direct Object Reference (IDOR) Labs</h2>
-          <p className="section-p-XSS">Test Your Hacking skills</p>
-          <div className="row-XSS">
+          <p className="section-p">Test Your Hacking skills</p>
+          <div className="row">
             {/* lab1 */}
             <Link
               to="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab1"
-              className="course-card-XSS"
+              className="course-card"
             >
-              <div className="course-image-XSS">
+              <div className="course-image">
                 <img src={Idor_cover} alt="Lab Cover" />
               </div>
-              <div className="course-text-XSS">
+              <div className="course-text">
                 <h3>Invoices.</h3>
-                <p className="modern-p-XSS">
+                <p className="modern-p">
                   Gain unauthorized access to other users' invoices.
                 </p>
-                <ul className="circled-order-XSS">
+                <ul className="circled-order">
                   <li>Cyber Security Basics</li>
                   <li>Networking Basics and Weaknesses</li>
                   <li>The Web And Common Attacks</li>
                   <li>Learn to Use The Linux OS</li>
                 </ul>
               </div>
-              <div className="easy-XSS">
-                <i className="fa-solid fa-signal lab-XSS"></i>
+              <div className="easy">
+                <i className="fa-solid fa-signal lab"></i>
                 <p>Easy</p>
               </div>
             </Link>
             {/* lab2 */}
             <Link
               to="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab2"
-              className="course-card-XSS"
+              className="course-card"
             >
-              <div className="course-image-XSS">
+              <div className="course-image">
                 <img src={Idor_cover} alt="Lab Cover" />
               </div>
-              <div className="course-text-XSS">
+              <div className="course-text">
                 <h3>Ticket Sales</h3>
-                <p className="modern-p-XSS">
+                <p className="modern-p">
                   Buy tickets for less than the regular price.
                 </p>
-                <ul className="circled-order-XSS">
+                <ul className="circled-order">
                   <li>Cyber Security Basics</li>
                   <li>Networking Basics and Weaknesses</li>
                   <li>The Web And Common Attacks</li>
                   <li>Learn to Use The Linux OS</li>
                 </ul>
               </div>
-              <div className="easy-XSS">
-                <i className="fa-solid fa-signal lab-XSS"></i>
+              <div className="easy">
+                <i className="fa-solid fa-signal lab"></i>
                 <p>Easy</p>
               </div>
             </Link>
             {/* lab3 */}
             <Link
               to="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab3"
-              className="course-card-XSS"
+              className="course-card"
             >
-              <div className="course-image-XSS">
+              <div className="course-image">
                 <img src={Idor_cover} alt="Lab Cover" />
               </div>
-              <div className="course-text-XSS">
+              <div className="course-text">
                 <h3>Money Transfer</h3>
-                <p className="modern-p-XSS">
+                <p className="modern-p">
                   Transfer money from another user's account to your own account
                   without any permission.
                 </p>
-                <ul className="circled-order-XSS">
+                <ul className="circled-order">
                   <li>Cyber Security Basics</li>
                   <li>Networking Basics and Weaknesses</li>
                   <li>The Web And Common Attacks</li>
                   <li>Learn to Use The Linux OS</li>
                 </ul>
               </div>
-              <div className="easy-XSS">
-                <i className="fa-solid fa-signal lab-XSS"></i>
+              <div className="easy">
+                <i className="fa-solid fa-signal lab"></i>
                 <p>Easy</p>
               </div>
             </Link>

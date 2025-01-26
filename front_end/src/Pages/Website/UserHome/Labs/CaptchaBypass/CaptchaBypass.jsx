@@ -47,18 +47,18 @@ export default function CaptchaBypass() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing">
+      <div className="landing-lab1">
         <div className="banner">
           {/* <img src={background} alt="bacground" /> */}
         </div>
-        <div className="container">
+        <div className="container-lab1">
           <div className="breadcrumb">
             <ul>
               <li>
                 <Link to="">Home</Link>
               </li>
               <li>
-                <Link to="">Obfuscation</Link>
+                <Link to="">Captcha Bypass</Link>
               </li>
               {/* <li>
                 <span className="active-breadcrumb">
@@ -70,9 +70,9 @@ export default function CaptchaBypass() {
           <div className="course-info">
             <img src={image} alt="logo" />
             <div className="course-text">
-              <h1>Obfuscation</h1>
+              <h1>Captcha Bypass</h1>
               <p>
-                Master the basics of obfuscation, a powerful technique for
+                Master the basics of Captcha Bypass, a powerful technique for
                 securing code and protecting intellectual property in
                 cybersecurity environments.
               </p>
@@ -110,17 +110,17 @@ export default function CaptchaBypass() {
       </div>
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course">
+      <div className="course-lab1">
         <div className="container" ref={faqSectionRef}>
           <div className="row">
-            <div className="faq-section">
-              <dl className="section-text">
+            <div className="faq-section-lab1">
+              <dl className="section-text-lab1">
                 {/* Single FAQ Area  */}
-                <dt className="wave fadeInUp faq-header">
-                  <span>step 1</span> Introduction
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span>Topic 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body">
-                  <h1>Welcome to Obfuscation</h1>
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <h1>Welcome to Captcha Bypass</h1>
 
                   <h2>What will you learn?</h2>
                   <ol>
@@ -131,10 +131,10 @@ export default function CaptchaBypass() {
                   </ol>
                 </dd>
 
-                <dt className="wave fadeInUp faq-header">
-                  <span> step 2</span> What are Obfuscation & Deobfuscation ?
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span> Topic 2</span> What are Obfuscation & Deobfuscation ?
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <p>
                     <br></br>
                   </p>
@@ -211,10 +211,10 @@ export default function CaptchaBypass() {
                   </p>
                 </dd>
 
-                <dt className="wave fadeInUp faq-header">
-                  <span> step 3</span>Javascript Obfuscation{" "}
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span> Topic 3</span>Javascript Obfuscation{" "}
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <br></br>
                   <h1>Javascript Obfuscation </h1>
                   <p>
@@ -280,9 +280,9 @@ export default function CaptchaBypass() {
                 {/* 
             # main slider
 
-            <dt className="wave fadeInUp faq-header">
-                  <span> step 2</span> What are Obfuscation & Deobfuscation ?</dt>
-                  <dd className="fadeInUp faq-body">
+            <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span> Topic 2</span> What are Obfuscation & Deobfuscation ?</dt>
+                  <dd className="fadeInUp faq-body-lab1" id="border-left">
                 <p><br></br></p>
 
 
