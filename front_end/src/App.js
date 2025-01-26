@@ -187,8 +187,6 @@ import BrokenAuthenticationLab from "./Pages/Website/UserHome/Labs/Broken_Auth/B
 import AuthLab1 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab1.jsx";
 import AuthLab2 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab2.jsx";
 import WordsList from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/WordsList.js";
-import CryptoGraphy_lab from "./Pages/Website/UserHome/Labs/CryptoGraphy/CryptoGraphy_lab.jsx";
-import WireShark_lab from "./Pages/Website/UserHome/Labs/WireShark/WireShark_lab.jsx";
 
 function App() {
   return (
