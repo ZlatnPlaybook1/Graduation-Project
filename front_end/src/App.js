@@ -142,6 +142,7 @@ import BrokenAuthentication from "./Pages/Website/UserHome/Labs/Broken_Auth/Brok
 import BrokenAuthenticationLab from "./Pages/Website/UserHome/Labs/Broken_Auth/BrokenAuthenticationLab.jsx";
 import AuthLab1 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab1.jsx";
 import AuthLab2 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab2.jsx";
+import WordsList from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/WordsList.js";
 
 function App() {
   return (
@@ -445,6 +446,7 @@ function App() {
             path="/broken-auth/Broken_Authentication_Lab/lab1"
             element={<AuthLab1 />}
           />
+          <Route path="/words-list" element={<WordsList />} />
           <Route
             path="/broken-auth/Broken_Authentication_Lab/lab2"
             element={<AuthLab2 />}

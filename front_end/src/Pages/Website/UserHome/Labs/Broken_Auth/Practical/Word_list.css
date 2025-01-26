@@ -1,0 +1,14 @@
+.words-list-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.words-list-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.words-list-container p {
+  line-height: 1.6;
+  white-space: pre-wrap;
+}

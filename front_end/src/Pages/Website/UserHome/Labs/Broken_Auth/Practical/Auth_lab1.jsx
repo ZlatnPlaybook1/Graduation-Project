@@ -1,21 +1,42 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./auth_lab.css";
 import GOBack from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 
-export default function AuthLab() {
-  const hintMessage = `
-  <p>Add Something</p>
-  `;
-
+export default function Auth_lab1() {
+  const hintMessage = `<p>Add Something</p>`;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here, e.g., authentication API call
-    console.log("Username:", username);
-    console.log("Password:", password);
+
+    try {
+      const response = await fetch("http://127.0.0.1:8080/api/brokenAuthLab1", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send data to the server");
+      }
+
+      const data = await response.json();
+
+      if (data.message === "successful") {
+        setMessage("Login successful!");
+      } else {
+        setMessage("Login failed. Please check your credentials.");
+      }
+    } catch (error) {
+      setMessage("An error occurred while sending data to the server.");
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -59,6 +80,22 @@ export default function AuthLab() {
               Submit
             </button>
           </form>
+          {message && <p className="lab1-response-message">{message}</p>}
+
+          {/* Add the required text below the submit button */}
+          <div className="lab1-credentials-info">
+            <p>
+              <strong>Username:</strong> admin
+            </p>
+            <p>
+              <strong>Wordlist:</strong> Seclist-10000 Common Credentials
+            </p>
+          </div>
+
+          {/* Link to the WordsList Page */}
+          <Link to="/words-list" className="lab1-words-link">
+            Click here to view the words list
+          </Link>
         </div>
       </div>
     </>

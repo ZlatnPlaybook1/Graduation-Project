@@ -81,3 +81,33 @@
     font-size: 24px;
   }
 }
+
+.lab1-words-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.lab1-words-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.lab1-words-link:focus {
+  outline: none;
+  color: #004085;
+  text-decoration: underline;
+}
+
+.lab1-credentials-info {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #333;
+}
+.lab1-credentials-info strong {
+  color: #000;
+}
