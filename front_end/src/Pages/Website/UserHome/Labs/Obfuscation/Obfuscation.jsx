@@ -143,7 +143,7 @@ export default function Obfuscation() {
                 <h4>Deobfuscation </h4>
                 <p>It is the reverse process of obfuscation, as it rewrites the script again from a very difficult to read to an understandable one. This can be done with many tools.</p>
                 <br></br>
-                <img src={exampleImage1} alt="Example" />
+                <img id="img-full" src={exampleImage1} alt="Example" />
                 <h2>Why do we use Obfuscation?</h2>
                 <br></br>
                 <p>There are many reasons why you may use obfuscation, here are some of them:</p>
@@ -177,19 +177,19 @@ export default function Obfuscation() {
                 <br></br>
                 <h1>Javascript Obfuscation </h1>
                 <p>There are several methods in JS obfuscation, one of them is to remove spaces, this method is called code minify, usually developers use this method as it reduces script file size.</p>
-                <img src={exampleImage2} alt="Example" />
+                <img id="img-full" src={exampleImage2} alt="Example" />
                 <br></br>
                 <h3>JS Obfuscation Tools </h3>
                 <br></br>
                 <h4>JSF</h4>
                 <p>By this method, you can rewrite any JS script with just six characters []()!+</p>
                 <p>You can try it online from this link:<a href="http://www.jsfuck.com">JSFuck</a></p>
-                <img src={exampleImage3} alt="Example" />
+                <img id="img-full" src={exampleImage3} alt="Example" />
                 <br></br>
                 <h4>Packer Obfuscation</h4>
                 <p>In this one, all script text and symbols will be stored in a list or dictionary and will be restored and rebuilt again during the execution process.</p>
                 <p>You can try it online from this link:<a href="https://www.cleancss.com/javascript-obfuscate/index.php">Packer Obfuscation</a></p>
-                <img src={exampleImage4} alt="Example" />
+                <img id="img-full" src={exampleImage4} alt="Example" />
                 <br></br>
                 <h4>JS deobfuscation Tools</h4>
                 <p>Instead of downloading and using deobfuscation tools on your machine, you can use them online.</p>

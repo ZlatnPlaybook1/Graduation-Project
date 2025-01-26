@@ -170,13 +170,13 @@ export default function Bash() {
                     A bash script always starts with the following line of code
                     at the top of the script.
                   </p>
-                  <img src={exampleImage1} alt="Example" />
+                  <img id="img-full" src={exampleImage1} alt="Example" />
                   <p>
                     This is so your shell (whatever type of it) knows that it
                     needs to run your file using bash in the terminal.
                   </p>
                   <p>Lets get into some basic examples.</p>
-                  <img src={exampleImage2} alt="Example" />
+                  <img id="img-full" src={exampleImage2} alt="Example" />
                   <p>
                     This will return the string “Hello World”. The command “
                     <span>"echo"</span>” is used to output text to the screen,
@@ -189,7 +189,7 @@ export default function Bash() {
                   we can run the command “<span>ls</span>” inside our bash
                   script and we will see the output when we run the file. So
                   lets make it do this!
-                  <img src={exampleImage3} alt="Example" />
+                  <img id="img-full" src={exampleImage3} alt="Example" />
                   <p>
                     Now from here on I am going to assume that you have a basic
                     understanding of Linux and its commands.
@@ -226,7 +226,7 @@ export default function Bash() {
                     simple and we create them
                   </h1>
                   <strong>like so:</strong>
-                  <img src={exampleImage4} alt="Example" />
+                  <img id="img-full" src={exampleImage4} alt="Example" />
                   <p>
                     Where we give the value of <span>Jammy</span> and assign it
                     to the variable <span>name</span>.
@@ -244,7 +244,7 @@ export default function Bash() {
                     We have to add a <span>$</span> onto front of our variable
                     name in order to use it.
                   </p>
-                  <img src={exampleImage5} alt="Example" />
+                  <img id="img-full" src={exampleImage5} alt="Example" />
                   <p>
                     If we test this out in our own terminal we get something
                     like this:
@@ -352,12 +352,12 @@ export default function Bash() {
                     <strong>set +x</strong> to end the section like the
                     following:
                   </p>
-                  <img src={exampleImage6} alt="Example" />
+                  <img id="img-full" src={exampleImage6} alt="Example" />
                   <p>
                     So lets look at an example. This is our script from earlier
                     being ran with <span>bash -x ./example.sh</span>
                   </p>
-                  <img src={exampleImage7} alt="Example" />
+                  <img id="img-full" src={exampleImage7} alt="Example" />
                   <p>
                     You can see its outputting a + for the command and then the
                     output of what that command executed. If there was an error
@@ -368,12 +368,12 @@ export default function Bash() {
                     We can also use multiple variables in something like an echo
                     statement. You aren't just limited to using 1!
                   </p>
-                  <img src={exampleImage8} alt="Example" />
+                  <img id="img-full" src={exampleImage8} alt="Example" />
                   <p>
                     Answer the following questions and use this piece of code to
                     guide you.
                   </p>
-                  <img src={exampleImage9} alt="Example" />
+                  <img id="img-full" src={exampleImage9} alt="Example" />
                   <div className="go-to-section">
                     <Link
                       to="/bash-scripting/bash_quiz#Variables"
@@ -401,7 +401,7 @@ export default function Bash() {
                     Lets start by declaring a parameter that is going to be our
                     first argument when running our bash script.
                   </p>
-                  <img src={exampleImage10} alt="Example" />
+                  <img id="img-full" src={exampleImage10} alt="Example" />
                   <p>
                     We now run our script with <span>./example.sh Alex</span>
                   </p>
@@ -423,12 +423,12 @@ export default function Bash() {
                     instead it would let us type in our name in a more
                     interactive way, we can do this using <span>read</span>.
                   </p>
-                  <img src={exampleImage11} alt="Example" />
+                  <img id="img-full" src={exampleImage11} alt="Example" />
                   <p>
                     This code will hang after its ran, this gives you the
                     opportunity to type in your name.
                   </p>
-                  <img src={exampleImage12} alt="Example" />
+                  <img id="img-full" src={exampleImage12} alt="Example" />
                   <p>And we can see that it worked!</p>
                   <p>
                     Maybe try making a little biography maker, where you take
@@ -564,7 +564,7 @@ export default function Bash() {
                   <span>Topic 6</span> Conditionals
                 </dt>
                 <dd className="fadeInUp faq-body-lab1" id="border-left">
-                  <img src={exampleImage13} alt="Example" />
+                  <img id="img-full" src={exampleImage13} alt="Example" />
                   <p>
                     When we talk about conditionals it means that a certain
                     piece of code relies on a condition being met, this is often
@@ -583,9 +583,9 @@ export default function Bash() {
                     First, we will discuss the basic syntax of an if statement.
                   </p>
                   <p>All if statements look like so:</p>
-                  <img src={exampleImage14} alt="Example" />
+                  <img id="img-full" src={exampleImage14} alt="Example" />
                   <p>Let's look at an example:</p>
-                  <img src={exampleImage15} alt="Example" />
+                  <img id="img-full" src={exampleImage15} alt="Example" />
                   <p>
                     If statements always use a pair of brackets and in the case
                     of the [] we need to leave a space on both sides of the
@@ -660,7 +660,7 @@ export default function Bash() {
                     an input(a parameter) and checks it against a value to check
                     if it's true or not. A guessing game if you will.
                   </p>
-                  <img src={exampleImage16} alt="Example" />
+                  <img id="img-full" src={exampleImage16} alt="Example" />
                   <p>Now let's test this in our terminal.</p>
                   <div className="terminal-container">
                     <div className="terminal-content">
@@ -742,7 +742,7 @@ export default function Bash() {
                     doesn't exist we will create the file and echo{" "}
                     <span>“hello”</span> to it. Let's begin!
                   </p>
-                  <img src={exampleImage17} alt="Example" />
+                  <img id="img-full" src={exampleImage17} alt="Example" />
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">

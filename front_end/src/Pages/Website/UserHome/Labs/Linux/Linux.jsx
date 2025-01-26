@@ -408,7 +408,7 @@ export default function Linux() {
                       <h2 className="note">
                         Pro tip: You can list the contents of a directory
                         without having to navigate to it by using ls and the
-                        name of the directory. I.e. <span>ls Pictures</span>
+                        name of the directory. I.e. <span id="note-span">ls Pictures</span>
                       </h2>
                     </li>
                     <li>
@@ -573,7 +573,7 @@ export default function Linux() {
                         contents of a file within directories without having to
                         navigate to it by using cat and the name of the
                         directory. I.e. <br />
-                        <span
+                        <span id="note-span"
                           style={{ display: "inline-block", marginTop: "15px" }}
                         >
                           {" "}

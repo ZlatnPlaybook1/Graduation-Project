@@ -1,419 +1,524 @@
+:root {
+  --main-color: #212c42 !important;
+  --sec-main-color: #a3ea2a !important;
+  --alt-color: #151c2b !important;
+  --font-color: rgba(255, 255, 255, 0.5) !important;
+  --font-color-hover: rgba(255, 255, 255, 0.75) !important;
+  --main-transition: 0.5s !important;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 15px;
+}
 
 /* Start Landing */
-.landing {
-  height: auto ;
-  position: relative ;
-  background-color: var(--alt-color) ;
-  isolation: isolate ;
-  z-index: 3 ;
+.landing-lab1 {
+  height: auto !important;
+  position: relative !important;
+  background-color: var(--alt-color) !important;
+  isolation: isolate !important;
+  z-index: 3 !important;
   padding: 0 120px;
   overflow: hidden;
 }
 
-.landing .banner {
-  position: absolute ;
-  height: 100% ;
-  width: 100% ;
-  z-index: -1 ;
-  overflow: hidden ;
+.landing-lab1 .banner {
+  position: absolute !important;
+  height: 100% !important;
+  width: 100% !important;
+  z-index: -1 !important;
+  overflow: hidden !important;
 }
 
-.landing .banner::after {
-  content: "" ;
-  position: absolute ;
-  inset: 0px ;
-  z-index: 1 ;
-  height: 100% ;
-  background: linear-gradient(
-    to right,
-    var(--alt-color) 30%,
-    rgba(21, 28, 43, 0.98) 50%,
-    transparent 100%
-  ) ;
+.landing-lab1 .banner::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0px !important;
+  z-index: 1 !important;
+  height: 100% !important;
+  background: linear-gradient(to right,
+      var(--alt-color) 30%,
+      rgba(21, 28, 43, 0.98) 50%,
+      transparent 100%) !important;
 }
 
-.landing .banner img {
-  position: absolute ;
-  left: 10% ;
-  top: 50% ;
+.landing-lab1 .banner img {
+  position: absolute !important;
+  left: 10% !important;
+  top: 50% !important;
   transform: translateY(-50%);
   max-width: 80%;
   height: auto;
 }
 
-.landing .container {
-  padding: 24px 12px ;
+.landing-lab1 .container-lab1 {
+  padding: 24px 12px !important;
 }
 
-.landing .breadcrumb ul {
-  display: flex ;
-  gap: 0.5rem ;
+.landing-lab1 .breadcrumb ul {
+  display: flex !important;
+  gap: 0.5rem !important;
 }
 
-.landing .breadcrumb ul li:first-of-type::before {
-  content: "" ;
+.landing-lab1 .breadcrumb ul li:first-of-type::before {
+  content: "" !important;
 }
 
-.landing .breadcrumb ul li::before {
-  content: ">" ;
-  color: rgb(184, 190, 201) ;
-  padding-right: 5px ;
+.landing-lab1 .breadcrumb ul li::before {
+  content: ">" !important;
+  color: rgb(184, 190, 201) !important;
+  padding-right: 5px !important;
 }
 
-.landing .breadcrumb ul li a {
-  font-size: 12px ;
-  color: rgb(184, 190, 201) ;
-  padding: 0 ;
-  margin: 0 ;
+.landing-lab1 .breadcrumb ul li a {
+  font-size: 12px !important;
+  color: rgb(184, 190, 201) !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.landing .breadcrumb ul li span.active-breadcrumb {
-  font-size: 12px ;
-  padding: 0 ;
-  margin: 0 ;
-  color: rgb(99, 110, 129) ;
+.landing-lab1 .breadcrumb ul li span.active-breadcrumb {
+  font-size: 12px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: rgb(99, 110, 129) !important;
 }
 
-.landing .breadcrumb ul li a:hover {
-  text-decoration: underline ;
+.landing-lab1 .breadcrumb ul li a:hover {
+  text-decoration: underline !important;
 }
 
-.landing .course-info {
-  display: flex ;
-  justify-content: flex-start ;
-  align-items: center ;
-  flex-direction: row ;
-  margin-top: 20px ;
-  margin-bottom: 20px ;
-  color: white ;
+.landing-lab1 .course-info {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  color: white !important;
 }
 
-.landing .course-info img {
-  width: 90px ;
+.landing-lab1 .course-info img {
+  width: 90px !important;
 }
 
-.landing .course-info .course-text {
-  margin-left: 20px ;
+.landing-lab1 .course-info .course-text {
+  margin-left: 20px !important;
 }
 
-.landing .course-info .course-text p {
-  margin-top: 5px ;
-  font-size: 12px ;
+.landing-lab1 .course-info .course-text p {
+  margin-top: 5px !important;
+  font-size: 12px !important;
 }
 
-.landing .course-info .course-icons {
-  display: flex ;
-  justify-content: flex-start ;
-  align-items: center ;
-  flex-direction: row ;
-  margin-top: 20px ;
-  margin-bottom: 20px ;
-  color: white ;
+.landing-lab1 .course-info .course-icons {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  color: white !important;
 }
 
-.landing .course-info .course-icons i.fa-signal {
-  color: green ;
+.landing-lab1 .course-info .course-icons i.fa-signal {
+  color: green !important;
 }
 
-.landing .course-info .course-icons i.fa-signal + p {
-  display: inline-block ;
-  color: green ;
+.landing-lab1 .course-info .course-icons i.fa-signal+p {
+  display: inline-block !important;
+  color: green !important;
 }
 
-.landing .course-info .course-icons .diff,
-.landing .course-info .course-icons .duration {
-  display: inline-block ;
-  margin-right: 20px ;
+.landing-lab1 .course-info .course-icons .diff,
+.landing-lab1 .course-info .course-icons .duration {
+  display: inline-block !important;
+  margin-right: 20px !important;
 }
 
-.landing .course-info .course-icons i.fa-clock + p {
-  display: inline-block ;
+.landing-lab1 .course-info .course-icons i.fa-clock+p {
+  display: inline-block !important;
 }
 
-.landing .course-info .course-icons .time {
-  padding-left: 10px ;
+.landing-lab1 .course-info .course-icons .time {
+  padding-left: 10px !important;
 }
 
-.landing .options {
-  display: flex ;
-  justify-content: start ;
-  gap: 12px ;
-  align-items: center ;
-  flex-direction: row ;
+.landing-lab1 .options {
+  display: flex !important;
+  justify-content: start !important;
+  gap: 12px !important;
+  align-items: center !important;
+  flex-direction: row !important;
 }
 
-.landing .options .like {
-  display: flex ;
-  justify-content: center ;
-  align-items: center ;
-  width: fit-content ;
-  border: 1px solid rgb(62, 71, 90) ;
-  border-radius: 4px ;
+.landing-lab1 .options .like {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: fit-content !important;
+  border: 1px solid rgb(62, 71, 90) !important;
+  border-radius: 4px !important;
 }
 
-.landing .options p {
+.landing-lab1 .options p {
   padding-top: 15px;
   padding-left: 15px;
 }
-.landing .options button {
-  background-color: var(--alt-color) ;
-  border-color: rgb(62, 71, 90) ;
-  color: white ;
-  display: inline-flex ;
-  align-items: center ;
-  justify-content: center ;
-  border-radius: 5px ;
-  max-width: 100% ;
-  cursor: pointer ;
-  font-size: 16px ;
-  gap: 6px ;
-  height: 36px ;
-  padding: 9px 16px ;
-  pointer-events: initial ;
-  border-width: 1px ;
-  border-style: solid ;
-  transition: var(--main-transition) ;
+
+.landing-lab1 .options button {
+  background-color: var(--alt-color) !important;
+  border-color: rgb(62, 71, 90) !important;
+  color: white !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 5px !important;
+  max-width: 100% !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+  gap: 6px !important;
+  height: 36px !important;
+  padding: 9px 16px !important;
+  pointer-events: initial !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  transition: var(--main-transition) !important;
 }
 
-.landing .options button:hover {
-  background-color: white ;
-  color: var(--alt-color) ;
+.landing-lab1 .options button:hover {
+  background-color: white !important;
+  color: var(--alt-color) !important;
 }
 
-.landing .options .like button {
-  border-radius: 4px 0px 0px 4px ;
-  border: none ;
+.landing-lab1 .options .like button {
+  border-radius: 4px 0px 0px 4px !important;
+  border: none !important;
 }
 
-.landing .options .like button:first-of-type {
-  border-right: 1px solid rgb(62, 71, 90) ;
+.landing-lab1 .options .like button:first-of-type {
+  border-right: 1px solid rgb(62, 71, 90) !important;
 }
 
 /* End Landing */
 /* Start Course Content */
-.course .row {
-  display: flex ;
-  justify-content: space-between ;
-  align-items: flex-start ;
-  flex-direction: column ;
-  margin-bottom: 70px ;
+.course-lab1 .row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  flex-direction: column !important;
+  margin-bottom: 70px !important;
 }
 
-.course .course-section {
-  background-color: inherit ;
-  width: 100% ;
-  display: flex ;
-  align-items: center ;
+.course-lab1 .course-section {
+  background-color: inherit !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
-.course .course-section .arrow {
-  background-color: inherit ;
-  float: right ;
-  display: flex ;
-  align-items: center ;
-  justify-content: flex-end ;
+.course-lab1 .course-section .arrow {
+  background-color: inherit !important;
+  float: right !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
 }
 
-.faq-section {
-  margin-top: 75px ;
-  display: block ;
-  width: 100% ;
-}
-
-@media (max-width: 991px) {
-  .faq-section .section-text {
-    margin-left: 0 ;
-  }
-
-  .faq-section .image {
-    display: none ;
-  }
-}
-
-.faq-item {
-  margin-bottom: 30px ;
-}
-
-.faq-section .section-text .faq-header {
-  border-radius: 5px 5px 0 0 ;
-  color: white ;
-  background-color: #212c42 ;
-  font-size: 18px ;
-  overflow: hidden ;
-  cursor: pointer ;
-  line-height: 20px ;
-  padding: 10px 25px ;
-  font-weight: lighter ;
-  position: relative ;
-  width: 100% ;
-  margin-top: 20px ;
+.faq-section-lab1 {
+  margin-top: 75px !important;
+  display: block !important;
+  width: 100% !important;
 }
 
 @media (max-width: 991px) {
-  .faq-section .section-text .faq-header {
-    font-size: 16px ;
+  .faq-section-lab1 .section-text-lab1 {
+    margin-left: 0 !important;
+  }
+
+  .faq-section-lab1 .image {
+    display: none !important;
   }
 }
 
-.faq-section .section-text .faq-header span {
-  color: red ;
-  margin-right: 40px ;
-  position: relative ;
+.faq-item-lab1 {
+  margin-bottom: 30px !important;
 }
 
-.faq-section .section-text .faq-header span::after {
-  content: "" ;
-  width: 10px ;
-  height: 10px ;
-  background-color: transparent ;
-  border: 1px solid #777 ;
-  border-radius: 50% ;
-  position: absolute ;
-  right: -45% ;
-  top: 50% ;
-  transform: translateY(-50%) ;
-}
-
-.faq-section .section-text .faq-body {
-  font-size: 18px ;
-  padding: 15px 25px ;
-  line-height: 1.9 ;
-  border-left: 4px solid red ;
-  box-shadow: 1px 2px rgb(0, 0, 0, 0.1) ;
-  border-radius: 0 0 5px 5px ;
-  background-color: white ;
-  color: rgb(21, 28, 43) ;
+.faq-section-lab1 .section-text-lab1 .faq-header-lab1 {
+  border-radius: 5px 5px 0 0 !important;
+  color: white !important;
+  background-color: #212c42 !important;
+  font-size: 18px !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  line-height: 20px !important;
+  padding: 10px 25px !important;
+  font-weight: lighter !important;
+  position: relative !important;
+  width: 100% !important;
+  margin-top: 20px !important;
 }
 
 @media (max-width: 991px) {
-  .faq-section .section-text .faq-body {
-    font-size: 14px ;
+  .faq-section-lab1 .section-text-lab1 .faq-header-lab1 {
+    font-size: 16px !important;
   }
 }
 
-.faq-section .section-text .faq-body img {
-  width: 25% ;
-  margin-left: auto ;
-  margin-right: auto ;
-  display: inherit ;
-  margin-bottom: 30px ;
+.faq-section-lab1 .section-text-lab1 .faq-header-lab1 span {
+  color: #a3ea2a !important;
+  margin-right: 40px !important;
+  position: relative !important;
 }
 
-.faq-section .section-text .faq-body ul li {
-  list-style: "- " ;
-  margin-bottom: 10px ;
-}
-.faq-section .section-text .faq-body ol li {
-  list-style: decimal ;
-  margin-bottom: 10px ;
-  font-size: 18px ;
-}
-.faq-section .section-text .faq-body ul li a {
-  color: #ff4747 ;
-  text-decoration: underline ;
-}
-
-.faq-section .section-text .faq-body ul li span {
-  color: blue ;
+.faq-section-lab1 .section-text-lab1 .faq-header-lab1 span::after {
+  content: "" !important;
+  width: 10px !important;
+  height: 10px !important;
+  background-color: transparent !important;
+  border: 1px solid #777 !important;
+  border-radius: 50% !important;
+  position: absolute !important;
+  right: -45% !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }
 
-.faq-section .section-text .faq-body li h2 {
-  color: #ff4747 ;
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 {
+  font-size: 18px !important;
+  padding: 15px 25px !important;
+  line-height: 1.9 !important;
+  border-left: 4px solid #a3ea2a !important;
+  box-shadow: 1px 2px rgb(0, 0, 0, 0.1) !important;
+  border-radius: 0 0 5px 5px !important;
+  background-color: white !important;
+  color: rgb(21, 28, 43) !important;
 }
 
-.faq-section .section-text .faq-body ul pre {
-  padding: 25px 20px ;
-  margin: 15px 0 ;
-  border-radius: 0 ;
-  border: none ;
-  background-color: #272822 ;
-  text-align: left ;
-  white-space: pre-wrap ;
-  word-wrap: break-word ;
+@media (max-width: 991px) {
+  .faq-section-lab1 .section-text-lab1 .faq-body-lab1 {
+    font-size: 14px !important;
+  }
 }
 
-.faq-section .section-text .faq-body ul pre code {
-  display: flex ;
-  align-items: start ;
-  flex-direction: column ;
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 img {
+  width: 25% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: inherit !important;
+  margin-bottom: 30px !important;
+}
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 img#img-full {
+  width: 75% !important;
 }
 
-.faq-section .section-text .faq-body ul pre span {
-  color: green ;
-  display: inline ;
-  white-space: normal ;
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 ul li {
+  list-style: "- " !important;
+  margin-bottom: 10px !important;
 }
 
-.faq-section .section-text .faq-body form {
-  margin-top: 30px ;
-  display: flex ;
-  justify-content: space-between ;
-  align-items: center ;
-  flex-direction: row ;
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 ol li {
+  list-style: decimal !important;
+  margin-bottom: 10px !important;
+  font-size: 18px !important;
 }
 
-.faq-section .section-text .faq-body form input {
-  flex: 3 1 0% ;
-  padding: 7px 12px ;
-  width: 100% ;
-  height: auto ;
-  font-size: 16px ;
-  color: rgb(28, 37, 56) ;
-  border-radius: 5px ;
-  background-color: white ;
-  outline: none ;
-  border: 0.1rem solid rgb(212, 216, 223) ;
-  margin-right: 20px ;
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 ul li a {
+  color: #a3ea2a !important;
+  text-decoration: underline !important;
 }
 
-.faq-section .section-text .faq-body form button {
-  display: inline-flex ;
-  align-items: center ;
-  justify-content: center ;
-  flex: 1 1 0% ;
-  cursor: pointer ;
-  gap: 6px ;
-  height: 36px ;
-  min-width: 300px ;
-  border-radius: 5px ;
-  max-width: 100% ;
-  font-size: 16px ;
-  padding: 7px 16px ;
-  text-decoration: none ;
-  pointer-events: initial ;
-  border-width: 1px ;
-  border-style: solid ;
-  background-color: transparent ;
-  color: rgb(21, 28, 43) ;
-  border-color: rgb(163, 234, 42) ;
-  transition: 0.2s ease-in-out ;
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 ul li span {
+  color: blue !important;
 }
-.faq-section
-  .section-text
-  .faq-body
-  form
-  button:hover:not(:disabled) {
-  background-color: rgb(163, 234, 42) ;
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 li h2 {
+  color: #a3ea2a !important;
+  font-size: 18px;
 }
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 ul pre {
+  padding: 25px 20px !important;
+  margin: 15px 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  background-color: #272822 !important;
+  text-align: left !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 ul pre code {
+  display: flex !important;
+  align-items: start !important;
+  flex-direction: column !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 ul pre span {
+  color: green !important;
+  display: inline !important;
+  white-space: normal !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 form {
+  margin-top: 30px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-direction: row !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 form input {
+  flex: 3 1 0% !important;
+  padding: 7px 12px !important;
+  width: 100% !important;
+  height: auto !important;
+  font-size: 16px !important;
+  color: rgb(28, 37, 56) !important;
+  border-radius: 5px !important;
+  background-color: white !important;
+  outline: none !important;
+  border: 0.1rem solid rgb(212, 216, 223) !important;
+  margin-right: 20px !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 form button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 1 0% !important;
+  cursor: pointer !important;
+  gap: 6px !important;
+  height: 36px !important;
+  min-width: 300px !important;
+  border-radius: 5px !important;
+  max-width: 100% !important;
+  font-size: 16px !important;
+  padding: 7px 16px !important;
+  text-decoration: none !important;
+  pointer-events: initial !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  background-color: transparent !important;
+  color: rgb(21, 28, 43) !important;
+  border-color: rgb(163, 234, 42) !important;
+  transition: 0.2s ease-in-out !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 form button:hover:not(:disabled) {
+  background-color: rgb(163, 234, 42) !important;
+}
+
 .go-to-section {
-  display: flex ;
-  justify-content: center ;
-  align-items: center ;
-  width: 100% ;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
 }
 
 .go-to {
-  margin-top: 50px ;
-  border-radius: 5px ;
-  max-width: 100% ;
-  font-size: 16px ;
-  padding: 7px 16px ;
-  background-color: transparent ;
-  color: rgb(21, 28, 43) ;
-  border: 1px solid rgb(163, 234, 42) ;
-  transition: var(--main-transition) ;
+  margin-top: 50px !important;
+  border-radius: 5px !important;
+  max-width: 100% !important;
+  font-size: 16px !important;
+  padding: 7px 16px !important;
+  background-color: transparent !important;
+  color: rgb(21, 28, 43) !important;
+  border: 1px solid rgb(163, 234, 42) !important;
+  transition: var(--main-transition) !important;
 }
+
 .go-to:hover {
-  background-color: rgb(163, 234, 42) ;
+  background-color: rgb(163, 234, 42) !important;
 }
+
 /* End Course Content */
+
+/*Table*/
+dt.wave-lab1.fadeInUp.faq-header-lab1 span {
+  color: #a3ea2a !important;
+}
+
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 dt.wave-lab1.fadeInUp.faq-header-lab1.m,
+#border-left,
+dd {
+  border-left: 4px solid #a3ea2a !important;
+}
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 3px solid #333;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+caption {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+thead th {
+  background-color: #79b01c;
+  color: white;
+  padding: 10px;
+  border: 2px solid #333;
+  text-align: center;
+}
+
+tbody td {
+  padding: 8px 10px;
+  border: 2px solid #333;
+  text-align: left;
+}
+
+tr {
+  transition: all 0.3s ease-in-out;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #a8e08e;
+}
+
+
+/* Extra Styles */
+.note {
+  color: #333;
+  background-color: #eee;
+  font-size: 18px;
+  margin: 20px 0;
+  border-left: 5px solid #a3ea2a;
+  padding: 5px;
+  font-style: italic;
+  line-height: 1.8;
+}
+.note #note-span {
+  color: white !important;
+  background-color: #333 !important;
+  padding: 2px 5px !important;
+  border-radius: 5px !important;
+}

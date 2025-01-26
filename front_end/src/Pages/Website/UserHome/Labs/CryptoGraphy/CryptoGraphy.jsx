@@ -145,7 +145,7 @@ export default function CryptoGraphy() {
                 <h4>Cryptography? </h4>
                 <p>Cryptography refers almost exclusively to encryption, the process of converting ordinary information (plaintext) into ciphertext. Decryption is the reverse, moving from unintelligible ciphertext to plaintext.</p>
                 <br></br>
-                <img src={exampleImage1} alt="Example" />
+                <img id="img-full" src={exampleImage1} alt="Example" />
                 <br></br>
                 <h4>The Role of Cryptography in Information Security</h4>
                 <p>Cryptography can be used to achieve several goals of information security, including confidentiality, integrity, and authentication. Integrity:</p>
@@ -167,7 +167,7 @@ export default function CryptoGraphy() {
                 <p>Steganography is the art and science of embedding secret messages in a cover message in such a way that, no one apart from the sender and intended recipient, suspects the existence of the message.</p>
                 <p>The diagram below represents a basic steganographic model. </p>
                 <br></br>
-                <img src={exampleImage2} alt="Example" />
+                <img id="img-full" src={exampleImage2} alt="Example" />
                 <br></br>
                 <h4>How does Steganography differ from Cryptography?</h4>
                 <p>Both of them have almost the same aim which is to protect a third-party message or information. They do, however, use a completely different mechanism to protect the information.</p>
