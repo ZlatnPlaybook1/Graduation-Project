@@ -7,10 +7,9 @@ import Header from "../../Header/Header";
 import image from "../../assets/img/Obfuscation/course_image.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
-import exampleImage1 from "../../assets/img/Obfuscation/1.png";
-import exampleImage2 from "../../assets/img/Obfuscation/2.png";
-import exampleImage3 from "../../assets/img/Obfuscation/3.png";
-import exampleImage4 from "../../assets/img/Obfuscation/4.png";
+import exampleImage1 from "../../assets/img/Cryptography/1.png";
+import exampleImage2 from "../../assets/img/Cryptography/2.png";
+
 
 
 
@@ -49,18 +48,18 @@ export default function CryptoGraphy() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing">
+      <div className="landing-lab1">
         <div className="banner">
           {/* <img src={background} alt="bacground" /> */}
         </div>
-        <div className="container">
+        <div className="container-lab1">
           <div className="breadcrumb">
             <ul>
               <li>
                 <Link to="">Home</Link>
               </li>
               <li>
-                <Link to="">Obfuscation</Link>
+                <Link to="">CryptoGraphy</Link>
               </li>
               {/* <li>
                 <span className="active-breadcrumb">
@@ -72,9 +71,11 @@ export default function CryptoGraphy() {
           <div className="course-info">
             <img src={image} alt="logo" />
             <div className="course-text">
-              <h1>Obfuscation</h1>
+              <h1>CryptoGraphy</h1>
               <p>
-              Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments.
+                Master the basics of CryptoGraphy, a powerful technique for
+                securing code and protecting intellectual property in
+                cybersecurity environments.
               </p>
               <div className="course-icons">
                 <div className="diff">
@@ -110,110 +111,116 @@ export default function CryptoGraphy() {
       </div>
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course">
+      <div className="course-lab1">
         <div className="container" ref={faqSectionRef}>
           <div className="row">
-            <div className="faq-section">
-              <dl className="section-text">
+            <div className="faq-section-lab1">
+              <dl className="section-text-lab1">
                 {/* Single FAQ Area  */}
                 <dt className="wave fadeInUp faq-header">
-                  <span>step 1</span> Introduction</dt>
+                  <span>step 1</span> Introduction to Cryptography</dt>
                 <dd className="fadeInUp faq-body">
-                  <h1>Welcome to  Obfuscation</h1>
-                  
+                  <h1>Welcome to  Introduction to Cryptography</h1>
+                  <br></br>
                   <h2>What will you learn?</h2>
                   <ol>
-                    <li>What are Obfuscation & Deobfuscation?</li>
-                    <li>Why do we use Obfuscation?</li>
-                    <li>Javascript Obfuscation </li>
-                    <li>JS Deobfuscation Tools</li>
+                    <li>What is Cryptography?</li>
+                    <li>The Role of Cryptography in Information Security </li>
+                    <li> What is Steganography?</li>
+                    <li>How does Steganography differ from Cryptography?</li>
+                    <li>Steganography Techniques</li>
+                    <li>Best Tools to Perform Steganography</li>
                   </ol>
                 </dd>
 
 
 
                 <dt className="wave fadeInUp faq-header">
-                  <span> step 2</span> What are Obfuscation & Deobfuscation ?</dt>
+                  <span> step 2</span> What is Cryptography?</dt>
                   <dd className="fadeInUp faq-body">
                 <p><br></br></p>
-                <h1>What are Obfuscation & Deobfuscation?</h1>
-                <h4>Obfuscation </h4>
-                <p>The process of modifying the script to convert it to a difficult, harder-to-understand format, but will return the same result. There are several obfuscation methods hence that there are many tools for it.</p>
-                <br></br>
-                <h4>Deobfuscation </h4>
-                <p>It is the reverse process of obfuscation, as it rewrites the script again from a very difficult to read to an understandable one. This can be done with many tools.</p>
+                <h1>What is Cryptography?</h1>
+                <h4>Cryptography? </h4>
+                <p>Cryptography refers almost exclusively to encryption, the process of converting ordinary information (plaintext) into ciphertext. Decryption is the reverse, moving from unintelligible ciphertext to plaintext.</p>
                 <br></br>
                 <img src={exampleImage1} alt="Example" />
-                <h2>Why do we use Obfuscation?</h2>
                 <br></br>
-                <p>There are many reasons why you may use obfuscation, here are some of them:</p>
-                <ol>
-                    <li>Prevent others from stealing their code </li>
-                    <li>Avoid attackers understanding the script functionalities and abusing it.</li>
-                    <li>Bypassing WAFs and security detection systems from filtering or detecting your payloads. </li>
-                  </ol>
-                <br></br>
-                <h2>Common Techniques of Obfuscation</h2>
-                <br></br>
-                
-                <h5>1 . Renaming Variables and Functions:</h5>
-                    <p>Changing the names of variables, functions, and classes to meaningless or random strings. For example, a variable name like totalAmount could be obfuscated to something like a1b2c3.</p>
-                <h5>2 . Control Flow Obfuscation:</h5>
-                <p>Modifying the flow of the program, such as adding redundant code paths, loops, or operations that don’t affect the final outcome, but make it harder to follow the logical flow of the code.</p>
-                <h5>3 . String Encryption:</h5>
-                <p>Encrypting or encoding strings within the code (e.g., URLs, keys, or messages) to prevent attackers from easily extracting meaningful data by reading the source code.</p>
-                <h5>4 . Code Insertion (Dead Code):</h5>
-                <p>Adding unnecessary or irrelevant code that doesn’t affect the program's functionality but serves to confuse anyone trying to analyze the code. This might include extra variables or operations that don't change the result.</p>
-                <h5>5 . Flattening:</h5>
-                <p>Transforming the code structure to remove loops or functions and make the program’s behavior appear as one large block of code, making it more difficult to follow.</p>
+                <h4>The Role of Cryptography in Information Security</h4>
+                <p>Cryptography can be used to achieve several goals of information security, including confidentiality, integrity, and authentication. Integrity:</p>
+                <p>Cryptography can also be used to ensure the integrity (or accuracy) of information through the use of hashing algorithms and message digests.</p>
+                <p>Confidentiality : only targeted people would be able to receive data </p>
+                <p>Integrity : we should keep data safe without modification (storage or transmission)</p>
+                <p>Authentication : we able to decide who is the current user.</p>
+                <br></br>   
             </dd> 
 
 
 
 
             <dt className="wave fadeInUp faq-header">
-                  <span> step 3</span>Javascript Obfuscation </dt>
+                  <span> step 3</span> What is Steganography? </dt>
                   <dd className="fadeInUp faq-body">
                 <br></br>
-                <h1>Javascript Obfuscation </h1>
-                <p>There are several methods in JS obfuscation, one of them is to remove spaces, this method is called code minify, usually developers use this method as it reduces script file size.</p>
+                <h1>What is Steganography?</h1>
+                <p>Steganography is the art and science of embedding secret messages in a cover message in such a way that, no one apart from the sender and intended recipient, suspects the existence of the message.</p>
+                <p>The diagram below represents a basic steganographic model. </p>
+                <br></br>
                 <img src={exampleImage2} alt="Example" />
                 <br></br>
-                <h3>JS Obfuscation Tools </h3>
+                <h4>How does Steganography differ from Cryptography?</h4>
+                <p>Both of them have almost the same aim which is to protect a third-party message or information. They do, however, use a completely different mechanism to protect the information.</p>
+                <p>Cryptography changes the ciphertext information which can not be understood without a decryption key. And if someone intercepted this encrypted message they could easily see that some sort of encryption had been applied. </p>
+                <p>Steganography, on the other hand, does not alter the information format, so it conceals the message's existence.</p>
                 <br></br>
-                <h4>JSF</h4>
-                <p>By this method, you can rewrite any JS script with just six characters []()!+</p>
-                <p>You can try it online from this link:<a href="http://www.jsfuck.com">JSFuck</a></p>
-                <img src={exampleImage3} alt="Example" />
-                <br></br>
-                <h4>Packer Obfuscation</h4>
-                <p>In this one, all script text and symbols will be stored in a list or dictionary and will be restored and rebuilt again during the execution process.</p>
-                <p>You can try it online from this link:<a href="https://www.cleancss.com/javascript-obfuscate/index.php">Packer Obfuscation</a></p>
-                <img src={exampleImage4} alt="Example" />
-                <br></br>
-                <h4>JS deobfuscation Tools</h4>
-                <p>Instead of downloading and using deobfuscation tools on your machine, you can use them online.</p>
-                <br></br>
-                <h3>Here are some examples:</h3>
+                <h4>Steganography Techniques</h4>
                 <ol>
-                    <li><a href="https://mindedsecurity.github.io/jstillery/">JStillery :</a>This tool performs advanced JS deobfuscation via partial evaluation.</li>
-                    <li><a href="http://deobfuscatejavascript.com/">deobfuscate javascript </a></li>
-                    <li><a href="https://beautifier.io/">Beautifier.io</a></li>
-                    
-                  </ol>
-
-
+                    <li>Image Steganography</li>
+                    <li>Audio Steganography</li>
+                </ol>
+                <br></br>
+                <h4>Image Steganography</h4>
+                <p>Hiding the data is known as image steganography, by taking the cover object as the background.</p>
+                <br></br>
+                <p>In digital steganography, images are widely used as cover sources, because the digital representation of an image contains a huge number of bits. There are several ways of hiding the data within an image. </p>
+                <br></br>
+                <h4>Popular approaches involve:</h4>
+                <ol>
+                    <li>Least Significant Bit Insertion</li>
+                    <li>Masking and Filtering</li>
+                    <li>Redundant Pattern Encoding</li>
+                    <li>Encrypt and Scatter</li>
+                </ol>
+                <br></br>
+                <h3>Audio Steganography</h3>
+                <p>In audio steganography, the secret message is embedded into an audio signal which alters the binary sequence of the corresponding audio file. </p>
+                <p>Hiding secret messages in digital sound is a much more difficult process when compared to others, such as Image Steganography. </p>
+                <br></br>
+                <h4>Different methods of audio steganography include:</h4>
+                <ol>
+                    <li>Least Significant Bit Encoding</li>
+                    <li>Parity Encoding</li>
+                    <li>Phase Coding</li>
+                    <li>Spread Spectrum</li>
+                </ol>
+                <br></br>
+                <h4>Best Tools to Perform Steganography</h4>
+                <p>There are many software available that offer steganography.  Some offer normal steganography, but a few offer encryption before hiding the data. </p>
+                <br></br>
+                <h4>These are the steganography tools that are available for free:</h4>
+                <p>Stegsolve : Interactively transforms images, and views color schemes separately</p>
+                <p>SonicVisualiser Visualizing audio files in a waveform, display spectrograms</p>
+                <p>DeepSound Audio stego tool that was used in Mr. Robot series. Windows tool but could be run in wine.</p>
+                <p>Steghide tool to encrypt and hide data.</p>
+                <br></br>
                 </dd> 
-            
-            
-            
+
               
                 {/* 
             # main slider
 
-            <dt className="wave fadeInUp faq-header">
-                  <span> step 2</span> What are Obfuscation & Deobfuscation ?</dt>
-                  <dd className="fadeInUp faq-body">
+            <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span> Topic 2</span> What are Obfuscation & Deobfuscation ?</dt>
+                  <dd className="fadeInUp faq-body-lab1" id="border-left">
                 <p><br></br></p>
 
 

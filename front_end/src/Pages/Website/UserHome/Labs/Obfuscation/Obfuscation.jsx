@@ -49,11 +49,11 @@ export default function Obfuscation() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing">
+      <div className="landing-lab1">
         <div className="banner">
           {/* <img src={background} alt="bacground" /> */}
         </div>
-        <div className="container">
+        <div className="container-lab1">
           <div className="breadcrumb">
             <ul>
               <li>
@@ -110,15 +110,15 @@ export default function Obfuscation() {
       </div>
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course">
+      <div className="course-lab1">
         <div className="container" ref={faqSectionRef}>
           <div className="row">
-            <div className="faq-section">
-              <dl className="section-text">
+            <div className="faq-section-lab1">
+              <dl className="section-text-lab1">
                 {/* Single FAQ Area  */}
-                <dt className="wave fadeInUp faq-header">
-                  <span>step 1</span> Introduction</dt>
-                <dd className="fadeInUp faq-body">
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span>Topic 1</span> Introduction</dt>
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <h1>Welcome to  Obfuscation</h1>
                   
                   <h2>What will you learn?</h2>
@@ -132,9 +132,9 @@ export default function Obfuscation() {
 
 
 
-                <dt className="wave fadeInUp faq-header">
-                  <span> step 2</span> What are Obfuscation & Deobfuscation ?</dt>
-                  <dd className="fadeInUp faq-body">
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span>Topic 2</span> What are Obfuscation & Deobfuscation ?</dt>
+                  <dd className="fadeInUp faq-body-lab1" id="border-left">
                 <p><br></br></p>
                 <h1>What are Obfuscation & Deobfuscation?</h1>
                 <h4>Obfuscation </h4>
@@ -171,9 +171,9 @@ export default function Obfuscation() {
 
 
 
-            <dt className="wave fadeInUp faq-header">
-                  <span> step 3</span>Javascript Obfuscation </dt>
-                  <dd className="fadeInUp faq-body">
+            <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span> Topic 3</span>Javascript Obfuscation </dt>
+                  <dd className="fadeInUp faq-body-lab1" id="border-left">
                 <br></br>
                 <h1>Javascript Obfuscation </h1>
                 <p>There are several methods in JS obfuscation, one of them is to remove spaces, this method is called code minify, usually developers use this method as it reduces script file size.</p>
@@ -211,9 +211,9 @@ export default function Obfuscation() {
                 {/* 
             # main slider
 
-            <dt className="wave fadeInUp faq-header">
-                  <span> step 2</span> What are Obfuscation & Deobfuscation ?</dt>
-                  <dd className="fadeInUp faq-body">
+            <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span> Topic 2</span> What are Obfuscation & Deobfuscation ?</dt>
+                  <dd className="fadeInUp faq-body-lab1" id="border-left">
                 <p><br></br></p>
 
 

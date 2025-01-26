@@ -61,11 +61,11 @@ export default function Bash() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing">
+      <div className="landing-lab1">
         <div className="banner">
           <img src={background} alt="bacground" />
         </div>
-        <div className="container">
+        <div className="container-lab1">
           <div className="breadcrumb">
             <ul>
               <li>
@@ -124,16 +124,16 @@ export default function Bash() {
       </div>
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course">
+      <div className="course-lab1">
         <div className="container" ref={faqSectionRef}>
           <div className="row">
-            <div className="faq-section">
-              <dl className="section-text">
+            <div className="faq-section-lab1">
+              <dl className="section-text-lab1">
                 {/* Single FAQ Area  */}
-                <dt className="wave fadeInUp faq-header">
-                  <span>Lesson 1</span> Introduction
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span>Topic 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <h1>Welcome to the introductory bash scripting room!</h1>
                   <img src={exampleImage18} alt="Example" />
                   <h2>What is bash?</h2>
@@ -141,9 +141,9 @@ export default function Bash() {
                     Bash is a scripting language that runs within the terminal
                     on most Linux distros, as well as MacOS. Shell scripts are a
                     sequence of bash commands within a file, combined together
-                    to achieve more complex Lessons than simple one-liner and
+                    to achieve more complex Topics than simple one-liner and
                     are especially useful when it comes to automating sysadmin
-                    Lessons such as backups.
+                    Topics such as backups.
                   </p>
                   <p>
                     This is a few things among many that you will learn in this
@@ -157,10 +157,10 @@ export default function Bash() {
                     <li>Conditionals</li>
                   </ol>
                 </dd>
-                <dt className="wave fadeInUp faq-header">
-                  <span>Lesson 2</span> Our first simple bash scripts
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span>Topic 2</span> Our first simple bash scripts
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body-lab1">
                   <h1>
                     Ok now that we have had a brief introduction to what bash is
                     and what it is used for let's jump right into some examples!
@@ -217,10 +217,10 @@ export default function Bash() {
                   </Link>
                   </div> */}
                 </dd>
-                <dt className="wave fadeInUp faq-header">
-                  <span>Lesson 3</span> Variables
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span>Topic 3</span> Variables
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <h1>
                     Now we are moving onto variables,in bash these are quite
                     simple and we create them
@@ -383,10 +383,10 @@ export default function Bash() {
                     </Link>
                   </div>
                 </dd>
-                <dt className="wave fadeInUp faq-header">
-                  <span>Lesson 4</span> Parameters
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span>Topic 4</span> Parameters
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <h1>
                     We will now look at one of the main features of bash and
                     that's using parameters.
@@ -450,10 +450,10 @@ export default function Bash() {
                     </Link>
                   </div>
                 </dd>
-                <dt className="wave fadeInUp faq-header">
-                  <span>Lesson 5</span> Arrays
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span>Topic 5</span> Arrays
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <h1>Arrays</h1>
                   <p>
                     For this module i suggest you follow along in a standard
@@ -560,10 +560,10 @@ export default function Bash() {
                     </Link>
                   </div>
                 </dd>
-                <dt className="wave fadeInUp faq-header">
-                  <span>Lesson 6</span> Conditionals
+                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                  <span>Topic 6</span> Conditionals
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                   <img src={exampleImage13} alt="Example" />
                   <p>
                     When we talk about conditionals it means that a certain
@@ -728,7 +728,7 @@ export default function Bash() {
                   <p>
                     Now let's create another script where we will use 2
                     conditions simultaneously and coming back to a concept we
-                    learnt in the first lesson.
+                    learnt in the first Topic.
                   </p>
                   <p>Let's begin.</p>
                   <p>
@@ -800,7 +800,7 @@ export default function Bash() {
                     text into the file.
                   </p>
                   <p>
-                    To finish off our little project from the previous Lesson.
+                    To finish off our little project from the previous Topic.
                     You can build on your script using an if/else statement.
                     Test to see if the age is under 18, if it is then echo out
                     their name with "You are not eligible for work" or something
@@ -823,8 +823,8 @@ export default function Bash() {
                 {/* 
             # main slider
 
-            <dt className="wave fadeInUp faq-header"><span>Lesson 3</span> Variables </dt>
-                <dd className="fadeInUp faq-body">
+            <dt className="wave-lab1 fadeInUp faq-header-lab1"><span>Topic 3</span> Variables </dt>
+                <dd className="fadeInUp faq-body-lab1" id="border-left">
                 <p><br></br></p>
 
 
