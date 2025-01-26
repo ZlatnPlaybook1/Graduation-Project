@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../Header/Header";
-import "./SQLInjection_lab.css";
+import ".//Sql_Injection.css";
 import labImg from "../../assets/img/SQL_Injection/lab.png";
 
 import { Link } from "react-router-dom";

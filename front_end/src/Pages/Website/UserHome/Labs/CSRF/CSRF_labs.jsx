@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../Header/Header";
-import "./CSRF_labs.css";
+import "./CSRF.css";
 import labImg from "../../assets/img/CSRF/lab1.jpeg";
 
 import { Link } from "react-router-dom";
@@ -10,13 +10,13 @@ export default function CSRF_labs() {
     <>
       <Header />
       {/* Start Landing */}
-      <div className="landing-CSRF">
-        <div className="container-CSRF">
-          <div className="course-info-CSRF">
-            <div className="course-text-CSRF">
+      <div className="landing">
+        <div className="container">
+          <div className="course-info">
+            <div className="course-text">
               <h1>Practice</h1>
-              <p className="brief-CSRF">
-                <i className="fa-solid fa-bullseye lab-CSRF"></i>
+              <p className="brief">
+                <i className="fa-solid fa-bullseye lab"></i>
                 Reinforce what you're learning
               </p>
               <p>
@@ -24,12 +24,12 @@ export default function CSRF_labs() {
                 challenges.
               </p>
             </div>
-            <div className="course-icon-CSRF">
-              <div className="border-CSRF">
-                <div className="content-CSRF">
-                  <i className="fas fa-book-open lab-CSRF"></i>
+            <div className="course-icon">
+              <div className="border">
+                <div className="content">
+                  <i className="fas fa-book-open lab"></i>
                   <p>Practice</p>
-                  <i className="fas fa-bullseye lab-CSRF"></i>
+                  <i className="fas fa-bullseye lab"></i>
                 </div>
               </div>
             </div>
@@ -39,17 +39,17 @@ export default function CSRF_labs() {
       {/* End Landing */}
 
       {/* Start Course */}
-      <div className="course-CSRF">
-        <div className="container-CSRF">
+      <div className="course">
+        <div className="container">
           <h2>Cross-Site Request Forgery (CSRF)</h2>
-          <p className="section-p-CSRF">Test Your Hacking Skills</p>
-          <div className="row-CSRF">
+          <p className="section-p">Test Your Hacking Skills</p>
+          <div className="row">
             {/* Lab1 */}
-            <Link to="/CSRF/CSRF_labs/first_lab" className="course-card-CSRF">
-              <div className="course-image-CSRF">
+            <Link to="/CSRF/CSRF_labs/first_lab" className="course-card">
+              <div className="course-image">
                 <img src={labImg} alt="Lab 1 Image" />
               </div>
-              <div className="course-text-CSRF">
+              <div className="course-text">
                 <h3>Exploiting CSRF Vulnerability for Login Bypass</h3>
                 <p>
                   Explore how attackers can bypass login mechanisms using CSRF
@@ -63,18 +63,18 @@ export default function CSRF_labs() {
                   malicious actions, like deleting user accounts.
                 </p>
               </div>
-              <div className="easy-CSRF">
-                <i className="fa-solid fa-signal lab-CSRF"></i>
+              <div className="easy">
+                <i className="fa-solid fa-signal lab"></i>
                 <p>Easy</p>
               </div>
             </Link>
 
             {/* Lab2 */}
-            <Link to="/CSRF/CSRF_labs/second_lab" className="course-card-CSRF">
-              <div className="course-image-CSRF">
+            <Link to="/CSRF/CSRF_labs/second_lab" className="course-card">
+              <div className="course-image">
                 <img src={labImg} alt="Lab 2 Image" />
               </div>
-              <div className="course-text-CSRF">
+              <div className="course-text">
                 <h3>CSRF Exploiting SQL Injection via WHERE Clause</h3>
                 <p>
                   Learn how attackers can exploit poorly implemented SQL queries
@@ -87,32 +87,32 @@ export default function CSRF_labs() {
                   mechanisms to prevent unauthorized data access.
                 </p>
               </div>
-              <div className="easy-CSRF">
-                <i className="fa-solid fa-signal lab-CSRF"></i>
+              <div className="easy">
+                <i className="fa-solid fa-signal lab"></i>
                 <p>Easy</p>
               </div>
             </Link>
 
             {/* Lab3 */}
-            <Link to="/CSRF/CSRF_labs/third_lab" className="course-card-CSRF">
-              <div className="course-image-CSRF">
+            <Link to="/CSRF/CSRF_labs/third_lab" className="course-card">
+              <div className="course-image">
                 <img src={labImg} alt="Lab 3 Image" />
               </div>
-              <div className="course-text-CSRF">
+              <div className="course-text">
                 <h3>Preventing CSRF Attacks on Sensitive Actions</h3>
                 <p>
                   Investigate how CSRF attacks can target authenticated users to
                   perform malicious actions. In this lab, you will:
                   <br />- Analyze the injection of malicious forms that exploit
                   CSRF vulnerabilities.
-                  <br />- Implement anti-CSRF tokens to prevent unauthorized
-                  requests from being executed.
+                  <br />- Implement anti tokens to prevent unauthorized requests
+                  from being executed.
                   <br />- Apply the SameSite cookie attribute for additional
                   protection against cross-site request forgery.
                 </p>
               </div>
-              <div className="easy-CSRF">
-                <i className="fa-solid fa-signal lab-CSRF"></i>
+              <div className="easy">
+                <i className="fa-solid fa-signal lab"></i>
                 <p>Easy</p>
               </div>
             </Link>

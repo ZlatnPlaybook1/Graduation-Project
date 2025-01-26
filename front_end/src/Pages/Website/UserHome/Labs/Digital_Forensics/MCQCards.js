@@ -1,19 +1,3 @@
-const BlockchainImage = require("../../assets/img/DigitalForensics/BlockchainandCryptocurrency.jpg");
-const ComputerImage = require("../../assets/img/DigitalForensics/Computer.jpg");
-const CloudImage = require("../../assets/img/DigitalForensics/Cloud.jpg");
-const DatabaseImage = require("../../assets/img/DigitalForensics/Database.jpg");
-const DataRecoveryImage = require("../../assets/img/DigitalForensics/DataRecovery.jpg");
-const DroneImage = require("../../assets/img/DigitalForensics/Drone.jpg");
-const EmailImage = require("../../assets/img/DigitalForensics/Email.jpg");
-const GamingImage = require("../../assets/img/DigitalForensics/Gaming.jpg");
-const IoTImage = require("../../assets/img/DigitalForensics/IoT.jpg");
-const MalwareImage = require("../../assets/img/DigitalForensics/Malware.jpg");
-const MobileImage = require("../../assets/img/DigitalForensics/Mobile.jpg");
-const MultimediaImage = require("../../assets/img/DigitalForensics/Multimedia.jpg");
-const NetworkImage = require("../../assets/img/DigitalForensics/Network.jpg");
-const SocialMediaImage = require("../../assets/img/DigitalForensics/SocialMedia.jpg");
-const VehicleImage = require("../../assets/img/DigitalForensics/Vehicle.jpg");
-
 const MCQCards = [
   {
     id: 1,
