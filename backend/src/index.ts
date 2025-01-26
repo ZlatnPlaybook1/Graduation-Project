@@ -23,6 +23,7 @@ import lab3IDORSRouter from "./labs/IDORS/lab3/lab3.router";
 import userRouter from "./labs/AC-Vuln/Lab1/user.router";
 import lab1BrokenAuthRouter from "./labs/brokenAuth/lab1/lab1.router";
 import lab2BrokenAuthRouter from "./labs/brokenAuth/lab2/lab2.router";
+import lab3BrokenAuthRouter from "./labs/brokenAuth/lab3/lab3.router";
 const app = express();
 app.use("/uploads", express.static("uploads"));
 
@@ -54,6 +55,7 @@ app.use("/api", lab3IDORSRouter);
 app.use("/api", userRouter);
 app.use("/api", lab1BrokenAuthRouter);
 app.use("/api", lab2BrokenAuthRouter);
+app.use("/api", lab3BrokenAuthRouter);
 
 dotenv.config();
 
