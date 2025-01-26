@@ -10,13 +10,13 @@ export default function Digital_Forensics_labs() {
     <>
       <Header />
       {/* Start Landing */}
-      <div className="landing-ac-vuln">
-        <div className="container-ac-vuln">
-          <div className="course-info-ac-vuln">
-            <div className="course-text-ac-vuln">
+      <div className="landing">
+        <div className="container">
+          <div className="course-info">
+            <div className="course-text">
               <h1>Practice</h1>
-              <p className="brief-ac-vuln">
-                <i className="fa-solid fa-bullseye lab-ac-vuln"></i>
+              <p className="brief">
+                <i className="fa-solid fa-bullseye lab"></i>
                 Reinforce what you're learning
               </p>
               <p>
@@ -24,12 +24,12 @@ export default function Digital_Forensics_labs() {
                 challenges.
               </p>
             </div>
-            <div className="course-icon-ac-vuln">
-              <div className="border-ac-vuln">
-                <div className="content-ac-vuln">
-                  <i className="fas fa-book-open lab-ac-vuln"></i>
+            <div className="course-icon">
+              <div className="border">
+                <div className="content">
+                  <i className="fas fa-book-open lab"></i>
                   <p>Practice</p>
-                  <i className="fas fa-bullseye lab-ac-vuln"></i>
+                  <i className="fas fa-bullseye lab"></i>
                 </div>
               </div>
             </div>
@@ -39,49 +39,46 @@ export default function Digital_Forensics_labs() {
       {/* End Landing */}
 
       {/* Start Course */}
-      <div className="course-ac-vuln">
-        <div className="container-ac-vuln">
+      <div className="course">
+        <div className="container">
           <h2>Digital Forensics</h2>
-          <p className="section-p-ac-vuln">Test Your Hacking Skills</p>
-          <div className="row-ac-vuln">
+          <p className="section-p">Test Your Hacking Skills</p>
+          <div className="row">
             {/* lab1 */}
             <Link
               to="/Digital_Forensics/Digital_Forensics_labs/lab1"
-              className="course-card-ac-vuln"
+              className="course-card"
             >
-              <div className="course-image-ac-vuln">
+              <div className="course-image">
                 <img src={labImg} alt="" />
               </div>
-              <div className="course-text-ac-vuln">
+              <div className="course-text">
                 <h3>MCQ Question Review</h3>
                 <p>
                   These are multiple choice questions that are designed to be a
                   review for the exam.
                 </p>
               </div>
-              <div className="easy-ac-vuln">
-                <i className="fa-solid fa-signal lab-ac-vuln"></i>
+              <div className="easy">
+                <i className="fa-solid fa-signal lab"></i>
                 <p>Easy</p>
               </div>
             </Link>
 
             {mcqData.map((mcq) => (
-              <Link to={mcq.link} className="course-card-ac-vuln" key={mcq.id}>
-                <div className="course-image-ac-vuln">
+              <Link to={mcq.link} className="course-card" key={mcq.id}>
+                <div className="course-image">
                   <img
                     src={mcq.image}
                     alt={mcq.title}
-                    style={{
-                      height: "70%",
-                    }}
                   />
                 </div>
-                <div className="course-text-ac-vuln">
+                <div className="course-text">
                   <h3>{mcq.title}</h3>
                   <p>{mcq.description}</p>
                 </div>
-                <div className="easy-ac-vuln">
-                  <i className="fa-solid fa-signal lab-ac-vuln"></i>
+                <div className="easy">
+                  <i className="fa-solid fa-signal lab"></i>
                   <p>{mcq.difficulty}</p>
                 </div>
               </Link>

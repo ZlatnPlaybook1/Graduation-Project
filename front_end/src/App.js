@@ -187,6 +187,8 @@ import BrokenAuthenticationLab from "./Pages/Website/UserHome/Labs/Broken_Auth/B
 import AuthLab1 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab1.jsx";
 import AuthLab2 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab2.jsx";
 import WordsList from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/WordsList.js";
+import AuthLab3 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab3.jsx";
+import Products from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/products.jsx";
 
 function App() {
   return (
@@ -575,6 +577,14 @@ function App() {
             path="/broken-auth/Broken_Authentication_Lab/lab2"
             element={<AuthLab2 />}
           />
+          <Route
+            path="/broken-auth/Broken_Authentication_Lab/lab3"
+            element={<AuthLab3 />}
+          />
+          <Route
+            path="/broken-auth/Broken_Authentication_Lab/lab3/products"
+            element={<Products />}
+          />
           {/* End Broken Authentication */}
           {/* Start Cookies */}
           <Route path="/cookies" element={<Cookies />} />
@@ -649,10 +659,7 @@ function App() {
           {/* End CryptoGraphy */}
           {/* Start WireShark */}
           <Route path="/wireshark" element={<WireShark />} />
-          <Route
-            path="/wireshark/wireshark_lab"
-            element={<WIRESHARK_LAB />}
-          />
+          <Route path="/wireshark/wireshark_lab" element={<WIRESHARK_LAB />} />
           {/* End WireShark */}
           {/* Start FileInclusion */}
           <Route path="/fileinclusion" element={<FileInclusion />} />
@@ -663,10 +670,7 @@ function App() {
           {/* End FileInclusion */}
           {/* Start SSTI */}
           <Route path="/SSTI" element={<SSTI />} />
-          <Route
-            path="/SSTI/SSTI_lab"
-            element={<SSTI_LAB />}
-          />
+          <Route path="/SSTI/SSTI_lab" element={<SSTI_LAB />} />
           {/* End SSTI */}
           {/* Start CaptchaBypass */}
           <Route path="/captchabypass" element={<CaptchaBypass />} />

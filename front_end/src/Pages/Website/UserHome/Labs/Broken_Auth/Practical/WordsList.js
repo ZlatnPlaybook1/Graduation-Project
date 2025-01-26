@@ -22,7 +22,7 @@ export default function WordsList() {
     Compute, Compass, Compute, Compare, Declare, Deliver, Disease, Dispose,
     Culture, Curious, Decline, Defense, Cyberlab, Destroy, Created, Digital, Display,
     Density, Diamond, Ability, Anybody, Antique, Among, Analyze, Acquire,
-    Arrange, Appeals, Blanket, Benefit, Balance, Bottles, Captain, Capture,
+    Arrange, Appeals, Blanket, Benefit ,lifehack, Balance, Bottles, Captain, Capture,
     Classic, Declare, Correct, Defense, Diamond, Climate, Decline, Compute,
     Contact, Created, Density, Dignity, Dispose, Digital, Believe, Abandon,
     Combine, Declare, Courage, Culture, Develop 
