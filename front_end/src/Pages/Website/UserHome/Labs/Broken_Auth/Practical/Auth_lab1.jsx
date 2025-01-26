@@ -28,8 +28,8 @@ export default function Auth_lab1() {
 
       const data = await response.json();
 
-      if (data.message === "successful") {
-        setMessage("Login successful!");
+      if (data.message === "success") {
+        setMessage("success!");
       } else {
         setMessage("Login failed. Please check your credentials.");
       }
@@ -80,9 +80,17 @@ export default function Auth_lab1() {
               Submit
             </button>
           </form>
-          {message && <p className="lab1-response-message">{message}</p>}
 
-          {/* Add the required text below the submit button */}
+          {message && (
+            <p
+              className={`lab1-response-message ${
+                message === "success!" ? "success" : "error"
+              }`}
+            >
+              {message}
+            </p>
+          )}
+
           <div className="lab1-credentials-info">
             <p>
               <strong>Username:</strong> admin
@@ -92,7 +100,6 @@ export default function Auth_lab1() {
             </p>
           </div>
 
-          {/* Link to the WordsList Page */}
           <Link to="/words-list" className="lab1-words-link">
             Click here to view the words list
           </Link>

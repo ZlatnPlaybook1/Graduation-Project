@@ -49,7 +49,7 @@ export default function BrokenAuthenticationLab() {
                 <img src={Auth_Photo} alt="Lab Cover" />
               </div>
               <div className="course-text-XSS">
-                <h3>Brute Force</h3>
+                <h3>Brute Force 1</h3>
                 <p className="modern-p-XSS">Find the password of the admin</p>
                 <ul className="circled-order-XSS">
                   <li>Cyber Security Basics</li>
@@ -66,6 +66,32 @@ export default function BrokenAuthenticationLab() {
             {/* lab2 */}
             <Link
               to="/broken-auth/Broken_Authentication_Lab/lab2"
+              className="course-card-XSS"
+            >
+              <div className="course-image-XSS">
+                <img src={Auth_Photo} alt="Lab Cover" />
+              </div>
+              <div className="course-text-XSS">
+                <h3>Brute Force </h3>
+                <p className="modern-p-XSS">
+                  Developers forgot to add exit function when redirecting. Good
+                  luck!
+                </p>
+                <ul className="circled-order-XSS">
+                  <li>Cyber Security Basics</li>
+                  <li>Networking Basics and Weaknesses</li>
+                  <li>The Web And Common Attacks</li>
+                  <li>Learn to Use The Linux OS</li>
+                </ul>
+              </div>
+              <div className="easy-XSS">
+                <i className="fa-solid fa-signal lab-XSS"></i>
+                <p>Easy</p>
+              </div>
+            </Link>
+            {/* lab3 */}
+            <Link
+              to="/broken-auth/Broken_Authentication_Lab/lab3"
               className="course-card-XSS"
             >
               <div className="course-image-XSS">

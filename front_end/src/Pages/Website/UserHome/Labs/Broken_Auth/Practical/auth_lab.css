@@ -111,3 +111,36 @@
 .lab1-credentials-info strong {
   color: #000;
 }
+.lab1-response-message {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.lab1-response-message.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  box-shadow: 0px 4px 8px rgba(0, 128, 0, 0.2);
+}
+
+.lab1-response-message.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  box-shadow: 0px 4px 8px rgba(255, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

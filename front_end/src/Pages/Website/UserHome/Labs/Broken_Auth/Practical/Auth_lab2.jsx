@@ -14,7 +14,7 @@ export default function Auth_lab2() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://127.0.0.1:8080/api/brokenAuthlab1", {
+      const response = await fetch("http://127.0.0.1:8080/api/brokenAuthlab2", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,8 +28,8 @@ export default function Auth_lab2() {
 
       const data = await response.json();
 
-      if (data.message === "successful") {
-        setMessage("Login successful!");
+      if (data.message === "success") {
+        setMessage("success!");
       } else {
         setMessage("Login failed. Please check your credentials.");
       }
@@ -80,7 +80,16 @@ export default function Auth_lab2() {
               Submit
             </button>
           </form>
-          {message && <p className="lab1-response-message">{message}</p>}
+
+          {message && (
+            <p
+              className={`lab1-response-message ${
+                message === "success!" ? "success" : "error"
+              }`}
+            >
+              {message}
+            </p>
+          )}
 
           {/* Link to the WordsList Page */}
           <Link to="/words-list" className="lab1-words-link">
