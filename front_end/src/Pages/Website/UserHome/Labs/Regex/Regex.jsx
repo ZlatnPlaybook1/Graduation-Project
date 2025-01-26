@@ -1,111 +1,35 @@
-import React, { useEffect, useRef } from "react";
-import $ from "jquery";
+import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import "./Regex.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
-import { Link, useNavigate } from "react-router-dom";
-
+import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function Regex() {
-  const faqSectionRef = useRef(null);
-  const navigate = useNavigate();
-  const handleGoToLab = () => {
-    navigate("/Regex/Regex_labs");
-  };
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
+  const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <div className="landing-lab1">
-        <div className="banner">
-          <img src={background} alt="" />
-        </div>
-        <div className="container-lab1">
-          <div className="breadcrumb">
-            <ul>
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="">Regular Expressions</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="course-info">
-            <img src={imagecourse} alt="" />
-            <div className="course-text">
-              <h1>Regular Expressions</h1>
-              <p>
-                Learn how attackers leverage regular expressions (regex) for
+      <LandingLab
+        background={background}
+        imagecourse={imagecourse}
+        courseTitle="Regular Expressions"
+        courseDescription="Learn how attackers leverage regular expressions (regex) for
                 pattern matching in malicious scripts, data exfiltration, and
                 crafting payloads. Explore how security professionals use regex
                 to identify vulnerabilities, analyze logs, detect threats, and
                 filter malicious inputs. Master techniques to create robust
                 regex patterns to safeguard applications from injection attacks
-                and unauthorized access.
-              </p>
-              <div className="course-icons">
-                <div className="diff">
-                  <div className="easy">
-                    <i className="fa-solid fa-signal"></i>
-                    <p> Easy</p>
-                  </div>
-                </div>
-                <div className="duration">
-                  <i className="fa-solid fa-clock"></i>
-                  <p className="time">20 min</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="options">
-            <button>
-              <i className="far fa-bookmark"></i>
-              <p>Save Room</p>
-            </button>
-            <div className="like">
-              <button>
-                <i className="fas fa-thumbs-up"></i>
-                <p></p>
-              </button>
-              <button>
-                <i className="fas fa-thumbs-down"></i>
-                <p></p>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+                and unauthorized access."
+        difficulty="Intermediate"
+        duration="30 min"
+        onSaveRoom={() => console.log("Room Saved!")}
+        onLike={() => console.log("Liked!")}
+        onDislike={() => console.log("Disliked!")}
+      />
       {/* End Landing */}
       {/* Start Course */}
       <div className="course-lab1">
@@ -323,7 +247,10 @@ export default function Regex() {
               </dl>
             </div>
             <div className="go-to-section">
-              <button onClick={handleGoToLab} className="go-to">
+              <button
+                onClick={() => handleGoToLab("/Regex/Regex_labs")}
+                className="go-to"
+              >
                 Go To Labs
               </button>
             </div>

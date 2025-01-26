@@ -4,9 +4,8 @@ import Footer from "../../Footer/Footer";
 import "./CSRF.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
-import { Link } from "react-router-dom";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-
+import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function CSRF() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -14,64 +13,21 @@ export default function CSRF() {
     <>
       <Header />
       {/* Start Landing */}
-      <div className="landing-lab1">
-        <div className="banner">
-          <img src={background} alt="" />
-        </div>
-        <div className="container-lab1">
-          <div className="breadcrumb">
-            <ul>
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="">Cross-Site Request Forgery (CSRF)</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="course-info">
-            <img src={imagecourse} alt="" />
-            <div className="course-text">
-              <h1>Cross-Site Request Forgery (CSRF)</h1>
-              <p>
-                Discover how attackers exploit CSRF vulnerabilities to perform
+      <LandingLab
+        background={background}
+        imagecourse={imagecourse}
+        courseTitle="Cross-Site Request Forgery (CSRF)"
+        courseDescription="Discover how attackers exploit CSRF vulnerabilities to perform
                 unauthorized actions on behalf of authenticated users without
                 their consent. Learn the strategies to detect, mitigate, and
                 safeguard web applications against such attacks, ensuring robust
-                protection for your users.
-              </p>
-              <div className="course-icons">
-                <div className="diff">
-                  <div className="easy">
-                    <i className="fa-solid fa-signal"></i>
-                    <p> Easy</p>
-                  </div>
-                </div>
-                <div className="duration">
-                  <i className="fa-solid fa-clock"></i>
-                  <p className="time">20 min</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="options">
-            <button>
-              <i className="far fa-bookmark"></i>
-              <p>Save Room</p>
-            </button>
-            <div className="like">
-              <button>
-                <i className="fas fa-thumbs-up"></i>
-                <p></p>
-              </button>
-              <button>
-                <i className="fas fa-thumbs-down"></i>
-                <p></p>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+                protection for your users."
+        difficulty="Intermediate"
+        duration="30 min"
+        onSaveRoom={() => console.log("Room Saved!")}
+        onLike={() => console.log("Liked!")}
+        onDislike={() => console.log("Disliked!")}
+      />
       {/* End Landing */}
       {/* Start Course */}
       <div className="course-lab1">
