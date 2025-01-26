@@ -124,7 +124,8 @@ a {
 .landing-lab2 .course-info-lab2 .course-text-lab2 p {
   margin-top: 5px;
   font-size: 12px;
-  display: inline-block;padding-left: 10px;
+  display: inline-block;
+  padding-left: 10px;
 }
 
 .landing-lab2 .course-info-lab2 .course-icons-lab2 {
