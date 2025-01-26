@@ -1,5 +1,5 @@
 import {Router} from "express";
-import {login} from "./lab1.controller";
+import {login} from "./lab1/lab1.controller";
 
 let lab1 = Router();
 
