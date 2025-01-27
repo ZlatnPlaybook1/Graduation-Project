@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import "../Page_Styles/Content.css";
+import "../Page_Styles/Content_sec.css";
 import Header from "../../Header/Header";
 // import background from "../../assets/img/background.png";
 import image from "../../assets/img/Obfuscation/course_image.png";
@@ -75,11 +75,11 @@ export default function WireShark() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing-lab1">
+      <div className="landing-labd">
         <div className="banner">
           {/* <img src={background} alt="bacground" /> */}
         </div>
-        <div className="container-lab1">
+        <div className="container-labd">
           <div className="breadcrumb">
             <ul>
               <li>
@@ -138,15 +138,15 @@ export default function WireShark() {
       </div>
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-lab1">
+      <div className="course-labd">
         <div className="container" ref={faqSectionRef}>
           <div className="row">
-            <div className="faq-section-lab1">
-              <dl className="section-text-lab1">
+            <div className="faq-section-labd">
+              <dl className="section-text-labd">
                 {/* Single FAQ Area  */}
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>step 1</span> Introduction</dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                 <h2>Wireshark Fundamentals</h2>
                 <br></br>
                 <p>Wireshark, a tool used for creating and analyzing PCAPs (network packet capture files), is commonly used as one of the best packet analysis tools. In this room, we will look at the basics of installing Wireshark and using it to perform basic packet analysis and take a deep look at each common networking protocol.</p>
@@ -166,9 +166,9 @@ export default function WireShark() {
                 </dd>
 
 
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>step 2</span> Wireshark Overview</dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                 <h2>Wireshark Overview :</h2>
                 <br></br>
                 <p>The first screen that we are greeted by when opening Wireshark is the main page that will allow us to specify our interface(s) as well as apply filters to narrow down traffic that we are capturing.</p>
@@ -213,9 +213,9 @@ export default function WireShark() {
                 <br></br>
                 </dd>
 
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span> step 3</span>Collection Methods</dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                 <p>Before going into detail about how to analyze each protocol in a PCAP we need to understand the ways to gather a PCAP file. The basic steps to gather a PCAP in Wireshark itself can be simple however bringing into traffic can both the hard part as well as the fun part, this can include: taps, port mirroring, MAC floods, ARP Poisoning. This room will not cover how to set up these various strategies of live packet capturing and will only cover the basic theory of each.</p>
                 <br></br>
                 <h4>Collection Methods Overview :</h4>
@@ -245,9 +245,9 @@ export default function WireShark() {
                 <br></br>      
                 </dd>
 
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span> step 4</span> Filtering Captures </dt>
-                  <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <dd className="fadeInUp faq-body-labd" id="border-left">
                 <br></br>
                 <h3>Filtering Captures :</h3>
                 <p>Packet Filtering is a very important part of packet analysis especially when you have a very large number of packet sometimes even 100,000 plus. In task 3 capture filters were briefly covered however there is a second type of filter that is often thought of as more powerful and easier to use. This second method is known as display captures, you can apply display captures in two ways: through the analyze tab and at the filter bar at the top of the packet capture.</p>
@@ -270,32 +270,32 @@ export default function WireShark() {
                 <p>Filtering gives us a very large scope of what we can do with the packets, because of this there can be a lot of different filtering syntax options. We will only be covering the very basics in this room such as filtering by IP, protocol, etc. for more information on filtering check out the Wireshark filtering documentation.</p>
                 <p>There is a general syntax to the filter commands however they can be a little silly at times. The basic syntax of Wireshark filters is some kind of service or protocol like ip or tcp, followed by a dot then whatever is being filtered for example an address, MAC, SRC, protocol, etc.</p>
                 <p>Filtering by IP: The first filter we will look at is ip.addr, this filter will allow you to comb through the traffic and only see packets with a specific IP address contained in those packets, whether it be from the source or destination.</p>
-                <code>Syntax: ip.addr == &lt;IP Address&gt;</code>
+                <span>Syntax: ip.addr == &lt;IP Address&gt;</span>
                 <br></br>
                 <img id="img-full" src={exampleImage7} alt="Example" />
                 <br></br>
                 <p>This filter can be handy in practical applications, say when you are threat hunting, and have identified a potentially suspicious host with other tools, you can use Wireshark to further analyze the packets coming from that device.</p>
                 <p>Filtering by SRC and DST: The second filter will look at is two in one as well as a filter operator: ip.src and ip.dst. These filters allow us to filter the traffic by the source and destination from which the traffic is coming from.</p>
-                <p>Syntax: <code>ip.src == &lt;SRC IP Address&gt; and ip.dst == &lt;DST IP Address&gt;</code></p>
+                <p>Syntax: <span>ip.src == &lt;SRC IP Address&gt; and ip.dst == &lt;DST IP Address&gt;</span></p>
                 <br></br>
                 <img id="img-full" src={exampleImage8} alt="Example" />
                 <br></br>
                 <p>Similar to the first filter we can see that Wireshark is combing through the packets and filtering based on the source and destination we set.</p>
                 <p>Filtering by TCP Protocols: The last filter that we will be covering is the protocol filter, this allows you to set a port or protocol to filter by and can be handy when trying to keep track of an unusual protocol or port being used.</p>
                 <p>It is worthwhile to mention that Wireshark can filter by both port numbers as well as protocol names.</p>
-                <p>Syntax: <code>tcp.port eq &lt;Port #&gt; or &lt;Protocol Name&gt;</code></p>
+                <p>Syntax: <span>tcp.port eq &lt;Port #&gt; or &lt;Protocol Name&gt;</span></p>
                 <br></br>
                 <img id="img-full" src={exampleImage9} alt="Example" />
                 <br></br>
                 <p>Filtering by UDP Protocols: You can also filter by UDP ports by changing the prefix from tcp to udp</p>
-                <p>Syntax: <code>udp.port eq &lt;Port #&gt; or &lt;Protocol Name&gt;</code></p>
+                <p>Syntax: <span>udp.port eq &lt;Port #&gt; or &lt;Protocol Name&gt;</span></p>
                 <p>That is the end of filtering for this task however I recommend you play around with other filters and operators on your own. Once you're ready move on to step 5.</p>
                 </dd> 
 
 
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span> Step 6 </span> Packet Dissection</dt>
-                  <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <dd className="fadeInUp faq-body-labd" id="border-left">
                 <br></br>
                 <p>This section covers how Wireshark uses OSI layers to break down packets and how to use these layers for analysis. It is expected that you already have background knowledge of what the OSI model is and how it works.</p>
                 <br></br>
@@ -357,9 +357,9 @@ export default function WireShark() {
                 <br></br>
                 </dd>
 
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span> Step 7</span>ARP Traffic </dt>
-                  <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <dd className="fadeInUp faq-body-labd" id="border-left">
                 <br></br>
                 <h4>ARP Overview </h4>
                 <p>ARP or Address Resolution Protocol is a Layer 2 protocol that is used to connect IP Addresses with MAC Addresses. They will contain REQUEST messages and RESPONSE messages. To identify packets the message header will contain one of two operation codes:</p>
@@ -395,9 +395,9 @@ export default function WireShark() {
             </dd> 
 
 
-            <dt className="wave-lab1 fadeInUp faq-header-lab1">
+            <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>  Step 8 </span> ICMP & TCP  Traffic </dt>
-                  <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <dd className="fadeInUp faq-body-labd" id="border-left">
             <br></br>
             <h2>ICMP Overview</h2>
             <p>ICMP or Internet Control Message Protocol is used to analyze various nodes on a network. This is most commonly used with utilities like ping and traceroute. You should already be familiar with how ICMP works; however, if you need a refresher, read the IETF documentation.</p>
@@ -461,9 +461,9 @@ export default function WireShark() {
                 {/* 
             # main slider
 
-            <dt className="wave-lab1 fadeInUp faq-header-lab1">
+            <dt className="wave-labd fadeInUp faq-header-labd">
                   <span> Topic 2</span> What are Obfuscation & Deobfuscation ?</dt>
-                  <dd className="fadeInUp faq-body-lab1" id="border-left">
+                  <dd className="fadeInUp faq-body-labd" id="border-left">
                 <p><br></br></p>
 
 

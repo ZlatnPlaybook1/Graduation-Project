@@ -1,7 +1,8 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import "../Page_Styles/Content.css";
+// import "../Page_Styles/Content.css";
+import "../Page_Styles/Content_sec.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/background.png";
 import image from "../../assets/img/bash/full_colored_dark (1).png";
@@ -61,11 +62,11 @@ export default function Bash() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing-lab1">
+      <div className="landing-labd">
         <div className="banner">
           <img src={background} alt="bacground" />
         </div>
-        <div className="container-lab1">
+        <div className="container-labd">
           <div className="breadcrumb">
             <ul>
               <li>
@@ -124,16 +125,16 @@ export default function Bash() {
       </div>
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-lab1">
+      <div className="course-labd">
         <div className="container" ref={faqSectionRef}>
           <div className="row">
-            <div className="faq-section-lab1">
-              <dl className="section-text-lab1">
+            <div className="faq-section-labd">
+              <dl className="section-text-labd">
                 {/* Single FAQ Area  */}
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <h1>Welcome to the introductory bash scripting room!</h1>
                   <img src={exampleImage18} alt="Example" />
                   <h2>What is bash?</h2>
@@ -157,10 +158,10 @@ export default function Bash() {
                     <li>Conditionals</li>
                   </ol>
                 </dd>
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 2</span> Our first simple bash scripts
                 </dt>
-                <dd className="fadeInUp faq-body-lab1">
+                <dd className="fadeInUp faq-body-labd">
                   <h1>
                     Ok now that we have had a brief introduction to what bash is
                     and what it is used for let's jump right into some examples!
@@ -217,10 +218,10 @@ export default function Bash() {
                   </Link>
                   </div> */}
                 </dd>
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 3</span> Variables
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <h1>
                     Now we are moving onto variables,in bash these are quite
                     simple and we create them
@@ -259,7 +260,7 @@ export default function Bash() {
                         tabIndex="0"
                       >
                         <code className="language-shell-session">
-                          <span className="token command">
+                          <span className="token command-c">
                             <span
                               className="token info punctuation"
                             >
@@ -270,7 +271,7 @@ export default function Bash() {
                               </span>
                             </span>
                           </span>
-                          <span className="token command">
+                          <span className="token command-c">
                             <span
                               className="token info punctuation"
                             >
@@ -281,7 +282,7 @@ export default function Bash() {
                               </span>
                             </span>
                           </span>
-                          <span className="token command">
+                          <span className="token command-c">
                             <span
                               className="token info punctuation"
                             >
@@ -324,7 +325,7 @@ export default function Bash() {
                         tabIndex="0"
                       >
                         <code className="language-shell-session">
-                          <span className="token command">
+                          <span className="token command-c">
                             <span
                               className="token info punctuation"
                             >
@@ -383,10 +384,10 @@ export default function Bash() {
                     </Link>
                   </div>
                 </dd>
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 4</span> Parameters
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <h1>
                     We will now look at one of the main features of bash and
                     that's using parameters.
@@ -450,10 +451,10 @@ export default function Bash() {
                     </Link>
                   </div>
                 </dd>
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 5</span> Arrays
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <h1>Arrays</h1>
                   <p>
                     For this module i suggest you follow along in a standard
@@ -560,10 +561,10 @@ export default function Bash() {
                     </Link>
                   </div>
                 </dd>
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 6</span> Conditionals
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <img id="img-full" src={exampleImage13} alt="Example" />
                   <p>
                     When we talk about conditionals it means that a certain
@@ -672,7 +673,7 @@ export default function Bash() {
                         tabIndex="0"
                       >
                         <code className="language-shell-session">
-                          <span className="token command">
+                          <span className="token command-c">
                             <span
                               className="token info punctuation"
                             >
@@ -683,7 +684,7 @@ export default function Bash() {
                               </span>
                             </span>
                           </span>
-                          <span className="token command">
+                          <span className="token command-c-c">
                             <span
                               className="token info punctuation"
                             >
@@ -694,7 +695,7 @@ export default function Bash() {
                               </span>
                             </span>
                           </span>
-                          <span className="token command">
+                          <span className="token command-c">
                             <span
                               className="token info punctuation"
                             >
@@ -705,7 +706,7 @@ export default function Bash() {
                               </span>
                             </span>
                           </span>
-                          <span className="token command">
+                          <span className="token command-c">
                             <span
                               className="token info punctuation"
                             >
@@ -753,7 +754,7 @@ export default function Bash() {
                         tabIndex="0"
                       >
                         <code className="language-shell-session">
-                          <span className="token command">
+                          <span className="token command-c">
                             <span
                               className="token info punctuation"
                             >
@@ -764,7 +765,7 @@ export default function Bash() {
                               </span>
                             </span>
                           </span>
-                          <span className="token command">
+                          <span className="token command-c">
                             <span
                               className="token info punctuation"
                             >
@@ -775,7 +776,7 @@ export default function Bash() {
                               </span>
                             </span>
                           </span>
-                          <span className="token command">
+                          <span className="token command-c">
                             <span
                               className="token info punctuation"
                             >
@@ -823,8 +824,8 @@ export default function Bash() {
                 {/* 
             # main slider
 
-            <dt className="wave-lab1 fadeInUp faq-header-lab1"><span>Topic 3</span> Variables </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+            <dt className="wave-labd fadeInUp faq-header-labd"><span>Topic 3</span> Variables </dt>
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                 <p><br></br></p>
 
 

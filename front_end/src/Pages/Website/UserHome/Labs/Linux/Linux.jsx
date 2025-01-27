@@ -1,7 +1,8 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import "../Page_Styles/Content.css";
+// import "../Page_Styles/Content.css";
+import "../Page_Styles/Content_sec.css";
 import Header from "../../Header/Header";
 // import background from "../../assets/img/background.png";
 import image from "../../assets/img/linux/linux_logo.png";
@@ -43,11 +44,11 @@ export default function Linux() {
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing-lab1">
+      <div className="landing-labd">
         <div className="banner">
           {/* <img src={background} alt="bacground" /> */}
         </div>
-        <div className="container-lab1">
+        <div className="container-labd">
           <div className="breadcrumb">
             <ul>
               <li>
@@ -100,17 +101,17 @@ export default function Linux() {
       </div>
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-lab1">
+      <div className="course-labd">
         <div className="container" ref={faqSectionRef}>
           <div className="row">
             {/* <div className="container> */}
-            <div className="faq-section-lab1">
-              <dl className="section-text-lab1">
+            <div className="faq-section-labd">
+              <dl className="section-text-labd">
                 {/* Single FAQ Area  */}
-                <dt className="faq-header-lab1 wave-lab1 fadeInUp">
+                <dt className="faq-header-labd wave-labd fadeInUp">
                   <span>Topic 1</span>Running Your First few Commands
                 </dt>
-                <dd className="faq-body-lab1 fadeInUp" id="border-left">
+                <dd className="faq-body-labd fadeInUp" id="border-left">
                   <ul>
                     <li>
                       <p>
@@ -133,7 +134,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -197,7 +198,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -234,7 +235,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -287,10 +288,10 @@ export default function Linux() {
                     </button>
                   </form> */}
                 </dd>
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 2</span>Interacting With the Filesystem!
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       <p>
@@ -364,7 +365,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -379,7 +380,7 @@ export default function Linux() {
                                   <span className="function token"> ls</span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     'Important Files' 'My Documents' Notes
@@ -408,7 +409,8 @@ export default function Linux() {
                       <h2 className="note">
                         Pro tip: You can list the contents of a directory
                         without having to navigate to it by using ls and the
-                        name of the directory. I.e. <span id="note-span">ls Pictures</span>
+                        name of the directory. I.e.{" "}
+                        <span id="note-span">ls Pictures</span>
                       </h2>
                     </li>
                     <li>
@@ -432,7 +434,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -447,7 +449,7 @@ export default function Linux() {
                                   <span className="function token"> ls</span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     dog_picture1.jpg dog_picture2.jpg
@@ -499,7 +501,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -516,12 +518,12 @@ export default function Linux() {
                                   <span className="function token"> ls</span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">todo.txt</span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -539,7 +541,7 @@ export default function Linux() {
                                   <span className="token user">todo.txt</span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     Here's something important for me to do
@@ -573,7 +575,8 @@ export default function Linux() {
                         contents of a file within directories without having to
                         navigate to it by using cat and the name of the
                         directory. I.e. <br />
-                        <span id="note-span"
+                        <span
+                          id="note-span"
                           style={{ display: "inline-block", marginTop: "15px" }}
                         >
                           {" "}
@@ -620,7 +623,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -637,14 +640,14 @@ export default function Linux() {
                                   <span className="class-name token"> pwd</span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     /home/ubuntu/Documents
                                   </span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -744,10 +747,10 @@ export default function Linux() {
                     </button>
                   </form> */}
                 </dd>
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 3</span>Searching for Files
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       <p>
@@ -798,7 +801,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -813,14 +816,14 @@ export default function Linux() {
                                   <span className="function token"> ls</span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     Desktop Documents Pictures folder1
                                   </span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -872,7 +875,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -893,14 +896,14 @@ export default function Linux() {
                                   </span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     ./folder1/passwords.txt
                                   </span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -943,7 +946,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -962,21 +965,21 @@ export default function Linux() {
                                   <span className="token user">*.txt</span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     ./folder1/passwords.txt
                                   </span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     ./Documents/todo.txt
                                   </span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -1022,7 +1025,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -1041,14 +1044,14 @@ export default function Linux() {
                                   <span className="token user">access.log</span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     244 access.log
                                   </span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -1091,7 +1094,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -1110,7 +1113,7 @@ export default function Linux() {
                                   <span className="token user">access.log</span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     81.143.211.90 - - [25/Mar/2021:11:17 + 0000]
@@ -1119,7 +1122,7 @@ export default function Linux() {
                                   </span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -1170,10 +1173,10 @@ export default function Linux() {
                     </button>
                   </form> */}
                 </dd>
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 4</span>An Introduction to Shell Operators
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       <p>
@@ -1287,7 +1290,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -1324,7 +1327,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -1340,7 +1343,7 @@ export default function Linux() {
                                   <span className="token user">welcome</span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">hey</span>
                                 </span>
@@ -1385,7 +1388,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -1422,7 +1425,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-shell-session">
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
                                     CyberLabs@linux1
@@ -1438,12 +1441,12 @@ export default function Linux() {
                                   <span className="token user">welcome</span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">hey</span>
                                 </span>
                               </span>
-                              <span className="token command">
+                              <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">hello</span>
                                 </span>
