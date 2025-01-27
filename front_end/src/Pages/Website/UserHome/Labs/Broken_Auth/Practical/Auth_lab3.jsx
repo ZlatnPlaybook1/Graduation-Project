@@ -37,7 +37,7 @@ export default function Auth_lab3() {
       if (data.message === "success") {
         setMessage("success!");
         window.open(
-          "/broken-auth/Broken_Authentication_Lab/lab3/products",
+          "/broken-auth/Broken_Authentication_Lab/products",
           "_blank"
         );
       } else {

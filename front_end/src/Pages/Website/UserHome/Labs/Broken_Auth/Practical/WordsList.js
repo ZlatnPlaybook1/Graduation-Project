@@ -28,10 +28,19 @@ export default function WordsList() {
     Combine, Declare, Courage, Culture, Develop 
   `;
 
+  const wordArray = words
+    .split(",")
+    .map((word) => word.trim())
+    .filter((word) => word !== "");
+
   return (
     <div className="words-list-container">
       <h1>Words List</h1>
-      <p>{words}</p>
+      <div className="word-list">
+        {wordArray.map((word, index) => (
+          <p key={index}>{word}</p>
+        ))}
+      </div>
     </div>
   );
 }

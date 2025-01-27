@@ -577,7 +577,7 @@ function App() {
             element={<AuthLab3 />}
           />
           <Route
-            path="/broken-auth/Broken_Authentication_Lab/lab3/products"
+            path="/broken-auth/Broken_Authentication_Lab/products"
             element={<Products />}
           />
           {/* End Broken Authentication */}
