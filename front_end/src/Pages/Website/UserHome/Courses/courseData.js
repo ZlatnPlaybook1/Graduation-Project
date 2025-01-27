@@ -272,12 +272,13 @@ const courseData = [
     category: "Temporary Category",
     title: "wireshark",
     description:
-      "Before hacking something, you first need to understand the basics",
+      "Master the Fundamentals of Wireshark: A Powerful Tool for Cybersecurity and Code Protection",
     topics: [
-      "Cyber Security Basics",
-      "Networking Basics and Weaknesses",
-      "The Web And Common Attacks",
-      "Learn to Use The Linux OS",
+      "Wireshark Overview",
+      "Collection Methods",
+      "ARP Traffic",
+      "ICMP & TCP Traffic",
+      
     ],
     difficulty: "Medium",
     image: require("../assets/img/wireshark/card_image.png"),
