@@ -224,12 +224,12 @@ const courseData = [
     category: "Temporary Category",
     title: "Cryptography",
     description:
-      "This is a temporary placeholder topic to meet the required number of 30 topics.",
+      "Master the basics of CryptoGraphy, a powerful technique for securing code and protecting intellectual property in cybersecurity environments.",
     topics: [
-      "Placeholder Topic 1",
-      "Placeholder Topic 2",
-      "Placeholder Topic 3",
-      "Placeholder Topic 4",
+      "What is Cryptography?",
+      "What is Steganography?",
+      "How does Steganography differ from Cryptography?",
+      "Types of Encryption",
     ],
     difficulty: "Medium",
     image: require("../assets/img/Cryptography/card_image.png"),
