@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   display: flex;
   justify-content: center;
@@ -43,13 +43,10 @@ body {
 }
 
 .circle-img {
-  /* width: 80px;
-  height: 80px; */
   width: 100%;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
-  /* margin-bottom: 5px; */
   transition: all 0.5s ease;
 }
 
@@ -67,7 +64,6 @@ body {
   margin: 0;
 }
 
-/* Hover effect */
 .circle:hover {
   border-radius: 10px;
   transform: scale(1.2) translate(0, 0);
@@ -86,22 +82,22 @@ body {
   opacity: 0;
 }
 
-.card-details {
+.about-card-details {
   display: none;
   text-align: center;
   padding: 10px;
 }
 
-.circle:hover .card-details {
+.circle:hover .about-card-details {
   display: block;
 }
 
-.card-details h3 {
+.about-card-details h3 {
   font-size: 18px;
   margin: 10px 0 5px;
 }
 
-.card-details p {
+.about-card-details p {
   font-size: 14px;
   margin: 5px 0;
 }
@@ -123,14 +119,12 @@ body {
   color: maroon;
 }
 
-/* Smooth hover effect for all elements */
 .circle,
 .circle-img,
 .circle-name {
   transition: all 0.5s ease;
 }
 
-/* Positioning small circles */
 .circle-1 {
   top: 0;
   left: 50%;
@@ -171,4 +165,4 @@ body {
   bottom: 20%;
   left: 20%;
   transform: translate(-50%, 50%);
-}
+} */
