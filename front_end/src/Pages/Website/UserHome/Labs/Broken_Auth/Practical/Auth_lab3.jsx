@@ -13,7 +13,6 @@ export default function Auth_lab3() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check if both username and password are entered
     if (!username || !password) {
       setMessage("Username and Password are required.");
       return;
@@ -35,7 +34,7 @@ export default function Auth_lab3() {
       const data = await response.json();
 
       if (data.message === "success") {
-        setMessage("success!");
+        setMessage("Login successful!");
         window.open(
           "/broken-auth/Broken_Authentication_Lab/products",
           "_blank"
@@ -94,17 +93,19 @@ export default function Auth_lab3() {
           {message && (
             <p
               className={`lab1-response-message ${
-                message === "success!" ? "success" : "error"
+                message.includes("successful") ? "success" : "error"
               }`}
             >
               {message}
             </p>
           )}
-
-          {/* Link to the WordsList Page */}
-          <Link to="/words-list" className="lab1-words-link">
-            Click here to view the words list
-          </Link>
+        </div>
+        {/* Link visible in source code */}
+        <div
+          style={{ display: "none" }}
+          data-hidden-link="/broken-auth/Broken_Authentication_Lab/products"
+        >
+          Inspect the source code for a hint!
         </div>
       </div>
     </>
