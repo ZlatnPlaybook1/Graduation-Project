@@ -157,9 +157,9 @@ export default function CryptoGraphy() {
                 <h4>The Role of Cryptography in Information Security</h4>
                 <p>Cryptography can be used to achieve several goals of information security, including confidentiality, integrity, and authentication. Integrity:</p>
                 <p>Cryptography can also be used to ensure the integrity (or accuracy) of information through the use of hashing algorithms and message digests.</p>
-                <p>Confidentiality : only targeted people would be able to receive data </p>
-                <p>Integrity : we should keep data safe without modification (storage or transmission)</p>
-                <p>Authentication : we able to decide who is the current user.</p>
+                <p><strong>Confidentiality :</strong> only targeted people would be able to receive data </p>
+                <p><strong>Integrity  :</strong> we should keep data safe without modification (storage or transmission)</p>
+                <p><strong>Authentication  :</strong> we able to decide who is the current user.</p>
                 <br></br>   
             </dd> 
 
@@ -238,14 +238,14 @@ export default function CryptoGraphy() {
                 <img id="img-full" src={exampleImage4} alt="Example" />
                 <br></br>
                 <p>We have just introduced several new terms, and we need to learn them to understand any text about cryptography. The terms are listed below:</p>
-                <ul>
+                <ol>
                 <li><strong>Plaintext</strong> is the original, readable message or data before it’s encrypted. It can be a document, an image, a multimedia file, or any other binary data.</li>
                 <li><strong>Ciphertext</strong> is the scrambled, unreadable version of the message after encryption. Ideally, we cannot get any information about the original plaintext except its approximate size.</li>
                 <li><strong>Cipher</strong> is an algorithm or method to convert plaintext into ciphertext and back again. A cipher is usually developed by a mathematician.</li>
                 <li><strong>Key</strong> is a string of bits the cipher uses to encrypt or decrypt data. In general, the used cipher is public knowledge; however, the key must remain secret unless it is the public key in asymmetric encryption. We will visit asymmetric encryption in a later task.</li>
                 <li><strong>Encryption</strong> is the process of converting plaintext into ciphertext using a cipher and a key. Unlike the key, the choice of the cipher is disclosed.</li>
                 <li><strong>Decryption</strong> is the reverse process of encryption, converting ciphertext back into plaintext using a cipher and a key. Although the cipher would be public knowledge, recovering the plaintext without knowledge of the key should be impossible (infeasible).</li>
-                </ul>
+                </ol>
 
             </dd>
 
@@ -257,21 +257,21 @@ export default function CryptoGraphy() {
 
                 <p>Cryptography’s history is long and dates back to ancient Egypt in 1900 BCE. However, one of the simplest historical ciphers is the Caesar Cipher from the first century BCE. The idea is simple: shift each letter by a certain number to encrypt the message.</p>
                 <p>Consider the following example:</p>
-                <ul>
+                <ol>
                 <li>Plaintext: <code>cyber lab</code></li>
                 <li>Key: 3 (Assume it is a right shift of 3.)</li>
                 <li>Cipher: Caesar Cipher</li>
-                </ul>
+                </ol>
                 <p>We can easily figure out that c becomes f, y becomes b, b becomes e, and so on. As you noticed, once we reach Z, we start all over, as shown in the figure below. Consequently, we get the ciphertext of <code>fbehu ode</code>.</p>
                 <br></br>
                 <img id="img-full" src={exampleImage5} alt="Example" />
                 <br></br>
                 <p>To decrypt, we need the following information:</p>
-                <ul>
+                <ol>
                 <li>Ciphertext: <code>fbehu ode</code></li>
                 <li>Key: 3</li>
                 <li>Cipher: Caesar Cipher</li>
-                </ul>
+                </ol>
                 <br></br>
                 <img id="img-full" src={exampleImage6} alt="Example" />
                 <br></br>
@@ -281,11 +281,11 @@ export default function CryptoGraphy() {
                 <br></br>
 
                 <p>You would come across many more historical ciphers in movies and cryptography books. Examples include:</p>
-                <ul>
+                <ol>
                 <li>The Vigenère cipher from the 16th century</li>
                 <li>The Enigma machine from World War II</li>
                 <li>The one-time pad from the Cold War</li>
-                </ul>
+                </ol>
                 </dd> 
 
                 <dt className="wave-labd fadeInUp faq-header-labd">
@@ -303,13 +303,13 @@ export default function CryptoGraphy() {
                 <p>Consider the simple case where you created a password-protected document to share it with your colleague. You can easily email the encrypted document to your colleague, but most likely, you cannot email them the password. The reason is that anyone with access to their mailbox would access both the password-protected document and its password. Therefore, you need to think of a different way, i.e., channel, to share the password. Unless you think of a secure, accessible channel, one solution would be to meet in person and communicate the password to them.</p>
                 <p>Examples of symmetric encryption are <strong >DES</strong> (Data Encryption Standard), 3DES (Triple <strong >DES</strong>) and <strong >AES</strong> (Advanced Encryption Standard).</p>
                 <br></br>
-                <ul>
+                <ol>
                 <li><strong>DES</strong> was adopted as a standard in 1977 and uses a 56-bit key. With the advancement in computing power, in 1999, a <strong >DES</strong> key was successfully broken in less than 24 hours, motivating the shift to 3DES.</li>
                 <br></br>
                 <li><strong>3DES</strong> is DES applied three times; consequently, the key size is 168 bits, though the effective security is 112 bits. 3DES was more of an <strong >ad</strong>-hoc solution when <strong >DES</strong> was no longer considered secure. 3DES was deprecated in 2019 and should be replaced by <strong >AES</strong>; however, it may still be found in some legacy systems.</li>
                 <br></br>
                 <li><strong>AES</strong> was adopted as a standard in 2001. Its key size can be 128, 192, or 256 bits.</li>
-                </ul>
+                </ol>
                 <p>There are many more symmetric encryption ciphers used in various applications; however, they have not been adopted as standards.</p>
                 <br></br>
                 <h2>Asymmetric Encryption</h2>
@@ -325,11 +325,11 @@ export default function CryptoGraphy() {
                 <br></br>
                 <h2>Summary of New Terms :</h2>
                 <br></br>
-                <ul>
+                <ol>
                 <li><strong>Alice and Bob</strong> are fictional characters commonly used in cryptography examples to represent two parties trying to communicate securely.</li>
                 <li><strong>Symmetric encryption</strong> is a method in which the same key is used for both encryption and decryption. Consequently, this key must remain secure and never be disclosed to anyone except the intended party.</li>
                 <li><strong>Asymmetric encryption</strong> is a method that uses two different keys: a public key for encryption and a private key for decryption.</li>
-                </ul>
+                </ol>
 
 
             </dd> 
