@@ -121,4 +121,13 @@ model apiHackingLab {
   id       Int    @id @default(autoincrement())
   username String @unique
   password String
+  image   imageForApiHacking[]
+}
+
+model imageForApiHacking {
+  id        Int    @id @default(autoincrement())
+  name      String
+  path      String
+  userId    Int
+  user      apiHackingLab @relation(fields: [userId], references: [id])
 }

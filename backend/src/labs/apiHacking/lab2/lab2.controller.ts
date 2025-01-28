@@ -25,3 +25,34 @@ export const loginController = async (req: Request, res: Response) => {
         }
     });
 }
+
+export const  userImageById = async (req: Request, res: Response) => {
+    const userImage = await prisma.imageForApiHacking.findMany({
+        where: {
+            userId: req.body.userId
+        },
+    });
+    if (!userImage) {
+        return res.status(404).send("No image found");
+    }
+    return res.status(200).json({
+        message: "success",
+        data: userImage
+    });
+}
+
+export const  deleteUserImage = async (req: Request, res: Response) => {
+    const userImage = await prisma.imageForApiHacking.delete({
+        where: {
+            userId: req.body.userId,
+            id: req.body.id         // id of the image
+        },
+    });
+    if (!userImage) {
+        return res.status(404).send("No image found");
+    }
+    return res.status(200).json({
+        message: "success",
+        data: userImage
+    });
+}

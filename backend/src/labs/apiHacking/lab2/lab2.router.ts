@@ -1,9 +1,12 @@
 import {Router} from "express";
-import {loginController} from "./lab2.controller";
+import {deleteUserImage, loginController, userImageById} from "./lab2.controller";
 
 let lab2apiHacking = Router();
 
 lab2apiHacking.post("/ApiHackinglab2", loginController);
+
+lab2apiHacking.get("wallpapers/${userId}", userImageById);
+lab2apiHacking.delete("wallpapers/${userId}/${wallpaperId}", deleteUserImage);
 
 
 export default lab2apiHacking;
