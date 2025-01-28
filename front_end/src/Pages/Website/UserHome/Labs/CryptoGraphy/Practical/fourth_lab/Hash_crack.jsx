@@ -1,16 +1,18 @@
 import Footer from "../../../../Footer/Footer";
 import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
+import Header from "../../../../Header/Header";
 import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import "../../../Page_Styles/Practical_Flag_answers.css";
 import React, { useEffect, useState } from "react";
 
-export default function Power() {
+export default function Hash_Crack() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showFail, setShowFail] = useState(false);
-  const fileUrl = "/power_of_comand.rar";
-  const fileName = "power_of_comand.rar";
+  const fileUrl = "/CryptoGraphy/hash crack.rar";
+  const fileName = "Hash Crack.rar";
+
   useEffect(() => {
-    document.title = "Power of Command";
+    document.title = "Hash Crack";
     injectKeyframes();
   }, []);
 
@@ -34,10 +36,11 @@ export default function Power() {
   const checkAnswer = (e) => {
     e.preventDefault(); // Prevent form submission
     const answer = e.target.answer.value; // Get answer from input
-    if (answer === "FLAG{Grep_Are_Very_Useful}") {
+    if (answer === "1ab566b9fa5c0297295743e7c2a6ec27") {
       setShowSuccess(true);
       document.getElementById("check").disabled = true;
-      document.getElementById("check").innerHTML = '<i class="fa-solid fa-check"></i> Correct Answer';
+      document.getElementById("check").innerHTML =
+        '<i class="fa-solid fa-check"></i> Correct Answer';
       launchFireworks();
       setTimeout(() => {
         setShowSuccess(false);
@@ -76,49 +79,47 @@ export default function Power() {
   return (
     <>
       <div className="course-labcc">
-      <GoBack_Btn/>
-      <ShowHint_Btn/>
-      <div className="firework" id="firework"></div>
-        {showSuccess && (
-          <div className="message success">
-            Congratulations!
-          </div>
-        )}
-        {showFail && (
-          <div className="message fail">Wrong!</div>
-        )}
+        <GoBack_Btn />
+        <ShowHint_Btn title="" />
+        <div className="firework" id="firework"></div>
+        {showSuccess && <div className="message success">Congratulations!</div>}
+        {showFail && <div className="message fail">Wrong!</div>}
         <div className="container-labcc">
-            <div className="faq-section-labcc">
+          <div className="faq-section-labcc">
+            <div className="fileViewer">
+              <p id="lab-info">
+                A hacker left a cryptic hash behind after breaching the
+                company’s network. Can you crack it and uncover the password to
+                access the CEO’s secure vault?
+              </p>
+            </div>
             <div className="caution">
-                <p>Download This file and open it in your linux machine Linux</p>
+              <p>Download this file and open it on your Linux machine</p>
               <i className="fa-solid fa-triangle-exclamation"></i>
-              </div>
-              <div className="fileViewer">
-                <a href={fileUrl} download={fileName}>
-                  {/* <button onClick={download} className={styles.downloadButton}> */}
-                  <button className="downloadButton">
-                    <i className="fas fa-download"></i>
-                    {fileName}
-                  </button>
-                </a>
-              </div>
-              <div className="question-div">
-              <h1 className="question">
-              Check your Flag here:
-                </h1>
-                <form onSubmit={checkAnswer}>
-                  <input
-                    type="text"
-                    name="answer"
-                    placeholder="Flag Format: flag{**********}" 
-                  />
-                  <button type="submit" id="check">
-                    <i className="fa-regular fa-paper-plane"></i>Submit
-                  </button>
-                </form>
-              </div>
+            </div>
+            <div className="fileViewer info">
+              <a href={fileUrl} download={fileName}>
+                <button className="downloadButton">
+                  <i className="fas fa-download"></i>
+                  {fileName}
+                </button>
+              </a>
+            </div>
+            <div className="question-div">
+              <h1 className="question">Check your Flag here:</h1>
+              <form onSubmit={checkAnswer}>
+                <input
+                  type="text"
+                  name="answer"
+                  placeholder="Flag Format: flag{**********}"
+                />
+                <button type="submit" id="check">
+                  <i className="fa-regular fa-paper-plane"></i> Submit
+                </button>
+              </form>
             </div>
           </div>
+        </div>
       </div>
       <Footer />
     </>

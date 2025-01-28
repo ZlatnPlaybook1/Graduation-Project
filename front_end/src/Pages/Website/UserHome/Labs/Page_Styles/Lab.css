@@ -179,7 +179,7 @@ i {
   }
 }
 
-.landing .course-info .course-icon .border {
+.landing .course-info .course-icon .border-icon {
   transform: rotateZ(-45deg);
   width: 230px;
   height: 230px;

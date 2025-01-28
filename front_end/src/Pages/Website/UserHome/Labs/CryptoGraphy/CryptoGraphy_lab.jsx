@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import  "../Page_Styles/Lab.css";
+import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
-import image from "../../assets//img/Obfuscation/card_image.png";
+import image from "../../assets/img/Cryptography/card_image.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
@@ -57,7 +57,7 @@ export default function CryptoGraphy_lab() {
               </p>
             </div>
             <div className="course-icon">
-              <div className="border">
+              <div className="border-icon">
                 <div className="content">
                   <i className="fas fa-book-open"></i>
                   <p>Practice</p>
@@ -72,18 +72,81 @@ export default function CryptoGraphy_lab() {
       {/* Start Courses  */}
       <div className="course">
         <div className="container">
-          <h2>Obfuscation Lab</h2>
+          <h2>CryptoGraphy Lab</h2>
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             <Link
-              to="/Obfuscation/obfuscation_lab/login"
+              to="/cryptography/cryptography_lab/top-secret"
               className="course-card"
             >
               <div className="course-image">
                 <img src={image} alt="" />
               </div>
               <div className="course-text">
-                <h3>Legendary Process</h3>
+                <h3>Top Secret</h3>
+                <p>
+                  Master the basics of obfuscation, a powerful technique for
+                  securing code and protecting intellectual property in
+                  cybersecurity environments
+                </p>
+                <ul className="circled-order"></ul>
+              </div>
+              <div className="easy">
+                <i className="fa-solid fa-signal "></i>
+                <p>Easy</p>
+              </div>
+            </Link>
+            <Link
+              to="/cryptography/cryptography_lab/decode-the-iamge"
+              className="course-card"
+            >
+              <div className="course-image">
+                <img src={image} alt="" />
+              </div>
+              <div className="course-text">
+                <h3>Decode the Image</h3>
+                <p>
+                  Master the basics of obfuscation, a powerful technique for
+                  securing code and protecting intellectual property in
+                  cybersecurity environments
+                </p>
+                <ul className="circled-order"></ul>
+              </div>
+              <div className="easy">
+                <i className="fa-solid fa-signal "></i>
+                <p>Easy</p>
+              </div>
+            </Link>
+            <Link
+              to="/cryptography/cryptography_lab/corrupted"
+              className="course-card"
+            >
+              <div className="course-image">
+                <img src={image} alt="" />
+              </div>
+              <div className="course-text">
+                <h3>Corrupted</h3>
+                <p>
+                  Master the basics of obfuscation, a powerful technique for
+                  securing code and protecting intellectual property in
+                  cybersecurity environments
+                </p>
+                <ul className="circled-order"></ul>
+              </div>
+              <div className="easy">
+                <i className="fa-solid fa-signal "></i>
+                <p>Easy</p>
+              </div>
+            </Link>
+            <Link
+              to="/cryptography/cryptography_lab/hash-crack"
+              className="course-card"
+            >
+              <div className="course-image">
+                <img src={image} alt="" />
+              </div>
+              <div className="course-text">
+                <h3>Hash Crack</h3>
                 <p>
                   Master the basics of obfuscation, a powerful technique for
                   securing code and protecting intellectual property in

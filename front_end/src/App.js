@@ -142,6 +142,10 @@ import OBFUSCATION_LOGIN from "./Pages/Website/UserHome/Labs/Obfuscation/Practic
 // CryptoGraphy
 import CryptoGraphy from "./Pages/Website/UserHome/Labs/CryptoGraphy/CryptoGraphy.jsx";
 import CRYPTOGRAPHY_LAB from "./Pages/Website/UserHome/Labs/CryptoGraphy/CryptoGraphy_lab.jsx";
+import TOP_SECRET from "./Pages/Website/UserHome/Labs/CryptoGraphy/Practical/first_lab/Top_secret.jsx";
+import DECODE_IMAGE from "./Pages/Website/UserHome/Labs/CryptoGraphy/Practical/second_lab/Decode_image.jsx";
+import Corrupted from "./Pages/Website/UserHome/Labs/CryptoGraphy/Practical/third_lab/corrupted.jsx";
+import HASH_CRACK from "./Pages/Website/UserHome/Labs/CryptoGraphy/Practical/fourth_lab/Hash_crack.jsx";
 // End CryptoGraphy
 // WireShark
 import WireShark from "./Pages/Website/UserHome/Labs/WireShark/WireShark.jsx";
@@ -665,8 +669,19 @@ function App() {
           <Route path="/cryptography" element={<CryptoGraphy />} />
           <Route
             path="/cryptography/cryptography_lab"
-            element={<CRYPTOGRAPHY_LAB />}
-          />
+            element={<CRYPTOGRAPHY_LAB />}/>
+          <Route
+            path="/cryptography/cryptography_lab/top-secret"
+            element={<TOP_SECRET />}/>
+          <Route
+            path="/cryptography/cryptography_lab/decode-the-iamge"
+            element={<DECODE_IMAGE />}/>
+          <Route
+            path="/cryptography/cryptography_lab/corrupted"
+            element={<Corrupted />}/>
+          <Route
+            path="/cryptography/cryptography_lab/hash-crack"
+            element={<HASH_CRACK />}/>
           {/* End CryptoGraphy */}
           {/* Start WireShark */}
           <Route path="/wireshark" element={<WireShark />} />

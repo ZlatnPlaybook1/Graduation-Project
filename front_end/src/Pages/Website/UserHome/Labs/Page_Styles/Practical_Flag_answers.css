@@ -1,11 +1,11 @@
-.container {
+.container-labcc {
     margin-left: auto;
     margin-right: auto;
 }
 
 /* Extra small */
 @media (min-width: 0px) {
-    .container {
+    .container-labcc {
         max-width: 100%;
     }
 }
@@ -13,7 +13,7 @@
 
 /* small */
 @media (min-width: 576px) {
-    .container {
+    .container-labcc {
         max-width: 540px;
     }
 }
@@ -21,61 +21,62 @@
 
 /*  Medium */
 @media (min-width: 768px) {
-    .container {
+    .container-labcc {
         max-width: 750px;
     }
 }
 
 /* Large */
 @media (min-width: 992px) {
-    .container {
+    .container-labcc {
         max-width: 970px;
     }
 }
 
 /* X-Large */
 @media (min-width: 1200px) {
-    .container {
+    .container-labcc {
         max-width: 1170px;
     }
 }
 
 
-.course {
+.course-labcc {
     position: relative;
-    height: calc(100vh - (102px + 93px));
+    min-height: calc(100vh - (102px));
+    /* height: calc(100vh - (102px)); */
     padding-top: 50px;
 }
 
 /* Start Course Content */
-.course .row {
+/* .course .row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
     margin-bottom: 70px;
-}
+} */
 
 
-.course .course-section {
+.course-labcc .course-section {
     background-color: inherit;
     width: 100%;
     display: flex;
     align-items: center;
 }
 
-.faq-section {
+.faq-section-labcc {
     margin-top: 75px;
     display: block;
     width: 100%;
 }
 
 @media (max-width: 991px) {
-    .faq-section .section-text {
+    .faq-section-labcc .section-text {
         margin-left: 0;
     }
 
-    .faq-section .image {
+    .faq-section-labcc .image {
         display: none;
     }
 }
@@ -133,7 +134,7 @@
     margin-bottom: 30px;
 }
 
-.faq-section .section-text .faq-header {
+.faq-section-labcc .section-text .faq-header {
     border-radius: 5px 5px 0 0;
     color: white;
     background-color: #212c42;
@@ -149,18 +150,18 @@
 }
 
 @media (max-width: 991px) {
-    .faq-section .section-text .faq-header {
+    .faq-section-labcc .section-text .faq-header {
         font-size: 16px;
     }
 }
 
-.faq-section .section-text .faq-header span {
+.faq-section-labcc .section-text .faq-header span {
     color: var(--sec-main-color);
     margin-right: 40px;
     position: relative;
 }
 
-.faq-section .section-text .faq-header span::after {
+.faq-section-labcc .section-text .faq-header span::after {
     content: "";
     width: 10px;
     height: 10px;
@@ -173,7 +174,7 @@
     transform: translateY(-50%);
 }
 
-.faq-section .section-text .faq-body {
+.faq-section-labcc .section-text .faq-body {
     font-size: 18px;
     padding: 15px 25px;
     line-height: 1.9;
@@ -185,22 +186,22 @@
 }
 
 @media (max-width: 991px) {
-    .faq-section .section-text .faq-body {
+    .faq-section-labcc .section-text .faq-body {
         font-size: 14px;
     }
 }
 
-.faq-section a {
+.faq-section-labcc a {
     color: var(--sec-main-color);
     text-decoration: underline;
 }
 
-.faq-section p {
+.faq-section-labcc p {
     font-weight: 400;
     font-size: 16px;
 }
 
-.faq-section span:not([class]) {
+.faq-section-labcc span:not([class]) {
     color: #eee;
     background-color: rgb(33, 44, 66);
     padding: 4px 5px;
@@ -210,7 +211,7 @@
     font-size: 15px;
 }
 
-.faq-section h2 {
+.faq-section-labcc h2 {
     color: var(--sec-main-color);
     font-size: 20px;
 }
@@ -219,13 +220,13 @@
     margin: 50px 0;
 }
 
-.faq-section .question {
+.faq-section-labcc .question {
     padding-top: 20px;
     font-size: 16px;
     font-weight: 400;
 }
 
-.faq-section form {
+.faq-section-labcc form {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
@@ -233,7 +234,7 @@
     flex-direction: row;
 }
 
-.faq-section form input {
+.faq-section-labcc form input {
     flex: 3 1 0%;
     padding: 7px 12px;
     width: 100%;
@@ -247,7 +248,7 @@
     margin-right: 20px;
 }
 
-.faq-section form button {
+.faq-section-labcc form button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -270,7 +271,7 @@
     transition: 0.2s ease-in-out;
 }
 
-.faq-section form button:hover:not(:disabled) {
+.faq-section-labcc form button:hover:not(:disabled) {
     background-color: rgb(163, 234, 42);
 }
 
@@ -285,8 +286,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    margin-bottom: 30px;
+}
+.fileViewer .info {
+
 }
 
+#lab-info {
+    font-size: 24px;
+    font-weight: 400;
+    font-style: italic;
+}
 
 .downloadButton {
     background-color: var(--sec-main-color);
