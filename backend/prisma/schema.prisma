@@ -116,3 +116,9 @@ model ACUser {
   id    Int    @id @default(autoincrement())
   name  String
 }
+
+model apiHackingLab {
+  id       Int    @id @default(autoincrement())
+  username String @unique
+  password String
+}
