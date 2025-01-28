@@ -20,6 +20,7 @@ export default function Second_Lab() {
     }
 
     try {
+      // Request to the API
       const response = await fetch("http://127.0.0.1:8080/api/ApiHackinglab2", {
         method: "POST",
         headers: {
@@ -37,7 +38,7 @@ export default function Second_Lab() {
       if (data.message === "success") {
         setMessage("Login successful!");
 
-        const userId = Number(data.data.id); // Extract the user ID
+        const userId = Number(data.data.id);
 
         // Navigate based on user ID
         if (userId === 1) {
@@ -112,6 +113,11 @@ export default function Second_Lab() {
             </p>
           )}
         </div>
+      </div>
+
+      {/* Hidden div to inform about the data source */}
+      <div className="hidden-data-source" style={{ display: "none" }}>
+        <p> Read users json </p>
       </div>
     </>
   );

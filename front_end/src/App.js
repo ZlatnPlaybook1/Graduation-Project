@@ -191,6 +191,7 @@ import AuthLab2 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_l
 import WordsList from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/WordsList.js";
 import AuthLab3 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab3.jsx";
 import Products from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/products.jsx";
+import UsersPage from "./Pages/Website/UserHome/Labs/Api-Hacking/practical/second_lab/UsersPage.jsx";
 
 function App() {
   return (
@@ -447,6 +448,10 @@ function App() {
           <Route
             path="/Api_Hacking/Api_Hacking_labs/lab2"
             element={<API_HACKING_SECOND_LAB />}
+          />
+          <Route
+            path="/Api_Hacking/Api_Hacking_labs/lab2/users.json"
+            element={<UsersPage />}
           />
           <Route
             path="/Api_Hacking/Api_Hacking_labs/lab2/DashboardAdmin/:id"
