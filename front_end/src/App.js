@@ -13,6 +13,7 @@ import Writer from "./Pages/Dashboard/Writer/Writer.jsx";
 import Error404 from "./Pages/Auth/404.jsx";
 import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
 import SQL_INJECTION from "./Pages/Website/UserHome/Labs/Sql_Injection/Sql_Injection.jsx";
+import SQLInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/SQLInjection_labs.jsx";
 import LoginSqlInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/first_lab/LoginSqlInjection.jsx";
 import Welcome from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/first_lab/Welcome.jsx";
 import OUR_STORE from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/second_lab/Our_Store.jsx";
@@ -82,6 +83,9 @@ import API_HACKING from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking.j
 import API_HACKING_LABS from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking_labs.jsx";
 import API_HACKING_FIRST_LAB from "./Pages/Website/UserHome/Labs/Api-Hacking/practical/first_lab/First_Lab.jsx";
 import API_HACKING_SECOND_LAB from "./Pages/Website/UserHome/Labs/Api-Hacking/practical/second_lab/Second_Lab.jsx";
+import DashboardAdmin from "./Pages/Website/UserHome/Labs/Api-Hacking/practical/second_lab/DashboardUser/DashboardAdmin.jsx";
+import Dashboard1 from "./Pages/Website/UserHome/Labs/Api-Hacking/practical/second_lab/DashboardUser/Dashboard1.jsx";
+
 // End Api Hacking
 // Click Jacking
 import CLICK_JACKING from "./Pages/Website/UserHome/Labs/Click-Jacking/Click_Jacking.jsx";
@@ -162,7 +166,6 @@ import JWTATTACKS_LAB from "./Pages/Website/UserHome/Labs/JWTAttacks/JWTAttacks_
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
-import SQLInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/SQLInjection_labs.jsx";
 import Robots from "./Pages/Website/UserHome/Labs/XSS/Practical/Robots.jsx";
 import XSS_SEVEN from "./Pages/Website/UserHome/Labs/XSS/Practical/XSS_SEVEN.jsx";
 import PyramidsOfGiza from "./Pages/Website/UserHome/Labs/XSS/Practical/PyramidsOfGiza.jsx";
@@ -444,6 +447,14 @@ function App() {
           <Route
             path="/Api_Hacking/Api_Hacking_labs/lab2"
             element={<API_HACKING_SECOND_LAB />}
+          />
+          <Route
+            path="/Api_Hacking/Api_Hacking_labs/lab2/DashboardAdmin/:id"
+            element={<DashboardAdmin />}
+          />
+          <Route
+            path="/Api_Hacking/Api_Hacking_labs/lab2/DashboardUser/:id"
+            element={<Dashboard1 />}
           />
           {/* End Api Hacking */}
           {/* Click Jacking */}
