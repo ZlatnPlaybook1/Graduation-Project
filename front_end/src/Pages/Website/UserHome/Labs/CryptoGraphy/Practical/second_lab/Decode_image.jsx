@@ -36,7 +36,7 @@ export default function Decode_image() {
   const checkAnswer = (e) => {
     e.preventDefault(); // Prevent form submission
     const answer = e.target.answer.value; // Get answer from input
-    if (answer === "Y3liZXJfbGFiX3N0ZWc=") {
+    if (answer === "Flag{cyber_lab_steg_hunter}") {
       setShowSuccess(true);
       document.getElementById("check").disabled = true;
       document.getElementById("check").innerHTML =

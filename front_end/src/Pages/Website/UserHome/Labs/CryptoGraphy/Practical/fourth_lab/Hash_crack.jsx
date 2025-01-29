@@ -36,7 +36,7 @@ export default function Hash_Crack() {
   const checkAnswer = (e) => {
     e.preventDefault(); // Prevent form submission
     const answer = e.target.answer.value; // Get answer from input
-    if (answer === "1ab566b9fa5c0297295743e7c2a6ec27") {
+    if (answer === "Iamtheflag") {
       setShowSuccess(true);
       document.getElementById("check").disabled = true;
       document.getElementById("check").innerHTML =
@@ -80,7 +80,7 @@ export default function Hash_Crack() {
     <>
       <div className="course-labcc">
         <GoBack_Btn />
-        <ShowHint_Btn title="" />
+        <ShowHint_Btn hintText={" The answer is locked inside an MD5 hash , Maybe an MD5 cracker can help you break it? 💻🚀"} />
         <div className="firework" id="firework"></div>
         {showSuccess && <div className="message success">Congratulations!</div>}
         {showFail && <div className="message fail">Wrong!</div>}

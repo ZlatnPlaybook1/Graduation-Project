@@ -36,7 +36,7 @@ export default function Top_Secret() {
   const checkAnswer = (e) => {
     e.preventDefault(); // Prevent form submission
     const answer = e.target.answer.value; // Get answer from input
-    if (answer === "FLAG{cyber_lab :)}") {
+    if (answer === "FLAG(CYBER_LAB_SECRET_LAYER)") {
       setShowSuccess(true);
       document.getElementById("check").disabled = true;
       document.getElementById("check").innerHTML =
@@ -80,7 +80,7 @@ export default function Top_Secret() {
     <>
       <div className="course-labcc">
         <GoBack_Btn />
-        <ShowHint_Btn hintText={"Check the hex signature to verify if it's a PNG file. Use a hex editor to examine the first row for '89 50 4E 47'"}/>
+        <ShowHint_Btn hintText={"Check the hex signature to verify if it's a PNG file. Use a hex editor to examine the first row for '89 50 4E 47'. Once you extract the text, analyze it to determine the type of encryption used!"}/>
         <div className="firework" id="firework"></div>
         {showSuccess && <div className="message success">Congratulations!</div>}
         {showFail && <div className="message fail">Wrong!</div>}
