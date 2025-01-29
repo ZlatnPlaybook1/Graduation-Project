@@ -288,13 +288,12 @@
     flex-direction: row;
     margin-bottom: 30px;
 }
-.fileViewer .info {
 
-}
+.fileViewer .info {}
 
 #lab-info {
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 300;
     font-style: italic;
 }
 
