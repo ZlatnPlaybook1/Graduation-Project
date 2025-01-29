@@ -7,7 +7,7 @@ export default function WordsList() {
     "Approve,Blanket,Benefit,Combine,Digital,Captain,Against,Antique," +
     "Anxiety,Circuit,lifehack,Compare,Counsel,Correct,Capture,Declare,Defeats," +
     "Deliver,Density,Dispose,Display,Created,Acquire,Analyze,Content," +
-    "Article,Attempt,Compass,Decline,Defense,Develop,Destroy,Classic," +
+    "Article,Attempt,Compass,user,Decline,superuser,Defense,Develop,Destroy,Classic," +
     "Contact,Curious,Country,Culture,Cyberlab,Believe,Creator,Climate,Abandon";
 
   const wordArray = words
