@@ -196,7 +196,11 @@ import WordsList from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Words
 import AuthLab3 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab3.jsx";
 import Products from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/products.jsx";
 import UsersPage from "./Pages/Website/UserHome/Labs/Api-Hacking/practical/second_lab/UsersPage.jsx";
-
+import PathTraversal from "./Pages/Website/UserHome/Labs/Path...Traversal/PathTraversal.jsx";
+import PathTraversalLabs from "./Pages/Website/UserHome/Labs/Path...Traversal/PathTraversalLabs.jsx";
+import PathTraversalBlacklist from "./Pages/Website/UserHome/Labs/Path...Traversal/Practical/PathTraversalBlacklist.jsx";
+import ShowProducts from "./Pages/Website/UserHome/Labs/Path...Traversal/Practical/ShowProducts.jsx";
+import EtcPassword from "./Pages/Website/UserHome/Labs/Path...Traversal/Practical/passwd.jsx";
 function App() {
   return (
     <div className="App">
@@ -601,6 +605,25 @@ function App() {
             element={<Products />}
           />
           {/* End Broken Authentication */}
+          {/* Start Path Traversal */}
+          <Route path="/Path__Traversal" element={<PathTraversal />} />
+          <Route
+            path="/Path__Traversal/Path_Traversal_Labs"
+            element={<PathTraversalLabs />}
+          />
+          <Route
+            path="/Path__Traversal/Path_Traversal_Labs/lab1"
+            element={<PathTraversalBlacklist />}
+          />
+          <Route
+            path="/Path__Traversal/Path_Traversal_Labs/lab1/Show_Products/:id"
+            element={<ShowProducts />}
+          />
+          <Route
+            path="/Path__Traversal/Path_Traversal_Labs/etc/passwd"
+            element={<EtcPassword />}
+          />
+          {/* End Path Traversal */}
           {/* Start Cookies */}
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />
@@ -669,19 +692,24 @@ function App() {
           <Route path="/cryptography" element={<CryptoGraphy />} />
           <Route
             path="/cryptography/cryptography_lab"
-            element={<CRYPTOGRAPHY_LAB />}/>
+            element={<CRYPTOGRAPHY_LAB />}
+          />
           <Route
             path="/cryptography/cryptography_lab/top-secret"
-            element={<TOP_SECRET />}/>
+            element={<TOP_SECRET />}
+          />
           <Route
             path="/cryptography/cryptography_lab/decode-the-iamge"
-            element={<DECODE_IMAGE />}/>
+            element={<DECODE_IMAGE />}
+          />
           <Route
             path="/cryptography/cryptography_lab/corrupted"
-            element={<Corrupted />}/>
+            element={<Corrupted />}
+          />
           <Route
             path="/cryptography/cryptography_lab/hash-crack"
-            element={<HASH_CRACK />}/>
+            element={<HASH_CRACK />}
+          />
           {/* End CryptoGraphy */}
           {/* Start WireShark */}
           <Route path="/wireshark" element={<WireShark />} />

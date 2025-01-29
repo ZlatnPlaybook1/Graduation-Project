@@ -217,7 +217,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Lab2.jpg"),
-    link: "/temp_topic_15",
+    link: "/Path__Traversal",
   },
   {
     id: 15,
@@ -278,7 +278,6 @@ const courseData = [
       "Collection Methods",
       "ARP Traffic",
       "ICMP & TCP Traffic",
-      
     ],
     difficulty: "Medium",
     image: require("../assets/img/wireshark/card_image.png"),
