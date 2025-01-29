@@ -216,10 +216,10 @@ export default function CryptoGraphy() {
                 <p>There are many software available that offer steganography.  Some offer normal steganography, but a few offer encryption before hiding the data. </p>
                 <br></br>
                 <h4>These are the steganography tools that are available for free:</h4>
-                <p>Stegsolve : Interactively transforms images, and views color schemes separately</p>
-                <p>SonicVisualiser Visualizing audio files in a waveform, display spectrograms</p>
-                <p>DeepSound Audio stego tool that was used in Mr. Robot series. Windows tool but could be run in wine.</p>
-                <p>Steghide tool to encrypt and hide data.</p>
+                <p><span>Stegsolve :</span> Interactively transforms images, and views color schemes separately</p>
+                <p><span>SonicVisualiser : </span> Visualizing audio files in a waveform, display spectrograms</p>
+                <p><span>DeepSound : </span>Audio stego tool that was used in Mr. Robot series. Windows tool but could be run in wine.</p>
+                <p><span>Steghide :</span> tool to encrypt and hide data.</p>
                 <br></br>
                 </dd> 
 
