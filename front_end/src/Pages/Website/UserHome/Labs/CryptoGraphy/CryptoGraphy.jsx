@@ -354,7 +354,7 @@ export default function CryptoGraphy() {
               </dl>
             </div>
             <div className="go-to-section">
-              <Link to="/obfuscation/obfuscation_lab" className="go-to">
+              <Link to="/cryptography/cryptography_lab" className="go-to">
                 Go To Lab
               </Link>
             </div>

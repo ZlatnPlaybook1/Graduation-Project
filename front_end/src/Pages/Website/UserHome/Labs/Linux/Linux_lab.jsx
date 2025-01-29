@@ -28,7 +28,7 @@ export default function Linux_lab() {
               </p>
             </div>
             <div className="course-icon">
-              <div className="border">
+              <div className="border-icon">
                 <div className="content">
                   <i className="fas fa-book-open"></i>
                   <p>Practice</p>

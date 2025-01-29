@@ -51,7 +51,7 @@ export default function Bash_lab() {
                     <p>Put your knowledge into practice with gamified cyber security challenges.</p>
                 </div>
                 <div className="course-icon">
-                    <div className="border">
+                    <div className="border-icon">
                         <div className="content">
                             <i className="fas fa-book-open lab"></i>
                             <p>Practice</p>

@@ -1,8 +1,7 @@
 import Footer from "../../../../Footer/Footer";
 import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
-import Header from "../../../../Header/Header";
 import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import styles from "./Patient.module.css";
+import "../../../Page_Styles/Practical_Flag_answers.css";
 import React, { useEffect, useState } from "react";
 
 export default function Patient() {
@@ -77,35 +76,34 @@ export default function Patient() {
 
   return (
     <>
-      <Header />
-      <div className={styles.course}>
+      <div className="course-labcc">
       <GoBack_Btn/>
       <ShowHint_Btn/>
-        <div className={styles.firework} id="firework"></div>
+        <div className="firework" id="firework"></div>
         {showSuccess && (
-          <div className={`${styles.message} ${styles.success}`}>
+          <div className="message success">
             Congratulations!
           </div>
         )}
         {showFail && (
-          <div className={`${styles.message} ${styles.fail}`}>Wrong!</div>
+          <div className="message fail">Wrong!</div>
         )}
-        <div className={styles.container}>
-          <div className={styles["faq-section"]}>
-            <div className={styles.caution}>
+        <div className="container-labcc">
+          <div className="faq-section-labcc">
+            <div className="caution">
               <p>Download this file and open it on your Linux machine</p>
               <i className="fa-solid fa-triangle-exclamation"></i>
             </div>
-            <div className={styles.fileViewer}>
+            <div className="fileViewer">
               <a href={fileUrl} download={fileName}>
-                <button className={styles.downloadButton}>
+                <button className="downloadButton">
                   <i className="fas fa-download"></i>
                   {fileName}
                 </button>
               </a>
             </div>
-            <div className={styles["question-div"]}>
-              <h1 className={styles.question}>Check your Flag here:</h1>
+            <div className="question-div">
+              <h1 className="question">Check your Flag here:</h1>
               <form onSubmit={checkAnswer}>
                 <input
                   type="text"
