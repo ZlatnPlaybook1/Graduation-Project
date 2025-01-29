@@ -7,6 +7,6 @@ lab1PathTraversalRouter.get ("/pathTraversalLab1Products", products);
 
 lab1PathTraversalRouter.get ("/pathTraversalLab1Product/:id", product);
 
-lab1PathTraversalRouter.get ("/pathTraversalLab1Product/../../etc/passwd" , password);
+lab1PathTraversalRouter.get ("/pathTraversalLab1Product/etc/passwd" , password);
 
 export default lab1PathTraversalRouter;
