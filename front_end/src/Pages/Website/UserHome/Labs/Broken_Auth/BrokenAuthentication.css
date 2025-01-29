@@ -1,10 +1,11 @@
 .Auth-faq-body {
   animation: fadeInUp 0.5s ease-out;
-  font-family: "Montserrat", sans-serif;
+  font-family: "poppins", sans-serif;
   padding: 1rem;
   background-color: #f9f9f9;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-weight: 400 !important;
 }
 
 .auth-issues-list,
@@ -19,6 +20,7 @@
   margin-bottom: 1.5rem;
   font-size: 1rem;
   color: #333;
+  font-weight: 400;
 }
 
 .auth-causes-list,
@@ -31,11 +33,12 @@
 .auth-cause-item,
 .impact-detail-item {
   margin-bottom: 0.5rem;
+  font-weight: 400;
 }
 .auth-consequences-title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-family: "Poppins", serif;
+  font-size: 16px;
+  font-weight: 400;
   color: #d63384;
   background: linear-gradient(
     90deg,
@@ -57,7 +60,7 @@
 
 .special-highlight {
   color: #d63384;
-  font-weight: bold;
+  font-weight: 400;
   background: linear-gradient(
     90deg,
     rgba(214, 51, 132, 0.2) 0%,
@@ -105,8 +108,8 @@
 }
 
 .scenario-title {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
   color: #333333;
   margin-bottom: 0.8rem;
 }
@@ -118,10 +121,12 @@
 
 .detail {
   margin-bottom: 0.6rem;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .impact {
-  font-weight: 600;
+  font-weight: 400;
   color: #4caf50;
   margin-top: 1.2rem;
 }
@@ -130,7 +135,7 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "poppins", sans-serif;
 }
 
 .security-item {
@@ -148,31 +153,37 @@
 }
 
 .section-title {
-  font-size: 1.4rem;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 400;
   color: #333;
   margin-bottom: 1rem;
 }
 
 .section-details {
   margin: 1rem 0;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .detail-item {
   margin-bottom: 1rem;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .detail-item strong {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #2d2d2d;
+  font-weight: 400;
 }
 
 .detail-list {
   margin-left: 1.5rem;
   color: #555;
-  font-size: 1rem;
 }
 
 .detail-list li {
   margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
 }

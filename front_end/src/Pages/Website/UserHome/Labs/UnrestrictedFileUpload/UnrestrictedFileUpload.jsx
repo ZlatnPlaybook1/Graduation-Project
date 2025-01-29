@@ -107,13 +107,15 @@ export default function UnrestrictedFileUpload() {
                         <div class="modern-title">
                           Unrestricted File Upload{" "}
                         </div>
-                        vulnerability occurs due to insufficient or improper
-                        file-type validation controls being implemented prior to
-                        files being uploaded to the web application. Without
-                        these methods of validation in place, a malicious actor
-                        may be able to craft the upload request to bypass the
-                        application-layer defenses and potentially completely
-                        compromise the system.
+                        <div className="Files-first">
+                          vulnerability occurs due to insufficient or improper
+                          file-type validation controls being implemented prior
+                          to files being uploaded to the web application.
+                          Without these methods of validation in place, a
+                          malicious actor may be able to craft the upload
+                          request to bypass the application-layer defenses and
+                          potentially completely compromise the system.
+                        </div>
                       </p>
                     </li>
                     <li>
@@ -125,9 +127,12 @@ export default function UnrestrictedFileUpload() {
                           </span>{" "}
                           as a significant risk
                         </p>
-                        , and for good reason. Unrestricted File Uploads are an
-                        excellent primary entry point for an attacker, offering
-                        a foothold into the system for further escalation.
+                        <div className="Files-first">
+                          , and for good reason. Unrestricted File Uploads are
+                          an excellent primary entry point for an attacker,
+                          offering a foothold into the system for further
+                          escalation.
+                        </div>
                       </p>
                     </li>
                   </ul>

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./Header.css";
 import axios from "axios";
 import Cookie from "cookie-universal";
-
+import logo from "../../assets/img/core-img/logo.png";
 const Header = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const [profileListVisible, setProfileListVisible] = useState(false);
@@ -83,7 +83,7 @@ const Header = () => {
               <i className="fa-solid fa-xmark" onClick={hideSidebar}></i>
               <NavLink to="/">
                 {/* Display user profile image or default logo */}
-                <img src={userImage || "../assets/img/logo.png"} alt="Logo" />
+                <img src={logo} alt="Logo" />
               </NavLink>
               <NavLink to="/home">
                 <i className="fa-solid fa-window-maximize"></i>Home
@@ -98,7 +98,7 @@ const Header = () => {
           <div className="logo_links">
             <NavLink to="/">
               {/* Display user profile image or default logo */}
-              <img src={userImage || "../assets/img/logo.png"} alt="Logo" />
+              <img src={logo} alt="Logo" />
             </NavLink>
             <NavLink to="/home">
               <i className="fa-solid fa-window-maximize"></i>Home
