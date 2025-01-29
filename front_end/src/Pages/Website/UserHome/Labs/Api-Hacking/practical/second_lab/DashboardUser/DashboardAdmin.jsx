@@ -7,7 +7,7 @@ import ShowHint from "../../../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function DashboardAdmin() {
   const { id: userId } = useParams();
-  const [wallpaper, setWallpaper] = useState(null);
+  const [wallpapers, setWallpapers] = useState([]);
   const [loading, setLoading] = useState(true);
   const hintMessage = `<p>Add Something</p>`;
 
@@ -22,9 +22,9 @@ export default function DashboardAdmin() {
           throw new Error("Failed to fetch wallpapers");
         }
         const data = await response.json();
-        setWallpaper(data);
+        setWallpapers(data.data);
       } catch (error) {
-        console.error("Error fetching wallpaper:", error);
+        console.error("Error fetching wallpapers:", error);
       } finally {
         setLoading(false);
       }
@@ -36,21 +36,27 @@ export default function DashboardAdmin() {
   }, [userId]);
 
   // Delete a specific wallpaper
-  const handleDelete = (id) => {
-    setWallpaper(null);
-    fetch(`http://127.0.0.1:8080/api/wallpapers/${userId}/${id}`, {
-      method: "DELETE",
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error deleting wallpaper");
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(
+        `http://127.0.0.1:8080/api/wallpapers/${userId}/${id}`,
+        {
+          method: "DELETE",
         }
-      })
-      .catch((error) => console.error("Error deleting wallpaper:", error));
+      );
+      if (!response.ok) {
+        throw new Error("Error deleting wallpaper");
+      }
+      setWallpapers((prevWallpapers) =>
+        prevWallpapers.filter((wallpaper) => wallpaper.id !== id)
+      );
+    } catch (error) {
+      console.error("Error deleting wallpaper:", error);
+    }
   };
 
   if (loading) {
-    return <p>Loading wallpaper...</p>;
+    return <p>Loading wallpapers...</p>;
   }
 
   return (
@@ -59,25 +65,27 @@ export default function DashboardAdmin() {
       <ShowHint hintText={hintMessage} />
       <div className="dashboard-container">
         <h2 className="dashboard-title">Wallpaper Details</h2>
-        {wallpaper ? (
-          <div className="wallpaper-card">
-            <img
-              src={wallpaper.url}
-              alt={wallpaper.title}
-              className="wallpaper-image"
-            />
-            <div className="wallpaper-actions">
-              <p className="wallpaper-title">{wallpaper.title}</p>
-              <button
-                className="delete-btn"
-                onClick={() => handleDelete(wallpaper.id)}
-              >
-                <FaTrash />
-              </button>
+        {wallpapers.length > 0 ? (
+          wallpapers.map((wallpaper) => (
+            <div className="wallpaper-card" key={wallpaper.id}>
+              <img
+                src={`http://127.0.0.1:8080/${wallpaper.path}`}
+                alt={wallpaper.name}
+                className="wallpaper-image"
+              />
+              <div className="wallpaper-actions">
+                <p className="wallpaper-title">{wallpaper.name}</p>
+                <button
+                  className="delete-btn"
+                  onClick={() => handleDelete(wallpaper.id)}
+                >
+                  <FaTrash />
+                </button>
+              </div>
             </div>
-          </div>
+          ))
         ) : (
-          <p>No wallpaper found for the given ID.</p>
+          <p>No wallpapers found for the given user.</p>
         )}
       </div>
     </>

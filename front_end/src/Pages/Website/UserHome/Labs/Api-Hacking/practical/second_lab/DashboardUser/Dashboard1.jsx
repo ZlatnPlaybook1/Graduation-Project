@@ -22,7 +22,13 @@ export default function Dashboard1() {
           throw new Error("Failed to fetch wallpapers");
         }
         const data = await response.json();
-        setWallpaper(data);
+
+        console.log("Fetched Data:", data);
+        if (data.data && data.data.length > 0) {
+          setWallpaper(data.data[0]);
+        } else {
+          setWallpaper(null);
+        }
       } catch (error) {
         console.error("Error fetching wallpaper:", error);
       } finally {
@@ -37,7 +43,6 @@ export default function Dashboard1() {
 
   // Delete a specific wallpaper
   const handleDelete = (id) => {
-    setWallpaper(null);
     fetch(`http://127.0.0.1:8080/api/wallpapers/${userId}/${id}`, {
       method: "DELETE",
     })
@@ -45,6 +50,7 @@ export default function Dashboard1() {
         if (!response.ok) {
           throw new Error("Error deleting wallpaper");
         }
+        setWallpaper(null);
       })
       .catch((error) => console.error("Error deleting wallpaper:", error));
   };
@@ -61,13 +67,21 @@ export default function Dashboard1() {
         <h2 className="dashboard-title">Wallpaper Details</h2>
         {wallpaper ? (
           <div className="wallpaper-card">
-            <img
-              src={wallpaper.url}
-              alt={wallpaper.title}
-              className="wallpaper-image"
-            />
+            {wallpaper.path ? (
+              <img
+                src={
+                  wallpaper.path.startsWith("http")
+                    ? wallpaper.path
+                    : `http://127.0.0.1:8080/${wallpaper.path}`
+                }
+                alt={wallpaper.name}
+                className="wallpaper-image"
+              />
+            ) : (
+              <p>Image path is not available.</p>
+            )}
             <div className="wallpaper-actions">
-              <p className="wallpaper-title">{wallpaper.title}</p>
+              <p className="wallpaper-title">{wallpaper.name}</p>
               <button
                 className="delete-btn"
                 onClick={() => handleDelete(wallpaper.id)}
