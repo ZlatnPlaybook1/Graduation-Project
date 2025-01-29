@@ -65,10 +65,7 @@ const Sidebar = () => {
           <>
             {user.role === "admin" && (
               <>
-
-
-                
-<NavLink
+                <NavLink
                   to="/dashboard/personal-information"
                   className="navlink active side-bar-link"
                 >
@@ -83,7 +80,7 @@ const Sidebar = () => {
                     Personal Information
                   </span>
                 </NavLink>
-                
+
                 <NavLink
                   to="/dashboard/users"
                   className="navlink active side-bar-link"
@@ -118,7 +115,7 @@ const Sidebar = () => {
                     Add User
                   </span>
                 </NavLink>
-             
+
                 <NavLink
                   to="/dashboard/settings"
                   className="navlink active side-bar-link"

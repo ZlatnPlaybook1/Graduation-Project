@@ -201,6 +201,10 @@ import PathTraversalLabs from "./Pages/Website/UserHome/Labs/Path...Traversal/Pa
 import PathTraversalBlacklist from "./Pages/Website/UserHome/Labs/Path...Traversal/Practical/PathTraversalBlacklist.jsx";
 import ShowProducts from "./Pages/Website/UserHome/Labs/Path...Traversal/Practical/ShowProducts.jsx";
 import EtcPassword from "./Pages/Website/UserHome/Labs/Path...Traversal/Practical/passwd.jsx";
+import CommandInjection from "./Pages/Website/UserHome/Labs/CommandInjection/CommandInjection.jsx";
+import CommandInjectionLab2 from "./Pages/Website/UserHome/Labs/CommandInjection/Practical/CommandInjectionLab2.jsx";
+import CommandInjectionLab1 from "./Pages/Website/UserHome/Labs/CommandInjection/Practical/CommandInjectionLab1.jsx";
+import CommandInjectionLabs from "./Pages/Website/UserHome/Labs/CommandInjection/CommandInjectionLabs.jsx";
 function App() {
   return (
     <div className="App">
@@ -624,6 +628,21 @@ function App() {
             element={<EtcPassword />}
           />
           {/* End Path Traversal */}
+          {/* Start  Command Injection  */}
+          <Route path="/Command_Injection" element={<CommandInjection />} />
+          <Route
+            path="/Command_Injection/Command_Injection_labs"
+            element={<CommandInjectionLabs />}
+          />
+          <Route
+            path="/Command_Injection/Command_Injection_labs/lab1"
+            element={<CommandInjectionLab1 />}
+          />
+          <Route
+            path="/Command_Injection/Command_Injection_labs/lab2"
+            element={<CommandInjectionLab2 />}
+          />
+          {/* End  Command Injection  */}
           {/* Start Cookies */}
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />

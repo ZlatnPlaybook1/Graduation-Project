@@ -313,7 +313,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Lab2.jpg"),
-    link: "/infoDisc",
+    link: "/Command_Injection ",
   },
   {
     id: 21,
