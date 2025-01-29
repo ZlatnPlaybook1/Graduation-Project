@@ -4,6 +4,7 @@ import morgan from "morgan";
 import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
+import path from "path";
 import registerRouter from "./registerWithAuthentication/register.router";
 import loginRouter from "./login/login.router";
 import logoutRouter from "./logout/logout.router";
@@ -27,6 +28,7 @@ import lab3BrokenAuthRouter from "./labs/brokenAuth/lab3/lab3.router";
 import lab2apiHacking from "./labs/apiHacking/lab2/lab2.router";
 const app = express();
 app.use("/uploads", express.static("uploads"));
+app.use('/src', express.static( "src"));
 
 app.use(cors());
 app.use(morgan("dev")); // morgan: HTTP request logger middleware,
