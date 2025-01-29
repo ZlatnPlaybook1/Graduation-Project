@@ -3,7 +3,7 @@ import {Request, Response} from "express";
 export const login = async (req: Request, res: Response) => {
     try {
         const username = "user";
-        const password = "user";
+        const password = "lifehack";
 
         if (!req.body.username || !req.body.password) {
             return res.status(400).send("Username and password are required");
