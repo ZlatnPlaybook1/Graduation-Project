@@ -18,6 +18,7 @@ export default function Writer() {
   const [imagePreview, setImagePreview] = useState("");
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
+  const [success, setSuccess] = useState(""); // State for success message
 
   const calculateAge = (birthday) => {
     const birthDate = new Date(birthday);
@@ -95,6 +96,7 @@ export default function Writer() {
     e.preventDefault();
     setLoading(true);
     setErr("");
+    setSuccess(""); // Reset success message on new submission
 
     // Prepare FormData to submit
     const submissionData = new FormData();
@@ -122,6 +124,7 @@ export default function Writer() {
       const submittedData = res.data.data;
       console.log("Response:", submittedData);
       setLoading(false);
+      setSuccess("Data submitted successfully!"); // Set success message
     } catch (error) {
       setLoading(false);
       setErr("Error submitting data");
@@ -194,6 +197,8 @@ export default function Writer() {
         </div>
         <button type="submit">Submit</button>
         {err && <p className="error">{err}</p>}
+        {success && <p className="success">{success}</p>}{" "}
+        {/* Display success message */}
       </form>
     </div>
   );

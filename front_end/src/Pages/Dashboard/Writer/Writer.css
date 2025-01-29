@@ -95,3 +95,22 @@
   border: 3px solid #d1d1d1;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+.success {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}

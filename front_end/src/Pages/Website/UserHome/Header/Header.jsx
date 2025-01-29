@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
-import logo from "../assets/img/logo.png";
-import profile from "../assets/img/profile.png";
 import axios from "axios";
 import Cookie from "cookie-universal";
 
 const Header = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const [profileListVisible, setProfileListVisible] = useState(false);
+  const [userImage, setUserImage] = useState("");
 
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
+
   const showSidebar = () => {
     setSidebarVisible(true);
   };
@@ -23,6 +23,31 @@ const Header = () => {
   const toggleProfileList = () => {
     setProfileListVisible(!profileListVisible);
   };
+
+  // Fetch the user profile image
+  useEffect(() => {
+    const fetchUserProfileImage = async () => {
+      try {
+        const res = await axios.get("http://127.0.0.1:8080/api/personalInfo", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        const data = res.data.data;
+        // Construct full image URL
+        const imageUrl = data.image
+          ? `http://127.0.0.1:8080/${data.image.path.replace("\\", "/")}`
+          : "";
+
+        setUserImage(imageUrl); // Set the profile image URL
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchUserProfileImage();
+  }, [token]);
 
   async function handleLogout() {
     try {
@@ -57,7 +82,8 @@ const Header = () => {
               {/* Close button */}
               <i className="fa-solid fa-xmark" onClick={hideSidebar}></i>
               <NavLink to="/">
-                <img src={logo} alt="Logo" />
+                {/* Display user profile image or default logo */}
+                <img src={userImage || "../assets/img/logo.png"} alt="Logo" />
               </NavLink>
               <NavLink to="/home">
                 <i className="fa-solid fa-window-maximize"></i>Home
@@ -71,7 +97,8 @@ const Header = () => {
           {/* Logo and navigation links */}
           <div className="logo_links">
             <NavLink to="/">
-              <img src={logo} alt="Logo" />
+              {/* Display user profile image or default logo */}
+              <img src={userImage || "../assets/img/logo.png"} alt="Logo" />
             </NavLink>
             <NavLink to="/home">
               <i className="fa-solid fa-window-maximize"></i>Home
@@ -86,7 +113,10 @@ const Header = () => {
             <i className="fa-solid fa-magnifying-glass"></i>
             <div className="profile-section">
               <button className="profile" onClick={toggleProfileList}>
-                <img src={profile} alt="Profile" />
+                <img
+                  src={userImage || "../assets/img/profile.png"}
+                  alt="Profile"
+                />
               </button>
 
               {/* Profile list dropdown */}
