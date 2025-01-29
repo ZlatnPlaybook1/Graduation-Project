@@ -42,17 +42,23 @@ export const  userImageById = async (req: Request, res: Response) => {
 }
 
 export const  deleteUserImage = async (req: Request, res: Response) => {
-    const userImage = await prisma.imageForApiHacking.delete({
+    const userImage = await prisma.imageForApiHacking.findUnique({
         where: {
-            userId: req.body.userId,
-            id: req.body.id         // id of the image
+            userId: Number(req.params.userId),
+            id: Number(req.params.id)         // id of the image
         },
     });
     if (!userImage) {
         return res.status(404).send("No image found");
     }
+    await prisma.imageForApiHacking.delete({
+        where: {
+            id: Number(req.params.id)
+        }
+    });
+
     return res.status(200).json({
-        message: "success",
+        message: "image deleted successfully",
         data: userImage
     });
 }
