@@ -33,7 +33,6 @@ export default function Settings() {
     setShowSuccessMessage(false);
 
     try {
-      console.log("Sending password reset request...");
       const response = await axios.post(
         "http://127.0.0.1:8080/api/reset-password",
         {
@@ -48,8 +47,6 @@ export default function Settings() {
         }
       );
 
-      console.log("API Response:", response.data);
-
       if (response?.data?.success) {
         setSuccessMessage("Password reset successfully!");
         setShowSuccessMessage(true);
@@ -57,7 +54,6 @@ export default function Settings() {
         setErrorMessage(response?.data?.message);
       }
     } catch (error) {
-      console.error("Error resetting password:", error);
       setErrorMessage(
         error.response?.data?.message ||
           "Failed to reset password. Please try again."
@@ -71,7 +67,7 @@ export default function Settings() {
     <div className="settings-container">
       {/* Success Message */}
       {showSuccessMessage && (
-        <div className="success-message-box">
+        <div className="success-message-box show">
           <p>{successMessage}</p>
           <button onClick={() => setShowSuccessMessage(false)}>Dismiss</button>
         </div>

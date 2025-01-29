@@ -5,21 +5,20 @@ import "./Writer.css";
 
 export default function Writer() {
   const cookie = Cookie();
-  // Get cookie
   const token = cookie.get("CuberWeb");
 
   const [formData, setFormData] = useState({
     name: "",
-    age: "",
     birthday: "",
     address: "",
     phoneNum: "",
-    image: "",
+    image: null, // Store image as file object
   });
 
   const [imagePreview, setImagePreview] = useState("");
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
+  const [success, setSuccess] = useState(""); // State for success message
 
   const calculateAge = (birthday) => {
     const birthDate = new Date(birthday);
@@ -36,20 +35,23 @@ export default function Writer() {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log(res);
+
         const data = res.data.data;
+        // Construct full image URL
+        const imageUrl = data.image
+          ? `http://127.0.0.1:8080/${data.image.path.replace("\\", "/")}`
+          : "";
 
         setFormData((prevData) => ({
           ...prevData,
           name: data.name,
-          age: calculateAge(data.birthday),
           birthday: data.birthday,
           address: data.address,
           phoneNum: data.phoneNum,
-          image: data.image,
+          image: imageUrl, // Set the full image URL
         }));
 
-        setImagePreview(data.image);
+        setImagePreview(imageUrl); // Set the preview image URL
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -82,9 +84,9 @@ export default function Writer() {
       reader.onloadend = () => {
         setFormData((prevData) => ({
           ...prevData,
-          image: reader.result,
+          image: file, // Store the file object for form submission
         }));
-        setImagePreview(reader.result);
+        setImagePreview(reader.result); // Preview image using base64
       };
       reader.readAsDataURL(file);
     }
@@ -94,11 +96,17 @@ export default function Writer() {
     e.preventDefault();
     setLoading(true);
     setErr("");
+    setSuccess(""); // Reset success message on new submission
 
-    // Create a copy of formData and remove the image field if not updated
-    const submissionData = { ...formData };
-    if (!formData.image) {
-      delete submissionData.image;
+    // Prepare FormData to submit
+    const submissionData = new FormData();
+    submissionData.append("name", formData.name);
+    submissionData.append("birthday", formData.birthday);
+    submissionData.append("address", formData.address);
+    submissionData.append("phoneNum", formData.phoneNum);
+
+    if (formData.image) {
+      submissionData.append("image", formData.image); // Append image file
     }
 
     try {
@@ -108,6 +116,7 @@ export default function Writer() {
         {
           headers: {
             Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data", // Ensure it's set for file upload
           },
         }
       );
@@ -115,6 +124,7 @@ export default function Writer() {
       const submittedData = res.data.data;
       console.log("Response:", submittedData);
       setLoading(false);
+      setSuccess("Data submitted successfully!"); // Set success message
     } catch (error) {
       setLoading(false);
       setErr("Error submitting data");
@@ -146,8 +156,7 @@ export default function Writer() {
           <input
             type="number"
             name="age"
-            value={formData.age}
-            onChange={handleChange}
+            value={calculateAge(formData.birthday)}
             disabled
             required
           />
@@ -188,6 +197,8 @@ export default function Writer() {
         </div>
         <button type="submit">Submit</button>
         {err && <p className="error">{err}</p>}
+        {success && <p className="success">{success}</p>}{" "}
+        {/* Display success message */}
       </form>
     </div>
   );

@@ -10,7 +10,7 @@ import pg from "../assets/img/bg-img/header-bg1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Cookie from "cookie-universal";
-import profile from "../UserHome/assets/img/profile.png";
+// import profile from "../UserHome/assets/img/profile.png";
 import axios from "axios";
 
 const Header = () => {
@@ -18,6 +18,7 @@ const Header = () => {
   const [profileListVisible, setProfileListVisible] = useState(false);
   const navigate = useNavigate();
   const [name, setName] = useState("");
+  const [userImage, setUserImage] = useState("");
 
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
@@ -28,28 +29,30 @@ const Header = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  // useEffect(() => {
-  //   if (token) {
-  //     console.log("Token found:", token);
-  //     axios
-  //       .get("http://127.0.0.1:8000/api/user", {
-  //         headers: {
-  //           Authorization: `Bearer ${token}`,
-  //         },
-  //       })
-  //       .then((res) => {
-  //         console.log("API response:", res);
-  //         setName(res.data.data.name);
-  //       })
-  //       .catch((error) => {
-  //         console.error("API request failed:", error);
-  //         navigate("/login", { replace: true });
-  //       });
-  //   } else {
-  //     console.log("No token found, redirecting to login");
-  //     navigate("/login", { replace: true });
-  //   }
-  // }, [token, navigate]);
+  // Fetch the user profile image
+  useEffect(() => {
+    const fetchUserProfileImage = async () => {
+      try {
+        const res = await axios.get("http://127.0.0.1:8080/api/personalInfo", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        const data = res.data.data;
+        // Construct full image URL
+        const imageUrl = data.image
+          ? `http://127.0.0.1:8080/${data.image.path.replace("\\", "/")}`
+          : "";
+
+        setUserImage(imageUrl); // Set the profile image URL
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchUserProfileImage();
+  }, [token]);
 
   async function handleLogout() {
     try {
@@ -314,7 +317,10 @@ const Header = () => {
             <div className="profile_links">
               <div className="profile-section">
                 <button className="profile" onClick={toggleProfileList}>
-                  <img src={profile} alt="Profile" />
+                  <img
+                    src={userImage || "../assets/img/profile.png"}
+                    alt="Profile"
+                  />
                 </button>
 
                 {/* Profile list dropdown */}
@@ -359,7 +365,10 @@ const Header = () => {
               {/* <p className="user-name">Welcome, {name}</p> */}
               <div className="profile-section">
                 <button className="profile" onClick={toggleProfileList}>
-                  <img src={profile} alt="Profile" />
+                  <img
+                    src={userImage || "../assets/img/profile.png"}
+                    alt="Profile"
+                  />
                 </button>
 
                 {/* Profile list dropdown */}
