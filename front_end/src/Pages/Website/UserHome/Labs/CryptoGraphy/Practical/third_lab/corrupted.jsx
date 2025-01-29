@@ -80,11 +80,8 @@ export default function Corrupted() {
     <>
       <div className="course-labcc">
         <GoBack_Btn />
-        <ShowHint_Btn
-          hintText={
-            "Remember, the base64 string must always be a multiple of 4 characters."
-          }
-        />
+        <ShowHint_Btn hintText={"Remember, the base64 string must always be a multiple of 4 characters."}/>
+
         <div className="firework" id="firework"></div>
         {showSuccess && <div className="message success">Congratulations!</div>}
         {showFail && <div className="message fail">Wrong!</div>}
@@ -92,11 +89,10 @@ export default function Corrupted() {
           <div className="faq-section-labcc">
             <div className="fileViewer">
               <p id="lab-info">
-                "We found a strange string of characters while scanning through
-                encrypted files, but they appear to be corrupted. The text
-                reads:
-                R[corrupted]hZ3tjeWJlcl9sYWJfY29ycnVwdGVkX2Jhc2U2NF9yZXZlYWx9.<br/>
-                Can you make sense of this and uncover what it really means?"
+                We found a strange string of characters while scanning through
+                encrypted files, but they appear to be corrupted.<br></br> <br></br>
+                <span><strong>The text reads : </strong> R[corrupted]hZ3tjeWJlcl9sYWJfY29ycnVwdGVkX2Jhc2U2NF9yZXZlYWx9</span> <br></br> <br></br>
+                Can you make sense of this and uncover what it really means?
               </p>
             </div>
             <div className="caution">
