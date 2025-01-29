@@ -63,20 +63,20 @@ export default function DashboardAdmin() {
     <>
       <GOBack />
       <ShowHint hintText={hintMessage} />
-      <div className="dashboard-container">
-        <h2 className="dashboard-title">Wallpaper Details</h2>
+      <div className="wallpaper-dashboard">
+        <h2 className="wallpaper-title">Wallpaper Details</h2>
         {wallpapers.length > 0 ? (
           wallpapers.map((wallpaper) => (
-            <div className="wallpaper-card" key={wallpaper.id}>
+            <div className="wallpaper-item" key={wallpaper.id}>
               <img
                 src={`http://127.0.0.1:8080/${wallpaper.path}`}
                 alt={wallpaper.name}
-                className="wallpaper-image"
+                className="wallpaper-thumbnail"
               />
-              <div className="wallpaper-actions">
-                <p className="wallpaper-title">{wallpaper.name}</p>
+              <div className="wallpaper-controls">
+                <p className="wallpaper-name">{wallpaper.name}</p>
                 <button
-                  className="delete-btn"
+                  className="delete-wallpaper-btn"
                   onClick={() => handleDelete(wallpaper.id)}
                 >
                   <FaTrash />
@@ -85,7 +85,9 @@ export default function DashboardAdmin() {
             </div>
           ))
         ) : (
-          <p>No wallpapers found for the given user.</p>
+          <p className="no-wallpapers-message">
+            No wallpapers found for the given user.
+          </p>
         )}
       </div>
     </>
