@@ -63,6 +63,52 @@ export default function PathTraversalLabs() {
                 <p>Easy</p>
               </div>
             </Link>
+            {/* lab2 */}
+            <Link
+              to="/Path__Traversal/Path_Traversal_Labs/lab2"
+              className="course-card"
+            >
+              <div className="course-image">
+                <img src={Auth_Photo} alt="Lab Cover" />
+              </div>
+              <div className="course-text">
+                <h3>Path Traversal MCQ 1</h3>
+                <p className="modern-p">Find the password of the admin</p>
+                <ul className="circled-order">
+                  <li>Cyber Security Basics</li>
+                  <li>Networking Basics and Weaknesses</li>
+                  <li>The Web And Common Attacks</li>
+                  <li>Learn to Use The Linux OS</li>
+                </ul>
+              </div>
+              <div className="easy">
+                <i className="fa-solid fa-signal lab"></i>
+                <p>Easy</p>
+              </div>
+            </Link>
+            {/* lab3 */}
+            <Link
+              to="/Path__Traversal/Path_Traversal_Labs/lab3"
+              className="course-card"
+            >
+              <div className="course-image">
+                <img src={Auth_Photo} alt="Lab Cover" />
+              </div>
+              <div className="course-text">
+                <h3>Path Traversal MCQ 2</h3>
+                <p className="modern-p">Find the password of the admin</p>
+                <ul className="circled-order">
+                  <li>Cyber Security Basics</li>
+                  <li>Networking Basics and Weaknesses</li>
+                  <li>The Web And Common Attacks</li>
+                  <li>Learn to Use The Linux OS</li>
+                </ul>
+              </div>
+              <div className="easy">
+                <i className="fa-solid fa-signal lab"></i>
+                <p>Easy</p>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

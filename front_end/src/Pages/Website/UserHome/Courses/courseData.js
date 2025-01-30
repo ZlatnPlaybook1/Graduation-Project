@@ -205,8 +205,8 @@ const courseData = [
   },
   {
     id: 14,
-    category: "Temporary Category",
-    title: "Temporary Topic",
+    category: "Web Vulnerabilities",
+    title: "Path Traversal",
     description:
       "This is a temporary placeholder topic to meet the required number of 30 topics.",
     topics: [
@@ -301,7 +301,7 @@ const courseData = [
   },
   {
     id: 20,
-    category: "Temporary Category",
+    category: "Web Vulnerabilities",
     title: "Command Injection",
     description:
       "Before hacking something, you first need to understand the basics",

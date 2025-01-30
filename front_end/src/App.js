@@ -196,16 +196,23 @@ import WordsList from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Words
 import AuthLab3 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab3.jsx";
 import Products from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/products.jsx";
 import UsersPage from "./Pages/Website/UserHome/Labs/Api-Hacking/practical/second_lab/UsersPage.jsx";
+// Start Path Traversal
 import PathTraversal from "./Pages/Website/UserHome/Labs/Path...Traversal/PathTraversal.jsx";
 import PathTraversalLabs from "./Pages/Website/UserHome/Labs/Path...Traversal/PathTraversalLabs.jsx";
-import PathTraversalBlacklist from "./Pages/Website/UserHome/Labs/Path...Traversal/Practical/PathTraversalBlacklist.jsx";
-import ShowProducts from "./Pages/Website/UserHome/Labs/Path...Traversal/Practical/ShowProducts.jsx";
-import EtcPassword from "./Pages/Website/UserHome/Labs/Path...Traversal/Practical/passwd.jsx";
+import PathTraversalBlacklist from "./Pages/Website/UserHome/Labs/Path...Traversal/Practical/Lab1/PathTraversalBlacklist.jsx";
+import ShowProducts from "./Pages/Website/UserHome/Labs/Path...Traversal/Practical/Lab1/ShowProducts.jsx";
+import EtcPassword from "./Pages/Website/UserHome/Labs/Path...Traversal/Practical/Lab1/passwd.jsx";
+import PathTraversalMcq1 from "./Pages/Website/UserHome/Labs/Path...Traversal/Practical/MCQ/PathTraversalMcq1.jsx";
+import PathTraversalMcq2 from "./Pages/Website/UserHome/Labs/Path...Traversal/Practical/MCQ/PathTraversalMcq2.jsx";
+// End Path Traversal
+// Start Command Injection
 import CommandInjection from "./Pages/Website/UserHome/Labs/CommandInjection/CommandInjection.jsx";
 import CommandInjectionLabs from "./Pages/Website/UserHome/Labs/CommandInjection/CommandInjectionLabs.jsx";
 import CommandInjectionLab1 from "./Pages/Website/UserHome/Labs/CommandInjection/Practical/CommandInjectionLab1.jsx";
 import CommandInjectionLab2 from "./Pages/Website/UserHome/Labs/CommandInjection/Practical/CommandInjectionLab2.jsx";
 import CommandInjectionLab3 from "./Pages/Website/UserHome/Labs/CommandInjection/Practical/CommandInjectionLab3.jsx";
+// End Command Injection
+
 function App() {
   return (
     <div className="App">
@@ -619,6 +626,14 @@ function App() {
           <Route
             path="/Path__Traversal/Path_Traversal_Labs/lab1"
             element={<PathTraversalBlacklist />}
+          />
+          <Route
+            path="/Path__Traversal/Path_Traversal_Labs/lab2"
+            element={<PathTraversalMcq1 />}
+          />
+          <Route
+            path="/Path__Traversal/Path_Traversal_Labs/lab3"
+            element={<PathTraversalMcq2 />}
           />
           <Route
             path="/Path__Traversal/Path_Traversal_Labs/lab1/Show_Products/:id"

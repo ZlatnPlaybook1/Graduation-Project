@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import GOBack from "../../../GoBack_Btn/GoBack_Btn";
+import GOBack from "../../../../GoBack_Btn/GoBack_Btn";
 import "./ShowProducts.css";
 
 export default function ShowProducts() {
