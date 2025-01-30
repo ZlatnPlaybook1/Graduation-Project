@@ -3,56 +3,79 @@ import { useNavigate, useLocation } from "react-router-dom";
 import GOBack from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 import "./CommandInjectionLabs.css";
-
-// Import images from your local folder
 import Image1 from "../../../assets/img/Command Injection/resim.jpg";
 import Image2 from "../../../assets/img/Command Injection/resim2.jpg";
 import Image3 from "../../../assets/img/Command Injection/resim3.jpg";
 
 export default function CommandInjectionLab2() {
-  const hintMessage = `<p>Add Something</p>`;
+  const hintMessage = <p>Add Something</p>;
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [currentDateTime, setCurrentDateTime] = useState("");
-  const [showStock, setShowStock] = useState(null); // State for tracking which card is clicked
+  const [showStock, setShowStock] = useState(null);
+  const [apiResponse, setApiResponse] = useState("");
 
-  // Get product_id from URL
+  // Extract and process product_id from the URL
   const searchParams = new URLSearchParams(location.search);
   const productId = searchParams.get("product_id");
 
+  let ip = "";
+  if (productId) {
+    const match = productId.match(/^\d+(.*)$/);
+    ip = match && match[1] ? match[1].trim() : "";
+  }
+
+  // Relaxed hostname validation function allowing spaces, semicolons, and other special characters
+  const isValidInput = (input) => {
+    const regex = /^[a-zA-Z0-9\s\.\-\;\:\,\=\(\)]+$/;
+    return regex.test(input);
+  };
+
   useEffect(() => {
-    const updateDateTime = () => {
-      const now = new Date();
-      setCurrentDateTime(now.toString()); // Update the current date and time
-    };
+    if (ip) {
+      // Validate if the input is a valid format (allowing spaces and special characters)
+      const validIp = isValidInput(ip) ? ip : "";
 
-    // Update the date when product_id contains |date or ;date
-    if (
-      productId &&
-      (productId.includes("|date") || productId.includes(";date"))
-    ) {
-      updateDateTime();
+      if (!validIp) {
+        setApiResponse("Error: Invalid input format");
+        return;
+      }
+
+      console.log("Sending valid input:", validIp); // Log the value being sent
+      fetch("http://127.0.0.1:8080/api/commendInjectionLab2", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ip: validIp }), // Corrected to pass 'ip' instead of 'input'
+      })
+        .then((response) => {
+          if (!response.ok) {
+            console.error(
+              "Error response:",
+              response.status,
+              response.statusText
+            );
+            throw new Error("Error: Unable to connect to API");
+          }
+          return response.json();
+        })
+        .then((data) => setApiResponse(data.result || "Unexpected response"))
+        .catch((error) => {
+          console.error(error);
+          setApiResponse("Error: Unable to connect to API");
+        });
     }
-  }, [productId]);
+  }, [ip]);
 
-  // Generate stock message based on the selected card
   const generateStockMessage = (stockCount) => {
-    // If productId contains |date or ;date, show the current date/time
-    if (
-      productId &&
-      (productId.includes("|date") || productId.includes(";date"))
-    ) {
-      return `Stock: ${currentDateTime} Pieces`;
-    }
-
-    // Otherwise, show the stock count for the selected card
     return `Stock: ${stockCount} Pieces`;
   };
 
   const handleCardClick = (cardId) => {
-    setShowStock(cardId); // Set the card ID that was clicked
-    // Update the URL with the selected product_id
+    // Reset the API response when clicking the card
+    setApiResponse("");
+    setShowStock(cardId);
     navigate(`?product_id=${cardId}`);
   };
 
@@ -76,24 +99,19 @@ export default function CommandInjectionLab2() {
           </div>
         </div>
 
-        {/* Display stock message based on the selected card */}
-        {showStock !== null && (
-          <div className="stock-info-container">
+        <div className="stock-info-container">
+          {/* Show stock information only if showStock is set */}
+          {showStock !== null && !apiResponse && (
             <p className="stock-info">
               {generateStockMessage(
                 showStock === 1 ? 13 : showStock === 2 ? 26 : 25
               )}
             </p>
-          </div>
-        )}
-
-        {/* Display the date message only if |date or ;date is in the URL */}
-        {productId &&
-          (productId.includes("|date") || productId.includes(";date")) && (
-            <div className="stock-info-container">
-              <p className="stock-info">{generateStockMessage(0)}</p>
-            </div>
           )}
+
+          {/* Show API response only if it's received */}
+          {apiResponse && <p className="api-response">{apiResponse}</p>}
+        </div>
       </div>
     </>
   );
