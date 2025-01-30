@@ -1,81 +1,31 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import "./InsecureDirectObjectReference.css";
-import $ from "jquery";
-import { Link } from "react-router-dom";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import CourseInfo from "../../Courses/CourseInfo";
 import "./InsecureDirectObjectReference.css";
-import IDORicon from "../../assets/img/IDOR/idorIcon.jpg";
+import imagecourse from "../../assets/img/IDOR/idorIcon.jpg";
+import background from "../../assets/img/background.png";
 import IDOR_Vulerability from "../../assets/img/IDOR/InsecureDirectObjectReference(IDOR)Vulnerability.png";
+import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function InsecureDirectObjectReference() {
-  const faqSectionRef = useRef(null);
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
+  const { faqSectionRef, handleGoToLab } = UseFaqSection();
+
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <div className="landing-landing">
-        <div className="banner-landing">
-          {/* <img src={uplode} alt="background" /> */}
-        </div>
-        <div className="container-landing">
-          <div className="breadcrumb-landing">
-            <ul>
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="">Insecure Direct Object Reference (IDOR)</Link>
-              </li>
-            </ul>
-          </div>
-          <CourseInfo
-            imgSrc={IDORicon}
-            title="Insecure Direct Object Reference (IDOR)"
-            description="Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce."
-          />
-          <div className="options-landing">
-            <button>
-              <i className="far fa-bookmark for-landing"></i>
-              <p>Save Room</p>
-            </button>
-            <div className="like-landing">
-              <button>
-                <i className="fas fa-thumbs-up for-landing"></i>
-                <p>Like</p>
-              </button>
-              <button>
-                <i className="fas fa-thumbs-down for-landing"></i>
-                <p>Dislike</p>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <LandingLab
+        background={background}
+        imagecourse={imagecourse}
+        courseTitle="Insecure Direct Object Reference (IDOR)"
+        courseDescription="Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce."
+        difficulty="Intermediate"
+        duration="30 min"
+        onSaveRoom={() => console.log("Room Saved!")}
+        onLike={() => console.log("Liked!")}
+        onDislike={() => console.log("Disliked!")}
+      />
       {/* End Landing */}
       {/* Start Content */}
       <div className="SecureUploadContent">
@@ -300,13 +250,18 @@ export default function InsecureDirectObjectReference() {
                 </dd>
               </dl>
             </div>
-            <div className="go-to-section-lab">
-              <Link
-                to="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs"
-                className="go-to-lab"
+
+            <div className="go-to-section">
+              <button
+                onClick={() =>
+                  handleGoToLab(
+                    "/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs"
+                  )
+                }
+                className="go-to"
               >
-                Go To Lab
-              </Link>
+                Go To Labs
+              </button>
             </div>
           </div>
         </div>

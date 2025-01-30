@@ -1,103 +1,30 @@
 import React from "react";
-import { useEffect, useRef } from "react";
-import $ from "jquery";
 import "./XSS.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/background.png";
-import image from "../../assets/img/course_image.png";
+import imagecourse from "../../assets/img/course_image.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
-
+import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function XSS() {
-  const faqSectionRef = useRef(null);
-
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
+  const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing-lab2">
-        <div className="banner-lab2">
-          <img src={background} alt="bacground" />
-        </div>
-        <div className="container-lab2">
-          <div className="breadcrumb-lab2">
-            <ul>
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="">Cross-Site Scripting</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="course-info-lab2">
-            <img src={image} alt="logo" />
-            <div className="course-text-lab2">
-              <h1>Cross-Site Scripting</h1>
-              <p>
-                Hack your first website (legally in a safe environment) and
-                experience an ethical hacker's job.
-              </p>
-              <div className="course-icons-lab2">
-                <div className="diff-lab2">
-                  <div className="easy-lab2">
-                    <i className="fa-solid fa-signal for-lab2"></i>
-                    <p>Easy</p>
-                  </div>
-                </div>
-                <div className="duration-lab2">
-                  <i className="fa-solid fa-clock for-lab2"></i>
-                  <p className="time">15 min</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="options-lab2">
-            <button>
-              <i className="far fa-bookmark for-lab2"></i>
-              <p>Save Room</p>
-            </button>
-            <div className="like-lab2">
-              <button>
-                <i className="fas fa-thumbs-up for-lab2"></i>
-                <p></p>
-              </button>
-              <button>
-                <i className="fas fa-thumbs-down for-lab2"></i>
-                <p></p>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <LandingLab
+        background={background}
+        imagecourse={imagecourse}
+        courseTitle="Cross-Site Scripting"
+        courseDescription=" Hack your first website (legally in a safe environment) and
+                experience an ethical hacker's job."
+        difficulty="Intermediate"
+        duration="30 min"
+        onSaveRoom={() => console.log("Room Saved!")}
+        onLike={() => console.log("Liked!")}
+        onDislike={() => console.log("Disliked!")}
+      />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className="course-lab2">
@@ -593,10 +520,13 @@ export default function XSS() {
                 </dd>
               </dl>
             </div>
-            <div className="go-to-section-lab2">
-              <Link to="/xss/xss_lab" className="go-to-lab2">
+            <div className="go-to-section">
+              <button
+                onClick={() => handleGoToLab("/xss/xss_labs")}
+                className="go-to"
+              >
                 Go To Labs
-              </Link>
+              </button>
             </div>
           </div>
         </div>

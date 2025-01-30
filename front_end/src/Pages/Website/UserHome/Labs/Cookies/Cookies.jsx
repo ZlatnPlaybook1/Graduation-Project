@@ -1,104 +1,31 @@
 import React from "react";
-import { useEffect, useRef } from "react";
-import $ from "jquery";
 import "../Page_Styles/Content.css";
 import Header from "../../Header/Header";
-// import background from "../../assets/img/cookies/baner_lap.png";
-import image from "../../assets/img/cookies/Cookies_transparent.png";
+import imagecourse from "../../assets/img/cookies/Cookies_transparent.png";
+import background from "../../assets/img/background.png";
+import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import LandingLab from "../../LandingLab/LandingLab.jsx";
 import inLab3 from "../../assets/img/inLab3.png";
-import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
 export default function Cookies() {
-  const faqSectionRef = useRef(null);
-
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
+  const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing-lab1">
-        <div className="banner">
-          {/* <img src={background} alt="bacground" /> */}
-        </div>
-        <div className="container-lab1">
-          <div className="breadcrumb">
-            <ul>
-              <li>
-                <Link to="">Home</Link>
-              </li>
-              <li>
-                <Link to="">Cookies</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="course-info">
-            <img src={image} alt="logo" />
-            <div className="course-text">
-              <h1>Cookies</h1>
-              <p>
-                Understand the role of cookies in web security, how they are
-                used, and the potential privacy concerns they introduce.
-              </p>
-              <div className="course-icons">
-                <div className="diff">
-                  <div className="easy">
-                    <i className="fa-solid fa-signal"></i>
-                    <p>Easy</p>
-                  </div>
-                </div>
-                <div className="duration">
-                  <i className="fa-solid fa-clock"></i>
-                  <p className="time">15 min</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="options">
-            <button>
-              <i className="far fa-bookmark"></i>
-              <p>Save Room</p>
-            </button>
-            <div className="like">
-              <button>
-                <i className="fas fa-thumbs-up"></i>
-                <p></p>
-              </button>
-              <button>
-                <i className="fas fa-thumbs-down"></i>
-                <p></p>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <LandingLab
+        background={background}
+        imagecourse={imagecourse}
+        courseTitle="Cookies"
+        courseDescription=" Understand the role of cookies in web security, how they are
+                used, and the potential privacy concerns they introduce."
+        difficulty="Intermediate"
+        duration="30 min"
+        onSaveRoom={() => console.log("Room Saved!")}
+        onLike={() => console.log("Liked!")}
+        onDislike={() => console.log("Disliked!")}
+      />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className="course-lab1">
@@ -333,9 +260,12 @@ export default function Cookies() {
               </dl>
             </div>
             <div className="go-to-section">
-              <Link to="/cookies/cookies_lab" className="go-to">
-                Go To Lab
-              </Link>
+              <button
+                onClick={() => handleGoToLab("/cookies/cookies_lab")}
+                className="go-to"
+              >
+                Go To Labs
+              </button>
             </div>
           </div>
         </div>

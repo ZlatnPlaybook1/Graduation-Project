@@ -1,12 +1,10 @@
 import React from "react";
-import { useEffect, useRef } from "react";
-import $ from "jquery";
-// import "../Page_Styles/Content.css";
 import "../Page_Styles/Content_sec.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/background.png";
-import image from "../../assets/img/bash/full_colored_dark (1).png";
-import { Link } from "react-router-dom";
+import imagecourse from "../../assets/img/bash/full_colored_dark (1).png";
+import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import LandingLab from "../../LandingLab/LandingLab.jsx";
 import Footer from "../../Footer/Footer";
 import exampleImage1 from "../../assets/img/bash/carbon-8.png";
 import exampleImage2 from "../../assets/img/bash/carbon-9.png";
@@ -28,101 +26,24 @@ import exampleImage17 from "../../assets/img/bash/carbon-25.png";
 import exampleImage18 from "../../assets/img/bash/first.jpg";
 
 export default function Bash() {
-  const faqSectionRef = useRef(null);
-
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
+  const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing-labd">
-        <div className="banner">
-          <img src={background} alt="bacground" />
-        </div>
-        <div className="container-labd">
-          <div className="breadcrumb">
-            <ul>
-              <li>
-                <Link to="">Home</Link>
-              </li>
-              <li>
-                <Link to="">Bash Scripting</Link>
-              </li>
-              {/* <li>
-                <span className="active-breadcrumb">
-                  Intro To Offensive Security
-                </span>
-              </li> */}
-            </ul>
-          </div>
-          <div className="course-info">
-            <img src={image} alt="logo" />
-            <div className="course-text">
-              <h1>Bash Scripting</h1>
-              <p>
-                Master the basics of Bash scripting, a powerful tool for
+      <LandingLab
+        background={background}
+        imagecourse={imagecourse}
+        courseTitle="Bash Scripting"
+        courseDescription="Master the basics of Bash scripting, a powerful tool for
                 automating tasks and managing systems in cybersecurity
-                environments.
-              </p>
-              <div className="course-icons">
-                <div className="diff">
-                  <div className="easy">
-                    <i className="fa-solid fa-signal"></i>
-                    <p>Easy</p>
-                  </div>
-                </div>
-                <div className="duration">
-                  <i className="fa-solid fa-clock "></i>
-                  <p className="time">50 min</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="options">
-            <button>
-              <i className="far fa-bookmark"></i>
-              <p>Save Room</p>
-            </button>
-            <div className="like">
-              <button>
-                <i className="fas fa-thumbs-up"></i>
-                <p></p>
-              </button>
-              <button>
-                <i className="fas fa-thumbs-down"></i>
-                <p></p>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+                environments."
+        difficulty="Intermediate"
+        duration="30 min"
+        onSaveRoom={() => console.log("Room Saved!")}
+        onLike={() => console.log("Liked!")}
+        onDislike={() => console.log("Disliked!")}
+      />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className="course-labd">
@@ -142,8 +63,8 @@ export default function Bash() {
                     Bash is a scripting language that runs within the terminal
                     on most Linux distros, as well as MacOS. Shell scripts are a
                     sequence of bash commands within a file, combined together
-                    to achieve more complex Topics than simple one-liner and
-                    are especially useful when it comes to automating sysadmin
+                    to achieve more complex Topics than simple one-liner and are
+                    especially useful when it comes to automating sysadmin
                     Topics such as backups.
                   </p>
                   <p>
@@ -209,14 +130,6 @@ export default function Bash() {
                   <p>
                     And then we run it using <span>./</span>
                   </p>
-                  {/* <div className={styles["go-to-section"]}>
-                  <Link
-                    to="/bash-scripting/bash_quiz#Our first simple bash scripts"
-                    className={styles["go-to"]}
-                  >
-                    Test your self
-                  </Link>
-                  </div> */}
                 </dd>
                 <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 3</span> Variables
@@ -261,36 +174,20 @@ export default function Bash() {
                       >
                         <code className="language-shell-session">
                           <span className="token command-c">
-                            <span
-                              className="token info punctuation"
-                            >
-                              <span
-                                className="token user"
-                              >
+                            <span className="token info punctuation">
+                              <span className="token user">
                                 $ name = "Jammy"
                               </span>
                             </span>
                           </span>
                           <span className="token command-c">
-                            <span
-                              className="token info punctuation"
-                            >
-                              <span
-                                className="token user"
-                              >
-                                $ echo $name
-                              </span>
+                            <span className="token info punctuation">
+                              <span className="token user">$ echo $name</span>
                             </span>
                           </span>
                           <span className="token command-c">
-                            <span
-                              className="token info punctuation"
-                            >
-                              <span
-                                className="token user"
-                              >
-                                Jammy
-                              </span>
+                            <span className="token info punctuation">
+                              <span className="token user">Jammy</span>
                             </span>
                           </span>
                         </code>
@@ -326,12 +223,8 @@ export default function Bash() {
                       >
                         <code className="language-shell-session">
                           <span className="token command-c">
-                            <span
-                              className="token info punctuation"
-                            >
-                              <span
-                                className="token user"
-                              >
+                            <span className="token info punctuation">
+                              <span className="token user">
                                 bash -x ./file.sh
                               </span>
                             </span>
@@ -376,12 +269,14 @@ export default function Bash() {
                   </p>
                   <img id="img-full" src={exampleImage9} alt="Example" />
                   <div className="go-to-section">
-                    <Link
-                      to="/bash-scripting/bash_quiz#Variables"
+                    <button
+                      onClick={() =>
+                        handleGoToLab("/bash-scripting/bash_quiz#Variables")
+                      }
                       className="go-to"
                     >
-                      Go To Variables Questions
-                    </Link>
+                      Go To Labs
+                    </button>
                   </div>
                 </dd>
                 <dt className="wave-labd fadeInUp faq-header-labd">
@@ -442,13 +337,16 @@ export default function Bash() {
                     parameters and I advice you to play around with them, after
                     all practice is what makes you better!
                   </p>
+
                   <div className="go-to-section">
-                    <Link
-                      to="/bash-scripting/bash_quiz#Parameters"
+                    <button
+                      onClick={() =>
+                        handleGoToLab("/bash-scripting/bash_quiz#Parameters")
+                      }
                       className="go-to"
                     >
-                      Go To Parameters Questions
-                    </Link>
+                      Go To Labs
+                    </button>
                   </div>
                 </dd>
                 <dt className="wave-labd fadeInUp faq-header-labd">
@@ -474,9 +372,7 @@ export default function Bash() {
                     each item has a corresponding index , All indexes start at
                     position 0
                   </p>
-                  <table
-                    className="table table-bordered"
-                  >
+                  <table className="table table-bordered">
                     <tbody>
                       <tr>
                         <td>item</td>
@@ -552,13 +448,16 @@ export default function Bash() {
                     So we successfully managed to swap out an element in our
                     array!
                   </p>
+
                   <div className="go-to-section">
-                    <Link
-                      to="/bash-scripting/bash_quiz#Arrays"
+                    <button
+                      onClick={() =>
+                        handleGoToLab("/bash-scripting/bash_quiz#Arrays")
+                      }
                       className="go-to"
                     >
-                      Go To Arrays Questions
-                    </Link>
+                      Go To Labs
+                    </button>
                   </div>
                 </dd>
                 <dt className="wave-labd fadeInUp faq-header-labd">
@@ -607,9 +506,7 @@ export default function Bash() {
                     The <span>-eq</span> is one way of doing this, you could
                     also use <span>“=”</span>
                   </p>
-                  <table
-                    className="table table-bordered"
-                  >
+                  <table className="table table-bordered">
                     <thead>
                       <tr>
                         <th>Operator</th>
@@ -674,45 +571,29 @@ export default function Bash() {
                       >
                         <code className="language-shell-session">
                           <span className="token command-c">
-                            <span
-                              className="token info punctuation"
-                            >
-                              <span
-                                className="token user"
-                              >
+                            <span className="token info punctuation">
+                              <span className="token user">
                                 # ./example.sh guessme
                               </span>
                             </span>
                           </span>
                           <span className="token command-c-c">
-                            <span
-                              className="token info punctuation"
-                            >
-                              <span
-                                className="token user"
-                              >
+                            <span className="token info punctuation">
+                              <span className="token user">
                                 "They are equal"
                               </span>
                             </span>
                           </span>
                           <span className="token command-c">
-                            <span
-                              className="token info punctuation"
-                            >
-                              <span
-                                className="token user"
-                              >
+                            <span className="token info punctuation">
+                              <span className="token user">
                                 # ./example.sh hi
                               </span>
                             </span>
                           </span>
                           <span className="token command-c">
-                            <span
-                              className="token info punctuation"
-                            >
-                              <span
-                                className="token user"
-                              >
+                            <span className="token info punctuation">
+                              <span className="token user">
                                 "They are not equal"
                               </span>
                             </span>
@@ -755,36 +636,22 @@ export default function Bash() {
                       >
                         <code className="language-shell-session">
                           <span className="token command-c">
-                            <span
-                              className="token info punctuation"
-                            >
-                              <span
-                                className="token user"
-                              >
+                            <span className="token info punctuation">
+                              <span className="token user">
                                 ./example.sh hello.txt
                               </span>
                             </span>
                           </span>
                           <span className="token command-c">
-                            <span
-                              className="token info punctuation"
-                            >
-                              <span
-                                className="token user"
-                              >
+                            <span className="token info punctuation">
+                              <span className="token user">
                                 ─# cat hello.txt
                               </span>
                             </span>
                           </span>
                           <span className="token command-c">
-                            <span
-                              className="token info punctuation"
-                            >
-                              <span
-                                className="token user"
-                              >
-                                hello
-                              </span>
+                            <span className="token info punctuation">
+                              <span className="token user">hello</span>
                             </span>
                           </span>
                         </code>
@@ -812,32 +679,27 @@ export default function Bash() {
                     Feel free to add anything you like and make it as
                     complicated as you wish and good luck with your project!
                   </p>
+
                   <div className="go-to-section">
-                    <Link
-                      to="/bash-scripting/bash_quiz#Conditionals"
+                    <button
+                      onClick={() =>
+                        handleGoToLab("/bash-scripting/bash_quiz#Conditionals")
+                      }
                       className="go-to"
                     >
-                      Go To Conditionals Questions
-                    </Link>
+                      Go To Labs
+                    </button>
                   </div>
                 </dd>
-                {/* 
-            # main slider
-
-            <dt className="wave-labd fadeInUp faq-header-labd"><span>Topic 3</span> Variables </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
-                <p><br></br></p>
-
-
-            </dd> 
-            
-            */}
               </dl>
             </div>
             <div className="go-to-section">
-              <Link to="/bash-scripting/bash_quiz" className="go-to">
-                Go To Quiz
-              </Link>
+              <button
+                onClick={() => handleGoToLab("/bash-scripting/bash_quiz")}
+                className="go-to"
+              >
+                Go To Labs
+              </button>
             </div>
           </div>
         </div>

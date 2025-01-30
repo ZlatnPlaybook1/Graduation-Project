@@ -1,113 +1,35 @@
 import React from "react";
-import { useEffect, useRef } from "react";
-import $ from "jquery";
 import "../Page_Styles/Content.css";
 import Header from "../../Header/Header";
-// import background from "../../assets/img/background.png";
-import image from "../../assets/img/Obfuscation/course_image.png";
-import { Link } from "react-router-dom";
+import background from "../../assets/img/background.png";
+import imagecourse from "../../assets/img/Obfuscation/course_image.png";
 import Footer from "../../Footer/Footer";
 import exampleImage1 from "../../assets/img/Obfuscation/1.png";
 import exampleImage2 from "../../assets/img/Obfuscation/2.png";
 import exampleImage3 from "../../assets/img/Obfuscation/3.png";
 import exampleImage4 from "../../assets/img/Obfuscation/4.png";
-
+import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function CaptchaBypass() {
-  const faqSectionRef = useRef(null);
-
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
+  const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing-labd">
-        <div className="banner">
-          {/* <img src={background} alt="bacground" /> */}
-        </div>
-        <div className="container-labd">
-          <div className="breadcrumb">
-            <ul>
-              <li>
-                <Link to="">Home</Link>
-              </li>
-              <li>
-                <Link to="">Captcha Bypass</Link>
-              </li>
-              {/* <li>
-                <span className="active-breadcrumb">
-                  Intro To Offensive Security
-                </span>
-              </li> */}
-            </ul>
-          </div>
-          <div className="course-info">
-            <img src={image} alt="logo" />
-            <div className="course-text">
-              <h1>Captcha Bypass</h1>
-              <p>
-                Master the basics of Captcha Bypass, a powerful technique for
+
+      <LandingLab
+        background={background}
+        imagecourse={imagecourse}
+        courseTitle="Captcha Bypass"
+        courseDescription=" Master the basics of Captcha Bypass, a powerful technique for
                 securing code and protecting intellectual property in
-                cybersecurity environments.
-              </p>
-              <div className="course-icons">
-                <div className="diff">
-                  <div className="easy">
-                    <i className="fa-solid fa-signal"></i>
-                    <p>Easy</p>
-                  </div>
-                </div>
-                <div className="duration">
-                  <i className="fa-solid fa-clock"></i>
-                  <p className="time">50 min</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="options">
-            <button>
-              <i className="far fa-bookmark"></i>
-              <p>Save Room</p>
-            </button>
-            <div className="like">
-              <button>
-                <i className="fas fa-thumbs-up"></i>
-                <p></p>
-              </button>
-              <button>
-                <i className="fas fa-thumbs-down"></i>
-                <p></p>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+                cybersecurity environments."
+        difficulty="Intermediate"
+        duration="30 min"
+        onSaveRoom={() => console.log("Room Saved!")}
+        onLike={() => console.log("Liked!")}
+        onDislike={() => console.log("Disliked!")}
+      />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className="course-labd">
@@ -276,25 +198,15 @@ export default function CaptchaBypass() {
                     </li>
                   </ol>
                 </dd>
-
-                {/* 
-            # main slider
-
-            <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span> Topic 2</span> What are Obfuscation & Deobfuscation ?</dt>
-                  <dd className="fadeInUp faq-body-labd" id="border-left">
-                <p><br></br></p>
-
-
-            </dd> 
-            
-            */}
               </dl>
             </div>
             <div className="go-to-section">
-              <Link to="/obfuscation/obfuscation_lab" className="go-to">
-                Go To Lab
-              </Link>
+              <button
+                onClick={() => handleGoToLab("/obfuscation/obfuscation_lab")}
+                className="go-to"
+              >
+                Go To Labs
+              </button>
             </div>
           </div>
         </div>

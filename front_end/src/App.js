@@ -699,7 +699,7 @@ function App() {
           {/* Start Obfuscation */}
           <Route path="/obfuscation" element={<Obfuscation />} />
           <Route
-            path="/Obfuscation/obfuscation_lab"
+            path="/Obfuscation/obfuscation_labs"
             element={<OBFUSCATION_LAB />}
           />
           <Route

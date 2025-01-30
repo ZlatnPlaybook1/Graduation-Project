@@ -1,104 +1,29 @@
 import React from "react";
-import { useEffect, useRef } from "react";
-import $ from "jquery";
-// import "../Page_Styles/Content.css";
 import "../Page_Styles/Content_sec.css";
 import Header from "../../Header/Header";
-// import background from "../../assets/img/background.png";
-import image from "../../assets/img/linux/linux_logo.png";
-import { Link } from "react-router-dom";
+import imagecourse from "../../assets/img/linux/linux_logo.png";
+import background from "../../assets/img/background.png";
 import Footer from "../../Footer/Footer";
-
+import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function Linux() {
-  const faqSectionRef = useRef(null);
-
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
+  const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <div className="landing-labd">
-        <div className="banner">
-          {/* <img src={background} alt="bacground" /> */}
-        </div>
-        <div className="container-labd">
-          <div className="breadcrumb">
-            <ul>
-              <li>
-                <Link to="">Home</Link>
-              </li>
-              <li>
-                <Link to="">Linux Fundamentals</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="course-info">
-            <img src={image} alt="logo" />
-            <div className="course-text">
-              <h1>Linux Fundamentals</h1>
-              <p>
-                Build a solid foundation in Linux, the operating system at the
-                core of many cybersecurity tools and infrastructures.
-              </p>
-              <div className="course-icons">
-                <div className="diff">
-                  <div className="easy">
-                    <i className="fas fa-signal"></i>
-                    <p>Easy</p>
-                  </div>
-                </div>
-                <div className="duration">
-                  <i className="fa-solid fa-clock"></i>
-                  <p className="time">15 min</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="options">
-            <button>
-              <i className="far fa-bookmark"></i>
-              <p>Save Room</p>
-            </button>
-            <div className="like">
-              <button>
-                <i className="fas fa-thumbs-up"></i>
-                <p></p>
-              </button>
-              <button>
-                <i className="fas fa-thumbs-down"></i>
-                <p></p>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <LandingLab
+        background={background}
+        imagecourse={imagecourse}
+        courseTitle="Linux Fundamentals"
+        courseDescription="Build a solid foundation in Linux, the operating system at the
+                core of many cybersecurity tools and infrastructures."
+        difficulty="Intermediate"
+        duration="30 min"
+        onSaveRoom={() => console.log("Room Saved!")}
+        onLike={() => console.log("Liked!")}
+        onDislike={() => console.log("Disliked!")}
+      />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className="course-labd">
@@ -259,34 +184,6 @@ export default function Linux() {
                       </div>
                     </li>
                   </ul>
-                  {/* <p className="question">
-                    If we wanted to output the text "TryHackMe", what would our
-                    command be?
-                  </p>
-                  <form>
-                    <input
-                      type="text"
-                      name="answer"
-                      placeholder="Answer Format: **********"
-                    />
-                    <button>
-                      <i className="fa-regular fa-paper-plane"></i>Submit
-                    </button>
-                  </form>
-                  <p className="question">
-                    What is the username of who you're logged in as on your
-                    deployed Linux machine?
-                  </p>
-                  <form action="">
-                    <input
-                      type="text"
-                      name="answer"
-                      placeholder="Answer Format: **********"
-                    />
-                    <button>
-                      <i className="fa-regular fa-paper-plane"></i>Submit
-                    </button>
-                  </form> */}
                 </dd>
                 <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 2</span>Interacting With the Filesystem!
@@ -692,60 +589,6 @@ export default function Linux() {
                       </ol>
                     </li>
                   </ul>
-                  {/* <p className="question">
-                    On the Linux machine that you deploy, how many folders are
-                    there?
-                  </p>
-                  <form action="">
-                    <input
-                      type="text"
-                      name="answer"
-                      placeholder="Answer Format: **********"
-                    />
-                    <button>
-                      <i className="fa-regular fa-paper-plane"></i>Submit
-                    </button>
-                  </form>
-                  <p className="question">
-                    Which directory contains a file?
-                  </p>
-                  <form action="">
-                    <input
-                      type="text"
-                      name="answer"
-                      placeholder="Answer Format: **********"
-                    />
-                    <button>
-                      <i className="fa-regular fa-paper-plane"></i>Submit
-                    </button>
-                  </form>
-                  <p className="question">
-                    What is the contents of this file?
-                  </p>
-                  <form action="">
-                    <input
-                      type="text"
-                      name="answer"
-                      placeholder="Answer Format: **********"
-                    />
-                    <button>
-                      <i className="fa-regular fa-paper-plane"></i>Submit
-                    </button>
-                  </form>
-                  <p className="question">
-                    Use the cd command to navigate to this file and find out the
-                    new current working directory. What is the path?
-                  </p>
-                  <form action="">
-                    <input
-                      type="text"
-                      name="answer"
-                      placeholder="Answer Format: **********"
-                    />
-                    <button>
-                      <i className="fa-regular fa-paper-plane"></i>Submit
-                    </button>
-                  </form> */}
                 </dd>
                 <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 3</span>Searching for Files
@@ -1145,33 +988,6 @@ export default function Linux() {
                       </p>
                     </li>
                   </ul>
-                  {/* <p className="question">
-                    Use grep on "access.log" to find the flag that has a prefix
-                    of "THM". What is the flag?
-                  </p>
-                  <form action="">
-                    <input
-                      type="text"
-                      name="answer"
-                      placeholder="Answer Format: **********"
-                    />
-                    <button>
-                      <i className="fa-regular fa-paper-plane"></i>Submit
-                    </button>
-                  </form>
-                  <p className="question">
-                    And I still haven't found what I'm looking for!
-                  </p>
-                  <form action="">
-                    <input
-                      type="text"
-                      name="answer"
-                      placeholder="Answer Format: **********"
-                    />
-                    <button>
-                      <i className="fa-regular fa-paper-plane"></i>Submit
-                    </button>
-                  </form> */}
                 </dd>
                 <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 4</span>An Introduction to Shell Operators
@@ -1457,71 +1273,17 @@ export default function Linux() {
                       </div>
                     </li>
                   </ul>
-                  {/* <p className="question">
-                    If we wanted to run a command in the background, what
-                    operator would we want to use?
-                  </p>
-                  <form action="">
-                    <input
-                      type="text"
-                      name="answer"
-                      placeholder="Answer Format: **********"
-                    />
-                    <button>
-                      <i className="fa-regular fa-paper-plane"></i>Submit
-                    </button>
-                  </form>
-                  <p className="question">
-                    If I wanted to replace the contents of a file named
-                    "passwords" with the word "password123", what would my
-                    command be?
-                  </p>
-                  <form action="">
-                    <input
-                      type="text"
-                      name="answer"
-                      placeholder="Answer Format: **********"
-                    />
-                    <button>
-                      <i className="fa-regular fa-paper-plane"></i>Submit
-                    </button>
-                  </form>
-                  <p className="question">
-                    Now if I wanted to add "tryhackme" to this file named
-                    "passwords" but also keep "passwords123", what would my
-                    command be
-                  </p>
-                  <form action="">
-                    <input
-                      type="text"
-                      name="answer"
-                      placeholder="Answer Format: **********"
-                    />
-                    <button>
-                      <i className="fa-regular fa-paper-plane"></i>Submit
-                    </button>
-                  </form>
-                  <p className="question">
-                    Now use the deployed Linux machine to put these into
-                    practice
-                  </p>
-                  <form action="">
-                    <input
-                      type="text"
-                      name="answer"
-                      placeholder="Answer Format: **********"
-                    />
-                    <button>
-                      <i className="fa-regular fa-paper-plane"></i>Submit
-                    </button>
-                  </form> */}
                 </dd>
               </dl>
             </div>
+
             <div className="go-to-section">
-              <Link to="/linux/linux_lab" className="go-to">
-                Go To Lab
-              </Link>
+              <button
+                onClick={() => handleGoToLab("/linux/linux_lab")}
+                className="go-to"
+              >
+                Go To Labs
+              </button>
             </div>
           </div>
         </div>

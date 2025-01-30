@@ -1,89 +1,32 @@
-import React, { useEffect, useRef } from "react";
-import $ from "jquery";
+import React from "react";
 import "./UnrestrictedFileUpload.css";
-import { Link } from "react-router-dom";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import CourseInfo from "../../Courses/CourseInfo";
 import photo2 from "../../assets/img/Unrestricted File Upload/Post&GetImage.png";
 import code1 from "../../assets/img/Unrestricted File Upload/code1FileUpload.png";
 import code2 from "../../assets/img/Unrestricted File Upload/code2FileUpload.png";
 import code3 from "../../assets/img/Unrestricted File Upload/code3FileUpload.png";
-import uplode from "../../assets/img/Unrestricted File Upload/FileUploadIcon.png";
+import imagecourse from "../../assets/img/Unrestricted File Upload/FileUploadIcon.png";
+import background from "../../assets/img/background.png";
+import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function UnrestrictedFileUpload() {
-  const faqSectionRef = useRef(null);
-
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
+  const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <div className="landing-landing">
-        <div className="banner-landing">
-          {/* <img src={uplode} alt="background" /> */}
-        </div>
-        <div className="container-landing">
-          <div className="breadcrumb-landing">
-            <ul>
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="">Unrestricted File Upload</Link>
-              </li>
-            </ul>
-          </div>
-          <CourseInfo
-            imgSrc={uplode}
-            title="Unrestricted File Upload"
-            description="Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce."
-          />
-          <div className="options-landing">
-            <button>
-              <i className="far fa-bookmark for-landing"></i>
-              <p>Save Room</p>
-            </button>
-            <div className="like-landing">
-              <button>
-                <i className="fas fa-thumbs-up for-landing"></i>
-                <p></p>
-              </button>
-              <button>
-                <i className="fas fa-thumbs-down for-landing"></i>
-                <p></p>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <LandingLab
+        background={background}
+        imagecourse={imagecourse}
+        courseTitle="Unrestricted File Upload"
+        courseDescription="Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce."
+        difficulty="Intermediate"
+        duration="30 min"
+        onSaveRoom={() => console.log("Room Saved!")}
+        onLike={() => console.log("Liked!")}
+        onDislike={() => console.log("Disliked!")}
+      />
       {/* End Landing */}
       {/* Start Content */}
       <div className="UnrestrictedContent">
@@ -334,13 +277,18 @@ export default function UnrestrictedFileUpload() {
                 {/* Single FAQ Area  */}
               </dl>
             </div>
-            <div className="go-to-section-lab2">
-              <Link
-                to="/Unrestricted File Upload/lab_Unrestricted_File_Uplode"
-                className="go-to-lab2"
+
+            <div className="go-to-section">
+              <button
+                onClick={() =>
+                  handleGoToLab(
+                    "/Unrestricted File Upload/lab_Unrestricted_File_Uplode"
+                  )
+                }
+                className="go-to"
               >
-                Go To Lab
-              </Link>
+                Go To Labs
+              </button>
             </div>
           </div>
         </div>
