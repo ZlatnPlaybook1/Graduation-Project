@@ -150,6 +150,9 @@ import HASH_CRACK from "./Pages/Website/UserHome/Labs/CryptoGraphy/Practical/fou
 // WireShark
 import WireShark from "./Pages/Website/UserHome/Labs/WireShark/WireShark.jsx";
 import WIRESHARK_LAB from "./Pages/Website/UserHome/Labs/WireShark/WireShark_lab.jsx";
+import STOLEN_FLAG from "./Pages/Website/UserHome/Labs/WireShark/Practical/first_lab/Stolen_flag.jsx";
+import TCP_INTRUSION from "./Pages/Website/UserHome/Labs/WireShark/Practical/second_lab/TCP_intrusion.jsx";
+import ARP_TRICK from "./Pages/Website/UserHome/Labs/WireShark/Practical/third_lab/ARP_trick.jsx";
 // End WireShark
 // File Inclusion
 import FileInclusion from "./Pages/Website/UserHome/Labs/FileInclusion/FileInclusion.jsx";
@@ -753,6 +756,9 @@ function App() {
           {/* Start WireShark */}
           <Route path="/wireshark" element={<WireShark />} />
           <Route path="/wireshark/wireshark_lab" element={<WIRESHARK_LAB />} />
+          <Route path="/wireshark/wireshark_lab/stolen-flag" element={<STOLEN_FLAG />} />
+          <Route path="/wireshark/wireshark_lab/tcp-intrusion" element={<TCP_INTRUSION />} />
+          <Route path="/wireshark/wireshark_lab/arp-trick" element={<ARP_TRICK />} />
           {/* End WireShark */}
           {/* Start FileInclusion */}
           <Route path="/fileinclusion" element={<FileInclusion />} />

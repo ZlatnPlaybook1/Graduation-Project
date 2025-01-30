@@ -1,12 +1,15 @@
-.container {
+.obu-container {
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
 /* Extra small */
 @media (min-width: 0px) {
-  .container {
+  .obu-container {
     max-width: 100%;
   }
 }
@@ -14,7 +17,7 @@
 
 /* small */
 @media (min-width: 576px) {
-  .container {
+  .obu-container {
     max-width: 540px;
   }
 }
@@ -22,21 +25,21 @@
 
 /*  Medium */
 @media (min-width: 768px) {
-  .container {
+  .obu-container {
     max-width: 750px;
   }
 }
 
 /* Large */
 @media (min-width: 992px) {
-  .container {
+  .obu-container {
     max-width: 970px;
   }
 }
 
 /* X-Large */
 @media (min-width: 1200px) {
-  .container {
+  .obu-container {
     max-width: 1170px;
   }
 }
@@ -53,10 +56,11 @@
 .obfuscation_lab_body {
   display: flex;
   justify-content: center;
-  align-items: center;height: 95%;
+  align-items: center;
+  height: 95%;
 }
 
-.card {
+.obu-card {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -67,7 +71,7 @@
   color: #EAEAEA;
 }
 
-.card_content {
+.obu-card_content {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -76,7 +80,7 @@
   padding: 20px;
 }
 
-.card_form {
+.obu-card_form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -84,13 +88,13 @@
   justify-content: center;
 }
 
-.card_title {
+.obu-card_title {
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
 }
 
-.card_field {
+.obu-card_field {
   width: 100%;
   margin-bottom: 20px;
   display: flex;
@@ -99,20 +103,21 @@
   align-items: center;
 }
 
-.card_field label {
+.obu-card_field label {
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 10px;
+  color: #eaeaea;
 }
 
-.card_field .input {
+.obu-card_field .input {
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: end;
 }
 
-.card_field .input i {
+.obu-card_field .input i {
   position: absolute;
   border-radius: 50%;
   background-color: #252A34;
@@ -120,7 +125,7 @@
   color: #EAEAEA;
 }
 
-.card_field .input input {
+.obu-card_field .input input {
   width: 100%;
   padding: 10px;
   margin-bottom: 0;
@@ -129,13 +134,13 @@
   font-size: 16px;
 }
 
-.card_field .input input:focus {
+.obu-card_field .input input:focus {
   outline: none;
   border: 1px solid #225693;
 }
 
-.card_field button,
-.card_field a {
+.obu-card_field button,
+.obu-card_field a {
   width: 100%;
   height: 50px;
   border-radius: 50px;
@@ -150,8 +155,8 @@
   overflow: hidden;
 }
 
-.card_field button::after,
-.card_field a::after {
+.obu-card_field button::after,
+.obu-card_field a::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -163,32 +168,32 @@
   transition: var(--main-transition);
 }
 
-.card_field button:hover::after,
-.card_field a:hover::after {
+.obu-card_field button:hover::after,
+.obu-card_field a:hover::after {
   top: 0;
 }
 
-.card_field.hint {
+.obu-card_field.hint {
   position: absolute;
   top: 5%;
   right: 3%;
   width: max-content;
 }
 
-.card_field.back {
+.obu-card_field.back {
   position: absolute;
   top: 5%;
   left: 3%;
   width: max-content;
 }
 
-.card_field.hint .source {
+.obu-card_field.hint .source {
   padding: 10px 35px;
   position: relative;
   overflow: hidden;
 }
 
-.card_field.hint .source::before {
+.obu-card_field.hint .source::before {
   content: "Check Inspect";
   position: absolute;
   width: 100%;
@@ -203,7 +208,7 @@
   transition: var(--main-transition);
 }
 
-.card_field.hint .source:focus::before {
+.obu-card_field.hint .source:focus::before {
   top: 0;
 }
 

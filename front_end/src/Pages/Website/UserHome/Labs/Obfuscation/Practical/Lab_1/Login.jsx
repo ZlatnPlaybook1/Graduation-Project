@@ -88,12 +88,12 @@ export default function Obfuscation_login() {
           '<p>click inspect  and try to beautify and Deobfuscate  script use this : </p> <a href="https://filipemgs.github.io/poisonjs/">De-obfuscate</a> <a href="https://beautifier.io/">beautifier.io</a>' 
           } />
         <div className="obfuscation_lab_body">
-          <div className="container">
-            <div className="card">
-              <div className="card_content">
-                <div className="card_title">Login</div>
-                <form className="card_form" onSubmit={submitLogin}>
-                  <div className="card_field">
+          <div className="obu-container">
+            <div className="obu-card">
+              <div className="obu-card_content">
+                <div className="obu-card_title">Login</div>
+                <form className="obu-card_form" onSubmit={submitLogin}>
+                  <div className="obu-card_field">
                     <label htmlFor="username">Username</label>
                     <div className="input">
                       <i className="fa-solid fa-user fa-2x"></i>
@@ -109,7 +109,7 @@ export default function Obfuscation_login() {
                       />
                     </div>
                   </div>
-                  <div className="card_field">
+                  <div className="obu-card_field">
                     <label htmlFor="password">Password</label>
                     <div className="input">
                       <i className="fa-solid fa-lock fa-2x"></i>
@@ -125,7 +125,7 @@ export default function Obfuscation_login() {
                       />
                     </div>
                   </div>
-                  <div className="card_field">
+                  <div className="obu-card_field">
                     <button type="submit">Login</button>
                   </div>
                   {err !== "" && <span className="error">{err}</span>}

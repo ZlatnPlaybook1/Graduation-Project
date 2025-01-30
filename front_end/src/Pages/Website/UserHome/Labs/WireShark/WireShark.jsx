@@ -794,7 +794,7 @@ export default function WireShark() {
             </div>
             <div className="go-to-section">
               <button
-                onClick={() => handleGoToLab("/obfuscation/obfuscation_lab")}
+                onClick={() => handleGoToLab("/wireshark/wireshark_lab")}
                 className="go-to"
               >
                 Go To Labs
