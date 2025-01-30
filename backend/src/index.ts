@@ -27,6 +27,7 @@ import lab3BrokenAuthRouter from "./labs/brokenAuth/lab3/lab3.router";
 import lab2apiHacking from "./labs/apiHacking/lab2/lab2.router";
 import lab1PathTraversalRouter from "./labs/pathTraversal/lab1/lab1.router";
 import lab1CommendInjection from "./labs/commandInjection/lab1/lab1.router";
+import lab3CommendInjection from "./labs/commandInjection/lab3/lab3.router";
 
 const app = express();
 app.use("/uploads", express.static("uploads"));
@@ -64,6 +65,7 @@ app.use("/api", lab3BrokenAuthRouter);
 app.use("/api", lab2apiHacking);
 app.use("/api", lab1PathTraversalRouter);
 app.use("/api", lab1CommendInjection);
+app.use("/api", lab3CommendInjection);
 
 dotenv.config();
 
