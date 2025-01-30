@@ -118,6 +118,7 @@ export default function IDORLabComponent() {
           <div className="form-group">
             <label htmlFor="transfer_amount">Transfer Amount:</label>
             <input
+              className="idor-number"
               type="number"
               id="transfer_amount"
               value={transferAmount}
@@ -134,7 +135,7 @@ export default function IDORLabComponent() {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="Idor-button">
             Transfer
           </button>
         </form>

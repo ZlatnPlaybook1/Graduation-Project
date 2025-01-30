@@ -514,7 +514,7 @@ function App() {
           {/* End Sql_Injection */}
           {/* Start XSS */}
           <Route path="/xss" element={<XSS />} />
-          <Route path="/xss/xss_lab" element={<XSS_LAB />} />
+          <Route path="/xss/xss_labs" element={<XSS_LAB />} />
           <Route path="/xss/xss_lab/first_lab" element={<XSS_FIRST />} />
           <Route path="/xss/xss_lab/second_lab" element={<XSS_SECOND />} />
           <Route path="/xss/xss_lab/third_lab" element={<XSS_THIRD />} />

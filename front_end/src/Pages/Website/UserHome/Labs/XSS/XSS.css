@@ -9,7 +9,8 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-weight: 600;
+  font-weight: 400;
+  font-family: "Poppins", serif;
 }
 ul {
   list-style: none;
@@ -19,7 +20,7 @@ ul {
 a {
   text-decoration: none;
   color: #333;
-  font-size: 18px;
+  font-size: 16px;
   margin: 0 10px;
   padding: 15px;
 }
@@ -86,14 +87,14 @@ a {
 }
 
 .landing-lab2 .breadcrumb-lab2 ul li a {
-  font-size: 12px;
+  font-size: 16px;
   color: rgb(184, 190, 201);
   padding: 0;
   margin: 0;
 }
 
 .landing-lab2 .breadcrumb-lab2 ul li span.active-breadcrumb-lab2 {
-  font-size: 12px;
+  font-size: 16px;
   padding: 0;
   margin: 0;
   color: rgb(99, 110, 129);
@@ -123,7 +124,7 @@ a {
 
 .landing-lab2 .course-info-lab2 .course-text-lab2 p {
   margin-top: 5px;
-  font-size: 12px;
+  font-size: 16px;
   display: inline-block;
   padding-left: 10px;
 }
@@ -266,12 +267,12 @@ a {
   border-radius: 5px 5px 0 0;
   color: white;
   background-color: #212c42;
-  font-size: 18px;
+  font-size: 16px;
   overflow: hidden;
   cursor: pointer;
   line-height: 20px;
   padding: 10px 25px;
-  font-weight: lighter;
+  font-weight: 400;
   position: relative;
   width: 100%;
   margin-top: 20px;
@@ -303,7 +304,9 @@ a {
 }
 
 .faq-section-lab2 .section-text-lab2 .faq-body-lab2 {
-  font-size: 18px;
+  font-family: "Poppins", serif;
+  font-size: 16px !important;
+  font-weight: 400 !important;
   padding: 15px 25px;
   line-height: 1.9;
   border-left: 4px solid red;
@@ -315,7 +318,8 @@ a {
 
 @media (max-width: 991px) {
   .faq-section-lab2 .section-text-lab2 .faq-body-lab2 {
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 400;
   }
 }
 
@@ -335,7 +339,7 @@ a {
 .faq-section-lab2 .section-text-lab2 .faq-body-lab2 ol li {
   list-style: decimal;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .faq-section-lab2 .section-text-lab2 .faq-body-lab2 ul li a {

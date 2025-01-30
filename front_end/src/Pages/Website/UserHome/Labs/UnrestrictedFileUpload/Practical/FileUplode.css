@@ -87,7 +87,7 @@ body {
 }
 
 /* Buttons */
-.btn {
+.style-btn {
   margin-top: 15px;
   font-size: 1rem;
   font-weight: 500;
@@ -96,12 +96,12 @@ body {
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn-primary {
+.style-btn {
   background: #4a90e2;
   color: #ffffff;
   border: none;
 }
 
-.btn-primary:hover {
+.style-btn:hover {
   background: #357ab8;
 }

@@ -140,7 +140,7 @@ const UnrestrictedLab1 = () => {
                   />
                 </div>
                 <div className="d-grid gap-2">
-                  <button className="btn btn-primary" type="submit">
+                  <button className="style-btn" type="submit">
                     Upload
                   </button>
                 </div>
