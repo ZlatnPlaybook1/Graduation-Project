@@ -35,7 +35,7 @@ export default function TCP_intrusion() {
   const checkAnswer = (e) => {
     e.preventDefault(); // Prevent form submission
     const answer = e.target.answer.value; // Get answer from input
-    if (answer === "Flag{cyber_lab_steg_hunter}") {
+    if (answer === "FLAG{TRACE_THE_PATHWAY_CYBER_LAB}") {
       setShowSuccess(true);
       document.getElementById("check").disabled = true;
       document.getElementById("check").innerHTML =

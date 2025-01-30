@@ -35,7 +35,7 @@ export default function ARP_trick() {
   const checkAnswer = (e) => {
     e.preventDefault(); // Prevent form submission
     const answer = e.target.answer.value; // Get answer from input
-    if (answer === "Flag{cyber_lab_corrupted_base64_reveal}") {
+    if (answer === "FLAG{CYBER_LAB_404X}") {
       setShowSuccess(true);
       document.getElementById("check").disabled = true;
       document.getElementById("check").innerHTML =

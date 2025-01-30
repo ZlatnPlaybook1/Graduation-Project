@@ -35,7 +35,7 @@ export default function Stolen_flag() {
   const checkAnswer = (e) => {
     e.preventDefault(); // Prevent form submission
     const answer = e.target.answer.value; // Get answer from input
-    if (answer === "FLAG(CYBER_LAB_SECRET_LAYER)") {
+    if (answer === "Flag{D3c0d3_P4ck3t_Cyber_Lab}") {
       setShowSuccess(true);
       document.getElementById("check").disabled = true;
       document.getElementById("check").innerHTML =
