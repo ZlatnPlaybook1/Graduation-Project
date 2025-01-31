@@ -150,9 +150,9 @@ import HASH_CRACK from "./Pages/Website/UserHome/Labs/CryptoGraphy/Practical/fou
 // WireShark
 import WireShark from "./Pages/Website/UserHome/Labs/WireShark/WireShark.jsx";
 import WIRESHARK_LAB from "./Pages/Website/UserHome/Labs/WireShark/WireShark_lab.jsx";
-import STOLEN_FLAG from "./Pages/Website/UserHome/Labs/WireShark/Practical/first_lab/Stolen_flag.jsx";
+import STOLEN_FLAG from "./Pages/Website/UserHome/Labs/WireShark/Practical/third_lab/Stolen_flag.jsx";
 import TCP_INTRUSION from "./Pages/Website/UserHome/Labs/WireShark/Practical/second_lab/TCP_intrusion.jsx";
-import ARP_TRICK from "./Pages/Website/UserHome/Labs/WireShark/Practical/third_lab/ARP_trick.jsx";
+import ARP_TRICK from "./Pages/Website/UserHome/Labs/WireShark/Practical/first_lab/ARP_trick.jsx";
 // End WireShark
 // File Inclusion
 import FileInclusion from "./Pages/Website/UserHome/Labs/FileInclusion/FileInclusion.jsx";
