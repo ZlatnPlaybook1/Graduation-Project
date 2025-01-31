@@ -3,8 +3,8 @@ import Header from "../../Header/Header";
 import "./BL_Vuln.css";
 import labImg from "../../assets/img/BLV/lab1.jpeg";
 
-import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
+import { Card } from "../../Card/Card";
 export default function BL_Vuln_labs() {
   return (
     <>
@@ -45,67 +45,40 @@ export default function BL_Vuln_labs() {
           <p className="section-p">Test Your Hacking Skills</p>
           <div className="row">
             {/* lab1 */}
-            <Link to="/BL-Vuln/BL_Vuln_labs/first_lab" className="course-card">
-              <div className="course-image">
-                <img src={labImg} alt="Lab 1 img" />
-              </div>
-              <div className="course-text">
-                <h3>Excessive trust in client-side controls</h3>
-                <p>
-                  This lab doesn't adequately validate user input. You can
-                  exploit a logic flaw in its purchasing workflow to buy items
-                  for an unintended price. To solve the lab, buy a "Lightweight
-                  l33t leather jacket". You can log in to your own account using
-                  the following credentials: <code>wiener:peter</code>.
-                </p>
-              </div>
-
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+            link={"/BL-Vuln/BL_Vuln_labs/first_lab"}
+            image={labImg}
+            title={"Excessive trust in client-side controls"}
+            brief={["This lab doesn't adequately validate user input. You can exploit a logic flaw in its purchasing workflow to buy items for an unintended price. To solve the lab, buy a 'Lightweight l33t leather jacket'. You can log in to your own account using the following credentials: ",<code>wiener:peter</code>,"."]}
+            difficulty={"Easy"}
+            />
 
             {/* lab2 */}
-            <Link to="/BL-Vuln/BL_Vuln_labs/second_lab" className="course-card">
-              <div className="course-image">
-                <img src={labImg} alt="Lab 2 img" />
-              </div>
-              <div className="course-text">
-                <h3>High-level logic vulnerability</h3>
-                <p>
-                  This lab doesn't adequately validate user input. You can
-                  exploit a logic flaw in its purchasing workflow to buy items
-                  for an unintended price. To solve the lab, buy a "Lightweight
-                  l33t leather jacket". You can log in to your own account using
-                  the following credentials: <code>wiener:peter</code>.
-                </p>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link={"/BL-Vuln/BL_Vuln_labs/second_lab"}
+              image={labImg}
+              title={"High-level logic vulnerability"}
+              brief={[
+                "This lab doesn't adequately validate user input. You can exploit a logic flaw in its purchasing workflow to buy items for an unintended price. To solve the lab, buy a 'Lightweight l33t leather jacket'. You can log in to your own account using the following credentials: ",
+                <code>wiener:peter</code>,
+                ".",
+              ]}
+              difficulty={"Easy"}
+            />
 
             {/* Lab3 */}
-            <Link to="/BL-Vuln/BL_Vuln_labs/third_lab" className="course-card">
-              <div className="course-image">
-                <img src={labImg} alt="Lab 3 img" />
-              </div>
-              <div className="course-text">
-                <h3>Inconsistent security controls</h3>
-                <p>
-                  This lab's flawed logic allows arbitrary users to access
-                  administrative functionality that should only be available to
-                  company employees. To solve the lab, access the admin panel
-                  and delete the user <code>carlos</code>.
-                </p>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link={"/BL-Vuln/BL_Vuln_labs/third_lab"}
+              image={labImg}
+              title={"Inconsistent security controls"}
+              brief={[
+                "This lab's flawed logic allows arbitrary users to access administrative functionality that should only be available to company employees. To solve the lab, access the admin panel and delete the user ",
+                <code>carlos</code>,
+                ".",
+              ]}
+              difficulty={"Easy"}
+            />
+
           </div>
         </div>
       </div>

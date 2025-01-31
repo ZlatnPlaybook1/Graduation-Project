@@ -3,8 +3,8 @@ import Header from "../../Header/Header";
 import "./AC_Vuln.css";
 import labImg from "../../assets/img/ACV/lab.jpeg";
 
-import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
+import { Card } from "../../Card/Card";
 export default function AC_Vuln_labs() {
   return (
     <>
@@ -45,65 +45,50 @@ export default function AC_Vuln_labs() {
           <p className="section-p">Test Your Hacking Skills</p>
           <div className="row">
             {/* lab1 */}
-            <Link to="/AC-Vuln/AC_Vuln_labs/first_lab" className="course-card">
-              <div className="course-image">
-                <img src={labImg} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>vulnerability allowing login bypass</h3>
-                <p>
-                  This lab has an unprotected admin panel. Solve the lab by
-                  deleting the user <mark>carlos</mark>.
-                </p>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link={"/AC-Vuln/AC_Vuln_labs/first_lab"}
+              image={labImg}
+              title={"vulnerability allowing login bypass"}
+              brief={[
+                "This lab has an unprotected admin panel. Solve the lab by deleting the user",
+                <mark>carlos</mark>,
+                ".",
+              ]}
+              difficulty={"Easy"}
+            />
             {/* lab2 */}
-            <Link to="/AC-Vuln/AC_Vuln_labs/second_lab" className="course-card">
-              <div className="course-image">
-                <img src={labImg} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Unprotected admin functionality with unpredictable URL</h3>
-                <p>
-                  This lab has an unprotected admin panel. It's located at an
-                  unpredictable location, but the location is disclosed
-                  somewhere in the application. Solve the lab by accessing the
-                  admin panel, and using it to delete the user
-                  <mark>Carlos</mark>.
-                </p>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link={"/AC-Vuln/AC_Vuln_labs/second_lab"}
+              image={labImg}
+              title={"Unprotected admin functionality with unpredictable URL"}
+              brief={[
+                `This lab has an unprotected admin panel. It's located at an
+                unpredictable location, but the location is disclosed
+                somewhere in the application. Solve the lab by accessing the
+                admin panel, and using it to delete the user`,
+                <mark>carlos</mark>,
+                ".",
+              ]}
+              difficulty={"Easy"}
+            />
             {/* Lab3 */}
-            <Link to="/AC-Vuln/AC_Vuln_labs/third_lab" className="course-card">
-              <div className="course-image">
-                <img src={labImg} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>
-                  vulnerability in WHERE clause allowing retrieval of hidden
-                  data
-                </h3>
-                <p>
-                  This lab has an admin panel at /admin, which identifies
+            <Card
+              link={"/AC-Vuln/AC_Vuln_labs/third_lab"}
+              image={labImg}
+              title={
+                "vulnerability in WHERE clause allowing retrieval of hidden data"
+              }
+              brief={[
+                `This lab has an admin panel at /admin, which identifies
                   administrators using a forgeable cookie. Solve the lab by
                   accessing the admin panel and using it to delete the user
                   carlos. You can log in to your own account using the following
-                  credentials: <code>wiener:peter</code>
-                </p>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+                  credentials: `,
+                <code>wiener:peter</code>,
+                ".",
+              ]}
+              difficulty={"Easy"}
+            />
           </div>
         </div>
       </div>
