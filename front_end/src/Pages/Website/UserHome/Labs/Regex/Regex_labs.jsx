@@ -3,8 +3,8 @@ import Header from "../../Header/Header";
 import "./Regex.css";
 import labImg from "../../assets/img/Regex/lab1.jpeg";
 
-import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
+import { Card } from "../../Card/Card";
 export default function Regex_labs() {
   return (
     <>
@@ -45,40 +45,26 @@ export default function Regex_labs() {
           <p className="section-p">Test Your Hacking Skills</p>
           <div className="row">
             {/* Lab1 */}
-            <Link to="/Regex/Regex_labs/MCQReview" className="course-card">
-              <div className="course-image">
-                <img src={labImg} alt="Lab 1 Image" />
-              </div>
-              <div className="course-text">
-                <h3>MCQ Question Review</h3>
-                <p>
-                  These are multiple choice questions that are designed to be a
-                  review for the exam.
-                </p>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+            link={"/Regex/Regex_labs/MCQReview"}
+            image={labImg}
+            title={"MCQ Question Review"}
+            brief={
+              "These are multiple choice questions that are designed to be a review for the exam."
+            }
+            difficulty={"Easy"}
+            />
 
             {/* Lab2 */}
-            <Link to="/Regex/Regex_labs/CompleteReview" className="course-card">
-              <div className="course-image">
-                <img src={labImg} alt="Lab 2 Image" />
-              </div>
-              <div className="course-text">
-                <h3>Complete Question Review</h3>
-                <p>
-                  These are Complete questions that are designed to be a review
-                  for the exam.
-                </p>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+            link={"/Regex/Regex_labs/CompleteReview"}
+            image={labImg}
+            title={"Complete Question Review"}
+            brief={
+              "These are Complete questions that are designed to be a review for the exam."
+            }
+            difficulty={"Easy"}
+            />
           </div>
         </div>
       </div>

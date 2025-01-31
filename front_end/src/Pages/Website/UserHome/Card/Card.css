@@ -26,7 +26,6 @@
 
 .course-card img {
     width: 100%;
-    scale: 0.8;
     object-fit: cover;
     margin-bottom: 10px;
 }
@@ -38,6 +37,7 @@
     left: 0;
     transition: var(--main-transition);
     margin-bottom: 30px;
+    width: 100%;
     transform: translateY(-10%);
 }
 

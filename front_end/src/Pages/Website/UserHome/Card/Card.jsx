@@ -16,12 +16,6 @@ export const Card = ({
       <div className="course-text">
         <h3>{title}</h3>
         <p>{brief}</p>
-        <ul className="circled-order-cookies">
-          <li>Cyber Security Basics</li>
-          <li>Networking Basics and Weaknesses</li>
-          <li>The Web And Common Attacks</li>
-          <li>Learn to Use The Linux OS</li>
-        </ul>
       </div>
       <div className="easy">
         <i className="fa-solid fa-signal lab"></i>
