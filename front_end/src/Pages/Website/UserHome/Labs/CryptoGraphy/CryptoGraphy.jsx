@@ -2,7 +2,7 @@ import React from "react";
 import "../Page_Styles/Content_sec.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/background.png";
-import imagecourse from "../../assets/img/Obfuscation/course_image.png";
+import imagecourse from "../../assets/img/Cryptography/course_image.png";
 import Footer from "../../Footer/Footer";
 import exampleImage1 from "../../assets/img/Cryptography/1.png";
 import exampleImage2 from "../../assets/img/Cryptography/2.png";

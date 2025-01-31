@@ -2,12 +2,8 @@ import React from "react";
 import "../Page_Styles/Content.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/background.png";
-import imagecourse from "../../assets/img/Obfuscation/course_image.png";
+import imagecourse from "../../assets/img/Captcha Bypass/course_image.png";
 import Footer from "../../Footer/Footer";
-import exampleImage1 from "../../assets/img/Obfuscation/1.png";
-import exampleImage2 from "../../assets/img/Obfuscation/2.png";
-import exampleImage3 from "../../assets/img/Obfuscation/3.png";
-import exampleImage4 from "../../assets/img/Obfuscation/4.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function CaptchaBypass() {
@@ -38,166 +34,390 @@ export default function CaptchaBypass() {
             <div className="faq-section-labd">
               <dl className="section-text-labd">
                 {/* Single FAQ Area  */}
+                
                 <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span>Topic 1</span> Introduction
+                  <span>Module 1</span> Introduction to Captcha & Its Purpose
                 </dt>
                 <dd className="fadeInUp faq-body-labd" id="border-left">
-                  <h1>Welcome to Captcha Bypass</h1>
-
-                  <h2>What will you learn?</h2>
-                  <ol>
-                    <li>What are Obfuscation & Deobfuscation?</li>
-                    <li>Why do we use Obfuscation?</li>
-                    <li>Javascript Obfuscation </li>
-                    <li>JS Deobfuscation Tools</li>
-                  </ol>
+                  <p><br></br></p>
+                  <h1>What is Captcha?</h1>
+                  <h4>Captcha Overview</h4>
+                  <p>
+                    Captcha stands for <strong>Completely Automated Public Turing test to tell Computers and Humans Apart</strong>. It's a type of challenge-response test used in computing to determine if the user is human or a bot. Captchas are most commonly used in online forms, account registrations, and login systems.
+                  </p>
+                  <p>
+                    Captchas work by presenting tasks that are easy for humans to complete but difficult for bots to solve, such as identifying objects in images, solving puzzles, or typing distorted text. The challenge lies in creating a system that accurately distinguishes between human and automated bot behavior.
+                  </p>
+                  <h4>Types of Captchas</h4>
+                  <p>
+                    There are several types of Captcha mechanisms, with varying complexity:
+                  </p>
+                  <ul>
+                    <p><strong>Text-based Captcha:</strong> This type asks users to identify and type characters shown in distorted images. The images often contain noise or overlapping text to prevent automation.</p>
+                    <p><strong>Image-based Captcha:</strong> Users are asked to select images that match a certain criteria, such as choosing all the pictures containing cars or traffic lights.</p>
+                    <p><strong>reCAPTCHA:</strong> Google's reCAPTCHA comes in versions like v2 and v3. Version 2 uses the "I'm not a robot" checkbox, while v3 works invisibly, scoring users' behavior based on how they interact with the site.</p>
+                    <p><strong>hCaptcha:</strong> Similar to reCAPTCHA, but often used as a monetization service for website owners.</p>
+                    <p><strong>FunCaptcha:</strong> A puzzle-based Captcha that requires users to rotate objects to the correct orientation.</p>
+                  </ul>
+                  <h4>Why Websites Use Captchas?</h4>
+                  <p>
+                    Websites use Captchas to prevent malicious bots from abusing their systems. Without Captchas, bots could flood registration forms, brute force login attempts, scrape valuable data, or perform other harmful activities.
+                  </p>
+                  <p>
+                    Here are the primary reasons why Captchas are used:
+                  </p>
+                  <ul>
+                    <p><strong>Preventing Spam:</strong> Bots can flood forms with spam data, disrupting legitimate submissions and causing website owners to deal with an overwhelming amount of junk.</p>
+                    <p><strong>Protecting User Accounts:</strong> By blocking automated login attempts, Captchas stop bots from accessing private user accounts through brute force or credential stuffing attacks.</p>
+                    <p><strong>Preventing Data Scraping:</strong> Bots often harvest data from websites, such as emails, phone numbers, or product details, which can be exploited for marketing or malicious purposes.</p>
+                  </ul>
+                  <h4>Challenges with Captchas</h4>
+                  <p>
+                    While Captchas are essential for online security, they present challenges for legitimate users as well. Some people, such as those with visual impairments, may have difficulty solving Captchas. Over time, bots have become increasingly adept at bypassing simple Captchas, leading to the evolution of more complex systems like reCAPTCHA v3.
+                  </p>
+                  <p>
+                    As a result, Captchas must continuously evolve to stay one step ahead of bot automation, while also ensuring accessibility for users with disabilities.
+                  </p>
+                  <br></br>
                 </dd>
 
                 <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span> Topic 2</span> What are Obfuscation & Deobfuscation ?
+                  <span>Module 2</span> Understanding Captcha Bypass Techniques
                 </dt>
                 <dd className="fadeInUp faq-body-labd" id="border-left">
+                  <p><br></br></p>
+                  <h1>Understanding Captcha Bypass Techniques</h1>
+                  <h4>Bypass Methods Overview</h4>
                   <p>
-                    <br></br>
+                    As bots have become more sophisticated, several methods have been developed to bypass Captchas. While it is important to remember that bypassing Captchas for malicious purposes is illegal and unethical, ethical hackers, penetration testers, and developers working on automated tasks often need to understand these techniques for testing purposes or legitimate automation.
                   </p>
-                  <h1>What are Obfuscation & Deobfuscation?</h1>
-                  <h4>Obfuscation </h4>
+                  <h4>Common Bypass Methods</h4>
                   <p>
-                    The process of modifying the script to convert it to a
-                    difficult, harder-to-understand format, but will return the
-                    same result. There are several obfuscation methods hence
-                    that there are many tools for it.
+                    Below are several methods that are commonly used to bypass Captchas:
+                  </p>
+                  <ul>
+                    <p><strong>Optical Character Recognition (OCR):</strong> OCR is the process of extracting text from images. For text-based Captchas, OCR tools like `Tesseract` can be used to recognize and interpret distorted text. However, this method can be tricky with more complex Captchas that involve background noise or intricate distortion.</p>
+                    <p><strong>Audio Captcha Solving:</strong> Many Captchas offer an audio alternative for those with visual impairments. Automated speech-to-text tools can be used to transcribe these audio Captchas, providing a way to bypass them.</p>
+                    <p><strong>Captcha Solving APIs:</strong> Services like 2Captcha, Anti-Captcha, and DeathByCaptcha offer APIs that allow you to send Captcha challenges and receive solutions in return. These services usually employ human workers to solve Captchas on your behalf, making it highly effective but not entirely automated.</p>
+                    <p><strong>Browser Automation (Selenium, Puppeteer):</strong> Tools like Selenium and Puppeteer simulate human browsing behavior. These tools can interact with Captchas by mimicking mouse movements, keyboard input, or even solving certain Captchas (like image-based ones) through AI-driven scripts.</p>
+                    <p><strong>Machine Learning & AI:</strong> AI-powered systems can recognize patterns in images and learn how to bypass Captchas. This method is still evolving but holds promise for solving complex Captchas with less human intervention.</p>
+                  </ul>
+                  <h4>Ethical Considerations</h4>
+                  <p>
+                    It's important to note that while these techniques can be useful for legitimate purposes (e.g., testing Captcha systems for vulnerabilities or automating repetitive tasks), bypassing Captchas without permission is illegal and unethical. Make sure to always have the consent of the website owner before attempting any form of Captcha bypass.
+                  </p>
+                  <p>
+                    Ethical hacking and responsible disclosure are key principles that should guide your actions. If you discover a vulnerability or a bypass method, report it responsibly to the website or service owner. Always use these techniques for educational or ethical hacking purposes only.
                   </p>
                   <br></br>
-                  <h4>Deobfuscation </h4>
-                  <p>
-                    It is the reverse process of obfuscation, as it rewrites the
-                    script again from a very difficult to read to an
-                    understandable one. This can be done with many tools.
-                  </p>
-                  <br></br>
-                  <img src={exampleImage1} alt="Example" />
-                  <h2>Why do we use Obfuscation?</h2>
-                  <br></br>
-                  <p>
-                    There are many reasons why you may use obfuscation, here are
-                    some of them:
-                  </p>
-                  <ol>
-                    <li>Prevent others from stealing their code </li>
-                    <li>
-                      Avoid attackers understanding the script functionalities
-                      and abusing it.
-                    </li>
-                    <li>
-                      Bypassing WAFs and security detection systems from
-                      filtering or detecting your payloads.{" "}
-                    </li>
-                  </ol>
-                  <br></br>
-                  <h2>Common Techniques of Obfuscation</h2>
-                  <br></br>
-
-                  <h5>1 . Renaming Variables and Functions:</h5>
-                  <p>
-                    Changing the names of variables, functions, and classes to
-                    meaningless or random strings. For example, a variable name
-                    like totalAmount could be obfuscated to something like
-                    a1b2c3.
-                  </p>
-                  <h5>2 . Control Flow Obfuscation:</h5>
-                  <p>
-                    Modifying the flow of the program, such as adding redundant
-                    code paths, loops, or operations that don’t affect the final
-                    outcome, but make it harder to follow the logical flow of
-                    the code.
-                  </p>
-                  <h5>3 . String Encryption:</h5>
-                  <p>
-                    Encrypting or encoding strings within the code (e.g., URLs,
-                    keys, or messages) to prevent attackers from easily
-                    extracting meaningful data by reading the source code.
-                  </p>
-                  <h5>4 . Code Insertion (Dead Code):</h5>
-                  <p>
-                    Adding unnecessary or irrelevant code that doesn’t affect
-                    the program's functionality but serves to confuse anyone
-                    trying to analyze the code. This might include extra
-                    variables or operations that don't change the result.
-                  </p>
-                  <h5>5 . Flattening:</h5>
-                  <p>
-                    Transforming the code structure to remove loops or functions
-                    and make the program’s behavior appear as one large block of
-                    code, making it more difficult to follow.
-                  </p>
                 </dd>
 
                 <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span> Topic 3</span>Javascript Obfuscation{" "}
+                  <span>Module 3</span> Bypassing Simple Captchas using Python
                 </dt>
                 <dd className="fadeInUp faq-body-labd" id="border-left">
-                  <br></br>
-                  <h1>Javascript Obfuscation </h1>
+                  <p><br></br></p>
+                  <h1>Bypassing Simple Captchas using Python</h1>
+                  <h4>Python Setup & Tools</h4>
                   <p>
-                    There are several methods in JS obfuscation, one of them is
-                    to remove spaces, this method is called code minify, usually
-                    developers use this method as it reduces script file size.
+                    Python is a great language for automating tasks and bypassing simple Captchas. In this module, we will explore using Python libraries like `pytesseract` (for OCR) and `Selenium` (for browser automation) to bypass basic Captchas.
                   </p>
-                  <img src={exampleImage2} alt="Example" />
-                  <br></br>
-                  <h3>JS Obfuscation Tools </h3>
-                  <br></br>
-                  <h4>JSF</h4>
+                  <h4>Step 1: Setting Up Your Environment</h4>
                   <p>
-                    By this method, you can rewrite any JS script with just six
-                    characters []()!+
+                    To start, you need to install the required libraries. You can install them using the following commands:
                   </p>
+                  <div className="terminal-container">
+                        <div className="terminal-content">
+                          <div className="terminal-top">
+                          URL
+                          </div>
+                          <pre
+                            className="terminal-codelanguage-shell-session"
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                  <span className="token user"></span>
+                                </span>
+                              </span>
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                <span className="token user">
+                                pip install pytesseract opencv-python selenium
+                                </span>
+                                </span>
+                              </span>
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                  <span className="token user"></span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
                   <p>
-                    You can try it online from this link:
-                    <a href="http://www.jsfuck.com">JSFuck</a>
+                    You also need to install the `Tesseract OCR` engine. On Linux, you can install it using:
                   </p>
-                  <img src={exampleImage3} alt="Example" />
+                  <div className="terminal-container">
+                        <div className="terminal-content">
+                          <div className="terminal-top">
+                          Code
+                          </div>
+                          <pre
+                            className="terminal-codelanguage-shell-session"
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                  <span className="token user"></span>
+                                </span>
+                              </span>
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                <span className="token user">
+                                  sudo apt install tesseract-ocr
+                                </span>
+                                </span>
+                              </span>
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                  <span className="token user"></span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                  <p>
+                    For Windows or macOS, refer to the official Tesseract installation guide. Once installed, ensure that Tesseract is available in your system’s PATH variable.
+                  </p>
+                  <h4>Step 2: Extracting Text from Captchas</h4>
+                  <p>
+                    With `pytesseract`, you can easily extract text from Captchas. Here's a simple example of how to use OCR to read text from an image:
+                  </p>
                   <br></br>
-                  <h4>Packer Obfuscation</h4>
+                  <div className="terminal-container">
+                        <div className="terminal-content">
+                          <div className="terminal-top">
+                          Code
+                          </div>
+                          <pre
+                            className="terminal-codelanguage-shell-session"
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                  <span className="token user"></span>
+                                </span>
+                              </span>
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                <span className="token user">
+                                import pytesseract<br></br>
+                                import cv2<br></br>
+                                <br></br>
+                                # Load image<br></br><br></br>
+                                image = cv2.imread('captcha-image.png')<br></br>
+                                <br></br>
+                                # Preprocess image (optional)<br></br><br></br>
+                                gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)<br></br>
+                                <br></br>
+                                # Extract text from image using pytesseract<br></br><br></br>
+                                captcha_text = pytesseract.image_to_string(gray_image)<br></br>
+                                print(f"Captcha Text: &#123;captcha_text&#125;")<br></br>
+                                </span>
+                                </span>
+                              </span>
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                  <span className="token user"></span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                      <br></br>
                   <p>
-                    In this one, all script text and symbols will be stored in a
-                    list or dictionary and will be restored and rebuilt again
-                    during the execution process.
+                    This code loads the image, converts it to grayscale (which helps improve OCR accuracy), and then uses `pytesseract` to extract any readable text from the image. Depending on the complexity of the Captcha, you might need to experiment with different preprocessing techniques like thresholding or noise reduction.
                   </p>
+                  <h4>Step 3: Automating Form Submission with Selenium</h4>
                   <p>
-                    You can try it online from this link:
-                    <a href="https://www.cleancss.com/javascript-obfuscate/index.php">
-                      Packer Obfuscation
-                    </a>
+                    To automate the process of submitting the Captcha and form, you can use Selenium. Here's an example of how you can fill out a form and submit it:
                   </p>
-                  <img src={exampleImage4} alt="Example" />
                   <br></br>
-                  <h4>JS deobfuscation Tools</h4>
+                  <div className="terminal-container">
+                        <div className="terminal-content">
+                          <div className="terminal-top">
+                          Code
+                          </div>
+                          <pre
+                            className="terminal-codelanguage-shell-session"
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                  <span className="token user"></span>
+                                </span>
+                              </span>
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                <span className="token user">
+                                from selenium import webdriver<br></br>
+                                from selenium.webdriver.common.keys import Keys<br></br>
+                                <br></br>
+                                # Initialize WebDriver<br></br><br></br>
+                                driver = webdriver.Chrome()<br></br>
+                                <br></br>
+                                # Open website<br></br><br></br>
+                                driver.get('https://example.com/captcha-form')<br></br>
+                                <br></br>
+                                # Fill out form fields<br></br><br></br>
+                                driver.find_element_by_id('username').send_keys('my_username')<br></br>
+                                driver.find_element_by_id('password').send_keys('my_password')<br></br>
+                                <br></br>
+                                # Solve Captcha (assumes you already got the text from pytesseract)<br></br><br></br>
+                                captcha_input = driver.find_element_by_id('captcha_input')<br></br>
+                                captcha_input.send_keys(captcha_text)<br></br>
+                                <br></br>
+                                # Submit form<br></br><br></br>
+                                driver.find_element_by_id('submit_button').click()<br></br>
+                                </span>
+                                </span>
+                              </span>
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                  <span className="token user"></span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                      <br></br>
                   <p>
-                    Instead of downloading and using deobfuscation tools on your
-                    machine, you can use them online.
+                    This code will automatically open the page, fill in the form fields, solve the Captcha (by sending the extracted text to the Captcha input), and submit the form.
                   </p>
                   <br></br>
-                  <h3>Here are some examples:</h3>
-                  <ol>
-                    <li>
-                      <a href="https://mindedsecurity.github.io/jstillery/">
-                        JStillery :
-                      </a>
-                      This tool performs advanced JS deobfuscation via partial
-                      evaluation.
-                    </li>
-                    <li>
-                      <a href="http://deobfuscatejavascript.com/">
-                        deobfuscate javascript{" "}
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://beautifier.io/">Beautifier.io</a>
-                    </li>
-                  </ol>
                 </dd>
+
+                <dt className="wave-labd fadeInUp faq-header-labd">
+                  <span>Module 4</span> Advanced Captcha Bypass – reCAPTCHA v2 & v3
+                </dt>
+                <dd className="fadeInUp faq-body-labd" id="border-left">
+                  <p><br></br></p>
+                  <h1>Bypassing reCAPTCHA v2 & v3</h1>
+                  <h4>Understanding reCAPTCHA v2</h4>
+                  <p>
+                    reCAPTCHA v2 is one of the most commonly encountered Captchas on the web today. The most famous reCAPTCHA v2 challenge is the “I’m not a robot” checkbox. However, it can also require the user to select images that contain specific objects like traffic lights, cars, or buses.
+                  </p>
+                  <p>
+                    This challenge is designed to be easy for humans but difficult for bots. However, automated systems have become sophisticated enough to bypass these Captchas using machine learning models, OCR, or by outsourcing the solving task to human-based Captcha-solving services.
+                  </p>
+                  <h4>Bypassing reCAPTCHA v2 with 2Captcha</h4>
+                  <p>
+                    One effective way to bypass reCAPTCHA v2 is by using the 2Captcha service. The service allows you to submit the Captcha challenge to a team of human workers who solve it for you. Here’s how you can use their API:
+                  </p>
+                  <div className="terminal-container">
+                        <div className="terminal-content">
+                          <div className="terminal-top">
+                          Code
+                          </div>
+                          <pre
+                            className="terminal-codelanguage-shell-session"
+                            tabIndex="0"
+                          >
+                            <code className="language-shell-session">
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                  <span className="token user"></span>
+                                </span>
+                              </span>
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                <span className="token user">
+                                <p>import requests</p>
+                                <br></br>
+                                # API key from 2Captcha <br></br><br></br>
+                                api_key = 'YOUR_2CAPTCHA_API_KEY'<br></br>
+                                <br></br>
+                                # Image URL of the Captcha challenge<br></br><br></br>
+                                captcha_image_url = 'https://example.com/captcha-image.jpg'<br></br>
+                                <br></br>
+                                # Request for solving the captcha<br></br><br></br>
+                                response = requests.post('http://2captcha.com/in.php', data=&#123;<br></br>
+                                    'key': api_key,<br></br>
+                                    'method': 'base64',<br></br>
+                                    'body': captcha_image_url,<br></br>
+                                    'json': 1,<br></br>
+                                    &#125;)<br></br>
+                                    <br></br>
+                                result = response.json()<br></br>
+                                captcha_id = result['request']<br></br>
+                                <br></br>
+                                # Wait for the solution<br></br><br></br>
+                                solution = None<br></br>
+                                while solution is None:<br></br>
+                                    response = requests.get(f'http://2captcha.com/res.php?key=&#123;api_key&#125;&action=get&id=&#123;captcha_id&#125;&json=1')<br></br>
+                                    result = response.json()<br></br>
+                                    if result['status'] == 1:<br></br>
+                                        solution = result['request']<br></br>
+                                        <br></br>
+                                print(f"Captcha solved: &#123;solution&#125;")<br></br>
+                                </span>
+                                </span>
+                              </span>
+                              <span className="token command-c">
+                                <span className="token info punctuation">
+                                  <span className="token user"></span>
+                                </span>
+                              </span>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                  <h4>Bypassing reCAPTCHA v3</h4>
+                  <p>
+                    reCAPTCHA v3 is more difficult to bypass because it does not present direct challenges to users. Instead, it runs in the background, analyzing user interactions with the page and assigning a score based on how likely the user is a bot.
+                  </p>
+                  <p>
+                    Bypassing reCAPTCHA v3 typically requires mimicking human behavior by simulating mouse movements, clicks, and keyboard inputs. Tools like Selenium or Puppeteer can be used to automate these interactions and make the system appear human-like to reCAPTCHA v3.
+                  </p>
+                  <br></br>
+                </dd>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
               </dl>
             </div>
             <div className="go-to-section">
