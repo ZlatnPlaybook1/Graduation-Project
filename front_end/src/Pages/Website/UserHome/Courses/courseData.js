@@ -210,7 +210,7 @@ const courseData = [
     description:
       "This is a temporary placeholder topic to meet the required number of 30 topics.",
     topics: [
-      "Placeholder Topic 1",
+      "1",
       "Placeholder Topic 2",
       "Placeholder Topic 3",
       "Placeholder Topic 4",
