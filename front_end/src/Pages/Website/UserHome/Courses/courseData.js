@@ -320,12 +320,12 @@ const courseData = [
     category: "Temporary Category",
     title: "File Inclusion",
     description:
-      "Before hacking something, you first need to understand the basics",
+      "Learn how file inclusion vulnerabilities like LFI and RFI are exploited. Understand their risks and explore remediation techniques to secure applications",
     topics: [
-      "Cyber Security Basics",
-      "Networking Basics and Weaknesses",
-      "The Web And Common Attacks",
-      "Learn to Use The Linux OS",
+      "Path Traversal",
+      "Local File Inclusion (LFI)",
+      "Remote File Inclusion (RFI)",
+      "Remediation",
     ],
     difficulty: "Medium",
     image: require("../assets/img/File Inclusion/card_image.png"),
