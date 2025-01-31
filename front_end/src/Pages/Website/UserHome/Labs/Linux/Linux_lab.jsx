@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets/img/linux/linux_logo.png";
-import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
+import { Card } from "../../Card/Card";
 
 export default function Linux_lab() {
   useEffect(() => {
@@ -46,82 +46,38 @@ export default function Linux_lab() {
           <h2>Linux Lab</h2>
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
-            <Link
-              to="/linux/linux_lab/patient"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={image} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>be Patient</h3>
-                <p>Try to Capture the Flag</p>
-                <ul className="circled-order">
-                  <li>Download this file and open it on your Linux machine</li>
-                </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-            <Link
-              to="/linux/linux_lab/power-of-command"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={image} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Power Of Command</h3>
-                <p>Try to Capture the Flag</p>
-                <ul className="circled-order">
-                  <li>Download this file and open it on your Linux machine</li>
-                </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-            <Link
-              to="/linux/linux_lab/welcome"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={image} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Welcome</h3>
-                <p>Try to Capture the Flag</p>
-                <ul className="circled-order">
-                  <li>Download this file and open it on your Linux machine</li>
-                </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-            <Link
-              to="/linux/linux_lab/test-yourself"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={image} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Test YourSelf</h3>
-                <p>Try to Capture the Flag</p>
-                <ul className="circled-order">
-                  <li>Download this file and open it on your Linux machine</li>
-                </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link="/linux/linux_lab/patient"
+              image={image}
+              title="be Patient"
+              text="Try to Capture the Flag"
+              difficulty={"Easy"}
+              descriptionList={["Download this file and open it on your Linux machine"]}
+            />
+            <Card
+              link="/linux/linux_lab/power-of-command"
+              image={image}
+              title="Power Of Command"
+              text="Try to Capture the Flag"
+              difficulty={"Easy"}
+              descriptionList={["Download this file and open it on your Linux machine"]}
+            />
+            <Card
+              link="/linux/linux_lab/welcome"
+              image={image}
+              title="Welcome"
+              text="Try to Capture the Flag"
+              difficulty={"Easy"}
+              descriptionList={["Download this file and open it on your Linux machine"]}
+            />
+            <Card
+              link="/linux/linux_lab/test-yourself"
+              image={image}
+              title="Test YourSelf"
+              text="Try to Capture the Flag"
+              difficulty={"Easy"}
+              descriptionList={["Download this file and open it on your Linux machine"]}
+            />
           </div>
         </div>
       </div>

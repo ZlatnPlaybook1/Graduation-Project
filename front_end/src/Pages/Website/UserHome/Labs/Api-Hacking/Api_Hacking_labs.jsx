@@ -3,8 +3,8 @@ import Header from "../../Header/Header";
 import "./Api_Hacking.css";
 import labImg from "../../assets/img/Api_Hacking/lab.jpg";
 
-import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
+import { Card } from "../../Card/Card";
 export default function AC_Vuln_labs() {
   return (
     <>
@@ -45,48 +45,27 @@ export default function AC_Vuln_labs() {
           <p className="section-p">Test Your Hacking Skills</p>
           <div className="row">
             {/* lab1 */}
-            <Link
-              to="/Api_Hacking/Api_Hacking_labs/lab1"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={labImg} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>MCQ Question Review</h3>
-                <p>
-                  These are multiple choice questions that are designed to be a
-                  review for the exam.
-                </p>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link={"/Api_Hacking/Api_Hacking_labs/lab1"}
+              image={labImg}
+              title={"MCQ Question Review"}
+              brief={
+                "These are multiple choice questions that are designed to be a review for the exam."
+              }
+              difficulty={"Easy"}
+            />
             {/* lab2 */}
-            <Link
-              to="/Api_Hacking/Api_Hacking_labs/lab2"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={labImg} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Unprotected admin functionality with unpredictable URL</h3>
-                <p>
-                  This lab has an unprotected admin panel. It's located at an
-                  unpredictable location, but the location is disclosed
-                  somewhere in the application. Solve the lab by accessing the
-                  admin panel, and using it to delete the user
-                  <mark>Carlos</mark>.
-                </p>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link={"/Api_Hacking/Api_Hacking_labs/lab2"}
+              image={labImg}
+              title={"Unprotected admin functionality with unpredictable URL"}
+              brief={[
+                "This lab has an unprotected admin panel. It's located at an unpredictable location, but the location is disclosed somewhere in the application. Solve the lab by accessing the admin panel, and using it to delete the user ",
+                <mark>Carlos</mark>,
+                ".",
+              ]}
+              difficulty={"Easy"}
+            />
             {/* Lab3 */}
           </div>
         </div>

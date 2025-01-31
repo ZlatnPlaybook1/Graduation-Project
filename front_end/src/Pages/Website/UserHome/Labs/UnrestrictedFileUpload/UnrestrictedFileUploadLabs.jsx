@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import lab_Cover from "../../assets/img/Unrestricted File Upload/file-upload-vector.jpg";
+import { Card } from "../../Card/Card";
 export default function UnrestrictedFileUploadLabs() {
   return (
     <>
@@ -42,78 +43,29 @@ export default function UnrestrictedFileUploadLabs() {
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             {/* lab1 */}
-            <Link
-              to="/Unrestricted File Upload/lab_Unrestricted_File_Uplode/first_lab"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={lab_Cover} alt="Lab Cover" />
-              </div>
-              <div className="course-text">
-                <h3>Unrestricted:</h3>
-                <p>Upload disallowed file type.</p>
-                <ul className="circled-order">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
-                </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+            link={"/Unrestricted File Upload/lab_Unrestricted_File_Uplode/first_lab"}
+            image={lab_Cover}
+            title={"Unrestricted:"}
+            brief={"Upload disallowed file type."}
+            difficulty={"Easy"}
+            />
             {/* lab2 */}
-            <Link
-              to="/Unrestricted File Upload/lab_Unrestricted_File_Uplode/second_lab"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={lab_Cover} alt="Lab Cover" />
-              </div>
-              <div className="course-text">
-                <h3>MIME Type:</h3>
-                <p>
-                  Upload disallowed file type, bypassing MIME type checking.
-                </p>
-                <ul className="circled-order">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
-                </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+            link={"/Unrestricted File Upload/lab_Unrestricted_File_Uplode/second_lab"}
+            image={lab_Cover}
+            title={"MIME Type:"}
+            brief={"Upload disallowed file type, bypassing MIME type checking."}
+            difficulty={"Easy"}
+            />
             {/* lab3 */}
-            <Link
-              to="/Unrestricted File Upload/lab_Unrestricted_File_Uplode/third_lab"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={lab_Cover} alt="Lab Cover" />
-              </div>
-              <div className="course-text">
-                <h3>Blacklist :</h3>
-                <p>
-                  Upload disallowed file type, bypassing the blacklist check.
-                </p>
-                <ul className="circled-order">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
-                </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+            link={"/Unrestricted File Upload/lab_Unrestricted_File_Uplode/third_lab"}
+            image={lab_Cover}
+            title={"Blacklist:"}
+            brief={"Upload disallowed file type, bypassing the blacklist check."}
+            difficulty={"Easy"}
+            />
           </div>
         </div>
       </div>

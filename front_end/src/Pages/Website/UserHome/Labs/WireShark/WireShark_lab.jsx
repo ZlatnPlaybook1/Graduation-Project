@@ -1,43 +1,11 @@
 import React from "react";
-import { useEffect, useRef } from "react";
-import $ from "jquery";
 import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets//img/Obfuscation/card_image.png";
-import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
+import { Card } from "../../Card/Card";
 
 export default function WireShark_lab() {
-  const faqSectionRef = useRef(null);
-
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
   return (
     <>
       <Header />
@@ -75,69 +43,27 @@ export default function WireShark_lab() {
           <h2>Wire Shark Lab</h2>
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
-            <Link
-              to="/wireshark/wireshark_lab/arp-trick"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={image} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>ARP Trick</h3>
-                <p>
-                  Master the basics of obfuscation, a powerful technique for
-                  securing code and protecting intellectual property in
-                  cybersecurity environments
-                </p>
-                <ul className="circled-order"></ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal "></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-            <Link
-              to="/wireshark/wireshark_lab/tcp-intrusion"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={image} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>TCP Intrusion</h3>
-                <p>
-                  Master the basics of obfuscation, a powerful technique for
-                  securing code and protecting intellectual property in
-                  cybersecurity environments
-                </p>
-                <ul className="circled-order"></ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal "></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-            <Link
-              to="/wireshark/wireshark_lab/stolen-flag"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={image} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Stolen Flag</h3>
-                <p>
-                  Master the basics of obfuscation, a powerful technique for
-                  securing code and protecting intellectual property in
-                  cybersecurity environments
-                </p>
-                <ul className="circled-order"></ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal "></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+            link={"/wireshark/wireshark_lab/arp-trick"}
+            image={image}
+            title={"ARP Trick"}
+            brief={"Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments"}
+            difficulty={"Easy"}
+            />
+            <Card
+            link={"/wireshark/wireshark_lab/tcp-intrusion"}
+            image={image}
+            title={"TCP Intrusion"}
+            brief={"Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments"}
+            difficulty={"Intermediate"}
+            />
+            <Card
+            link={"/wireshark/wireshark_lab/stolen-flag"}
+            image={image}
+            title={"Stolen Flag"}
+            brief={"Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments"}
+            difficulty={"Hard"}
+            />
           </div>
         </div>
       </div>

@@ -131,7 +131,6 @@ import HASHING_SECOND_LAB from "./Pages/Website/UserHome/Labs/Hashing/practical/
 // End Hashing
 // Bash Scripting
 import Bash from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash.jsx";
-import BASH_LAB from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_lab.jsx";
 import BASH_QUIZ from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_quiz.jsx";
 // End Bash Scripting
 // Obfuscation
@@ -744,7 +743,6 @@ function App() {
           {/* End Linux */}
           {/* Start Bash Scripting */}
           <Route path="/bash-scripting" element={<Bash />} />
-          <Route path="/bash-scripting/bash_lab" element={<BASH_LAB />} />
           <Route path="/bash-scripting/bash_quiz" element={<BASH_QUIZ />} />
           {/* End Bash Scripting */}
           {/* Start Obfuscation */}
