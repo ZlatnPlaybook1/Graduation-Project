@@ -336,6 +336,8 @@
 .faq-section-labd .section-text-labd .faq-body-labd a:not(.go-to) {
   color: var(--sec-main-color);
   text-decoration: underline;
+  padding: 0;
+  margin: 0;
 }
 
 .faq-section-labd .section-text-labd .faq-body-labd p {
@@ -403,7 +405,7 @@
   padding: 10px 20px;
 }
 
-.faq-section-labd .section-text-labd .faq-body-labd .terminal-container{
+.faq-section-labd .section-text-labd .faq-body-labd .terminal-container {
   margin-bottom: 20px;
 }
 

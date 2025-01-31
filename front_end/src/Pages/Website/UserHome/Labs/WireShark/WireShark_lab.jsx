@@ -76,14 +76,14 @@ export default function WireShark_lab() {
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             <Link
-              to="/wireshark/wireshark_lab/stolen-flag"
+              to="/wireshark/wireshark_lab/arp-trick"
               className="course-card"
             >
               <div className="course-image">
                 <img src={image} alt="" />
               </div>
               <div className="course-text">
-                <h3>Stolen Flag</h3>
+                <h3>ARP Trick</h3>
                 <p>
                   Master the basics of obfuscation, a powerful technique for
                   securing code and protecting intellectual property in
@@ -118,14 +118,14 @@ export default function WireShark_lab() {
               </div>
             </Link>
             <Link
-              to="/wireshark/wireshark_lab/arp-trick"
+              to="/wireshark/wireshark_lab/stolen-flag"
               className="course-card"
             >
               <div className="course-image">
                 <img src={image} alt="" />
               </div>
               <div className="course-text">
-                <h3>ARP Trick</h3>
+                <h3>Stolen Flag</h3>
                 <p>
                   Master the basics of obfuscation, a powerful technique for
                   securing code and protecting intellectual property in
