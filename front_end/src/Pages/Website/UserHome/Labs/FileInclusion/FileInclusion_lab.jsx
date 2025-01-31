@@ -2,7 +2,7 @@ import React from "react";
 import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets//img/Obfuscation/card_image.png";
-import { Link } from "react-router-dom";
+import { Card } from "../../Card/Card";
 import Footer from "../../Footer/Footer";
 
 export default function FileInclusion_lab() {
@@ -43,27 +43,13 @@ export default function FileInclusion_lab() {
           <h2>Obfuscation Lab</h2>
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
-            <Link
-              to="/Obfuscation/obfuscation_lab/login"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={image} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Legendary Process</h3>
-                <p>
-                  Master the basics of obfuscation, a powerful technique for
-                  securing code and protecting intellectual property in
-                  cybersecurity environments
-                </p>
-                <ul className="circled-order"></ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal "></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+            link={""}
+            image={image}
+            title={""}
+            brief={""}
+            difficulty={""}
+            />
           </div>
         </div>
       </div>

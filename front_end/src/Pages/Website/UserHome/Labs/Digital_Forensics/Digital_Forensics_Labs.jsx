@@ -3,8 +3,8 @@ import Header from "../../Header/Header";
 import "./Digital_Forensics.css";
 import mcqData from "./MCQCards";
 import labImg from "../../assets/img/DigitalForensics/Email.jpg";
-import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
+import { Card } from "../../Card/Card";
 export default function Digital_Forensics_labs() {
   return (
     <>
@@ -45,25 +45,14 @@ export default function Digital_Forensics_labs() {
           <p className="section-p">Test Your Hacking Skills</p>
           <div className="row">
             {/* lab1 */}
-            <Link
-              to="/Digital_Forensics/Digital_Forensics_labs/lab1"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={labImg} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Audio Forensics</h3>
-                <p>
-                  Analyze audio files to extract information and solve the case.
-                </p>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-
+            <Card
+            link={"/Digital_Forensics/Digital_Forensics_labs/lab1"}
+            image={labImg}
+            title={"Audio Forensics"}
+            brief={"Analyze audio files to extract information and solve the case."}
+            difficulty={"Easy"}
+            />
+{/* 
             {mcqData.map((mcq) => (
               <Link to={mcq.link} className="course-card" key={mcq.id}>
                 <div className="course-image">
@@ -78,6 +67,29 @@ export default function Digital_Forensics_labs() {
                   <p>{mcq.difficulty}</p>
                 </div>
               </Link>
+            ))} */}
+            {mcqData.map((mcq) => (
+              // <Card to={mcq.link} className="course-card" key={mcq.id}>
+              //   <div className="course-image">
+              //     <img src={mcq.image} alt={mcq.title} />
+              //   </div>
+              //   <div className="course-text">
+              //     <h3>{mcq.title}</h3>
+              //     <p>{mcq.description}</p>
+              //   </div>
+              //   <div className="easy">
+              //     <i className="fa-solid fa-signal lab"></i>
+              //     <p>{mcq.difficulty}</p>
+              //   </div>
+              // </Card>
+              <Card
+              link={mcq.link}
+              image={mcq.image}
+              alt={mcq.title}
+              title={mcq.title}
+              brief={mcq.description}
+              difficulty={mcq.difficulty}
+              />
             ))}
           </div>
         </div>

@@ -1,6 +1,4 @@
 import React from "react";
-import { useEffect, useRef } from "react";
-import $ from "jquery";
 import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets/img/Cryptography/card_image.png";
@@ -8,36 +6,6 @@ import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
 export default function CryptoGraphy_lab() {
-  const faqSectionRef = useRef(null);
-
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
   return (
     <>
       <Header />

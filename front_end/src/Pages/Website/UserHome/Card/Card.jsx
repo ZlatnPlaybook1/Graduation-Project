@@ -3,6 +3,7 @@ import "./Card.css";
 export const Card = ({
   link,
   image,
+  alt="Example",
   title,
   brief,
   difficulty,
@@ -11,7 +12,7 @@ export const Card = ({
   return (
     <Link to={link} className="course-card">
       <div className="course-image">
-        <img src={image} alt="Example" />
+        <img src={image} alt={alt} />
       </div>
       <div className="course-text">
         <h3>{title}</h3>
