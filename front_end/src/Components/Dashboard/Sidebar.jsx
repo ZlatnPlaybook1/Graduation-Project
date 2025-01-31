@@ -48,6 +48,11 @@ const Sidebar = () => {
     width: isOpen ? "220px" : "60px",
   };
 
+  const contentStyle = {
+    marginLeft: isOpen ? "220px" : "60px",
+    transition: "margin-left 0.3s ease-in-out",
+  };
+
   return (
     <div className="full-cont">
       <div className="sidebar" style={sidebarStyle}>
@@ -184,6 +189,9 @@ const Sidebar = () => {
             )}
           </>
         )}
+      </div>
+      <div className="main-contents" style={contentStyle}>
+        {/* Your Main Content Goes Here */}
       </div>
     </div>
   );
