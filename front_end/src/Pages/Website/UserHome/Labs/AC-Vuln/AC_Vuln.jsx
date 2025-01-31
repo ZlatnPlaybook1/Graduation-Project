@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import "./AC_Vuln.css";
+import "../Page_Styles/Content.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
@@ -28,17 +28,20 @@ export default function AC_Vuln() {
       />
       {/* End Landing */}
       {/* Start Course */}
-      <div className="course-lab1">
-        <div className="container">
+      <div className="course-labd">
+        <div className="container" ref={faqSectionRef}>
           <div className="row">
-            <div className="faq-section-lab1" ref={faqSectionRef}>
-              <dl className="section-text-lab1">
+            <div className="faq-section-labd">
+              <dl className="section-text-labd">
                 {/* Task 1 */}
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Introduction</span> Introduction to Access Control
+                {/* <dt className="wave-labd fadeInUp faq-header-labd">
+                  <span></span>  
+                </dt> */}
+                <dt className="wave-labd fadeInUp faq-header-labd">
+                  <span>Intro</span> Introduction to Access Control
                   Vulnerabilities
                 </dt>
-                <dd className="fadeInUp faq-body-lab1">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <h3>
                     Welcome to the Access Control Vulnerability Learning Room!
                   </h3>
@@ -74,13 +77,10 @@ export default function AC_Vuln() {
                   </ol>
                 </dd>
                 {/* Topic 1 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 1</span> Understanding Access Control
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       <b>Definition:</b> Access control ensures users can only
@@ -106,13 +106,10 @@ export default function AC_Vuln() {
                   </ul>
                 </dd>
                 {/* Topic 2 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 2</span> Types of Access Control Flaws
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       <b>Horizontal Privilege Escalation:</b> A user accesses
@@ -130,13 +127,10 @@ export default function AC_Vuln() {
                   </ul>
                 </dd>
                 {/* Topic 3 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 3</span> Examples of Exploits
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       <b>Accessing Other Users' Data:</b> Viewing or modifying
@@ -153,13 +147,10 @@ export default function AC_Vuln() {
                   </ul>
                 </dd>
                 {/* Topic 4 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="wave-labd fadeInUp faq-header-labd">
                   <span>Topic 4</span> Access Control Best Practices
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       <b>Principle of Least Privilege:</b> Grant users only the
