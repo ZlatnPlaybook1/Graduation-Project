@@ -2,7 +2,7 @@ import React from "react";
 import "../Page_Styles/Content_sec.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/background.png";
-import imagecourse from "../../assets/img/Obfuscation/course_image.png";
+import imagecourse from "../../assets/img/wireshark/course_image.png";
 import Footer from "../../Footer/Footer";
 import exampleImage1 from "../../assets/img/wireshark/course_image.png";
 import exampleImage2 from "../../assets/img/wireshark/1.png";
@@ -794,7 +794,7 @@ export default function WireShark() {
             </div>
             <div className="go-to-section">
               <button
-                onClick={() => handleGoToLab("/obfuscation/obfuscation_lab")}
+                onClick={() => handleGoToLab("/wireshark/wireshark_lab")}
                 className="go-to"
               >
                 Go To Labs

@@ -203,7 +203,7 @@ export default function Obfuscation() {
 
             <div className="go-to-section">
               <button
-                onClick={() => handleGoToLab("/obfuscation/obfuscation_labs")}
+                onClick={() => handleGoToLab("/obfuscation/obfuscation_lab")}
                 className="go-to"
               >
                 Go To Labs
