@@ -368,12 +368,12 @@ const courseData = [
     category: "Temporary Category",
     title: "Server Side Template Injection (SSTI)",
     description:
-      "Before hacking something, you first need to understand the basics",
+      "Server Side Template Injection (SSTI) is a vulnerability that occurs when user input is incorrectly embedded in server-side templates. Attackers can inject malicious code leading to  security risks.",
     topics: [
-      "Cyber Security Basics",
-      "Networking Basics and Weaknesses",
-      "The Web And Common Attacks",
-      "Learn to Use The Linux OS",
+      "Introduction",
+      "SSTI vulnerabilities",
+      "Constructing a SSTI attack",
+      "How to prevent SSTI vulnerabilities",
     ],
     difficulty: "Medium",
     image: require("../assets/img/Server Side Template Injection/card_image.png"),
