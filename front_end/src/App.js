@@ -64,8 +64,7 @@ import CSRF_LABS from "./Pages/Website/UserHome/Labs/CSRF/CSRF_labs.jsx";
 import CSRF_FIRST_LAB from "./Pages/Website/UserHome/Labs/CSRF/practical/first_lab/First_Lab.jsx";
 import CSRF_SECOND_LAB from "./Pages/Website/UserHome/Labs/CSRF/practical/second_lab/Second_Lab.jsx";
 // End Cross-Site Request Forgery
-// ProductDetails
-import ProductDetails from "./Pages/Website/UserHome/Labs/CSRF/practical/first_lab/ProductDetails.jsx";
+
 // Regular Expression
 import REGEX from "./Pages/Website/UserHome/Labs/Regex/Regex.jsx";
 import REGEX_LABS from "./Pages/Website/UserHome/Labs/Regex/Regex_labs.jsx";
@@ -127,6 +126,10 @@ import VEHICLE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/p
 import HASHING from "./Pages/Website/UserHome/Labs/Hashing/Hashing.jsx";
 import HASHING_LABS from "./Pages/Website/UserHome/Labs/Hashing/Hashing_labs.jsx";
 import HASHING_FIRST_LAB from "./Pages/Website/UserHome/Labs/Hashing/practical/first_lab/First_Lab.jsx";
+import HashGenerator from "./Pages/Website/UserHome/Labs/Hashing/practical/first_lab/HashGenerator.jsx";
+import HashComparator from "./Pages/Website/UserHome/Labs/Hashing/practical/first_lab/HashComparator.jsx";
+import HashCracker from "./Pages/Website/UserHome/Labs/Hashing/practical/first_lab/HashCracker.jsx";
+import SaltingDemo from "./Pages/Website/UserHome/Labs/Hashing/practical/first_lab/SaltingDemo.jsx";
 import HASHING_SECOND_LAB from "./Pages/Website/UserHome/Labs/Hashing/practical/second_lab/Second_Lab.jsx";
 // End Hashing
 // Bash Scripting
@@ -341,12 +344,6 @@ function App() {
           />
 
           {/* End CSRF */}
-          {/* ProductDetails */}
-          <Route
-            path="/CSRF/CSRF_labs/first_lab/productdetails/:id"
-            element={<ProductDetails />}
-          />
-          {/* End ProductDetails */}
           {/* Regex */}
           <Route path="/Regex" element={<REGEX />} />
           <Route path="/Regex/Regex_labs" element={<REGEX_LABS />} />
@@ -513,6 +510,22 @@ function App() {
           <Route
             path="/Hashing/Hashing_labs/lab1"
             element={<HASHING_FIRST_LAB />}
+          />
+          <Route
+            path="/Hashing/Hashing_labs/lab1/HashGenerator"
+            element={<HashGenerator />}
+          />
+          <Route
+            path="/Hashing/Hashing_labs/lab1/HashComparator"
+            element={<HashComparator />}
+          />
+          <Route
+            path="/Hashing/Hashing_labs/lab1/HashCracker"
+            element={<HashCracker />}
+          />
+          <Route
+            path="/Hashing/Hashing_labs/lab1/SaltingDemo"
+            element={<SaltingDemo />}
           />
           <Route
             path="/Hashing/Hashing_labs/lab2"
@@ -784,9 +797,18 @@ function App() {
           {/* Start WireShark */}
           <Route path="/wireshark" element={<WireShark />} />
           <Route path="/wireshark/wireshark_lab" element={<WIRESHARK_LAB />} />
-          <Route path="/wireshark/wireshark_lab/stolen-flag" element={<STOLEN_FLAG />} />
-          <Route path="/wireshark/wireshark_lab/tcp-intrusion" element={<TCP_INTRUSION />} />
-          <Route path="/wireshark/wireshark_lab/arp-trick" element={<ARP_TRICK />} />
+          <Route
+            path="/wireshark/wireshark_lab/stolen-flag"
+            element={<STOLEN_FLAG />}
+          />
+          <Route
+            path="/wireshark/wireshark_lab/tcp-intrusion"
+            element={<TCP_INTRUSION />}
+          />
+          <Route
+            path="/wireshark/wireshark_lab/arp-trick"
+            element={<ARP_TRICK />}
+          />
           {/* End WireShark */}
           {/* Start FileInclusion */}
           <Route path="/fileinclusion" element={<FileInclusion />} />

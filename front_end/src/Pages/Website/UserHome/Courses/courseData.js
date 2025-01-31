@@ -248,7 +248,8 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/InfoDisc/landing.jpg"),
+    image: require("../assets/img/Hashing/landing.jpg"),
+    link: "/Hashing",
     link: "/Hashing",
   },
   {
