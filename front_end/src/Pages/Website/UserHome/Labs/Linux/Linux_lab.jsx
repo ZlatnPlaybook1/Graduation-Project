@@ -58,7 +58,6 @@ export default function Linux_lab() {
                 <p>Try to Capture the Flag</p>
                 <ul className="circled-order">
                   <li>Download this file and open it on your Linux machine</li>
-                  {/* <li>use waht you learn and try to find the flag</li> */}
                 </ul>
               </div>
               <div className="easy">

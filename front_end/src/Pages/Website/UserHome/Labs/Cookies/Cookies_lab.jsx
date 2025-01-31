@@ -104,12 +104,6 @@ export default function Cookies_lab() {
               <div className="course-text">
                 <h3>Hashing</h3>
                 <p>try to login as admin</p>
-                {/* <ul className="circled-order-cookies">
-                            <li>Cyber Security Basics</li>
-                            <li>Networking Basics and Weaknesses</li>
-                            <li>The Web And Common Attacks</li>
-                            <li>Learn to Use The Linux OS</li>
-                        </ul> */}
               </div>
               <div className="easy">
                 <i className="fa-solid fa-signal lab"></i>

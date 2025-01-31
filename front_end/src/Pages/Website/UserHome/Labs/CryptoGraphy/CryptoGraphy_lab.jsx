@@ -85,7 +85,9 @@ export default function CryptoGraphy_lab() {
               <div className="course-text">
                 <h3>Top Secret</h3>
                 <p>
-                   cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀
+                  cryptography, a crucial skill for securing data and
+                  understanding encryption techniques in cybersecurity
+                  environments. 🚀
                 </p>
                 <ul className="circled-order"></ul>
               </div>
@@ -104,7 +106,9 @@ export default function CryptoGraphy_lab() {
               <div className="course-text">
                 <h3>Decode the Image</h3>
                 <p>
-                   cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀
+                  cryptography, a crucial skill for securing data and
+                  understanding encryption techniques in cybersecurity
+                  environments. 🚀
                 </p>
                 <ul className="circled-order"></ul>
               </div>
@@ -123,7 +127,9 @@ export default function CryptoGraphy_lab() {
               <div className="course-text">
                 <h3>Corrupted</h3>
                 <p>
-                   cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀
+                  cryptography, a crucial skill for securing data and
+                  understanding encryption techniques in cybersecurity
+                  environments. 🚀
                 </p>
                 <ul className="circled-order"></ul>
               </div>
@@ -142,7 +148,9 @@ export default function CryptoGraphy_lab() {
               <div className="course-text">
                 <h3>Hash Crack</h3>
                 <p>
-                   cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀
+                  cryptography, a crucial skill for securing data and
+                  understanding encryption techniques in cybersecurity
+                  environments. 🚀
                 </p>
                 <ul className="circled-order"></ul>
               </div>
