@@ -13,11 +13,11 @@ const LandingLab = ({
   onDislike = () => {},
 }) => {
   return (
-    <div className="landing-lab1">
+    <div className="landing-labd">
       <div className="banner">
         <img src={background} alt="" />
       </div>
-      <div className="container-lab1">
+      <div className="container-labd">
         <div className="breadcrumb">
           <ul>
             <li>
