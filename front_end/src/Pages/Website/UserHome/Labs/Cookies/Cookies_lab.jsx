@@ -6,38 +6,9 @@ import Header from "../../Header/Header";
 import image from "../../assets/img/cookies/Cookies_logo.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
+import { Card } from "../../Card/Card";
 
 export default function Cookies_lab() {
-  const faqSectionRef = useRef(null);
-
-  useEffect(() => {
-    const $faqSection = $(faqSectionRef.current);
-    const $dt = $faqSection.find("dt");
-    const $dd = $faqSection.find("dd");
-
-    $dd.hide();
-    $dt.first().addClass("active");
-    $dd.first().show();
-
-    $dt.on("click", function () {
-      const $this = $(this);
-      const $nextDd = $this.next("dd");
-
-      if ($this.hasClass("active")) {
-        $this.removeClass("active");
-        $nextDd.slideUp(500);
-      } else {
-        $dt.removeClass("active");
-        $dd.slideUp(500);
-        $this.addClass("active");
-        $nextDd.slideDown(500);
-      }
-    });
-
-    return () => {
-      $dt.off("click");
-    };
-  }, []);
   return (
     <>
       <Header />
@@ -75,41 +46,32 @@ export default function Cookies_lab() {
           <h2>Cookies Lab</h2>
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
-            <Link to="/cookies/cookies_lab/first/login" className="course-card">
-              <div className="course-image">
-                <img src={image} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Admin has the power</h3>
-                <p>try to login as admin</p>
-                {/* <ul className="circled-order-cookies">
-                            <li>Cyber Security Basics</li>
-                            <li>Networking Basics and Weaknesses</li>
-                            <li>The Web And Common Attacks</li>
-                            <li>Learn to Use The Linux OS</li>
-                        </ul> */}
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-            <Link
-              to="/cookies/cookies_lab/second/login"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={image} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Hashing</h3>
-                <p>try to login as admin</p>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+            link="/cookies/cookies_lab/first/login"
+            image={image}
+            title="Admin has the power"
+            brief="try to login as admin"
+            difficulty="Easy"
+            descriptionList={[
+              "Cyber Security Basics",
+              "Networking Basics and Weaknesses",
+              "The Web And Common Attacks",
+              "Learn to Use The Linux OS",
+            ]}
+            />
+            <Card
+            link="/cookies/cookies_lab/second/login"
+            image={image}
+            title="Hashing"
+            brief="try to login as admin"
+            difficulty="Easy"
+            descriptionList={[
+              "Cyber Security Basics",
+              "Networking Basics and Weaknesses",
+              "The Web And Common Attacks",
+              "Learn to Use The Linux OS",
+            ]}
+            />
           </div>
         </div>
       </div>
