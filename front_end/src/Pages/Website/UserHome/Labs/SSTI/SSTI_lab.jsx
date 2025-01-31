@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import $ from "jquery";
 import  "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
-import image from "../../assets//img/Obfuscation/card_image.png";
+import image from "../../assets//img/Server Side Template Injection/card_image.png";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 
