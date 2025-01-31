@@ -46,49 +46,23 @@ export default function Digital_Forensics_labs() {
           <div className="row">
             {/* lab1 */}
             <Card
-            link={"/Digital_Forensics/Digital_Forensics_labs/lab1"}
-            image={labImg}
-            title={"Audio Forensics"}
-            brief={"Analyze audio files to extract information and solve the case."}
-            difficulty={"Easy"}
+              link={"/Digital_Forensics/Digital_Forensics_labs/lab1"}
+              image={labImg}
+              title={"Audio Forensics"}
+              brief={
+                "Analyze audio files to extract information and solve the case."
+              }
+              difficulty={"Easy"}
             />
-{/* 
+
             {mcqData.map((mcq) => (
-              <Link to={mcq.link} className="course-card" key={mcq.id}>
-                <div className="course-image">
-                  <img src={mcq.image} alt={mcq.title} />
-                </div>
-                <div className="course-text">
-                  <h3>{mcq.title}</h3>
-                  <p>{mcq.description}</p>
-                </div>
-                <div className="easy">
-                  <i className="fa-solid fa-signal lab"></i>
-                  <p>{mcq.difficulty}</p>
-                </div>
-              </Link>
-            ))} */}
-            {mcqData.map((mcq) => (
-              // <Card to={mcq.link} className="course-card" key={mcq.id}>
-              //   <div className="course-image">
-              //     <img src={mcq.image} alt={mcq.title} />
-              //   </div>
-              //   <div className="course-text">
-              //     <h3>{mcq.title}</h3>
-              //     <p>{mcq.description}</p>
-              //   </div>
-              //   <div className="easy">
-              //     <i className="fa-solid fa-signal lab"></i>
-              //     <p>{mcq.difficulty}</p>
-              //   </div>
-              // </Card>
               <Card
-              link={mcq.link}
-              image={mcq.image}
-              alt={mcq.title}
-              title={mcq.title}
-              brief={mcq.description}
-              difficulty={mcq.difficulty}
+                link={mcq.link}
+                image={mcq.image}
+                alt={mcq.title}
+                title={mcq.title}
+                brief={mcq.description}
+                difficulty={mcq.difficulty}
               />
             ))}
           </div>

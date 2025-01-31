@@ -52,10 +52,12 @@ a {
   inset: 0px !important;
   z-index: 1 !important;
   height: 100% !important;
-  background: linear-gradient(to right,
-      var(--alt-color) 30%,
-      rgba(21, 28, 43, 0.98) 50%,
-      transparent 100%) !important;
+  background: linear-gradient(
+    to right,
+    var(--alt-color) 30%,
+    rgba(21, 28, 43, 0.98) 50%,
+    transparent 100%
+  ) !important;
 }
 
 .landing-lab1 .banner img {
@@ -141,7 +143,7 @@ a {
   color: green !important;
 }
 
-.landing-lab1 .course-info .course-icons i.fa-signal+p {
+.landing-lab1 .course-info .course-icons i.fa-signal + p {
   display: inline-block !important;
   color: green !important;
 }
@@ -152,7 +154,7 @@ a {
   margin-right: 20px !important;
 }
 
-.landing-lab1 .course-info .course-icons i.fa-clock+p {
+.landing-lab1 .course-info .course-icons i.fa-clock + p {
   display: inline-block !important;
 }
 
@@ -302,6 +304,7 @@ a {
 }
 
 .faq-section-lab1 .section-text-lab1 .faq-body-lab1 {
+  font-family: "poppins", sans-serif !important;
   font-size: 18px !important;
   padding: 15px 25px !important;
   line-height: 1.9 !important;
@@ -422,7 +425,11 @@ a {
   transition: 0.2s ease-in-out !important;
 }
 
-.faq-section-lab1 .section-text-lab1 .faq-body-lab1 form button:hover:not(:disabled) {
+.faq-section-lab1
+  .section-text-lab1
+  .faq-body-lab1
+  form
+  button:hover:not(:disabled) {
   background-color: rgb(163, 234, 42) !important;
 }
 
@@ -456,7 +463,10 @@ dt.wave-lab1.fadeInUp.faq-header-lab1 span {
   color: #a3ea2a !important;
 }
 
-.faq-section-lab1 .section-text-lab1 .faq-body-lab1 dt.wave-lab1.fadeInUp.faq-header-lab1.m,
+.faq-section-lab1
+  .section-text-lab1
+  .faq-body-lab1
+  dt.wave-lab1.fadeInUp.faq-header-lab1.m,
 #border-left,
 dd {
   border-left: 4px solid #a3ea2a !important;
@@ -503,7 +513,6 @@ tr:nth-child(even) {
 tr:hover {
   background-color: #a8e08e;
 }
-
 
 /* Extra Styles */
 .note {

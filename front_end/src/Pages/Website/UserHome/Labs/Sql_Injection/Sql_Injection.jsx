@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import "./Sql_Injection.css";
+import "../Page_Styles/Content.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
@@ -28,15 +28,15 @@ export default function Sql_Injection() {
       />
       {/* End Landing */}
       {/* Start Course */}
-      <div className="course-lab1">
-        <div className="container">
+      <div className="course-labd">
+        <div className="container" ref={faqSectionRef}>
           <div className="row">
-            <div className="faq-section-lab1" ref={faqSectionRef}>
-              <dl className="section-text-lab1">
-                <dt className="wave-lab1 fadeInUp faq-header-lab1">
-                  <span>Task 1</span> SQL Injection
+            <div className="faq-section-labd">
+              <dl className="section-text-labd">
+                <dt className="wave-labd fadeInUp faq-header-labd">
+                  <span>Topic 1</span> SQL Injection
                 </dt>
-                <dd className="fadeInUp faq-body-lab1">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       <p>
@@ -58,10 +58,10 @@ export default function Sql_Injection() {
                     </li>
                   </ul>
                 </dd>
-                <dt className="wave-lab1  fadeInUp faq-header-lab1">
-                  <span>Task 2</span> Retrieving hidden data
+                <dt className="wave-labd  fadeInUp faq-header-labd">
+                  <span>Topic 2</span> Retrieving hidden data
                 </dt>
-                <dd className="faq-body-lab1">
+                <dd className="faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       The single quote character <span>'</span> and look for
@@ -152,10 +152,10 @@ export default function Sql_Injection() {
                     </li>
                   </ul>
                 </dd>
-                <dt className="wave-lab1  fadeInUp faq-header-lab1">
-                  <span>Task 3</span> SQL injection UNION attacks
+                <dt className="wave-labd  fadeInUp faq-header-labd">
+                  <span>Topic 3</span> SQL injection UNION attacks
                 </dt>
-                <dd className="faq-body-lab1">
+                <dd className="faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       When an application is vulnerable to SQL injection, and
@@ -201,10 +201,10 @@ export default function Sql_Injection() {
                     </li>
                   </ul>
                 </dd>
-                <dt className="wave-lab1  fadeInUp faq-header-lab1">
-                  <span>Task 4</span> Finding columns with a useful data type
+                <dt className="wave-labd  fadeInUp faq-header-labd">
+                  <span>Topic 4</span> Finding columns with a useful data type
                 </dt>
-                <dd className="faq-body-lab1">
+                <dd className="faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       A SQL injection UNION attack enables you to retrieve the
@@ -262,11 +262,11 @@ export default function Sql_Injection() {
                     </li>
                   </ul>
                 </dd>
-                <dt className="wave-lab1  fadeInUp faq-header-lab1">
-                  <span>Task 5</span>Using a SQL injection UNION attack to
+                <dt className="wave-labd  fadeInUp faq-header-labd">
+                  <span>Topic 5</span>Using a SQL injection UNION attack to
                   retrieve interesting data
                 </dt>
-                <dd className="faq-body-lab1">
+                <dd className="faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       When you have determined the number of columns returned by

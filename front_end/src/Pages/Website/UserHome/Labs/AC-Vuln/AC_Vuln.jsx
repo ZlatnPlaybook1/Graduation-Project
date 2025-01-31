@@ -38,7 +38,7 @@ export default function AC_Vuln() {
                   <span></span>  
                 </dt> */}
                 <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span>Intro</span> Introduction to Access Control
+                  <span>Intro </span> Introduction to Access Control
                   Vulnerabilities
                 </dt>
                 <dd className="fadeInUp faq-body-labd" id="border-left">
