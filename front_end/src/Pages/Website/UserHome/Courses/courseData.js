@@ -349,7 +349,7 @@ const courseData = [
   },
   {
     id: 23,
-    category: "Temporary Category",
+    category: "Server-Side Exploits",
     title: "Insecure Deserialization",
     description:
       "Before hacking something, you first need to understand the basics",
@@ -361,7 +361,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Lab2.jpg"),
-    link: "/infoDisc",
+    link: "/Insecure_Deserialization",
   },
   {
     id: 24,

@@ -212,6 +212,12 @@ import CommandInjectionLab1 from "./Pages/Website/UserHome/Labs/CommandInjection
 import CommandInjectionLab2 from "./Pages/Website/UserHome/Labs/CommandInjection/Practical/CommandInjectionLab2.jsx";
 import CommandInjectionLab3 from "./Pages/Website/UserHome/Labs/CommandInjection/Practical/CommandInjectionLab3.jsx";
 // End Command Injection
+// Start InsecureDeserialization
+import InsecureDeserialization from "./Pages/Website/UserHome/Labs/InsecureDeserialization/InsecureDeserialization.jsx";
+import InsecureDeserializationLabs from "./Pages/Website/UserHome/Labs/InsecureDeserialization/InsecureDeserializationLabs.jsx";
+import InsecureDeserializationLab1 from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab1/InsecureDeserializationLab1.jsx";
+import InsecureDeserializationLab2 from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab2/InsecureDeserializationLab2.jsx";
+import InsecureDeserializationLab3 from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab3/InsecureDeserializationLab3.jsx";
 
 function App() {
   return (
@@ -663,6 +669,28 @@ function App() {
             element={<CommandInjectionLab3 />}
           />
           {/* End  Command Injection  */}
+          {/* Start Insecure Deserialization */}
+          <Route
+            path="/Insecure_Deserialization"
+            element={<InsecureDeserialization />}
+          />
+          <Route
+            path="/Insecure_Deserialization/Insecure_Deserialization_Labs"
+            element={<InsecureDeserializationLabs />}
+          />
+          <Route
+            path="/Insecure_Deserialization/Insecure_Deserialization_Labs/lab1"
+            element={<InsecureDeserializationLab1 />}
+          />
+          <Route
+            path="/Insecure_Deserialization/Insecure_Deserialization_Labs/lab2"
+            element={<InsecureDeserializationLab2 />}
+          />
+          <Route
+            path="/Insecure_Deserialization/Insecure_Deserialization_Labs/lab3"
+            element={<InsecureDeserializationLab3 />}
+          />
+          {/* End Insecure_Deserialization */}
           {/* Start Cookies */}
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />

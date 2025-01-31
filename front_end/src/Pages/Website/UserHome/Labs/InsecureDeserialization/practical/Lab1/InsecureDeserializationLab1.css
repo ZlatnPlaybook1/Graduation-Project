@@ -1,0 +1,80 @@
+/* InsecureDeserializationLab.css */
+.InsecureDeserializationLab-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: "Montserrat", sans-serif;
+}
+
+.InsecureDeserializationLab-form-wrapper {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.InsecureDeserializationLab-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.InsecureDeserializationLab-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.InsecureDeserializationLab-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.InsecureDeserializationLab-input-group {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.InsecureDeserializationLab-input-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.InsecureDeserializationLab-input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.InsecureDeserializationLab-input-group input:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(102, 126, 234, 0.5);
+}
+
+.InsecureDeserializationLab-button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.InsecureDeserializationLab-button:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+}
