@@ -1,45 +1,38 @@
 import { Request, Response } from "express";
+import { Buffer } from "buffer";
 
 export const loginController = async (req: Request, res: Response) => {
     console.log("Cookies:", req.cookies);
     console.log("Body:", req.body);
 
-    console.log("Cookies received:", req.cookies);
-
     const { username, password } = req.body;
 
-    if (username === "admin") {
-        res.cookie("session", req.cookies.session, {
+    // Handle "test" user login
+    if (username === "test" && password === "test") {
+        const sessionData = `s:8:"username";s:4:"test"`;
+        const encodedSession = Buffer.from(sessionData).toString("base64");
+
+        res.cookie("session", encodedSession, {
             httpOnly: true,
             secure: false, // Set to true if using HTTPS
-            sameSite: "lax", // Corrected to lowercase
+            sameSite: "lax",
         });
-        return res.json({ message: "Login successful", data: { username } });
+
+        return res.status(200).json({ message: "Login successful", data: { username } });
     }
 
     // Handle "admin" user login
     if (username === "admin" && password === "admin") {
-        const sessionCookie = req.cookies.session;
+        const sessionData = `s:8:"username";s:5:"admin"`;
+        const encodedSession = Buffer.from(sessionData).toString("base64");
 
-        if (!sessionCookie) {
-            console.error("Session cookie is missing");
-            return res.status(400).json({ error: "Session cookie is missing" });
-        }
+        res.cookie("session", encodedSession, {
+            httpOnly: true,
+            secure: false, // Set to true if using HTTPS
+            sameSite: "lax",
+        });
 
-        const decodedCookie = Buffer.from(sessionCookie, "base64").toString("utf-8");
-        console.log("Decoded Cookie:", decodedCookie);
-
-        // Validate the decoded cookie structure
-        if (decodedCookie.includes('s:8:"username";s:5:"admin"')) {
-            return res
-                .status(200)
-                .json({ message: "Login successful", data: { username: "admin" } });
-        }
-
-        console.error("Decoded cookie does not match the expected structure");
-        return res
-            .status(400)
-            .json({ error: "Invalid session cookie format or content" });
+        return res.status(200).json({ message: "Login successful", data: { username } });
     }
 
     // Invalid credentials
