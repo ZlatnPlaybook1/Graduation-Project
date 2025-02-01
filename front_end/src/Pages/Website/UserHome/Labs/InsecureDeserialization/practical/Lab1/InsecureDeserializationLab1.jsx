@@ -21,16 +21,7 @@ export default function InsecureDeserializationLab1() {
     const encodedCookies = btoa(serializedData);
 
     // Set the cookie in the browser
-    document.cookie = `session=${encodedCookies}; path=/; max-age=3600; SameSite=None; Secure`;
-
-    // Retrieve the cookie you just set
-    const sessionCookie = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("session="))
-      ?.split("=")[1];
-
-    // Log the cookie to see what is being sent
-    console.log("Cookie sent to API:", `${sessionCookie}`);
+    document.cookie = `session=${encodedCookies}; path=/; max-age=3600; SameSite=Lax`;
 
     const payload = { username, password };
     console.log("Data sent to API:", payload);
@@ -42,9 +33,9 @@ export default function InsecureDeserializationLab1() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Cookie: `${sessionCookie}`, // Send the cookie manually
           },
-          body: JSON.stringify({ username, password }),
+          credentials: "include", // This is crucial for sending cookies
+          body: JSON.stringify(payload),
         }
       );
 
@@ -65,6 +56,7 @@ export default function InsecureDeserializationLab1() {
       }
     } catch (error) {
       console.error("Error:", error);
+      setErrorMessage("Login failed. Please try again.");
     }
   };
 

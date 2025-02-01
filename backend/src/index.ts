@@ -37,8 +37,9 @@ app.use("/src", express.static("src"));
 
 app.use(
   cors({
-    methods: ["GET", "POST"],
-    credentials: true,
+    origin: "http://localhost:3000",  // Your React app's URL
+    credentials: true,                // Required for cookies
+    methods: ['GET', 'POST'],
   })
 );
 app.use(morgan("dev")); // morgan: HTTP request logger middleware,
