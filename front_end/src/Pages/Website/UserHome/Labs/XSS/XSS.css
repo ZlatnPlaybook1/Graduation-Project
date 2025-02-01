@@ -25,200 +25,8 @@ a {
   padding: 15px;
 }
 
-/* Start Landing */
-.landing-lab2 {
-  height: auto !important;
-  position: relative !important;
-  background-color: var(--alt-color) !important;
-  isolation: isolate !important;
-  z-index: 3 !important;
-  padding: 0 120px;
-  overflow: hidden;
-}
-
-.landing-lab2 .banner-lab2 {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.landing-lab2 .banner-lab2::after {
-  content: "";
-  position: absolute;
-  inset: 0px;
-  z-index: 1;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    var(--alt-color) 30%,
-    rgba(21, 28, 43, 0.98) 50%,
-    transparent 100%
-  );
-}
-
-.landing-lab2 .banner-lab2 img {
-  position: absolute !important;
-  left: 10% !important;
-  top: 50% !important;
-  transform: translateY(-50%);
-  max-width: 80%;
-  height: auto;
-}
-
-.landing-lab2 .container-lab2 {
-  padding: 24px 12px;
-}
-
-.landing-lab2 .breadcrumb-lab2 ul {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.landing-lab2 .breadcrumb-lab2 ul li:first-of-type::before {
-  content: "";
-}
-
-.landing-lab2 .breadcrumb-lab2 ul li::before {
-  content: ">";
-  color: rgb(184, 190, 201);
-  padding-right: 5px;
-}
-
-.landing-lab2 .breadcrumb-lab2 ul li a {
-  font-size: 16px;
-  color: rgb(184, 190, 201);
-  padding: 0;
-  margin: 0;
-}
-
-.landing-lab2 .breadcrumb-lab2 ul li span.active-breadcrumb-lab2 {
-  font-size: 16px;
-  padding: 0;
-  margin: 0;
-  color: rgb(99, 110, 129);
-}
-
-.landing-lab2 .breadcrumb-lab2 ul li a:hover {
-  text-decoration: underline;
-}
-
-.landing-lab2 .course-info-lab2 {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: row;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: white;
-}
-
-.landing-lab2 .course-info-lab2 img {
-  width: 90px;
-}
-
-.landing-lab2 .course-info-lab2 .course-text-lab2 {
-  margin-left: 20px;
-}
-
-.landing-lab2 .course-info-lab2 .course-text-lab2 p {
-  margin-top: 5px;
-  font-size: 16px;
-  display: inline-block;
-  padding-left: 10px;
-}
-
-.landing-lab2 .course-info-lab2 .course-icons-lab2 {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: row;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: white;
-}
-
-.landing-lab2 .course-info-lab2 .course-icons-lab2 i.fa-signal.for-lab2 {
-  color: green;
-}
-
-.landing .course-info .course-icons i.fa-signal + p {
-  display: inline-block;
-  color: green;
-}
-
-.landing-lab2 .course-info-lab2 .course-icons-lab2 .diff-lab2,
-.landing-lab2 .course-info-lab2 .course-icons-lab2 .duration-lab2 {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-.landing-lab2 .course-info-lab2 .course-icons-lab2 i.fa-clock.for-lab2 + p {
-  display: inline-block;
-}
-.landing-lab2 .course-info-lab2 .course-icons-lab2 .time {
-  padding-left: 10px !important;
-}
-.landing-lab2 .options-lab2 {
-  display: flex;
-  justify-content: start;
-  gap: 12px;
-  align-items: center;
-  flex-direction: row;
-}
-
-.landing-lab2 .options-lab2 .like-lab2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  border: 1px solid rgb(62, 71, 90);
-  border-radius: 4px;
-}
-
-.landing-lab2 .options-lab2 p {
-  padding-top: 15px;
-  padding-left: 15px;
-}
-
-.landing-lab2 .options-lab2 button {
-  background-color: var(--alt-color);
-  border-color: rgb(62, 71, 90);
-  color: white;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  max-width: 100%;
-  cursor: pointer;
-  font-size: 16px;
-  gap: 6px;
-  height: 36px;
-  padding: 9px 16px;
-  pointer-events: initial;
-  border-width: 1px;
-  border-style: solid;
-  transition: var(--main-transition);
-}
-
-.landing-lab2 .options-lab2 button:hover {
-  background-color: white;
-  color: var(--alt-color);
-}
-
-.landing-lab2 .options-lab2 .like.for-lab2 button {
-  border-radius: 4px 0px 0px 4px;
-  border: none;
-}
-
-.landing-lab2 .options-lab2 .like-lab2 button:first-of-type {
-  border-right: 1px solid rgb(62, 71, 90);
-}
-/* End Landing */
-
 /* Start Course Content */
-.course-lab2 .row-lab2 {
+.SecureUploadContent .secure-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -226,7 +34,7 @@ a {
   margin-bottom: 70px;
 }
 
-.course-lab2 .course-section .arrow {
+.SecureUploadContent .course-section .arrow {
   background-color: inherit !important;
   float: right !important;
   display: flex !important;
@@ -234,14 +42,14 @@ a {
   justify-content: flex-end !important;
 }
 
-.course-lab2 .course-section-lab2 {
+.SecureUploadContent .course-section-lab2 {
   background-color: inherit;
   width: 100%;
   display: flex;
   align-items: center;
 }
 
-.faq-section-lab2 {
+.secure-faq-section {
   margin-top: 75px;
   display: block;
   width: 70%;
@@ -250,11 +58,11 @@ a {
 }
 
 @media (max-width: 991px) {
-  .faq-section-lab2 .section-text-lab2 {
+  .secure-faq-section .secure-section-text {
     margin-left: 0;
   }
 
-  .faq-section-lab2 .image-lab2 {
+  .secure-faq-section .image-lab2 {
     display: none;
   }
 }
@@ -263,7 +71,7 @@ a {
   margin-bottom: 30px;
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-header-lab2 {
+.secure-faq-section .secure-section-text .secure-faq-header {
   border-radius: 5px 5px 0 0;
   color: white;
   background-color: #212c42;
@@ -279,18 +87,18 @@ a {
 }
 
 @media (max-width: 991px) {
-  .faq-section-lab2 .section-text-lab2 .faq-header-lab2 {
+  .secure-faq-section .secure-section-text .secure-faq-header {
     font-size: 16px;
   }
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-header-lab2 span {
-  color: red;
+.secure-faq-section .secure-section-text .secure-faq-header span {
+  color: var(--sec-main-color);
   margin-right: 40px;
   position: relative;
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-header-lab2 span::after {
+.secure-faq-section .secure-section-text .secure-faq-header span::after {
   content: "";
   width: 10px;
   height: 10px;
@@ -303,27 +111,29 @@ a {
   transform: translateY(-50%);
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-body-lab2 {
-  font-family: "Poppins", serif;
+.secure-faq-section .secure-section-text .Auth-faq-body {
   font-size: 16px !important;
-  font-weight: 400 !important;
   padding: 15px 25px;
   line-height: 1.9;
-  border-left: 4px solid red;
-  box-shadow: 1px 2px rgb(0, 0, 0, 0.1);
-  border-radius: 0 0 5px 5px;
-  background-color: white;
   color: rgb(21, 28, 43);
+  animation: fadeInUp 0.5s ease-out;
+  font-family: "poppins", sans-serif;
+  padding: 1rem;
+  padding-left: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-weight: 400 !important;
 }
 
 @media (max-width: 991px) {
-  .faq-section-lab2 .section-text-lab2 .faq-body-lab2 {
+  .secure-faq-section .secure-section-text .Auth-faq-body {
     font-size: 16px;
     font-weight: 400;
   }
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-body-lab2 img {
+.secure-faq-section .secure-section-text .Auth-faq-body img {
   width: 25%;
   margin-left: auto;
   margin-right: auto;
@@ -331,31 +141,31 @@ a {
   margin-bottom: 30px;
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-body-lab2 ul li {
+.secure-faq-section .secure-section-text .Auth-faq-body ul li {
   list-style: "- ";
   margin-bottom: 10px;
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-body-lab2 ol li {
+.secure-faq-section .secure-section-text .Auth-faq-body ol li {
   list-style: decimal;
   margin-bottom: 10px;
   font-size: 16px;
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-body-lab2 ul li a {
+.secure-faq-section .secure-section-text .Auth-faq-body ul li a {
   color: #ff4747;
   text-decoration: underline;
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-body-lab2 ul li span {
+.secure-faq-section .secure-section-text .Auth-faq-body ul li span {
   color: blue;
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-body-lab2 li h2 {
+.secure-faq-section .secure-section-text .Auth-faq-body li h2 {
   color: #ff4747;
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-body-lab2 ul pre {
+.secure-faq-section .secure-section-text .Auth-faq-body ul pre {
   padding: 25px 20px;
   margin: 15px 0;
   border-radius: 0;
@@ -366,19 +176,19 @@ a {
   word-wrap: break-word;
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-body-lab2 ul pre code {
+.secure-faq-section .secure-section-text .Auth-faq-body ul pre code {
   display: flex;
   align-items: start;
   flex-direction: column;
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-body-lab2 ul pre span {
+.secure-faq-section .secure-section-text .Auth-faq-body ul pre span {
   color: green;
   display: inline;
   white-space: normal;
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-body-lab2 form {
+.secure-faq-section .secure-section-text .Auth-faq-body form {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
@@ -386,7 +196,7 @@ a {
   flex-direction: row;
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-body-lab2 form input {
+.secure-faq-section .secure-section-text .Auth-faq-body form input {
   flex: 3 1 0%;
   padding: 7px 12px;
   width: 100%;
@@ -400,7 +210,7 @@ a {
   margin-right: 20px;
 }
 
-.faq-section-lab2 .section-text-lab2 .faq-body-lab2 form button {
+.secure-faq-section .secure-section-text .Auth-faq-body form button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -423,9 +233,9 @@ a {
   transition: 0.2s ease-in-out;
 }
 
-.faq-section-lab2
-  .section-text-lab2
-  .faq-body-lab2
+.secure-faq-section
+  .secure-section-text
+  .Auth-faq-body
   form
   button:hover:not(:disabled) {
   background-color: rgb(163, 234, 42);

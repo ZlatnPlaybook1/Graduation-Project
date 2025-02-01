@@ -8,6 +8,7 @@ const Header = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const [profileListVisible, setProfileListVisible] = useState(false);
   const [userImage, setUserImage] = useState("");
+  const [userName, setUserName] = useState("");
 
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
@@ -25,8 +26,9 @@ const Header = () => {
   };
 
   // Fetch the user profile image
+  // Fetch the user profile data
   useEffect(() => {
-    const fetchUserProfileImage = async () => {
+    const fetchUserProfile = async () => {
       try {
         const res = await axios.get("http://127.0.0.1:8080/api/personalInfo", {
           headers: {
@@ -35,18 +37,18 @@ const Header = () => {
         });
 
         const data = res.data.data;
-        // Construct full image URL
         const imageUrl = data.image
           ? `http://127.0.0.1:8080/${data.image.path.replace("\\", "/")}`
           : "";
 
-        setUserImage(imageUrl); // Set the profile image URL
+        setUserImage(imageUrl);
+        setUserName(data.name); // Set the user's name
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
     };
 
-    fetchUserProfileImage();
+    fetchUserProfile();
   }, [token]);
 
   async function handleLogout() {
@@ -110,7 +112,7 @@ const Header = () => {
 
           {/* Profile section */}
           <div className="profile_links">
-            <i className="fa-solid fa-magnifying-glass"></i>
+            <h3 className="name-profile">Hello! {userName}</h3>
             <div className="profile-section">
               <button className="profile" onClick={toggleProfileList}>
                 <img

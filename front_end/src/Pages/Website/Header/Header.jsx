@@ -17,7 +17,7 @@ const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [profileListVisible, setProfileListVisible] = useState(false);
   const navigate = useNavigate();
-  const [name, setName] = useState("");
+  const [userName, setUserName] = useState("");
   const [userImage, setUserImage] = useState("");
 
   const cookie = Cookie();
@@ -29,9 +29,9 @@ const Header = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  // Fetch the user profile image
+  // Fetch the user profile data and Name
   useEffect(() => {
-    const fetchUserProfileImage = async () => {
+    const fetchUserProfile = async () => {
       try {
         const res = await axios.get("http://127.0.0.1:8080/api/personalInfo", {
           headers: {
@@ -40,37 +40,19 @@ const Header = () => {
         });
 
         const data = res.data.data;
-        // Construct full image URL
         const imageUrl = data.image
           ? `http://127.0.0.1:8080/${data.image.path.replace("\\", "/")}`
           : "";
 
-        setUserImage(imageUrl); // Set the profile image URL
+        setUserImage(imageUrl);
+        setUserName(data.name); // Set the user's name
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
     };
 
-    fetchUserProfileImage();
+    fetchUserProfile();
   }, [token]);
-
-  async function handleLogout() {
-    try {
-      await axios.post(
-        "http://127.0.0.1:8000/api/logout",
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      cookie.remove("CuberWeb");
-      window.location.pathname = "/";
-    } catch (err) {
-      console.log(err);
-    }
-  }
   useEffect(() => {
     // Sticky header
     $(window).on("scroll", function () {
@@ -316,6 +298,7 @@ const Header = () => {
           {token ? (
             <div className="profile_links">
               <div className="profile-section">
+                {/* <h3 className="name-profile">Welcome, {userName}</h3> */}
                 <button className="profile" onClick={toggleProfileList}>
                   <img
                     src={userImage || "../assets/img/profile.png"}
@@ -340,13 +323,6 @@ const Header = () => {
                       </NavLink>
                     </li>
                   </ul>
-                  {/* <ul>
-                    <li>
-                      <NavLink onClick={handleLogout}>
-                        <i className="fas fa-right-from-bracket"></i> Log Out
-                      </NavLink>
-                    </li>
-                  </ul> */}
                 </div>
               </div>
             </div>
@@ -362,7 +338,6 @@ const Header = () => {
           )}
           {token ? (
             <div className="profile_links">
-              {/* <p className="user-name">Welcome, {name}</p> */}
               <div className="profile-section">
                 <button className="profile" onClick={toggleProfileList}>
                   <img
@@ -386,13 +361,6 @@ const Header = () => {
                         </NavLink>
                       </li>
                     </ul>
-                    {/* <ul>
-                      <li>
-                        <NavLink onClick={handleLogout}>
-                          <i className="fas fa-right-from-bracket"></i> Log Out
-                        </NavLink>
-                      </li>
-                    </ul> */}
                   </div>
                 )}
               </div>
