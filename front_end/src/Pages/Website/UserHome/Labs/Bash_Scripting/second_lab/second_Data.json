@@ -1,0 +1,94 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What piece of code can we insert at the start of a line to comment out our code?",
+      "correctAnswer": "#",
+      "hint": "Match any of the characters c, o, or g"
+    },
+    {
+      "id": 2,
+      "question": "What will the following script output to the screen, echo “BishBashBosh”",
+      "correctAnswer": "BishBashBosh",
+      "hint": "Use a character set to match c, f, or h, followed by 'at'"
+    },
+    {
+      "id": 3,
+      "question": "What would this code return?",
+      "correctAnswer": "#",
+      "hint": "Include both uppercase and lowercase variations in the set"
+    },
+    {
+      "id": 4,
+      "question": "How would you print out the city to the screen?",
+      "correctAnswer": "#",
+      "hint": "Match both uppercase and lowercase 'File' and digits from 1 to 9"
+    },
+    {
+      "id": 5,
+      "question": "How would you print out the country to the screen?",
+      "correctAnswer": "#",
+      "hint": "Use a negative lookahead to exclude '7'"
+    },
+    {
+      "id": 6,
+      "question": "How can we get the number of arguments supplied to a script?",
+      "correctAnswer": "$#",
+      "hint": "Match c, f, h, or r followed by 'at'; include uppercase for 'Cat'"
+    },
+    {
+      "id": 7,
+      "question": "How can we get the filename of our current script (aka our first argument)?",
+      "correctAnswer": "$0",
+      "hint": "Use '?' to indicate an optional 's' at the end"
+    },
+    {
+      "id": 8,
+      "question": "How can we get the 4th argument supplied to the script?",
+      "correctAnswer": "$4",
+      "hint": "Escape the dot in 'cat.xyz' since it's a special character"
+    },
+    {
+      "id": 9,
+      "question": "If a script asks us for input, how can we direct our input into a variable called ‘test’ using 'read'?",
+      "correctAnswer": "read test",
+      "hint": "Use groups and an optional 's' for cats and hats"
+    },
+    {
+      "id": 10,
+      "question": "What will the output of 'echo $1 $3' be if the script was run with './script.sh hello hola aloha'?",
+      "correctAnswer": "hello aloha",
+      "hint": "Exclude n to z by specifying a range within the set"
+    },
+    {
+      "id": 11,
+      "question": "What would be the command to print audi to the screen using indexing?",
+      "correctAnswer": "echo ${cars[1]}",
+      "hint": "Start the pattern with b or h and end with optional 's'"
+    },
+    {
+      "id": 12,
+      "question": "If we wanted to remove tesla from the array how would we do so?",
+      "correctAnswer": "unset cars[3]",
+      "hint": "Match the exact string 'catssss'"
+    },
+    {
+      "id": 13,
+      "question": "How could we insert a new value called toyota to replace tesla?",
+      "correctAnswer": "cars[3]='toyota'",
+      "hint": "Use '*' to match zero or more occurrences of 's'"
+    },
+    {
+      "id": 14,
+      "question": "What is the flag to check if we have read access to a file?",
+      "correctAnswer": "-r",
+      "hint": "Use '+' to match one or more occurrences of 'r'"
+    },
+    {
+      "id": 15,
+      "question": "What is the flag to check to see if it's a directory?",
+      "correctAnswer": "-d",
+      "hint": "Use the pipe '|' to match each filename explicitly"
+    }
+  ]
+}

@@ -134,7 +134,7 @@ import HASHING_SECOND_LAB from "./Pages/Website/UserHome/Labs/Hashing/practical/
 // End Hashing
 // Bash Scripting
 import Bash from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash.jsx";
-import BASH_QUIZ from "./Pages/Website/UserHome/Labs/Bash_Scripting/Bash_quiz.jsx";
+import BASH_QUIZ from "./Pages/Website/UserHome/Labs/Bash_Scripting/second_lab/Bash_quiz.jsx";
 // End Bash Scripting
 // Obfuscation
 import Obfuscation from "./Pages/Website/UserHome/Labs/Obfuscation/Obfuscation.jsx";
