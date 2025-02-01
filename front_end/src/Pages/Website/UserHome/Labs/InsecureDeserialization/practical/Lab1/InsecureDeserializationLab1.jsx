@@ -10,41 +10,43 @@ export default function InsecureDeserializationLab1() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
-    // Serialize a PHP-like object and Base64 encode it
+  
     const serializedData = `O:4:"User":2:{s:8:"username";s:${username.length}:"${username}";s:8:"password";s:${password.length}:"${password}";}`;
     const encodedCookies = btoa(serializedData);
-
-    // Set the cookie in the browser
+  
     document.cookie = `session=${encodedCookies}; path=/; max-age=3600; SameSite=Lax`;
-
+  
     try {
-      // Send the username and password to the backend
-      const response = await fetch("http://127.0.0.1:8080/api/insecureDeserializationLab1", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include", // Ensure cookies are sent with the request
-        body: JSON.stringify({ username, password }),
-      });
-
+      const response = await fetch(
+        "http://127.0.0.1:8080/api/insecureDeserializationLab1",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include", // Ensures cookies are sent
+          body: JSON.stringify({ username, password }),
+        }
+      );
+  
       if (!response.ok) {
         throw new Error("Login failed");
       }
-
+  
       const data = await response.json();
       console.log("Success:", data);
-
-      // Redirect based on the username
+  
       if (data.data.username === "admin") {
-        navigate("/AdminDashboard");
+        navigate("/Insecure_Deserialization/Insecure_Deserialization_Labs/lab1/AdminDashboard");
       } else if (data.data.username === "test") {
-        navigate("/testPage");
+        navigate("/Insecure_Deserialization/Insecure_Deserialization_Labs/lab1/testPage");
       }
     } catch (error) {
       console.error("Error:", error);
       setErrorMessage("Login failed. Please try again.");
     }
   };
+  
 
   return (
     <div>
