@@ -1,0 +1,22 @@
+import { Request, Response } from "express";
+
+export const loginController = async (req: Request, res: Response) => {
+    if (req.body.username === "test" && req.body.password === "test") {
+        return res.status(200).json({
+            message: "login successful",
+            data: {
+                username: req.body.username,
+            },
+        });
+    } else if (req.body.username === "admin" && req.body.password === "admin") {
+        return res.status(200).json({
+            message: "login successful",
+            data: {
+                username: req.body.username,
+            },
+        });
+    } else {
+        return res.status(401).send("Invalid name or password");
+    }
+};
+
