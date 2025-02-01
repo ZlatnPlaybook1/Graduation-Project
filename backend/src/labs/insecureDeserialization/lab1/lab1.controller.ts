@@ -1,30 +1,43 @@
 import { Request, Response } from "express";
 
 export const loginController = async (req: Request, res: Response) => {
-    console.log(req.params);
-    console.log(req.body);
-    console.log(req.cookies);
+    console.log("Cookies:", req.cookies);
+  console.log("Body:", req.body);
 
-    if (req.body.username === "test" && req.body.password === "test") {
-        return res.status(200).json({
-            message: "login successful",
-            data: {
-                username: req.body.username,
-            },
-        });
-    } else if (
-        req.body.username === "admin" &&
-        req.body.password === "admin" 
-        // req.cookies.session ===
-        // "Tzo0OiJVc2VyIjoyOntzOjg6InVzZXJuYW1lIjtzOjQ6ImFkbWluIjtzOjg6InBhc3N3b3JkIjtzOjQ6ImFkbWluIjt9"
-    ) {
-        return res.status(200).json({
-            message: "login successful",
-            data: {
-                username: req.body.username,
-            },
-        });
-    } else {
-        return res.status(401).send("Invalid name or password");
+  const { username, password } = req.body;
+
+  // Handle "test" user login
+  if (username === "test" && password === "test") {
+    return res
+      .status(200)
+      .json({ message: "Login successful", data: { username } });
+  }
+
+  // Handle "admin" user login
+  if (username === "admin" && password === "admin") {
+    const sessionCookie = req.cookies.session;
+
+    if (!sessionCookie) {
+      console.error("Session cookie is missing");
+      return res.status(400).json({ error: "Session cookie is missing" });
     }
+
+    const decodedCookie = Buffer.from(sessionCookie, "base64").toString("utf-8");
+    console.log("Decoded Cookie:", decodedCookie);
+
+    // Validate the decoded cookie structure
+    if (decodedCookie.includes('s:8:"username";s:5:"admin"')) {
+      return res
+        .status(200)
+        .json({ message: "Login successful", data: { username: "admin" } });
+    }
+
+    console.error("Decoded cookie does not match the expected structure");
+    return res
+      .status(400)
+      .json({ error: "Invalid session cookie format or content" });
+  }
+
+  // Invalid credentials
+  return res.status(401).json({ error: "Invalid username or password" });
 };
