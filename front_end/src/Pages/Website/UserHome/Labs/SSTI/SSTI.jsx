@@ -63,6 +63,8 @@ export default function SSTI() {
                   <span>Step 2</span> SSTI vulnerabilities</dt>
                 <dd className="fadeInUp faq-body-labd" id="border-left">
                   <br></br>
+                  <h1>server-side template injection vulnerabilities</h1>
+                  
                   <h2>How do server-side template injection vulnerabilities arise?</h2>
                   <br></br>
                   <p>Server-side template injection vulnerabilities arise when user input is concatenated into templates rather than being passed in as data.</p>
@@ -178,7 +180,7 @@ export default function SSTI() {
                   <span>Step 2</span> Constructing a SSTI attack</dt>
                 <dd className="fadeInUp faq-body-labd" id="border-left">
                 <br></br>
-                <h2>Constructing a server-side template injection attack</h2>
+                <h1>Constructing a server-side template injection attack</h1>
                 <br></br>
                 <img src={exampleImage1} id="img-full" alt="Example" />
                 <br></br>
@@ -462,7 +464,7 @@ export default function SSTI() {
                   <span>Step 4</span> How to prevent   SSTI vulnerabilities</dt>
                 <dd className="fadeInUp faq-body-labd" id="border-left">
                   <br></br>
-                  <h2>How to prevent server-side template injection vulnerabilities</h2>
+                  <h1>How to prevent server-side template injection vulnerabilities</h1>
                   <br></br>
                   <p>The best way to prevent server-side template injection is to not allow any users to modify or submit new templates. However, this is sometimes unavoidable due to business requirements.</p>
 
