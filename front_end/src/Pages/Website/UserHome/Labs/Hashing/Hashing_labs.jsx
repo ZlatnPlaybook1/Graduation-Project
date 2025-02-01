@@ -4,7 +4,6 @@ import "../Page_Styles/Lab.css";
 
 import labImg from "../../assets/img/Hashing/Generator.jpg";
 
-import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
 export default function Hashing_labs() {

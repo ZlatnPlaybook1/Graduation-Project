@@ -1,10 +1,7 @@
 import React from "react";
-import { useEffect, useRef } from "react";
-import $ from "jquery";
 import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets/img/cookies/Cookies_logo.png";
-import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
 
@@ -52,12 +49,6 @@ export default function Cookies_lab() {
             title="Admin has the power"
             brief="try to login as admin"
             difficulty="Easy"
-            descriptionList={[
-              "Cyber Security Basics",
-              "Networking Basics and Weaknesses",
-              "The Web And Common Attacks",
-              "Learn to Use The Linux OS",
-            ]}
             />
             <Card
             link="/cookies/cookies_lab/second/login"
@@ -65,12 +56,6 @@ export default function Cookies_lab() {
             title="Hashing"
             brief="try to login as admin"
             difficulty="Easy"
-            descriptionList={[
-              "Cyber Security Basics",
-              "Networking Basics and Weaknesses",
-              "The Web And Common Attacks",
-              "Learn to Use The Linux OS",
-            ]}
             />
           </div>
         </div>

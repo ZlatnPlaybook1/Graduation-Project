@@ -58,12 +58,6 @@ export default function XSS_lab() {
                 ".",
               ]}
               difficulty={"Easy"}
-              descriptionList={[
-                "Cyber Security Basics",
-                "Networking Basics and Weaknesses",
-                "The Web And Common Attacks",
-                "Learn to Use The Linux OS",
-              ]}
             />
             {/* lab2 */}
             <Card
@@ -80,12 +74,6 @@ export default function XSS_lab() {
                 " when the blog post is viewed.",
               ]}
               difficulty={"Easy"}
-              descriptionList={[
-                "Cyber Security Basics",
-                "Networking Basics and Weaknesses",
-                "The Web And Common Attacks",
-                "Learn to Use The Linux OS",
-              ]}
             />
             {/* lab3 */}
             <Card
@@ -108,12 +96,6 @@ export default function XSS_lab() {
                 ".",
               ]}
               difficulty={"Easy"}
-              descriptionList={[
-                "Cyber Security Basics",
-                "Networking Basics and Weaknesses",
-                "The Web And Common Attacks",
-                "Learn to Use The Linux OS",
-              ]}
             />
             {/* lab4 */}
             <Card
@@ -130,12 +112,6 @@ export default function XSS_lab() {
                 " when the comment author name is clicked.",
               ]}
               difficulty={"Easy"}
-              descriptionList={[
-                "Cyber Security Basics",
-                "Networking Basics and Weaknesses",
-                "The Web And Common Attacks",
-                "Learn to Use The Linux OS",
-              ]}
             />
 
             {/* lab7 */}

@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import Auth_Photo from "../../assets/img/Broken Authentication/Auth_Icon.png";
+import { Card } from "../../Card/Card";
 export default function BrokenAuthenticationLab() {
   return (
     <>
@@ -41,80 +41,29 @@ export default function BrokenAuthenticationLab() {
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             {/* lab1 */}
-            <Link
-              to="/broken-auth/Broken_Authentication_Lab/lab1"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={Auth_Photo} alt="Lab Cover" />
-              </div>
-              <div className="course-text">
-                <h3>Brute Force 1</h3>
-                <p className="modern-p">Find the password of the admin</p>
-                <ul className="circled-order">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
-                </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link={"/broken-auth/Broken_Authentication_Lab/lab1"}
+              image={Auth_Photo}
+              title={"Brute Force 1"}
+              brief={"Find the password of the admin"}
+              difficulty={"Easy"}
+            />
             {/* lab2 */}
-            <Link
-              to="/broken-auth/Broken_Authentication_Lab/lab2"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={Auth_Photo} alt="Lab Cover" />
-              </div>
-              <div className="course-text">
-                <h3>Brute Force </h3>
-                <p className="modern-p">
-                  Developers forgot to add exit function when redirecting. Good
-                  luck!
-                </p>
-                <ul className="circled-order">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
-                </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link={"/broken-auth/Broken_Authentication_Lab/lab2"}
+              image={Auth_Photo}
+              title={"Brute Force 2"}
+              brief={"Developers forgot to add exit function when redirecting. Good luck!"}
+              difficulty={"Easy"}
+            />
             {/* lab3 */}
-            <Link
-              to="/broken-auth/Broken_Authentication_Lab/lab3"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={Auth_Photo} alt="Lab Cover" />
-              </div>
-              <div className="course-text">
-                <h3>No Redirect</h3>
-                <p className="modern-p">
-                  Developers forgot to add exit function when redirecting. Good
-                  luck!
-                </p>
-                <ul className="circled-order">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
-                </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link={"/broken-auth/Broken_Authentication_Lab/lab3"}
+              image={Auth_Photo}
+              title={"No Redirect"}
+              brief={"Developers forgot to add exit function when redirecting. Good luck!"}
+              difficulty={"Easy"}
+            />
           </div>
         </div>
       </div>

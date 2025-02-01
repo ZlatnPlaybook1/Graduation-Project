@@ -780,7 +780,7 @@ function App() {
             element={<TOP_SECRET />}
           />
           <Route
-            path="/cryptography/cryptography_lab/decode-the-iamge"
+            path="/cryptography/cryptography_lab/decode-the-image"
             element={<DECODE_IMAGE />}
           />
           <Route

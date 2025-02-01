@@ -2,8 +2,8 @@ import React from "react";
 import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets/img/Cryptography/card_image.png";
-import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
+import { Card } from "../../Card/Card";
 
 export default function CryptoGraphy_lab() {
   return (
@@ -43,90 +43,42 @@ export default function CryptoGraphy_lab() {
           <h2>CryptoGraphy Lab</h2>
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
-            <Link
-              to="/cryptography/cryptography_lab/top-secret"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={image} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Top Secret</h3>
-                <p>
-                  cryptography, a crucial skill for securing data and
-                  understanding encryption techniques in cybersecurity
-                  environments. 🚀
-                </p>
-                <ul className="circled-order"></ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal "></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-            <Link
-              to="/cryptography/cryptography_lab/decode-the-iamge"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={image} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Decode the Image</h3>
-                <p>
-                  cryptography, a crucial skill for securing data and
-                  understanding encryption techniques in cybersecurity
-                  environments. 🚀
-                </p>
-                <ul className="circled-order"></ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal "></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-            <Link
-              to="/cryptography/cryptography_lab/corrupted"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={image} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Corrupted</h3>
-                <p>
-                  cryptography, a crucial skill for securing data and
-                  understanding encryption techniques in cybersecurity
-                  environments. 🚀
-                </p>
-                <ul className="circled-order"></ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal "></i>
-                <p>Easy</p>
-              </div>
-            </Link>
-            <Link
-              to="/cryptography/cryptography_lab/hash-crack"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={image} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Hash Crack</h3>
-                <p>
-                  cryptography, a crucial skill for securing data and
-                  understanding encryption techniques in cybersecurity
-                  environments. 🚀
-                </p>
-                <ul className="circled-order"></ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal "></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link={"/cryptography/cryptography_lab/top-secret"}
+              image={image}
+              title={"Top Secret"}
+              brief={
+                "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
+              }
+              difficulty={"Easy"}
+              />
+              <Card
+                  link={"/cryptography/cryptography_lab/decode-the-image"}
+                  image={image}
+                  title={"Decode the Image"}
+                  brief={
+                    "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
+                  }
+                  difficulty={"Easy"}
+              />
+              <Card
+                  link={"/cryptography/cryptography_lab/corrupted"}
+                  image={image}
+                  title={"Corrupted"}
+                  brief={
+                    "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
+                  }
+                  difficulty={"Easy"}
+              />
+              <Card
+                  link={"/cryptography/cryptography_lab/hash-crack"}
+                  image={image}
+                  title={"Hash Crack"}
+                  brief={
+                    "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
+                  }
+                  difficulty={"Easy"}
+              />
           </div>
         </div>
       </div>

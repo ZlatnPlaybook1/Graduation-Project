@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import Idor_cover from "../../assets/img/IDOR/IDOR_Cover.jpg";
+import { Card } from "../../Card/Card";
 export default function InsecureDirectObjectReferenceLabs() {
   return (
     <>
@@ -42,81 +42,29 @@ export default function InsecureDirectObjectReferenceLabs() {
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             {/* lab1 */}
-            <Link
-              to="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab1"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={Idor_cover} alt="Lab Cover" />
-              </div>
-              <div className="course-text">
-                <h3>Invoices.</h3>
-                <p className="modern-p">
-                  Gain unauthorized access to other users' invoices.
-                </p>
-                <ul className="circled-order">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
-                </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link={"/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab1"}
+              image={Idor_cover}
+              title={"Invoices"}
+              brief={"Gain unauthorized access to other users' invoices"}
+              difficulty={"Easy"}
+            />
             {/* lab2 */}
-            <Link
-              to="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab2"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={Idor_cover} alt="Lab Cover" />
-              </div>
-              <div className="course-text">
-                <h3>Ticket Sales</h3>
-                <p className="modern-p">
-                  Buy tickets for less than the regular price.
-                </p>
-                <ul className="circled-order">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
-                </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link={"/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab2"}
+              image={Idor_cover}
+              title={"Ticket Sales"}
+              brief={"Buy tickets for less than the regular price"}
+              difficulty={"Easy"}
+            />
             {/* lab3 */}
-            <Link
-              to="/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab3"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={Idor_cover} alt="Lab Cover" />
-              </div>
-              <div className="course-text">
-                <h3>Money Transfer</h3>
-                <p className="modern-p">
-                  Transfer money from another user's account to your own account
-                  without any permission.
-                </p>
-                <ul className="circled-order">
-                  <li>Cyber Security Basics</li>
-                  <li>Networking Basics and Weaknesses</li>
-                  <li>The Web And Common Attacks</li>
-                  <li>Learn to Use The Linux OS</li>
-                </ul>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link={"/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab3"}
+              image={Idor_cover}
+              title={"Money Transfer"}
+              brief={"Transfer money from another user's account to your own account without any permission"}
+              difficulty={"Easy"}
+            />
           </div>
         </div>
       </div>

@@ -3,8 +3,8 @@ import Header from "../../Header/Header";
 import "./Click_Jacking.css";
 import labImg from "../../assets/img/ACV/lab.jpeg";
 
-import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
+import { Card } from "../../Card/Card";
 export default function Click_Jacking_Labs() {
   return (
     <>
@@ -45,48 +45,25 @@ export default function Click_Jacking_Labs() {
           <p className="section-p">Test Your Hacking Skills</p>
           <div className="row">
             {/* lab1 */}
-            <Link
-              to="/Click_Jacking/Click_Jacking_labs/lab1"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={labImg} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>vulnerability allowing login bypass</h3>
-                <p>
-                  This lab has an unprotected admin panel. Solve the lab by
-                  deleting the user <mark>carlos</mark>.
-                </p>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+              link={"/Click_Jacking/Click_Jacking_labs/lab1"}
+              image={labImg}
+              title={"vulnerability allowing login bypass"}
+              brief={
+                "This lab has an unprotected admin panel. Solve the lab by deleting the user carlos."
+              }
+              difficulty={"Easy"}
+            />
             {/* lab2 */}
-            <Link
-              to="/Click_Jacking/Click_Jacking_labs/lab2"
-              className="course-card"
-            >
-              <div className="course-image">
-                <img src={labImg} alt="" />
-              </div>
-              <div className="course-text">
-                <h3>Unprotected admin functionality with unpredictable URL</h3>
-                <p>
-                  This lab has an unprotected admin panel. It's located at an
-                  unpredictable location, but the location is disclosed
-                  somewhere in the application. Solve the lab by accessing the
-                  admin panel, and using it to delete the user
-                  <mark>Carlos</mark>.
-                </p>
-              </div>
-              <div className="easy">
-                <i className="fa-solid fa-signal lab"></i>
-                <p>Easy</p>
-              </div>
-            </Link>
+            <Card
+            link={"/Click_Jacking/Click_Jacking_labs/lab2"}
+            image={labImg}
+            title={"Unprotected admin functionality with unpredictable URL"}
+            brief={
+              "This lab has an unprotected admin panel. It's located at an unpredictable location, but the location is disclosed somewhere in the application. Solve the lab by accessing the admin panel, and using it to delete the user Carlos."
+            }
+            difficulty={"Easy"}
+            />
             {/* Lab3 */}
           </div>
         </div>

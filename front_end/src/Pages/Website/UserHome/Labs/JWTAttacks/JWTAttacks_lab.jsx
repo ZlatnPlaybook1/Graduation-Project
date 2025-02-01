@@ -44,12 +44,11 @@ export default function JWTAttacks_lab() {
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             <Card
-            link={''}
+            link={""}
             image={image}
-            title={''}
-            brief={''}
-            difficulty={''}
-            descriptionList={[]}
+            title={""}
+            brief={""}
+            difficulty={""}
             />
           </div>
         </div>

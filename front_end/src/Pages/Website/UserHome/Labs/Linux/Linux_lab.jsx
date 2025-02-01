@@ -50,33 +50,29 @@ export default function Linux_lab() {
               link="/linux/linux_lab/patient"
               image={image}
               title="be Patient"
-              text="Try to Capture the Flag"
+              brief="Try to Capture the Flag"
               difficulty={"Easy"}
-              descriptionList={["Download this file and open it on your Linux machine"]}
             />
             <Card
               link="/linux/linux_lab/power-of-command"
               image={image}
               title="Power Of Command"
-              text="Try to Capture the Flag"
+              brief="Try to Capture the Flag"
               difficulty={"Easy"}
-              descriptionList={["Download this file and open it on your Linux machine"]}
             />
             <Card
               link="/linux/linux_lab/welcome"
               image={image}
               title="Welcome"
-              text="Try to Capture the Flag"
+              brief="Try to Capture the Flag"
               difficulty={"Easy"}
-              descriptionList={["Download this file and open it on your Linux machine"]}
             />
             <Card
               link="/linux/linux_lab/test-yourself"
               image={image}
               title="Test YourSelf"
-              text="Try to Capture the Flag"
+              brief="Try to Capture the Flag"
               difficulty={"Easy"}
-              descriptionList={["Download this file and open it on your Linux machine"]}
             />
           </div>
         </div>

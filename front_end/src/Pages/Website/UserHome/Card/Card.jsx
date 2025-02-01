@@ -7,7 +7,6 @@ export const Card = ({
   title,
   brief,
   difficulty,
-  descriptionList,
 }) => {
   return (
     <Link to={link} className="course-card">
