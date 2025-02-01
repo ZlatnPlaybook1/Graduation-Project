@@ -14,11 +14,6 @@ export default function InsecureDeserializationLab1() {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    if (username === "admin" && password === "admin") {
-      setErrorMessage("You are not authorized");
-      return;
-    }
-
     // Prepare the serialized PHP-like object
     const serializedData = `O:4:"User":2:{s:8:"username";s:4:"${username}";s:8:"password";s:4:"${password}";}`;
 
@@ -27,8 +22,19 @@ export default function InsecureDeserializationLab1() {
 
     // Set the cookie in the browser
     document.cookie = `session=${encodedCookies}; path=/; max-age=3600; SameSite=None; Secure`;
+
+    // Retrieve the cookie you just set
+    const sessionCookie = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("session="))
+      ?.split("=")[1];
+
+    // Log the cookie to see what is being sent
+    console.log("Cookie sent to API:", `${sessionCookie}`);
+
     const payload = { username, password };
     console.log("Data sent to API:", payload);
+
     try {
       const response = await fetch(
         "http://127.0.0.1:8080/api/insecureDeserializationLab1",
@@ -36,9 +42,9 @@ export default function InsecureDeserializationLab1() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Cookie: `${sessionCookie}`, // Send the cookie manually
           },
           body: JSON.stringify({ username, password }),
-          credentials: "include",
         }
       );
 

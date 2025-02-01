@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 
 export const loginController = async (req: Request, res: Response) => {
+  console.log(req.cookies.session);
   if (req.body.username === "test" && req.body.password === "test") {
     return res.status(200).json({
       message: "login successful",
@@ -11,7 +12,7 @@ export const loginController = async (req: Request, res: Response) => {
   } else if (
     req.body.username === "admin" &&
     req.body.password === "admin" &&
-    req.cookies.session ===
+    req.params.session ===
       "Tzo0OiJVc2VyIjoyOntzOjg6InVzZXJuYW1lIjtzOjQ6ImFkbWluIjtzOjg6InBhc3N3b3JkIjtzOjQ6ImFkbWluIjt9"
   ) {
     return res.status(200).json({
