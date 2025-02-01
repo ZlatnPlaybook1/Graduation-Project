@@ -1,0 +1,28 @@
+.test-page-container {
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.test-page-content {
+  text-align: center;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.test-page-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.test-page-text {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}

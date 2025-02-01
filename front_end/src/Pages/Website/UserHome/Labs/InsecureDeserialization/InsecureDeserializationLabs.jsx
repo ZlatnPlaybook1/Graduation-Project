@@ -42,23 +42,19 @@ export default function InsecureDeserializationLabs() {
           <div className="row">
             {/* lab1 */}
             <Card
-                link={"/Insecure_Deserialization/Insecure_Deserialization_Labs/lab1"}
-                image={Auth_Photo}
-                title={"Path Traversal Blacklist"}
-                brief={"Find the password of the admin"}
-                difficulty={"Easy"}
+              link={
+                "/Insecure_Deserialization/Insecure_Deserialization_Labs/lab1"
+              }
+              image={Auth_Photo}
+              title={"Path Traversal Blacklist"}
+              brief={"Find the password of the admin"}
+              difficulty={"Easy"}
             />
             {/* lab2 */}
             <Card
-                link={"/Insecure_Deserialization/Insecure_Deserialization_Labs/lab2"}
-                image={Auth_Photo}
-                title={"Path Traversal Blacklist"}
-                brief={"Find the password of the admin"}
-                difficulty={"Easy"}
-            />
-            {/* lab3 */}
-            <Card
-              link={"/Insecure_Deserialization/Insecure_Deserialization_Labs/lab3"}
+              link={
+                "/Insecure_Deserialization/Insecure_Deserialization_Labs/lab2"
+              }
               image={Auth_Photo}
               title={"Path Traversal Blacklist"}
               brief={"Find the password of the admin"}

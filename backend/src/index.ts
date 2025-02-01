@@ -29,12 +29,18 @@ import lab1PathTraversalRouter from "./labs/pathTraversal/lab1/lab1.router";
 import lab1CommendInjection from "./labs/commandInjection/lab1/lab1.router";
 import lab2CommendInjection from "./labs/commandInjection/lab2/lab2.router";
 import lab3CommendInjection from "./labs/commandInjection/lab3/lab3.router";
+import lab1inscureDeserialization from "./labs/insecureDeserialization/lab1/lab1.router";
 
 const app = express();
 app.use("/uploads", express.static("uploads"));
-app.use('/src', express.static( "src"));
+app.use("/src", express.static("src"));
 
-app.use(cors());
+app.use(
+  cors({
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 app.use(morgan("dev")); // morgan: HTTP request logger middleware,
 // dev: predefined format string that Morgan will use to log requests
 app.use(bodyParser.json({ limit: "10mb" }));
@@ -68,6 +74,7 @@ app.use("/api", lab1PathTraversalRouter);
 app.use("/api", lab1CommendInjection);
 app.use("/api", lab2CommendInjection);
 app.use("/api", lab3CommendInjection);
+app.use("/api", lab1inscureDeserialization);
 
 dotenv.config();
 

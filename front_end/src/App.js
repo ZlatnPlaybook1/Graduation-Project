@@ -222,7 +222,8 @@ import InsecureDeserialization from "./Pages/Website/UserHome/Labs/InsecureDeser
 import InsecureDeserializationLabs from "./Pages/Website/UserHome/Labs/InsecureDeserialization/InsecureDeserializationLabs.jsx";
 import InsecureDeserializationLab1 from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab1/InsecureDeserializationLab1.jsx";
 import InsecureDeserializationLab2 from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab2/InsecureDeserializationLab2.jsx";
-import InsecureDeserializationLab3 from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab3/InsecureDeserializationLab3.jsx";
+import TestPage from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab1/TestPage.jsx";
+import AdminDashboard from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab1/AdminDashboard.jsx";
 
 function App() {
   return (
@@ -698,12 +699,16 @@ function App() {
             element={<InsecureDeserializationLab1 />}
           />
           <Route
-            path="/Insecure_Deserialization/Insecure_Deserialization_Labs/lab2"
-            element={<InsecureDeserializationLab2 />}
+            path="/Insecure_Deserialization/Insecure_Deserialization_Labs/lab1/testPage"
+            element={<TestPage />}
           />
           <Route
-            path="/Insecure_Deserialization/Insecure_Deserialization_Labs/lab3"
-            element={<InsecureDeserializationLab3 />}
+            path="/Insecure_Deserialization/Insecure_Deserialization_Labs/lab1/AdminDashboard"
+            element={<AdminDashboard />}
+          />
+          <Route
+            path="/Insecure_Deserialization/Insecure_Deserialization_Labs/lab2"
+            element={<InsecureDeserializationLab2 />}
           />
           {/* End Insecure_Deserialization */}
           {/* Start Cookies */}
