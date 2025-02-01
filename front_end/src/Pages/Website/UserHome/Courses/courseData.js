@@ -60,7 +60,7 @@ const courseData = [
       "Mitigation Techniques",
     ],
     difficulty: "Easy",
-    image: require("../assets/img/ACV/landing.jpeg"),
+    image: require("../assets/img/ACV/Landing.jpg"),
     link: "/AC_Vuln",
   },
   {
@@ -108,7 +108,7 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Easy",
-    image: require("../assets/img/BLV/landing.avif"),
+    image: require("../assets/img/BLV/Landing.jpg"),
     link: "/BL_Vuln",
   },
   {
@@ -200,7 +200,7 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Easy",
-    image: require("../assets/img/Regex/landing.jpeg"),
+    image: require("../assets/img/Regex/Landing.jpg"),
     link: "/Regex",
   },
   {
@@ -441,7 +441,7 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/Click_Jacking/landing.jpeg"),
+    image: require("../assets/img/Click_Jacking/landing.jpg"),
     link: "/Click_Jacking",
   },
   {
