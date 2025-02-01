@@ -33,9 +33,14 @@ import lab1inscureDeserialization from "./labs/insecureDeserialization/lab1/lab1
 
 const app = express();
 app.use("/uploads", express.static("uploads"));
-app.use('/src', express.static( "src"));
+app.use("/src", express.static("src"));
 
-app.use(cors());
+app.use(
+  cors({
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 app.use(morgan("dev")); // morgan: HTTP request logger middleware,
 // dev: predefined format string that Morgan will use to log requests
 app.use(bodyParser.json({ limit: "10mb" }));

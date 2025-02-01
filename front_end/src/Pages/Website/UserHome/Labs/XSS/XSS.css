@@ -144,6 +144,8 @@ a {
 .secure-faq-section .secure-section-text .Auth-faq-body ul li {
   list-style: "- ";
   margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .secure-faq-section .secure-section-text .Auth-faq-body ol li {
@@ -151,7 +153,10 @@ a {
   margin-bottom: 10px;
   font-size: 16px;
 }
-
+.secure-faq-section .secure-section-text .Auth-faq-body ul li p {
+  font-size: 16px;
+  font-weight: 400;
+}
 .secure-faq-section .secure-section-text .Auth-faq-body ul li a {
   color: #ff4747;
   text-decoration: underline;

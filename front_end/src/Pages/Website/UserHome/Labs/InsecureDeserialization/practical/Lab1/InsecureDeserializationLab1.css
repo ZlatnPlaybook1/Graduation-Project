@@ -8,6 +8,13 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.InsecureDeserializationLab-error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
 .InsecureDeserializationLab-form-wrapper {
   background: #fff;
   padding: 2rem;
