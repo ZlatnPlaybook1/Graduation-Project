@@ -65,12 +65,10 @@ b {
   inset: 0px;
   z-index: 1;
   height: 100%;
-  background: linear-gradient(
-    to right,
-    var(--alt-color) 30%,
-    rgba(21, 28, 43, 0.98) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(to right,
+      var(--alt-color) 30%,
+      rgba(21, 28, 43, 0.98) 50%,
+      transparent 100%);
 }
 
 .landing-labd .banner img {
@@ -154,7 +152,7 @@ b {
   color: green;
 }
 
-.landing-labd .course-info .course-icons i.fa-signal + p {
+.landing-labd .course-info .course-icons i.fa-signal+p {
   display: inline-block;
   color: green;
 }
@@ -165,7 +163,7 @@ b {
   margin-right: 20px;
 }
 
-.landing-labd .course-info .course-icons i.fa-clock + p {
+.landing-labd .course-info .course-icons i.fa-clock+p {
   display: inline-block;
   padding-left: 10px;
 }
@@ -453,7 +451,6 @@ b {
 .faq-section-labd .section-text-labd .faq-body-labd code[class*="language-"] {
   color: rgb(186, 200, 212);
   background: rgb(40, 44, 51);
-  flex-grow: 1;
   font-weight: 600;
   font-size: 16px;
   text-align: left;
@@ -463,6 +460,7 @@ b {
   line-height: 1.5;
   tab-size: 4;
   hyphens: none;
+  word-break: break-all;
   white-space: pre-wrap;
   margin-top: 0;
   margin-bottom: 2px;
@@ -482,6 +480,7 @@ b {
   line-height: 1.5;
   white-space: pre-wrap;
 }
+
 .faq-section-labd .section-text-labd .faq-body-labd .command-c {
   margin-bottom: 5px;
 }
@@ -565,11 +564,7 @@ b {
   transition: 0.2s ease-in-out;
 }
 
-.faq-section-labd
-  .section-text-labd
-  .faq-body-labd
-  form
-  button:hover:not(:disabled) {
+.faq-section-labd .section-text-labd .faq-body-labd form button:hover:not(:disabled) {
   background-color: rgb(163, 234, 42);
 }
 
@@ -602,11 +597,9 @@ b {
   color: #d63384;
   font-weight: 400;
   text-transform: capitalize;
-  background: linear-gradient(
-    90deg,
-    rgba(214, 51, 132, 0.2) 0%,
-    rgba(214, 51, 132, 0.1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(214, 51, 132, 0.2) 0%,
+      rgba(214, 51, 132, 0.1) 100%);
   padding: 0.2rem 0.4rem;
   border-radius: 8px;
   transition: background 0.3s ease;
@@ -615,12 +608,15 @@ b {
 .pink-note:hover {
   background: rgba(214, 51, 132, 0.3);
 }
+
 .oList {
   padding-left: 1.2rem !important;
 }
+
 .table.compare-table td,
 .table.compare-table th {
   text-align: center !important;
   padding: 5 10px !important;
 }
+
 /* End course-labd Content */
