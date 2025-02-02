@@ -8,6 +8,9 @@ import React, { useEffect, useState } from "react";
 import ParisImage from "../images/Paris.jpeg";
 import BerlinImage from "../images/Berlin.jpeg";
 import TokyoImage from "../images/Tokyo.jpeg";
+import CairoImage from "../images/Cairo.jpeg";
+import LondonImage from "../images/London.jpeg";
+import PyongyangImage from "../images/Pyongyang.jpeg";
 
 export default function Learn_capital_1() {
   const [selectedFile, setSelectedFile] = useState("");
@@ -28,6 +31,18 @@ export default function Learn_capital_1() {
     Tokyo: {
       content: "Tokyo is the capital of Japan.",
       image: TokyoImage,
+    },
+    Cairo: {
+      content: "Cairo is the capital of Egypt.",
+      image: CairoImage,
+    },
+    London: {
+      content: "London is the capital of England.",
+      image: LondonImage,
+    },
+    Pyongyang: {
+      content: "Pyongyang is the capital of North Korea.",
+      image: PyongyangImage,
     },
   };
 
