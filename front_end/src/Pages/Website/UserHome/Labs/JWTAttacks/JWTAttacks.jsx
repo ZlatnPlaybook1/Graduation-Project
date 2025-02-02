@@ -1020,189 +1020,967 @@ export default function JWTAttacks() {
                   </div>
                 </dd>
                 <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span>Topic 6</span>JSON Web Tokens
+                  <span>Topic 6</span>JWT Lifetimes
                 </dt>
                 <dd className="fadeInUp faq-body-labd" id="border-left">
                   <div className="subject-section">
                     <p>
-                      Imagine you’re at an exclusive party. You flash a fancy
-                      wristband at the bouncer, and they immediately know you’re
-                      legit. That’s how <b>JSON Web Tokens (JWTs)</b> work in
-                      the digital world — they’re self-contained tokens that
-                      scream, “I’m authenticated, let me in!”
+                      The lifetime of a <b>JWT</b> is a critical security
+                      consideration. Proper management of the exp (expiration)
+                      claim is essential to ensure that tokens cannot be abused
+                      indefinitely. Below, we explore the key issues and
+                      solutions regarding token expiration.
                     </p>
-                  </div>
-                  <div className="subject-section">
-                    <h2>What is inside a JWT?</h2>
+                    <h2>The Problem: Tokens Without Expiry</h2>
                     <p>
-                      A <b>JWT</b> is like a digital sandwich, neatly split into
-                      three layers (and yes, they’re <b>Base64Url</b> encoded
-                      for extra nerd flair):
+                      <b>Issue</b>
+                    </p>
+                    <p>
+                      If the exp claim is omitted or set too far into the
+                      future, the JWT becomes persistently valid. Unlike
+                      <b>cookies, JWTs</b> lack server-side expiration
+                      mechanisms, making them vulnerable to misuse if they are
+                      stolen or compromised.
+                    </p>
+                    <h2>Practical Example</h2>
+                    <div className="terminal-container">
+                      <div className="terminal-content">
+                        <div className="terminal-top">
+                          The <b>JWT</b> below does not contain an exp claim,
+                          making it permanently valid:
+                        </div>
+                        <pre
+                          className="terminal-codelanguage-shell-session"
+                          tabIndex="0"
+                        >
+                          <code className="language-shell-session">
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJhZG1pbiI6MX0.ko7EQiATQQzrQPwRO8ZTY37pQWGLPZWEvdWH0tVDNPU
+                                </span>
+                              </span>
+                            </span>
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                    <p>
+                      An attacker can use this token indefinitely unless
+                      external mechanisms like token blocklists are in place to
+                      revoke it.
+                    </p>
+                    <h2>The Fix: Setting an exp Claim</h2>
+                    <p>
+                      <b>Set an Expiry Time</b>
                     </p>
                     <ol>
                       <li>
-                        <b>Header:</b>The top bun, where you declare what kind
-                        of sandwich (<b>token</b>) this is and how it’s signed.
-                        Typical ingredients include “alg”: “HS256” and “typ”:
+                        <div className="terminal-container">
+                          <div className="terminal-content">
+                            <div className="terminal-top">
+                              Ensure that every <b>JWT</b> contains an
+                              <b> exp</b> claim to define its expiration time.
+                              For example:
+                            </div>
+                            <pre
+                              className="terminal-codelanguage-shell-session"
+                              tabIndex="0"
+                            >
+                              <code className="language-shell-session">
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token user">
+                                      <span className="token class-name">
+                                        import{" "}
+                                      </span>
+                                      datetime
+                                    </span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token user">
+                                      <span className="token class-name">
+                                        import{" "}
+                                      </span>
+                                      jwt
+                                    </span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token user">
+                                      <span className="token string">
+                                        lifetime{" "}
+                                      </span>
+                                      = datetime.datetime.now() +
+                                      datetime.timedelta(minutes=5)
+                                    </span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token user">
+                                      payload = {"{"}
+                                    </span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token class-name">
+                                      'username'{" "}
+                                      <span className="token user">: </span>
+                                      'user'{" "}
+                                      <span className="token user">,</span>
+                                    </span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token class-name">
+                                      'admin'{" "}
+                                      <span className="token user">: </span>
+                                      <span className="token string">0 </span>
+                                      <span className="token user">,</span>
+                                    </span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token class-name">
+                                      'exp'{" "}
+                                      <span className="token user">
+                                        : lifetime
+                                      </span>
+                                    </span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token user">{"}"}</span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token user">
+                                      access_token = jwt.encode(payload,
+                                      self.secret, algorithm=
+                                      <span className="token class-name">
+                                        "HS256"
+                                      </span>
+                                      )
+                                    </span>
+                                  </span>
+                                </span>
+                              </code>
+                            </pre>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        This ensures that the token expires after 5 minutes.
+                      </li>
+                    </ol>
+                  </div>
+                  <div className="subject-section">
+                    <h2>Enforce Expiration Checks</h2>
+                    <ol>
+                      <li>
+                        <div className="terminal-container">
+                          <div className="terminal-content">
+                            <div className="terminal-top">
+                              <b>
+                                Most <b>JWT</b> libraries automatically validate
+                                the exp claim. If a token is expired, they will
+                                raise an exception during decoding:
+                              </b>
+                            </div>
+                            <pre
+                              className="terminal-codelanguage-shell-session"
+                              tabIndex="0"
+                            >
+                              <code className="language-shell-session">
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token class-name">
+                                      try<span className="token user">:</span>
+                                    </span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token user">
+                                      payload = jwt.decode(token, self.secret,
+                                      algorithms=[
+                                      <span className="token class-name">
+                                        "HS256"
+                                      </span>
+                                      ])
+                                    </span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token class-name">
+                                      except{" "}
+                                      <span className="token user">
+                                        jwt.ExpiredSignatureError:
+                                      </span>
+                                    </span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token user">
+                                      print(
+                                      <span className="token class-name">
+                                        "Token has expired"
+                                      </span>
+                                      )
+                                    </span>
+                                  </span>
+                                </span>
+                              </code>
+                            </pre>
+                          </div>
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+                  <div className="subject-section">
+                    <h2>Challenges with Token Expiry</h2>
+                    <p>
+                      <b>Revoking Tokens Before Expiry</b>
+                    </p>
+                    <p>
+                      To revoke a <b>token</b> before its <b>exp</b> time, you
+                      need to maintain a blocklist of <b>invalidated tokens</b>.
+                      This approach, while effective, partially negates the
+                      decentralized nature of <b>JWTs</b>.
+                    </p>
+                    <p>
+                      <b>Setting Appropriate Expiry Times</b>
+                    </p>
+                    <p>
+                      The <b>exp</b> value should align with the application’s
+                      security requirements:
+                    </p>
+                    <ol>
+                      <li>
+                        <b>Short Expiry: </b>Banking or sensitive applications
+                        where token misuse can lead to significant consequences.
                         “JWT”.
                       </li>
                       <li>
-                        <b>Payload:</b>The meat (or tofu, for our vegans). It’s
-                        packed with claims — fancy talk for bits of info like
-                        user roles or session details. Some claims are standard,
-                        others are custom, and developers can toss in anything
-                        they want (though we’re not judging their culinary
-                        skills here).
-                      </li>
-                      <li>
-                        <b>Signature:</b>The spicy sauce. This proves the
-                        sandwich hasn’t been tampered with. It’s created using
-                        the <b>header</b>, <b>payload</b>, and a secret recipe (
-                        <b>key</b>).
+                        <b>Long Expiry: </b> Non-sensitive applications or when
+                        user convenience is prioritized, e.g., email
+                        applications.
                       </li>
                     </ol>
                   </div>
                   <div className="subject-section">
-                    <h2>Signing Algorithms: The Sauce Varieties</h2>
+                    <h2>Refresh Tokens</h2>
                     <p>
-                      <b>JWTs</b> get their authenticity from the signature, and
-                      there are three main styles:
+                      Use refresh <b>tokens</b> to renew short-lived <b>JWTs</b>
+                      . This involves issuing two tokens:
                     </p>
                     <ol>
                       <li>
-                        <b>None:</b>Yup, no sauce at all. It’s basically handing
-                        over a plain sandwich and hoping no one notices.
-                        Spoiler: this is a terrible idea for security.
+                        <b>Access Token: </b>Short-lived and used for <b>API</b>{" "}
+                        requests.
                       </li>
                       <li>
-                        <b>Symmetric Signing (HS256):</b>The sauce is made with
-                        a shared secret key. Both the creator and verifier need
-                        to know the secret recipe. Great for cozy, in-house
-                        parties.
-                      </li>
-                      <li>
-                        <b>Asymmetric Signing (RS256):</b>Now we’re fancy. The
-                        sauce is made with a <b>private key</b> and verified
-                        with a matching <b>public key</b>. Perfect for big,
-                        exclusive events where you can’t trust everyone with the
-                        recipe.
+                        <b>Refresh Token: </b>Long-lived and stored securely to
+                        obtain new access tokens when needed.
                       </li>
                     </ol>
+                    <div className="terminal-container">
+                      <div className="terminal-content">
+                        <div className="terminal-top">
+                          <b>Example of issuing both tokens:</b>
+                        </div>
+                        <pre
+                          className="terminal-codelanguage-shell-session"
+                          tabIndex="0"
+                        >
+                          <code className="language-shell-session">
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  access_lifetime = datetime.datetime.now() +
+                                  datetime.timedelta(minutes=
+                                  <span className="token string">5</span>)
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  refresh_lifetime = datetime.datetime.now() +
+                                  datetime.timedelta(days=
+                                  <span className="token string">30</span>)
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  access_payload = {"{"}
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token class-name">
+                                  'username'{" "}
+                                  <span className="token user">: </span>
+                                  'user'{" "}
+                                </span>
+                                <span className="token user">,</span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token class-name">
+                                  'admin' <span className="token user">: </span>
+                                  <span className="token string">0 </span>
+                                </span>
+                                <span className="token user">,</span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  <span className="token class-name">
+                                    'exp'{" "}
+                                  </span>
+                                  : access_lifetime
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">{"}"}</span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  refresh_payload = {"{"}
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token class-name">
+                                  'username'{" "}
+                                  <span className="token user">: </span>
+                                  'user'{" "}
+                                </span>
+                                <span className="token user">,</span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  <span className="token class-name">
+                                    'exp'{" "}
+                                  </span>
+                                  : refresh_lifetime
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">{"}"}</span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  access_token = jwt.encode(access_payload,
+                                  self.secret, algorithm=
+                                  <span className="token class-name">
+                                    "HS256"
+                                  </span>
+                                  )
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  refresh_token = jwt.encode(refresh_payload,
+                                  self.secret, algorithm=
+                                  <span className="token class-name">
+                                    "HS256"
+                                  </span>
+                                  )
+                                </span>
+                              </span>
+                            </span>
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
                   </div>
                   <div className="subject-section">
-                    <h2>Why JWTs Are Awesome</h2>
+                    <h2>Key Takeaways</h2>
                     <p>
-                      The real power of <b>JWTs</b> lies in their signature.
-                      Once signed, they can travel around freely — like a VIP
-                      pass that works across apps. A central authentication
-                      server can issue these <b>tokens</b>, and every app in the
-                      network can independently verify them. No phone calls, no
-                      awkward questions, just seamless trust.
+                      <b>Always Set exp</b>
                     </p>
+                    <ol>
+                      <li>
+                        Ensure all <b>JWTs</b> have a reasonable expiration time
+                        to limit the window of opportunity for misuse.
+                      </li>
+                    </ol>
                     <p>
-                      Oh, and if you’re feeling extra secure, you can encrypt
-                      <b>JWTs</b> (called <b>JWEs</b>). But usually, the
-                      signature alone does the job of keeping everything
-                      trustworthy and efficient.
+                      <b>Use Refresh Tokens for Longevity</b>
                     </p>
+                    <ol>
+                      <li>
+                        Implement a refresh token system to allow secure,
+                        long-term user sessions.
+                      </li>
+                    </ol>
                     <p>
-                      So, the next time you interact with a sleek <b>API</b> or
-                      login flow, just remember — you’re holding the ultimate
-                      tech wristband: the <b>JWT</b>. 🎟️
+                      <b>Consider Token Blocklists</b>
+                    </p>
+                    <ol>
+                      <li>
+                        While it breaks the decentralized nature of
+                        <b> JWTs, blocklists</b> are necessary for critical
+                        applications to allow <b>token</b> revocation.
+                      </li>
+                    </ol>
+                    <p>
+                      By setting appropriate expiration times and incorporating
+                      additional mechanisms like refresh <b>tokens</b> or
+                      <b> blocklists</b>, you can significantly enhance the
+                      security of your <b>JWT</b>
+                      implementation.
                     </p>
                   </div>
                 </dd>
                 <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span>Topic 7</span>JSON Web Tokens
+                  <span>Topic 7</span>Cross-Service Relay Attacks
                 </dt>
                 <dd className="fadeInUp faq-body-labd" id="border-left">
                   <div className="subject-section">
                     <img src={exampleImage2} alt="Example" />
                     <p>
-                      Imagine you’re at an exclusive party. You flash a fancy
-                      wristband at the bouncer, and they immediately know you’re
-                      legit. That’s how <b>JSON Web Tokens (JWTs)</b> work in
-                      the digital world — they’re self-contained tokens that
-                      scream, “I’m authenticated, let me in!”
+                      <b>JWT</b> misconfigurations can lead to serious
+                      vulnerabilities when used in systems where a centralized
+                      authentication server serves multiple applications. The
+                      <b> audience</b> (aud)<b> claim</b> is critical in these
+                      scenarios to prevent <b>Cross-Service Relay attacks</b>, a
+                      form of privilege escalation.
                     </p>
                   </div>
+
                   <div className="subject-section">
-                    <h2>What is inside a JWT?</h2>
+                    <h2>The Problem: Cross-Service Misconfiguration</h2>
                     <p>
-                      A <b>JWT</b> is like a digital sandwich, neatly split into
-                      three layers (and yes, they’re <b>Base64Url</b> encoded
-                      for extra nerd flair):
+                      <b>Cross-Service Relay Attack</b>
                     </p>
                     <ol>
                       <li>
-                        <b>Header:</b>The top bun, where you declare what kind
-                        of sandwich (<b>token</b>) this is and how it’s signed.
-                        Typical ingredients include “alg”: “HS256” and “typ”:
-                        “JWT”.
+                        When an authentication server generates <b>JWTs</b> for
+                        multiple applications, the aud claim specifies which
+                        application the token is intended for. If this claim is
+                        not verified by the application, a token valid for one
+                        service could be used on another, potentially allowing
+                        unauthorized access.
                       </li>
                       <li>
-                        <b>Payload:</b>The meat (or tofu, for our vegans). It’s
-                        packed with claims — fancy talk for bits of info like
-                        user roles or session details. Some claims are standard,
-                        others are custom, and developers can toss in anything
-                        they want (though we’re not judging their culinary
-                        skills here).
-                      </li>
-                      <li>
-                        <b>Signature:</b>The spicy sauce. This proves the
-                        sandwich hasn’t been tampered with. It’s created using
-                        the <b>header</b>, <b>payload</b>, and a secret recipe (
-                        <b>key</b>).
+                        Example: A user is an admin on <b>appB</b> but not on{" "}
+                        <b>appA</b>. If appA does not verify the aud claim, the{" "}
+                        <b>JWT</b> for appB could be used to gain admin
+                        privileges on appA.
                       </li>
                     </ol>
                   </div>
                   <div className="subject-section">
-                    <h2>Signing Algorithms: The Sauce Varieties</h2>
+                    <h2>Practical Example</h2>
                     <p>
-                      <b>JWTs</b> get their authenticity from the signature, and
-                      there are three main styles:
+                      <b>Steps:</b>
+                    </p>
+                    <p>
+                      <b>Authenticate to appA</b>
                     </p>
                     <ol>
                       <li>
-                        <b>None:</b>Yup, no sauce at all. It’s basically handing
-                        over a plain sandwich and hoping no one notices.
-                        Spoiler: this is a terrible idea for security.
+                        <div className="terminal-container">
+                          <div className="terminal-content">
+                            <div className="terminal-top">
+                              Send a login request to the centralized
+                              authentication server for <b>appA:</b>
+                            </div>
+                            <pre
+                              className="terminal-codelanguage-shell-session"
+                              tabIndex="0"
+                            >
+                              <code className="language-shell-session">
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token user">{"{"}</span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token class-name">
+                                      'username'
+                                      <span className="token user"> : </span>
+                                      'user'
+                                    </span>
+                                    <span className="token user"> ,</span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token class-name">
+                                      'password'
+                                      <span className="token user"> : </span>
+                                      "password7"
+                                    </span>
+                                    <span className="token user"> ,</span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token class-name">
+                                      'application'
+                                      <span className="token user"> : </span>
+                                      "appA"
+                                    </span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token user">{"}"}</span>
+                                  </span>
+                                </span>
+                              </code>
+                            </pre>
+                          </div>
+                        </div>
                       </li>
                       <li>
-                        <b>Symmetric Signing (HS256):</b>The sauce is made with
-                        a shared secret key. Both the creator and verifier need
-                        to know the secret recipe. Great for cozy, in-house
-                        parties.
+                        <p>
+                          The server generates a <b>JWT</b> with “aud”: “appA”.
+                        </p>
+                        <p>Use This Token:</p>
+                        <ol>
+                          <li>
+                            On <b>appA:</b> The request is accepted, but you’re
+                            not an admin.
+                          </li>
+                          <li>
+                            On <b>appB:</b> The token is rejected because the
+                            audience is incorrect.
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                    <p>
+                      <b>Authenticate to appB</b>
+                    </p>
+                    <ol>
+                      <li>
+                        <div className="terminal-container">
+                          <div className="terminal-content">
+                            <div className="terminal-top">
+                              Send a login request for <b>appB:</b>
+                            </div>
+                            <pre
+                              className="terminal-codelanguage-shell-session"
+                              tabIndex="0"
+                            >
+                              <code className="language-shell-session">
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token user">{"{"}</span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token class-name">
+                                      'username'
+                                      <span className="token user"> : </span>
+                                      'user'
+                                    </span>
+                                    <span className="token user"> ,</span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token class-name">
+                                      'password'
+                                      <span className="token user"> : </span>
+                                      "password7"
+                                    </span>
+                                    <span className="token user"> ,</span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token class-name">
+                                      'application'
+                                      <span className="token user"> : </span>
+                                      "appB"
+                                    </span>
+                                  </span>
+                                </span>
+                                <span className="token command-c">
+                                  <span className="token info punctuation">
+                                    <span className="token user">{"}"}</span>
+                                  </span>
+                                </span>
+                              </code>
+                            </pre>
+                          </div>
+                        </div>
                       </li>
                       <li>
-                        <b>Asymmetric Signing (RS256):</b>Now we’re fancy. The
-                        sauce is made with a <b>private key</b> and verified
-                        with a matching <b>public key</b>. Perfect for big,
-                        exclusive events where you can’t trust everyone with the
-                        recipe.
+                        <p>
+                          The server generates a <b>JWT</b> with “aud”: “appB”.
+                        </p>
+                        <p>Use This Token:</p>
+                        <ol>
+                          <li>
+                            On <b>appB:</b> The request is accepted, and you’re
+                            recognized as an admin.
+                          </li>
+                          <li>
+                            On <b>appA:</b> The request is accepted
+                            <b> without verifying the</b> aud <b>claim</b>,
+                            resulting in unintended admin privileges.
+                          </li>
+                        </ol>
                       </li>
                     </ol>
                   </div>
                   <div className="subject-section">
-                    <h2>Why JWTs Are Awesome</h2>
+                    <h2>The Development Mistake</h2>
                     <p>
-                      The real power of <b>JWTs</b> lies in their signature.
-                      Once signed, they can travel around freely — like a VIP
-                      pass that works across apps. A central authentication
-                      server can issue these <b>tokens</b>, and every app in the
-                      network can independently verify them. No phone calls, no
-                      awkward questions, just seamless trust.
+                      <b>Missing Audience Verification</b>
+                    </p>
+                    <ol>
+                      <li>
+                        AppA does not verify the aud claim of the <b>JWT</b>.
+                      </li>
+                      <li>
+                        As a result, it incorrectly accepts tokens intended for
+                        other services.
+                      </li>
+                    </ol>
+                    <p>
+                      <b>Overly Broad Audience Scope</b>
+                    </p>
+                    <ol>
+                      <li>
+                        If an authentication server generates <b>tokens</b> with
+                        a broad aud claim (e.g., “aud”: [“appA”, “appB”]), all
+                        applications might accept the <b>token</b> regardless of
+                        the intended purpose.
+                      </li>
+                    </ol>
+                    <h2>The Fix</h2>
+                    <p>
+                      <b>Enforce Audience Claim Verification</b>
                     </p>
                     <p>
-                      Oh, and if you’re feeling extra secure, you can encrypt
-                      <b>JWTs</b> (called <b>JWEs</b>). But usually, the
-                      signature alone does the job of keeping everything
-                      trustworthy and efficient.
+                      The application must validate the aud claim during{" "}
+                      <b>token</b>
+                      decoding to ensure the <b>JWT</b> is intended for that
+                      specific application. Here’s an example in Python using
+                      the <b>PyJWT</b>
+                      library:
+                    </p>
+                    <div className="terminal-container">
+                      <div className="terminal-content">
+                        <div className="terminal-top">
+                          Ensure that every <b>JWT</b> contains an
+                          <b> exp</b> claim to define its expiration time. For
+                          example:
+                        </div>
+                        <pre
+                          className="terminal-codelanguage-shell-session"
+                          tabIndex="0"
+                        >
+                          <code className="language-shell-session">
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  <span className="token class-name">
+                                    import{" "}
+                                  </span>
+                                  jwt
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token string">
+                                  # Secret key and audience list
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  secret ={" "}
+                                  <span className="token class-name">
+                                    "your_secret_key"
+                                  </span>
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  audience = [
+                                  <span className="token class-name">
+                                    "appA"
+                                  </span>
+                                  ]{" "}
+                                  <span className="token string">
+                                    # Define the expected audience for this
+                                    application
+                                  </span>
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token string">
+                                  # Decode and verify the token
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token class-name">
+                                  try<span className="token user">:</span>
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  payload = jwt.decode(token, secret,
+                                  audience=audience, algorithms=[
+                                  <span className="token class-name">
+                                    "HS256"
+                                  </span>
+                                  ])
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  print(
+                                  <span className="token class-name">
+                                    "Token is valid for this application."
+                                  </span>
+                                  )
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token class-name">
+                                  except{" "}
+                                  <span className="token user">
+                                    jwt.InvalidAudienceError:
+                                  </span>
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  print(
+                                  <span className="token class-name">
+                                    "Invalid audience claim. Token not
+                                    accepted."
+                                  </span>
+                                  )
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token class-name">
+                                  except{" "}
+                                  <span className="token user">Exception </span>
+                                  as <span className="token user">e:</span>
+                                </span>
+                              </span>
+                            </span>
+                            <span className="token command-c">
+                              <span className="token info punctuation">
+                                <span className="token user">
+                                  print(
+                                  <span className="token class-name">
+                                    f"Token verification failed:{" "}
+                                  </span>
+                                  {"{e}"}
+                                  <span className="token class-na">"</span>)
+                                </span>
+                              </span>
+                            </span>
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="subject-section">
+                    <h2>Best Practices for Fixing Audience Issues</h2>
+                    <p>
+                      <b>Set Specific Audience Claims</b>
+                    </p>
+                    <ol>
+                      <li>
+                        Ensure the authentication server includes an aud claim
+                        that specifies the target application(s).
+                      </li>
+                    </ol>
+                    <p>
+                      <b>Application-Specific Enforcement</b>
+                    </p>
+                    <ol>
+                      <li>
+                        Each application must enforce strict audience
+                        verification.
+                      </li>
+                    </ol>
+                    <p>
+                      <b>Minimize Audience Scope</b>
+                    </p>
+                    <ol>
+                      <li>
+                        Avoid <b>tokens</b> with broad aud claims (e.g., “aud”:
+                        [“appA”, “appB”]). Assign <b>tokens</b> to single
+                        audiences whenever possible.
+                      </li>
+                    </ol>
+                  </div>
+                  <div className="subject-section">
+                    <h2>Key Takeaways</h2>
+                    <ol>
+                      <li>
+                        <p>
+                          <b>Always Verify the aud Claim: </b>Applications must
+                          validate that a JWT is intended for them. Without
+                          this, tokens can be misused across services.
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <b>Limit Audience Scope: </b>Avoid using tokens valid
+                          for multiple applications unless absolutely
+                          necessary..
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <b>Implement Proper Token Validation: </b>Use robust
+                          libraries to ensure the aud claim is part of the{" "}
+                          <b>token</b>
+                          verification processes.
+                        </p>
+                      </li>
+                    </ol>
+                    <p>
+                      By addressing audience misconfigurations, you can protect
+                      your systems from{" "}
+                      <b>
+                        Cross-Service Relay attacks and privilege escalation.
+                      </b>
+                    </p>
+                  </div>
+                </dd>
+                <dt className="wave-labd fadeInUp faq-header-labd">
+                  <span>Topic 8</span>Conclusion: JWTs — Not Just a Fancy
+                  Acronym for “Just Wait, Trouble!”
+                </dt>
+                <dd className="fadeInUp faq-body-labd" id="border-left">
+                  <div className="subject-section">
+                    <p>
+                      This room was a rollercoaster ride through the world of
+                      <b>JWT (JSON Web Token)</b> misconfigurations and
+                      vulnerabilities. Before you leap into the wild with your
+                      <b>JWTs</b>, here’s the cheat sheet to keep them behaving
+                      like good little tokens:
+                    </p>
+                    <ol>
+                      <li>
+                        <p>
+                          <b>Don’t Spill Secrets in JWT Claims.</b>
+                        </p>
+                        <p>
+                          Sure, <b>JWTs</b> are encoded, but encoding ≠
+                          encryption. Think of it like writing your diary in pig
+                          Latin — it’s not exactly Fort Knox. Keep sensitive
+                          info out of those claims.
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <b>Your Signature = Your Safety Net.</b>
+                        </p>
+                        <p>
+                          a <b>JWT</b> is only as strong as its signature game.
+                          Weak secrets or sloppy verification practices are
+                          basically a welcome mat for attackers. Double-check
+                          your cryptographic chops.
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <b>Expiration Dates Are a Must.</b>
+                        </p>
+                        <p>
+                          Nobody wants a clingy token. Set expiration dates to
+                          ensure no one’s carrying around ancient <b>JWTs </b>
+                          like they’re trading cards.
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <b>Audience Claim: The Gatekeeper of SSO.</b>
+                        </p>
+                        <p>
+                          In SSO environments, the audience claim is like a
+                          bouncer at an exclusive club — only the right app gets
+                          in. No exceptions.
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <b> Cryptographic Attacks: A Token’s Nightmare.</b>
+                        </p>
+                        <p>
+                          <b>JWTs</b> rely on cryptography, so if someone cracks
+                          your crypto, they’ve cracked your <b>JWT</b>. Stay
+                          sharp; we’ll tackle this more in our cryptography
+                          module.
+                        </p>
+                      </li>
+                    </ol>
+                    <p>
+                      Oh, and we didn’t dive into <b>JWKs</b> spoofing attacks
+                      in this room, but if you’re curious, there’s a whole other
+                      room waiting to teach you how to channel your inner
+                      cryptography ninja. 🥷
                     </p>
                     <p>
-                      So, the next time you interact with a sleek <b>API</b> or
-                      login flow, just remember — you’re holding the ultimate
-                      tech wristband: the <b>JWT</b>. 🎟️
+                      In short, treat your <b>JWTs</b> with care, or they’ll
+                      transform from trusted tokens to Just Why, Though? tokens.
                     </p>
                   </div>
                 </dd>
