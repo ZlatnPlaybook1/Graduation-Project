@@ -71,12 +71,13 @@ import REGEX_LABS from "./Pages/Website/UserHome/Labs/Regex/Regex_labs.jsx";
 import REGEX_FIRST_LAB from "./Pages/Website/UserHome/Labs/Regex/practical/first_lab/First_Lab.jsx";
 import REGEX_SECOND_LAB from "./Pages/Website/UserHome/Labs/Regex/practical/second_lab/Second_Lab.jsx";
 // End Regular Expression
-//Path Traversal
-import PATH_TRAVERSAL from "./Pages/Website/UserHome/Labs/Path-Traversal/Path_Traversal.jsx";
-import PATH_TRAVERSAL_LABS from "./Pages/Website/UserHome/Labs/Path-Traversal/Path_Traversal_labs.jsx";
-import PATH_TRAVERSAL_FIRST_LAB from "./Pages/Website/UserHome/Labs/Path-Traversal/practical/first_lab/First_Lab.jsx";
-import PATH_TRAVERSAL_SECOND_LAB from "./Pages/Website/UserHome/Labs/Path-Traversal/practical/second_lab/Second_Lab.jsx";
-// End Path Traversal
+//Careers in Cyber
+// import CAREERS_IN_CYBER from "./Pages/Website/UserHome/Labs/";
+// import PATH_TRAVERSAL from "./Pages/Website/UserHome/Labs/Path-Traversal/Path_Traversal.jsx";
+// import PATH_TRAVERSAL_LABS from "./Pages/Website/UserHome/Labs/Path-Traversal/Path_Traversal_labs.jsx";
+// import PATH_TRAVERSAL_FIRST_LAB from "./Pages/Website/UserHome/Labs/Path-Traversal/practical/first_lab/First_Lab.jsx";
+// import PATH_TRAVERSAL_SECOND_LAB from "./Pages/Website/UserHome/Labs/Path-Traversal/practical/second_lab/Second_Lab.jsx";
+// End Careers in Cyber
 // Api Hacking
 import API_HACKING from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking.jsx";
 import API_HACKING_LABS from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking_labs.jsx";
@@ -446,7 +447,7 @@ function App() {
 
           {/* End Digital Forensics */}
           {/* Path Traversal */}
-          <Route path="/Path_Traversal" element={<PATH_TRAVERSAL />} />
+          {/* <Route path="/Path_Traversal" element={<PATH_TRAVERSAL />} />
           <Route
             path="/Path_Traversal/Path_Traversal_labs"
             element={<PATH_TRAVERSAL_LABS />}
@@ -458,7 +459,7 @@ function App() {
           <Route
             path="/Path_Traversal/Path_Traversal_labs/lab2"
             element={<PATH_TRAVERSAL_SECOND_LAB />}
-          />
+          /> */}
           {/* End Path Traversal */}
 
           {/* Api Hacking */}

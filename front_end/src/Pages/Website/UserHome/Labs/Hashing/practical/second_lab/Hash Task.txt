@@ -104,10 +104,10 @@ Instructions for the Trainer:
 
 ===================================================================================================================================================================
 
-                                             CCCC   Y   Y  BBBBB   EEEEE  RRRR     L         AAAAA      BBBBB       SSSS
-                                            C        Y Y   B    B  E      R   R    L        A     A     B    B    S
-                                            C         Y    BBBBB   EEEE   RRRR     L        AAAAAAA     BBBBB       SSSS
-                                            C         Y    B    B  E      R  R     L        A     A     B    B           S
-                                             CCCC     Y    BBBBB   EEEEE  R   R    LLLLL    A     A     BBBBB       SSSS
+                                             CCCC   Y   Y  BBBBB   EEEEE  RRRR        L         AAAAA      BBBBB       SSSS
+                                            C        Y Y   B    B  E      R   R       L        A     A     B    B    S
+                                            C         Y    BBBBB   EEEE   RRRR        L        AAAAAAA     BBBBB       SSSS
+                                            C         Y    B    B  E      R  R        L        A     A     B    B           S
+                                             CCCC     Y    BBBBB   EEEEE  R   R       LLLLL    A     A     BBBBB       SSSS
 
 ===================================================================================================================================================================

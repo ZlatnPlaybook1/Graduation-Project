@@ -213,7 +213,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/Regex/Landing.jpg"),
-    state: "not-published",
+    state: "published",
     link: "/Regex",
   },
   {
@@ -229,7 +229,7 @@ const courseData = [
       "Placeholder Topic 4",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/Lab2.jpg"),
+    image: require("../assets/img/Path_Traversal/landing.jpeg"),
     state: "not-published",
     link: "/Path__Traversal",
   },
@@ -315,7 +315,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/AudFor/landing.png"),
-    state: "pending",
+    state: "published",
     link: "/Digital_Forensics",
   },
   {
@@ -355,7 +355,7 @@ const courseData = [
   {
     id: 22,
     category: "Temporary Category",
-    title: "Path Traversal",
+    title: "Careers in Cyber",
     description:
       "Before hacking something, you first need to understand the basics",
     topics: [
@@ -365,9 +365,9 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/Path_Traversal/landing.jpeg"),
-    state: "not-published",
-    link: "/Path_Traversal",
+    image: require("../assets/img/CareersInCyber/landing.jpg"),
+    state: "pending",
+    link: "/",
   },
   {
     id: 23,

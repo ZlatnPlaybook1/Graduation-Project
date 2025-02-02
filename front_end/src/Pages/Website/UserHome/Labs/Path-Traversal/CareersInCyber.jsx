@@ -1,10 +1,9 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import "./Regex.css";
 import "../Page_Styles/Content_sec.css";
-import background from "../../assets/img/Regex/background.png";
-import courseImage from "../../assets/img/Regex/courseImage.png";
+import background from "../../assets/img/CareersInCyber/background.png";
+import courseImage from "../../assets/img/CareersInCyber/courseImage.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
