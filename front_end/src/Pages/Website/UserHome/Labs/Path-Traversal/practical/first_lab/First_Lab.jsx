@@ -1,7 +1,5 @@
 import React from "react";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
+import HackerLoginForm from "../../../../HackerLoginForm/HackerLoginForm";
 
 export default function First_Lab() {
   const hintMessage = `
@@ -21,15 +19,7 @@ export default function First_Lab() {
 
   return (
     <>
-      <GoBackBtn />
-      <ShowHintBtn hintText={hintMessage} />
-      <div className="container">
-        <h1 style={{ textAlign: "center", marginBlock: "50px" }}>
-          Hello Lab 1
-        </h1>
-
-        <Go2TopBtn />
-      </div>
+      <HackerLoginForm />
     </>
   );
 }

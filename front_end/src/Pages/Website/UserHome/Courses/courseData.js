@@ -47,7 +47,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/cookies/Cookies_transparent.png"),
-    state: "not-published",
+    state: "published",
     link: "/cookies",
   },
   {
@@ -98,7 +98,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/linux/linux_logo.png"),
-    state: "not-published",
+    state: "published",
     link: "/linux",
   },
   {
@@ -144,7 +144,7 @@ const courseData = [
     topics: ["simple bash scripts", "Variables", "Parameters", "Arrays"],
     difficulty: "Easy",
     image: require("../assets/img/bash/bash_course_logo.png"),
-    state: "not-published",
+    state: "published",
     link: "/bash-scripting",
   },
   {
@@ -196,7 +196,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/Obfuscation/card_image.png"),
-    state: "not-published",
+    state: "published",
     link: "/obfuscation",
   },
   {
@@ -213,7 +213,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/Regex/Landing.jpg"),
-    state: "not-published",
+    state: "published",
     link: "/Regex",
   },
   {
@@ -229,7 +229,7 @@ const courseData = [
       "Placeholder Topic 4",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/Lab2.jpg"),
+    image: require("../assets/img/Path_Traversal/landing.jpeg"),
     state: "not-published",
     link: "/Path__Traversal",
   },
@@ -247,7 +247,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Cryptography/card_image.png"),
-    state: "not-published",
+    state: "published",
     link: "/cryptography",
   },
   {
@@ -298,7 +298,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/wireshark/card_image.png"),
-    state: "not-published",
+    state: "published",
     link: "/wireshark",
   },
   {
@@ -315,7 +315,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/AudFor/landing.png"),
-    state: "pending",
+    state: "published",
     link: "/Digital_Forensics",
   },
   {
@@ -349,13 +349,13 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/File Inclusion/card_image.png"),
-    state: "not-published",
+    state: "pending",
     link: "/fileinclusion",
   },
   {
     id: 22,
     category: "Temporary Category",
-    title: "Path Traversal",
+    title: "Careers in Cyber",
     description:
       "Before hacking something, you first need to understand the basics",
     topics: [
@@ -365,9 +365,9 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/Path_Traversal/landing.jpeg"),
-    state: "not-published",
-    link: "/Path_Traversal",
+    image: require("../assets/img/CareersInCyber/landing.jpg"),
+    state: "pending",
+    link: "/",
   },
   {
     id: 23,

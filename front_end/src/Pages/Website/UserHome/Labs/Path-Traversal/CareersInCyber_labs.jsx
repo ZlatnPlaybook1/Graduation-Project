@@ -1,11 +1,10 @@
 import React from "react";
 import Header from "../../Header/Header";
-import "./Digital_Forensics.css";
-import mcqData from "./MCQCards";
-import labImg from "../../assets/img/DigitalForensics/Email.jpg";
+import labImg from "../../assets/img/Regex/lab.jpg";
+
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
-export default function Digital_Forensics_labs() {
+export default function Regex_labs() {
   return (
     <>
       <Header />
@@ -41,30 +40,30 @@ export default function Digital_Forensics_labs() {
       {/* Start Course */}
       <div className="course">
         <div className="container">
-          <h2>Digital Forensics</h2>
+          <h2>Regular Expressions Labs</h2>
           <p className="section-p">Test Your Hacking Skills</p>
           <div className="row">
-            {/* lab1 */}
+            {/* Lab1 */}
             <Card
-              link={"/Digital_Forensics/Digital_Forensics_labs/lab1"}
+              link={"/Regex/Regex_labs/MCQReview"}
               image={labImg}
-              title={"Audio Forensics"}
+              title={"MCQ Question Review"}
               brief={
-                "Analyze audio files to extract information and solve the case."
+                "These are multiple choice questions that are designed to be a review for the exam."
               }
               difficulty={"Easy"}
             />
 
-            {mcqData.map((mcq) => (
-              <Card
-                link={mcq.link}
-                image={mcq.image}
-                alt={mcq.title}
-                title={mcq.title}
-                brief={mcq.description}
-                difficulty={mcq.difficulty}
-              />
-            ))}
+            {/* Lab2 */}
+            <Card
+              link={"/Regex/Regex_labs/CompleteReview"}
+              image={labImg}
+              title={"Complete Question Review"}
+              brief={
+                "These are Complete questions that are designed to be a review for the exam."
+              }
+              difficulty={"Easy"}
+            />
           </div>
         </div>
       </div>
