@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import "./Hashing.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
 import HashingVsEncryption from "../../assets/img/Hashing/hashing-vs-encryption.png";
@@ -9,6 +8,7 @@ import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn.jsx";
 export default function Hashing() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -615,6 +615,7 @@ export default function Hashing() {
           </div>
         </div>
       </div>
+      <Go2TopBtn />
       <Footer />
     </>
   );

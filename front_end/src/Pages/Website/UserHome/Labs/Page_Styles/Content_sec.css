@@ -623,4 +623,9 @@ b {
   text-align: center !important;
   padding: 5 10px !important;
 }
+a.custom-link {
+  color: normal !important;
+  text-decoration: underline !important;
+  font-size: normal !important;
+}
 /* End course-labd Content */
