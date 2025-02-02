@@ -47,6 +47,7 @@ const IDOR_Lab2 = () => {
         if (response.ok) {
           const data = await response.json();
           setAccountBalance(data.balance);
+          console.log("Fetched account balance:", data); // Log the response
         } else {
           setMessage("Failed to fetch account balance.");
         }
@@ -81,6 +82,7 @@ const IDOR_Lab2 = () => {
         const result = await response.json();
         setAccountBalance(result.balance);
         setMessage(result.message);
+        console.log("API Response after purchase:", result); // Log the response
       } else {
         setMessage("Failed to process the purchase. Please try again.");
       }
@@ -103,7 +105,9 @@ const IDOR_Lab2 = () => {
         {message && (
           <div
             className={`unique-ticket-alert ${
-              message.startsWith("Successfully") ? "success" : "error"
+              message.startsWith("Tickets booked successfully")
+                ? "success"
+                : "error"
             }`}
           >
             {message}

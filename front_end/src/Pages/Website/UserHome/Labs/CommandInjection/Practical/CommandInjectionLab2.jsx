@@ -15,9 +15,10 @@ export default function CommandInjectionLab2() {
   const [showStock, setShowStock] = useState(null);
   const [apiResponse, setApiResponse] = useState("");
 
-  // Extract and process product_id from the URL
+  // Extract and process query parameters from the URL
   const searchParams = new URLSearchParams(location.search);
   const productId = searchParams.get("product_id");
+  const queryParams = location.search; // Entire query string (including '&')
 
   let ip = "";
   if (productId) {
@@ -42,12 +43,17 @@ export default function CommandInjectionLab2() {
       }
 
       console.log("Sending valid input:", validIp); // Log the value being sent
+
+      // Log the data sent in the API request
+      const requestData = { ip: validIp, queryParams: queryParams };
+      console.log("Request Data:", requestData);
+
       fetch("http://127.0.0.1:8080/api/commendInjectionLab2", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ip: validIp }), // Corrected to pass 'ip' instead of 'input'
+        body: JSON.stringify(requestData), // Send full query string
       })
         .then((response) => {
           if (!response.ok) {
@@ -66,7 +72,7 @@ export default function CommandInjectionLab2() {
           setApiResponse("Error: Unable to connect to API");
         });
     }
-  }, [ip]);
+  }, [ip, queryParams]); // Added queryParams to dependency array
 
   const generateStockMessage = (stockCount) => {
     return `Stock: ${stockCount} Pieces`;

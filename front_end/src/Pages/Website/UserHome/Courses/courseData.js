@@ -30,7 +30,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/Cross_Site_Scripting/xss.jpeg.jpg"),
-    state: "not-published",
+    state: "Published",
     link: "/xss",
   },
   {
@@ -81,7 +81,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/Unrestricted File Upload/card_image.png"),
-    state: "not-published",
+    state: "Published",
     link: "/UnrestrictedFileUpload",
   },
   {
@@ -179,7 +179,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/IDOR/Insecure_Direct_Object_Reference.png"),
-    state: "not-published",
+    state: "published",
     link: "/Insecure_Direct_Object_Reference(IDOR)",
   },
   {

@@ -48,17 +48,17 @@ export default function CommandInjectionLabs() {
               brief={"Find the password of the admin"}
               difficulty={"Easy"}
             />
-            {/* lab2 */}
+            {/* lab3 */}
             <Card
-              link={"/Command_Injection/Command_Injection_labs/lab2"}
+              link={"/Command_Injection/Command_Injection_labs/lab3"}
               image={Auth_Photo}
               title={"Path Traversal Blacklist"}
               brief={"Find the password of the admin"}
               difficulty={"Easy"}
             />
-            {/* lab3 */}
+            {/* lab2 */}
             <Card
-              link={"/Command_Injection/Command_Injection_labs/lab3"}
+              link={"/Command_Injection/Command_Injection_labs/lab2"}
               image={Auth_Photo}
               title={"Path Traversal Blacklist"}
               brief={"Find the password of the admin"}

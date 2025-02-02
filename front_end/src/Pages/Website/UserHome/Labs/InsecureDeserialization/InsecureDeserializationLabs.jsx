@@ -37,7 +37,7 @@ export default function InsecureDeserializationLabs() {
       {/* End Landing */}
       <div className="course">
         <div className="container">
-          <h2>Insecure Deserialization</h2>
+          <h2>Insecure Deserialization Labs</h2>
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             {/* lab1 */}
