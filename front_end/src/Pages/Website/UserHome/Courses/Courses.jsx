@@ -72,9 +72,13 @@ const Courses = () => {
                       <div className="ribbon coming-soon">
                         <span>Coming Soon</span>
                       </div>
-                    ) : (
+                    ) : course.state === "published" ? (
                       <div className="ribbon published">
                         <span>Published</span>
+                      </div>
+                    ) : (
+                      <div className="ribbon pending">
+                        <span>Pending</span>
                       </div>
                     )}
                   </div>

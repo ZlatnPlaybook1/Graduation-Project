@@ -13,7 +13,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/SQL_Injection/landing3.png"),
-    state: "not-published",
+    state: "pending",
     link: "/sql_Injection",
   },
   {
@@ -64,7 +64,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/ACV/Landing.jpg"),
-    state: "not-published",
+    state: "pending",
     link: "/AC_Vuln",
   },
   {
@@ -264,7 +264,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Hashing/landing.jpg"),
-    state: "Published",
+    state: "published",
     link: "/Hashing",
   },
   {
@@ -304,7 +304,7 @@ const courseData = [
   {
     id: 19,
     category: "Temporary Category",
-    title: "Digital Forensics✅",
+    title: "Digital Forensics",
     description:
       " Before hacking something, you first need to understand the basics",
     topics: [
@@ -315,7 +315,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/AudFor/landing.png"),
-    state: "not-published",
+    state: "pending",
     link: "/Digital_Forensics",
   },
   {
@@ -417,7 +417,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Api_Hacking/landing.png"),
-    state: "not-published",
+    state: "pending",
     link: "/Api_Hacking",
   },
   {

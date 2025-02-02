@@ -258,7 +258,9 @@
 .ribbon.published {
   background-color: #2ed573;
 }
-
+.ribbon.pending {
+  background-color: #ffa502;
+}
 .course-image {
   position: relative;
   overflow: hidden;
