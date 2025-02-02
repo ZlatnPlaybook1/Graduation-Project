@@ -10,7 +10,9 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import "../first_lab/First_Lab.css";
-
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
 const CyberLabTask = () => {
   const [instructions, setInstructions] = useState("");
   const [answerText, setAnswerText] = useState("");
@@ -121,149 +123,164 @@ const CyberLabTask = () => {
     link.download = "cyber_lab_task_instructions.txt";
     link.click();
   };
-
+  const hintMessage = `
+    <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
+      <li>1.
+        
+      </li>
+    </ul>
+  `;
   return (
-    <div className="w-100 p-y5">
-      <div className="container p-0 my-5">
-        <div className="card shadow-lg">
-          <div className="card-body">
-            {/* Title */}
-            <h2 className="card-title my-4 display-5 title-gradient">
-              Hashing Task 🔒
-            </h2>
+    <>
+      {" "}
+      <GoBackBtn />
+      <ShowHint_Btn hintText={hintMessage} />
+      <div className=" w-100 p-y5 mt-5">
+        <div className="container p-0 my-5">
+          <div className="card shadow-lg">
+            <div className="card-body">
+              {/* Title */}
+              <h2 className="card-title my-4 display-5 title-gradient">
+                Hashing Task 🔒
+              </h2>
 
-            {/* Explanation Section */}
-            <div className="mb-5 text-left">
-              <h3 className="mb-3">
-                What is a Cybersecurity Hashing Task?
-                <FontAwesomeIcon icon={faInfoCircle} className="ms-2" />
-              </h3>
-              <p>
-                A <strong>Cybersecurity Hashing Task</strong> involves
-                identifying the original words and the hashing algorithms used
-                to generate their hashes. This task helps you understand:
-              </p>
-              <ul className="list-group list-group-flush mb-4">
-                <li className="list-group-item">✔️ How hashing works</li>
-                <li className="list-group-item">
-                  ✔️ Differences between MD5, SHA-1, and SHA-256
-                </li>
-                <li className="list-group-item">
-                  ✔️ Practical applications of hashing in cybersecurity
-                </li>
-              </ul>
-            </div>
+              {/* Explanation Section */}
+              <div className="mb-5 text-left">
+                <h3 className="mb-3">
+                  What is a Cybersecurity Hashing Task?
+                  <FontAwesomeIcon icon={faInfoCircle} className="ms-2" />
+                </h3>
+                <p>
+                  A <strong>Cybersecurity Hashing Task</strong> involves
+                  identifying the original words and the hashing algorithms used
+                  to generate their hashes. This task helps you understand:
+                </p>
+                <ul className="list-group list-group-flush mb-4">
+                  <li className="list-group-item">✔️ How hashing works</li>
+                  <li className="list-group-item">
+                    ✔️ Differences between MD5, SHA-1, and SHA-256
+                  </li>
+                  <li className="list-group-item">
+                    ✔️ Practical applications of hashing in cybersecurity
+                  </li>
+                </ul>
+              </div>
 
-            {/* Example Section with Creative Accordion */}
-            <div className="mb-5 text-left">
-              <h3 className="mb-3">
-                Example Task & Answer Format
-                <FontAwesomeIcon icon={faChevronDown} className="ms-2" />
-              </h3>
-              <div className="accordion custom-accordion" id="exampleAccordion">
-                <div className="accordion-item">
-                  <h2 className="accordion-header" id="exampleHeading">
-                    <button
-                      className="accordion-button collapsed custom-accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#exampleCollapse"
-                      aria-expanded="false"
-                      aria-controls="exampleCollapse"
-                      onClick={() => setIsAccordionOpen(!isAccordionOpen)}
+              {/* Example Section with Creative Accordion */}
+              <div className="mb-5 text-left">
+                <h3 className="mb-3">
+                  Example Task & Answer Format
+                  <FontAwesomeIcon icon={faChevronDown} className="ms-2" />
+                </h3>
+                <div
+                  className="accordion custom-accordion"
+                  id="exampleAccordion"
+                >
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="exampleHeading">
+                      <button
+                        className="accordion-button collapsed custom-accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#exampleCollapse"
+                        aria-expanded="false"
+                        aria-controls="exampleCollapse"
+                        onClick={() => setIsAccordionOpen(!isAccordionOpen)}
+                      >
+                        <span className="ms-2">
+                          {isAccordionOpen ? "Hide Examples" : "Show Examples"}
+                        </span>
+                      </button>
+                    </h2>
+
+                    <div
+                      id="exampleCollapse"
+                      className="accordion-collapse collapse"
+                      aria-labelledby="exampleHeading"
+                      data-bs-parent="#exampleAccordion"
                     >
-                      <span className="ms-2">
-                        {isAccordionOpen ? "Hide Examples" : "Show Examples"}
-                      </span>
-                    </button>
-                  </h2>
-
-                  <div
-                    id="exampleCollapse"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="exampleHeading"
-                    data-bs-parent="#exampleAccordion"
-                  >
-                    <div className="accordion-body text-left">
-                      <h5>Example Input:</h5>
-                      <pre className="bg-light p-2 rounded">
-                        Hashed Word 1: 5f4dcc3b5aa765d61d8327deb882cf99
-                      </pre>
-                      <h5>Example Output:</h5>
-                      <pre className="bg-light p-2 rounded">
-                        {'{ "word": "password", "hashed_algorithm": "MD5" }'}
-                      </pre>
+                      <div className="accordion-body text-left">
+                        <h5>Example Input:</h5>
+                        <pre className="bg-light p-2 rounded">
+                          Hashed Word 1: 5f4dcc3b5aa765d61d8327deb882cf99
+                        </pre>
+                        <h5>Example Output:</h5>
+                        <pre className="bg-light p-2 rounded">
+                          {'{ "word": "password", "hashed_algorithm": "MD5" }'}
+                        </pre>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Download Instructions Section */}
-            <div className="mb-5 text-left">
-              <h3 className="mb-3">
-                Download Instructions
-                <FontAwesomeIcon icon={faFileDownload} className="ms-2" />
-              </h3>
-              <button onClick={downloadTxtFile} className="btn btn-primary">
-                <FaFileDownload className="me-2" /> Download Instructions
-              </button>
-            </div>
-
-            {/* Upload Answers Section */}
-            <div className="mb-5 text-left">
-              <h3 className="mb-3">
-                Upload Your Answers
-                <FontAwesomeIcon icon={faFileUpload} className="ms-2" />
-              </h3>
-              <div className="row">
-                <div className="col-md-6">
-                  <div className="form-floating mb-3">
-                    <input
-                      type="file"
-                      accept=".txt"
-                      onChange={handleFileUpload}
-                      className="form-control"
-                      id="fileInput"
-                    />
-                    <label htmlFor="fileInput">Upload your answer file</label>
-                  </div>
-                  <p className="text-muted">
-                    {fileName
-                      ? `Uploaded file: ${fileName}`
-                      : "No file uploaded yet"}
-                  </p>
-                </div>
-                <div className="col-md-6 d-flex align-items-end">
-                  <button
-                    onClick={handleSubmitAnswers}
-                    className="btn btn-success w-100 py-2"
-                    disabled={jsonAnswer.length === 0}
-                  >
-                    <FaFileUpload className="me-2" /> Submit Answers
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Result Section */}
-            {score !== null && (
+              {/* Download Instructions Section */}
               <div className="mb-5 text-left">
                 <h3 className="mb-3">
-                  Result
-                  <FontAwesomeIcon icon={faCheck} className="ms-2" />
+                  Download Instructions
+                  <FontAwesomeIcon icon={faFileDownload} className="ms-2" />
                 </h3>
-                <div className="alert alert-info">
-                  <strong>
-                    Your Score: {score} / {correctAnswers.length}
-                  </strong>
+                <button onClick={downloadTxtFile} className="btn btn-primary">
+                  <FaFileDownload className="me-2" /> Download Instructions
+                </button>
+              </div>
+
+              {/* Upload Answers Section */}
+              <div className="mb-5 text-left">
+                <h3 className="mb-3">
+                  Upload Your Answers
+                  <FontAwesomeIcon icon={faFileUpload} className="ms-2" />
+                </h3>
+                <div className="row">
+                  <div className="col-md-6">
+                    <div className="form-floating mb-3">
+                      <input
+                        type="file"
+                        accept=".txt"
+                        onChange={handleFileUpload}
+                        className="form-control"
+                        id="fileInput"
+                      />
+                      <label htmlFor="fileInput">Upload your answer file</label>
+                    </div>
+                    <p className="text-muted">
+                      {fileName
+                        ? `Uploaded file: ${fileName}`
+                        : "No file uploaded yet"}
+                    </p>
+                  </div>
+                  <div className="col-md-6 d-flex align-items-end">
+                    <button
+                      onClick={handleSubmitAnswers}
+                      className="btn btn-success w-100 py-2"
+                      disabled={jsonAnswer.length === 0}
+                    >
+                      <FaFileUpload className="me-2" /> Submit Answers
+                    </button>
+                  </div>
                 </div>
               </div>
-            )}
+
+              {/* Result Section */}
+              {score !== null && (
+                <div className="mb-5 text-left">
+                  <h3 className="mb-3">
+                    Result
+                    <FontAwesomeIcon icon={faCheck} className="ms-2" />
+                  </h3>
+                  <div className="alert alert-info">
+                    <strong>
+                      Your Score: {score} / {correctAnswers.length}
+                    </strong>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <Go2TopBtn />
+    </>
   );
 };
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Courses.css";
 import courseData from "./courseData"; // Assuming you move course data to a separate file
 import ChatWidget from "../../AiChatWidget/ChatWidget";
+import Go2TopBtn from "../Go2Top_Btn/Go2Top_Btn";
 const Courses = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Courses");
   const [searchTerm, setSearchTerm] = useState("");
@@ -97,6 +98,7 @@ const Courses = () => {
         </div>
       </div>
       <ChatWidget />
+      <Go2TopBtn />
     </>
   );
 };
