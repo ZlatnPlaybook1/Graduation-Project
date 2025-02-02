@@ -1,7 +1,7 @@
 import React from "react";
 import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
-import image from "../../assets//img/Obfuscation/card_image.png";
+import image from "../../assets//img/File Inclusion/card_image.png";
 import { Card } from "../../Card/Card";
 import Footer from "../../Footer/Footer";
 
@@ -44,11 +44,11 @@ export default function FileInclusion_lab() {
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             <Card
-              link={""}
+              link={"/fileinclusion/fileinclusion_lab/Learn-the-capital-1"}
               image={image}
-              title={""}
-              brief={""}
-              difficulty={""}
+              title={"Learn The Capital #1"}
+              brief={"You Will Learn How To Use File Inclusion"}
+              difficulty={"Easy"}
             />
           </div>
         </div>
