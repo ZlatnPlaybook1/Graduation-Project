@@ -47,7 +47,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/cookies/Cookies_transparent.png"),
-    state: "not-published",
+    state: "published",
     link: "/cookies",
   },
   {
@@ -98,7 +98,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/linux/linux_logo.png"),
-    state: "not-published",
+    state: "published",
     link: "/linux",
   },
   {
@@ -144,7 +144,7 @@ const courseData = [
     topics: ["simple bash scripts", "Variables", "Parameters", "Arrays"],
     difficulty: "Easy",
     image: require("../assets/img/bash/bash_course_logo.png"),
-    state: "not-published",
+    state: "published",
     link: "/bash-scripting",
   },
   {
@@ -196,7 +196,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/Obfuscation/card_image.png"),
-    state: "not-published",
+    state: "published",
     link: "/obfuscation",
   },
   {
@@ -247,7 +247,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Cryptography/card_image.png"),
-    state: "not-published",
+    state: "published",
     link: "/cryptography",
   },
   {
@@ -298,7 +298,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/wireshark/card_image.png"),
-    state: "not-published",
+    state: "published",
     link: "/wireshark",
   },
   {
@@ -349,7 +349,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/File Inclusion/card_image.png"),
-    state: "not-published",
+    state: "pending",
     link: "/fileinclusion",
   },
   {
