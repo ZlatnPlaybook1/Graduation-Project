@@ -14,7 +14,6 @@ const HackerLoginForm = () => {
       }}
     >
       <main className="hacker-login">
-        {/* Background grid animation */}
         {Array.from({ length: spanCount }).map((_, index) => (
           <span key={index} className="hackerLogin-gridSpan"></span>
         ))}

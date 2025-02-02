@@ -64,7 +64,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/SQL_Injection/landing3.png"),
-    state: "pending",
+    state: "published",
     link: "/sql_Injection",
   },
   {
