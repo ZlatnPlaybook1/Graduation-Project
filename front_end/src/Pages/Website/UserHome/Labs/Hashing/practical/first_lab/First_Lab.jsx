@@ -5,80 +5,96 @@ import ComparatorImage from "../../../../assets/img/Hashing/Comparator.jpg";
 import GeneratorImage from "../../../../assets/img/Hashing/Generator.jpg";
 import SaltingImage from "../../../../assets/img/Hashing/Salting.jpg";
 import { Card } from "../../../../Card/Card";
-
+import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
 const HashingLab = () => {
+  const hintMessage = `
+    <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
+      <li>1.
+        Go to the lab and view <mark>robots.txt</mark> by appending
+        <mark>/robots.txt</mark> to the lab URL. Notice that the 
+        <mark>Disallow</mark> line discloses the path to the admin panel.
+      </li>
+      \n
+      <li>2. 
+        In the URL bar, replace <mark>/robots.txt</mark> with
+        <mark>/administrator-panel</mark> to load the admin panel.
+      </li>\n
+      <li>3.
+        Delete <mark>carlos</mark>.
+      </li>
+    </ul>
+  `;
   return (
-    <div className="course">
-      <div className="container mt-5">
-        <div className="card shadow-lg">
-          <div className="card-body">
-            <h1 className="card-title my-4 display-5 title-gradient">
-              Hashing Lab
-            </h1>
-            <p>
-              Hashing is the process of converting an input (which can be a
-              password, a file, or any message) into a fixed-length string of
-              bytes. The output, or hash, is unique to the input data, and even
-              a small change in the input will produce a completely different
-              hash. Hashing is used in various applications, such as password
-              storage, digital signatures, and data integrity checks.
-            </p>
-            <div className="d-flex my-3" style={{ height: "auto" }}>
-              <div
-                className="vr py-3"
-                style={{ width: "20px", height: "auto" }}
-              ></div>
-              <h4 className="bg-gray p-3 mt-2">
-                <code>
-                  Below are some hashing tools, including a Hash Generator, Hash
-                  Comparator, Hash Cracker, and Salting Demo. Explore them to
-                  learn more about hashing!
-                </code>
-              </h4>
+    <>
+      <GoBack_Btn />
+      <ShowHint_Btn hintText={hintMessage} />
+      <div className="course">
+        <div className="container mt-5">
+          <div className="card shadow-lg">
+            <div className="card-body">
+              <h1 className="card-title my-4 display-5 title-gradient">
+                Hashing Lab
+              </h1>
+              <p>
+                Hashing is the process of converting an input (which can be a
+                password, a file, or any message) into a fixed-length string of
+                bytes. The output, or hash, is unique to the input data, and
+                even a small change in the input will produce a completely
+                different hash. Hashing is used in various applications, such as
+                password storage, digital signatures, and data integrity checks.
+              </p>
+              <div className="note">
+                Below are some hashing tools, including a Hash Generator, Hash
+                Comparator, Hash Cracker, and Salting Demo. Explore them to
+                learn more about hashing!
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="row">
-          <Card
-            link={"/Hashing/Hashing_labs/lab1/HashGenerator"}
-            image={GeneratorImage}
-            title={"Hash Generator"}
-            brief={
-              "Generate MD5, SHA-1, and SHA-256 hashes for any text input."
-            }
-            difficulty={"Easy"}
-          />
-          <Card
-            link={"/Hashing/Hashing_labs/lab1/HashComparator"}
-            image={ComparatorImage}
-            title={"Hash Comparator"}
-            brief={
-              "Compare two hashes to see if they match. Useful for verifying data integrity."
-            }
-            difficulty={"Easy"}
-          />
-          <Card
-            link={"/Hashing/Hashing_labs/lab1/HashCracker"}
-            image={CrackerImage}
-            title={"Hash Cracker"}
-            brief={
-              "Attempt to crack common password hashes using a dictionary attack (for educational purposes only)."
-            }
-            difficulty={"Easy"}
-          />
-          <Card
-            link={"/Hashing/Hashing_labs/lab1/SaltingDemo"}
-            image={SaltingImage}
-            title={"Salting Demo"}
-            brief={
-              "See how salting adds security to password hashing by adding a random string before hashing."
-            }
-            difficulty={"Easy"}
-          />
+          <div className="row">
+            <Card
+              link={"/Hashing/Hashing_labs/lab1/HashGenerator"}
+              image={GeneratorImage}
+              title={"Hash Generator"}
+              brief={
+                "Generate MD5, SHA-1, and SHA-256 hashes for any text input."
+              }
+              difficulty={"Easy"}
+            />
+            <Card
+              link={"/Hashing/Hashing_labs/lab1/HashComparator"}
+              image={ComparatorImage}
+              title={"Hash Comparator"}
+              brief={
+                "Compare two hashes to see if they match. Useful for verifying data integrity."
+              }
+              difficulty={"Easy"}
+            />
+            <Card
+              link={"/Hashing/Hashing_labs/lab1/HashCracker"}
+              image={CrackerImage}
+              title={"Hash Cracker"}
+              brief={
+                "Attempt to crack common password hashes using a dictionary attack (for educational purposes only)."
+              }
+              difficulty={"Easy"}
+            />
+            <Card
+              link={"/Hashing/Hashing_labs/lab1/SaltingDemo"}
+              image={SaltingImage}
+              title={"Salting Demo"}
+              brief={
+                "See how salting adds security to password hashing by adding a random string before hashing."
+              }
+              difficulty={"Easy"}
+            />
+          </div>
         </div>
       </div>
-    </div>
+      <Go2TopBtn />
+    </>
   );
 };
 

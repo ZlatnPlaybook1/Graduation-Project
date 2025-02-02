@@ -16,6 +16,7 @@
   border: none;
   display: inline-flex;
   align-items: center;
+  z-index: 1000;
 }
 
 .show-hint-btn .show-hint-btn-icon {

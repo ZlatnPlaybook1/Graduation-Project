@@ -105,10 +105,12 @@ i {
 /* Start Landing */
 .landing {
   height: auto;
-  background: linear-gradient(105deg,
-      var(--sec-main-color) 0%,
-      var(--sec-main-color) 60%,
-      rgb(28, 37, 56) 60%);
+  background: linear-gradient(
+    105deg,
+    var(--sec-main-color) 0%,
+    var(--sec-main-color) 60%,
+    rgb(28, 37, 56) 60%
+  );
 }
 
 @media (max-width: 991px) {
@@ -234,7 +236,7 @@ i {
   flex-direction: column;
 }
 
-.course .container>h2 {
+.course .container > h2 {
   border: 2px solid var(--sec-main-color);
   width: max-content;
   align-self: center;

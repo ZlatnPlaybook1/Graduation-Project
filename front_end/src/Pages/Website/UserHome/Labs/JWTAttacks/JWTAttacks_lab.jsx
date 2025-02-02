@@ -1,5 +1,5 @@
 import React from "react";
-import  "../Page_Styles/Lab.css";
+import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets//img/Obfuscation/card_image.png";
 import Footer from "../../Footer/Footer";
@@ -44,11 +44,11 @@ export default function JWTAttacks_lab() {
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             <Card
-            link={""}
-            image={image}
-            title={""}
-            brief={""}
-            difficulty={""}
+              link={""}
+              image={image}
+              title={""}
+              brief={""}
+              difficulty={""}
             />
           </div>
         </div>

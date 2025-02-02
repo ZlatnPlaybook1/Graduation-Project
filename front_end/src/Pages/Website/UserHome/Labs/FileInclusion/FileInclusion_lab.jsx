@@ -44,11 +44,11 @@ export default function FileInclusion_lab() {
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             <Card
-            link={""}
-            image={image}
-            title={""}
-            brief={""}
-            difficulty={""}
+              link={""}
+              image={image}
+              title={""}
+              brief={""}
+              difficulty={""}
             />
           </div>
         </div>

@@ -3,7 +3,7 @@ import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import "./CSRF.css";
 import background from "../../assets/img/background.png";
-import imagecourse from "../../assets/img/course_image.png";
+import courseImage from "../../assets/img/CSRF/CourseImage.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function CSRF() {
@@ -15,7 +15,7 @@ export default function CSRF() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        imagecourse={imagecourse}
+        imagecourse={courseImage}
         courseTitle="Cross-Site Request Forgery (CSRF)"
         courseDescription="Discover how attackers exploit CSRF vulnerabilities to perform
                 unauthorized actions on behalf of authenticated users without

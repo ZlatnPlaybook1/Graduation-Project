@@ -66,6 +66,16 @@ const Courses = () => {
                 <a href={course.link} className="course-card">
                   <div className="course-image">
                     <img src={course.image} alt={course.title} />
+                    {/* Ribbon Badge with Rotated Text */}
+                    {course.state === "not-published" ? (
+                      <div className="ribbon coming-soon">
+                        <span>Coming Soon</span>
+                      </div>
+                    ) : (
+                      <div className="ribbon published">
+                        <span>Published</span>
+                      </div>
+                    )}
                   </div>
                   <div className="course-text">
                     <h3>{course.title}</h3>

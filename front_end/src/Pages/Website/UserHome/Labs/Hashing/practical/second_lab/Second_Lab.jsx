@@ -3,7 +3,6 @@ import Swal from "sweetalert2";
 import { FaFileDownload, FaFileUpload } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCheckCircle,
   faChevronDown,
   faCheck,
   faFileUpload,

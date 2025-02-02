@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from "react";
-import $ from "jquery";
+import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import "./Hashing.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
-import logicflaw from "../../assets/img/Api_Hacking/apiImg1.svg";
-import ExplainImg from "../../assets/img/Api_Hacking/apiImg2.svg";
+import HashingVsEncryption from "../../assets/img/Hashing/hashing-vs-encryption.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 export default function Hashing() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -29,753 +29,576 @@ export default function Hashing() {
       />
       {/* End Landing */}
       {/* Start Course */}
-      <div className="course-lab1">
+      <div className="course-labd">
         <div className="container " ref={faqSectionRef}>
           <div className="row">
             <div className="faq-section-labd">
               <dl className="section-text-labd">
-                {/* Topic 1: Brief */}
+                {/* Topic 1 */}
                 <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span>Topic 1</span>Brief
+                  <span>Topic 1</span>What is hashing in cybersecurity?
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body-labd">
                   <div className="faq-content">
                     <p>
-                      SQL (Structured Query Language) Injection, mostly referred
-                      to as SQLi, is an attack on a web application database
-                      server that causes malicious queries to be executed. When
-                      a web application communicates with a database using input
-                      from a user that hasn't been properly validated, there
-                      runs the potential of an attacker being able to steal,
-                      delete or alter private and customer data and also attack
-                      the web application authentication methods to private or
-                      customer areas. This is why SQLi is one of the oldest web
-                      application vulnerabilities, and it can also be the most
-                      damaging.
+                      <mark>Hashing</mark> is a one-way function that takes a
+                      string of any length and returns a fixed-length string.
+                      The output of the function is called a hash. Hashing is
+                      used to verify the integrity of data. It is also used to
+                      store passwords in a database. The hash of a password is
+                      stored in the database instead of the password itself.
+                      This way, if the database is compromised, the attacker
+                      will have a hard time getting the passwords.
+                    </p>
+                    <p></p>
+                    <p>
+                      <b>Another Definitions:</b>
+                      <br />
+                      <mark>Hashing</mark> is a one-way mathematical function
+                      that turns data into a string of nondescript text that
+                      cannot be reversed or decoded. In the context of
+                      cybersecurity,
+                      <mark>hashing</mark> is a way to keep sensitive
+                      information and data — including passwords, messages, and
+                      documents — secure. Once this content is converted via a
+                      hashing algorithm, the resulting value (or hash code) is
+                      unreadable to humans and extremely difficult to decrypt,
+                      even with the help of advanced technology. Hashing has
+                      become an important cybersecurity tool for organizations,
+                      especially given the rise in remote work and use of
+                      personal devices. Both of these trends require
+                      organizations to leverage{" "}
+                      <mark> single sign-on (SSO) </mark>
+                      technology to enable a remote workforce and reduce
+                      friction within the user experience. Though this is a
+                      necessary part of modern business, attackers have come to
+                      recognize the inherent vulnerability of stored passwords
+                      and user credentials, which means that companies must take
+                      additional steps to keep that information secure.
                     </p>
                     <p>
-                      In this room, you'll learn what databases are, what SQL is
-                      with some basic SQL commands, how to detect SQL
-                      vulnerabilities, how to exploit SQLi vulnerabilities and,
-                      as a developer, how you can protect yourself against SQL
-                      Injection.
+                      <b>Components of hashing</b>
+                      <br /> Hashing has three main components:
+                      <ol>
+                        <li>The input key</li>
+                        <li>The hash function</li>
+                        <li>The hash table</li>
+                      </ol>
+                    </p>
+                    <p>
+                      <span className="pink-note">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        Input Key:
+                      </span>
+                      The input data or message that is processed by the hash
+                      function and converted into the hash code.
+                    </p>
+                    <p>
+                      <span className="pink-note">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        Hash Function
+                      </span>
+                      A mathematical function that converts the input data, or
+                      key, into a unique hash value.
+                    </p>
+                    <p>
+                      <span className="pink-note">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        Hash Table:
+                      </span>
+                      A data structure that stores data and maps keys to values.
                     </p>
                   </div>
                 </dd>
 
-                {/* Topic 2: What is a Database? */}
+                {/* Topic 2*/}
                 <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span>Topic 2</span>What is a Database?
+                  <span>Topic 2</span>Types of hashing
                 </dt>
-                <dd className="faq-body-labd" id="border-left">
+                <dd className="faq-body-labd">
                   <div className="faq-content">
                     <p>
-                      If you're not used to working with databases or exploiting
-                      them, there's probably some new terminology to get used
-                      to, so let's start with some basics on how databases are
-                      structured and how they work.
+                      Hashing is not singular in nature. In fact, there are a
+                      variety of hashing algorithms that are suitable for
+                      various use cases.{" "}
+                      <mark>
+                        Here, we explore The following common hashing
+                        algorithms:
+                      </mark>
                     </p>
                     <p>
-                      A database is a way of electronically storing collections
-                      of data in an organised manner. A database is controlled
-                      by a DBMS, which is an acronym for Database Management
-                      System. DBMSs fall into two camps: Relational and
-                      Non-Relational; the focus of this room will be on
-                      Relational databases; some common ones you'll come across
-                      are MySQL, Microsoft SQL Server, Access, PostgreSQL and
-                      SQLite. We'll explain the difference between Relational
-                      and Non-Relational databases at the end of this task, but
-                      first, it's important to learn a few terms.
+                      <ol>
+                        <li>
+                          <span className="pink-note">LANMAN:</span> The
+                          Microsoft LAN Manager hashing algorithm, or LANMAN, is
+                          a network operating system and authentication protocol
+                          developed by Microsoft primarily for storing
+                          passwords. Introduced in the 1980s, LANMAN is now
+                          considered largely obsolete, though it is perhaps the
+                          best-known example of a hashing algorithm.
+                        </li>
+                        <li>
+                          <span className="pink-note">
+                            NTLM (New Technology LAN Manager):{" "}
+                          </span>
+                          Windows New Technology LAN Manager (NTLM) is a suite
+                          of security protocols offered by Microsoft to
+                          authenticate users’ identities and protect the
+                          integrity and confidentiality of their activity. At
+                          its core, NTLM is an SSO tool that relies on a
+                          challenge-response protocol to confirm the user
+                          without requiring them to submit a password, a process
+                          known as NTLM authentication.
+                        </li>
+                        <li>
+                          <span className="pink-note">Script:</span> This
+                          hashing algorithm is is a key derivation function
+                          (KDF) and password-based key derivation function
+                          (PBKDF) that can convert data or passwords into
+                          cryptographic keys. The primary purpose of Scrypt is
+                          to provide a more robust defense against cryptographic
+                          attacks, such as brute-force attacks.
+                        </li>
+                        <li>
+                          <span className="pink-note">Ehtash:</span> Ethash is a
+                          “proof of work” hashing algorithm developed by the
+                          Ethereum network. The algorithm is custom built to
+                          secure the Ethereum cryptocurrency network and its
+                          blockchain and validate platform transactions.
+                        </li>
+                        <li>
+                          <span className="pink-note">
+                            MD5(Message Digest Algorithm 5):
+                          </span>{" "}
+                          MD5 is a widely used hashing algorithm that produces a
+                          128-bit hash value. It is commonly used to verify data
+                          integrity and ensure that data is not tampered with
+                          during transmission.
+                        </li>
+                        <li>
+                          <span className="pink-note">SHA-1:</span> SHA-1 is a
+                          widely used hashing algorithm that produces a 160-bit
+                          hash value. It is commonly used to verify data
+                          integrity and ensure that data is not tampered with
+                          during transmission.
+                        </li>
+                        <li>
+                          <span className="pink-note">SHA-256:</span> SHA-256 is
+                          a widely used hashing algorithm that produces a
+                          256-bit hash value. It is commonly used to verify data
+                          integrity and ensure that data is not tampered with
+                          during transmission.
+                        </li>
+                        <li>
+                          <span className="pink-note">SHA-512:</span> SHA-512 is
+                          a widely used hashing algorithm that produces a
+                          512-bit hash value. It is commonly used to verify data
+                          integrity and ensure that data is not tampered with
+                          during transmission.
+                        </li>
+                      </ol>
+                    </p>
+                  </div>
+                </dd>
+
+                {/* Topic 3 */}
+                <dt className="wave-labd fadeInUp faq-header-labd">
+                  <span>Topic 3</span>Hashing use cases in cybersecurity
+                </dt>
+                <dd className="faq-body-labd">
+                  <div className="faq-content">
+                    <p>
+                      <mark>Hashing</mark> plays an important role in many
+                      cybersecurity algorithms and protocols. At the most basic
+                      level, hashing is a way to encode sensitive data or text
+                      into an indecipherable value that is incredibly difficult
+                      to decode.
                     </p>
                     <p>
-                      Within a DBMS, you can have multiple databases, each
-                      containing its own set of related data. For example, you
-                      may have a database called "shop". Within this database,
-                      you want to store information about products available to
-                      purchase, users who have signed up to your online shop,
-                      and information about the orders you've received. You'd
-                      store this information separately in the database using
-                      something called tables. The tables are identified with a
-                      unique name for each one. You can see this structure in
-                      the diagram below, but you can also see how a business
-                      might have other separate databases to store staff
-                      information or the accounts team.
+                      <mark>
+                        Below, we discuss three of the most common hashing use
+                        cases in cybersecurity:
+                      </mark>
+                      <ol>
+                        <li>Password storage</li>
+                        <li>Digital signatures</li>
+                        <li>File and document management</li>
+                      </ol>
+                    </p>
+                    <p>
+                      <span className="pink-note">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        Password storage: <br />
+                      </span>{" "}
+                      Storing passwords as plain text within a system,
+                      application, or device is extremely risky. A password
+                      storage solution can use hashing to encode and save login
+                      credentials as a hashed value. When users attempt to
+                      access the system in the future, the solution will
+                      authenticate the user by validating the password that was
+                      entered with the hashed value in the database.
+                    </p>
+
+                    <p>
+                      <span className="pink-note">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />{" "}
+                        Digital signatures: <br />
+                      </span>{" "}
+                      A digital signature is a cryptographic technique used to
+                      verify the origin, authenticity, and integrity of a
+                      message, document, or transaction.
+                    </p>
+                    <p>
+                      <mark>To create a digital signature using hashing:</mark>
+                      <ol className="oList">
+                        <li style={{ listStyleType: "none" }}>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2  pink-note"
+                          />{" "}
+                          A hash function is applied to the original message to
+                          create a secure hash value
+                        </li>
+                        <li style={{ listStyleType: "none" }}>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2  pink-note"
+                          />{" "}
+                          The hash value is then encrypted using a private key
+                          that belongs to the sender; this process creates the
+                          digital signature
+                        </li>
+                        <li style={{ listStyleType: "none" }}>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2  pink-note"
+                          />{" "}
+                          The recipient uses a public key to decrypt the digital
+                          signature
+                        </li>
+                        <li style={{ listStyleType: "none" }}>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2  pink-note"
+                          />{" "}
+                          The recipient then takes the resulting hash value and
+                          applies the same hash function; if the hash values
+                          match, it proves that the message has not been altered
+                          and that it originated with the designated sender
+                        </li>
+                      </ol>
+                    </p>
+
+                    <p>
+                      <mark>File and document management</mark>
+                      <br />
+                      Though digital signatures are often used to secure email
+                      and other digital communications, they can also
+                      authenticate and verify any kind of electronic transaction
+                      or document. Two main use cases are:
+                    </p>
+                    <p>
+                      <ol>
+                        <li>
+                          <span className="pink-note">
+                            Document comparisons:{" "}
+                          </span>
+                          During hashing, the hash function will produce a
+                          fixed-value character string that serves as a unique
+                          identifier for any type of document or file. If the
+                          document is altered in any way, even minutely, the
+                          hash value will also change. As a result, hashing
+                          provides a fast and effective way to compare files and
+                          confirm they have not been altered or compromised.
+                          Data integrity verification: To verify the integrity
+                          of the data within a file or document, a hashing
+                          algorithm can be used to produce a checksum, which is
+                          a hash value that reflects the sum of the dataset.
+                          This checksum accompanies the data as it is shared or
+                          transmitted. Upon receipt, the user can create a new
+                          checksum and compare it to the original. If the two
+                          values match, then the data is considered secure.
+                        </li>
+                        <li>
+                          <span className="pink-note">
+                            Data integrity verification:
+                          </span>{" "}
+                          To verify the integrity of the data within a file or
+                          document, a hashing algorithm can be used to produce a
+                          checksum, which is a hash value that reflects the sum
+                          of the dataset. This checksum accompanies the data as
+                          it is shared or transmitted. Upon receipt, the user
+                          can create a new checksum and compare it to the
+                          original. If the two values match, then the data is
+                          considered secure.
+                        </li>
+                      </ol>
+                    </p>
+                  </div>
+                </dd>
+
+                {/* Topic 4*/}
+                <dt className="wave-labd fadeInUp faq-header-labd">
+                  <span>Topic 4</span>Hashing benefits in cybersecurity
+                </dt>
+                <dd className="faq-body-labd">
+                  <div className="faq-content">
+                    <p>
+                      <mark>Hashing</mark> is an essential component within many
+                      cybersecurity practices and protocols. Benefits include:
+                    </p>
+                    <p>
+                      <ol className="oList">
+                        <li style={{ listStyleType: "none" }}>
+                          <span className="pink-note">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="me-2"
+                            />{" "}
+                            Strong password security:
+                          </span>{" "}
+                          Hashing is a critical part of identity and access
+                          management (IAM) tools. By using a hashing tool,
+                          organizations can ensure the identity of their users
+                          and maintain proper access controls. This helps
+                          prevent password-based attacks, such as password
+                          spraying or credential theft.
+                        </li>
+                        <li style={{ listStyleType: "none" }}>
+                          <span className="pink-note">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="me-2"
+                            />{" "}
+                            File and data integrity:
+                          </span>
+                          Once a file, document, or dataset is hashed, any
+                          change will result in a new, completely different hash
+                          value. This helps organizations track and identify if
+                          and when assets have been altered and immediately stop
+                          using any asset that may be compromised.
+                        </li>
+                        <li style={{ listStyleType: "none" }}>
+                          <span className="pink-note">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="me-2"
+                            />{" "}
+                            Data security:{" "}
+                          </span>
+                          A hashed value is virtually useless to cybercriminals
+                          and bad actors because it is extremely challenging to
+                          decode a one-way hash function. This means that a data
+                          breach may not necessarily result in the loss of
+                          sensitive data if it has been properly hashed.
+                        </li>
+                        <li style={{ listStyleType: "none" }}>
+                          <span className="pink-note">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="me-2"
+                            />{" "}
+                            Secure communications:
+                          </span>{" "}
+                          Hashing is a critical part of digital signatures,
+                          which is the primary way to authenticate both the
+                          contents of a message and the identity of the sender.
+                        </li>
+                        <li style={{ listStyleType: "none" }}>
+                          <span className="pink-note">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="me-2"
+                            />{" "}
+                            Secure downloads:{" "}
+                          </span>
+                          When downloading software or any large file, systems
+                          can verify the hash value of the download to ensure it
+                          has not been infected with malware.
+                        </li>
+                        <li style={{ listStyleType: "none" }}>
+                          <span className="pink-note">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="me-2"
+                            />{" "}
+                            Improved threat detection:
+                          </span>{" "}
+                          Hash codes are a fast and effective way to scan and
+                          discover known threats on a system or within the
+                          network.
+                        </li>
+                      </ol>
+                    </p>
+                  </div>
+                </dd>
+
+                {/* Topic 5 */}
+                <dt className="wave-labd fadeInUp faq-header-labd">
+                  <span>Topic 5</span>Limitations of hashing
+                </dt>
+                <dd className="faq-body-labd">
+                  <div className="faq-content">
+                    <p>
+                      <mark>Though hashing</mark> is a useful tool, it has its
+                      limitations. In this section, we explore a few challenges
+                      and drawbacks of using hashing in cybersecurity:
+                    </p>
+                    <p>
+                      <ol className="oList">
+                        <li style={{ listStyleType: "none" }}>
+                          <span className="pink-note">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="me-2"
+                            />{" "}
+                            Collision:
+                          </span>
+                          A collision is when two or more inputs result in the
+                          same hash value. Large enterprises or companies that
+                          store significant amounts of data will face this
+                          challenge and must implement a solution to prevent
+                          such collisions. For example, a company might
+                          implement a chaining strategy, which is when a
+                          duplicative value is added to a linked list on the
+                          hash table.
+                        </li>
+                        <li style={{ listStyleType: "none" }}>
+                          <span className="pink-note">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="me-2"
+                            />
+                            Performance:
+                          </span>
+                          Hashing can be a bit of a balancing act. Algorithms
+                          are designed to optimize both speed and memory use;
+                          they must also be able to support the level of data
+                          input needed by the company. This creates significant
+                          complexity in terms of algorithm design and evolution.
+                          With respect to cybersecurity, a slow algorithm or one
+                          facing significant backlogs can translate into higher
+                          risk.
+                        </li>
+                        <li style={{ listStyleType: "none" }}>
+                          <span className="pink-note">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="me-2"
+                            />
+                            Security risks:
+                          </span>
+                          By definition, hashing is a one-way conversion of data
+                          into an indecipherable string of text. Generally, it
+                          is impossible to reconvert the hash value back to
+                          data. However, some sophisticated adversaries can
+                          either discover or guess the hash function, which
+                          would allow them to reverse engineer the hash values
+                          or tamper with the dataset by creating fake inputs.
+                        </li>
+                      </ol>
+                    </p>
+                  </div>
+                </dd>
+                {/* Topic 6 */}
+                <dt className="wave-labd fadeInUp faq-header-labd">
+                  <span>Topic 6</span>Hashing vs. encryption
+                </dt>
+                <dd className="faq-body-labd">
+                  <div className="faq-content">
+                    <p>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 pink-note"
+                      />
+                      Though hashing and encryption may seem to result in the
+                      same outcome, they are actually two different functions.
+                    </p>
+                    <p>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 pink-note"
+                      />
+                      The main difference is that <mark>Hashing</mark> is always
+                      intended to be a one-way conversion of data. The hash
+                      value is a unique string of text that can only be decoded
+                      if the adversary is able to steal or guess the hash
+                      function and then reverse engineer the data input.
+                    </p>
+                    <p>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 pink-note"
+                      />
+                      <mark>Data encryption,</mark> on the other hand, is a
+                      two-way process. Though encryption also uses cryptographic
+                      algorithms to convert plain text into an encoded format,
+                      it has a corresponding decoding key that allows users to
+                      decrypt the data.
                     </p>
                     <div className="faq-image">
-                      {/* <img src={tableImage } alt="Database Table" /> */}
-                      <p className="image-caption">
-                        Example of a database table.
-                      </p>
+                      <img
+                        src={HashingVsEncryption}
+                        alt="Hashing Vs Encryption"
+                      />
+                      <p className="image-caption">Hashing Vs Encryption.</p>
                     </div>
                     <p>
-                      A table is made up of columns and rows; a useful way to
-                      imagine a table is like a grid with the columns going
-                      across the top from left to right containing the name of
-                      the cell and the rows going from top to bottom, with each
-                      one having the actual data.
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 pink-note"
+                      />
+                      Another key difference is that <mark>Hashing</mark>{" "}
+                      provides you with the ability to authenticate data,
+                      messages, files, or other assets. Users can confirm that
+                      data sent from one user to another has not been
+                      intercepted and altered by comparing the original hash
+                      value with the one produced by the recipient. With
+                      encrypted data, on the other hand, there is no way to
+                      validate the data or tell if it has been changed, which is
+                      why hashing is preferred for authentication purposes.
                     </p>
                     <p>
-                      <strong>Columns:</strong> Each column, better referred to
-                      as a field, has a unique name per table. When creating a
-                      column, you also set the type of data it will contain,
-                      common ones being integers (numbers), strings (standard
-                      text) or dates. Some databases can contain much more
-                      complex data, such as geospatial, which contains location
-                      information. Setting the data type also ensures that
-                      incorrect information isn't stored, such as the string
-                      "hello world" being stored in a column meant for dates. If
-                      this happens, the database server will usually produce an
-                      error message. A column containing an integer can also
-                      have an auto-increment feature enabled; this gives each
-                      row of data a unique number that grows (increments) with
-                      each subsequent row. Doing so creates what is called a key
-                      field; a key field has to be unique for every row of data,
-                      which can be used to find that exact row in SQL queries.
-                    </p>
-                    <p>
-                      <strong>Rows:</strong> Rows or records contain individual
-                      lines of data. When you add data to the table, a new
-                      row/record is created; when you delete data, a row/record
-                      is removed.
-                    </p>
-                    <p>
-                      <strong>Relational Vs Non-Relational Databases:</strong> A
-                      relational database stores information in tables, and
-                      often, the tables share information between them; they use
-                      columns to specify and define the data being stored and
-                      rows actually to store the data. The tables will often
-                      contain a column that has a unique ID (primary key), which
-                      will then be used in other tables to reference it and
-                      cause a relationship between the tables, hence the name
-                      relational database.
-                    </p>
-                    <p>
-                      Non-relational databases, sometimes called NoSQL, on the
-                      other hand, are any sort of database that doesn't use
-                      tables, columns and rows to store the data. A specific
-                      database layout doesn't need to be constructed so each row
-                      of data can contain different information, giving more
-                      flexibility over a relational database. Some popular
-                      databases of this type are MongoDB, Cassandra and
-                      ElasticSearch.
-                    </p>
-                  </div>
-                </dd>
-
-                {/* Topic 3: What is SQL? */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span>Topic 3</span>What is SQL?
-                </dt>
-                <dd className="faq-body-labd" id="border-left">
-                  <div className="faq-content">
-                    <p>
-                      SQL (Structured Query Language) is a feature-rich language
-                      used for querying databases. These SQL queries are better
-                      referred to as statements.
-                    </p>
-                    <p>
-                      The simplest of the commands which we'll cover in this
-                      task is used to retrieve (select), update, insert and
-                      delete data. Although somewhat similar, some database
-                      servers have their own syntax and slight changes to how
-                      things work. All of these examples are based on a MySQL
-                      database. After learning the lessons, you'll easily be
-                      able to search for alternative syntax online for the
-                      different servers. It's worth noting that SQL syntax is
-                      not case-sensitive.
-                    </p>
-                    <p>
-                      <strong>SELECT:</strong> The first query type we'll learn
-                      is the SELECT query used to retrieve data from the
-                      database.
-                    </p>
-                    <pre>
-                      <code>{`select * from users;`}</code>
-                    </pre>
-                    <p>
-                      The first word SELECT, tells the database we want to
-                      retrieve some data; the * tells the database we want to
-                      receive back all columns from the table. For example, the
-                      table may contain three columns (id, username and
-                      password). "from users" tells the database we want to
-                      retrieve the data from the table named users. Finally, the
-                      semicolon at the end tells the database that this is the
-                      end of the query.
-                    </p>
-                    <p>
-                      The next query is similar to the above, but this time,
-                      instead of using the * to return all columns in the
-                      database table, we are just requesting the username and
-                      password field.
-                    </p>
-                    <pre>
-                      <code>{`select username,password from users;`}</code>
-                    </pre>
-                    <p>
-                      The following query, like the first, returns all the
-                      columns by using the * selector, and then the "LIMIT 1"
-                      clause forces the database to return only one row of data.
-                      Changing the query to "LIMIT 1,1" forces the query to skip
-                      the first result, and then "LIMIT 2,1" skips the first two
-                      results, and so on. You need to remember the first number
-                      tells the database how many results you wish to skip, and
-                      the second number tells the database how many rows to
-                      return.
-                    </p>
-                    <pre>
-                      <code>{`select * from users LIMIT 1;`}</code>
-                    </pre>
-                    <p>
-                      Lastly, we're going to utilise the where clause; this is
-                      how we can finely pick out the exact data we require by
-                      returning data that matches our specific clauses:
-                    </p>
-                    <pre>
-                      <code>
-                        {`select * from users where username='admin';`}
-                      </code>
-                    </pre>
-                    <p>
-                      This will only return the rows where the username is equal
-                      to admin.
-                    </p>
-                    <pre>
-                      <code>
-                        {`select * from users where username != 'admin';`}
-                      </code>
-                    </pre>
-                    <p>
-                      This will only return the rows where the username is NOT
-                      equal to admin.
-                    </p>
-                    <pre>
-                      <code>
-                        {`select * from users where username='admin' or username='jon';`}
-                      </code>
-                    </pre>
-                    <p>
-                      This will only return the rows where the username is
-                      either equal to admin or jon.
-                    </p>
-                    <pre>
-                      <code>
-                        {`select * from users where username='admin' and password='p4ssword';`}
-                      </code>
-                    </pre>
-                    <p>
-                      This will only return the rows where the username is equal
-                      to admin and the password is equal to p4ssword.
-                    </p>
-                    <p>
-                      Using the like clause allows you to specify data that
-                      isn't an exact match but instead either starts, contains
-                      or ends with certain characters by choosing where to place
-                      the wildcard character represented by a percentage sign %.
-                    </p>
-                    <pre>
-                      <code>
-                        {`select * from users where username like 'a%';`}
-                      </code>
-                    </pre>
-                    <p>
-                      This returns any rows with a username beginning with the
-                      letter a.
-                    </p>
-                    <pre>
-                      <code>
-                        {`select * from users where username like '%n';`}
-                      </code>
-                    </pre>
-                    <p>
-                      This returns any rows with a username ending with the
-                      letter n.
-                    </p>
-                    <pre>
-                      <code>
-                        {`select * from users where username like '%mi%';`}
-                      </code>
-                    </pre>
-                    <p>
-                      This returns any rows with a username containing the
-                      characters mi within them.
-                    </p>
-                    <p>
-                      <strong>UNION:</strong> The UNION statement combines the
-                      results of two or more SELECT statements to retrieve data
-                      from either single or multiple tables; the rules to this
-                      query are that the UNION statement must retrieve the same
-                      number of columns in each SELECT statement, the columns
-                      have to be of a similar data type, and the column order
-                      has to be the same. This might sound not very clear, so
-                      let's use the following analogy. Say a company wants to
-                      create a list of addresses for all customers and suppliers
-                      to post a new catalogue. We have one table called
-                      customers with the following contents:
-                    </p>
-                    <pre>
-                      <code>
-                        {`id | name           | address          | city      | postcode
-1  | Mr John Smith  | 123 Fake Street  | Manchester | M2 3FJ
-2  | Mrs Jenny Palmer | 99 Green Road   | Birmingham | B2 4KL
-3  | Miss Sarah Lewis | 15 Fore Street  | London     | NW12 3GH`}
-                      </code>
-                    </pre>
-                    <p>
-                      And another called suppliers with the following contents:
-                    </p>
-                    <pre>
-                      <code>
-                        {`id | company          | address                     | city     | postcode
-1  | Widgets Ltd     | Unit 1a, Newby Estate | Bristol   | BS19 4RT
-2  | The Tool Company | 75 Industrial Road   | Norwich   | N22 3DR
-3  | Axe Makers Ltd  | 2b Makers Unit, Market Road | London | SE9 1KK`}
-                      </code>
-                    </pre>
-                    <p>
-                      Using the following SQL Statement, we can gather the
-                      results from the two tables and put them into one result
-                      set:
-                    </p>
-                    <pre>
-                      <code>
-                        {`SELECT name,address,city,postcode from customers UNION SELECT company,address,city,postcode from suppliers;`}
-                      </code>
-                    </pre>
-                    <p>The results will look like this:</p>
-                    <pre>
-                      <code>
-                        {`name           | address                     | city      | postcode
-Mr John Smith  | 123 Fake Street          | Manchester | M2 3FJ
-Mrs Jenny Palmer | 99 Green Road           | Birmingham | B2 4KL
-Miss Sarah Lewis | 15 Fore Street          | London     | NW12 3GH
-Widgets Ltd     | Unit 1a, Newby Estate   | Bristol    | BS19 4RT
-The Tool Company | 75 Industrial Road     | Norwich    | N22 3DR
-Axe Makers Ltd  | 2b Makers Unit, Market Road | London | SE9 1KK`}
-                      </code>
-                    </pre>
-                    <p>
-                      <strong>INSERT:</strong> The INSERT statement tells the
-                      database we wish to insert a new row of data into the
-                      table. "into users" tells the database which table we wish
-                      to insert the data into, "(username,password)" provides
-                      the columns we are providing data for and then "values
-                      ('bob','password');" provides the data for the previously
-                      specified columns.
-                    </p>
-                    <pre>
-                      <code>
-                        {`insert into users (username,password) values ('bob','password123');`}
-                      </code>
-                    </pre>
-                    <p>The results will look like this:</p>
-                    <pre>
-                      <code>
-                        {`id | username | password
-1  | jon      | pass123
-2  | admin    | p4ssword
-3  | martin   | secret123
-4  | bob      | password123`}
-                      </code>
-                    </pre>
-                    <p>
-                      <strong>UPDATE:</strong> The UPDATE statement tells the
-                      database we wish to update one or more rows of data within
-                      a table. You specify the table you wish to update using
-                      "update %tablename% SET" and then select the field or
-                      fields you wish to update as a comma-separated list such
-                      as "username='root',password='pass123'" then finally,
-                      similar to the SELECT statement, you can specify exactly
-                      which rows to update using the where clause such as "where
-                      username='admin;".
-                    </p>
-                    <pre>
-                      <code>
-                        {`update users SET username='root',password='pass123' where username='admin';`}
-                      </code>
-                    </pre>
-                    <p>The results will look like this:</p>
-                    <pre>
-                      <code>
-                        {`id | username | password
-1  | jon      | pass123
-2  | root     | pass123
-3  | martin   | secret123
-4  | bob      | password123`}
-                      </code>
-                    </pre>
-                    <p>
-                      <strong>DELETE:</strong> The DELETE statement tells the
-                      database we wish to delete one or more rows of data. Apart
-                      from missing the columns you wish to return, the format of
-                      this query is very similar to the SELECT. You can specify
-                      precisely which data to delete using the where clause and
-                      the number of rows to be deleted using the LIMIT clause.
-                    </p>
-                    <pre>
-                      <code>
-                        {`delete from users where username='martin';`}
-                      </code>
-                    </pre>
-                    <p>The results will look like this:</p>
-                    <pre>
-                      <code>
-                        {`id | username | password
-1  | jon      | pass123
-2  | root     | pass123
-4  | bob      | password123`}
-                      </code>
-                    </pre>
-                    <p>
-                      If no WHERE clause is used, all data will be deleted from
-                      the table.
-                    </p>
-                    <pre>
-                      <code>{`delete from users;`}</code>
-                    </pre>
-                    <p>The results will look like this:</p>
-                    <pre>
-                      <code>{`id | username | password`}</code>
-                    </pre>
-                  </div>
-                </dd>
-
-                {/* Topic 4: What is SQL Injection? */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span>Topic 4</span>What is SQL Injection?
-                </dt>
-                <dd className="faq-body-labd" id="border-left">
-                  <div className="faq-content">
-                    <p>
-                      The point wherein a web application using SQL can turn
-                      into SQL Injection is when user-provided data gets
-                      included in the SQL query.
-                    </p>
-                    <p>
-                      Take the following scenario where you've come across an
-                      online blog, and each blog entry has a unique ID number.
-                      The blog entries may be either set to public or private,
-                      depending on whether they're ready for public release. The
-                      URL for each blog entry may look something like this:
-                    </p>
-                    <pre>
-                      <code>{`https://website.thm/blog?id=1`}</code>
-                    </pre>
-                    <p>
-                      From the URL above, you can see that the blog entry
-                      selected comes from the id parameter in the query string.
-                      The web application needs to retrieve the article from the
-                      database and may use an SQL statement that looks something
-                      like the following:
-                    </p>
-                    <pre>
-                      <code>
-                        {`SELECT * from blog where id=1 and private=0 LIMIT 1;`}
-                      </code>
-                    </pre>
-                    <p>
-                      From what you've learned in the previous task, you should
-                      be able to work out that the SQL statement above is
-                      looking in the blog table for an article with the id
-                      number of 1 and the private column set to 0, which means
-                      it's able to be viewed by the public and limits the
-                      results to only one match.
-                    </p>
-                    <p>
-                      As was mentioned at the start of this task, SQL Injection
-                      is introduced when user input is introduced into the
-                      database query. In this instance, the id parameter from
-                      the query string is used directly in the SQL query.
-                    </p>
-                    <p>
-                      Let's pretend article ID 2 is still locked as private, so
-                      it cannot be viewed on the website. We could now instead
-                      call the URL:
-                    </p>
-                    <pre>
-                      <code>{`https://website.thm/blog?id=2;--`}</code>
-                    </pre>
-                    <p>Which would then, in turn, produce the SQL statement:</p>
-                    <pre>
-                      <code>
-                        {`SELECT * from blog where id=2;-- and private=0 LIMIT 1;`}
-                      </code>
-                    </pre>
-                    <p>
-                      The semicolon in the URL signifies the end of the SQL
-                      statement, and the two dashes cause everything afterwards
-                      to be treated as a comment. By doing this, you're just, in
-                      fact, running the query:
-                    </p>
-                    <pre>
-                      <code>{`SELECT * from blog where id=2;--`}</code>
-                    </pre>
-                    <p>
-                      Which will return the article with an ID of 2 whether it
-                      is set to public or not.
-                    </p>
-                    <p>
-                      This was just one example of an SQL Injection
-                      vulnerability of a type called In-Band SQL Injection;
-                      there are three types in total: In-Band, Blind and
-                      Out-of-Band, which we'll discuss over the following tasks.
-                    </p>
-                  </div>
-                </dd>
-
-                {/* Topic 5: In-Band SQLi */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span>Topic 5</span>In-Band SQLi
-                </dt>
-                <dd className="faq-body-labd" id="border-left">
-                  <div className="faq-content">
-                    <p>
-                      In-Band SQL Injection is the easiest type to detect and
-                      exploit; In-Band just refers to the same method of
-                      communication being used to exploit the vulnerability and
-                      also receive the results, for example, discovering an SQL
-                      Injection vulnerability on a website page and then being
-                      able to extract data from the database to the same page.
-                    </p>
-                    <p>
-                      <strong>Error-Based SQL Injection:</strong> This type of
-                      SQL Injection is the most useful for easily obtaining
-                      information about the database structure, as error
-                      messages from the database are printed directly to the
-                      browser screen. This can often be used to enumerate a
-                      whole database.
-                    </p>
-                    <p>
-                      <strong>Union-Based SQL Injection:</strong> This type of
-                      Injection utilises the SQL UNION operator alongside a
-                      SELECT statement to return additional results to the page.
-                      This method is the most common way of extracting large
-                      amounts of data via an SQL Injection vulnerability.
-                    </p>
-                    <p>
-                      <strong>Practical:</strong> Click the green "Start
-                      Machine" button to use the SQL Injection Example practice
-                      lab. Each level contains a mock browser and also SQL Query
-                      and Error boxes to assist in getting your queries/payload
-                      correct.
-                    </p>
-                    <p>
-                      Level one of the practice lab contains a mock browser and
-                      website featuring a blog with different articles, which
-                      can be accessed by changing the id number in the query
-                      string.
-                    </p>
-                    <p>
-                      The key to discovering error-based SQL Injection is to
-                      break the code's SQL query by trying certain characters
-                      until an error message is produced; these are most
-                      commonly single apostrophes ( ' ) or a quotation mark ( "
-                      ).
-                    </p>
-                    <p>
-                      Try typing an apostrophe ( ' ) after the id=1 and press
-                      enter. And you'll see this returns an SQL error informing
-                      you of an error in your syntax. The fact that you've
-                      received this error message confirms the existence of an
-                      SQL Injection vulnerability. We can now exploit this
-                      vulnerability and use the error messages to learn more
-                      about the database structure.
-                    </p>
-                    <p>
-                      The first thing we need to do is return data to the
-                      browser without displaying an error message. Firstly,
-                      we'll try the UNION operator so we can receive an extra
-                      result if we choose it. Try setting the mock browsers id
-                      parameter to:
-                    </p>
-                    <pre>
-                      <code>{`1 UNION SELECT 1`}</code>
-                    </pre>
-                    <p>
-                      This statement should produce an error message informing
-                      you that the UNION SELECT statement has a different number
-                      of columns than the original SELECT query. So let's try
-                      again but add another column:
-                    </p>
-                    <pre>
-                      <code>{`1 UNION SELECT 1,2`}</code>
-                    </pre>
-                    <p>
-                      Same error again, so let's repeat by adding another
-                      column:
-                    </p>
-                    <pre>
-                      <code>{`1 UNION SELECT 1,2,3`}</code>
-                    </pre>
-                    <p>
-                      Success, the error message has gone, and the article is
-                      being displayed, but now we want to display our data
-                      instead of the article. The article is displayed because
-                      it takes the first returned result somewhere in the
-                      website's code and shows that. To get around that, we need
-                      the first query to produce no results. This can simply be
-                      done by changing the article ID from 1 to 0.
-                    </p>
-                    <pre>
-                      <code>{`0 UNION SELECT 1,2,3`}</code>
-                    </pre>
-                    <p>
-                      You'll now see the article is just made up of the result
-                      from the UNION select, returning the column values 1, 2,
-                      and 3. We can start using these returned values to
-                      retrieve more useful information. First, we'll get the
-                      database name that we have access to:
-                    </p>
-                    <pre>
-                      <code>{`0 UNION SELECT 1,2,database()`}</code>
-                    </pre>
-                    <p>
-                      You'll now see where the number 3 was previously
-                      displayed; it now shows the name of the database, which is
-                      sqli_one.
-                    </p>
-                    <p>
-                      Our next query will gather a list of tables that are in
-                      this database.
-                    </p>
-                    <pre>
-                      <code>
-                        {`0 UNION SELECT 1,2,group_concat(table_name) FROM information_schema.tables WHERE table_schema = 'sqli_one'`}
-                      </code>
-                    </pre>
-                    <p>
-                      There are a couple of new things to learn in this query.
-                      Firstly, the method group_concat() gets the specified
-                      column (in our case, table_name) from multiple returned
-                      rows and puts it into one string separated by commas. The
-                      next thing is the information_schema database; every user
-                      of the database has access to this, and it contains
-                      information about all the databases and tables the user
-                      has access to. In this particular query, we're interested
-                      in listing all the tables in the sqli_one database, which
-                      is article and staff_users.
-                    </p>
-                    <p>
-                      As the first level aims to discover Martin's password, the
-                      staff_users table is what interests us. We can utilise the
-                      information_schema database again to find the structure of
-                      this table using the below query.
-                    </p>
-                    <pre>
-                      <code>
-                        {`0 UNION SELECT 1,2,group_concat(column_name) FROM information_schema.columns WHERE table_name = 'staff_users'`}
-                      </code>
-                    </pre>
-                    <p>
-                      This is similar to the previous SQL query. However, the
-                      information we want to retrieve has changed from
-                      table_name to column_name, the table we are querying in
-                      the information_schema database has changed from tables to
-                      columns, and we're searching for any rows where the
-                      table_name column has a value of staff_users.
-                    </p>
-                    <p>
-                      The query results provide three columns for the
-                      staff_users table: id, password, and username. We can use
-                      the username and password columns for our following query
-                      to retrieve the user's information.
-                    </p>
-                    <pre>
-                      <code>
-                        {`0 UNION SELECT 1,2,group_concat(username,':',password SEPARATOR '<br/>') FROM staff_users`}
-                      </code>
-                    </pre>
-                    <p>
-                      Again, we use the group_concat method to return all of the
-                      rows into one string and make it easier to read. We've
-                      also added ,':', to split the username and password from
-                      each other. Instead of being separated by a comma, we've
-                      chosen the HTML <br /> tag that forces each result to be
-                      on a separate line to make for easier reading.
-                    </p>
-                    <p>
-                      You should now have access to Martin's password to enter
-                      and move to the next level.
-                    </p>
-                  </div>
-                </dd>
-
-                {/* Topic 6: Blind SQLi - Authentication Bypass */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span>Topic 6</span>Blind SQLi - Authentication Bypass
-                </dt>
-                <dd className="faq-body-labd" id="border-left">
-                  <div className="faq-content">
-                    <p>
-                      Unlike In-Band SQL injection, where we can see the results
-                      of our attack directly on the screen, blind SQLi is when
-                      we get little to no feedback to confirm whether our
-                      injected queries were, in fact, successful or not, this is
-                      because the error messages have been disabled, but the
-                      injection still works regardless. It might surprise you
-                      that all we need is that little bit of feedback to
-                      successfully enumerate a whole database.
-                    </p>
-                    <p>
-                      <strong>Authentication Bypass:</strong> One of the most
-                      straightforward Blind SQL Injection techniques is when
-                      bypassing authentication methods such as login forms. In
-                      this instance, we aren't that interested in retrieving
-                      data from the database; We just want to get past the
-                      login.
-                    </p>
-                    <p>
-                      Login forms that are connected to a database of users are
-                      often developed in such a way that the web application
-                      isn't interested in the content of the username and
-                      password but more in whether the two make a matching pair
-                      in the users table. In basic terms, the web application is
-                      asking the database, "Do you have a user with the username
-                      bob and the password bob123?" the database replies with
-                      either yes or no (true/false) and, depending on that
-                      answer, dictates whether the web application lets you
-                      proceed or not.
-                    </p>
-                    <p>
-                      Taking the above information into account, it's
-                      unnecessary to enumerate a valid username/password pair.
-                      We just need to create a database query that replies with
-                      a yes/true.
-                    </p>
-                    <p>
-                      <strong>Practical:</strong> Level Two of the SQL Injection
-                      examples shows this exact example. We can see in the box
-                      labelled "SQL Query" that the query to the database is the
-                      following:
-                    </p>
-                    <pre>
-                      <code>
-                        {`select * from users where username='%username%' and password='%password%' LIMIT 1;`}
-                      </code>
-                    </pre>
-                    <p>
-                      N.B The %username% and %password% values are taken from
-                      the login form fields. The initial values in the SQL Query
-                      box will be blank as these fields are currently empty.
-                    </p>
-                    <p>
-                      To make this into a query that always returns as true, we
-                      can enter the following into the password field:
-                    </p>
-                    <pre>
-                      <code>{`' OR 1=1;--`}</code>
-                    </pre>
-                    <p>Which turns the SQL query into the following:</p>
-                    <pre>
-                      <code>
-                        {`select * from users where username='' and password='' OR 1=1;`}
-                      </code>
-                    </pre>
-                    <p>
-                      Because 1=1 is a true statement and we've used an OR
-                      operator, this will always cause the query to return as
-                      true, which satisfies the web applications logic that the
-                      database found a valid username/password combination and
-                      that access should be allowed.
+                      <span className="pink-note">
+                        Compare & Contrast: Encryption vs. Hashing
+                      </span>
+                      Both hashing and encryption scramble data to protect it
+                      from hackers. But the way the data is scrambled, and what
+                      happens with it after encoding, is different.
+                      <div className="table-responsive w-75 mx-auto">
+                        <table className="table table-bordered compare-table">
+                          <tr>
+                            <th></th>
+                            <th>Encryption</th>
+                            <th>Hashing </th>
+                          </tr>
+                          <tr>
+                            <th>Goal </th>
+                            <td>Protect while in storage </td>
+                            <td>No</td>
+                          </tr>
+                          <tr>
+                            <th>Decoding available? </th>
+                            <td>Yes</td>
+                            <td>No</td>
+                          </tr>
+                          <tr>
+                            <th>Data anonymized?</th>
+                            <td>No</td>
+                            <td>No</td>
+                          </tr>
+                          <tr>
+                            <th>Type of key</th>
+                            <td>Public and Private</td>
+                            <td>Private</td>
+                          </tr>
+                          <tr>
+                            <th>Used for passwords?</th>
+                            <td>Yes, while in transit</td>
+                            <td>Yes, while in storage </td>
+                          </tr>
+                        </table>
+                      </div>
                     </p>
                   </div>
                 </dd>

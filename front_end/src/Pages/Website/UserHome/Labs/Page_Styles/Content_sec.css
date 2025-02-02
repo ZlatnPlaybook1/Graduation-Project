@@ -3,7 +3,6 @@
   margin-right: auto;
 }
 
-
 /* Extra small */
 @media (min-width: 0px) {
   .container-labd {
@@ -11,14 +10,12 @@
   }
 }
 
-
 /* small */
 @media (min-width: 576px) {
   .container-labd {
     max-width: 540px;
   }
 }
-
 
 /*  Medium */
 @media (min-width: 768px) {
@@ -39,6 +36,10 @@
   .container-labd {
     max-width: 1170px;
   }
+}
+
+b {
+  margin: 0;
 }
 
 /* Start landing-labd */
@@ -64,7 +65,12 @@
   inset: 0px;
   z-index: 1;
   height: 100%;
-  background: linear-gradient(to right, var(--alt-color) 30%, rgba(21, 28, 43, 0.98) 50%, transparent 100%);
+  background: linear-gradient(
+    to right,
+    var(--alt-color) 30%,
+    rgba(21, 28, 43, 0.98) 50%,
+    transparent 100%
+  );
 }
 
 .landing-labd .banner img {
@@ -78,8 +84,7 @@
 
 .landing-labd .breadcrumb ul {
   display: flex;
-  gap: .5rem;
-
+  gap: 0.5rem;
 }
 
 .landing-labd .breadcrumb ul li:first-of-type::before {
@@ -149,7 +154,7 @@
   color: green;
 }
 
-.landing-labd .course-info .course-icons i.fa-signal+p {
+.landing-labd .course-info .course-icons i.fa-signal + p {
   display: inline-block;
   color: green;
 }
@@ -160,7 +165,7 @@
   margin-right: 20px;
 }
 
-.landing-labd .course-info .course-icons i.fa-clock+p {
+.landing-labd .course-info .course-icons i.fa-clock + p {
   display: inline-block;
   padding-left: 10px;
 }
@@ -230,7 +235,6 @@
   margin-bottom: 70px;
 }
 
-
 .course-labd .course-labd-section {
   background-color: inherit;
   width: 100%;
@@ -243,7 +247,6 @@
   display: block;
   width: 100%;
 }
-
 
 @media (max-width: 991px) {
   .faq-section-labd .section-text-labd {
@@ -301,10 +304,10 @@
 
 .faq-section-labd .section-text-labd .faq-body-labd {
   font-size: 18px;
-  padding: 15px 25px;
+  padding: 25px;
   line-height: 1.9;
   border-left: 4px solid var(--sec-main-color);
-  box-shadow: 1px 2px rgb(0, 0, 0, .1);
+  box-shadow: 1px 2px rgb(0, 0, 0, 0.1);
   border-radius: 0 0 5px 5px;
   background-color: white;
   color: rgb(21, 28, 43);
@@ -316,6 +319,10 @@
   }
 }
 
+.faq-section-labd .section-text-labd .faq-body-labd .subject-section {
+  margin-bottom: 50px;
+}
+
 .faq-section-labd .section-text-labd .faq-body-labd img {
   width: 50%;
   margin-left: auto;
@@ -323,7 +330,6 @@
   display: inherit;
   margin-bottom: 30px;
 }
-
 
 .faq-section-labd .section-text-labd .faq-body-labd ol li {
   list-style: decimal;
@@ -394,14 +400,12 @@
 
 .faq-section-labd .section-text-labd .faq-body-labd .note {
   background: #f9f9f9;
-  border-left: 10px solid #FFBC49;
+  border-left: 10px solid #ffbc49;
   margin: 15px 10px;
-  padding: 5px 10px;
   color: rgb(21, 28, 43);
   font-size: 14px;
   font-weight: 400;
   font-style: italic;
-  width: max-content;
   padding: 10px 20px;
 }
 
@@ -436,7 +440,8 @@
   height: 5px;
   border-radius: 50%;
   background-color: rgb(255, 68, 68);
-  box-shadow: rgb(255, 68, 68) 0px 0px 0px 2px, rgb(178, 224, 40) 1.5rem 0px 0px 2px, rgb(255, 156, 7) 3rem 0px 0px 2px;
+  box-shadow: rgb(255, 68, 68) 0px 0px 0px 2px,
+    rgb(178, 224, 40) 1.5rem 0px 0px 2px, rgb(255, 156, 7) 3rem 0px 0px 2px;
 }
 
 .faq-section-labd .section-text-labd .faq-body-labd .terminal-code,
@@ -466,6 +471,9 @@
   display: flex;
   flex-direction: column;
 }
+.faq-section-labd .section-text-labd .faq-body-labd pre[class*="language-"] {
+  overflow-x: hidden;
+}
 
 .faq-section-labd .section-text-labd .faq-body-labd .token {
   color: rgb(186, 200, 212);
@@ -473,6 +481,9 @@
   font-size: 16px;
   line-height: 1.5;
   white-space: pre-wrap;
+}
+.faq-section-labd .section-text-labd .faq-body-labd .command-c {
+  margin-bottom: 5px;
 }
 
 .faq-section-labd .section-text-labd .faq-body-labd .token.punctuation {
@@ -554,7 +565,11 @@
   transition: 0.2s ease-in-out;
 }
 
-.faq-section-labd .section-text-labd .faq-body-labd form button:hover:not(:disabled) {
+.faq-section-labd
+  .section-text-labd
+  .faq-body-labd
+  form
+  button:hover:not(:disabled) {
   background-color: rgb(163, 234, 42);
 }
 
@@ -583,4 +598,29 @@
   color: white;
 }
 
+.pink-note {
+  color: #d63384;
+  font-weight: 400;
+  text-transform: capitalize;
+  background: linear-gradient(
+    90deg,
+    rgba(214, 51, 132, 0.2) 0%,
+    rgba(214, 51, 132, 0.1) 100%
+  );
+  padding: 0.2rem 0.4rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.pink-note:hover {
+  background: rgba(214, 51, 132, 0.3);
+}
+.oList {
+  padding-left: 1.2rem !important;
+}
+.table.compare-table td,
+.table.compare-table th {
+  text-align: center !important;
+  padding: 5 10px !important;
+}
 /* End course-labd Content */

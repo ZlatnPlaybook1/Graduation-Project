@@ -7,7 +7,9 @@
   -webkit-text-fill-color: transparent;
   margin-top: 2rem;
 }
-
+.card:hover {
+  z-index: 2000;
+}
 .custom-accordion .accordion-button {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;

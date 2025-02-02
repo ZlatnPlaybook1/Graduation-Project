@@ -13,6 +13,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/SQL_Injection/landing3.png"),
+    state: "not-published",
     link: "/sql_Injection",
   },
   {
@@ -29,6 +30,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/Cross_Site_Scripting/xss.jpeg.jpg"),
+    state: "not-published",
     link: "/xss",
   },
   {
@@ -45,6 +47,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/cookies/Cookies_transparent.png"),
+    state: "not-published",
     link: "/cookies",
   },
   {
@@ -61,6 +64,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/ACV/Landing.jpg"),
+    state: "not-published",
     link: "/AC_Vuln",
   },
   {
@@ -77,6 +81,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/Unrestricted File Upload/card_image.png"),
+    state: "not-published",
     link: "/UnrestrictedFileUpload",
   },
   {
@@ -93,6 +98,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/linux/linux_logo.png"),
+    state: "not-published",
     link: "/linux",
   },
   {
@@ -109,6 +115,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/BLV/Landing.jpg"),
+    state: "not-published",
     link: "/BL_Vuln",
   },
   {
@@ -125,6 +132,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/Broken Authentication/card_image.png"),
+    state: "not-published",
     link: "/broken-auth",
   },
   {
@@ -136,6 +144,7 @@ const courseData = [
     topics: ["simple bash scripts", "Variables", "Parameters", "Arrays"],
     difficulty: "Easy",
     image: require("../assets/img/bash/bash_course_logo.png"),
+    state: "not-published",
     link: "/bash-scripting",
   },
   {
@@ -152,6 +161,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/CSRF/landing.jpg"),
+    state: "not-published",
     link: "/CSRF",
   },
   {
@@ -169,6 +179,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/IDOR/Insecure_Direct_Object_Reference.png"),
+    state: "not-published",
     link: "/Insecure_Direct_Object_Reference(IDOR)",
   },
   {
@@ -185,6 +196,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/Obfuscation/card_image.png"),
+    state: "not-published",
     link: "/obfuscation",
   },
   {
@@ -201,6 +213,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/Regex/Landing.jpg"),
+    state: "not-published",
     link: "/Regex",
   },
   {
@@ -217,6 +230,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Lab2.jpg"),
+    state: "not-published",
     link: "/Path__Traversal",
   },
   {
@@ -233,6 +247,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Cryptography/card_image.png"),
+    state: "not-published",
     link: "/cryptography",
   },
   {
@@ -249,7 +264,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Hashing/landing.jpg"),
-    link: "/Hashing",
+    state: "Published",
     link: "/Hashing",
   },
   {
@@ -266,6 +281,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Lab2.jpg"),
+    state: "not-published",
     link: "/lab2",
   },
   {
@@ -282,6 +298,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/wireshark/card_image.png"),
+    state: "not-published",
     link: "/wireshark",
   },
   {
@@ -298,6 +315,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/AudFor/landing.png"),
+    state: "not-published",
     link: "/Digital_Forensics",
   },
   {
@@ -314,6 +332,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Lab2.jpg"),
+    state: "not-published",
     link: "/Command_Injection ",
   },
   {
@@ -330,6 +349,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/File Inclusion/card_image.png"),
+    state: "not-published",
     link: "/fileinclusion",
   },
   {
@@ -346,6 +366,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Path_Traversal/landing.jpeg"),
+    state: "not-published",
     link: "/Path_Traversal",
   },
   {
@@ -362,6 +383,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Lab2.jpg"),
+    state: "not-published",
     link: "/Insecure_Deserialization",
   },
   {
@@ -378,6 +400,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Server Side Template Injection/card_image.png"),
+    state: "not-published",
     link: "/SSTI",
   },
   {
@@ -394,6 +417,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Api_Hacking/landing.png"),
+    state: "not-published",
     link: "/Api_Hacking",
   },
   {
@@ -410,6 +434,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Lab2.jpg"),
+    state: "not-published",
     link: "/infoDisc",
   },
   {
@@ -426,6 +451,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Captcha Bypass/card_image.png"),
+    state: "not-published",
     link: "/captchabypass",
   },
   {
@@ -442,6 +468,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Click_Jacking/landing.jpg"),
+    state: "not-published",
     link: "/Click_Jacking",
   },
   {
@@ -458,6 +485,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Lab2.jpg"),
+    state: "not-published",
     link: "/infoDisc",
   },
   {
@@ -474,6 +502,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/JWT attacks/card_image.png"),
+    state: "not-published",
     link: "/jwtattacks",
   },
 ];
