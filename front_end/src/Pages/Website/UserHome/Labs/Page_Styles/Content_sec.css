@@ -453,7 +453,6 @@ b {
 .faq-section-labd .section-text-labd .faq-body-labd code[class*="language-"] {
   color: rgb(186, 200, 212);
   background: rgb(40, 44, 51);
-  flex-grow: 1;
   font-weight: 600;
   font-size: 16px;
   text-align: left;
@@ -463,6 +462,7 @@ b {
   line-height: 1.5;
   tab-size: 4;
   hyphens: none;
+  word-break: break-all;
   white-space: pre-wrap;
   margin-top: 0;
   margin-bottom: 2px;
@@ -482,6 +482,7 @@ b {
   line-height: 1.5;
   white-space: pre-wrap;
 }
+
 .faq-section-labd .section-text-labd .faq-body-labd .command-c {
   margin-bottom: 5px;
 }
@@ -615,9 +616,11 @@ b {
 .pink-note:hover {
   background: rgba(214, 51, 132, 0.3);
 }
+
 .oList {
   padding-left: 1.2rem !important;
 }
+
 .table.compare-table td,
 .table.compare-table th {
   text-align: center !important;
