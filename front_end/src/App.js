@@ -72,11 +72,10 @@ import REGEX_FIRST_LAB from "./Pages/Website/UserHome/Labs/Regex/practical/first
 import REGEX_SECOND_LAB from "./Pages/Website/UserHome/Labs/Regex/practical/second_lab/Second_Lab.jsx";
 // End Regular Expression
 //Careers in Cyber
-// import CAREERS_IN_CYBER from "./Pages/Website/UserHome/Labs/";
-// import PATH_TRAVERSAL from "./Pages/Website/UserHome/Labs/Path-Traversal/Path_Traversal.jsx";
-// import PATH_TRAVERSAL_LABS from "./Pages/Website/UserHome/Labs/Path-Traversal/Path_Traversal_labs.jsx";
-// import PATH_TRAVERSAL_FIRST_LAB from "./Pages/Website/UserHome/Labs/Path-Traversal/practical/first_lab/First_Lab.jsx";
-// import PATH_TRAVERSAL_SECOND_LAB from "./Pages/Website/UserHome/Labs/Path-Traversal/practical/second_lab/Second_Lab.jsx";
+import CAREERS_IN_CYBER from "./Pages/Website/UserHome/Labs/CareersInCyber/CareersInCyber.jsx";
+import CAREERS_IN_CYBER_LABS from "./Pages/Website/UserHome/Labs/CareersInCyber/CareersInCyber_labs.jsx";
+import CAREERS_IN_CYBER_FIRST_LAB from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/first_lab/First_Lab.jsx";
+
 // End Careers in Cyber
 // Api Hacking
 import API_HACKING from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking.jsx";
@@ -446,21 +445,17 @@ function App() {
           />
 
           {/* End Digital Forensics */}
-          {/* Path Traversal */}
-          {/* <Route path="/Path_Traversal" element={<PATH_TRAVERSAL />} />
+          {/* Careers in Cyber */}
+          <Route path="/CareersInCyber" element={<CAREERS_IN_CYBER />} />
           <Route
-            path="/Path_Traversal/Path_Traversal_labs"
-            element={<PATH_TRAVERSAL_LABS />}
+            path="/CareersInCyber/CareersInCyber_labs"
+            element={<CAREERS_IN_CYBER_LABS />}
           />
           <Route
-            path="/Path_Traversal/Path_Traversal_labs/lab1"
-            element={<PATH_TRAVERSAL_FIRST_LAB />}
+            path="/CareersInCyber/CareersInCyber_labs/lab1"
+            element={<CAREERS_IN_CYBER_FIRST_LAB />}
           />
-          <Route
-            path="/Path_Traversal/Path_Traversal_labs/lab2"
-            element={<PATH_TRAVERSAL_SECOND_LAB />}
-          /> */}
-          {/* End Path Traversal */}
+          {/* End Careers in Cyber */}
 
           {/* Api Hacking */}
           <Route path="/Api_Hacking" element={<API_HACKING />} />

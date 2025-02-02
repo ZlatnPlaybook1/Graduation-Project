@@ -1,20 +1,20 @@
 const courseData = [
   {
     id: 1,
-    category: "Web Vulnerabilities",
-    title: "SQL Injection",
+    category: "Temporary Category",
+    title: "Careers in Cyber",
     description:
-      "Learn how attackers exploit vulnerabilities in web applications using SQL injection and understand the techniques to detect and prevent them.",
+      "Before hacking something, you first need to understand the basics",
     topics: [
-      "Retrieving hidden data",
-      "SQL injection UNION attacks",
-      "Finding columns with a useful data type",
-      "Using a SQL injection UNION attack to retrieve interesting data",
+      "Cyber Security Basics",
+      "Networking Basics and Weaknesses",
+      "The Web And Common Attacks",
+      "Learn to Use The Linux OS",
     ],
-    difficulty: "Easy",
-    image: require("../assets/img/SQL_Injection/landing3.png"),
+    difficulty: "Medium",
+    image: require("../assets/img/CareersInCyber/landing.jpg"),
     state: "pending",
-    link: "/sql_Injection",
+    link: "/CareersInCyber",
   },
   {
     id: 2,
@@ -53,19 +53,19 @@ const courseData = [
   {
     id: 4,
     category: "Web Vulnerabilities",
-    title: "Access Control Vulnerabilities",
+    title: "SQL Injection",
     description:
-      "Learn how attackers exploit vulnerabilities in web applications to bypass access controls and understand the techniques to detect and prevent them.",
+      "Learn how attackers exploit vulnerabilities in web applications using SQL injection and understand the techniques to detect and prevent them.",
     topics: [
-      "What are Access Control Vulnerabilities?",
-      "Types of Access Control Flaws",
-      "Exploitation Examples",
-      "Mitigation Techniques",
+      "Retrieving hidden data",
+      "SQL injection UNION attacks",
+      "Finding columns with a useful data type",
+      "Using a SQL injection UNION attack to retrieve interesting data",
     ],
     difficulty: "Easy",
-    image: require("../assets/img/ACV/Landing.jpg"),
+    image: require("../assets/img/SQL_Injection/landing3.png"),
     state: "pending",
-    link: "/AC_Vuln",
+    link: "/sql_Injection",
   },
   {
     id: 5,
@@ -104,19 +104,19 @@ const courseData = [
   {
     id: 7,
     category: "Web Vulnerabilities",
-    title: "Business Logic Vulnerabilities",
+    title: "Access Control Vulnerabilities",
     description:
-      "Before hacking something, you first need to understand the basics",
+      "Learn how attackers exploit vulnerabilities in web applications to bypass access controls and understand the techniques to detect and prevent them.",
     topics: [
-      "Cyber Security Basics",
-      "Networking Basics and Weaknesses",
-      "The Web And Common Attacks",
-      "Learn to Use The Linux OS",
+      "What are Access Control Vulnerabilities?",
+      "Types of Access Control Flaws",
+      "Exploitation Examples",
+      "Mitigation Techniques",
     ],
     difficulty: "Easy",
-    image: require("../assets/img/BLV/Landing.jpg"),
-    state: "not-published",
-    link: "/BL_Vuln",
+    image: require("../assets/img/ACV/Landing.jpg"),
+    state: "pending",
+    link: "/AC_Vuln",
   },
   {
     id: 8,
@@ -149,8 +149,8 @@ const courseData = [
   },
   {
     id: 10,
-    category: "Fundamentals",
-    title: "Cross Site Request Forgery (CSRF)",
+    category: "Web Vulnerabilities",
+    title: "Business Logic Vulnerabilities",
     description:
       "Before hacking something, you first need to understand the basics",
     topics: [
@@ -160,9 +160,9 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Easy",
-    image: require("../assets/img/CSRF/landing.jpg"),
+    image: require("../assets/img/BLV/Landing.jpg"),
     state: "not-published",
-    link: "/CSRF",
+    link: "/BL_Vuln",
   },
   {
     id: 11,
@@ -200,11 +200,11 @@ const courseData = [
     link: "/obfuscation",
   },
   {
-    id: 13,
-    category: "Specialized Topics",
-    title: "Regular expressions",
+    id: 10,
+    category: "Fundamentals",
+    title: "Cross Site Request Forgery (CSRF)",
     description:
-      " Before hacking something, you first need to understand the basics",
+      "Before hacking something, you first need to understand the basics",
     topics: [
       "Cyber Security Basics",
       "Networking Basics and Weaknesses",
@@ -212,9 +212,9 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Easy",
-    image: require("../assets/img/Regex/Landing.jpg"),
-    state: "published",
-    link: "/Regex",
+    image: require("../assets/img/CSRF/landing.jpg"),
+    state: "not-published",
+    link: "/CSRF",
   },
   {
     id: 14,
@@ -252,20 +252,20 @@ const courseData = [
   },
   {
     id: 16,
-    category: "Temporary Category",
-    title: "Hashing",
+    category: "Specialized Topics",
+    title: "Regular expressions",
     description:
-      "Before hacking something, you first need to understand the basics",
+      " Before hacking something, you first need to understand the basics",
     topics: [
       "Cyber Security Basics",
       "Networking Basics and Weaknesses",
       "The Web And Common Attacks",
       "Learn to Use The Linux OS",
     ],
-    difficulty: "Medium",
-    image: require("../assets/img/Hashing/landing.jpg"),
+    difficulty: "Easy",
+    image: require("../assets/img/Regex/Landing.jpg"),
     state: "published",
-    link: "/Hashing",
+    link: "/Regex",
   },
   {
     id: 17,
@@ -304,9 +304,9 @@ const courseData = [
   {
     id: 19,
     category: "Temporary Category",
-    title: "Digital Forensics",
+    title: "Hashing",
     description:
-      " Before hacking something, you first need to understand the basics",
+      "Before hacking something, you first need to understand the basics",
     topics: [
       "Cyber Security Basics",
       "Networking Basics and Weaknesses",
@@ -314,9 +314,9 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/AudFor/landing.png"),
+    image: require("../assets/img/Hashing/landing.jpg"),
     state: "published",
-    link: "/Digital_Forensics",
+    link: "/Hashing",
   },
   {
     id: 20,
@@ -355,9 +355,9 @@ const courseData = [
   {
     id: 22,
     category: "Temporary Category",
-    title: "Careers in Cyber",
+    title: "Digital Forensics",
     description:
-      "Before hacking something, you first need to understand the basics",
+      " Before hacking something, you first need to understand the basics",
     topics: [
       "Cyber Security Basics",
       "Networking Basics and Weaknesses",
@@ -365,9 +365,9 @@ const courseData = [
       "Learn to Use The Linux OS",
     ],
     difficulty: "Medium",
-    image: require("../assets/img/CareersInCyber/landing.jpg"),
-    state: "pending",
-    link: "/",
+    image: require("../assets/img/AudFor/landing.png"),
+    state: "published",
+    link: "/Digital_Forensics",
   },
   {
     id: 23,

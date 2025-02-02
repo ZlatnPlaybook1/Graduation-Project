@@ -4,6 +4,7 @@ import Footer from "../../Footer/Footer";
 import "../Page_Styles/Content_sec.css";
 import background from "../../assets/img/CareersInCyber/background.png";
 import courseImage from "../../assets/img/CareersInCyber/courseImage.png";
+import CareerImag from "../../assets/img/CareersInCyber/courseImage.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -41,23 +42,48 @@ export default function Regex() {
               <dl className="section-text-labd">
                 {/* Topic 1 */}
                 <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span>Topic 1</span>Introduction
+                  <span>Topic 1</span> Introduction
                 </dt>
                 <dd className="fadeInUp faq-body-labd">
                   <div className="faq-content">
+                    <div className="faq-image">
+                      <img src={CareerImag} alt="Careers In Cyber" />
+                      <p className="image-caption">Careers In Cyber</p>
+                    </div>
                     <p>
-                      <mark>What are regular expressions?</mark> <br />
-                      Regular expressions (or Regex) are patterns of text that
-                      you define to search documents and match exactly what
-                      you're looking for.
+                      Cyber security careers are becoming more in demand and
+                      offer high salaries. There are many different jobs within
+                      the security industry, from offensive pentesting (hacking
+                      machines and reporting on vulnerabilities) to defensive
+                      security (defending against and investigating
+                      cyberattacks).
                     </p>
                     <p>
-                      <mark>Why should I learn how to use them?</mark> <br />
-                      Even if you won't need them sooner or later, it's a great
-                      tool to know how to use. It will make you more capable in
-                      CTF's, and potentially a better developer if that's a goal
-                      you have. You spend a little time learning it and save
-                      yourself lots of time in the long run by using it.
+                      Why get a career in cyber:
+                      <ol className="oL">
+                        <li>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2"
+                          />
+                          High Pay - jobs in security have high starting
+                          salaries
+                        </li>
+                        <li>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2"
+                          />
+                          Exciting - work can include legally hacking systems or
+                          defending against cyber attacks
+                        </li>
+                        <li>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2"
+                          />
+                        </li>
+                      </ol>
                     </p>
                     <p>
                       <mark>I know all that, but I'm lazy.</mark> <br />
