@@ -229,6 +229,20 @@
   flex-direction: row;
 }
 
+.selection-style {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.selection-style select {
+  padding: 5px 45px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+
 .faq-section-labcc form input {
   flex: 3 1 0%;
   padding: 7px 12px;
@@ -268,6 +282,21 @@
 
 .faq-section-labcc form button:hover:not(:disabled) {
   background-color: rgb(163, 234, 42);
+  color: whitesmoke;
+}
+
+.capital-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.capital-info img {
+  max-width: 100%;
+  height: auto;
 }
 
 .fileViewer {
