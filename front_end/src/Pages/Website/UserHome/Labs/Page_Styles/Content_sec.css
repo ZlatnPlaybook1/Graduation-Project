@@ -620,6 +620,7 @@ b {
 
 .oList {
   padding-left: 1.2rem !important;
+  list-style: none !important;
 }
 
 .table.compare-table td,
