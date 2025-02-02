@@ -471,7 +471,11 @@ b {
   display: flex;
   flex-direction: column;
 }
+<<<<<<< HEAD
 .faq-section-labd .section-text-labd .faq-body-labd pre[class*="language-"] {
+=======
+.faq-section-labd .section-text-labd .faq-body-labd pre[class*="language-"]{
+>>>>>>> 55774d137845e9cc1002b0975fa41652242fffb7
   overflow-x: hidden;
 }
 

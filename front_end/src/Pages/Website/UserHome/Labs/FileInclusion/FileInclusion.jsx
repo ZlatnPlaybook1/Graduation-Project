@@ -170,10 +170,15 @@ export default function FileInclusion() {
                     c:\boot.ini, then the attacker can try the following
                     depending on the target OS version:
                   </p>
+<<<<<<< HEAD
                   <p>
                     http://webapp.cyberlaps/get.php?file=../../../../boot.ini or
                   </p>
                   <p>
+=======
+                  <p>http://webapp.cyberlaps/get.php?file=../../../../boot.ini or</p>
+                  <p>
+>>>>>>> 55774d137845e9cc1002b0975fa41652242fffb7
                     http://webapp.cyberlaps/get.php?file=../../../../windows/win.ini
                   </p>
                   <p>
@@ -363,8 +368,13 @@ export default function FileInclusion() {
                         <a href="http://webapp.cyberlaps/index.php?lang=EN">
                           http://webapp.cyberlaps/index.php?lang=EN
                         </a>
+<<<<<<< HEAD
                         . If we enter an invalid input, such as cyberlaps, we
                         get the following error
+=======
+                        . If we enter an invalid input, such as cyberlaps, we get the
+                        following error
+>>>>>>> 55774d137845e9cc1002b0975fa41652242fffb7
                       </p>
                       <div className="terminal-container">
                         <div className="terminal-content">
@@ -377,11 +387,17 @@ export default function FileInclusion() {
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
+<<<<<<< HEAD
                                     Warning: include(languages/cyberlaps.php):
                                     failed to open stream: No such file or
                                     directory in
                                     /var/www/html/cyberlaps-4/index.php on line
                                     12
+=======
+                                    Warning: include(languages/cyberlaps.php): failed
+                                    to open stream: No such file or directory in
+                                    /var/www/html/cyberlaps-4/index.php on line 12
+>>>>>>> 55774d137845e9cc1002b0975fa41652242fffb7
                                   </span>
                                 </span>
                               </span>
@@ -391,8 +407,13 @@ export default function FileInclusion() {
                       </div>
                       <p>
                         The error message discloses significant information. By
+<<<<<<< HEAD
                         entering cyberlaps as input, an error message shows what
                         the include function looks like:
+=======
+                        entering cyberlaps as input, an error message shows what the
+                        include function looks like:
+>>>>>>> 55774d137845e9cc1002b0975fa41652242fffb7
                         include(languages/cyberlaps.php);.
                       </p>
                       <p>
@@ -420,8 +441,13 @@ export default function FileInclusion() {
                       </p>
                       <p className="note">
                         Note that we used 4 ../ because we know the path has
+<<<<<<< HEAD
                         four levels /var/www/html/cyberlaps-4. But we still
                         receive the following error:
+=======
+                        four levels /var/www/html/cyberlaps-4. But we still receive
+                        the following error:
+>>>>>>> 55774d137845e9cc1002b0975fa41652242fffb7
                       </p>
                       <div className="terminal-container">
                         <div className="terminal-content">
@@ -437,9 +463,14 @@ export default function FileInclusion() {
                                     Warning:
                                     include(languages/../../../../../etc/passwd.php):
                                     failed to open stream: No such file or
+<<<<<<< HEAD
                                     directory in
                                     /var/www/html/cyberlaps-4/index.php on line
                                     12
+=======
+                                    directory in /var/www/html/cyberlaps-4/index.php
+                                    on line 12
+>>>>>>> 55774d137845e9cc1002b0975fa41652242fffb7
                                   </span>
                                 </span>
                               </span>
@@ -530,9 +561,14 @@ export default function FileInclusion() {
                                   <span className="token user">
                                     Warning: include(languages/etc/passwd):
                                     failed to open stream: No such file or
+<<<<<<< HEAD
                                     directory in
                                     /var/www/html/cyberlaps-5/index.php on line
                                     15
+=======
+                                    directory in /var/www/html/cyberlaps-5/index.php
+                                    on line 15
+>>>>>>> 55774d137845e9cc1002b0975fa41652242fffb7
                                   </span>
                                 </span>
                               </span>
@@ -606,9 +642,14 @@ export default function FileInclusion() {
                   <p>
                     The following figure is an example of steps for a successful
                     RFI attack! Let’s say that the attacker hosts a PHP file on
+<<<<<<< HEAD
                     their own server{" "}
                     <span>http://attacker.cyberlaps/cmd.txt</span> where cmd.txt
                     contains a printing message Hello cyberlaps.
+=======
+                    their own server <span>http://attacker.cyberlaps/cmd.txt</span>{" "}
+                    where cmd.txt contains a printing message Hello cyberlaps.
+>>>>>>> 55774d137845e9cc1002b0975fa41652242fffb7
                   </p>
                   <div className="terminal-container">
                     <div className="terminal-content">
@@ -641,8 +682,12 @@ export default function FileInclusion() {
                     file. As a result, the web app includes the remote file into
                     include function to execute the PHP file within the page and
                     send the execution content to the attacker. In our case, the
+<<<<<<< HEAD
                     current page somewhere has to show the Hello cyberlaps
                     message.
+=======
+                    current page somewhere has to show the Hello cyberlaps message.
+>>>>>>> 55774d137845e9cc1002b0975fa41652242fffb7
                   </p>
                   <p>
                     Visit the following lab URL:{" "}
