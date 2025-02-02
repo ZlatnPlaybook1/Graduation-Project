@@ -698,7 +698,7 @@ export default function Bash() {
                 onClick={() => handleGoToLab("/bash-scripting/bash_quiz")}
                 className="go-to"
               >
-                Go To Labs
+                Go To Quiz
               </button>
             </div>
           </div>
