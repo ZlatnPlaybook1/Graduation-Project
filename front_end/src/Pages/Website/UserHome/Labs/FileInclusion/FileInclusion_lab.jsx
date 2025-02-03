@@ -50,6 +50,20 @@ export default function FileInclusion_lab() {
               brief={"You Will Learn How To Use File Inclusion"}
               difficulty={"Easy"}
             />
+            <Card
+              link={"/fileinclusion/fileinclusion_lab/Learn-the-capital-2"}
+              image={image}
+              title={"Learn The Capital #2"}
+              brief={"You Will Learn How To Use File Inclusion"}
+              difficulty={"Intermediate"}
+            />
+            <Card
+              link={"/fileinclusion/fileinclusion_lab/Learn-the-capital-3"}
+              image={image}
+              title={"Learn The Capital #3"}
+              brief={"You Will Learn How To Use File Inclusion"}
+              difficulty={"Hard"}
+            />
           </div>
         </div>
       </div>

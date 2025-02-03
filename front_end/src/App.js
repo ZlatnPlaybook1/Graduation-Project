@@ -159,6 +159,8 @@ import ARP_TRICK from "./Pages/Website/UserHome/Labs/WireShark/Practical/first_l
 import FileInclusion from "./Pages/Website/UserHome/Labs/FileInclusion/FileInclusion.jsx";
 import FILEINCLUSION_LAB from "./Pages/Website/UserHome/Labs/FileInclusion/FileInclusion_lab.jsx";
 import LEARN_CAPITAL_1 from "./Pages/Website/UserHome/Labs/FileInclusion/Practical/first_lab/Learn_capital_1.jsx";
+import LEARN_CAPITAL_2 from "./Pages/Website/UserHome/Labs/FileInclusion/Practical/second_lab/Learn_capital_2.jsx";
+import LEARN_CAPITAL_3 from "./Pages/Website/UserHome/Labs/FileInclusion/Practical/third_lab/Learn_capital_3.jsx";
 
 // End FileInclusion
 // SSTI
@@ -815,6 +817,14 @@ function App() {
           <Route
             path="fileinclusion/fileinclusion_lab/Learn-the-capital-1"
             element={<LEARN_CAPITAL_1 />}
+          />
+          <Route
+            path="fileinclusion/fileinclusion_lab/Learn-the-capital-2"
+            element={<LEARN_CAPITAL_2 />}
+          />
+          <Route
+            path="fileinclusion/fileinclusion_lab/Learn-the-capital-3"
+            element={<LEARN_CAPITAL_3 />}
           />
           {/* End FileInclusion */}
           {/* Start SSTI */}

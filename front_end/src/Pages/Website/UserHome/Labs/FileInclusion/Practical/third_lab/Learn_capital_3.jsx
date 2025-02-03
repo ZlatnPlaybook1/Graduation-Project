@@ -5,14 +5,14 @@ import "../../../Page_Styles/Practical_Flag_answers.css";
 import React, { useEffect, useState } from "react";
 
 // Import images for the capitals
-import BerlinImage from "../images/lab1/Berlin.jpeg";
-import CairoImage from "../images/lab1/Cairo.jpeg";
-import LondonImage from "../images/lab1/London.jpeg";
-import ParisImage from "../images/lab1/Paris.jpeg";
-import PyongyangImage from "../images/lab1/Pyongyang.jpeg";
-import TokyoImage from "../images/lab1/Tokyo.jpeg";
+import BMWImage from "../images/lab3/BMW.jpeg";
+import GTRImage from "../images/lab3/GTR.jpeg";
+import HondaImage from "../images/lab3/Honda.jpeg";
+import KiaImage from "../images/lab3/Kia.jpeg";
+import MazdaImage from "../images/lab3/Mazda.jpeg";
+import NissanImage from "../images/lab3/Nissan.jpeg";
 
-export default function Learn_capital_1() {
+export default function Learn_capital_3() {
   const [selectedFile, setSelectedFile] = useState("");
   const [fileContent, setFileContent] = useState("");
   const [capitalImage, setCapitalImage] = useState("");
@@ -20,29 +20,29 @@ export default function Learn_capital_1() {
 
   // Simulated file system for educational purposes
   const allowedFiles = {
-    Berlin: {
-      content: "Berlin is the capital of Germany.",
-      image: BerlinImage,
+    BMW: {
+      content: "BMW is A Car.",
+      image: BMWImage,
     },
-    Cairo: {
-      content: "Cairo is the capital of Egypt.",
-      image: CairoImage,
+    GTR: {
+      content: "GTR is A Car.",
+      image: GTRImage,
     },
-    London: {
-      content: "London is the capital of England.",
-      image: LondonImage,
+    Honda: {
+      content: "Honda is A Car.",
+      image: HondaImage,
     },
-    Paris: {
-      content: "Paris is the capital of France.",
-      image: ParisImage,
+    Kia: {
+      content: "Kia is A Car.",
+      image: KiaImage,
     },
-    Pyongyang: {
-      content: "Pyongyang is the capital of North Korea.",
-      image: PyongyangImage,
+    Mazda: {
+      content: "Mazda is A Car.",
+      image: MazdaImage,
     },
-    Tokyo: {
-      content: "Tokyo is the capital of Japan.",
-      image: TokyoImage,
+    Nissan: {
+      content: "Nissan is A Car.",
+      image: NissanImage,
     },
   };
 

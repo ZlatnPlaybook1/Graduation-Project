@@ -5,14 +5,14 @@ import "../../../Page_Styles/Practical_Flag_answers.css";
 import React, { useEffect, useState } from "react";
 
 // Import images for the capitals
-import BerlinImage from "../images/lab1/Berlin.jpeg";
-import CairoImage from "../images/lab1/Cairo.jpeg";
-import LondonImage from "../images/lab1/London.jpeg";
-import ParisImage from "../images/lab1/Paris.jpeg";
-import PyongyangImage from "../images/lab1/Pyongyang.jpeg";
-import TokyoImage from "../images/lab1/Tokyo.jpeg";
+import AppleImage from "../images/lab2/Apple.jpeg";
+import BananaImage from "../images/lab2/Banana.jpeg";
+import GuavaImage from "../images/lab2/Guava.jpeg";
+import MangoImage from "../images/lab2/Mango.jpeg";
+import StrawberryImage from "../images/lab2/Strawberry.jpeg";
+import WaterMelonImage from "../images/lab2/WaterMelon.jpeg";
 
-export default function Learn_capital_1() {
+export default function Learn_capital_2() {
   const [selectedFile, setSelectedFile] = useState("");
   const [fileContent, setFileContent] = useState("");
   const [capitalImage, setCapitalImage] = useState("");
@@ -20,29 +20,29 @@ export default function Learn_capital_1() {
 
   // Simulated file system for educational purposes
   const allowedFiles = {
-    Berlin: {
-      content: "Berlin is the capital of Germany.",
-      image: BerlinImage,
+    Apple: {
+      content: "Apple is A Fruit.",
+      image: AppleImage,
     },
-    Cairo: {
-      content: "Cairo is the capital of Egypt.",
-      image: CairoImage,
+    Banana: {
+      content: "Banana is A Fruit.",
+      image: BananaImage,
     },
-    London: {
-      content: "London is the capital of England.",
-      image: LondonImage,
+    Guava: {
+      content: "Guava is A Fruit.",
+      image: GuavaImage,
     },
-    Paris: {
-      content: "Paris is the capital of France.",
-      image: ParisImage,
+    Mango: {
+      content: "Mango is A Fruit.",
+      image: MangoImage,
     },
-    Pyongyang: {
-      content: "Pyongyang is the capital of North Korea.",
-      image: PyongyangImage,
+    Strawberry: {
+      content: "Strawberry is A Fruit.",
+      image: StrawberryImage,
     },
-    Tokyo: {
-      content: "Tokyo is the capital of Japan.",
-      image: TokyoImage,
+    WaterMelon: {
+      content: "WaterMelon is A Fruit.",
+      image: WaterMelonImage,
     },
   };
 
