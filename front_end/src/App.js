@@ -62,6 +62,8 @@ import CSRF from "./Pages/Website/UserHome/Labs/CSRF/CSRF.jsx";
 import CSRF_LABS from "./Pages/Website/UserHome/Labs/CSRF/CSRF_labs.jsx";
 import CSRF_FIRST_LAB from "./Pages/Website/UserHome/Labs/CSRF/practical/first_lab/First_Lab.jsx";
 import CSRF_SECOND_LAB from "./Pages/Website/UserHome/Labs/CSRF/practical/second_lab/Second_Lab.jsx";
+import CSRF_THIRD_LAB from "./Pages/Website/UserHome/Labs/CSRF/practical/third_lab/Third_Lab.jsx";
+import CSRF_FOURTH_LAB from "./Pages/Website/UserHome/Labs/CSRF/practical/quiz/MCQQuiz.jsx";
 // End Cross-Site Request Forgery
 
 // Regular Expression
@@ -337,6 +339,11 @@ function App() {
             path="/CSRF/CSRF_labs/second_lab"
             element={<CSRF_SECOND_LAB />}
           />
+          <Route
+            path="/CSRF/CSRF_labs/third_lab"
+            element={<CSRF_THIRD_LAB />}
+          />
+          <Route path="/CSRF/CSRF_labs/MCQQuiz" element={<CSRF_FOURTH_LAB />} />
 
           {/* End CSRF */}
           {/* Regex */}

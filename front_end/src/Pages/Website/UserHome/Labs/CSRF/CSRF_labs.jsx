@@ -93,7 +93,7 @@ export default function CSRF_labs() {
             />
             {/* MCQ Quiz */}
             <Card
-              link={"/CSRF/CSRF_labs/third_lab"}
+              link={"/CSRF/CSRF_labs/MCQQuiz"}
               image={labImg}
               title={"MCQ Quiz"}
               brief={[
