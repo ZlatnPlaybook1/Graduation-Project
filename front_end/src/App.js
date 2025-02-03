@@ -17,7 +17,6 @@ import SQLInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/SQLInjecti
 import LoginSqlInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/first_lab/LoginSqlInjection.jsx";
 import Welcome from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/first_lab/Welcome.jsx";
 import OUR_STORE from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/second_lab/Our_Store.jsx";
-import IN_STORE from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/second_lab/In_Store.jsx";
 import WITH_STOCK from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/second_lab/With_Stock.jsx";
 import PRICES_EXP from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/third_lab/Prices_exp.jsx";
 import SHOW_PRICES from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/third_lab/Show_prices.jsx";
@@ -260,10 +259,6 @@ function App() {
           <Route
             path="/Sql_Injection/sql_Injection_lab/second_lab/our_store"
             element={<OUR_STORE />}
-          />
-          <Route
-            path="/Sql_Injection/sql_Injection_lab/second_lab/in_store"
-            element={<IN_STORE />}
           />
           <Route
             path="/Sql_Injection/sql_Injection_lab/second_lab/our_store'+or+1=1--"

@@ -468,7 +468,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/Click_Jacking/landing.jpg"),
-    state: "not-published",
+    state: "pending",
     link: "/Click_Jacking",
   },
   {
