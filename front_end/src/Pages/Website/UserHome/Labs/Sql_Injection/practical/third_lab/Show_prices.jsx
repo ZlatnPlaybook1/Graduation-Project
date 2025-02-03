@@ -1,26 +1,7 @@
-import "./Show_prices.css";
-import { useState } from "react";
-import axios from "axios";
+import data from "./Data.json";
 import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 export default function Show_prices() {
-  const [loading, setLoading] = useState(false);
-  const [err, setErr] = useState("");
-  axios
-    .post("http://127.0.0.1:8080/api/Show_Prices")
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      setLoading(false);
-      if (error.response) {
-        setErr(error.response.data);
-        console.error(error.response.data);
-      } else {
-        setErr("Network Error");
-        console.error(error);
-      }
-    });
   const hintMessage = `
     <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
       <li>1.
@@ -51,29 +32,52 @@ Continue adding null values until the error disappears and the response includes
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
       {/* Start Courses  */}
-      <div className="course-Show_prices ">
-        <div className="container-Show_prices ">
-          <h1 style={{ textAlign: "center", marginBlock: "15px" }}>
-            Prices In Our Site
-          </h1>
-          <div className="row-practice">
-            <div className="card-Show_prices ">
-              <h4>Robot Home Security Buddy</h4>
-              <p>$92.70</p>
-            </div>
-            <div className="card-Show_prices ">
-              <h4>All-in-one Typewriter</h4>
-              <p>$33.61</p>
-            </div>
-            <div className="card-Show_prices ">
-              <h4>Photobomb Backdrops</h4>
-              <p>$46.21</p>
-            </div>
-            <div className="card-Show_prices ">
-              <h4>Grow Your Own Spy Kit</h4>
-              <p>$19.26</p>
-            </div>
-          </div>
+      <div className="d-flex justify-content-center align-items-center w-100 min-vh-100">
+        <div
+          className="container text-center py-5"
+          style={{
+            backgroundColor: "#f8f9fa",
+            borderRadius: "10px",
+            padding: "30px",
+            boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          <h1 className="mb-4 text-primary"> Add to Cart</h1>
+          <table
+            className="table table-bordered table-hover"
+            style={{
+              backgroundColor: "white",
+              borderRadius: "10px",
+              overflow: "hidden",
+            }}
+          >
+            <thead className="thead-dark">
+              <tr>
+                <th style={{ backgroundColor: "#007bff", color: "white" }}>
+                  Product Name
+                </th>
+                <th style={{ backgroundColor: "#007bff", color: "white" }}>
+                  Actual Price
+                </th>
+                <th style={{ backgroundColor: "#007bff", color: "white" }}>
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.products.map((product, index) => (
+                <tr key={index}>
+                  <td>{product.name}</td>
+                  <td>{product.actual_price}</td>
+                  <td>
+                    <button className="btn btn-outline-success btn-sm d-flex align-items-center justify-content-center mx-auto">
+                      <i className="fas fa-cart-plus me-2"></i> AddCart
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
       {/* End Course Content  */}
