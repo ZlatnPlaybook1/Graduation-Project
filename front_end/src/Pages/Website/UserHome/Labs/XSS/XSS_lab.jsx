@@ -9,34 +9,34 @@ export default function XSS_lab() {
   return (
     <>
       <Header />
-      {/* Start Landing  */}
-      <div class="landing">
-        <div class="container">
-          <div class="course-info">
-            <div class="course-text">
+      {/* Start Landing */}
+      <div className="landing">
+        <div className="container">
+          <div className="course-info">
+            <div className="course-text">
               <h1>Practice</h1>
-              <p class="brief">
-                <i class="fa-solid fa-bullseye lab"></i> Reinforce what you're
-                learning
+              <p className="brief">
+                <i className="fa-solid fa-bullseye lab"></i> Reinforce what
+                you're learning
               </p>
               <p>
                 Put your knowledge into practice with gamified cyber security
                 challenges.
               </p>
             </div>
-            <div class="course-icon">
-              <div class="border">
-                <div class="content">
-                  <i class="fas fa-book-open lab"></i>
+            <div className="course-icon">
+              <div className="border-icon">
+                <div className="content">
+                  <i className="fas fa-book-open lab"></i>
                   <p>Practice</p>
-                  <i class="fas fa-bullseye lab"></i>
+                  <i className="fas fa-bullseye lab"></i>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* End Landing  */}
+      {/* End Landing */}
       {/* Start Courses  */}
       <div class="course">
         <div class="container">
@@ -101,7 +101,7 @@ export default function XSS_lab() {
             <Card
               link={"/xss/xss_lab/fourth_lab"}
               image={lab_Cover}
-              title={["Stored XSS in anchor ",<q>href</q>]}
+              title={["Stored XSS in anchor ", <q>href</q>]}
               brief={[
                 "This lab contains a ",
                 <span className="highlight">

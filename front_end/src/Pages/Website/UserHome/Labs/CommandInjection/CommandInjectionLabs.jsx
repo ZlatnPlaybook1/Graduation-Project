@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import Auth_Photo from "../../assets/img/Broken Authentication/Auth_Icon.png";
+import Auth_Photo from "../../assets/img/Command Injection/command-injection-labs.png";
 import { Card } from "../../Card/Card";
 export default function CommandInjectionLabs() {
   return (
@@ -23,7 +23,7 @@ export default function CommandInjectionLabs() {
               </p>
             </div>
             <div className="course-icon">
-              <div className="border">
+              <div className="border-icon">
                 <div className="content">
                   <i className="fas fa-book-open lab"></i>
                   <p>Practice</p>
@@ -35,33 +35,34 @@ export default function CommandInjectionLabs() {
         </div>
       </div>
       {/* End Landing */}
+      {/* Start Course */}
       <div className="course">
         <div className="container">
-          <h2>Command Injection</h2>
+          <h2>Command Injection Labs</h2>
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             {/* lab1 */}
             <Card
               link={"/Command_Injection/Command_Injection_labs/lab1"}
               image={Auth_Photo}
-              title={"Path Traversal Blacklist"}
-              brief={"Find the password of the admin"}
+              title={"Pingject"}
+              brief={"Try to execute a forbidden command."}
               difficulty={"Easy"}
             />
             {/* lab3 */}
             <Card
               link={"/Command_Injection/Command_Injection_labs/lab3"}
               image={Auth_Photo}
-              title={"Path Traversal Blacklist"}
-              brief={"Find the password of the admin"}
+              title={"Blacklist Breakout"}
+              brief={"Find a way to bypass the blacklist."}
               difficulty={"Easy"}
             />
             {/* lab2 */}
             <Card
               link={"/Command_Injection/Command_Injection_labs/lab2"}
               image={Auth_Photo}
-              title={"Path Traversal Blacklist"}
-              brief={"Find the password of the admin"}
+              title={"URLject"}
+              brief={"Hack the Address Bar"}
               difficulty={"Easy"}
             />
           </div>

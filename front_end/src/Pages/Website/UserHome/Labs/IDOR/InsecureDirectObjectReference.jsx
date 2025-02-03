@@ -4,7 +4,7 @@ import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import "./InsecureDirectObjectReference.css";
 import imagecourse from "../../assets/img/IDOR/idorIcon.jpg";
-import background from "../../assets/img/background.png";
+import background from "../../assets/img/IDOR/IDOR.jpg";
 import IDOR_Vulerability from "../../assets/img/IDOR/InsecureDirectObjectReference(IDOR)Vulnerability.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";

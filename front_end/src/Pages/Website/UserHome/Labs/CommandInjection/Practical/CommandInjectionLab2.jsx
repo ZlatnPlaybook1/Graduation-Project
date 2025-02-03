@@ -8,7 +8,7 @@ import Image2 from "../../../assets/img/Command Injection/resim2.jpg";
 import Image3 from "../../../assets/img/Command Injection/resim3.jpg";
 
 export default function CommandInjectionLab2() {
-  const hintMessage = <p>Add Something</p>;
+  const hintMessage = `<p>Try to add “;” to the URL </p>`;
   const navigate = useNavigate();
   const location = useLocation();
 

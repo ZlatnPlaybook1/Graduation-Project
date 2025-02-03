@@ -225,6 +225,8 @@ import InsecureDeserializationLab1 from "./Pages/Website/UserHome/Labs/InsecureD
 import InsecureDeserializationLab2 from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab2/InsecureDeserializationLab2.jsx";
 import TestPage from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab1/TestPage.jsx";
 import AdminDashboard from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab1/AdminDashboard.jsx";
+import BurpSuit from "./Pages/Website/UserHome/Labs/Burp-Suite/BurpSuit.jsx";
+import BurpSuitLabs from "./Pages/Website/UserHome/Labs/Burp-Suite/BurpSuitLabs.jsx";
 
 function App() {
   return (
@@ -698,6 +700,10 @@ function App() {
             element={<InsecureDeserializationLab2 />}
           />
           {/* End Insecure_Deserialization */}
+          {/* Start Burp suit */}
+          <Route path="/Burp_Suit" element={<BurpSuit />} />
+          <Route path="/Burp_Suit/Burp_Suit_Labs" element={<BurpSuitLabs />} />
+          {/* End Burp Suit */}
           {/* Start Cookies */}
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />

@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import Auth_Photo from "../../assets/img/Broken Authentication/Auth_Icon.png";
+import Auth_Photo from "../../assets/img/Insecure_Deserialization/Labs_Photo_Insecure.png";
 import { Card } from "../../Card/Card";
 export default function InsecureDeserializationLabs() {
   return (
@@ -23,7 +23,7 @@ export default function InsecureDeserializationLabs() {
               </p>
             </div>
             <div className="course-icon">
-              <div className="border">
+              <div className="border-icon">
                 <div className="content">
                   <i className="fas fa-book-open lab"></i>
                   <p>Practice</p>
@@ -35,6 +35,7 @@ export default function InsecureDeserializationLabs() {
         </div>
       </div>
       {/* End Landing */}
+      {/* Start Course */}
       <div className="course">
         <div className="container">
           <h2>Insecure Deserialization Labs</h2>
@@ -46,8 +47,10 @@ export default function InsecureDeserializationLabs() {
                 "/Insecure_Deserialization/Insecure_Deserialization_Labs/lab1"
               }
               image={Auth_Photo}
-              title={"Path Traversal Blacklist"}
-              brief={"Find the password of the admin"}
+              title={"Bake Your Own Cookies"}
+              brief={
+                "When ‘user’ isn’t enough—forge the cookie and become admin"
+              }
               difficulty={"Easy"}
             />
             {/* lab2 */}
@@ -56,8 +59,10 @@ export default function InsecureDeserializationLabs() {
                 "/Insecure_Deserialization/Insecure_Deserialization_Labs/lab2"
               }
               image={Auth_Photo}
-              title={"Path Traversal Blacklist"}
-              brief={"Find the password of the admin"}
+              title={"Cookie Cracking Cascade"}
+              brief={
+                "A lab where cookies aren’t snacks… they’re keys to admin power."
+              }
               difficulty={"Easy"}
             />
           </div>

@@ -7,7 +7,7 @@ import code1 from "../../assets/img/Unrestricted File Upload/code1FileUpload.png
 import code2 from "../../assets/img/Unrestricted File Upload/code2FileUpload.png";
 import code3 from "../../assets/img/Unrestricted File Upload/code3FileUpload.png";
 import imagecourse from "../../assets/img/Unrestricted File Upload/FileUploadIcon.png";
-import background from "../../assets/img/background.png";
+import background from "../../assets/img/Unrestricted File Upload/background_File_Upload.jpg";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function UnrestrictedFileUpload() {
@@ -20,7 +20,7 @@ export default function UnrestrictedFileUpload() {
         background={background}
         imagecourse={imagecourse}
         courseTitle="Unrestricted File Upload"
-        courseDescription="Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce."
+        courseDescription="In this course, you will explore the security risks associated with unrestricted file uploads in web applications. We will cover how attackers can exploit vulnerabilities in file upload mechanisms and the potential consequences, including unauthorized access and data breaches. You will learn about the best practices to mitigate such risks, ensuring safe file handling and improving the overall security posture of web applications."
         difficulty="Intermediate"
         duration="30 min"
         onSaveRoom={() => console.log("Room Saved!")}

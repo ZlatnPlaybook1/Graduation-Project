@@ -3,7 +3,7 @@ import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import "./BrokenAuthentication.css";
-import background from "../../assets/img/background.png";
+import background from "../../assets/img/Broken Authentication/broken_authentication_blogpost.png";
 import imagecourse from "../../assets/img/Broken Authentication/broken-authentication.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
@@ -17,8 +17,8 @@ export default function BrokenAuthentication() {
       <LandingLab
         background={background}
         imagecourse={imagecourse}
-        courseTitle="Insecure Direct Object Reference (IDOR)"
-        courseDescription="Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce."
+        courseTitle="Broken Authentication"
+        courseDescription="This course delves into the common vulnerabilities in authentication systems that can lead to security breaches. You will learn about the flaws in authentication mechanisms, such as weak password policies, improper session management, and failure to validate user inputs, and how these weaknesses can be exploited by attackers. By the end of the course, you will understand how to strengthen authentication systems, implement secure login processes, and protect user identities against unauthorized access."
         difficulty="Intermediate"
         duration="30 min"
         onSaveRoom={() => console.log("Room Saved!")}

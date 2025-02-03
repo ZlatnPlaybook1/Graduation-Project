@@ -6,7 +6,45 @@ import GOBack from "../../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function PathTraversalBlacklist() {
-  const hintMessage = `<p>Add Something</p>`;
+  const hintMessage = `
+    <style>
+      .hint-container {
+        color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: 20px auto;
+        text-align: center;
+        font-size: 16px;
+      }
+      
+      .hint-container p {
+        font-weight: 500;
+        line-height: 1.6;
+      }
+      
+      .hint-message {
+        color: #2986CC;
+        font-weight: 600;
+        font-size: 18px;
+        text-shadow: 1px 1px 4px rgba(255, 179, 24, 0.6);
+        margin-top: 15px;
+        font-style: italic;
+      }
+      
+      .hint-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+    </style>
+    <div class="hint-container">
+      <p class="hint-message">
+        Reach /etc/passwd by appending '../../' in URL to navigate to the parent directory.
+      </p>
+    </div>
+  `;
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 

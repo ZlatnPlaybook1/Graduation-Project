@@ -1,0 +1,144 @@
+/* General Styles */
+.command-injection-list {
+  list-style: none;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.command-injection-item {
+  margin-bottom: 20px;
+}
+
+.highlight-text {
+  font-weight: bold;
+  color: #d9534f;
+}
+
+/* Nested Lists */
+.command-injection-causes-list,
+.command-injection-separator-list {
+  margin-left: 20px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.command-injection-cause-item,
+.separator-item {
+  margin-bottom: 10px;
+}
+
+.command-injection-cause-item code,
+.separator-item code {
+  font-size: 16px;
+  background-color: #f8f8f8;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+}
+
+.command-injection-item code {
+  font-size: 16px;
+  background-color: #f8f8f8;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .command-injection-list {
+    font-size: 16px;
+  }
+
+  .command-injection-item {
+    margin-bottom: 16px;
+  }
+}
+
+/* Injection Impact List Styles */
+.injection-impact-list {
+  list-style: none;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin: 20px 0;
+}
+
+.injection-impact-item {
+  margin-bottom: 20px;
+}
+
+.emphasis-text {
+  font-weight: bold;
+  color: #d9534f;
+}
+
+.injection-impact-item code {
+  font-size: 14px;
+  background-color: #f8f8f8;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .injection-impact-list {
+    font-size: 14px;
+  }
+
+  .injection-impact-item {
+    margin-bottom: 15px;
+  }
+}
+
+/* Prevention List Styles */
+.prevention-list {
+  list-style: none;
+  padding: 0;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin: 20px 0;
+}
+
+.prevention-list .prevention-item {
+  margin-bottom: 20px;
+}
+
+/* Input Validation List Styles */
+.prevention-list .prevention-item .input-validation-list {
+  margin-left: 20px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.prevention-list .prevention-item .input-validation-item {
+  margin-bottom: 10px;
+}
+
+/* Code Block Styles */
+.prevention-list .prevention-item code {
+  font-size: 14px;
+  background-color: #f8f8f8;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .prevention-list {
+    font-size: 14px;
+  }
+
+  .prevention-item {
+    margin-bottom: 15px;
+  }
+}

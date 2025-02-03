@@ -1,0 +1,148 @@
+.security-vuln-list {
+  list-style: none;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.security-vuln-item {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.highlighted-text {
+  font-weight: 500;
+  color: #d9534f;
+}
+.path-traversal-info {
+  background: linear-gradient(135deg, #1e1e2f, #3a3a4f);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.path-traversal-text {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.highlight-word {
+  color: #ffcc00;
+  font-weight: 400;
+}
+
+.danger-word {
+  color: #ff5555;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.vulnerability-details {
+  background: linear-gradient(135deg, #21242d, #2e3241);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  max-width: 850px;
+  margin: 25px auto;
+  text-align: center;
+}
+
+.vulnerability-details .vulnerability-text {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.vulnerability-details .highlight {
+  color: #f5c518;
+  font-weight: 600;
+  text-shadow: 1px 1px 4px rgba(255, 204, 0, 0.5);
+}
+
+.vulnerability-details .danger {
+  color: #ff4f4f;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px rgba(255, 79, 79, 0.6);
+}
+
+.vulnerability-details .important {
+  color: #64d9ff;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.security-section {
+  background: linear-gradient(135deg, #2b2d42, #8d99ae);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 30px auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.security-section:hover {
+  transform: translateY(-10px);
+}
+
+.security-section .security-heading {
+  color: #f7f7f7;
+  font-size: 28px;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.security-section .security-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.security-section .security-item {
+  color: #ececec;
+  font-size: 16px;
+  line-height: 1.8;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.security-section .security-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(5px);
+}
+
+.security-section .security-list .security-item .security-highlight {
+  color: #f1c40f;
+  font-weight: 700;
+  text-shadow: 1px 1px 5px rgba(255, 204, 0, 0.6);
+}
+
+.security-section .security-danger {
+  color: #e74c3c;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 6px rgba(231, 76, 60, 0.7);
+}
+
+.security-section .security-item .security-important {
+  color: #fff !important;
+  font-weight: 600;
+  text-decoration: underline;
+  text-shadow: 0 1px 2px rgba(26, 188, 156, 0.5);
+}

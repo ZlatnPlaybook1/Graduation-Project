@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
-import background from "../../assets/img/background.png";
-import imagecourse from "../../assets/img/course_image.png";
+import background from "../../assets/img/Path__Traversal/what-is-path-traversal-attack.png";
+import imagecourse from "../../assets/img/Path__Traversal/Directory_Traversal.png";
 import Footer from "../../Footer/Footer";
 import "./PathTraversal.css";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
@@ -16,7 +16,7 @@ export default function PathTraversal() {
         background={background}
         imagecourse={imagecourse}
         courseTitle="Path Traversal"
-        courseDescription="Discover how attackers exploit Command Injection vulnerabilities to execute arbitrary system commands, gain unauthorized access, and manipulate application behavior. Learn how security professionals detect and mitigate these attacks through input validation, parameterized commands, and least privilege enforcement. Master techniques to prevent command injection by sanitizing user inputs, restricting system calls, and implementing secure coding practices to protect applications from exploitation."
+        courseDescription="Learn how attackers exploit path traversal vulnerabilities to access restricted files and directories. Understand the risks, detection techniques, and mitigation strategies, including input validation, secure file handling, and access controls to prevent unauthorized access."
         difficulty="Intermediate"
         duration="30 min"
         onSaveRoom={() => console.log("Room Saved!")}
@@ -31,48 +31,138 @@ export default function PathTraversal() {
               <dl className="secure-section-text">
                 {/* Single FAQ Area */}
                 <dt className="secure-wave fadeInUp secure-faq-header">
-                  <span>Task 1</span>Description
+                  <span>Task 1</span>Definition
                 </dt>
                 <dd className="fadeInUp Auth-faq-body">
-                  <ul className="auth-issues-list">
-                    <li className="auth-issue-item">
-                      <span className="special-highlight">
-                        Broken authentication
-                      </span>{" "}
-                      occurs when an application’s authentication mechanism is
-                      improperly designed or implemented, allowing attackers to
-                      bypass authentication or impersonate users. Common causes
-                      include:
-                    </li>
-                    <li className="auth-issue-item">
-                      <ul className="auth-causes-list">
-                        <li className="auth-cause-item">
-                          <span className="special-highlight">
-                            Failure to enforce strong password policies.
-                          </span>
-                        </li>
-                        <li className="auth-cause-item">
-                          Session management flaws (e.g., session IDs exposed or
-                          not invalidated after logout).
-                        </li>
-                        <li className="auth-cause-item">
-                          Lack of multi-factor authentication (MFA).
-                        </li>
-                        <li className="auth-cause-item">
-                          Insecure storage or transmission of credentials.
-                        </li>
-                        <li className="auth-cause-item">
-                          Poor defense against automated attacks, like
-                          credential stuffing or brute-force attacks.
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="auth-issue-item">
-                      These weaknesses can result in unauthorized access,
-                      leading to account compromise, data theft, and
-                      unauthorized actions.
+                  <ul className="security-vuln-list">
+                    <li className="security-vuln-item">
+                      <span className="highlighted-text">
+                        Path traversal (or directory traversal)
+                      </span>
+                      is a security vulnerability that occurs when an attacker
+                      manipulates file paths in a web application. This
+                      manipulation allows the attacker to access files and
+                      directories outside the intended directory. For example,
+                      by using sequences like <code>../</code> (dot-dot-slash),
+                      an attacker might navigate to sensitive areas of the
+                      server's file system.
                     </li>
                   </ul>
+                </dd>
+                {/* Single FAQ Area */}
+                <dt className="secure-wave fadeInUp secure-faq-header">
+                  <span>Task 2</span>Cause
+                </dt>
+                <dd className="fadeInUp Auth-faq-body">
+                  <div className="path-traversal-info">
+                    <p className="path-traversal-text">
+                      This vulnerability typically occurs because of
+                      <span className="highlight-word">
+                        improper input validation
+                      </span>
+                      . When a web application accepts user input (such as a{" "}
+                      <span className="highlight-word">file name</span> or a{" "}
+                      <span className="highlight-word">path</span>) without
+                      properly checking or sanitizing it, an attacker can
+                      include
+                      <span className="danger-word">
+                        malicious characters
+                      </span>{" "}
+                      or sequences. These sequences trick the application into
+                      navigating to{" "}
+                      <span className="highlight-word">
+                        unauthorized directories
+                      </span>
+                      . Failing to use{" "}
+                      <span className="danger-word">secure functions</span> that
+                      correctly handle file paths increases this risk.
+                    </p>
+                  </div>
+                </dd>
+                {/* Single FAQ Area */}
+                <dt className="secure-wave fadeInUp secure-faq-header">
+                  <span>Task 3</span>Impact
+                </dt>
+                <dd className="fadeInUp Auth-faq-body">
+                  <div className="vulnerability-details">
+                    <p className="vulnerability-text">
+                      This vulnerability typically occurs because of
+                      <span className="highlight">
+                        improper input validation
+                      </span>
+                      . When a web application accepts user input (such as a{" "}
+                      <span className="highlight">file name</span> or a{" "}
+                      <span className="highlight">path</span>) without properly
+                      checking or sanitizing it, an attacker can inject
+                      <span className="danger">malicious characters</span> or
+                      sequences. These sequences trick the application into
+                      navigating to{" "}
+                      <span className="highlight">
+                        unauthorized directories
+                      </span>
+                      , exposing <span className="danger">sensitive files</span>
+                      . Failing to use{" "}
+                      <span className="important">secure functions</span>
+                      that correctly handle file paths significantly increases
+                      this risk.
+                    </p>
+                  </div>
+                </dd>
+                {/* Single FAQ Area */}
+                <dt className="secure-wave fadeInUp secure-faq-header">
+                  <span>Task 4</span>Prevention
+                </dt>
+                <dd className="fadeInUp Auth-faq-body">
+                  <div className="security-section">
+                    <h2 className="security-heading">
+                      Preventing Path Traversal Vulnerabilities
+                    </h2>
+                    <ul className="security-list">
+                      <li className="security-item">
+                        <span className="security-highlight">
+                          Validate and sanitize all user inputs:
+                        </span>
+                        Ensure inputs do not contain unexpected characters or
+                        patterns.
+                        <span className="security-important">
+                          Regular expressions
+                        </span>{" "}
+                        or built-in validation libraries can help.
+                      </li>
+                      <li className="security-item">
+                        <span className="security-highlight">
+                          Use secure functions for file path management:
+                        </span>
+                        Many programming languages offer functions to safely
+                        handle and normalize file paths. These functions can
+                        resolve{" "}
+                        <span className="security-danger">relative paths</span>{" "}
+                        and prevent traversal beyond allowed directories.
+                      </li>
+                      <li className="security-item">
+                        <span className="security-highlight">
+                          Implement access controls:
+                        </span>
+                        Even if a path is manipulated, proper access control
+                        mechanisms prevent
+                        <span className="security-danger">
+                          unauthorized file access
+                        </span>
+                        .
+                      </li>
+                      <li className="security-item">
+                        <span className="security-highlight">
+                          Maintain a whitelist:
+                        </span>
+                        Instead of allowing any file path provided by the user,
+                        use a predefined{" "}
+                        <span className="security-important">
+                          list of allowable file names
+                        </span>{" "}
+                        or directories.
+                      </li>
+                    </ul>
+                  </div>
                 </dd>
               </dl>
             </div>

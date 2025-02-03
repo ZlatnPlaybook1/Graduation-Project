@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import Auth_Photo from "../../assets/img/Path__Traversal/Photo_Labs_Path_Traversal.png";
+import Auth_Photo from "../../assets/img/Burp_Suit/Labs-Burp-Suit.jpg";
 import { Card } from "../../Card/Card";
-export default function PathTraversalLabs() {
+export default function BurpSuitLabs() {
   return (
     <>
       <Header />
@@ -35,36 +35,29 @@ export default function PathTraversalLabs() {
         </div>
       </div>
       {/* End Landing */}
+      {/* Start Course */}
       <div className="course">
         <div className="container">
-          <h2>Path Traversal Labs</h2>
+          <h2>Burp Suit Labs</h2>
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             {/* lab1 */}
             <Card
-              link={"/Path__Traversal/Path_Traversal_Labs/lab1"}
+              link={"/Inse/lab1"}
               image={Auth_Photo}
-              title={"Path to Passwd"}
-              brief={"Try to reach /etc/passwd "}
+              title={"Bake Your Own Cookies"}
+              brief={
+                "When ‘user’ isn’t enough—forge the cookie and become admin"
+              }
               difficulty={"Easy"}
             />
             {/* lab2 */}
             <Card
-              link={"/Path__Traversal/Path_Traversal_Labs/lab2"}
+              link={"//lab2"}
               image={Auth_Photo}
-              title={"Path Traversal MCQ 1"}
+              title={"Cookie Cracking Cascade"}
               brief={
-                "Answer the questions to test your knowledge on path traversal vulnerabilities."
-              }
-              difficulty={"Easy"}
-            />
-            {/* lab3 */}
-            <Card
-              link={"/Path__Traversal/Path_Traversal_Labs/lab3"}
-              image={Auth_Photo}
-              title={"Path Traversal MCQ 2"}
-              brief={
-                "Answer the questions to test your knowledge on path traversal vulnerabilities."
+                "A lab where cookies aren’t snacks… they’re keys to admin power."
               }
               difficulty={"Easy"}
             />

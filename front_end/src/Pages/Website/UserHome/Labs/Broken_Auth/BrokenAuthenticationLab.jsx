@@ -23,7 +23,7 @@ export default function BrokenAuthenticationLab() {
               </p>
             </div>
             <div className="course-icon">
-              <div className="border">
+              <div className="border-icon">
                 <div className="content">
                   <i className="fas fa-book-open lab"></i>
                   <p>Practice</p>
@@ -53,7 +53,9 @@ export default function BrokenAuthenticationLab() {
               link={"/broken-auth/Broken_Authentication_Lab/lab2"}
               image={Auth_Photo}
               title={"Brute Force 2"}
-              brief={"Developers forgot to add exit function when redirecting. Good luck!"}
+              brief={
+                "Developers forgot to add exit function when redirecting. Good luck!"
+              }
               difficulty={"Easy"}
             />
             {/* lab3 */}
@@ -61,7 +63,9 @@ export default function BrokenAuthenticationLab() {
               link={"/broken-auth/Broken_Authentication_Lab/lab3"}
               image={Auth_Photo}
               title={"No Redirect"}
-              brief={"Developers forgot to add exit function when redirecting. Good luck!"}
+              brief={
+                "Developers forgot to add exit function when redirecting. Good luck!"
+              }
               difficulty={"Easy"}
             />
           </div>

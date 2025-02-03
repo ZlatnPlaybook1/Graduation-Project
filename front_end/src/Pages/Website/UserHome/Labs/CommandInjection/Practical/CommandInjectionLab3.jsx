@@ -5,7 +5,7 @@ import GOBack from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function CommandInjectionLab3() {
-  const hintMessage = `<p>Add Something</p>`;
+  const hintMessage = `<p>Find a way to bypass the blacklist."</p>`;
   const [ip, setIp] = useState("");
   const [result, setResult] = useState("");
 

@@ -1,0 +1,257 @@
+/* Insecure Deserialization Container */
+.insecure-deserialization-container {
+  font-family: "poppins", sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.insecure-deserialization-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+.insecure-deserialization-title {
+  font-size: 28px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.insecure-deserialization-title:hover {
+  color: #007bff;
+}
+
+/* Description */
+.insecure-deserialization-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 25px;
+  transition: color 0.3s ease;
+}
+
+.insecure-deserialization-description:hover {
+  color: #333;
+}
+
+/* How It Works Section */
+.insecure-deserialization-how-it-works h3 {
+  font-size: 22px;
+  color: #007bff;
+  margin-bottom: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.insecure-deserialization-how-it-works h3:hover {
+  color: #0056b3;
+}
+
+.serialization-list {
+  list-style-type: none;
+  padding: 0;
+  font-size: 16px;
+}
+
+.serialization-list li {
+  margin-bottom: 18px;
+  transition: transform 0.3s ease;
+}
+
+.serialization-list li:hover {
+  transform: translateX(10px);
+}
+
+.serialization-list li strong {
+  font-weight: 400;
+  color: #007bff;
+}
+
+/* Attack Types */
+.insecure-deserialization-attack-types {
+  margin-left: 20px;
+  list-style-type: disc;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.insecure-deserialization-attack-types li {
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.insecure-deserialization-attack-types li:hover {
+  transform: translateX(10px);
+  color: #007bff;
+}
+
+/* Add a subtle animation for the entire section */
+.insecure-deserialization-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* React Insecure Deserialization Impact Section Container */
+.react-impact-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.react-impact-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* React Impact Title */
+.react-impact-container h4 {
+  font-size: 22px;
+  color: #007bff;
+  margin-bottom: 15px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.react-impact-container h4:hover {
+  color: #0056b3;
+}
+
+/* React Impact Points */
+.react-impact-list {
+  list-style-type: none;
+  padding: 0;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.react-impact-list li {
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.react-impact-list li:hover {
+  transform: translateX(10px);
+  color: #007bff;
+}
+
+/* React Highlighted Text */
+.react-impact-list li strong {
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.react-impact-list li strong:hover {
+  color: #0056b3;
+}
+
+/* Animation for container */
+.react-impact-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* React Insecure Deserialization Prevention Section Container */
+.react-prevention-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.react-prevention-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* React Prevention Title */
+.react-prevention-container h4 {
+  font-size: 22px;
+  color: #28a745;
+  margin-bottom: 15px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.react-prevention-container h4:hover {
+  color: #218838;
+}
+
+/* React Prevention Points */
+.react-prevention-list {
+  list-style-type: none;
+  padding: 0;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.react-prevention-list li {
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.react-prevention-list li:hover {
+  transform: translateX(10px);
+  color: #28a745;
+}
+
+/* React Highlighted Text */
+.react-prevention-list li strong {
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.react-prevention-list li strong:hover {
+  color: #218838;
+}
+
+/* Animation for container */
+.react-prevention-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

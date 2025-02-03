@@ -5,7 +5,7 @@ import GOBack from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function CommandInjectionLab1() {
-  const hintMessage = `<p>Add Something</p>`;
+  const hintMessage = `<p>Try to execute a forbidden command.</p>`;
   const [ip, setIp] = useState("");
   const [result, setResult] = useState("");
 

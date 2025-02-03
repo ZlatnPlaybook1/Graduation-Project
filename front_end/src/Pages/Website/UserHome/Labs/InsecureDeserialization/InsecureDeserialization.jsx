@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
-import background from "../../assets/img/background.png";
-import imagecourse from "../../assets/img/course_image.png";
+import background from "../../assets/img/Insecure_Deserialization/Insecure_Photo_Background.jpg";
+import imagecourse from "../../assets/img/Insecure_Deserialization/Icon_Insecure.png";
 import Footer from "../../Footer/Footer";
 import "./InsecureDeserialization.css";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
@@ -16,7 +16,7 @@ export default function InsecureDeserialization() {
         background={background}
         imagecourse={imagecourse}
         courseTitle="Insecure Deserialization"
-        courseDescription="Discover how attackers exploit Command Injection vulnerabilities to execute arbitrary system commands, gain unauthorized access, and manipulate application behavior. Learn how security professionals detect and mitigate these attacks through input validation, parameterized commands, and least privilege enforcement. Master techniques to prevent command injection by sanitizing user inputs, restricting system calls, and implementing secure coding practices to protect applications from exploitation."
+        courseDescription="In this course, you’ll learn about Insecure Deserialization, a vulnerability where untrusted data is deserialized without proper validation, allowing attackers to manipulate data or execute harmful actions. The course covers the risks, how deserialization works, common attack techniques, and best practices for preventing these security issues."
         difficulty="Intermediate"
         duration="30 min"
         onSaveRoom={() => console.log("Room Saved!")}
@@ -31,48 +31,109 @@ export default function InsecureDeserialization() {
               <dl className="secure-section-text">
                 {/* Single FAQ Area */}
                 <dt className="secure-wave fadeInUp secure-faq-header">
-                  <span>Task 1</span>Description
+                  <span>Task 1</span>Definition
                 </dt>
                 <dd className="fadeInUp Auth-faq-body">
-                  <ul className="auth-issues-list">
-                    <li className="auth-issue-item">
-                      <span className="special-highlight">
-                        Broken authentication
-                      </span>{" "}
-                      occurs when an application’s authentication mechanism is
-                      improperly designed or implemented, allowing attackers to
-                      bypass authentication or impersonate users. Common causes
-                      include:
-                    </li>
-                    <li className="auth-issue-item">
-                      <ul className="auth-causes-list">
-                        <li className="auth-cause-item">
-                          <span className="special-highlight">
-                            Failure to enforce strong password policies.
-                          </span>
+                  <div className="insecure-deserialization-container">
+                    <h2 className="insecure-deserialization-title">
+                      Insecure Deserialization
+                    </h2>
+                    <p className="insecure-deserialization-description">
+                      Insecure deserialization occurs when an application
+                      deserializes untrusted data without proper validation,
+                      allowing attackers to manipulate the serialized data to
+                      execute harmful actions.
+                    </p>
+
+                    <div className="insecure-deserialization-how-it-works">
+                      <h3>How It Works</h3>
+                      <ul className="serialization-list">
+                        <li>
+                          <strong>Serialization:</strong> Converting objects
+                          (e.g., user sessions, API tokens) into
+                          storable/transmittable formats (JSON, XML, binary).
                         </li>
-                        <li className="auth-cause-item">
-                          Session management flaws (e.g., session IDs exposed or
-                          not invalidated after logout).
-                        </li>
-                        <li className="auth-cause-item">
-                          Lack of multi-factor authentication (MFA).
-                        </li>
-                        <li className="auth-cause-item">
-                          Insecure storage or transmission of credentials.
-                        </li>
-                        <li className="auth-cause-item">
-                          Poor defense against automated attacks, like
-                          credential stuffing or brute-force attacks.
+                        <li>
+                          <strong>Insecure Deserialization:</strong> When an
+                          application deserializes untrusted data without
+                          validation, allowing attackers to:
+                          <ul className="insecure-deserialization-attack-types">
+                            <li>
+                              Inject malicious objects (e.g., code execution
+                              payloads).
+                            </li>
+                            <li>
+                              Tamper with logic (e.g., changing user roles,
+                              prices, or permissions).
+                            </li>
+                          </ul>
                         </li>
                       </ul>
-                    </li>
-                    <li className="auth-issue-item">
-                      These weaknesses can result in unauthorized access,
-                      leading to account compromise, data theft, and
-                      unauthorized actions.
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
+                </dd>
+                {/* Single FAQ Area */}
+                <dt className="secure-wave fadeInUp secure-faq-header">
+                  <span>Task 1</span>impact
+                </dt>
+                <dd className="fadeInUp Auth-faq-body">
+                  <div className="react-impact-container">
+                    <h4>Impact</h4>
+                    <ul className="react-impact-list">
+                      <li>
+                        <strong>Remote Code Execution (RCE):</strong> Execute
+                        arbitrary commands on the server.
+                      </li>
+                      <li>
+                        <strong>Data Tampering:</strong> Modify serialized data
+                        (e.g., change a user’s isAdmin: false to true).
+                      </li>
+                      <li>
+                        <strong>Denial of Service (DoS):</strong> Crash the app
+                        with malformed objects.
+                      </li>
+                      <li>
+                        <strong>Authentication Bypass:</strong> Hijack sessions
+                        or impersonate users.
+                      </li>
+                    </ul>
+                  </div>
+                </dd>
+                {/* Single FAQ Area */}
+                <dt className="secure-wave fadeInUp secure-faq-header">
+                  <span>Task 1</span>Prevention
+                </dt>
+                <dd className="fadeInUp Auth-faq-body">
+                  <div className="react-prevention-container">
+                    <h4>Prevention</h4>
+                    <ul className="react-prevention-list">
+                      <li>
+                        <strong>Use Secure Serialization Formats:</strong> Avoid
+                        binary serialization and prefer JSON or XML with strict
+                        validation.
+                      </li>
+                      <li>
+                        <strong>Implement Integrity Checks:</strong> Use digital
+                        signatures or hashing to verify serialized data.
+                      </li>
+                      <li>
+                        <strong>
+                          Restrict Deserialization to Trusted Sources:
+                        </strong>{" "}
+                        Never accept serialized objects from untrusted inputs.
+                      </li>
+                      <li>
+                        <strong>Use Sandboxing:</strong> Limit the impact of
+                        deserialized data by running it in a restricted
+                        environment.
+                      </li>
+                      <li>
+                        <strong>Disable Dangerous Features:</strong> If using
+                        languages like Java or PHP, disable unsafe
+                        deserialization methods.
+                      </li>
+                    </ul>
+                  </div>
                 </dd>
               </dl>
             </div>

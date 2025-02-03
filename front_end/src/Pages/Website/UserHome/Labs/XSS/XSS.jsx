@@ -1,8 +1,8 @@
 import React from "react";
 import "./XSS.css";
 import Header from "../../Header/Header";
-import background from "../../assets/img/background.png";
-import imagecourse from "../../assets/img/course_image.png";
+import background from "../../assets/img/Cross_Site_Scripting/cors1.png";
+import imagecourse from "../../assets/img/Cross_Site_Scripting/Broken Authentication.webp";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
