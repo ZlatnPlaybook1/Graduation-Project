@@ -48,20 +48,12 @@ export default function CSRF_labs() {
             <Card
               link={"/CSRF/CSRF_labs/first_lab"}
               image={labImg}
-              title={"Exploiting CSRF Vulnerability for Login Bypass"}
+              title={"CSRF vulnerability with no defenses"}
               brief={[
-                "Explore how attackers can bypass login mechanisms using CSRF vulnerabilities. In this lab, you will:",
+                "Discover how attackers can exploit CSRF vulnerabilities to perform unauthorized actions. In this lab, you will:",
                 <br />,
-                "- Learn to exploit unprotected paths like ",
-                <code>/robots.txt</code>,
-                " to find sensitive areas.",
-                <br />,
-                "- Understand how manipulating URLs, such as replacing ",
-                <code>/robots.txt</code>,
-                " with ",
-                <code>/administrator-panel</code>,
-                ", grants unauthorized access.",
-                <br />,
+                "- Learn how attackers can exploit CSRF vulnerabilities to change user email addresses.",
+
                 "- Practice logging in as an admin and performing malicious actions, like deleting user accounts.",
               ]}
               difficulty={"Easy"}
@@ -96,6 +88,22 @@ export default function CSRF_labs() {
                 "- Implement anti tokens to prevent unauthorized requests from being executed.",
                 <br />,
                 "- Apply the SameSite cookie attribute for additional protection against cross-site request forgery.",
+              ]}
+              difficulty={"Easy"}
+            />
+            {/* MCQ Quiz */}
+            <Card
+              link={"/CSRF/CSRF_labs/third_lab"}
+              image={labImg}
+              title={"MCQ Quiz"}
+              brief={[
+                " This quiz will test your knowledge of CSRF attacks and how to prevent them. You will be asked to answer multiple-choice questions on:",
+                <br />,
+                " - The impact of CSRF attacks on web applications.",
+                <br />,
+                " - Techniques to prevent CSRF attacks.",
+                <br />,
+                " - The importance of CSRF tokens in securing web applications.",
               ]}
               difficulty={"Easy"}
             />
