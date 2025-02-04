@@ -222,13 +222,15 @@ import CommandInjectionLab1 from "./Pages/Website/UserHome/Labs/CommandInjection
 import CommandInjectionLab2 from "./Pages/Website/UserHome/Labs/CommandInjection/Practical/CommandInjectionLab2.jsx";
 import CommandInjectionLab3 from "./Pages/Website/UserHome/Labs/CommandInjection/Practical/CommandInjectionLab3.jsx";
 // End Command Injection
-// Start InsecureDeserialization
+// Start Insecure Deserialization
 import InsecureDeserialization from "./Pages/Website/UserHome/Labs/InsecureDeserialization/InsecureDeserialization.jsx";
 import InsecureDeserializationLabs from "./Pages/Website/UserHome/Labs/InsecureDeserialization/InsecureDeserializationLabs.jsx";
 import InsecureDeserializationLab1 from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab1/InsecureDeserializationLab1.jsx";
 import InsecureDeserializationLab2 from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab2/InsecureDeserializationLab2.jsx";
 import TestPage from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab1/TestPage.jsx";
 import AdminDashboard from "./Pages/Website/UserHome/Labs/InsecureDeserialization/practical/Lab1/AdminDashboard.jsx";
+// End Insecure Deserialization
+// Start Burp Suit
 import BurpSuit from "./Pages/Website/UserHome/Labs/Burp-Suite/BurpSuit.jsx";
 import BurpSuitLabs from "./Pages/Website/UserHome/Labs/Burp-Suite/BurpSuitLabs.jsx";
 import BurpSuitLab1 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab1/BurpSuitLab1.jsx";
@@ -713,6 +715,14 @@ function App() {
           <Route
             path="/Insecure_Deserialization/Insecure_Deserialization_Labs/lab2"
             element={<InsecureDeserializationLab2 />}
+          />
+          <Route
+            path="/Insecure_Deserialization/Insecure_Deserialization_Labs/lab2/testPage"
+            element={<TestPage />}
+          />
+          <Route
+            path="/Insecure_Deserialization/Insecure_Deserialization_Labs/lab2/AdminDashboard"
+            element={<AdminDashboard />}
           />
           {/* End Insecure_Deserialization */}
           {/* Start Burp suit */}
