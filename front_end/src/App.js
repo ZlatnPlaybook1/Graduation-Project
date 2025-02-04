@@ -76,7 +76,7 @@ import REGEX_SECOND_LAB from "./Pages/Website/UserHome/Labs/Regex/practical/seco
 import CAREERS_IN_CYBER from "./Pages/Website/UserHome/Labs/CareersInCyber/CareersInCyber.jsx";
 import CAREERS_IN_CYBER_LABS from "./Pages/Website/UserHome/Labs/CareersInCyber/CareersInCyber_labs.jsx";
 import CAREERS_IN_CYBER_FIRST_LAB from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/first_lab/First_Lab.jsx";
-
+import CAREERS_IN_CYBER_MORE1 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/cyberAnalyst.jsx"
 // End Careers in Cyber
 // Api Hacking
 import API_HACKING from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking.jsx";
@@ -458,6 +458,10 @@ function App() {
           <Route
             path="/CareersInCyber/CareersInCyber_labs/lab1"
             element={<CAREERS_IN_CYBER_FIRST_LAB />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_labs/ShowMore1"
+            element={<CAREERS_IN_CYBER_MORE1 />}
           />
           {/* End Careers in Cyber */}
 
