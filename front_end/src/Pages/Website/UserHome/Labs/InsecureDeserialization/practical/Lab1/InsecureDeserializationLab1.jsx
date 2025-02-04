@@ -9,21 +9,25 @@ export default function InsecureDeserializationLab1() {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const hintMessage = <p>Add Something</p>;
+  const hintMessage = `<p>Decrypt BASE64 → Edit → Re-encrypt → Exploit.
+Username = password = admin
+https://www.base64decode.org/
+</p>`;
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    // Correct the serialized PHP-like object string using template literals
-    const serializedData = `O:4:"User":2:{s:8:"username";s:4:"${username}";s:8:"password";s:4:"${password}";}`;
+    if (username.toLowerCase() === "admin") {
+      setErrorMessage("You are not authorized.");
+      return;
+    }
 
-    // Base64 encode the serialized string
+    const serializedData = `O:4:"User":2:{s:8:"username";s:${username.length}:"${username}";s:8:"password";s:${password.length}:"${password}";}`;
+
     const encodedCookies = btoa(serializedData);
 
-    // Set the cookie in the browser
     document.cookie = `session=${encodedCookies}; path=/; max-age=3600; SameSite=Lax`;
 
-    // Include the session cookie in the body
     const payload = {
       username,
       password,
@@ -49,11 +53,7 @@ export default function InsecureDeserializationLab1() {
       const data = await response.json();
       console.log("Success:", data);
 
-      if (data.data.username === "admin") {
-        navigate(
-          "/Insecure_Deserialization/Insecure_Deserialization_Labs/lab1/AdminDashboard"
-        );
-      } else if (data.data.username === "test") {
+      if (data.data.username === "test") {
         navigate(
           "/Insecure_Deserialization/Insecure_Deserialization_Labs/lab1/testPage"
         );

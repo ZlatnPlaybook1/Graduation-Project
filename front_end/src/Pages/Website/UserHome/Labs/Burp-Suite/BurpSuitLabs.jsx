@@ -43,7 +43,7 @@ export default function BurpSuitLabs() {
           <div className="row">
             {/* lab1 */}
             <Card
-              link={"/Inse/lab1"}
+              link={"/Burp_Suit/Burp_Suit_Labs/lab1"}
               image={Auth_Photo}
               title={"Bake Your Own Cookies"}
               brief={
@@ -53,7 +53,7 @@ export default function BurpSuitLabs() {
             />
             {/* lab2 */}
             <Card
-              link={"//lab2"}
+              link={"/Burp_Suit/Burp_Suit_Labs/lab2"}
               image={Auth_Photo}
               title={"Cookie Cracking Cascade"}
               brief={
