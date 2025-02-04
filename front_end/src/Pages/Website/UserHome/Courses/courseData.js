@@ -213,7 +213,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/CSRF/landing.jpg"),
-    state: "not-published",
+    state: "pending",
     link: "/CSRF",
   },
   {
