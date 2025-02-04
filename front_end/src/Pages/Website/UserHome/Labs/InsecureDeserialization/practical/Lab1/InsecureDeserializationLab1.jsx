@@ -53,7 +53,11 @@ https://www.base64decode.org/
       const data = await response.json();
       console.log("Success:", data);
 
-      if (data.data.username === "test") {
+      if (data.data.username === "admin") {
+        navigate(
+          "/Insecure_Deserialization/Insecure_Deserialization_Labs/lab1/AdminDashboard"
+        );
+      } else if (data.data.username === "test") {
         navigate(
           "/Insecure_Deserialization/Insecure_Deserialization_Labs/lab1/testPage"
         );
