@@ -145,9 +145,9 @@ model BankAccount {
   accountBalance Float   @default(0)
   accountName    String
 }
-model BankAccount2 {
+
+model CSRFLab2 {
   id        Int     @id @default(autoincrement())
   authority String  @unique
   password  String
-  createdAt DateTime @default(now())
 }

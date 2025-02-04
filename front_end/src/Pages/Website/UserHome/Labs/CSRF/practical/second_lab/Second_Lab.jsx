@@ -4,55 +4,90 @@ import axios from "axios";
 const Second_Lab = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState(null);
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/login", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:5000/api/lab2/login",
+        {
+          username,
+          password,
+        }
+      );
+
       if (response.data.success) {
-        setMessage("Login successful! Redirecting...");
-        setTimeout(() => {
-          window.location.href = "/dashboard";
-        }, 2000);
+        localStorage.setItem("authority", username);
+        window.location.href = "/"; // Redirect to the homepage
+      } else {
+        setStatus("unsuccess");
       }
     } catch (error) {
-      setMessage("Invalid username or password");
+      console.error("Login failed:", error);
+      setStatus("unsuccess");
     }
   };
 
   return (
-    <div className="container mt-5">
-      <h1>Login</h1>
-      {message && <div className="alert alert-info">{message}</div>}
-      <form onSubmit={handleLogin}>
-        <div className="mb-3">
-          <label className="form-label">Username</label>
-          <input
-            type="text"
-            className="form-control"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
+    <div className="container">
+      <div className="container-wrapper">
+        <div className="row pt-4 mt-5 mb-3">
+          <div className="col-md-3"></div>
+          <div className="col-md-6">
+            <h1>Login Page</h1>
+            <a href="/reset">
+              <button type="button" className="btn btn-secondary btn-sm">
+                Reset Password
+              </button>
+            </a>
+          </div>
+          <div className="col-md-3"></div>
         </div>
-        <div className="mb-3">
-          <label className="form-label">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+
+        <div className="row pt-2">
+          <div className="col-md-3"></div>
+          <div className="col-md-6">
+            {status === "unsuccess" && (
+              <div className="alert alert-danger mt-2" role="alert">
+                Login unsuccessful. Please try again.
+              </div>
+            )}
+
+            <h3 className="mb-3">Please log in</h3>
+
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <label className="form-label">Username</label>
+                <input
+                  className="form-control"
+                  type="text"
+                  name="username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                />
+
+                <label className="form-label mt-2">Password</label>
+                <input
+                  className="form-control"
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="d-grid gap-2">
+                <button className="btn btn-primary mb-5" type="submit">
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>
+          <div className="col-md-3"></div>
         </div>
-        <button type="submit" className="btn btn-primary">
-          Login
-        </button>
-      </form>
+      </div>
     </div>
   );
 };
