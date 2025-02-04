@@ -34,6 +34,8 @@ import lab2inscureDeserialization from "./labs/insecureDeserialization/lab2/lab2
 import lab1CSRF from "./labs/CSRF/lab1/lab1.router";
 import lab2CSRF from "./labs/CSRF/lab2/lab2.router";
 import lab3CSRF from "./labs/CSRF/lab3/lab3.router";
+import lab1fileInclusion from "./labs/fileInclusion/lab1/lab1.router";
+
 
 const app = express();
 app.use("/uploads", express.static("uploads"));
@@ -84,6 +86,7 @@ app.use("/api", lab2inscureDeserialization);
 app.use("/api", lab1CSRF);
 app.use("/api", lab2CSRF);
 app.use("/api", lab3CSRF);
+app.use("/api", lab1fileInclusion);
 
 dotenv.config();
 
