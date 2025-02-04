@@ -41,7 +41,7 @@ available store credit.
       <GoBack_Btn />
       <ShowHint_Btn hintText={hintMessage} />
       <div className="container">
-        <h2 className="lab-header">Second Lab</h2>
+        <h2 className="lab-header">successfully </h2>
         <Go2TopBtn />
       </div>
     </>
