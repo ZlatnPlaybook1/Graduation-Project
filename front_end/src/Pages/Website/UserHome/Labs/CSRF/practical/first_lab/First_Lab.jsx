@@ -11,7 +11,7 @@ const First_Lab = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/account")
+      .get("http://127.0.0.1:8080/api/account")
       .then((res) => {
         setAccountNo(res.data.accountNo);
         setAccountName(res.data.accountName);
@@ -30,7 +30,7 @@ const First_Lab = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/update-password",
+        "http://127.0.0.1:8080/api/update-password",
         { accountPass }
       );
       setMessage(res.data.message);

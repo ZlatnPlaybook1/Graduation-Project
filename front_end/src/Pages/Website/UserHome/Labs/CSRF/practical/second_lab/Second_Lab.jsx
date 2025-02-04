@@ -10,7 +10,7 @@ const Second_Lab = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/lab2/login",
+        "http://127.0.0.1:8080/api/lab2/login",
         {
           username,
           password,
