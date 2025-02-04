@@ -55,9 +55,9 @@ model userForsqlInjection {
 }
 
 model userForXSS {
-  id       String  @id @default(uuid())
-  email    String  @unique
-  posts    Post[]
+  id    String @id @default(uuid())
+  email String @unique
+  posts Post[]
 }
 
 model File {
@@ -71,19 +71,19 @@ model File {
 }
 
 model Lab1IDORS {
-  id       Int  @id @default(autoincrement())
-  path    String?
+  id   Int     @id @default(autoincrement())
+  path String?
 }
 
 model Lab2IDORS {
-  id       Int   @id @default(1)
-  balance  Int   @default(1000)
+  id      Int @id @default(1)
+  balance Int @default(1000)
 }
 
 model Lab3IDORS {
-  id      Int   @id @default(autoincrement())
-  name    String    @default("user")
-  balance Int  @default(1000)
+  id      Int    @id @default(autoincrement())
+  name    String @default("user")
+  balance Int    @default(1000)
 }
 
 model Post {
@@ -112,48 +112,56 @@ enum Role {
   admin
   writer
 }
+
 model ACUser {
-  id    Int    @id @default(autoincrement())
-  name  String
+  id   Int    @id @default(autoincrement())
+  name String
 }
 
 model apiHackingLab {
-  id       Int    @id @default(autoincrement())
-  username String @unique
+  id       Int                  @id @default(autoincrement())
+  username String               @unique
   password String
-  image   imageForApiHacking[]
+  image    imageForApiHacking[]
 }
 
 model imageForApiHacking {
-  id        Int    @id @default(autoincrement())
-  name      String
-  path      String
-  userId    Int
-  user      apiHackingLab @relation(fields: [userId], references: [id])
+  id     Int           @id @default(autoincrement())
+  name   String
+  path   String
+  userId Int
+  user   apiHackingLab @relation(fields: [userId], references: [id])
 }
 
 model ProductToPathTraversalLab1 {
-  id       Int    @id @default(autoincrement())
-  name     String?
-  path     String
+  id          Int     @id @default(autoincrement())
+  name        String?
+  path        String
   description String
 }
+
 model BankAccount {
-  id             Int     @id @default(autoincrement())
-  accountNo      String  @unique
+  id             Int    @id @default(autoincrement())
+  accountNo      String @unique
   accountPass    String
-  accountBalance Float   @default(0)
+  accountBalance Float  @default(0)
   accountName    String
 }
 
 model CSRFLab2 {
-  id        Int     @id @default(autoincrement())
-  authority String  @unique
+  id        Int    @id @default(autoincrement())
+  authority String @unique
   password  String
 }
 
 model CSRFLab3 {
-  id      Int   @id @default(autoincrement())
-  name    String    @default("user")
-  balance Int  @default(1000)
+  id      Int    @id @default(autoincrement())
+  name    String @default("user")
+  balance Int    @default(1000)
+}
+
+model FileInclusionLab1 {
+  id   String @id @default(uuid())
+  name String @unique
+  path String
 }
