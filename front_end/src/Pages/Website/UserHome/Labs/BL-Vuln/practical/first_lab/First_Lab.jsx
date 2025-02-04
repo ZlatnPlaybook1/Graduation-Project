@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 
 const CyberLabsChecker = () => {
   const [inputValue, setInputValue] = useState("");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate(); // Hook for navigation
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -10,9 +13,9 @@ const CyberLabsChecker = () => {
 
   const handleSubmit = () => {
     if (inputValue === "cyberLabs") {
-      setMessage("🎉 Congratulations! You entered 'cyberLabs' correctly.");
+      setMessage("successfully");
     } else {
-      setMessage("❌ Error: Please enter 'cyberLabs'.");
+      navigate("/BL-Vuln/BL_Vuln_labs/second_lab"); // Navigate on success
     }
   };
 
@@ -33,17 +36,7 @@ const CyberLabsChecker = () => {
         <button className="btn btn-primary w-100" onClick={handleSubmit}>
           Submit
         </button>
-        {message && (
-          <p
-            className={`fw-bold mt-3 ${
-              message.includes("Congratulations")
-                ? "text-success"
-                : "text-danger"
-            }`}
-          >
-            {message}
-          </p>
-        )}
+        {message && <p className="fw-bold mt-3 text-danger">{message}</p>}
       </div>
     </div>
   );
