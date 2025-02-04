@@ -30,6 +30,7 @@ import lab1CommendInjection from "./labs/commandInjection/lab1/lab1.router";
 import lab2CommendInjection from "./labs/commandInjection/lab2/lab2.router";
 import lab3CommendInjection from "./labs/commandInjection/lab3/lab3.router";
 import lab1inscureDeserialization from "./labs/insecureDeserialization/lab1/lab1.router";
+import lab2inscureDeserialization from "./labs/insecureDeserialization/lab2/lab2.router";
 
 const app = express();
 app.use("/uploads", express.static("uploads"));
@@ -76,6 +77,7 @@ app.use("/api", lab1CommendInjection);
 app.use("/api", lab2CommendInjection);
 app.use("/api", lab3CommendInjection);
 app.use("/api", lab1inscureDeserialization);
+app.use("/api", lab2inscureDeserialization);
 
 dotenv.config();
 
