@@ -30,16 +30,18 @@ import lab1CommendInjection from "./labs/commandInjection/lab1/lab1.router";
 import lab2CommendInjection from "./labs/commandInjection/lab2/lab2.router";
 import lab3CommendInjection from "./labs/commandInjection/lab3/lab3.router";
 import lab1inscureDeserialization from "./labs/insecureDeserialization/lab1/lab1.router";
-// import lab1CSRF from "./labs/CSRF/lab1/lab1.router";
+import lab2inscureDeserialization from "./labs/insecureDeserialization/lab2/lab2.router";
+import lab1CSRF from "./labs/CSRF/lab1/lab1.router";
+import lab2CSRF from "./labs/CSRF/lab2/lab2.router";
 const app = express();
 app.use("/uploads", express.static("uploads"));
 app.use("/src", express.static("src"));
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // Your React app's URL
-    credentials: true, // Required for cookies
-    methods: ["GET", "POST"],
+    origin: "http://localhost:3000",  // Your React app's URL
+    credentials: true,                // Required for cookies
+    methods: ['GET', 'POST'],
   })
 );
 app.use(morgan("dev")); // morgan: HTTP request logger middleware,
@@ -76,7 +78,9 @@ app.use("/api", lab1CommendInjection);
 app.use("/api", lab2CommendInjection);
 app.use("/api", lab3CommendInjection);
 app.use("/api", lab1inscureDeserialization);
-// app.use("/api", lab1CSRF);
+app.use("/api", lab2inscureDeserialization);
+app.use("/api", lab1CSRF);
+app.use("/api", lab2CSRF);
 
 dotenv.config();
 

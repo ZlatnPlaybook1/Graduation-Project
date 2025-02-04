@@ -1,8 +1,7 @@
-// import express from "express";
-// import { login } from "../controllers/lab2.controller";
+import express from "express";
+import { login } from "./lab2.controller";
 
-// const router = express.Router();
+const lab2CSRF = express.Router();
+lab2CSRF.post("/login", login);
 
-// router.post("/login", login);
-
-// export default router;
+export default lab2CSRF;
