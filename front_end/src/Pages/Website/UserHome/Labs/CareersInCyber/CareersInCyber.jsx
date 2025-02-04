@@ -206,6 +206,16 @@ export default function CareersInCyber() {
                       </li>
                     </ol>
                   </div>
+                  <div className="go-to-section">
+                    <button
+                      onClick={() =>
+                        handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")
+                      }
+                      className="go-to"
+                    >
+                      Go To Labs
+                    </button>
+                  </div>
                 </dd>
 
                 {/* Topic 3 */}
