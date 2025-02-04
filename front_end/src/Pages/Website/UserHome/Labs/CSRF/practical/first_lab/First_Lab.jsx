@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const First_Lab = () => {
+  const [id, setId] = useState(1);
   const [accountNo, setAccountNo] = useState("");
   const [accountPass, setAccountPass] = useState("");
   const [accountBalance, setAccountBalance] = useState("");
@@ -9,17 +10,29 @@ const First_Lab = () => {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState(null);
 
-  useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8080/api/account")
-      .then((res) => {
-        setAccountNo(res.data.accountNo);
-        setAccountName(res.data.accountName);
-        setAccountBalance(res.data.accountBalance);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+  // Fetch account details
+  const fetchAccountData = async (accountId) => {
+    try {
+      const res = await axios.get(
+        `http://127.0.0.1:8080/api/account?id=${accountId}`
+      );
+      const { id, accountNo, accountName, accountBalance } = res.data.account;
+      setId(id);
+      setAccountNo(accountNo);
+      setAccountName(accountName);
+      setAccountBalance(accountBalance);
+    } catch (err) {
+      console.error(err);
+      setMessage("Error fetching account details");
+      setStatus("danger");
+    }
+  };
 
+  useEffect(() => {
+    fetchAccountData(id);
+  }, [id]); // Refresh when ID changes
+
+  // Handle password update
   const handleUpdate = async (e) => {
     e.preventDefault();
     if (!accountPass.trim()) {
@@ -31,10 +44,18 @@ const First_Lab = () => {
     try {
       const res = await axios.post(
         "http://127.0.0.1:8080/api/update-password",
-        { accountPass }
+        {
+          id, // Send ID
+          newPass: accountPass, // Use "newPass" instead of "accountPass"
+        }
       );
+
       setMessage(res.data.message);
       setStatus("success");
+      setAccountPass("");
+
+      // Refresh account data after updating the password
+      fetchAccountData(id);
     } catch (error) {
       setMessage(error.response?.data?.message || "Error updating password");
       setStatus("danger");
@@ -47,7 +68,21 @@ const First_Lab = () => {
         <div className="col-md-3"></div>
         <div className="col-md-6">
           <h1>My Bank Account</h1>
-          <button className="btn btn-secondary btn-sm">Reset</button>
+          <label>
+            Enter Account ID:
+            <input
+              type="number"
+              className="form-control mb-3"
+              value={id}
+              onChange={(e) => setId(Number(e.target.value))}
+            />
+          </label>
+          <button
+            className="btn btn-secondary btn-sm"
+            onClick={() => fetchAccountData(id)}
+          >
+            Refresh
+          </button>
         </div>
         <div className="col-md-3"></div>
       </div>
