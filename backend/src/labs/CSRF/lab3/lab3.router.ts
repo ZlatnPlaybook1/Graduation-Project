@@ -1,7 +1,10 @@
-import express from "express";
-import { login } from "./lab3.controller";
+import { Router } from "express";
+import { getAccounts, getAccount, transfer } from "./lab3.controller";
 
-const lab3CSRF = express.Router();
-lab3CSRF.post("/login", login);
+const CSRFLab3 = Router();
 
-export default lab3CSRF;
+CSRFLab3.get("/CSRF-accounts", getAccounts);
+CSRFLab3.get("/CSRF-account/:id", getAccount);
+CSRFLab3.post("/CSRF-transfer", transfer);
+
+export default CSRFLab3;
