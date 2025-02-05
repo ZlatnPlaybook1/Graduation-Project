@@ -165,3 +165,9 @@ model FileInclusionLab1 {
   name String @unique
   path String
 }
+
+model CartItem {
+  id    Int    @id @default(autoincrement())
+  name  String
+  price Int
+}
