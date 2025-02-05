@@ -77,9 +77,15 @@ import REGEX_SECOND_LAB from "./Pages/Website/UserHome/Labs/Regex/practical/seco
 // End Regular Expression
 //Careers in Cyber
 import CAREERS_IN_CYBER from "./Pages/Website/UserHome/Labs/CareersInCyber/CareersInCyber.jsx";
-import CAREERS_IN_CYBER_LABS from "./Pages/Website/UserHome/Labs/CareersInCyber/CareersInCyber_labs.jsx";
-import CAREERS_IN_CYBER_FIRST_LAB from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/first_lab/First_Lab.jsx";
+import CAREERS_IN_CYBER_MCQ from "./Pages/Website/UserHome/Labs/CareersInCyber/CareersInCyber_labs.jsx";
 import CAREERS_IN_CYBER_MORE1 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/cyberAnalyst.jsx";
+import CAREERS_IN_CYBER_MORE2 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/DigitalForensicsExaminer.jsx";
+import CAREERS_IN_CYBER_MORE3 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/IncidentResponder.jsx";
+import CAREERS_IN_CYBER_MORE4 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/MalwareAnalyst.jsx";
+import CAREERS_IN_CYBER_MORE5 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/PenetrationTester.jsx";
+import CAREERS_IN_CYBER_MORE6 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/RedTeamer.jsx";
+import CAREERS_IN_CYBER_MORE7 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/SecurityEngineer.jsx";
+
 // End Careers in Cyber
 // Api Hacking
 import API_HACKING from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking.jsx";
@@ -460,17 +466,39 @@ function App() {
           {/* Careers in Cyber */}
           <Route path="/CareersInCyber" element={<CAREERS_IN_CYBER />} />
           <Route
-            path="/CareersInCyber/CareersInCyber_labs"
-            element={<CAREERS_IN_CYBER_LABS />}
+            path="/CareersInCyber/CareersInCyber_MCQ"
+            element={<CAREERS_IN_CYBER_MCQ />}
           />
-          <Route
-            path="/CareersInCyber/CareersInCyber_labs/lab1"
-            element={<CAREERS_IN_CYBER_FIRST_LAB />}
-          />
+
           <Route
             path="/CareersInCyber/CareersInCyber_labs/ShowMore1"
             element={<CAREERS_IN_CYBER_MORE1 />}
           />
+          <Route
+            path="/CareersInCyber/CareersInCyber_labs/ShowMore2"
+            element={<CAREERS_IN_CYBER_MORE2 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_labs/ShowMore3"
+            element={<CAREERS_IN_CYBER_MORE3 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_labs/ShowMore4"
+            element={<CAREERS_IN_CYBER_MORE4 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_labs/ShowMore5"
+            element={<CAREERS_IN_CYBER_MORE5 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_labs/ShowMore6"
+            element={<CAREERS_IN_CYBER_MORE6 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_labs/ShowMore7"
+            element={<CAREERS_IN_CYBER_MORE7 />}
+          />
+
           {/* End Careers in Cyber */}
 
           {/* Api Hacking */}

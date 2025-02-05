@@ -76,6 +76,10 @@ const Courses = () => {
                       <div className="ribbon published">
                         <span>Published</span>
                       </div>
+                    ) : course.state === "semi-published" ? (
+                      <div className="ribbon semi-published">
+                        <span>Semi Published</span>
+                      </div>
                     ) : (
                       <div className="ribbon pending">
                         <span>Pending</span>

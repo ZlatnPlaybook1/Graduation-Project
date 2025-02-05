@@ -64,7 +64,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/SQL_Injection/landing3.png"),
-    state: "published",
+    state: "semi-published",
     link: "/sql_Injection",
   },
   {
@@ -115,7 +115,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/ACV/Landing.jpg"),
-    state: "pending",
+    state: "semi-published",
     link: "/AC_Vuln",
   },
   {
@@ -213,7 +213,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/CSRF/landing.jpg"),
-    state: "published",
+    state: "semi-published",
     link: "/CSRF",
   },
   {
@@ -263,7 +263,7 @@ const courseData = [
     ],
     difficulty: "Easy",
     image: require("../assets/img/Regex/Landing.jpg"),
-    state: "published",
+    state: "semi-published",
     link: "/Regex",
   },
   {
@@ -365,7 +365,7 @@ const courseData = [
     ],
     difficulty: "Medium",
     image: require("../assets/img/AudFor/landing.png"),
-    state: "published",
+    state: "semi-published",
     link: "/Digital_Forensics",
   },
   {

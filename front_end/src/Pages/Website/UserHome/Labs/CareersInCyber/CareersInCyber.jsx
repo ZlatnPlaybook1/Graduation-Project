@@ -209,7 +209,9 @@ export default function CareersInCyber() {
                   <div className="go-to-section">
                     <button
                       onClick={() =>
-                        handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")
+                        handleGoToLab(
+                          "/CareersInCyber/CareersInCyber_labs/ShowMore1"
+                        )
                       }
                       className="go-to"
                     >
@@ -735,7 +737,7 @@ export default function CareersInCyber() {
             <div className="go-to-section">
               <button
                 onClick={() =>
-                  handleGoToLab("/CareersInCyber/CareersInCyber_labs")
+                  handleGoToLab("/CareersInCyber/CareersInCyber_MCQ")
                 }
                 className="go-to"
               >
