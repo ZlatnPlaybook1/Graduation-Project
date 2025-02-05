@@ -4,41 +4,40 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export const CSRFLab2 = async (req: Request, res: Response) => {
-  const { username, currentPass } = req.body; // input from frontend
-  let validPass = ""; // To hold the valid password fetched from DB
-
   try {
-    // Use findUnique to fetch a specific user based on the username
+    const { username, enteredPass } = req.body;
+
+    // Find user in the database
     const user = await prisma.cSRFLab2.findUnique({
       where: { authority: username },
     });
 
-    if (user) {
-      // If the user exists, use the corresponding password as validPass
-      validPass = user.password; // Store the actual password as validPass
-
-      // Check if the provided password matches the valid password
-      if (currentPass === validPass) {
-        // Send back the valid password to the client (for educational purposes)
-        res.status(200).json({
-          success: true,
-          message: "User found and password verified",
-          validPassword: validPass, // Send the actual password to the client
-        });
-      } else {
-        res.status(401).json({
-          success: false,
-          message: "Invalid password",
-        });
-      }
-    } else {
-      res.status(404).json({
-        success: false,
-        message: "User not found",
-      });
+    if (!user) {
+      return res
+        .status(404)
+        .json({ success: false, message: "User not found" });
     }
+
+    // If user exists, return user details with entered password
+    res.status(200).json({
+      username: user.authority,
+      validPass: user.password, // Actual password from DB
+      enteredPass, // Password entered by the user
+    });
   } catch (error) {
-    console.error("Error:", error); // Log the error for debugging
+    console.error("Error checking user:", error);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};
+export const getAllUsers = async (req: Request, res: Response) => {
+  try {
+    const users = await prisma.cSRFLab2.findMany({
+      select: { authority: true, password: true },
+    });
+
+    res.status(200).json(users);
+  } catch (error) {
+    console.error("Error fetching users:", error);
     res.status(500).json({ success: false, message: "Server error" });
   }
 };

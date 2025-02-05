@@ -1,99 +1,72 @@
-import React, { useState } from "react";
-import Swal from "sweetalert2";
+import { useState, useEffect } from "react";
 import axios from "axios";
-
-export default function LoginPage() {
+// import Swal from "sweetalert2";
+const CSRFLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [validPass, setValidPass] = useState(""); // Store valid password from DB
-  const [message, setMessage] = useState("");
+  const [users, setUsers] = useState([]);
 
-  // Handle the login form submission
-  const handleLogin = async (e) => {
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get(
+          "http://127.0.0.1:8080/api/getAllUsers"
+        );
+        setUsers(response.data);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    };
+
+    fetchUsers();
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      // Send the HTTP request with the username and password
-      const response = await axios.post("http://127.0.0.1:8080/api/CSRFLab2", {
-        username,
-        password,
-        validPass, // Pass the current valid password (empty at the moment)
-      });
-
-      // If the response contains the valid password
-      if (response.data.success) {
-        setValidPass(response.data.validPassword); // Get the valid password from DB
-
-        // SweetAlert popup to show the password for the learner to intercept
-        Swal.fire({
-          title: "Success!",
-          text: `The valid password is: ${response.data.validPassword}`,
-          icon: "success",
-          confirmButtonText: "Got it",
-        });
-
-        // You can simulate password update or other actions after this
-        setMessage("Login successful");
+      const user = users.find((user) => user.authority === username);
+      if (user) {
+        const response = await axios.post(
+          "http://127.0.0.1:8080/api/CSRFLab2",
+          {
+            username: user.authority,
+            validPass: user.password,
+            enteredPass: password,
+          }
+        );
       } else {
-        setMessage(response.data.message);
-
-        Swal.fire({
-          title: "Try again!",
-          text: "Invalid username or password. Try intercepting the request.",
-          icon: "warning",
-          confirmButtonText: "OK",
-        });
+        //  Show error message using SweetAlert "User not found!"
+        // type your code here
       }
     } catch (error) {
-      setMessage("Server error");
-      console.error("Error:", error);
+      console.error("Login Error:", error);
     }
+    // if user enter correct user and password show success message using SweetAlert "Login Successful! & Lab finished"
+    // type your code here
   };
 
   return (
-    <div
-      className="container d-flex justify-content-center align-items-center"
-      style={{ height: "100vh" }}
-    >
-      <div
-        className="card p-4 shadow-lg"
-        style={{ maxWidth: "400px", width: "100%" }}
-      >
-        <h2 className="text-center mb-4">Login</h2>
-        <form onSubmit={handleLogin}>
-          <div className="mb-3">
-            <label htmlFor="username" className="form-label">
-              Username
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="username"
-              placeholder="Enter your username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label">
-              Password
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <button type="submit" className="btn btn-primary w-100">
-            Login
-          </button>
-        </form>
+    // style this using bootstrap for a good look
 
-        {message && <p className="mt-3 text-center">{message}</p>}
-      </div>
+    <div>
+      <h2>CSRF Lab Login</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Enter password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
-}
+};
+
+export default CSRFLogin;
