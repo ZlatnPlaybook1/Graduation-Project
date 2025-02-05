@@ -5,9 +5,9 @@ export async function getAccounts(req: Request, res: Response) {
   try {
     const accounts = await prisma.cSRFLab3.findMany({
       orderBy: {
-        id: "asc", // Ensures the accounts are ordered by ID in ascending order
+        id: "asc",
       },
-      take: 2, // Limits the result to the first two accounts
+      take: 2,
     });
 
     return res.status(200).json({
@@ -46,52 +46,56 @@ export async function getAccount(req: Request, res: Response) {
 
 export async function transfer(req: Request, res: Response) {
   try {
-    const senderId = Number(req.body.userId); // Sender's ID from the request body
-    const transferAmount = Number(req.body.transferAmount); // Transfer amount from the request body
+    const senderId = Number(req.body.userId);
+    const recipientId = Number(req.body.recipientId); // Add recipientId to the request body
+    const transferAmount = Number(req.body.transferAmount);
 
-    const accounts = await prisma.cSRFLab3.findMany({
-      orderBy: {
-        id: "asc", // Ordering by ID ascending
-      },
-      take: 2, // Selecting the first two accounts
+    // Validate transfer amount
+    if (transferAmount <= 0) {
+      return res.status(400).json({
+        message: "Transfer amount must be greater than 0.",
+      });
+    }
+
+    // Fetch sender and recipient accounts
+    const senderAccount = await prisma.cSRFLab3.findUnique({
+      where: { id: senderId },
     });
 
-    if (accounts.length < 2) {
-      return res.status(400).json({
-        message: "Insufficient number of accounts for transfer.",
-      });
-    }
+    const recipientAccount = await prisma.cSRFLab3.findUnique({
+      where: { id: recipientId },
+    });
 
-    const senderAccount = accounts[0]; // First account (sender)
-    const receiverAccount = accounts[1]; // Second account (receiver)
-
-    if (!senderAccount || !receiverAccount) {
+    // Validate sender and recipient accounts
+    if (!senderAccount || !recipientAccount) {
       return res.status(404).json({
-        message: "Account not found",
+        message: "Sender or recipient account not found.",
       });
     }
 
-    if (senderId === receiverAccount.id) {
+    // Ensure sender and recipient are not the same
+    if (senderAccount.id === recipientAccount.id) {
       return res.status(400).json({
         message: "Invalid operation: Cannot transfer to self.",
       });
     }
 
+    // Check sender's balance
     if (senderAccount.balance < transferAmount) {
       return res.status(400).json({
-        message: "Insufficient balance",
+        message: "Insufficient balance.",
       });
     }
 
-    // Performing the transfer using a transaction to update both accounts
+    // Perform the transfer using a transaction
     await prisma.$transaction([
       prisma.cSRFLab3.update({
         where: { id: senderAccount.id },
         data: { balance: senderAccount.balance - transferAmount },
       }),
       prisma.cSRFLab3.update({
-        where: { id: receiverAccount.id },
-        data: { balance: receiverAccount.balance + transferAmount },
+        where: { id: recipientAccount.id },
+        data: { balance: recipientAccount.balance + transferAmount },
       }),
     ]);
 

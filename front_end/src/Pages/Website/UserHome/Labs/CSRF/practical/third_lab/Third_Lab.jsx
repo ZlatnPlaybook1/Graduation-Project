@@ -11,18 +11,36 @@ export default function Third_Lab() {
   const [account, setAccount] = useState({});
   const [message, setMessage] = useState("");
 
+  // Fetch users on initial load
   useEffect(() => {
     axios
       .get(`${apiUrl}/CSRF-accounts`)
-      .then((response) => setUsers(response.data.money))
+      .then((response) => {
+        const usersData = response.data.money.slice(0, 2);
+        setUsers(usersData);
+
+        // Set userId to the first user's ID
+        if (usersData.length > 0) {
+          setUserId(usersData[0].id);
+        }
+
+        // Set recipientId and recipientName to the second user's ID and name
+        if (usersData.length > 1) {
+          setRecipientId(usersData[1].id);
+          setRecipientName(usersData[1].name);
+        }
+      })
       .catch((error) => console.error("Error fetching users:", error));
   }, []);
 
+  // Fetch account details when userId changes
   useEffect(() => {
     if (userId) {
       axios
         .get(`${apiUrl}/CSRF-account/${userId}`)
-        .then((response) => setAccount(response.data.account))
+        .then((response) => {
+          setAccount(response.data.account);
+        })
         .catch((error) => console.error("Error fetching account:", error));
     }
   }, [userId]);
@@ -30,19 +48,37 @@ export default function Third_Lab() {
   const handleTransfer = (e) => {
     e.preventDefault();
 
+    // Debugging: Log recipientId and userId
+    console.log("Recipient ID:", recipientId);
+    console.log("User ID:", userId);
+
+    // Ensure recipientId and userId are set
+    if (!recipientId || !userId) {
+      setMessage("Recipient or sender information is missing.");
+      return;
+    }
+
+    // Proceed with the transfer
     axios
       .post(`${apiUrl}/CSRF-transfer`, {
-        transferAmount,
-        recipientId,
-        userId,
+        transferAmount: Number(transferAmount),
+        recipientId: Number(recipientId),
+        userId: Number(userId),
       })
       .then((response) => {
         setMessage(response.data.message);
         setTransferAmount("");
-        setRecipientName("");
 
+        // Refresh user and account data
         axios.get(`${apiUrl}/CSRF-accounts`).then((response) => {
-          setUsers(response.data.money);
+          const usersData = response.data.money.slice(0, 2);
+          setUsers(usersData);
+
+          // Update recipientId and recipientName if necessary
+          if (usersData.length > 1) {
+            setRecipientId(usersData[1].id);
+            setRecipientName(usersData[1].name);
+          }
         });
         axios.get(`${apiUrl}/CSRF-account/${userId}`).then((response) => {
           setAccount(response.data.account);
@@ -63,12 +99,18 @@ export default function Third_Lab() {
       <div className="card shadow-sm mb-4">
         <div className="card-body">
           <h5 className="card-title">Account Information</h5>
-          <p className="card-text">
-            Account Name: <b>{account.name}</b>
-          </p>
-          <p className="card-text">
-            Balance: <b>{account.balance} $</b>
-          </p>
+          {users.length > 0 ? (
+            <>
+              <p className="card-text">
+                Sender Name: <b>{users[0].name}</b>
+              </p>
+              <p className="card-text">
+                Balance: <b>{users[0].balance} $</b>
+              </p>
+            </>
+          ) : (
+            <p>Loading account information...</p>
+          )}
         </div>
       </div>
 
@@ -91,7 +133,7 @@ export default function Third_Lab() {
             className="form-control"
             id="recipient_name"
             value={recipientName}
-            onChange={(e) => setRecipientName(e.target.value)}
+            readOnly
           />
         </div>
 
@@ -104,6 +146,7 @@ export default function Third_Lab() {
             value={transferAmount}
             onChange={(e) => setTransferAmount(e.target.value)}
             required
+            min="0"
           />
         </div>
 
