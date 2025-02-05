@@ -4,6 +4,7 @@ import morgan from "morgan";
 import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
+import path from "path";
 import registerRouter from "./registerWithAuthentication/register.router";
 import loginRouter from "./login/login.router";
 import logoutRouter from "./logout/logout.router";
@@ -35,7 +36,8 @@ import lab1CSRF from "./labs/CSRF/lab1/lab1.router";
 import lab2CSRF from "./labs/CSRF/lab2/lab2.router";
 import lab3CSRF from "./labs/CSRF/lab3/lab3.router";
 import lab1fileInclusion from "./labs/fileInclusion/lab1/lab1.router";
-
+import lab2fileInclusion from "./labs/fileInclusion/lab2/lab2.router";
+import lab3fileInclusion from "./labs/fileInclusion/lab3/lab3.router";
 
 const app = express();
 app.use("/uploads", express.static("uploads"));
@@ -55,6 +57,9 @@ app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "../views")); 
+
 
 app.use("/api", registerRouter);
 app.use("/api", loginRouter);
@@ -87,6 +92,8 @@ app.use("/api", lab1CSRF);
 app.use("/api", lab2CSRF);
 app.use("/api", lab3CSRF);
 app.use("/api", lab1fileInclusion);
+app.use("/api", lab2fileInclusion);
+app.use("/api", lab3fileInclusion);
 
 dotenv.config();
 

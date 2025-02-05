@@ -1,23 +1,19 @@
 import { Request, Response } from 'express';
-import prisma from '../../../utilities/db';
 
-export async function getImage(req: Request, res: Response) {
+export async function cityPage(req: Request, res: Response) {
     try {
-        const image = await prisma.fileInclusionLab1.findUnique({
-            where: {
-                name: req.params.file
-            },
-            select: {
-                id: true,
-                path: true,}
-            })
-        res.status(200).json({
-            message: 'Image retrieved successfully',
-            pdf: image,
-        });
+        let city = req.query.city as string;
+
+        // Prevent directory traversal attacks
+        const allowedPages = ["Berlin", "Cairo", "London", "Paris", "Pyongyang", "Tokyo"];
+
+        if (!allowedPages.includes(city)) {
+            city = null;
+        }
+
+        res.render("index", { cityPage: city });
     }
     catch (error) {
-        console.error(error);
-        res.status(500).send(error.message || 'Error retrieving image.');
+        res.status(500).send(error.message || "Error rendering page.");
     }
 }
