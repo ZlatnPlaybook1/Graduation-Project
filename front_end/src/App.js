@@ -12,6 +12,9 @@ import RequierAuth from "./Pages/Auth/RequierAuth.jsx";
 import Writer from "./Pages/Dashboard/Writer/Writer.jsx";
 import Error404 from "./Pages/Auth/404.jsx";
 import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
+import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
+import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
+// import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import SQL_INJECTION from "./Pages/Website/UserHome/Labs/Sql_Injection/Sql_Injection.jsx";
 import SQLInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/SQLInjection_labs.jsx";
 import LoginSqlInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/first_lab/LoginSqlInjection.jsx";
@@ -76,7 +79,7 @@ import REGEX_SECOND_LAB from "./Pages/Website/UserHome/Labs/Regex/practical/seco
 import CAREERS_IN_CYBER from "./Pages/Website/UserHome/Labs/CareersInCyber/CareersInCyber.jsx";
 import CAREERS_IN_CYBER_LABS from "./Pages/Website/UserHome/Labs/CareersInCyber/CareersInCyber_labs.jsx";
 import CAREERS_IN_CYBER_FIRST_LAB from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/first_lab/First_Lab.jsx";
-import CAREERS_IN_CYBER_MORE1 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/cyberAnalyst.jsx"
+import CAREERS_IN_CYBER_MORE1 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/cyberAnalyst.jsx";
 // End Careers in Cyber
 // Api Hacking
 import API_HACKING from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking.jsx";
@@ -177,9 +180,6 @@ import CAPTCHABYPASS_LAB from "./Pages/Website/UserHome/Labs/CaptchaBypass/Captc
 import JWTAttacks from "./Pages/Website/UserHome/Labs/JWTAttacks/JWTAttacks.jsx";
 import JWTATTACKS_LAB from "./Pages/Website/UserHome/Labs/JWTAttacks/JWTAttacks_lab.jsx";
 // End JWT Attacks
-// import RequireBack from "./Pages/Auth/RequireBack.jsx";
-import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
-import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
 import Robots from "./Pages/Website/UserHome/Labs/XSS/Practical/Robots.jsx";
 import XSS_SEVEN from "./Pages/Website/UserHome/Labs/XSS/Practical/XSS_SEVEN.jsx";
 import PyramidsOfGiza from "./Pages/Website/UserHome/Labs/XSS/Practical/PyramidsOfGiza.jsx";
@@ -188,16 +188,21 @@ import ChichenItza from "./Pages/Website/UserHome/Labs/XSS/Practical/ChichenItza
 import TajMahal from "./Pages/Website/UserHome/Labs/XSS/Practical/TajMahal.jsx";
 import ParadiseOfHawaii from "./Pages/Website/UserHome/Labs/XSS/Practical/ParadiseOfHawaii.jsx";
 import Colosseum from "./Pages/Website/UserHome/Labs/XSS/Practical/Colosseum.jsx";
+// Start UnrestrictedFileUpload
 import UnrestrictedFileUpload from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/UnrestrictedFileUpload.jsx";
 import UnrestrictedFileUploadLabs from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/UnrestrictedFileUploadLabs.jsx";
 import UnrestrictedFirstlab from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/Practical/Unrestricted_Lab1.jsx";
 import UnrestrictedSecondlab from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/Practical/Unrestricted_Lab2.jsx";
 import UnrestrictedThirdlab from "./Pages/Website/UserHome/Labs/UnrestrictedFileUpload/Practical/Unrestricted_Lab3.jsx";
+// End UnrestrictedFileUpload
+// Start Insecure Direct Object Reference
 import InsecureDirectObjectReference from "./Pages/Website/UserHome/Labs/IDOR/InsecureDirectObjectReference.jsx";
 import InsecureDirectObjectReferenceLabs from "./Pages/Website/UserHome/Labs/IDOR/InsecureDirectObjectReferenceLabs.jsx";
 import IDORLab1 from "./Pages/Website/UserHome/Labs/IDOR/practical/IDOR_Lab1.jsx";
 import IDORLab2 from "./Pages/Website/UserHome/Labs/IDOR/practical/IDOR_Lab2.jsx";
 import IDORLab3 from "./Pages/Website/UserHome/Labs/IDOR/practical/IDOR_Lab3.jsx";
+// End Insecure Direct Object Reference
+// Start Broken Authentication
 import BrokenAuthentication from "./Pages/Website/UserHome/Labs/Broken_Auth/BrokenAuthentication.jsx";
 import BrokenAuthenticationLab from "./Pages/Website/UserHome/Labs/Broken_Auth/BrokenAuthenticationLab.jsx";
 import AuthLab1 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab1.jsx";
@@ -206,6 +211,7 @@ import WordsList from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Words
 import AuthLab3 from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/Auth_lab3.jsx";
 import Products from "./Pages/Website/UserHome/Labs/Broken_Auth/Practical/products.jsx";
 import UsersPage from "./Pages/Website/UserHome/Labs/Api-Hacking/practical/second_lab/UsersPage.jsx";
+// End Broken Authentication
 // Start Path Traversal
 import PathTraversal from "./Pages/Website/UserHome/Labs/Path...Traversal/PathTraversal.jsx";
 import PathTraversalLabs from "./Pages/Website/UserHome/Labs/Path...Traversal/PathTraversalLabs.jsx";

@@ -80,7 +80,7 @@ export default function MoneyTransferLab() {
       <GoBack />
       <ShowHint hintText={hintMessage} />
       <div className="transfer-container">
-        <h1 className="transfer-title">💰 Secure Money Transfer</h1>
+        <h1 className="transfer-title">Secure Money Transfer</h1>
         <p className="transfer-subtitle">Send money safely and instantly.</p>
 
         <div className="transfer-details">
