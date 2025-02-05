@@ -1,95 +1,99 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import Swal from "sweetalert2";
 import axios from "axios";
 
-const Second_Lab = () => {
+export default function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [status, setStatus] = useState(null);
+  const [validPass, setValidPass] = useState(""); // Store valid password from DB
+  const [message, setMessage] = useState("");
 
-  const handleSubmit = async (e) => {
+  // Handle the login form submission
+  const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post(
-        "http://127.0.0.1:8080/api/lab2/login",
-        {
-          username,
-          password,
-        }
-      );
 
+    try {
+      // Send the HTTP request with the username and password
+      const response = await axios.post("http://127.0.0.1:8080/api/CSRFLab2", {
+        username,
+        password,
+        validPass, // Pass the current valid password (empty at the moment)
+      });
+
+      // If the response contains the valid password
       if (response.data.success) {
-        localStorage.setItem("authority", username);
-        window.location.href = "/"; // Redirect to the homepage
+        setValidPass(response.data.validPassword); // Get the valid password from DB
+
+        // SweetAlert popup to show the password for the learner to intercept
+        Swal.fire({
+          title: "Success!",
+          text: `The valid password is: ${response.data.validPassword}`,
+          icon: "success",
+          confirmButtonText: "Got it",
+        });
+
+        // You can simulate password update or other actions after this
+        setMessage("Login successful");
       } else {
-        setStatus("unsuccess");
+        setMessage(response.data.message);
+
+        Swal.fire({
+          title: "Try again!",
+          text: "Invalid username or password. Try intercepting the request.",
+          icon: "warning",
+          confirmButtonText: "OK",
+        });
       }
     } catch (error) {
-      console.error("Login failed:", error);
-      setStatus("unsuccess");
+      setMessage("Server error");
+      console.error("Error:", error);
     }
   };
 
   return (
-    <div className="container">
-      <div className="container-wrapper">
-        <div className="row pt-4 mt-5 mb-3">
-          <div className="col-md-3"></div>
-          <div className="col-md-6">
-            <h1>Login Page</h1>
-            <a href="/reset">
-              <button type="button" className="btn btn-secondary btn-sm">
-                Reset Password
-              </button>
-            </a>
+    <div
+      className="container d-flex justify-content-center align-items-center"
+      style={{ height: "100vh" }}
+    >
+      <div
+        className="card p-4 shadow-lg"
+        style={{ maxWidth: "400px", width: "100%" }}
+      >
+        <h2 className="text-center mb-4">Login</h2>
+        <form onSubmit={handleLogin}>
+          <div className="mb-3">
+            <label htmlFor="username" className="form-label">
+              Username
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="username"
+              placeholder="Enter your username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
           </div>
-          <div className="col-md-3"></div>
-        </div>
-
-        <div className="row pt-2">
-          <div className="col-md-3"></div>
-          <div className="col-md-6">
-            {status === "unsuccess" && (
-              <div className="alert alert-danger mt-2" role="alert">
-                Login unsuccessful. Please try again.
-              </div>
-            )}
-
-            <h3 className="mb-3">Please log in</h3>
-
-            <form onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <label className="form-label">Username</label>
-                <input
-                  className="form-control"
-                  type="text"
-                  name="username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                />
-
-                <label className="form-label mt-2">Password</label>
-                <input
-                  className="form-control"
-                  type="password"
-                  name="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="d-grid gap-2">
-                <button className="btn btn-primary mb-5" type="submit">
-                  Login
-                </button>
-              </div>
-            </form>
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
-          <div className="col-md-3"></div>
-        </div>
+          <button type="submit" className="btn btn-primary w-100">
+            Login
+          </button>
+        </form>
+
+        {message && <p className="mt-3 text-center">{message}</p>}
       </div>
     </div>
   );
-};
-
-export default Second_Lab;
+}

@@ -1,42 +1,24 @@
 import prisma from "../../../utilities/db";
 import { Request, Response } from "express";
 
-// Fetch Account Details by ID
+// Fetch the first account by ID
 export async function getAccount(req: Request, res: Response) {
-  const { id } = req.query;
-
-  if (!id) return res.status(400).json({ message: "Account ID is required" });
-
   try {
-    const account = await prisma.bankAccount.findUnique({
-      where: { id: Number(id) },
-      select: {
-        id: true,
-        accountNo: true,
-        accountName: true,
-        accountBalance: true,
-      },
+    const account = await prisma.bankAccount.findFirst({
+      orderBy: { id: "asc" },
     });
-
     if (!account) return res.status(404).json({ message: "Account not found" });
 
-    res.status(200).json({
-      message: "Account details retrieved successfully",
-      account,
-    });
+    res.status(200).json({ account });
   } catch (error) {
     console.error(error);
-    res.status(500).json({
-      error: "Error retrieving account details.",
-      message:
-        error.message || "An error occurred while retrieving account details.",
-    });
+    res.status(500).json({ message: "Error retrieving account details." });
   }
 }
 
-// Update Account Password by ID
+// Update Account Password by ID and return updated account
 export async function updatePassword(req: Request, res: Response) {
-  const { id, newPass } = req.body; // Changed to `newPass` to match request format
+  const { id, newPass } = req.body;
 
   if (!id) return res.status(400).json({ message: "Account ID is required" });
   if (!newPass?.trim())
@@ -47,26 +29,26 @@ export async function updatePassword(req: Request, res: Response) {
     const account = await prisma.bankAccount.findUnique({
       where: { id: Number(id) },
     });
-
     if (!account) return res.status(404).json({ message: "Account not found" });
 
-    // Update the password for the specific ID
+    // Update password
     await prisma.bankAccount.update({
       where: { id: Number(id) },
-      data: { accountPass: newPass }, // Updated field name
+      data: { accountPass: newPass },
+    });
+
+    // Fetch updated account details
+    const updatedAccount = await prisma.bankAccount.findUnique({
+      where: { id: Number(id) },
     });
 
     res.status(200).json({
-      success: true,
-      message: "Password updated successfully",
+      message: "Password Updating Successfully",
+      account: updatedAccount, // Return updated user info
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({
-      error: "Error updating password.",
-      message:
-        error.message || "An error occurred while updating the password.",
-    });
+    res.status(500).json({ message: "Error updating password." });
   }
 }
 

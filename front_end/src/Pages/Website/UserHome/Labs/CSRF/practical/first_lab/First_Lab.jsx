@@ -1,135 +1,140 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { FaUser, FaMoneyBillWave, FaLock } from "react-icons/fa"; // Icons for account details
 
-const First_Lab = () => {
-  const [id, setId] = useState(1);
-  const [accountNo, setAccountNo] = useState("");
-  const [accountPass, setAccountPass] = useState("");
-  const [accountBalance, setAccountBalance] = useState("");
-  const [accountName, setAccountName] = useState("");
+export default function CSRF_FIRST_LAB() {
+  const [account, setAccount] = useState(null);
+  const [newPass, setNewPass] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState(null);
+  const [updatedId, setUpdatedId] = useState(null);
 
-  // Fetch account details
-  const fetchAccountData = async (accountId) => {
+  // Fetch account details by ID (if provided) or first account
+  const fetchAccount = async (id = null) => {
     try {
-      const res = await axios.get(
-        `http://127.0.0.1:8080/api/account?id=${accountId}`
-      );
-      const { id, accountNo, accountName, accountBalance } = res.data.account;
-      setId(id);
-      setAccountNo(accountNo);
-      setAccountName(accountName);
-      setAccountBalance(accountBalance);
-    } catch (err) {
-      console.error(err);
-      setMessage("Error fetching account details");
-      setStatus("danger");
+      const url = id
+        ? `http://127.0.0.1:8080/api/account/${id}`
+        : "http://127.0.0.1:8080/api/account";
+      const res = await fetch(url);
+      const data = await res.json();
+
+      if (data.account) {
+        setAccount(data.account);
+      } else {
+        setAccount(null);
+      }
+    } catch (error) {
+      console.error("Error fetching account:", error);
+      setAccount(null);
     }
   };
 
   useEffect(() => {
-    fetchAccountData(id);
-  }, [id]); // Refresh when ID changes
+    fetchAccount();
+  }, []);
 
-  // Handle password update
-  const handleUpdate = async (e) => {
-    e.preventDefault();
-    if (!accountPass.trim()) {
-      setMessage("Password cannot be empty");
-      setStatus("warning");
-      return;
-    }
+  // Update password and fetch updated account info
+  const updatePassword = async () => {
+    if (!account) return;
 
     try {
-      const res = await axios.post(
+      const response = await fetch(
         "http://127.0.0.1:8080/api/update-password",
         {
-          id, // Send ID
-          newPass: accountPass, // Use "newPass" instead of "accountPass"
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id: account.id, newPass }),
         }
       );
 
-      setMessage(res.data.message);
-      setStatus("success");
-      setAccountPass("");
+      const result = await response.json();
 
-      // Refresh account data after updating the password
-      fetchAccountData(id);
+      if (response.ok) {
+        setMessage("Password Updated Successfully");
+
+        if (result.account) {
+          setUpdatedId(result.account.id);
+          setAccount(result.account); // Immediately update UI
+        }
+      } else {
+        setMessage("Error updating password");
+      }
     } catch (error) {
-      setMessage(error.response?.data?.message || "Error updating password");
-      setStatus("danger");
+      console.error("Error updating password:", error);
+      setMessage("Error updating password");
     }
   };
 
   return (
-    <div className="container">
-      <div className="row pt-5 mt-5 mb-3">
-        <div className="col-md-3"></div>
-        <div className="col-md-6">
-          <h1>My Bank Account</h1>
-          <label>
-            Enter Account ID:
-            <input
-              type="number"
-              className="form-control mb-3"
-              value={id}
-              onChange={(e) => setId(Number(e.target.value))}
-            />
-          </label>
-          <button
-            className="btn btn-secondary btn-sm"
-            onClick={() => fetchAccountData(id)}
+    <div
+      className="container-fluid min-vh-100 d-flex align-items-center justify-content-center"
+      style={{ background: "linear-gradient(135deg, #6f42c1, #00bcd4)" }}
+    >
+      <div
+        className="card shadow-lg rounded-lg border-0 p-4"
+        style={{ width: "400px", boxShadow: "0 8px 20px rgba(0, 0, 0, 0.1)" }}
+      >
+        <h2 className="text-center text-white mb-4">Account Information</h2>
+
+        {message && (
+          <div
+            className={`alert ${
+              message === "Password Updated Successfully"
+                ? "alert-success"
+                : "alert-danger"
+            }`}
           >
-            Refresh
-          </button>
-        </div>
-        <div className="col-md-3"></div>
-      </div>
-
-      <div className="row pt-2">
-        <div className="col-md-3"></div>
-        <div className="col-md-6">
-          <div className="card border-primary mb-3">
-            <div className="card-header text-primary">
-              Account Name: <b>{accountName}</b> <br />
-              Account No: <b>{accountNo}</b> <br />
-              Balance: <b>{accountBalance}</b>
-            </div>
+            {message}
           </div>
+        )}
 
-          <h3 className="mb-3">Update Your Password</h3>
-
-          {message && (
-            <div className={`alert alert-${status}`} role="alert">
-              <b>{message}</b>
+        {account ? (
+          <div className="mb-4">
+            <h3 className="text-info mb-3">Account Details</h3>
+            <div className="d-flex align-items-center mb-3">
+              <FaUser className="text-primary me-2" />
+              <p className="mb-0">
+                <strong>Account No:</strong> {account.accountNo}
+              </p>
             </div>
-          )}
+            <div className="d-flex align-items-center mb-3">
+              <FaMoneyBillWave className="text-success me-2" />
+              <p className="mb-0">
+                <strong>Balance:</strong> ${account.accountBalance}
+              </p>
+            </div>
+            <div className="d-flex align-items-center mb-4">
+              <FaUser className="text-info me-2" />
+              <p className="mb-0">
+                <strong>Name:</strong> {account.accountName}
+              </p>
+            </div>
 
-          <form>
-            <div className="mb-3">
-              <label htmlFor="accountPass" className="form-label">
-                Enter New Password:
-              </label>
+            <h4 className="text-info mb-3">Update Password</h4>
+            <div className="d-flex mb-3">
               <input
                 type="password"
-                className="form-control"
-                value={accountPass}
-                onChange={(e) => setAccountPass(e.target.value)}
-                placeholder="Enter your new password"
+                className="form-control me-2 border-0 shadow-sm"
+                placeholder="Enter new password"
+                value={newPass}
+                onChange={(e) => setNewPass(e.target.value)}
+                style={{ borderRadius: "30px" }}
               />
-            </div>
-            <div className="btn-group w-100 mb-5">
-              <button className="btn btn-warning" onClick={handleUpdate}>
-                Update Password
+              <button
+                className="btn btn-warning px-4 shadow-sm"
+                style={{
+                  borderRadius: "30px",
+                  transition: "all 0.3s ease",
+                }}
+                onClick={updatePassword}
+              >
+                <FaLock /> Update Password
               </button>
             </div>
-          </form>
-        </div>
-        <div className="col-md-3"></div>
+          </div>
+        ) : (
+          <p className="text-danger text-center">No account found.</p>
+        )}
       </div>
     </div>
   );
-};
-
-export default First_Lab;
+}
