@@ -248,7 +248,7 @@ import BurpSuitLabs from "./Pages/Website/UserHome/Labs/Burp-Suite/BurpSuitLabs.
 import BurpSuitLab1 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab1/BurpSuitLab1.jsx";
 import BurpSuitLab2 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab2/BurpSuitLab2.jsx";
 import BurpSuitLab3 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab3/BurpSuitLab3.jsx";
-import BurpSuitLab4 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/BurpSuitLab4.jsx";
+import BurpSuitLab4 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab4/BurpSuitLab4.jsx";
 import BurpSuitDescriptions from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab3/BurpSuitDescriptions.jsx";
 
 function App() {

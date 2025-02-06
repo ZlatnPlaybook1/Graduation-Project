@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./BurpSuitLab3.css";
-import GOBack from "../../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../../../ShowHint_Btn/ShowHint_Btn";
+import GOBack from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function BurpSuitLab3() {
   const navigate = useNavigate();
