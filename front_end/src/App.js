@@ -247,6 +247,9 @@ import BurpSuit from "./Pages/Website/UserHome/Labs/Burp-Suite/BurpSuit.jsx";
 import BurpSuitLabs from "./Pages/Website/UserHome/Labs/Burp-Suite/BurpSuitLabs.jsx";
 import BurpSuitLab1 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab1/BurpSuitLab1.jsx";
 import BurpSuitLab2 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab2/BurpSuitLab2.jsx";
+import BurpSuitLab3 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab3/BurpSuitLab3.jsx";
+import BurpSuitLab4 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/BurpSuitLab4.jsx";
+import BurpSuitDescriptions from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab3/BurpSuitDescriptions.jsx";
 
 function App() {
   return (
@@ -769,6 +772,18 @@ function App() {
           <Route
             path="/Burp_Suit/Burp_Suit_Labs/lab2"
             element={<BurpSuitLab2 />}
+          />
+          <Route
+            path="/Burp_Suit/Burp_Suit_Labs/lab3"
+            element={<BurpSuitLab3 />}
+          />
+          <Route
+            path="/Burp_Suit/Burp_Suit_Labs/lab3/:id"
+            element={<BurpSuitDescriptions />}
+          />
+          <Route
+            path="/Burp_Suit/Burp_Suit_Labs/lab4"
+            element={<BurpSuitLab4 />}
           />
           {/* End Burp Suit */}
           {/* Start Cookies */}

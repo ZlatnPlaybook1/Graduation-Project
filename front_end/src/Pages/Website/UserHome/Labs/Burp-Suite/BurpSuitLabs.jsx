@@ -61,6 +61,26 @@ export default function BurpSuitLabs() {
               }
               difficulty={"Easy"}
             />
+            {/* lab3 */}
+            <Card
+              link={"/Burp_Suit/Burp_Suit_Labs/lab3"}
+              image={Auth_Photo}
+              title={"Cookie Cracking Cascade"}
+              brief={
+                "A lab where cookies aren’t snacks… they’re keys to admin power."
+              }
+              difficulty={"Easy"}
+            />
+            {/* lab4 */}
+            <Card
+              link={"/Burp_Suit/Burp_Suit_Labs/lab4"}
+              image={Auth_Photo}
+              title={"Cookie Cracking Cascade"}
+              brief={
+                "A lab where cookies aren’t snacks… they’re keys to admin power."
+              }
+              difficulty={"Easy"}
+            />
           </div>
         </div>
       </div>
