@@ -22,11 +22,6 @@
 .team-name {
   color: white;
 }
-@media (max-width: 991px) {
-  .team .team-card-section .team-card {
-    max-width: 45%;
-  }
-}
 
 .team .team-card-section .team-img {
   position: relative;
@@ -68,12 +63,6 @@
 
 .team .team-card:hover .social-links {
   top: 0;
-}
-
-@media (max-width: 991px) {
-  .team .team-card-section .team-img .social-links {
-    display: none;
-  }
 }
 
 .team .team-card .social-links li a {
@@ -135,6 +124,16 @@
   margin: 0 auto;
   position: relative;
   top: -14px;
+}
+@media (max-width: 991px) {
+  .team .team-card-section .team-card {
+    max-width: 45%;
+  }
+}
+@media (max-width: 991px) {
+  .team .team-card-section .team-img .social-links {
+    display: none;
+  }
 }
 
 /* End Team Section */

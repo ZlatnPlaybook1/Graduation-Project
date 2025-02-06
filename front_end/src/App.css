@@ -1,22 +1,76 @@
 /* *  
    -- Default Styling 
 * */
-html {
-  scroll-behavior: smooth;
+:root {
+  --main-color: #212c42 !important;
+  --sec-main-color: #a3ea2a !important;
+  --alt-color: #151c2b !important;
+  --font-color: rgba(255, 255, 255, 0.5) !important;
+  --font-color-hover: rgba(255, 255, 255, 0.75) !important;
+  --main-transition: 0.5s !important;
+  --primaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradient-color: linear-gradient(
+    to right,
+    hsl(187, 85%, 43%),
+    hsl(199, 100%, 33%)
+  );
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --text-color: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 235);
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
 a {
   text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 15px;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 18px;
+}
+
+b {
+  display: inline-block;
+  margin: 0.4rem 0 0;
+}
+
+i {
+  color: inherit;
+  font-weight: normal;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 li {
   list-style: none;
 }
-.section {
-  padding: 4rem 0 2rem;
-}
-.container {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
+
 .flex {
   display: flex;
   align-items: center;
@@ -41,30 +95,21 @@ li {
 .btn-page:hover {
   background: var(--SecondaryColor);
 }
-input {
-  font-size: 100%;
-}
-/* 
- -- Media query */
 
-@media screen and (min-width: 1240px) {
-  .container {
-    width: 80% !important;
-    margin: auto !important;
-  }
-  .section {
-    padding: 6rem 0 4rem;
-  }
+.container {
+  margin: 0 auto;
 }
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
+.hh-100 {
+  height: 100vh;
+}
+.rows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rows .col-12 {
+  width: 100%;
+}
+.rows .col-6 {
+  width: 50%;
 }

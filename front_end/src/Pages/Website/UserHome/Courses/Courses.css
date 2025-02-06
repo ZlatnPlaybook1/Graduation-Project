@@ -161,72 +161,134 @@
 }
 /* End Course */
 
-/* New Style */
-.category-search-bar {
+/* Main Category Navigation */
+.category-nav {
+  background-color: #fff;
+  padding: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   align-items: center;
-  align-content: center;
-  /* gap: 20px; */
-  padding: 10px;
-  background-color: #eaf9f1;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.6s ease-in-out;
+  position: relative;
 }
 
-.categories-menu {
+.category-nav.active {
+  width: 100%;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Category List */
+.category-menu {
   display: flex;
-  gap: 10px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 0;
+  transition: all 0.6s ease-in-out;
+  overflow-x: auto;
+}
+.category-menu::-webkit-scrollbar {
+  width: 1em;
 }
 
+.category-menu::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(135, 177, 235, 0.3);
+}
+
+.category-menu::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  outline: 1px solid var(--main-color);
+}
+.category-nav.active .category-menu {
+  width: 90%;
+  justify-content: space-evenly;
+}
+
+/* Category Items */
+.category-menu li {
+  opacity: 0;
+  transform: rotateY(0deg);
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.category-nav.active .category-menu li {
+  opacity: 1;
+  transform: rotateY(360deg);
+}
+
+/* Category Buttons */
 .category-btn {
-  padding: 8px 16px;
+  background-color: transparent;
   border: none;
-  border-radius: 5px;
-  background-color: #ffffff;
   color: #333;
   font-weight: 600;
+  padding: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.6s ease-in-out;
+}
+/* .category-nav:not(.active):hover {
+  background-color: #5290f9;
+} */
+
+.icon:hover {
+  background-color: transparent;
 }
 
-.category-btn.active {
-  background-color: #08608a;
-  color: #fff;
-}
-
+.category-btn.active,
 .category-btn:hover {
-  background-color: #08608a;
+  background-color: #5290f9;
   color: #fff;
+  border-radius: 5px;
 }
-
-.search-container {
+/* Toggle Button */
+.icon {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 5px;
-}
-
-.search-container input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 200px;
-}
-
-.search-container .search-btn {
-  padding: 8px;
-  background-color: #08608a;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
+  background-color: #fff;
+  border: 0;
   cursor: pointer;
+  padding: 0;
+  position: relative;
+  height: 39px;
+  width: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
 }
 
-.search-container .search-btn i {
-  font-size: 16px;
+/* Icon Lines */
+.icon .line {
+  background-color: #5290f9;
+  height: 3px;
+  width: 30px;
+  position: absolute;
+  left: 0;
+  transition: all 0.5s ease-in-out;
 }
 
+.icon .line1 {
+  top: 10px;
+}
+
+.category-nav.active .icon .line2 {
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.icon .line3 {
+  bottom: 10px;
+}
+
+/* Active State - Menu Open */
+
+.icon .line2 {
+  transform: translateX(50%) translateY(-50%);
+}
 /* Ribbon Badge Styles */
 .ribbon {
   position: absolute;
@@ -266,4 +328,41 @@
 .course-image {
   position: relative;
   overflow: hidden;
+}
+
+/* Pagination Bar Style */
+.pagination-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #007bff;
+  background-color: transparent;
+  color: #007bff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pagination-button:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.pagination-button.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+.pagination-button:active {
+  transform: scale(0.95);
 }

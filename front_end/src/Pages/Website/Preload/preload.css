@@ -4,28 +4,6 @@
   --main-gradient: linear-gradient(to right, #21d397 0%, #7450fe 100%);
   --main-transition: 0.5s;
 }
-* {
-  margin: 0;
-  box-sizing: border-box;
-  font-weight: 600;
-}
-body {
-  font-family: "poppins", "sans-serif";
-}
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: #333;
-  font-size: 18px;
-  margin: 0 10px;
-  padding: 15px;
-}
-
 .section {
   padding-top: 100px;
   padding-bottom: 70px;
@@ -36,41 +14,6 @@ a {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* Extra small */
-@media (min-width: 0px) {
-  .container {
-    max-width: 100%;
-  }
-}
-
-/* small */
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-
-/*  Medium */
-@media (min-width: 768px) {
-  .container {
-    max-width: 750px;
-  }
-}
-
-/* Large */
-@media (min-width: 992px) {
-  .container {
-    max-width: 970px;
-  }
-}
-
-/* X-Large */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1170px;
-  }
 }
 
 .section-row {

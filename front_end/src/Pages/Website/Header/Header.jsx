@@ -248,12 +248,6 @@ const Header = () => {
         : $word.parent().children().eq(0);
     }
 
-    // function takePrev($word) {
-    //   return !$word.is(":first-child")
-    //     ? $word.prev()
-    //     : $word.parent().children().last();
-    // }
-
     function switchWord($oldWord, $newWord) {
       $oldWord.removeClass("is-visible").addClass("is-hidden");
       $newWord.removeClass("is-hidden").addClass("is-visible");
@@ -412,6 +406,7 @@ const Header = () => {
         </div>
       </header>
       {/* End Header */}
+
       {/* Start Landing Page */}
       <div className="landing section">
         <img src={pg} className="background-image" alt="Background" />

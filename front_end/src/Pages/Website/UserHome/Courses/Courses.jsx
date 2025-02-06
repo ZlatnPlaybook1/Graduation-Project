@@ -1,73 +1,97 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./Courses.css";
-import courseData from "./courseData"; // Assuming you move course data to a separate file
+import PaginatedCourses from "./PaginatedCourses";
+import courseData from "./courseData";
 import ChatWidget from "../../AiChatWidget/ChatWidget";
 import Go2TopBtn from "../Go2Top_Btn/Go2Top_Btn";
 const Courses = () => {
+  // const [searchTerm, setSearchTerm] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All Courses");
-  const [searchTerm, setSearchTerm] = useState("");
 
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: false,
+      mirror: true,
+    });
+  }, []);
   const categories = [
     "All Courses",
     "Web Vulnerabilities",
     "Server-Side Exploits",
     "Fundamentals",
-    "Specialized Topics",
+    "Other Topics1",
+    "Other Topics2",
   ];
 
   // Filter courses by category and search term
-  const filteredCourses = courseData.filter((course) => {
-    const term = searchTerm.toLowerCase();
-    const matchesSearchTerm =
-      course.title.toLowerCase().includes(term) ||
-      course.description.toLowerCase().includes(term) ||
-      course.topics.some((topic) => topic.toLowerCase().includes(term));
-    const matchesCategory =
-      selectedCategory === "All Courses" ||
-      course.category === selectedCategory;
+  // const filteredCourses = courseData.filter((course) => {
+  //   const term = searchTerm.toLowerCase();
+  //   const matchesSearchTerm =
+  //     course.title.toLowerCase().includes(term) ||
+  //     course.description.toLowerCase().includes(term) ||
+  //     course.topics.some((topic) => topic.toLowerCase().includes(term));
+  //   const matchesCategory =
+  //     selectedCategory === "All Courses" ||
+  //     course.category === selectedCategory;
 
-    return matchesSearchTerm && matchesCategory;
-  });
+  //   return matchesSearchTerm && matchesCategory;
+  // });
   return (
     <>
       <div className="course">
         <div className="container">
           {/* Category Buttons and Search Bar */}
-          <div className="category-search-bar">
-            <div className="categories-menu">
+          <div
+            className={`category-nav ${isOpen ? "active" : ""}`}
+            id="categoryNav"
+          >
+            <ul className="category-menu">
               {categories.map((category) => (
-                <button
-                  key={category}
-                  className={`category-btn ${
-                    selectedCategory === category ? "active" : ""
-                  }`}
-                  onClick={() => setSelectedCategory(category)}
-                >
-                  {category}
-                </button>
+                <li key={category}>
+                  <button
+                    className={`category-btn ${
+                      selectedCategory === category ? "active" : ""
+                    }`}
+                    onClick={() => setSelectedCategory(category)}
+                  >
+                    {category}
+                  </button>
+                </li>
               ))}
-            </div>
-            <div className="search-container">
-              <input
-                type="text"
-                placeholder="Search here"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              <button className="search-btn">
-                <i className="fa-solid fa-search"></i>
-              </button>
-            </div>
+            </ul>
+            <button
+              className="icon"
+              id="toggleBtn"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <div className="line line1"></div>
+              <div className="line line2"></div>
+              <div className="line line3"></div>
+            </button>
           </div>
+
           {/* <AchievementAlert /> */}
           {/* Courses */}
-          <div className="row-center">
-            {filteredCourses.map((course) => (
-              <div className="row-course" key={course.id}>
+          {/* <div className="row">
+            {filteredCourses.map((course, index) => (
+              <div
+                className="row-course"
+                key={course.id}
+                data-aos={
+                  index % 3 === 0
+                    ? "fade-right"
+                    : index % 3 === 1
+                    ? "fade-up"
+                    : "fade-left"
+                }
+              >
                 <a href={course.link} className="course-card">
                   <div className="course-image">
                     <img src={course.image} alt={course.title} />
-                    {/* Ribbon Badge with Rotated Text */}
                     {course.state === "not-published" ? (
                       <div className="ribbon coming-soon">
                         <span>Coming Soon</span>
@@ -102,7 +126,8 @@ const Courses = () => {
                 </a>
               </div>
             ))}
-          </div>
+          </div> */}
+          <PaginatedCourses filteredCourses={courseData} />
         </div>
       </div>
       <ChatWidget />

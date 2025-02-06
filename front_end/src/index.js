@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import "./App.css";
 import "../src/Css/base/media.css";
 import "./Css/components/form.css";
 import "./Css/components/button.css";
