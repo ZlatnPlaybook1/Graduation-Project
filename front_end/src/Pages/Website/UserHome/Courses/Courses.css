@@ -164,7 +164,6 @@
 /* Main Category Navigation */
 .category-nav {
   background-color: #fff;
-  padding: 20px;
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -174,9 +173,11 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   transition: all 0.6s ease-in-out;
   position: relative;
+  overflow: hidden;
 }
 
 .category-nav.active {
+  padding: 20px;
   width: 100%;
   justify-content: space-between;
   border-radius: 10px;
@@ -191,25 +192,20 @@
   margin: 0;
   width: 0;
   transition: all 0.6s ease-in-out;
-  overflow-x: auto;
-}
-.category-menu::-webkit-scrollbar {
-  width: 1em;
+  /* overflow-x: auto; */
 }
 
-.category-menu::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(135, 177, 235, 0.3);
-}
-
-.category-menu::-webkit-scrollbar-thumb {
-  background-color: var(--main-color);
-  outline: 1px solid var(--main-color);
-}
 .category-nav.active .category-menu {
   width: 90%;
   justify-content: space-evenly;
 }
-
+.category-nav.active .icon {
+  background-color: #fff;
+  color: #5290f9;
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+}
 /* Category Items */
 .category-menu li {
   opacity: 0;
@@ -225,19 +221,16 @@
 /* Category Buttons */
 .category-btn {
   background-color: transparent;
-  border: none;
   color: #333;
   font-weight: 600;
   padding: 10px;
-  cursor: pointer;
+  border: none;
   transition: all 0.6s ease-in-out;
 }
-/* .category-nav:not(.active):hover {
+.category-nav.active .icon:hover,
+.category-nav .icon:hover {
   background-color: #5290f9;
-} */
-
-.icon:hover {
-  background-color: transparent;
+  color: #fff;
 }
 
 .category-btn.active,
@@ -251,44 +244,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: transparent;
   border: 0;
   cursor: pointer;
   padding: 0;
   position: relative;
-  height: 39px;
-  width: 40px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
+  font-size: 2rem;
   transition: all 0.3s ease-in-out;
+  color: #5290f9;
+  background-color: #fff;
 }
 
-/* Icon Lines */
-.icon .line {
-  background-color: #5290f9;
-  height: 3px;
-  width: 30px;
-  position: absolute;
-  left: 0;
-  transition: all 0.5s ease-in-out;
-}
-
-.icon .line1 {
-  top: 10px;
-}
-
-.category-nav.active .icon .line2 {
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.icon .line3 {
-  bottom: 10px;
-}
-
-/* Active State - Menu Open */
-
-.icon .line2 {
-  transform: translateX(50%) translateY(-50%);
-}
 /* Ribbon Badge Styles */
 .ribbon {
   position: absolute;

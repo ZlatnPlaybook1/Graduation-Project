@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Courses.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
 import PaginatedCourses from "./PaginatedCourses";
 import courseData from "./courseData";
 import ChatWidget from "../../AiChatWidget/ChatWidget";
@@ -68,9 +70,11 @@ const Courses = () => {
               id="toggleBtn"
               onClick={() => setIsOpen(!isOpen)}
             >
-              <div className="line line1"></div>
-              <div className="line line2"></div>
-              <div className="line line3"></div>
+              {isOpen ? (
+                <FontAwesomeIcon icon={faTimes} />
+              ) : (
+                <FontAwesomeIcon icon={faPlus} />
+              )}
             </button>
           </div>
 
