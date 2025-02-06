@@ -176,5 +176,6 @@ model BurPSuiteLab3 {
   id   String  @id @default(uuid())
   name String?
   path String?
+  description String?
 }
 
