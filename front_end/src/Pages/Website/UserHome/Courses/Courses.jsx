@@ -23,11 +23,11 @@ const Courses = () => {
 
   const categories = [
     "All Courses",
-    "Web Vulnerabilities",
-    "Server-Side Exploits",
     "Fundamentals",
-    "Other Topics1",
-    "Other Topics2",
+    "Vulnerabilities",
+    "Tools & Techniques",
+    "My Courses",
+    "Fav Topics",
   ];
 
   const handleCategorySelect = (category) => {

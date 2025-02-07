@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const itemsPerPage = 12;
+const itemsPerPage = 9;
 
 const PaginatedCourses = ({ filteredCourses }) => {
   const [currentPage, setCurrentPage] = useState(1);
