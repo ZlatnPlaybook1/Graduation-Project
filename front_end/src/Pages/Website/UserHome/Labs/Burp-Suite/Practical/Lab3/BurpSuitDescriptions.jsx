@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import "./BurpSuitLab3.css";
 import GOBack from "../../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
 
@@ -8,6 +9,7 @@ export default function BurpSuitDescriptions() {
   const navigate = useNavigate();
   const [wallpaper, setWallpaper] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchWallpaperDetails = async () => {
@@ -19,9 +21,9 @@ export default function BurpSuitDescriptions() {
           throw new Error("Failed to fetch wallpaper details");
         }
         const data = await response.json();
-        setWallpaper(data);
+        setWallpaper(data.data);
       } catch (error) {
-        console.error("Error fetching wallpaper details:", error);
+        setError(error.message);
       } finally {
         setLoading(false);
       }
@@ -31,23 +33,26 @@ export default function BurpSuitDescriptions() {
   }, [id]);
 
   if (loading) return <p>Loading wallpaper details...</p>;
-
+  if (error) return <p className="text-danger">Error: {error}</p>;
   if (!wallpaper) return <p>Wallpaper not found.</p>;
 
   return (
     <>
       <GOBack />
       <ShowHint hintText="<p>Click image to go back</p>" />
-
-      <div className="selected-wallpaper">
-        <img
-          src={`http://127.0.0.1:8080/${wallpaper.path}`}
-          alt={wallpaper.name}
-          className="wallpaper-fullsize"
-          onClick={() => navigate("/Burp_Suit/Burp_Suit_Labs/lab3")}
-        />
-        <h3>{wallpaper.name}</h3>
-        <p>{wallpaper.description || "No description available"}</p>
+      <div className="wallpaper-center">
+        <div className="wallpaper-card text-center">
+          <img
+            src={`http://127.0.0.1:8080/${wallpaper.path}`}
+            alt={wallpaper.name}
+            className="wallpaper-card__image"
+            onClick={() => navigate("/Burp_Suit/Burp_Suit_Labs/lab3")}
+          />
+          <h3 className="wallpaper-card__title mt-3">{wallpaper.name}</h3>
+          <p className="wallpaper-card__description">
+            {wallpaper.description || "No description available"}
+          </p>
+        </div>
       </div>
     </>
   );

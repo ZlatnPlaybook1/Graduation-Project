@@ -21,14 +21,12 @@ export default function BurpSuitLab3() {
         }
         const data = await response.json();
 
-        // Filter wallpapers by specific IDs (3, 6, 9)
-        const filteredWallpapers = data.data.filter((wp) =>
-          [3, 6, 9].includes(wp.id)
-        );
+        if (!data || !Array.isArray(data.data)) {
+          throw new Error("Invalid API response format");
+        }
 
-        setWallpapers(filteredWallpapers);
+        setWallpapers(data.data); // Store the array of wallpapers
       } catch (error) {
-        console.error("Error fetching wallpapers:", error);
         setError("Failed to load wallpapers.");
       } finally {
         setLoading(false);
@@ -38,8 +36,8 @@ export default function BurpSuitLab3() {
     fetchWallpapers();
   }, []);
 
-  const handleImageClick = (wallpaper) => {
-    navigate(`/Burp_Suit/Burp_Suit_Labs/lab3/${wallpaper.id}`);
+  const handleImageClick = (id) => {
+    navigate(`/Burp_Suit/Burp_Suit_Labs/lab3/${id}`);
   };
 
   if (loading) {
@@ -55,34 +53,32 @@ export default function BurpSuitLab3() {
       <GOBack />
       <ShowHint hintText={hintMessage} />
 
-      <div className="container">
-        <h2 className="text-center mt-4">Products Details</h2>
+      <div className="items-section">
+        <h2 className="items-title">Item Details</h2>
 
         {wallpapers.length > 0 ? (
-          <div className="row justify-content-center">
-            {wallpapers.map((wallpaper) => (
-              <div
-                key={wallpaper.id}
-                className="col-md-4 col-sm-6 mb-4 text-center"
-              >
+          <div className="items-wrapper">
+            {wallpapers
+              .filter((item) => [3, 6, 9].includes(Number(item.id)))
+              .map((item) => (
                 <div
-                  className="card wallpaper-card"
-                  onClick={() => handleImageClick(wallpaper)}
+                  key={item.id}
+                  className="item-card"
+                  onClick={() => handleImageClick(item.id)}
                 >
                   <img
-                    src={`http://127.0.0.1:8080/${wallpaper.path}`}
-                    alt={wallpaper.name}
-                    className="card-img-top wallpaper-thumbnail"
+                    src={`http://127.0.0.1:8080/${item.path}`}
+                    alt={item.name}
+                    className="item-image"
                   />
-                  <div className="card-body">
-                    <p className="card-text wallpaper-name">{wallpaper.name}</p>
+                  <div className="item-info">
+                    <h5 className="item-name">{item.name}</h5>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         ) : (
-          <p className="text-center mt-4">No wallpapers found.</p>
+          <p className="items-empty">No items found.</p>
         )}
       </div>
     </>

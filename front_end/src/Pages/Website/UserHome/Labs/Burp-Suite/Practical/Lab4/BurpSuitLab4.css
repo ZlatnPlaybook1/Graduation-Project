@@ -1,0 +1,183 @@
+/* General Reset */
+
+/* Container Styling */
+.burp-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burp-container {
+  min-height: 100vh;
+  max-width: 700px;
+  margin: auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.burp-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Title Styling */
+.burp-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Question Styling */
+.burp-question {
+  font-size: 1.2rem;
+  color: #444;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* List Styling */
+.burp-list {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.burp-list-item {
+  font-size: 1rem;
+  color: #555;
+  background: #f3f3f3;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  word-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.burp-list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Input Styling */
+.burp-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.burp-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Button Styling */
+.burp-button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.burp-button:hover {
+  background: linear-gradient(135deg, #0056b3, #004599);
+  transform: translateY(-2px);
+}
+
+.burp-button:active {
+  transform: translateY(0);
+}
+
+/* Feedback Message Styling */
+.burp-correct,
+.burp-wrong {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.burp-correct {
+  color: #28a745;
+  background: #e8f5e9;
+  border-left: 5px solid #28a745;
+}
+
+.burp-wrong {
+  color: #dc3545;
+  background: #fdecea;
+  border-left: 5px solid #dc3545;
+}
+
+/* Completion Message */
+.burp-completion {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #28a745;
+  background: #e8f5e9;
+  padding: 18px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .burp-container {
+    padding: 20px;
+  }
+
+  .burp-title {
+    font-size: 1.8rem;
+  }
+
+  .burp-question {
+    font-size: 1rem;
+  }
+
+  .burp-list-item {
+    font-size: 0.9rem;
+  }
+
+  .burp-input,
+  .burp-button {
+    font-size: 0.9rem;
+  }
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
