@@ -43,7 +43,11 @@ const PaginatedCourses = ({ filteredCourses }) => {
         ...prevFavorites,
         [courseId]: currentStatus,
       }));
-      Swal.fire("Error", "Could not update favorite status.", "error");
+      Swal.fire(
+        "Error",
+        "Could not update favorite status.\n DB not Ready! Please try again later.",
+        "error"
+      );
     }
   };
 
@@ -85,7 +89,12 @@ const PaginatedCourses = ({ filteredCourses }) => {
       );
     } catch (error) {
       console.error("Error registering course:", error);
-      Swal.fire("Error", error.message, "error");
+      // Swal.fire("Error", error.message, "error");
+      Swal.fire(
+        "Error",
+        "Could not register for the course.\n DB not Ready! Please try again later.",
+        "error"
+      );
     }
   };
 
@@ -178,16 +187,15 @@ const PaginatedCourses = ({ filteredCourses }) => {
               <div className="course-text">
                 <h3>{course.title}</h3>
                 <p>{course.description}</p>
-              </div>
-
-              {/* Register Button */}
-              <div className="register-container" style={{ margin: "10px" }}>
-                <button
-                  className="btn btn-primary"
-                  onClick={(e) => handleRegister(course, e)}
-                >
-                  Register
-                </button>
+                {/* Register Button */}
+                <div className="register-container">
+                  <button
+                    className="btn btn-primary"
+                    onClick={(e) => handleRegister(course, e)}
+                  >
+                    Register
+                  </button>
+                </div>
               </div>
 
               <div className="easy">

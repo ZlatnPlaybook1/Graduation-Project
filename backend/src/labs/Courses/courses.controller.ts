@@ -5,10 +5,6 @@
 
 // const prisma = new PrismaClient();
 
-// /**
-//  * Update a course's favorite status.
-//  * Expects: { courseId: number, favorite: boolean } in req.body.
-//  */
 // export const updateFavorite = async (req: Request, res: Response) => {
 //   const { courseId, favorite } = req.body;
 
