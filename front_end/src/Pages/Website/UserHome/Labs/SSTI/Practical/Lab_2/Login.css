@@ -50,17 +50,23 @@
   padding-top: 40px;
 }
 
-.obfuscation_lab_body {
+.ssti_lab_body {
   display: flex;
   justify-content: center;
-  align-items: center;height: 95%;
+  align-items: center;
+  height: 95%;
+}
+.ssti_lab_body .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .card {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  height: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: max-content;
   background-color: #112D4E;
@@ -110,6 +116,7 @@
   display: flex;
   align-items: center;
   justify-content: end;
+  border: none;
 }
 
 .card_field .input i {

@@ -50,6 +50,20 @@ export default function SSTI_lab() {
             brief={""}
             difficulty={"Easy"}
             />
+            <Card
+            link={"/SSTI/SSTI_lab/blog"}
+            image={image}
+            title={"SSTI blog"}
+            brief={""}
+            difficulty={"Easy"}
+            />
+            <Card
+            link={"/SSTI/SSTI_lab/store"}
+            image={image}
+            title={"SSTI Store"}
+            brief={""}
+            difficulty={"Easy"}
+            />
           </div>
         </div>
       </div>

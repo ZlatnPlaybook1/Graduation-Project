@@ -5,7 +5,7 @@ import "./Login.css";
 import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
 
-export default function Obfuscation_login() {
+export default function SSTI_Login() {
   const faqSectionRef = useRef(null);
   const [form, setForm] = useState({
     username: "",
@@ -24,12 +24,12 @@ export default function Obfuscation_login() {
     setErr("");
     try {
       // const res = await axios.post(
-      //   "http://127.0.0.1:8080/api/Obfuscation_login",
+      //   "http://127.0.0.1:8080/api/SSTI_Login",
       //   form
       // );
       // setLoading(false);
       // const role = res.data.role;
-      if (form.username === "cyberlab" && form.password === "Obfuscation") {
+      if (form.username === "cyberlab" && form.password === "ssti") {
         setLoading(false);
         setRight(`Congratz \n Flag: {0BFU5C4T10N_1S_4RT_4ND_PR0T3CT10N}`);
       } else {
@@ -87,7 +87,7 @@ export default function Obfuscation_login() {
         <ShowHint_Btn hintText={
           '<p>click inspect  and try to beautify and Deobfuscate  script use this : </p> <a href="https://filipemgs.github.io/poisonjs/">De-obfuscate</a> <a href="https://beautifier.io/">beautifier.io</a>' 
           } />
-        <div className="obfuscation_lab_body">
+        <div className="ssti_lab_body">
           <div className="container">
             <div className="card">
               <div className="card_content">

@@ -177,6 +177,10 @@ import LEARN_CAPITAL_3 from "./Pages/Website/UserHome/Labs/FileInclusion/Practic
 // SSTI
 import SSTI from "./Pages/Website/UserHome/Labs/SSTI/SSTI.jsx";
 import SSTI_LAB from "./Pages/Website/UserHome/Labs/SSTI/SSTI_lab.jsx";
+import Blog from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_2/Blog.jsx";
+import BLOG_ITEM from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_2/Blog_item.jsx";
+import BLOG_LOGIN from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_2/Login.jsx";
+import SSTI_STORE from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_3/SSTI_store.jsx";
 // End SSTI
 // CaptchaBypass
 import CaptchaBypass from "./Pages/Website/UserHome/Labs/CaptchaBypass/CaptchaBypass.jsx";
@@ -250,6 +254,7 @@ import BurpSuitLab2 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab
 import BurpSuitLab3 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab3/BurpSuitLab3.jsx";
 import BurpSuitLab4 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab4/BurpSuitLab4.jsx";
 import BurpSuitDescriptions from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab3/BurpSuitDescriptions.jsx";
+import Test from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Lab_1/test.jsx";
 
 function App() {
   return (
@@ -910,6 +915,10 @@ function App() {
           {/* Start SSTI */}
           <Route path="/SSTI" element={<SSTI />} />
           <Route path="/SSTI/SSTI_lab" element={<SSTI_LAB />} />
+          <Route path="/SSTI/SSTI_lab/blog" element={<Blog />} />
+          <Route path="/SSTI/SSTI_lab/blog-item" element={<BLOG_ITEM />} />
+          <Route path="/SSTI/SSTI_lab/blog/login" element={<BLOG_LOGIN />} />
+          <Route path="/SSTI/SSTI_lab/store" element={<SSTI_STORE />} />
           {/* End SSTI */}
           {/* Start CaptchaBypass */}
           <Route path="/captchabypass" element={<CaptchaBypass />} />
@@ -925,6 +934,7 @@ function App() {
             element={<JWTATTACKS_LAB />}
           />
           {/* End JWTAttacks */}
+          <Route path="/test" element={<Test />} />
         </Route>
         {/* End Routes of Labs */}
 
