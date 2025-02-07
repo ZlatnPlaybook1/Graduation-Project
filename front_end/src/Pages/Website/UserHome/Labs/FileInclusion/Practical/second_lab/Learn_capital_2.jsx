@@ -4,47 +4,11 @@ import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import "../../../Page_Styles/Practical_Flag_answers.css";
 import React, { useEffect, useState } from "react";
 
-// Import images for the capitals
-import AppleImage from "../images/lab2/Apple.jpeg";
-import BananaImage from "../images/lab2/Banana.jpeg";
-import GuavaImage from "../images/lab2/Guava.jpeg";
-import MangoImage from "../images/lab2/Mango.jpeg";
-import StrawberryImage from "../images/lab2/Strawberry.jpeg";
-import WaterMelonImage from "../images/lab2/WaterMelon.jpeg";
-
 export default function Learn_capital_2() {
   const [selectedFile, setSelectedFile] = useState("");
   const [fileContent, setFileContent] = useState("");
   const [capitalImage, setCapitalImage] = useState("");
   const [error, setError] = useState("");
-
-  // Simulated file system for educational purposes
-  const allowedFiles = {
-    Apple: {
-      content: "Apple is A Fruit.",
-      image: AppleImage,
-    },
-    Banana: {
-      content: "Banana is A Fruit.",
-      image: BananaImage,
-    },
-    Guava: {
-      content: "Guava is A Fruit.",
-      image: GuavaImage,
-    },
-    Mango: {
-      content: "Mango is A Fruit.",
-      image: MangoImage,
-    },
-    Strawberry: {
-      content: "Strawberry is A Fruit.",
-      image: StrawberryImage,
-    },
-    WaterMelon: {
-      content: "WaterMelon is A Fruit.",
-      image: WaterMelonImage,
-    },
-  };
 
   useEffect(() => {
     document.title = "File Inclusion Demonstration";
@@ -53,17 +17,28 @@ export default function Learn_capital_2() {
     const queryParams = new URLSearchParams(window.location.search);
     const fileFromUrl = queryParams.get("file");
 
-    if (fileFromUrl && allowedFiles[fileFromUrl]) {
-      // If the file exists in the allowedFiles object, set the content and image
-      setSelectedFile(fileFromUrl);
-      setFileContent(allowedFiles[fileFromUrl].content);
-      setCapitalImage(allowedFiles[fileFromUrl].image);
-      setError(""); // Clear any errors
-    } else if (fileFromUrl) {
-      // If the file is in the URL but not in allowedFiles, show an error
-      setError("File not found or access denied.");
+    if (fileFromUrl) {
+      // Fetch file data from the backend
+      fetchFileData(fileFromUrl);
     }
   }, []);
+
+  const fetchFileData = async (fileName) => {
+    try {
+      const response = await fetch(`/api/getFileData?file=${fileName}`);
+      if (!response.ok) {
+        throw new Error("File not found or access denied.");
+      }
+      const data = await response.json();
+      setFileContent(data.content);
+      setCapitalImage(data.image);
+      setError("");
+    } catch (err) {
+      setError(err.message);
+      setFileContent("");
+      setCapitalImage("");
+    }
+  };
 
   const handleFileChange = (e) => {
     setSelectedFile(e.target.value);
@@ -72,20 +47,15 @@ export default function Learn_capital_2() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (selectedFile && allowedFiles[selectedFile]) {
+    if (selectedFile) {
       // Update the URL with the selected file as a query parameter
       const newUrl = `${window.location.pathname}?file=${selectedFile}`;
       window.history.pushState({}, "", newUrl);
 
-      // Set the file content and image
-      setFileContent(allowedFiles[selectedFile].content);
-      setCapitalImage(allowedFiles[selectedFile].image);
-      setError("");
+      // Fetch file data from the backend
+      fetchFileData(selectedFile);
     } else {
-      // Simulate a file inclusion vulnerability (for educational purposes)
-      setError("File not found or access denied.");
-      setFileContent("");
-      setCapitalImage("");
+      setError("Please select a file.");
     }
   };
 
@@ -113,11 +83,12 @@ export default function Learn_capital_2() {
                     <option value="" disabled>
                       Select a File
                     </option>
-                    {Object.keys(allowedFiles).map((file) => (
-                      <option key={file} value={file}>
-                        {file}
-                      </option>
-                    ))}
+                    <option value="Apple">Apple</option>
+                    <option value="Banana">Banana</option>
+                    <option value="Guava">Guava</option>
+                    <option value="Mango">Mango</option>
+                    <option value="Strawberry">Strawberry</option>
+                    <option value="WaterMelon">WaterMelon</option>
                   </select>
                 </div>
                 <button type="submit" id="check">
@@ -133,7 +104,7 @@ export default function Learn_capital_2() {
                 )}
                 {capitalImage && (
                   <div className="capital-image">
-                    <h3>Capital Image:</h3>
+                    <h3>Friut Image:</h3>
                     <img src={capitalImage} alt="Capital" style={{ maxWidth: "100%", height: "auto" }} />
                   </div>
                 )}

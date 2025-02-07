@@ -4,47 +4,11 @@ import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import "../../../Page_Styles/Practical_Flag_answers.css";
 import React, { useEffect, useState } from "react";
 
-// Import images for the capitals
-import BerlinImage from "../images/lab1/Berlin.jpeg";
-import CairoImage from "../images/lab1/Cairo.jpeg";
-import LondonImage from "../images/lab1/London.jpeg";
-import ParisImage from "../images/lab1/Paris.jpeg";
-import PyongyangImage from "../images/lab1/Pyongyang.jpeg";
-import TokyoImage from "../images/lab1/Tokyo.jpeg";
-
 export default function Learn_capital_1() {
   const [selectedFile, setSelectedFile] = useState("");
   const [fileContent, setFileContent] = useState("");
   const [capitalImage, setCapitalImage] = useState("");
   const [error, setError] = useState("");
-
-  // Simulated file system for educational purposes
-  const allowedFiles = {
-    Berlin: {
-      content: "Berlin is the capital of Germany.",
-      image: BerlinImage,
-    },
-    Cairo: {
-      content: "Cairo is the capital of Egypt.",
-      image: CairoImage,
-    },
-    London: {
-      content: "London is the capital of England.",
-      image: LondonImage,
-    },
-    Paris: {
-      content: "Paris is the capital of France.",
-      image: ParisImage,
-    },
-    Pyongyang: {
-      content: "Pyongyang is the capital of North Korea.",
-      image: PyongyangImage,
-    },
-    Tokyo: {
-      content: "Tokyo is the capital of Japan.",
-      image: TokyoImage,
-    },
-  };
 
   useEffect(() => {
     document.title = "File Inclusion Demonstration";
@@ -53,17 +17,28 @@ export default function Learn_capital_1() {
     const queryParams = new URLSearchParams(window.location.search);
     const fileFromUrl = queryParams.get("file");
 
-    if (fileFromUrl && allowedFiles[fileFromUrl]) {
-      // If the file exists in the allowedFiles object, set the content and image
-      setSelectedFile(fileFromUrl);
-      setFileContent(allowedFiles[fileFromUrl].content);
-      setCapitalImage(allowedFiles[fileFromUrl].image);
-      setError(""); // Clear any errors
-    } else if (fileFromUrl) {
-      // If the file is in the URL but not in allowedFiles, show an error
-      setError("File not found or access denied.");
+    if (fileFromUrl) {
+      // Fetch file data from the backend
+      fetchFileData(fileFromUrl);
     }
   }, []);
+
+  const fetchFileData = async (fileName) => {
+    try {
+      const response = await fetch(`/api/fileInclusionLab1?file=${fileName}`);
+      if (!response.ok) {
+        throw new Error("File not found or access denied.");
+      }
+      const data = await response.json();
+      setFileContent(data.content);
+      setCapitalImage(data.image);
+      setError("");
+    } catch (err) {
+      setError(err.message);
+      setFileContent("");
+      setCapitalImage("");
+    }
+  };
 
   const handleFileChange = (e) => {
     setSelectedFile(e.target.value);
@@ -72,20 +47,15 @@ export default function Learn_capital_1() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (selectedFile && allowedFiles[selectedFile]) {
+    if (selectedFile) {
       // Update the URL with the selected file as a query parameter
       const newUrl = `${window.location.pathname}?file=${selectedFile}`;
       window.history.pushState({}, "", newUrl);
 
-      // Set the file content and image
-      setFileContent(allowedFiles[selectedFile].content);
-      setCapitalImage(allowedFiles[selectedFile].image);
-      setError("");
+      // Fetch file data from the backend
+      fetchFileData(selectedFile);
     } else {
-      // Simulate a file inclusion vulnerability (for educational purposes)
-      setError("File not found or access denied.");
-      setFileContent("");
-      setCapitalImage("");
+      setError("Please select a file.");
     }
   };
 
@@ -104,24 +74,31 @@ export default function Learn_capital_1() {
               <div className="text-center">
                 <h2>File Inclusion Demonstration</h2>
                 <p>
-                  Select a file to view its content and the image of the capital. This simulates a file inclusion vulnerability in a controlled environment.
+                  Select a file to view its content and the image of the
+                  capital. This simulates a file inclusion vulnerability in a
+                  controlled environment.
                 </p>
               </div>
               <form onSubmit={handleSubmit} style={{ flexDirection: "column" }}>
                 <div className="selection-style">
-                  <select name="file" onChange={handleFileChange} value={selectedFile}>
+                  <select
+                    name="file"
+                    onChange={handleFileChange}
+                    value={selectedFile}
+                  >
                     <option value="" disabled>
                       Select a File
                     </option>
-                    {Object.keys(allowedFiles).map((file) => (
-                      <option key={file} value={file}>
-                        {file}
-                      </option>
-                    ))}
+                    <option value="Berlin">Berlin</option>
+                    <option value="Cairo">Cairo</option>
+                    <option value="London">London</option>
+                    <option value="Paris">Paris</option>
+                    <option value="Pyongyang">Pyongyang</option>
+                    <option value="Tokyo">Tokyo</option>
                   </select>
                 </div>
                 <button type="submit" id="check">
-                  <i className="fa-regular fa-file"></i> View File Content
+                  <i className="fa-regular fa-file"></i> What is The Capital?
                 </button>
               </form>
               <div className="capital-info">
@@ -134,7 +111,11 @@ export default function Learn_capital_1() {
                 {capitalImage && (
                   <div className="capital-image">
                     <h3>Capital Image:</h3>
-                    <img src={capitalImage} alt="Capital" style={{ maxWidth: "100%", height: "auto" }} />
+                    <img
+                      src={capitalImage}
+                      alt="Capital"
+                      style={{ maxWidth: "100%", height: "auto" }}
+                    />
                   </div>
                 )}
                 {error && (
