@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Courses.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
-import PaginatedCourses from "./PaginatedCourses";
 import courseData from "./courseData";
-import ChatWidget from "../../AiChatWidget/ChatWidget";
-import Go2TopBtn from "../Go2Top_Btn/Go2Top_Btn";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
+import PaginatedCourses from "./PaginatedCourses";
+
 const Courses = () => {
-  // const [searchTerm, setSearchTerm] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
+  const [searchIsOpen, setSearchIsOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Courses");
 
   useEffect(() => {
@@ -20,6 +20,7 @@ const Courses = () => {
       mirror: true,
     });
   }, []);
+
   const categories = [
     "All Courses",
     "Web Vulnerabilities",
@@ -29,26 +30,46 @@ const Courses = () => {
     "Other Topics2",
   ];
 
-  // Filter courses by category and search term
-  // const filteredCourses = courseData.filter((course) => {
-  //   const term = searchTerm.toLowerCase();
-  //   const matchesSearchTerm =
-  //     course.title.toLowerCase().includes(term) ||
-  //     course.description.toLowerCase().includes(term) ||
-  //     course.topics.some((topic) => topic.toLowerCase().includes(term));
-  //   const matchesCategory =
-  //     selectedCategory === "All Courses" ||
-  //     course.category === selectedCategory;
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+    setSearchIsOpen(false);
+  };
 
-  //   return matchesSearchTerm && matchesCategory;
-  // });
+  const filteredCourses = (courseData || []).filter((course) => {
+    const term = searchTerm.toLowerCase();
+    const matchesSearchTerm = course.title.toLowerCase().includes(term);
+    const matchesCategory =
+      selectedCategory === "All Courses" ||
+      course.category === selectedCategory;
+
+    return matchesSearchTerm && matchesCategory;
+  });
+
+  const toggleSearchBar = () => {
+    setSearchIsOpen(!searchIsOpen);
+    if (!searchIsOpen) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
+  };
+
+  const toggleCategoryNav = () => {
+    setIsOpen(!isOpen);
+    if (!isOpen) {
+      setSearchIsOpen(false);
+    } else {
+      setSearchIsOpen(true);
+    }
+  };
+
   return (
-    <>
-      <div className="course">
-        <div className="container">
-          {/* Category Buttons and Search Bar */}
+    <div className="course">
+      <div className="container">
+        {/* Category Buttons and Search Bar */}
+        <div className="menu-row w-100">
           <div
-            className={`category-nav ${isOpen ? "active" : ""}`}
+            className={`category-nav  ${isOpen ? "active" : ""}`}
             id="categoryNav"
           >
             <ul className="category-menu">
@@ -58,18 +79,14 @@ const Courses = () => {
                     className={`category-btn ${
                       selectedCategory === category ? "active" : ""
                     }`}
-                    onClick={() => setSelectedCategory(category)}
+                    onClick={() => handleCategorySelect(category)}
                   >
                     {category}
                   </button>
                 </li>
               ))}
             </ul>
-            <button
-              className="icon"
-              id="toggleBtn"
-              onClick={() => setIsOpen(!isOpen)}
-            >
+            <button className="icon" id="toggleBtn" onClick={toggleCategoryNav}>
               {isOpen ? (
                 <FontAwesomeIcon icon={faTimes} />
               ) : (
@@ -78,65 +95,25 @@ const Courses = () => {
             </button>
           </div>
 
-          {/* <AchievementAlert /> */}
-          {/* Courses */}
-          {/* <div className="row">
-            {filteredCourses.map((course, index) => (
-              <div
-                className="row-course"
-                key={course.id}
-                data-aos={
-                  index % 3 === 0
-                    ? "fade-right"
-                    : index % 3 === 1
-                    ? "fade-up"
-                    : "fade-left"
-                }
-              >
-                <a href={course.link} className="course-card">
-                  <div className="course-image">
-                    <img src={course.image} alt={course.title} />
-                    {course.state === "not-published" ? (
-                      <div className="ribbon coming-soon">
-                        <span>Coming Soon</span>
-                      </div>
-                    ) : course.state === "published" ? (
-                      <div className="ribbon published">
-                        <span>Published</span>
-                      </div>
-                    ) : course.state === "semi-published" ? (
-                      <div className="ribbon semi-published">
-                        <span>Semi Published</span>
-                      </div>
-                    ) : (
-                      <div className="ribbon pending">
-                        <span>Pending</span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="course-text">
-                    <h3>{course.title}</h3>
-                    <p>{course.description}</p>
-                    <ul className="circled-order">
-                      {course.topics.map((topic, index) => (
-                        <li key={index}>{topic}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="easy">
-                    <i className="fa-solid fa-signal"></i>
-                    <p>{course.difficulty}</p>
-                  </div>
-                </a>
-              </div>
-            ))}
-          </div> */}
-          <PaginatedCourses filteredCourses={courseData} />
+          {/* Search Bar */}
+          <div className={`search-container ${searchIsOpen ? "active" : ""}`}>
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <button className="search-btn" onClick={toggleSearchBar}>
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
+          </div>
         </div>
+
+        {/* Display Filtered Courses */}
+        <PaginatedCourses filteredCourses={filteredCourses} />
       </div>
-      <ChatWidget />
-      <Go2TopBtn />
-    </>
+    </div>
   );
 };
 
