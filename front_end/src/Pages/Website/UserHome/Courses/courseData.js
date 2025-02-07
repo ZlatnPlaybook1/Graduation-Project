@@ -4,7 +4,7 @@ const courseData = [
     category: "Career & Industry",
     title: "Careers in Cyber",
     description:
-      "Explore various career paths in the cybersecurity industry and learn about required skills and opportunities.",
+      "Discover diverse cybersecurity careers, essential skills, and industry opportunities today.",
     topics: [
       "Overview of Cyber Careers",
       "Educational Paths",
@@ -21,7 +21,7 @@ const courseData = [
     category: "Tools & Techniques",
     title: "Burp Suite",
     description:
-      "Learn the core skills required to start a career in cyber security",
+      "Master Burp Suite fundamentals, empowering cybersecurity testing and vulnerability assessment.",
     topics: [
       "Learn about different careers in cyber",
       "Hack your first application",
@@ -38,7 +38,7 @@ const courseData = [
     category: "Fundamentals",
     title: "Cookies",
     description:
-      "Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce.",
+      "Understand cookies’ roles, security implications, storage methods, and manipulation techniques.",
     topics: [
       "What Are Cookies?",
       "What are Cookies Used For?",
@@ -55,7 +55,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "SQL Injection",
     description:
-      "Learn how attackers exploit vulnerabilities in web applications using SQL injection and understand the techniques to detect and prevent them.",
+      "Identify SQL injection flaws, extract hidden data, and secure applications.",
     topics: [
       "Retrieving hidden data",
       "SQL injection UNION attacks",
@@ -72,7 +72,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "Unrestricted File Upload",
     description:
-      "Understand the risks and exploitation of unrestricted file upload vulnerabilities, a critical security issue in web applications.",
+      "Explore file upload risks, techniques, and methods to safeguard applications.",
     topics: [
       "What is Unrestricted File Upload?",
       "Why is it Dangerous?",
@@ -89,7 +89,7 @@ const courseData = [
     category: "Fundamentals",
     title: "Linux Fundamentals",
     description:
-      "Build a solid foundation in Linux, the operating system at the core of many cybersecurity tools and infrastructures.",
+      "Build essential Linux skills, mastering commands, filesystem navigation and operations.",
     topics: [
       "Running Your First Few Commands",
       "Interacting with the Filesystem",
@@ -106,7 +106,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "Access Control Vulnerabilities",
     description:
-      "Learn how attackers exploit vulnerabilities in web applications to bypass access controls and understand the techniques to detect and prevent them.",
+      "Learn to detect and mitigate access control vulnerabilities in applications.",
     topics: [
       "What are Access Control Vulnerabilities?",
       "Types of Access Control Flaws",
@@ -123,7 +123,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "Broken Authentication",
     description:
-      "Broken authentication lets attackers impersonate users, leading to account takeovers and data breaches. Securing login and session management helps prevent these risks.",
+      "Secure authentication mechanisms to prevent account takeovers and data breaches.",
     topics: [
       "Weak Passwords",
       "Session Management Issues",
@@ -140,7 +140,7 @@ const courseData = [
     category: "Fundamentals",
     title: "Bash Scripting",
     description:
-      "Master the basics of Bash scripting, a powerful tool for automating tasks and managing systems in cybersecurity environments.",
+      "Develop efficient Bash scripts to automate tasks and system management.",
     topics: ["simple bash scripts", "Variables", "Parameters", "Arrays"],
     difficulty: "Beginner",
     image: require("../assets/img/bash/bash_course_logo.png"),
@@ -152,7 +152,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "Business Logic Vulnerabilities",
     description:
-      "Explore how flaws in business logic can be exploited by attackers and learn mitigation strategies.",
+      "Analyze business logic flaws, exploitation methods, and strategies for mitigation.",
     topics: [
       "Understanding Business Logic",
       "Identifying Flaws",
@@ -169,13 +169,13 @@ const courseData = [
     category: "Vulnerabilities",
     title: "Insecure Direct Object Reference(IDOR)",
     description:
-      "Delve into Insecure Direct Object Reference (IDOR) vulnerabilities, a common security issue in web applications. Learn how attackers exploit weak access controls to gain unauthorized access to sensitive resources.",
+      "Explore IDOR vulnerabilities, unauthorized access, common examples, and mitigation strategies.",
     topics: [
       "What is IDOR?",
       "Why is it Dangerous?",
-      "Common Examples",
-      "Exploitation Techniques",
-      "Mitigation Strategies",
+      "Common Examples.",
+      "Exploitation Techniques.",
+      "Mitigation Strategies.",
     ],
     difficulty: "Intermediate",
     image: require("../assets/img/IDOR/Insecure_Direct_Object_Reference.png"),
@@ -187,7 +187,7 @@ const courseData = [
     category: "Tools & Techniques",
     title: "Obfuscation",
     description:
-      "Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments.",
+      "Learn code obfuscation techniques to protect intellectual property and security.",
     topics: [
       "What are Obfuscation & Deobfuscation?",
       "Why do we use Obfuscation?",
@@ -204,7 +204,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "Cross Site Request Forgery (CSRF)",
     description:
-      "Learn how CSRF attacks exploit user trust and how to secure applications against them.",
+      "Understand CSRF attack vectors, mitigation techniques, and prevention best practices.",
     topics: [
       "Understanding CSRF",
       "Exploitation Methods",
@@ -221,7 +221,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "Path Traversal",
     description:
-      "Exploiting file path vulnerabilities to access restricted directories and files.",
+      "Discover path traversal techniques and prevention measures for secure files.",
     topics: [
       "Path traversal techniques",
       "Directory traversal prevention",
@@ -238,7 +238,7 @@ const courseData = [
     category: "Fundamentals",
     title: "Cryptography",
     description:
-      "Master the basics of Cryptography, a powerful technique for securing data and communications in cybersecurity environments.",
+      "Master cryptography principles, encryption types, and techniques for secure communications.",
     topics: [
       "What is Cryptography?",
       "What is Steganography?",
@@ -255,7 +255,7 @@ const courseData = [
     category: "Fundamentals",
     title: "Regular expressions",
     description:
-      "Learn how to craft and use regular expressions to effectively search, match, and manipulate text.",
+      "Craft effective regular expressions for text matching, searching, and parsing.",
     topics: [
       "Basics of Regex",
       "Character Classes",
@@ -272,7 +272,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "Cross-Site Scripting",
     description:
-      "Learn the fundamentals of Cross-Site Scripting (XSS), one of the most common vulnerabilities in web applications.",
+      "Identify and mitigate cross-site scripting risks in modern web applications.",
     topics: [
       "What is Cross-Site Scripting?",
       "Types of XSS",
@@ -289,7 +289,7 @@ const courseData = [
     category: "Tools & Techniques",
     title: "wireshark",
     description:
-      "Master the Fundamentals of Wireshark: A Powerful Tool for Cybersecurity and Code Protection",
+      "Utilize Wireshark for deep network traffic analysis and security monitoring.",
     topics: [
       "Wireshark Overview",
       "Collection Methods",
@@ -306,7 +306,7 @@ const courseData = [
     category: "Fundamentals",
     title: "Hashing",
     description:
-      "Understand the principles of hashing, its applications in security, and how to implement secure hashing algorithms.",
+      "Understand hashing concepts, algorithms, security implications, and best practices thoroughly.",
     topics: [
       "Introduction to Hashing",
       "Common Hashing Algorithms",
@@ -323,7 +323,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "Command Injection",
     description:
-      "Command injection allows attackers to execute arbitrary commands on a system due to improper input handling.",
+      "Learn command injection techniques, exploitation risks, and secure coding practices.",
     topics: [
       "Understanding Command Injection",
       "Networking Weaknesses",
@@ -340,7 +340,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "File Inclusion",
     description:
-      "Learn how file inclusion vulnerabilities like LFI and RFI are exploited. Understand their risks and explore remediation techniques to secure applications.",
+      "Examine file inclusion flaws, exploit methods, and robust remediation strategies.",
     topics: [
       "Path Traversal",
       "Local File Inclusion (LFI)",
@@ -357,7 +357,7 @@ const courseData = [
     category: "Fundamentals",
     title: "Digital Forensics",
     description:
-      "Gain insights into digital forensics techniques and learn how to investigate and analyze digital evidence.",
+      "Investigate digital evidence using forensic techniques for accurate cyber investigations.",
     topics: [
       "Introduction to Digital Forensics",
       "Evidence Collection",
@@ -374,7 +374,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "Insecure Deserialization",
     description:
-      "Insecure deserialization happens when untrusted data is deserialized without proper validation, leading to potential attacks like code execution and data tampering.",
+      "Detect insecure deserialization risks, prevent code execution, and secure data.",
     topics: [
       "Serialization and Deserialization",
       "Remote Code Execution (RCE)",
@@ -391,7 +391,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "Server Side Template Injection (SSTI)",
     description:
-      "Server Side Template Injection (SSTI) is a vulnerability that occurs when user input is incorrectly embedded in server-side templates. Attackers can inject malicious code leading to security risks.",
+      "Understand SSTI risks, exploit techniques, and prevention strategies for templates.",
     topics: [
       "Introduction",
       "SSTI Vulnerabilities",
@@ -408,7 +408,7 @@ const courseData = [
     category: "Tools & Techniques",
     title: "API Hacking & Testing",
     description:
-      "Learn how to assess the security of APIs through hands-on hacking and testing methodologies.",
+      "Master API hacking techniques, testing methodologies, and security assessment procedures.",
     topics: [
       "API Fundamentals",
       "Common Vulnerabilities",
@@ -425,7 +425,7 @@ const courseData = [
     category: "Fundamentals",
     title: "Temp Subject",
     description:
-      "This is a placeholder course subject intended for upcoming content.",
+      "Placeholder course introducing essential foundational topics with content to follow.",
     topics: ["Topic 1", "Topic 2", "Topic 3", "Topic 4"],
     difficulty: "Beginner",
     image: require("../assets/img/Lab2.jpg"),
@@ -437,7 +437,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "Captcha Bypass",
     description:
-      "Learn how captcha bypass techniques are used by attackers and explore ways to strengthen captcha implementations.",
+      "Examine captcha bypass methods, security flaws, and advanced prevention techniques.",
     topics: [
       "Introduction to Captcha",
       "Bypass Techniques",
@@ -454,7 +454,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "click jacking",
     description:
-      "Understand click jacking attacks and learn how to protect web applications against them.",
+      "Investigate click jacking strategies, analyze attack mechanisms, and implement countermeasures.",
     topics: [
       "What is Click Jacking?",
       "Attack Techniques",
@@ -471,7 +471,7 @@ const courseData = [
     category: "Fundamentals",
     title: "Temp Subject",
     description:
-      "This placeholder course will be updated with relevant content soon.",
+      "Placeholder course offering preliminary topics, soon updated with comprehensive content.",
     topics: ["Topic 1", "Topic 2", "Topic 3", "Topic 4"],
     difficulty: "Beginner",
     image: require("../assets/img/Lab2.jpg"),
@@ -483,7 +483,7 @@ const courseData = [
     category: "Vulnerabilities",
     title: "JWT attacks",
     description:
-      "Explore how JSON Web Tokens (JWT) can be exploited in attacks and learn strategies to secure token-based authentication.",
+      "Examine JWT attack vectors, token vulnerabilities, and secure handling methods.",
     topics: [
       "Introduction to JWT",
       "Common Attack Vectors",

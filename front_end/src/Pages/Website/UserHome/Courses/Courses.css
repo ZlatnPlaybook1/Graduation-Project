@@ -269,12 +269,12 @@
 .ribbon {
   position: absolute;
   top: 2rem;
-  right: -2.9rem;
+  left: -2.9rem;
   width: 200px;
   padding: 8px 0;
   text-align: center;
   background-color: #ff4757;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
