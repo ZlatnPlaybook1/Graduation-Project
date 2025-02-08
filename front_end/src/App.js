@@ -116,6 +116,8 @@ import CLICK_JACKING_SECOND_LAB from "./Pages/Website/UserHome/Labs/Click-Jackin
 import BL_VULN from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln.jsx";
 import BL_VULN_LABS from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln_labs.jsx";
 import BL_VULN_FIRST_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/First_Lab.jsx";
+import BL_VULN_FIRST_LAB_CART from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/CartPage.jsx";
+import BL_VULN_FIRST_LAB_DETAIL_PAGE from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/DetailPage.jsx";
 import BL_VULN_SECOND_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/second_lab/Second_Lab.jsx";
 import BL_VULN_THIRD_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/third_lab/Third_Lab.jsx";
 // End Business Logic Vulnerability
@@ -397,6 +399,14 @@ function App() {
           <Route
             path="/BL-Vuln/BL_Vuln_labs/first_lab"
             element={<BL_VULN_FIRST_LAB />}
+          />
+          <Route
+            path="/BL-Vuln/BL_Vuln_labs/first_lab/cart"
+            element={<BL_VULN_FIRST_LAB_CART />}
+          />
+          <Route
+            path="/BL-Vuln/BL_Vuln_labs/first_lab/ProductDetail"
+            element={<BL_VULN_FIRST_LAB_DETAIL_PAGE />}
           />
           <Route
             path="/BL-Vuln/BL_Vuln_labs/second_lab"

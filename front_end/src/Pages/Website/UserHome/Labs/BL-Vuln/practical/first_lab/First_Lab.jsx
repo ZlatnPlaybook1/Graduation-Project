@@ -1,41 +1,78 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const First_Lab = () => {
-  const [item, setItem] = useState({ name: "", price: 0 });
-  const [message, setMessage] = useState("");
+const ProductsPage = () => {
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
 
-  const handleAddToCart = async () => {
-    try {
-      const response = await axios.post("/api/cart", {
-        name: item.name,
-        price: item.price,
-      });
-      setMessage(response.data.message);
-    } catch (error) {
-      setMessage("Failed to add item to cart.");
-    }
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
+
+  const addToCart = (product) => {
+    const updatedCart = [...cart, product];
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   return (
-    <div>
-      <h1>Buy Lightweight l33t Leather Jacket</h1>
-      <input
-        type="text"
-        placeholder="Item Name"
-        value={item.name}
-        onChange={(e) => setItem({ ...item, name: e.target.value })}
-      />
-      <input
-        type="number"
-        placeholder="Price"
-        value={item.price}
-        onChange={(e) => setItem({ ...item, price: parseInt(e.target.value) })}
-      />
-      <button onClick={handleAddToCart}>Add to Cart</button>
-      <p>{message}</p>
+    <div className="container-fluid d-flex">
+      <nav
+        className="bg-dark text-white p-3"
+        style={{ width: "200px", height: "100vh" }}
+      >
+        <ul className="list-unstyled">
+          <li>
+            <Link
+              to="/BL-Vuln/BL_Vuln_labs/first_lab/cart"
+              className="text-white"
+            >
+              Cart
+            </Link>
+          </li>
+          <li>
+            <Link to="/BL-Vuln/BL_Vuln_labs/first_lab" className="text-white">
+              Shopping
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <div className="container">
+        <div className="row mt-3">
+          {products.map((product) => (
+            <div key={product.id} className="col-md-4 mb-4">
+              <div className="card h-100">
+                <img
+                  src={product.image}
+                  className="card-img-top"
+                  alt={product.title}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{product.title}</h5>
+                  <p className="card-text">${product.price}</p>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => addToCart(product)}
+                  >
+                    Add to Cart
+                  </button>
+                  <Link
+                    to={`/BL-Vuln/BL_Vuln_labs/first_lab/ProductDetail/${product.id}`}
+                    className="btn btn-secondary ms-2"
+                  >
+                    Details
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default First_Lab;
+export default ProductsPage;
