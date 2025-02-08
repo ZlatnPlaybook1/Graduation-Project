@@ -1,9 +1,10 @@
 // import express from "express";
-// import { addToCart } from "./lab1.controller";
+// import { addToCart, getCart, checkoutCart } from "./lab1.controller";
 
-// const router = express.Router();
+// const cartRouter = express.Router();
 
-// // Route to add an item to the cart
-// router.post("/cart", addToCart);
+// cartRouter.post("/cart", addToCart); // Add item to cart
+// cartRouter.get("/cart/:userId", getCart); // Get cart details
+// cartRouter.post("/cart/checkout/:userId", checkoutCart); // Checkout cart
 
-// export default router;
+// export default cartRouter;

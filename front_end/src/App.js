@@ -411,7 +411,7 @@ function App() {
             element={<BL_VULN_FIRST_LAB_CART />}
           />
           <Route
-            path="/BL-Vuln/BL_Vuln_labs/first_lab/ProductDetail"
+            path="/BL-Vuln/BL_Vuln_labs/first_lab/ProductDetail/:id"
             element={<BL_VULN_FIRST_LAB_DETAIL_PAGE />}
           />
           <Route

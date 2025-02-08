@@ -1,6 +1,49 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
+// Inline Navigation component
+const Navigation = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  React.useEffect(() => {
+    const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+    setLoggedIn(isLoggedIn);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.setItem("loggedIn", "false");
+    setLoggedIn(false);
+    // Optionally add redirection here
+  };
+
+  return (
+    <nav className="custom-nav">
+      <ul className="custom-nav__list">
+        <li className="custom-nav__item">
+          <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/cart">Cart</Link>
+        </li>
+        <li className="custom-nav__item">
+          <Link to="/BL-Vuln/BL_Vuln_labs/first_lab">Shopping</Link>
+        </li>
+        <li className="custom-nav__item">
+          <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/myaccount">MyAcc</Link>
+        </li>
+        {loggedIn ? (
+          <li className="custom-nav__item">
+            <button onClick={handleLogout} className="btn btn-link">
+              Logout
+            </button>
+          </li>
+        ) : (
+          <li className="custom-nav__item">
+            <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/login">Login</Link>
+          </li>
+        )}
+      </ul>
+    </nav>
+  );
+};
+
 const DetailPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -15,6 +58,7 @@ const DetailPage = () => {
 
   return (
     <div className="container mt-5">
+      <Navigation />
       <h2>{product.title}</h2>
       <img
         src={product.image}
@@ -23,8 +67,8 @@ const DetailPage = () => {
         style={{ maxWidth: "300px" }}
       />
       <p>{product.description}</p>
-      <h4>${product.price}</h4>
-      <Link to="/" className="btn btn-primary">
+      <h4>${product.price.toFixed(2)}</h4>
+      <Link to="/BL-Vuln/BL_Vuln_labs/first_lab" className="btn btn-primary">
         Back to Shopping
       </Link>
     </div>
