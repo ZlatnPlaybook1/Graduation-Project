@@ -1,0 +1,75 @@
+.rc-container {
+  max-width: 400px;
+  margin: 10vh auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.rc-content {
+  text-align: center;
+}
+
+.rc-alert {
+  background-color: #ffcccc;
+  color: #a00;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.rc-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.rc-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.rc-form-group {
+  margin-bottom: 15px;
+}
+
+.rc-form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.rc-form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.rc-btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rc-btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.rc-btn-secondary {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  background-color: #dc3545;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.rc-btn-secondary:hover {
+  background-color: #a71d2a;
+}
