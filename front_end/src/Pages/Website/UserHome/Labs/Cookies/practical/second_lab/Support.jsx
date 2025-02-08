@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import "./Support.css";
+import "../Support.css";
 import support from "../../../../assets/img/support.png";
 import {  useNavigate } from "react-router-dom";
 import Cookie from "cookie-universal";

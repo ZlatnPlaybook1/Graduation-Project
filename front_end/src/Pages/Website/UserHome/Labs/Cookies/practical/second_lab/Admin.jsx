@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import $ from "jquery";
-import "./Admin.css";
+import "../Admin.css";
 import admin from "../../../../assets/img/admin.png";
 import Cookie from "cookie-universal";
 

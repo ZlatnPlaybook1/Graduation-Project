@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./Login_page.css";
+import "../Login_page.css";
 import axios from "axios";
 import React, { useState } from "react";
 import Cookie from "cookie-universal";
