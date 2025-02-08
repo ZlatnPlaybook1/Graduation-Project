@@ -1,133 +1,87 @@
 import React, { useState } from "react";
-import Swal from "sweetalert2";
 import "./MCQV2.css";
 
-const MCQQuizV2 = ({ questionsData }) => {
+const Quiz = ({ questions }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedOption, setSelectedOption] = useState("");
-  const [showAnswer, setShowAnswer] = useState(false);
-  const [userAnswers, setUserAnswers] = useState([]);
-  const [score, setScore] = useState(0);
+  const [selectedAnswers, setSelectedAnswers] = useState({});
+  const [showThankYou, setShowThankYou] = useState(false);
+  const [answerStatus, setAnswerStatus] = useState(null);
 
-  const questions = questionsData.questions;
-  const totalQuestions = questions.length;
+  const handleAnswerSelect = (questionId, answer, correctAnswer) => {
+    setSelectedAnswers({ ...selectedAnswers, [questionId]: answer });
+    
+    // Check if the selected answer is correct
+    if (answer === correctAnswer) {
+      setAnswerStatus({ status: "correct", selected: answer, correct: correctAnswer });
+    } else {
+      setAnswerStatus({ status: "wrong", selected: answer, correct: correctAnswer });
+    }
+    
+    // Automatically move to the next question after selection
+    setTimeout(() => {
+      setAnswerStatus(null);
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+      } else {
+        setShowThankYou(true);
+      }
+    }, 1000); // Delay to allow the user to see their selection
+  };
+
+  if (showThankYou) {
+    return (
+      <div className="thankyou-page">
+        <div className="main-inner">
+          <h1><span>Thank You</span> For Your Time!</h1>
+          <p>Your submission has been received.</p>
+        </div>
+      </div>
+    );
+  }
+
   const currentQuestion = questions[currentQuestionIndex];
 
-  const handleNext = () => {
-    if (currentQuestionIndex < totalQuestions - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedOption("");
-      setShowAnswer(false);
-    }
-  };
-
-  const handlePrevious = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1);
-      setSelectedOption("");
-      setShowAnswer(false);
-    }
-  };
-
-  const handleOptionSelect = (option) => {
-    setSelectedOption(option);
-    setShowAnswer(true);
-
-    // Save the selected answer for final score calculation
-    const newAnswers = [...userAnswers];
-    newAnswers[currentQuestionIndex] = option;
-    setUserAnswers(newAnswers);
-
-    // Update the score
-    if (option === currentQuestion.answer) {
-      setScore(score + 1);
-    }
-  };
-
-  const handleSubmit = () => {
-    const finalScore = score;
-    if (finalScore >= 15) {
-      Swal.fire({
-        title: "Congratulations!",
-        text: `Your level is fair! Final score: ${finalScore}`,
-        icon: "success",
-        confirmButtonText: "OK",
-      });
-    } else {
-      Swal.fire({
-        title: "Try again!",
-        text: `You failed. Final score: ${finalScore}.
-        \n\n Please try again.`,
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-    }
-  };
-  
-
   return (
-    <div className="quiz-container">
-      {/* Progress Bar */}
-      <div className="progress-bar">
-        <div
-          className="progress"
-          style={{
-            width: `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`,
-          }}
-        ></div>
+    <main>
+      <div className="step-bar">
+        <div className="fill" style={{ width: `${(currentQuestionIndex + 1) / questions.length * 100}%` }}></div>
       </div>
-      <div className="progress-text">
-        Question {currentQuestionIndex + 1} of {totalQuestions}
-      </div>
-
-      {/* Question */}
-      <div className="question-container">
-        <h2 className="question">{currentQuestion.question}</h2>
-        <div className="options">
-          {currentQuestion.options.map((option, index) => (
-            <button
-              key={index}
-              className={`option-button ${
-                showAnswer && option === currentQuestion.answer ? "correct" : ""
-              } ${
-                showAnswer &&
-                selectedOption === option &&
-                option !== currentQuestion.answer
-                  ? "incorrect"
-                  : ""
-              }`}
-              onClick={() => handleOptionSelect(option)}
-              disabled={showAnswer}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-        {showAnswer && (
-          <p className="feedback">
-            {selectedOption === currentQuestion.answer ? "Correct!" : "Wrong!"}
-          </p>
-        )}
-      </div>
-
-      {/* Navigation Buttons */}
-      <div className="navigation-buttons">
-        <button onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
-          Previous
-        </button>
-        {currentQuestionIndex === totalQuestions - 1 ? (
-          <button onClick={handleSubmit}>Submit</button>
-        ) : (
-          <button
-            onClick={handleNext}
-            disabled={currentQuestionIndex === totalQuestions - 1}
-          >
-            Next
-          </button>
-        )}
-      </div>
-    </div>
+      <form className="show-section">
+        <section className="steps">
+          <div className="step-number">Question {currentQuestionIndex + 1} / {questions.length}</div>
+          <h1 className="quiz-question">{currentQuestion.question}</h1>
+          <fieldset id={`step${currentQuestionIndex + 1}`}>
+            {currentQuestion.options.map((option, index) => (
+              <div 
+                key={index} 
+                className={`radio-field bounce-left ${
+                  answerStatus?.selected === option 
+                    ? answerStatus.status === "correct" 
+                      ? "correct-answer" 
+                      : "wrong-answer" 
+                    : answerStatus?.correct === option 
+                    ? "correct-answer" 
+                    : ""
+                }`}>
+                <input
+                  type="radio"
+                  name={`question-${currentQuestion.id}`}
+                  value={option}
+                  checked={selectedAnswers[currentQuestion.id] === option}
+                  onChange={() => handleAnswerSelect(currentQuestion.id, option, currentQuestion.correct_answer)}
+                />
+                <label>
+                  {option} 
+                  {answerStatus?.selected === option && answerStatus.status === "correct" && " ✅"}
+                  {answerStatus?.selected === option && answerStatus.status === "wrong" && " ❌"}
+                </label>
+              </div>
+            ))}
+          </fieldset>
+        </section>
+      </form>
+    </main>
   );
 };
 
-export default MCQQuizV2;
+export default Quiz;

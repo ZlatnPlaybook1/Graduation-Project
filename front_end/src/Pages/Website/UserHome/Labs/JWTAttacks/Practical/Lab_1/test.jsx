@@ -3,7 +3,7 @@ import data from "./data.json";
 export default function test() {
   return (
     <>
-      <MCQQuizV2 questionsData={data}/>
+      <MCQQuizV2 questions={data.questions}/>
     </>
   );
 }
