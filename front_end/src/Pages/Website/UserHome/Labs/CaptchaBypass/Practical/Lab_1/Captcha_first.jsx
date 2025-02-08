@@ -124,12 +124,6 @@ export default function Captcha_first() {
                   <p className="comment-text">{comment.comment}</p>
                 </div>
               ))}
-              {/* {form?.map((item) => (
-                    <div key={item.id} className="comment-card">
-                      <div className="comment-header">{comment.id}</div>
-                      <p className="comment-text">{item.comment}</p>
-                    </div> // Adjust according to your data structure
-                  ))} */}
             </div>
           </div>
         </div>
