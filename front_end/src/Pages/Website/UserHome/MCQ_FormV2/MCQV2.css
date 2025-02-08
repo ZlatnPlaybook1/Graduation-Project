@@ -8,7 +8,7 @@
 
 
 
-body {
+.body-quiz2 {
     font-family: "Jost";
     width: 100%;
     min-height: 100vh;
@@ -20,7 +20,7 @@ body {
 
 }
 
-main {
+.main-quiz2 {
 
     height: 100%;
     background-image: url(../assets/img/MCQV2/bg-2.jpg);
