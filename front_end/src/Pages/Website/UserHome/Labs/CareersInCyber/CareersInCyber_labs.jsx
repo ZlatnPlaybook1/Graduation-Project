@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../../Header/Header";
-import labImg from "../../assets/img/Regex/lab.jpg";
-
+import mcqData from "./MCQCards";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
 export default function Regex_labs() {
@@ -43,27 +42,16 @@ export default function Regex_labs() {
           <h2>Regular Expressions Labs</h2>
           <p className="section-p">Test Your Hacking Skills</p>
           <div className="row">
-            {/* Lab1 */}
-            <Card
-              link={"/Regex/Regex_labs/MCQReview"}
-              image={labImg}
-              title={"MCQ Question Review"}
-              brief={
-                "These are multiple choice questions that are designed to be a review for the exam."
-              }
-              difficulty={"Easy"}
-            />
-
-            {/* Lab2 */}
-            <Card
-              link={"/Regex/Regex_labs/CompleteReview"}
-              image={labImg}
-              title={"Complete Question Review"}
-              brief={
-                "These are Complete questions that are designed to be a review for the exam."
-              }
-              difficulty={"Easy"}
-            />
+            {mcqData.map((mcq, id) => (
+              <Card
+                title={mcq.title}
+                description={mcq.description}
+                difficulty={mcq.difficulty}
+                image={mcq.image}
+                link={mcq.link}
+                key={mcq.id}
+              />
+            ))}
           </div>
         </div>
       </div>

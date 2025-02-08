@@ -38,8 +38,8 @@ import lab3CSRF from "./labs/CSRF/lab3/lab3.router";
 import lab1fileInclusion from "./labs/fileInclusion/lab1/lab1.router";
 import lab2fileInclusion from "./labs/fileInclusion/lab2/lab2.router";
 import lab3fileInclusion from "./labs/fileInclusion/lab3/lab3.router";
-import BurPSuiteLab3 from "./labs/burpsuite/lab3/lab3.router"; 
-
+import BurPSuiteLab3 from "./labs/burpsuite/lab3/lab3.router";
+import clickJackLab1 from "./labs/ClickJacking/lab1/lab1.router";
 const app = express();
 app.use("/uploads", express.static("uploads"));
 app.use("/src", express.static("src"));
@@ -95,6 +95,7 @@ app.use("/api", lab1fileInclusion);
 app.use("/api", lab2fileInclusion);
 app.use("/api", lab3fileInclusion);
 app.use("/api", BurPSuiteLab3);
+app.use("/api", clickJackLab1);
 
 dotenv.config();
 

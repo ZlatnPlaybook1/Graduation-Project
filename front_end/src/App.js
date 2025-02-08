@@ -86,6 +86,14 @@ import CAREERS_IN_CYBER_MORE5 from "./Pages/Website/UserHome/Labs/CareersInCyber
 import CAREERS_IN_CYBER_MORE6 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/RedTeamer.jsx";
 import CAREERS_IN_CYBER_MORE7 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/SecurityEngineer.jsx";
 
+import CAREERS_IN_CYBER_MCQ1 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/DigitalForensicsExaminer.jsx";
+import CAREERS_IN_CYBER_MCQ2 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/IncidentResponder.jsx";
+import CAREERS_IN_CYBER_MCQ3 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/MalwareAnalyst.jsx";
+import CAREERS_IN_CYBER_MCQ4 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/PenetrationTester.jsx";
+import CAREERS_IN_CYBER_MCQ5 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/RedTeamer.jsx";
+import CAREERS_IN_CYBER_MCQ6 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/SecurityEngineer.jsx";
+import CAREERS_IN_CYBER_MCQ7 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/SecurityAnalyst.jsx";
+
 // End Careers in Cyber
 // Api Hacking
 import API_HACKING from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking.jsx";
@@ -100,6 +108,7 @@ import Dashboard1 from "./Pages/Website/UserHome/Labs/Api-Hacking/practical/seco
 import CLICK_JACKING from "./Pages/Website/UserHome/Labs/Click-Jacking/Click_Jacking.jsx";
 import CLICK_JACKING_LABS from "./Pages/Website/UserHome/Labs/Click-Jacking/Click_Jacking_labs.jsx";
 import CLICK_JACKING_FIRST_LAB from "./Pages/Website/UserHome/Labs/Click-Jacking/practical/first_lab/First_Lab.jsx";
+import CLICK_JACKING_EDIT_INFO from "./Pages/Website/UserHome/Labs/Click-Jacking/practical/first_lab/EditInfo.jsx";
 import CLICK_JACKING_SECOND_LAB from "./Pages/Website/UserHome/Labs/Click-Jacking/practical/second_lab/Second_Lab.jsx";
 // End Click Jacking
 
@@ -107,6 +116,8 @@ import CLICK_JACKING_SECOND_LAB from "./Pages/Website/UserHome/Labs/Click-Jackin
 import BL_VULN from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln.jsx";
 import BL_VULN_LABS from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln_labs.jsx";
 import BL_VULN_FIRST_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/First_Lab.jsx";
+import BL_VULN_FIRST_LAB_CART from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/CartPage.jsx";
+import BL_VULN_FIRST_LAB_DETAIL_PAGE from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/DetailPage.jsx";
 import BL_VULN_SECOND_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/second_lab/Second_Lab.jsx";
 import BL_VULN_THIRD_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/third_lab/Third_Lab.jsx";
 // End Business Logic Vulnerability
@@ -390,6 +401,14 @@ function App() {
             element={<BL_VULN_FIRST_LAB />}
           />
           <Route
+            path="/BL-Vuln/BL_Vuln_labs/first_lab/cart"
+            element={<BL_VULN_FIRST_LAB_CART />}
+          />
+          <Route
+            path="/BL-Vuln/BL_Vuln_labs/first_lab/ProductDetail"
+            element={<BL_VULN_FIRST_LAB_DETAIL_PAGE />}
+          />
+          <Route
             path="/BL-Vuln/BL_Vuln_labs/second_lab"
             element={<BL_VULN_SECOND_LAB />}
           />
@@ -506,6 +525,34 @@ function App() {
             path="/CareersInCyber/CareersInCyber_labs/ShowMore7"
             element={<CAREERS_IN_CYBER_MORE7 />}
           />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/Security_Analyst/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ1 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/Security_Engineer/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ2 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/Incident_Responder/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ3 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/Digital_Forensics_Examiner/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ4 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/Malware_Analyst/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ5 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/Red_Teamer/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ6 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/Penetration_Tester/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ7 />}
+          />
 
           {/* End Careers in Cyber */}
 
@@ -549,6 +596,10 @@ function App() {
           <Route
             path="/Click_Jacking/Click_Jacking_labs/lab2"
             element={<CLICK_JACKING_SECOND_LAB />}
+          />
+          <Route
+            path="/Click_Jacking/Click_Jacking_labs/EditInfo"
+            element={<CLICK_JACKING_EDIT_INFO />}
           />
           {/* End Click Jacking */}
 
