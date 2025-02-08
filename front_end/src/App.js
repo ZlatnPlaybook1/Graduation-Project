@@ -196,6 +196,7 @@ import SSTI_STORE from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_3/SSTI_
 // CaptchaBypass
 import CaptchaBypass from "./Pages/Website/UserHome/Labs/CaptchaBypass/CaptchaBypass.jsx";
 import CAPTCHABYPASS_LAB from "./Pages/Website/UserHome/Labs/CaptchaBypass/CaptchaBypass_lab.jsx";
+import CAPTCHABYPASS_1 from "./Pages/Website/UserHome/Labs/CaptchaBypass/Practical/Lab_1/Captcha_first.jsx";
 // End CaptchaBypass
 // JWT Attacks
 import JWTAttacks from "./Pages/Website/UserHome/Labs/JWTAttacks/JWTAttacks.jsx";
@@ -997,6 +998,10 @@ function App() {
           <Route
             path="/captchabypass/captchabypass_lab"
             element={<CAPTCHABYPASS_LAB />}
+          />
+          <Route
+            path="/captchabypass/captchabypass_lab/lab1"
+            element={<CAPTCHABYPASS_1 />}
           />
           {/* End CaptchaBypass */}
           {/* Start JWTAttacks */}

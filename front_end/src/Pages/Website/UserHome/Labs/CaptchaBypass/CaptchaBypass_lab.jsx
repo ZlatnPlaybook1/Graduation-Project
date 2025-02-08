@@ -1,5 +1,5 @@
 import React from "react";
-import  "../Page_Styles/Lab.css";
+import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets//img/Captcha Bypass/card_image.png";
 import { Link } from "react-router-dom";
@@ -45,11 +45,11 @@ export default function CaptchaBypass_lab() {
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             <Card
-            link={""}
-            image={image}
-            title={""}
-            brief={""}
-            difficulty={""}
+              link={"/captchabypass/captchabypass_lab/lab1"}
+              image={image}
+              title={"First Lab"}
+              brief={""}
+              difficulty={"Easy"}
             />
           </div>
         </div>
