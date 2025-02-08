@@ -6,10 +6,9 @@
   flex-direction: column;
 }
 
-.course-store {
-  padding: 70px 0;
+.course-store-ssti {
+  padding: 100px 0;
 }
-
 .course-store-ssti .row-practice {
   display: grid;
   grid-template-columns: 0.3fr 0.3fr 0.3fr;

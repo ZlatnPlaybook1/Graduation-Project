@@ -21,12 +21,14 @@ export default function SSTI_store() {
   `;
   return (
     <>
-      <div className="container">
+      <div className="container-ssti3">
         <GoBackBtn />
         <ShowHintBtn hintText={hintMessage} />
         <div className="course-store-ssti">
-          <div className="container-store ">
-            <h1 style={{ textAlign: "center" }}>Featured Products</h1>
+          <div className="container-store">
+            <h1 style={{ textAlign: "center", marginBottom: 60 }}>
+              Featured Products
+            </h1>
             <div className="row-practice">
               {products.map((product) => (
                 <div className="card-store" key={product.id}>

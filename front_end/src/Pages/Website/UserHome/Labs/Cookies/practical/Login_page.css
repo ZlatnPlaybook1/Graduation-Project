@@ -93,6 +93,7 @@ a {
 .login-form .form-group label {
   font-size: 1.2rem;
   font-weight: lighter;
+  color: whitesmoke
 }
 
 .login-form .form-group input {
