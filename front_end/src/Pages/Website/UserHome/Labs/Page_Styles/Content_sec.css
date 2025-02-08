@@ -207,7 +207,10 @@ b {
   transition: var(--main-transition);
 }
 
-.landing-labd .options button:hover {
+.landing-labd .options button:hover,
+.landing-labd .options button:focus,
+.landing-labd .options button:active,
+.landing-labd .options button.active {
   background-color: white;
   color: var(--alt-color);
 }

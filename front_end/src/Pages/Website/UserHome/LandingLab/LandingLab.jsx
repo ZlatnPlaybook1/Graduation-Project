@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const LandingLab = ({
@@ -12,6 +12,45 @@ const LandingLab = ({
   onLike = () => {},
   onDislike = () => {},
 }) => {
+  // State to track toggled states
+  const [isSaved, setIsSaved] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
+  const [isDisliked, setIsDisliked] = useState(false);
+
+  // Load state from localStorage on component mount
+  useEffect(() => {
+    const savedState = JSON.parse(localStorage.getItem("buttonStates")) || {};
+    setIsSaved(savedState.isSaved || false);
+    setIsLiked(savedState.isLiked || false);
+    setIsDisliked(savedState.isDisliked || false);
+  }, []);
+
+  // Save state to localStorage whenever it changes
+  useEffect(() => {
+    const buttonStates = { isSaved, isLiked, isDisliked };
+    localStorage.setItem("buttonStates", JSON.stringify(buttonStates));
+  }, [isSaved, isLiked, isDisliked]);
+
+  // Toggle Save Room state
+  const toggleSaveRoom = () => {
+    setIsSaved((prev) => !prev); // Toggle saved state
+    onSaveRoom(); // Call the passed prop function
+  };
+
+  // Toggle Like state
+  const toggleLike = () => {
+    setIsLiked((prev) => !prev); // Toggle liked state
+    if (isDisliked) setIsDisliked(false); // Turn off dislike if it's active
+    onLike(); // Call the passed prop function
+  };
+
+  // Toggle Dislike state
+  const toggleDislike = () => {
+    setIsDisliked((prev) => !prev); // Toggle disliked state
+    if (isLiked) setIsLiked(false); // Turn off like if it's active
+    onDislike(); // Call the passed prop function
+  };
+
   return (
     <div className="landing-labd">
       <div className="banner">
@@ -48,15 +87,24 @@ const LandingLab = ({
           </div>
         </div>
         <div className="options">
-          <button onClick={onSaveRoom}>
+          <button
+            onClick={toggleSaveRoom}
+            className={isSaved ? "active" : ""} // Add "active" class if saved
+          >
             <i className="far fa-bookmark"></i>
-            <p>Save Room</p>
+            <p>{isSaved ? "Remove from Favorite" : "Add to Favorite"}</p>
           </button>
           <div className="like">
-            <button onClick={onLike}>
+            <button
+              onClick={toggleLike}
+              className={isLiked ? "active" : ""} // Add "active" class if liked
+            >
               <i className="fas fa-thumbs-up"></i>
             </button>
-            <button onClick={onDislike}>
+            <button
+              onClick={toggleDislike}
+              className={isDisliked ? "active" : ""} // Add "active" class if disliked
+            >
               <i className="fas fa-thumbs-down"></i>
             </button>
           </div>
