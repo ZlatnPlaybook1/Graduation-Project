@@ -1,0 +1,143 @@
+.info-bar {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.container-shopping-cart {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.product:hover {
+  background: #ddd;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #666;
+}
+
+.clear-cart {
+  text-align: center;
+  background: #ff4b5c;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.clear-cart:hover {
+  background: #d83445;
+}
+
+.discount-code {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.discount-label {
+  font-size: 16px;
+  font-weight: bold;
+  background: #2575fc;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.discount-input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.discount-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #2575fc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.discount-input:focus {
+  border: 2px solid #6a11cb;
+}
+
+.apply-discount,
+.clear-discount {
+  text-align: center;
+  background: #2575fc;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.apply-discount:hover,
+.clear-discount:hover {
+  background: #6a11cb;
+}
+
+.discount-info {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.discount {
+  color: green;
+}
+
+.old-total {
+  color: red;
+}
+
+.total {
+  font-weight: bold;
+}
+
+.message-box {
+  margin-top: 15px;
+  padding: 12px;
+  background: #28a745;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease-in-out;
+}

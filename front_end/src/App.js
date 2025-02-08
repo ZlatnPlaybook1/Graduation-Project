@@ -266,6 +266,11 @@ import BurpSuitLab3 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab
 import BurpSuitLab4 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab4/BurpSuitLab4.jsx";
 import BurpSuitDescriptions from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab3/BurpSuitDescriptions.jsx";
 import Test from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Lab_1/test.jsx";
+import RaceCondition from "./Pages/Website/UserHome/Labs/Condition_Race/RaceCondition.jsx";
+import RaceConditionLabs from "./Pages/Website/UserHome/Labs/Condition_Race/RaceConditionLabs.jsx";
+import RaceConditionInRegister from "./Pages/Website/UserHome/Labs/Condition_Race/Practical/Lab1/RC_In_Register.jsx";
+import ViewRegistes from "./Pages/Website/UserHome/Labs/Condition_Race/Practical/Lab1/ViewRegistes.jsx";
+import ShoppingCart from "./Pages/Website/UserHome/Labs/Condition_Race/Practical/Lab2/ShoppingCart.jsx";
 
 function App() {
   return (
@@ -842,6 +847,22 @@ function App() {
             element={<BurpSuitLab4 />}
           />
           {/* End Burp Suit */}
+          {/* Start Race Condition */}
+          <Route path="/Race_Condition" element={<RaceCondition />} />
+          <Route
+            path="/Race_Condition/Race_Condition_Labs"
+            element={<RaceConditionLabs />}
+          />
+          <Route
+            path="/Race_Condition/Race_Condition_Labs/Lab1"
+            element={<RaceConditionInRegister />}
+          />
+          <Route path="/View Registers" element={<ViewRegistes />} />
+          <Route
+            path="/Race_Condition/Race_Condition_Labs/Lab2"
+            element={<ShoppingCart />}
+          />
+          {/* End Race Condition */}
           {/* Start Cookies */}
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cookies/cookies_lab" element={<COOKIES_LAB />} />

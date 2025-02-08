@@ -423,14 +423,14 @@ const courseData = [
   {
     id: 26,
     category: "Fundamentals",
-    title: "Temp Subject",
+    title: "Race Condition",
     description:
-      "Placeholder course introducing essential foundational topics with content to follow.",
+      "A race condition occurs when multiple processes access shared resources simultaneously in an uncontrolled manner, leading to unexpected errors or security vulnerabilities.",
     topics: ["Topic 1", "Topic 2", "Topic 3", "Topic 4"],
-    difficulty: "Beginner",
-    image: require("../assets/img/Lab2.jpg"),
-    state: "not-published",
-    link: "/infoDisc",
+    difficulty: "Intermediate",
+    image: require("../assets/img/Condition_Race/Race Condition.png"),
+    state: "pending",
+    link: "/Race_Condition",
   },
   {
     id: 27,

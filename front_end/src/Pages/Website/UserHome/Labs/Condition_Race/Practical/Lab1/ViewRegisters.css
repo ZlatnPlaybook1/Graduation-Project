@@ -1,0 +1,64 @@
+/* Unique class names for styling */
+.view-registers-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.view-registers-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.view-registers-back-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.view-registers-back-button:hover {
+  background-color: #0056b3;
+}
+
+.view-registers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.view-registers-table th,
+.view-registers-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.view-registers-table th {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.view-registers-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.view-registers-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.view-registers-delete-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.view-registers-delete-button:hover {
+  background-color: #c82333;
+}
