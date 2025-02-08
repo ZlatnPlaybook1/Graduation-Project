@@ -86,6 +86,14 @@ import CAREERS_IN_CYBER_MORE5 from "./Pages/Website/UserHome/Labs/CareersInCyber
 import CAREERS_IN_CYBER_MORE6 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/RedTeamer.jsx";
 import CAREERS_IN_CYBER_MORE7 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/SecurityEngineer.jsx";
 
+import CAREERS_IN_CYBER_MCQ1 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/DigitalForensicsExaminer.jsx";
+import CAREERS_IN_CYBER_MCQ2 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/IncidentResponder.jsx";
+import CAREERS_IN_CYBER_MCQ3 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/MalwareAnalyst.jsx";
+import CAREERS_IN_CYBER_MCQ4 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/PenetrationTester.jsx";
+import CAREERS_IN_CYBER_MCQ5 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/RedTeamer.jsx";
+import CAREERS_IN_CYBER_MCQ6 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/SecurityEngineer.jsx";
+import CAREERS_IN_CYBER_MCQ7 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/SecurityAnalyst.jsx";
+
 // End Careers in Cyber
 // Api Hacking
 import API_HACKING from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking.jsx";
@@ -506,6 +514,34 @@ function App() {
           <Route
             path="/CareersInCyber/CareersInCyber_labs/ShowMore7"
             element={<CAREERS_IN_CYBER_MORE7 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/Security_Analyst/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ1 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/Security_Engineer/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ2 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/Incident_Responder/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ3 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/Digital_Forensics_Examiner/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ4 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/Malware_Analyst/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ5 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/Red_Teamer/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ6 />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/Penetration_Tester/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ7 />}
           />
 
           {/* End Careers in Cyber */}
