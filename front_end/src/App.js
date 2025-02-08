@@ -100,6 +100,7 @@ import Dashboard1 from "./Pages/Website/UserHome/Labs/Api-Hacking/practical/seco
 import CLICK_JACKING from "./Pages/Website/UserHome/Labs/Click-Jacking/Click_Jacking.jsx";
 import CLICK_JACKING_LABS from "./Pages/Website/UserHome/Labs/Click-Jacking/Click_Jacking_labs.jsx";
 import CLICK_JACKING_FIRST_LAB from "./Pages/Website/UserHome/Labs/Click-Jacking/practical/first_lab/First_Lab.jsx";
+import CLICK_JACKING_EDIT_INFO from "./Pages/Website/UserHome/Labs/Click-Jacking/practical/first_lab/EditInfo.jsx";
 import CLICK_JACKING_SECOND_LAB from "./Pages/Website/UserHome/Labs/Click-Jacking/practical/second_lab/Second_Lab.jsx";
 // End Click Jacking
 
@@ -549,6 +550,10 @@ function App() {
           <Route
             path="/Click_Jacking/Click_Jacking_labs/lab2"
             element={<CLICK_JACKING_SECOND_LAB />}
+          />
+          <Route
+            path="/Click_Jacking/Click_Jacking_labs/EditInfo"
+            element={<CLICK_JACKING_EDIT_INFO />}
           />
           {/* End Click Jacking */}
 

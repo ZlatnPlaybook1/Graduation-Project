@@ -21,9 +21,9 @@ model User {
   address          String?
   birthday         String?
   phoneNum         String?
-  validationNumber ValidationNumber?
-  image            Image?
   File             File[]
+  image            Image?
+  validationNumber ValidationNumber?
 }
 
 model Image {
@@ -108,11 +108,6 @@ model lab3sql {
   category String? @default("electronics")
 }
 
-enum Role {
-  admin
-  writer
-}
-
 model ACUser {
   id   Int    @id @default(autoincrement())
   name String
@@ -173,28 +168,40 @@ model CartItem {
 }
 
 model BurPSuiteLab3 {
-  id   String  @id @default(uuid())
-  name String?
-  path String?
+  id          String  @id @default(uuid())
+  name        String?
+  path        String?
   description String?
 }
 
 model Course {
-  id             Int             @id @default(autoincrement())
-  title          String
-  description    String
-  image          String?
-  link           String?
-  state          String          
-  topics         String[]        
-  difficulty     String
-  favorite       Boolean         @default(false)
-  registrations  CourseRegistration[]
+  id            Int                  @id @default(autoincrement())
+  title         String
+  description   String
+  image         String?
+  link          String?
+  state         String
+  topics        String[]
+  difficulty    String
+  favorite      Boolean              @default(false)
+  registrations CourseRegistration[]
 }
 
 model CourseRegistration {
-  id         Int      @id @default(autoincrement())
-  course     Course   @relation(fields: [courseId], references: [id])
-  courseId   Int
-  createdAt  DateTime @default(now())
+  id        Int      @id @default(autoincrement())
+  courseId  Int
+  createdAt DateTime @default(now())
+  course    Course   @relation(fields: [courseId], references: [id])
+}
+
+model ClickJackLab1 {
+  id       Int     @id @default(autoincrement())
+  username String  @unique
+  password String
+  email    String?
+}
+
+enum Role {
+  admin
+  writer
 }
