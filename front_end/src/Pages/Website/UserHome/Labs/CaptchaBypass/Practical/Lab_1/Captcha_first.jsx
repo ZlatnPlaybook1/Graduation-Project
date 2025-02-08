@@ -8,6 +8,7 @@ import axios from "axios";
 
 export default function Captcha_first() {
   const [comment, setComment] = useState("");
+  const [comments, setComments] = useState([]);
   const [captcha, setCaptcha] = useState("");
   const faqSectionRef = useRef(null);
   const [form, setForm] = useState({
@@ -16,6 +17,7 @@ export default function Captcha_first() {
   });
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
+  const [id, setID] = useState(3);
   const [right, setRight] = useState("");
   function handleChange(e) {
     e.preventDefault();
@@ -26,12 +28,26 @@ export default function Captcha_first() {
     setLoading(true);
     setErr("");
     const form = { comment, captcha };
+    console.log(form);
+    const newComment = {
+      id: id, // Unique ID for each comment
+      comment: comment, // Default comment
+      captcha: captcha, // Store raw HTML content
+    };
+    setID((id) => id + 1);
+    setComments((prevComments) => [...prevComments, newComment]);
     try {
       const res = await axios.post(
         "http://127.0.0.1:8080/api/Captcha_first",
         form
       );
       console.log(form);
+      const newComment = {
+        id: Date.now(), // Unique ID for each comment
+        comment: comment, // Default comment
+        captcha: captcha, // Store raw HTML content
+      };
+      setComments((prevComments) => [...prevComments, newComment]);
 
       setLoading(false);
     } catch (error) {
@@ -60,7 +76,7 @@ export default function Captcha_first() {
           }
         />
         <div className="captcha_first">
-          <div className="container">
+          <div className="container-captcha">
             <div className="card-captcha">
               <div className="card_content">
                 <div className="card_title">Captcha Verification</div>
@@ -86,9 +102,34 @@ export default function Captcha_first() {
                   </div>
                   <div className="form-group-captcha">
                     <button type="submit">Send</button>
+                    {err && <span className="error">{err}</span>}
                   </div>
                 </form>
               </div>
+            </div>
+            <div className="comment-section">
+              <div className="comment-card">
+                <div className="comment-header">#1</div>
+                <p className="comment-text">comment 1</p>
+              </div>
+              <div className="comment-card">
+                <div className="comment-header">#2</div>
+                <p className="comment-text">comment 2</p>
+              </div>
+              {comments?.map((comment) => (
+                <div key={comment.id} className="comment-card">
+                  <div className="comment-header">
+                    <p className="name">#{comment.id}</p>
+                  </div>
+                  <p className="comment-text">{comment.comment}</p>
+                </div>
+              ))}
+              {/* {form?.map((item) => (
+                    <div key={item.id} className="comment-card">
+                      <div className="comment-header">{comment.id}</div>
+                      <p className="comment-text">{item.comment}</p>
+                    </div> // Adjust according to your data structure
+                  ))} */}
             </div>
           </div>
         </div>
