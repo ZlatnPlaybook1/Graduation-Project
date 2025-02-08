@@ -2,7 +2,6 @@ import React from "react";
 import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets//img/Captcha Bypass/card_image.png";
-import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
 

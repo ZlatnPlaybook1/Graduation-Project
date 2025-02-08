@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { useRef } from "react";
-import $ from "jquery";
 import "./Captcha_first.css";
 import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
@@ -10,7 +8,6 @@ export default function Captcha_first() {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
   const [captcha, setCaptcha] = useState("");
-  const faqSectionRef = useRef(null);
   const [form, setForm] = useState({
     comment: "",
     captcha: "",
@@ -19,10 +16,6 @@ export default function Captcha_first() {
   const [err, setErr] = useState("");
   const [id, setID] = useState(3);
   const [right, setRight] = useState("");
-  function handleChange(e) {
-    e.preventDefault();
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -43,10 +36,11 @@ export default function Captcha_first() {
       );
       console.log(form);
       const newComment = {
-        id: Date.now(), // Unique ID for each comment
+        id: id, // Unique ID for each comment
         comment: comment, // Default comment
         captcha: captcha, // Store raw HTML content
       };
+      setID((id) => id + 1);
       setComments((prevComments) => [...prevComments, newComment]);
 
       setLoading(false);
