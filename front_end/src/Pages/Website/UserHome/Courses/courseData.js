@@ -400,7 +400,7 @@ const courseData = [
     ],
     difficulty: "Intermediate",
     image: require("../assets/img/Server Side Template Injection/card_image.png"),
-    state: "not-published",
+    state: "pending",
     link: "/SSTI",
   },
   {
@@ -446,7 +446,7 @@ const courseData = [
     ],
     difficulty: "Intermediate",
     image: require("../assets/img/Captcha Bypass/card_image.png"),
-    state: "not-published",
+    state: "pending",
     link: "/captchabypass",
   },
   {
