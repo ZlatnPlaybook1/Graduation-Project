@@ -10,7 +10,6 @@ import pg from "../assets/img/bg-img/header-bg1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Cookie from "cookie-universal";
-// import profile from "../UserHome/assets/img/profile.png";
 import axios from "axios";
 
 const Header = () => {
