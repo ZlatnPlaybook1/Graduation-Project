@@ -38,6 +38,12 @@ export default function ShoppingCart() {
       .catch((error) => console.error("Error applying discount:", error));
   };
 
+  const clearDiscount = () => {
+    setDiscount(0);
+    setUserCoupon("");
+    setMessage("");
+  };
+
   const total = cart.reduce((sum, price) => sum + price, 0) - discount;
 
   return (
@@ -76,6 +82,9 @@ export default function ShoppingCart() {
               />
               <button className="apply-btn" onClick={applyDiscount}>
                 Apply Discount
+              </button>
+              <button className="clear-btn" onClick={clearDiscount}>
+                Clear Discount
               </button>
             </div>
 
