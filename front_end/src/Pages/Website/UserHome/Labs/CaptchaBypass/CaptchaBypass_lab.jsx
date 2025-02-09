@@ -40,16 +40,33 @@ export default function CaptchaBypass_lab() {
       {/* Start Courses  */}
       <div className="course">
         <div className="container">
-          <h2>CaptchaBypass Lab</h2>
+          <h2>Captcha Bypass Lab</h2>
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             <Card
               link={"/captchabypass/captchabypass_lab/lab1"}
               image={image}
-              title={"First Lab"}
-              brief={""}
+              title={"Captcha Bypass"}
+              brief={"Get rid of CAPTCHA with the help of ROBOTS! Remember, CAPTCHA is constantly being refreshed."}
               difficulty={"Easy"}
             />
+
+<Card
+              link={"/captchabypass/captchabypass_lab/lab1"}
+              image={image}
+              title={"Broken Captcha"}
+              brief={"Bypass captcha like a hacker, not manually."}
+              difficulty={"Intermediate"}
+            />
+
+<Card
+              link={"/captchabypass/captchabypass_lab/lab1"}
+              image={image}
+              title={"Bypass reCAPTCHA v2"}
+              brief={"Bypass captcha like a hacker"}
+              difficulty={"Intermediate"}
+            />
+
           </div>
         </div>
       </div>

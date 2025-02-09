@@ -43,13 +43,7 @@ export default function SSTI_lab() {
           <h2>SSTI Lab</h2>
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
-            <Card
-            link={""}
-            image={image}
-            title={""}
-            brief={""}
-            difficulty={"Easy"}
-            />
+            
             <Card
             link={"/SSTI/SSTI_lab/blog"}
             image={image}
@@ -62,7 +56,15 @@ export default function SSTI_lab() {
             image={image}
             title={"SSTI Store Vulnerability"}
             brief={"This lab is vulnerable to server-side template injection due to the unsafe construction of an ERB template."}
-            difficulty={"Easy"}
+            difficulty={"Intermediate"}
+            />
+            
+            <Card
+            link={""}
+            image={image}
+            title={"Vulnerable Flask Application"}
+            brief={"Understanding Server-Side Template Injection (SSTI) in Flask/Jinja2 Applications"}
+            difficulty={"Hard"}
             />
           </div>
         </div>

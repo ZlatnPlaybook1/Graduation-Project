@@ -17,9 +17,7 @@ export default function CaptchaBypass() {
         background={background}
         imagecourse={imagecourse}
         courseTitle="Captcha Bypass"
-        courseDescription=" Master the basics of Captcha Bypass, a powerful technique for
-                securing code and protecting intellectual property in
-                cybersecurity environments."
+        courseDescription=" CAPTCHA bypass methods use programming and AI techniques to defeat website security measures, enabling automated bots to solve challenges. This can facilitate spam, account creation bots, and other malicious activities. However, these methods are unethical, illegal, and actively countered by website owners."
         difficulty="Intermediate"
         duration="30 min"
         onSaveRoom={() => console.log("Room Saved!")}
