@@ -205,3 +205,11 @@ enum Role {
   admin
   writer
 }
+
+model Lab1RaceCondition {
+  id      String @id @default(uuid())
+  email   String @unique
+  name    String?
+  surname String?
+  tel     String?
+}
