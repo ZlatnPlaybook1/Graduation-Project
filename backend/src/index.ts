@@ -5,6 +5,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import path from "path";
+import session from "express-session";
 import registerRouter from "./registerWithAuthentication/register.router";
 import loginRouter from "./login/login.router";
 import logoutRouter from "./logout/logout.router";
@@ -43,6 +44,7 @@ import clickJackLab1 from "./labs/ClickJacking/lab1/lab1.router";
 import lab1RaceCondition from "./labs/raceCondition/lab1/lab1.router";
 import lab2RaceCondition from "./labs/raceCondition/lab2/lab2.router";
 import lab1capatcha from "./labs/capatchaBypass/lab1/lab1.router";
+import lab2capatcha from "./labs/capatchaBypass/lab2/lab2.router";
 
 const app = express();
 app.use("/uploads", express.static("uploads"));
@@ -55,6 +57,11 @@ app.use(
     methods: ["GET", "POST"],
   })
 );
+app.use(session({
+  secret: "captcha_secret",
+  resave: false,
+  saveUninitialized: true
+}));
 app.use(morgan("dev")); // morgan: HTTP request logger middleware,
 // dev: predefined format string that Morgan will use to log requests
 app.use(bodyParser.json({ limit: "10mb" }));
@@ -103,6 +110,7 @@ app.use("/api", clickJackLab1);
 app.use("/api", lab1RaceCondition);
 app.use("/api", lab2RaceCondition);
 app.use("/api", lab1capatcha);
+app.use("/api", lab2capatcha);
 
 dotenv.config();
 
