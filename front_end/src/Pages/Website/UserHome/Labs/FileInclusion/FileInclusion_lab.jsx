@@ -46,22 +46,22 @@ export default function FileInclusion_lab() {
             <Card
               link={"/fileinclusion/fileinclusion_lab/Learn-the-capital-1"}
               image={image}
-              title={"Learn The Capital #1"}
-              brief={"You Will Learn How To Use File Inclusion"}
+              title={"Learn The Capital"}
+              brief={"Access the admin page without permission."}
               difficulty={"Easy"}
             />
             <Card
               link={"/fileinclusion/fileinclusion_lab/Learn-the-capital-2"}
               image={image}
-              title={"Learn The Capital #2"}
-              brief={"You Will Learn How To Use File Inclusion"}
+              title={"Learn Fruits"}
+              brief={"We have taken some security measures. Let's see if you can access the admin page without permission."}
               difficulty={"Intermediate"}
             />
             <Card
               link={"/fileinclusion/fileinclusion_lab/Learn-the-capital-3"}
               image={image}
-              title={"Learn The Capital #3"}
-              brief={"You Will Learn How To Use File Inclusion"}
+              title={"Learn  Car Brand Logos"}
+              brief={"We have increased our security measures. Now it's not easy to access the admin page :)"}
               difficulty={"Hard"}
             />
           </div>

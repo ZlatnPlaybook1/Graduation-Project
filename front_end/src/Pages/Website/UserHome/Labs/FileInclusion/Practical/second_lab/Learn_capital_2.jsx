@@ -74,7 +74,7 @@ export default function Learn_capital_2() {
               <div className="text-center">
                 <h2>File Inclusion Demonstration</h2>
                 <p>
-                  Select a file to view its content and the image of the capital. This simulates a file inclusion vulnerability in a controlled environment.
+                  Select a file to view its content and the image of Fruits. This simulates a file inclusion vulnerability in a controlled environment.
                 </p>
               </div>
               <form onSubmit={handleSubmit} style={{ flexDirection: "column" }}>

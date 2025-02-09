@@ -23,9 +23,7 @@ export default function FileInclusion() {
         background={background}
         imagecourse={imagecourse}
         courseTitle="File Inclusion"
-        courseDescription=" Master the basics of File Inclusion, a powerful technique for
-                securing code and protecting intellectual property in
-                cybersecurity environments."
+        courseDescription=" A vulnerability that allows an attacker to attach a remotely or locally hosted file, usually via a script on the web server."
         difficulty="Intermediate"
         duration="30 min"
         onSaveRoom={() => console.log("Room Saved!")}

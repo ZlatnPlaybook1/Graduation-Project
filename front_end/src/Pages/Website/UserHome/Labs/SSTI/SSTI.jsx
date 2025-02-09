@@ -19,9 +19,7 @@ export default function SSTI() {
         background={background}
         imagecourse={imagecourse}
         courseTitle="Server Side Template Injection (SSTI)"
-        courseDescription=" Master the basics of Server Side Template Injection (SSTI), a
-                powerful technique for securing code and protecting intellectual
-                property in cybersecurity environments."
+        courseDescription="Server-Side Template Injection (SSTI) is a web vulnerability that arises when user input is improperly handled within a server-side template engine. Attackers can exploit this flaw to execute arbitrary code, potentially leaking sensitive information or performing unauthorized actions on the system. This can lead to severe security risks, including data breaches, remote code execution, and server compromise."
         difficulty="Intermediate"
         duration="30 min"
         onSaveRoom={() => console.log("Room Saved!")}

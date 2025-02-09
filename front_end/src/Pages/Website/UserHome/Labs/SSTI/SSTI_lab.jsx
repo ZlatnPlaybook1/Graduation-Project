@@ -53,15 +53,15 @@ export default function SSTI_lab() {
             <Card
             link={"/SSTI/SSTI_lab/blog"}
             image={image}
-            title={"SSTI blog"}
-            brief={""}
+            title={"Basic server-side template injection"}
+            brief={"This lab is vulnerable to server-side template injection due to the way it unsafely uses a Tornado template."}
             difficulty={"Easy"}
             />
             <Card
             link={"/SSTI/SSTI_lab/store"}
             image={image}
-            title={"SSTI Store"}
-            brief={""}
+            title={"SSTI Store Vulnerability"}
+            brief={"This lab is vulnerable to server-side template injection due to the unsafe construction of an ERB template."}
             difficulty={"Easy"}
             />
           </div>
