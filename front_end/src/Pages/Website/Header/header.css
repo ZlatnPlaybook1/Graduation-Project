@@ -21,7 +21,7 @@ header .navbar {
   display: flex;
   gap: 12px;
   padding-right: 160px;
-  /* margin-left: 120px; */
+  margin-left: 120px;
 }
 
 .navbar .links .text {

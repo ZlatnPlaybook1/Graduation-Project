@@ -35,7 +35,7 @@ export default function RC_In_Register() {
     <>
       <GoBack />
       <ShowHint hintText={hintMessage} />
-      <div className="rc-container shadow-lg rounded">
+      <div className="rc-container">
         <div className="rc-content">
           {message && <div className="rc-alert">{message}</div>}
           <h2 className="rc-title">User Registration</h2>
