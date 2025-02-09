@@ -41,6 +41,7 @@ import lab3fileInclusion from "./labs/fileInclusion/lab3/lab3.router";
 import BurPSuiteLab3 from "./labs/burpsuite/lab3/lab3.router";
 import clickJackLab1 from "./labs/ClickJacking/lab1/lab1.router";
 import lab1RaceCondition from "./labs/raceCondition/lab1/lab1.router";
+import lab2RaceCondition from "./labs/raceCondition/lab2/lab2.router";
 
 const app = express();
 app.use("/uploads", express.static("uploads"));
@@ -99,6 +100,7 @@ app.use("/api", lab3fileInclusion);
 app.use("/api", BurPSuiteLab3);
 app.use("/api", clickJackLab1);
 app.use("/api", lab1RaceCondition);
+app.use("/api", lab2RaceCondition);
 
 dotenv.config();
 
