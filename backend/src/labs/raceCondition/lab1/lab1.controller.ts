@@ -1,4 +1,4 @@
-import e, { Request, Response } from "express";
+import { Request, Response } from "express";
 import prisma from "../../../utilities/db";
 
 export const register = async (req: Request, res: Response) => {
