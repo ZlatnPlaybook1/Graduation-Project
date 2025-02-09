@@ -1,4 +1,4 @@
-.container-store {
+.container-ssti3 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 61px;
@@ -9,9 +9,10 @@
 .course-store-ssti {
   padding: 100px 0;
 }
+
 .course-store-ssti .row-practice {
   display: grid;
-  grid-template-columns: 0.3fr 0.3fr 0.3fr;
+  grid-template-columns: repeat(3, 0.3fr);
   grid-template-rows: auto auto;
   justify-content: center;
   margin-top: 30px;
@@ -68,7 +69,8 @@
   flex-direction: row;
   align-items: center;
 }
-.course-store-ssti .card-store .card-text-store h4{
+
+.course-store-ssti .card-store .card-text-store h4 {
   margin-bottom: 0;
 }
 
@@ -102,31 +104,31 @@
 }
 
 @media (min-width: 0px) {
-  .container-store {
+  .container-ssti3 {
     max-width: 100%;
   }
 }
 
 @media (min-width: 576px) {
-  .container-store {
+  .container-ssti3 {
     max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
-  .container-store {
+  .container-ssti3 {
     max-width: 750px;
   }
 }
 
 @media (min-width: 991px) {
-  .container-store {
+  .container-ssti3 {
     max-width: 970px;
   }
 }
 
 @media (min-width: 1200px) {
-  .container-store {
+  .container-ssti3 {
     max-width: 1170px;
   }
 }

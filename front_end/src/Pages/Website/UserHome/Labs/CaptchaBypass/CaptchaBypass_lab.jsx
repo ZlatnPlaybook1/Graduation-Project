@@ -47,26 +47,27 @@ export default function CaptchaBypass_lab() {
               link={"/captchabypass/captchabypass_lab/lab1"}
               image={image}
               title={"Captcha Bypass"}
-              brief={"Get rid of CAPTCHA with the help of ROBOTS! Remember, CAPTCHA is constantly being refreshed."}
+              brief={
+                "Get rid of CAPTCHA with the help of ROBOTS! Remember, CAPTCHA is constantly being refreshed."
+              }
               difficulty={"Easy"}
             />
 
-<Card
-              link={"/captchabypass/captchabypass_lab/lab1"}
+            <Card
+              link={"/captchabypass/captchabypass_lab/lab2"}
               image={image}
               title={"Broken Captcha"}
               brief={"Bypass captcha like a hacker, not manually."}
               difficulty={"Intermediate"}
             />
 
-<Card
-              link={"/captchabypass/captchabypass_lab/lab1"}
+            <Card
+              link={"/captchabypass/captchabypass_lab/lab3"}
               image={image}
               title={"Bypass reCAPTCHA v2"}
               brief={"Bypass captcha like a hacker"}
               difficulty={"Intermediate"}
             />
-
           </div>
         </div>
       </div>

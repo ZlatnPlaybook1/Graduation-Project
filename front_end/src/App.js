@@ -188,15 +188,17 @@ import LEARN_CAPITAL_3 from "./Pages/Website/UserHome/Labs/FileInclusion/Practic
 // SSTI
 import SSTI from "./Pages/Website/UserHome/Labs/SSTI/SSTI.jsx";
 import SSTI_LAB from "./Pages/Website/UserHome/Labs/SSTI/SSTI_lab.jsx";
-import Blog from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_2/Blog.jsx";
-import BLOG_ITEM from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_2/Blog_item.jsx";
-import BLOG_LOGIN from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_2/Login.jsx";
-import SSTI_STORE from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_3/SSTI_store.jsx";
+import Blog from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_1/Blog.jsx";
+import BLOG_ITEM from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_1/Blog_item.jsx";
+import BLOG_LOGIN from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_1/Login.jsx";
+import SSTI_STORE from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_2/SSTI_store.jsx";
 // End SSTI
 // CaptchaBypass
 import CaptchaBypass from "./Pages/Website/UserHome/Labs/CaptchaBypass/CaptchaBypass.jsx";
 import CAPTCHABYPASS_LAB from "./Pages/Website/UserHome/Labs/CaptchaBypass/CaptchaBypass_lab.jsx";
 import CAPTCHABYPASS_1 from "./Pages/Website/UserHome/Labs/CaptchaBypass/Practical/Lab_1/Captcha_first.jsx";
+import CAPTCHABYPASS_2 from "./Pages/Website/UserHome/Labs/CaptchaBypass/Practical/Lab_2/Captcha_second.jsx";
+import CAPTCHABYPASS_3 from "./Pages/Website/UserHome/Labs/CaptchaBypass/Practical/Lab_3/Captcha_third.jsx";
 // End CaptchaBypass
 // JWT Attacks
 import JWTAttacks from "./Pages/Website/UserHome/Labs/JWTAttacks/JWTAttacks.jsx";
@@ -1002,6 +1004,14 @@ function App() {
           <Route
             path="/captchabypass/captchabypass_lab/lab1"
             element={<CAPTCHABYPASS_1 />}
+          />
+          <Route
+            path="/captchabypass/captchabypass_lab/lab2"
+            element={<CAPTCHABYPASS_2 />}
+          />
+          <Route
+            path="/captchabypass/captchabypass_lab/lab3"
+            element={<CAPTCHABYPASS_3 />}
           />
           {/* End CaptchaBypass */}
           {/* Start JWTAttacks */}

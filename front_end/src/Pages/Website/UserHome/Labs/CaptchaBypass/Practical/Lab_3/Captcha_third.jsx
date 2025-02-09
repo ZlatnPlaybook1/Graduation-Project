@@ -4,33 +4,22 @@ import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
 import axios from "axios";
 
-export default function Captcha_first() {
+export default function Captcha_third() {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
-  const [captcha, setCaptcha] = useState(""); // User input
-  const [image, setImage] = useState(""); // Captcha image URL
-  const [captchaID, setCaptchaID] = useState(""); // Unique ID for verification
+  const [captcha, setCaptcha] = useState(""); // User input for captcha token
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
-  const [id, setID] = useState(3);
+  const [id, setID] = useState(1);
 
-  // Fetch captcha image from the backend when the component mounts
+  // Fetch CAPTCHA when component mounts
   useEffect(() => {
-    fetchCaptcha();
+    setErr(""); // Clear any previous errors
   }, []);
 
-  async function fetchCaptcha() {
-    try {
-      const res = await axios.get(
-        "http://127.0.0.1:8080/api/capatchalab1"
-      );
-      setImage(res.data.image); // Backend should return { image: "captcha_url", id: "captcha_id" }
-      setCaptchaID(res.data.id);
-      setErr(""); // Clear errors on new captcha
-    } catch (error) {
-      console.error("Error fetching captcha:", error);
-      setErr("Failed to load captcha.");
-    }
+  // Handle the CAPTCHA token change
+  function handleCaptchaChange(response) {
+    setCaptcha("6LeS-dEqAAAAAI-4UrXcNhSjt83EC5relJgDjp5L"); // Set the token from the reCAPTCHA
   }
 
   async function handleSubmit(e) {
@@ -38,51 +27,45 @@ export default function Captcha_first() {
     setLoading(true);
     setErr("");
 
+    if (!captcha) {
+      setErr("Please complete the CAPTCHA.");
+      setLoading(false);
+      return;
+    }
+
     try {
-      // Validate captcha with backend
+      // Send the CAPTCHA token to the backend for validation
       const verifyRes = await axios.post(
-        "http://127.0.0.1:8080/api/capatchalab1",
+        "http://127.0.0.1:8080/api/verify-captcha", // The backend URL for verifying captcha
         {
-          id: captchaID,
-          captcha: captcha,
+          captchaResponse: captcha, // The CAPTCHA response token
         }
       );
 
       if (!verifyRes.data.success) {
-        setErr("Wrong captcha, try again.");
+        setErr("Captcha verification failed, try again.");
         setLoading(false);
-        fetchCaptcha(); // Refresh captcha if wrong
         return;
       }
 
-      // Add new comment if captcha is correct
+      // Add comment after CAPTCHA is verified
       const newComment = { id, comment };
-      await axios.post("http://127.0.0.1:8080/api/capatchalab1comments", { comment });
+      await axios.post("http://127.0.0.1:8080/api/capatchalab3comments", {
+        comment,
+      });
 
       setComments((prevComments) => [...prevComments, newComment]);
       setID((prevID) => prevID + 1);
 
-      // Reset fields and get new captcha
+      // Reset fields after successful comment submission
       setComment("");
-      setCaptcha("");
-      fetchCaptcha();
-    } catch (error) {
-      setErr(error.response?.data?.message || "Network Error");
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  }
+      setCaptcha(""); // Reset captcha token
 
-  async function deleteCaptcha() {
-    try {
-      await axios.delete("http://127.0.0.1:8080/api/capatchalab1");
-      setComments([]); // Clear all comments
-      setErr("");
-      fetchCaptcha(); // Fetch new captcha after resetting
+      setLoading(false);
     } catch (error) {
-      console.error("Error resetting captcha:", error);
-      setErr("Failed to reset captcha.");
+      setErr("Network Error: Could not submit the comment.");
+      setLoading(false);
+      console.error(error);
     }
   }
 
@@ -98,7 +81,6 @@ export default function Captcha_first() {
         <div className="container-captcha">
           <div className="card-captcha">
             <div className="card_content">
-              <div className="card_title">Captcha Verification</div>
               <form onSubmit={handleSubmit}>
                 <div className="form-group-captcha">
                   <label htmlFor="comment">Enter Your Comment</label>
@@ -110,20 +92,13 @@ export default function Captcha_first() {
                     required
                   ></textarea>
                 </div>
-                <div className="form-group-captcha text-center">
-                  <img
-                    src={image}
-                    alt="Captcha"
-                    className="captcha-image"
-                  />
-                  <input
-                    type="text"
-                    name="captcha"
-                    value={captcha}
-                    onChange={(e) => setCaptcha(e.target.value)}
-                    className="input"
-                    required
-                  />
+                <div className="form-group-captcha text-center my-3 text-white">
+                  <h3>Captcha Verification</h3>
+                  <div
+                    className="g-recaptcha"
+                    data-sitekey="6LeS-dEqAAAAAPpBMi_ZYtf2dHEF5m0GqtzRYzR1" // Replace with your actual Site Key
+                    data-callback={handleCaptchaChange}
+                  ></div>
                 </div>
                 <div className="form-group-captcha">
                   <button type="submit" disabled={loading}>
@@ -134,10 +109,13 @@ export default function Captcha_first() {
               </form>
             </div>
           </div>
-          {/* Reset Button */}
+
           <div className="reset mb-5">
-            <button onClick={deleteCaptcha}>Reset</button>
+            <button onClick={() => setCaptcha("")} disabled={loading}>
+              {loading ? "Resetting..." : "Reset"}
+            </button>
           </div>
+
           <div className="comment-section">
             {comments.map((cmt) => (
               <div key={cmt.id} className="comment-card">
