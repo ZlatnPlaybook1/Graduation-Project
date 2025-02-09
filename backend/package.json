@@ -4,7 +4,9 @@
   },
   "dependencies": {
     "@prisma/adapter-pg": "^5.18.0",
+    "@types/axios": "^0.9.36",
     "@types/express-session": "^1.18.1",
+    "axios": "^1.7.9",
     "bcrypt": "^5.1.1",
     "canvas": "^3.1.0",
     "cookie-parser": "^1.4.6",
