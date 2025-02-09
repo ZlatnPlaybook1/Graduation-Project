@@ -8,6 +8,7 @@ export default function ShoppingCart() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [couponCode, setCouponCode] = useState("");
+  const [userCoupon, setUserCoupon] = useState("");
   const [message, setMessage] = useState("");
   const [discount, setDiscount] = useState(0);
 
@@ -27,12 +28,12 @@ export default function ShoppingCart() {
 
   const applyDiscount = () => {
     axios
-      .post("http://127.0.0.1:8080/api/ShoppingCart", { couponCode })
+      .post("http://127.0.0.1:8080/api/ShoppingCart", {
+        couponCode: userCoupon,
+      })
       .then((response) => {
         setMessage(response.data.message);
-        if (response.data.discount) {
-          setDiscount(response.data.discount);
-        }
+        setDiscount(response.data.discount || 0);
       })
       .catch((error) => console.error("Error applying discount:", error));
   };
@@ -65,8 +66,17 @@ export default function ShoppingCart() {
               ))}
             </div>
 
-            <div className="apply-discount" onClick={applyDiscount}>
-              Apply Discount
+            <div className="coupon-section">
+              <input
+                type="text"
+                placeholder="Enter coupon code"
+                value={userCoupon}
+                onChange={(e) => setUserCoupon(e.target.value)}
+                className="coupon-input"
+              />
+              <button className="apply-btn" onClick={applyDiscount}>
+                Apply Discount
+              </button>
             </div>
 
             <div className="discount-info">

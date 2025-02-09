@@ -36,6 +36,15 @@
   text-align: center;
   font-size: 14px;
 }
+.rc-alert-success {
+  background-color: #f4ffeb;
+  color: green;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
 
 /* Form Group */
 .rc-form-group {

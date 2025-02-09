@@ -81,19 +81,19 @@ export default function Products() {
   ];
 
   return (
-    <div className="products-container">
-      <h1 className="products-title">Our Products</h1>
-      <div className="products-grid">
+    <div className="lab4-products-container">
+      <h1 className="lab4-products-title">Our Products</h1>
+      <div className="lab4-products-grid">
         {products.map((product) => (
           <div key={product.id} className="product-card">
             <img
               src={product.image}
               alt={product.name}
-              className="product-image"
+              className="lab4-product-image"
             />
-            <h2 className="product-name">{product.name}</h2>
-            <p className="product-price">{product.price}</p>
-            <p className="product-description">{product.description}</p>
+            <h2 className="lab4-product-name">{product.name}</h2>
+            <p className="lab4-product-price">{product.price}</p>
+            <p className="lab4-product-description">{product.description}</p>
           </div>
         ))}
       </div>

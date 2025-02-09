@@ -25,7 +25,7 @@ export default function RC_In_Register() {
         "http://127.0.0.1:8080/api/RaceConditionRegister",
         formData
       );
-      setMessage(response.data);
+      setMessage(response.data.msg || "Registration successful!");
     } catch (error) {
       setMessage("Registration failed.");
     }
@@ -37,7 +37,17 @@ export default function RC_In_Register() {
       <ShowHint hintText={hintMessage} />
       <div className="rc-container">
         <div className="rc-content">
-          {message && <div className="rc-alert">{message}</div>}
+          {message && (
+            <div
+              className={
+                message.includes("User created successfully")
+                  ? "rc-alert-success"
+                  : "rc-alert-error"
+              }
+            >
+              {message}
+            </div>
+          )}
           <h2 className="rc-title">User Registration</h2>
           <form onSubmit={handleSubmit} className="rc-form">
             <div className="rc-form-group">
@@ -45,7 +55,7 @@ export default function RC_In_Register() {
               <input
                 type="text"
                 name="name"
-                value={formData.ad}
+                value={formData.name}
                 onChange={handleChange}
                 required
               />
@@ -55,7 +65,7 @@ export default function RC_In_Register() {
               <input
                 type="text"
                 name="surname"
-                value={formData.soyad}
+                value={formData.surname}
                 onChange={handleChange}
                 required
               />
