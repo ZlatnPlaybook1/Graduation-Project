@@ -7,29 +7,59 @@ import axios from "axios";
 export default function Captcha_first() {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
-  const [captcha, setCaptcha] = useState(""); // User input
-  const [image, setImage] = useState(""); // Captcha image URL
-  const [captchaID, setCaptchaID] = useState(""); // Unique ID for verification
+  const [captcha, setCaptcha] = useState("");
+  const [image, setImage] = useState("");
+  const [captchaID, setCaptchaID] = useState("");
+  const [storedCaptchaID, setStoredCaptchaID] = useState(""); // Store ID before submission
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
-  const [id, setID] = useState(3);
+  const [nextId, setNextId] = useState(1);
 
-  // Fetch captcha image from the backend when the component mounts
   useEffect(() => {
     fetchCaptcha();
+    fetchComments();
   }, []);
 
   async function fetchCaptcha() {
     try {
-      const res = await axios.get(
-        "http://127.0.0.1:8080/api/capatchalab1"
-      );
-      setImage(res.data.image); // Backend should return { image: "captcha_url", id: "captcha_id" }
+      const res = await axios.get("http://127.0.0.1:8080/api/capatchalab1");
+      const imgSrc = res.data.image.startsWith("data:image")
+        ? res.data.image
+        : `http://127.0.0.1:8080/${res.data.image}`;
+
+      setImage(imgSrc);
       setCaptchaID(res.data.id);
-      setErr(""); // Clear errors on new captcha
+      setStoredCaptchaID(res.data.id); // Store the ID for verification
+      setErr("");
     } catch (error) {
       console.error("Error fetching captcha:", error);
       setErr("Failed to load captcha.");
+    }
+  }
+
+  async function fetchComments() {
+    try {
+      const response = await axios.get(
+        "http://127.0.0.1:8080/api/capatchalab1comments"
+      );
+
+      if (Array.isArray(response.data.comments)) {
+        setComments(
+          response.data.comments.map((cmt, index) => ({
+            id: index + 1,
+            ...cmt,
+          }))
+        );
+        setNextId(response.data.comments.length + 1);
+      } else {
+        setComments([]);
+        setNextId(1);
+      }
+    } catch (error) {
+      setErr("Failed to fetch comments.");
+      console.error("Error fetching comments:", error);
+      setComments([]);
+      setNextId(1);
     }
   }
 
@@ -39,12 +69,12 @@ export default function Captcha_first() {
     setErr("");
 
     try {
-      // Validate captcha with backend
       const verifyRes = await axios.post(
         "http://127.0.0.1:8080/api/capatchalab1",
         {
-          id: captchaID,
+          id: storedCaptchaID, // Use stored ID instead of captchaID
           captcha: captcha,
+          comment: comment,
         }
       );
 
@@ -52,17 +82,14 @@ export default function Captcha_first() {
         setErr("Wrong captcha, try again.");
         setLoading(false);
         fetchCaptcha(); // Refresh captcha if wrong
+        fetchComments(); // Refresh captcha if wrong
         return;
       }
-
-      // Add new comment if captcha is correct
-      const newComment = { id, comment };
-      await axios.post("http://127.0.0.1:8080/api/capatchalab1comments", { comment });
-
-      setComments((prevComments) => [...prevComments, newComment]);
-      setID((prevID) => prevID + 1);
-
-      // Reset fields and get new captcha
+      await axios.post("http://127.0.0.1:8080/api/captchalab1comments", {
+        comment,
+      });
+      setComments((prevComments) => [...prevComments, { id: nextId, comment }]);
+      setNextId(nextId + 1);
       setComment("");
       setCaptcha("");
       fetchCaptcha();
@@ -74,26 +101,10 @@ export default function Captcha_first() {
     }
   }
 
-  async function deleteCaptcha() {
-    try {
-      await axios.delete("http://127.0.0.1:8080/api/capatchalab1");
-      setComments([]); // Clear all comments
-      setErr("");
-      fetchCaptcha(); // Fetch new captcha after resetting
-    } catch (error) {
-      console.error("Error resetting captcha:", error);
-      setErr("Failed to reset captcha.");
-    }
-  }
-
   return (
     <div className="body">
       <GoBack_Btn />
-      <ShowHint_Btn
-        hintText={`<p>Click inspect and try to beautify and deobfuscate script using:</p>
-          <a href="https://filipemgs.github.io/poisonjs/">De-obfuscate</a>
-          <a href="https://beautifier.io/">Beautifier.io</a>`}
-      />
+      <ShowHint_Btn />
       <div className="captcha_first">
         <div className="container-captcha">
           <div className="card-captcha">
@@ -115,6 +126,7 @@ export default function Captcha_first() {
                     src={image}
                     alt="Captcha"
                     className="captcha-image"
+                    style={{ width: "60%", marginBottom: "10px" }}
                   />
                   <input
                     type="text"
@@ -134,19 +146,20 @@ export default function Captcha_first() {
               </form>
             </div>
           </div>
-          {/* Reset Button */}
-          <div className="reset mb-5">
-            <button onClick={deleteCaptcha}>Reset</button>
-          </div>
+
           <div className="comment-section">
-            {comments.map((cmt) => (
-              <div key={cmt.id} className="comment-card">
-                <div className="comment-header">
-                  <p className="name">#{cmt.id}</p>
+            {comments.length === 0 ? (
+              <p>No comments yet</p>
+            ) : (
+              comments.map((cmt) => (
+                <div key={cmt.id} className="comment-card">
+                  <div className="comment-header">
+                    <p className="name">#{cmt.id}</p>
+                  </div>
+                  <p className="comment-text">{cmt.comment}</p>
                 </div>
-                <p className="comment-text">{cmt.comment}</p>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </div>

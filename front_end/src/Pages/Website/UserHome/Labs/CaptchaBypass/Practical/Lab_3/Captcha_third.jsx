@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../Captcha_labs.css";
+import ReCAPTCHA from "react-google-recaptcha";
 import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
 import axios from "axios";
@@ -7,26 +8,32 @@ import axios from "axios";
 export default function Captcha_third() {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
-  const [captcha, setCaptcha] = useState(""); // User input for captcha token
+  const [captcha, setCaptcha] = useState(null); // User input for captcha token
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
   const [id, setID] = useState(1);
 
-  // Fetch CAPTCHA when component mounts
+  const recaptchaRef = useRef(null);
+
+  // Load reCAPTCHA script dynamically
   useEffect(() => {
-    setErr(""); // Clear any previous errors
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
   }, []);
 
   // Handle the CAPTCHA token change
   function handleCaptchaChange(response) {
-    setCaptcha("6LeS-dEqAAAAAI-4UrXcNhSjt83EC5relJgDjp5L"); // Set the token from the reCAPTCHA
+    setCaptcha(response);
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     setErr("");
-
+    console.log(captcha);
     if (!captcha) {
       setErr("Please complete the CAPTCHA.");
       setLoading(false);
@@ -34,11 +41,11 @@ export default function Captcha_third() {
     }
 
     try {
-      // Send the CAPTCHA token to the backend for validation
+      // Verify CAPTCHA with backend
       const verifyRes = await axios.post(
-        "http://127.0.0.1:8080/api/verify-captcha", // The backend URL for verifying captcha
+        "http://127.0.0.1:8080/api/capatchalab3",
         {
-          captchaResponse: captcha, // The CAPTCHA response token
+          captchaResponse: captcha,
         }
       );
 
@@ -48,18 +55,22 @@ export default function Captcha_third() {
         return;
       }
 
-      // Add comment after CAPTCHA is verified
+      // Add comment after CAPTCHA verification
       const newComment = { id, comment };
       await axios.post("http://127.0.0.1:8080/api/capatchalab3comments", {
         comment,
       });
 
-      setComments((prevComments) => [...prevComments, newComment]);
+      setComments((prev) => [...prev, newComment]);
       setID((prevID) => prevID + 1);
 
-      // Reset fields after successful comment submission
+      // Reset form
       setComment("");
-      setCaptcha(""); // Reset captcha token
+      setCaptcha("");
+
+      if (recaptchaRef.current) {
+        window.grecaptcha.reset(); // Reset reCAPTCHA
+      }
 
       setLoading(false);
     } catch (error) {
@@ -94,11 +105,18 @@ export default function Captcha_third() {
                 </div>
                 <div className="form-group-captcha text-center my-3 text-white">
                   <h3>Captcha Verification</h3>
-                  <div
+                  {/* <div
                     className="g-recaptcha"
-                    data-sitekey="6LeS-dEqAAAAAPpBMi_ZYtf2dHEF5m0GqtzRYzR1" // Replace with your actual Site Key
+                    data-sitekey="6LeS-dEqAAAAAPpBMi_ZYtf2dHEF5m0GqtzRYzR1"
                     data-callback={handleCaptchaChange}
-                  ></div>
+                    ref={recaptchaRef}
+                    name="captcha"
+                    value={captcha}
+                  ></div> */}
+                  <ReCAPTCHA
+                    sitekey="6LeS-dEqAAAAAPpBMi_ZYtf2dHEF5m0GqtzRYzR1"
+                    onChange={handleCaptchaChange}
+                  />
                 </div>
                 <div className="form-group-captcha">
                   <button type="submit" disabled={loading}>
