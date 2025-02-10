@@ -19,6 +19,11 @@
       "id": 4,
       "encoded_data": "Tzo0OiJVc2VyIjozOntzOjg6InVzZXJuYW1lIjtzOjMyOiJBRE1JTiI7czo4OiJwYXNzd29yZCI7czozMjoiQ1lCRVJMQUIiO3M6NzoiaXNBZG1pbiI7aTowO30=",
       "decoded_value": "CYBERLAB"
+    },
+    {
+      "id": 5,
+      "encoded_data": "©}é4ýæöË([Î×ôJ",
+      "decoded_value": "MEGAPASSWORD"
     }
   ]
 }

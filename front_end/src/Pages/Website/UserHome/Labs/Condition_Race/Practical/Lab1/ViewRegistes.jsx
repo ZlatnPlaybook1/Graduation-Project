@@ -6,7 +6,6 @@ export default function ViewRegisters() {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-  // Fetch data from the API
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,25 +25,26 @@ export default function ViewRegisters() {
     fetchData();
   }, []);
 
-  // Function to handle deletion of a register
   const handleDelete = async (id) => {
-    try {
-      const response = await fetch(
-        `http://127.0.0.1:8080/api/RaceConditionDeleteRegister/${id}`,
-        {
-          method: "DELETE",
+    if (window.confirm("Are you sure you want to delete this register?")) {
+      try {
+        const response = await fetch(
+          `http://127.0.0.1:8080/api/RaceConditionDeleteRegister/${id}`,
+          {
+            method: "DELETE",
+          }
+        );
+        if (!response.ok) {
+          throw new Error("Failed to delete register");
         }
-      );
-      if (!response.ok) {
-        throw new Error("Failed to delete register");
+        const updatedData = await response.json();
+        setData(updatedData);
+      } catch (error) {
+        console.error("Error deleting register:", error);
       }
-      setData(data.filter((item) => item.id !== id));
-    } catch (error) {
-      console.error("Error deleting register:", error);
     }
   };
 
-  // Function to handle the back button
   const handleBack = () => {
     navigate("/Race_Condition/Race_Condition_Labs/Lab1");
   };

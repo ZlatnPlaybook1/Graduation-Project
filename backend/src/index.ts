@@ -56,14 +56,16 @@ app.use(
   cors({
     origin: "http://localhost:3000", // Your React app's URL
     credentials: true, // Required for cookies
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
-app.use(session({
-  secret: "captcha_secret",
-  resave: false,
-  saveUninitialized: true
-}));
+app.use(
+  session({
+    secret: "captcha_secret",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 app.use(morgan("dev")); // morgan: HTTP request logger middleware,
 // dev: predefined format string that Morgan will use to log requests
 app.use(bodyParser.json({ limit: "10mb" }));
