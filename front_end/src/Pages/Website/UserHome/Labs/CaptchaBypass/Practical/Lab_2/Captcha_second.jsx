@@ -47,7 +47,7 @@ console.log(captcha);
 console.log(comment);
     try {
       await axios.post("http://127.0.0.1:8080/api/capatchalab2", {
-        captcha: captcha,
+        result: captcha,
         comment: comment,
       });
 

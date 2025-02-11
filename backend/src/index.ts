@@ -6,7 +6,6 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import path from "path";
 import session from "express-session";
-import axios from "axios";
 import registerRouter from "./registerWithAuthentication/register.router";
 import loginRouter from "./login/login.router";
 import logoutRouter from "./logout/logout.router";
@@ -59,13 +58,7 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
-app.use(
-  session({
-    secret: "captcha_secret",
-    resave: false,
-    saveUninitialized: true,
-  })
-);
+
 app.use(morgan("dev")); // morgan: HTTP request logger middleware,
 // dev: predefined format string that Morgan will use to log requests
 app.use(bodyParser.json({ limit: "10mb" }));

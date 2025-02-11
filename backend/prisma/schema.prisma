@@ -219,3 +219,14 @@ model Lab1captcha {
   comment String?
   captcha String @unique
 }
+
+model Lab2captcha {
+  id      String  @id @default(uuid())
+  comment String?
+  captcha String?
+}
+
+model Lab2captchaComment {
+  id      String  @id @default(uuid())
+  comment String?
+}
