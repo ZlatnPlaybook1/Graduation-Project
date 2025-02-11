@@ -62,7 +62,26 @@ export default function Captcha_first() {
       setNextId(1);
     }
   }
+  async function deleteCaptcha() {
+    setLoading(true);
+    setErr("");
 
+    try {
+      await axios.delete("http://127.0.0.1:8080/api/capatchalab1");
+
+      setComments([]);
+      setComment("");
+      setCaptcha("");
+      setNextId(1);
+
+      fetchCaptcha(); // Fetch a new captcha after deletion
+    } catch (error) {
+      setErr(error.response?.data?.message || "Network Error");
+      console.error("Error resetting captcha:", error);
+    } finally {
+      setLoading(false);
+    }
+  }
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -146,7 +165,11 @@ export default function Captcha_first() {
               </form>
             </div>
           </div>
-
+          <div className="reset mb-5">
+            <button onClick={deleteCaptcha} disabled={loading}>
+              {loading ? "Resetting..." : "Reset"}
+            </button>
+          </div>
           <div className="comment-section">
             {comments.length === 0 ? (
               <p>No comments yet</p>

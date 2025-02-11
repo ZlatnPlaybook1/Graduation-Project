@@ -9,7 +9,6 @@ export default function Captcha_second() {
   const [comments, setComments] = useState([]);
   const [captcha, setCaptcha] = useState(""); // User input
   const [captchaQuestion, setCaptchaQuestion] = useState(""); // Displayed captcha
-  const [correctAnswer, setCorrectAnswer] = useState(null); // Store correct answer
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
   const [id, setID] = useState(1);
@@ -20,7 +19,6 @@ export default function Captcha_second() {
       const res = await axios.get("http://127.0.0.1:8080/api/capatchalab2");
       const { num1, num2 } = res.data;
       setCaptchaQuestion(`${num1} + ${num2}`);
-      setCorrectAnswer(num1 + num2); // Store correct answer
       setCaptcha(""); // Reset input field
       setErr("");
     } catch (error) {
@@ -38,14 +36,15 @@ export default function Captcha_second() {
     setLoading(true);
     setErr("");
 
-    // Check captcha locally before sending request
-    if (parseInt(captcha) !== correctAnswer) {
-      setErr("Wrong captcha, try again.");
-      setLoading(false);
-      fetchCaptcha(); // Refresh captcha
-      return;
-    }
-
+    // // Check captcha locally before sending request
+    // if (parseInt(captcha) !== correctAnswer) {
+    //   setErr("Wrong captcha, try again.");
+    //   setLoading(false);
+    //   fetchCaptcha(); // Refresh captcha
+    //   return;
+    // }
+console.log(captcha);
+console.log(comment);
     try {
       await axios.post("http://127.0.0.1:8080/api/capatchalab2", {
         captcha: captcha,
