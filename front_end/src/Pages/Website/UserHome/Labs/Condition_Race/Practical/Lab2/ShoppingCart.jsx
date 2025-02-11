@@ -6,11 +6,15 @@ import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function ShoppingCart() {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
   const [couponCode, setCouponCode] = useState("");
   const [userCoupon, setUserCoupon] = useState("");
   const [message, setMessage] = useState("");
-  const [discount, setDiscount] = useState(0);
+  const [discount, setDiscount] = useState(
+    parseInt(localStorage.getItem("discount")) || 0
+  );
 
   useEffect(() => {
     axios
@@ -22,8 +26,14 @@ export default function ShoppingCart() {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("discount", discount);
+  }, [cart, discount]);
+
   const addToCart = (price) => {
-    setCart([...cart, price]);
+    const updatedCart = [...cart, price];
+    setCart(updatedCart);
   };
 
   const applyDiscount = () => {
@@ -42,6 +52,15 @@ export default function ShoppingCart() {
     setDiscount(0);
     setUserCoupon("");
     setMessage("");
+  };
+
+  const resetCart = () => {
+    setCart([]);
+    setDiscount(0);
+    setUserCoupon("");
+    setMessage("");
+    localStorage.removeItem("cart");
+    localStorage.removeItem("discount");
   };
 
   const total = cart.reduce((sum, price) => sum + price, 0) - discount;
@@ -94,6 +113,10 @@ export default function ShoppingCart() {
               )}
               <p className="total">Total: {total} units</p>
             </div>
+
+            <button className="reset-btn" onClick={resetCart}>
+              Reset Cart
+            </button>
 
             {message && <div className="message-box">{message}</div>}
           </div>

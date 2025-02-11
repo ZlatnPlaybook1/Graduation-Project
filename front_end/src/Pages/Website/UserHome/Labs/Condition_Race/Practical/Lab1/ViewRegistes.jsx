@@ -4,6 +4,8 @@ import "./ViewRegisters.css";
 
 export default function ViewRegisters() {
   const [data, setData] = useState([]);
+  const [deleteId, setDeleteId] = useState(null);
+  const [message, setMessage] = useState({ text: "", type: "" });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,30 +21,49 @@ export default function ViewRegisters() {
         setData(result);
       } catch (error) {
         console.error("Error fetching data:", error);
+        setMessage({ text: "Error loading data", type: "error" });
       }
     };
 
     fetchData();
   }, []);
 
-  const handleDelete = async (id) => {
-    if (window.confirm("Are you sure you want to delete this register?")) {
-      try {
-        const response = await fetch(
-          `http://127.0.0.1:8080/api/RaceConditionDeleteRegister/${id}`,
-          {
-            method: "DELETE",
-          }
-        );
-        if (!response.ok) {
-          throw new Error("Failed to delete register");
-        }
-        const updatedData = await response.json();
-        setData(updatedData);
-      } catch (error) {
-        console.error("Error deleting register:", error);
-      }
+  useEffect(() => {
+    if (message.text) {
+      const timer = setTimeout(() => {
+        setMessage({ text: "", type: "" });
+      }, 2000);
+
+      return () => clearTimeout(timer);
     }
+  }, [message]);
+
+  const handleDeleteClick = (id) => {
+    setDeleteId(id);
+  };
+
+  const handleConfirmDelete = async () => {
+    try {
+      const response = await fetch(
+        `http://127.0.0.1:8080/api/RaceConditionDeleteRegister/${deleteId}`,
+        { method: "DELETE" }
+      );
+      if (!response.ok) {
+        throw new Error("Failed to delete register");
+      }
+
+      setData((prevData) => prevData.filter((item) => item.id !== deleteId));
+      setMessage({ text: "Register deleted successfully.", type: "success" });
+    } catch (error) {
+      console.error("Error deleting register:", error);
+      setMessage({ text: "Failed to delete register.", type: "error" });
+    } finally {
+      setDeleteId(null);
+    }
+  };
+
+  const handleCancelDelete = () => {
+    setDeleteId(null);
   };
 
   const handleBack = () => {
@@ -52,9 +73,17 @@ export default function ViewRegisters() {
   return (
     <div className="view-registers-container">
       <h1 className="view-registers-title">Registered Users</h1>
+
+      {message.text && (
+        <div className={`view-registers-message ${message.type}`}>
+          {message.text}
+        </div>
+      )}
+
       <button className="view-registers-back-button" onClick={handleBack}>
         Back
       </button>
+
       <table className="view-registers-table">
         <thead>
           <tr>
@@ -75,7 +104,7 @@ export default function ViewRegisters() {
               <td>
                 <button
                   className="view-registers-delete-button"
-                  onClick={() => handleDelete(item.id)}
+                  onClick={() => handleDeleteClick(item.id)}
                 >
                   Delete
                 </button>
@@ -84,6 +113,18 @@ export default function ViewRegisters() {
           ))}
         </tbody>
       </table>
+
+      {deleteId !== null && (
+        <div className="delete-confirmation">
+          <p>Are you sure you want to delete this register?</p>
+          <button className="confirm-button" onClick={handleConfirmDelete}>
+            Yes
+          </button>
+          <button className="cancel-button" onClick={handleCancelDelete}>
+            No
+          </button>
+        </div>
+      )}
     </div>
   );
 }
