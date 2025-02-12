@@ -1,44 +1,23 @@
-import e, { Request, Response } from "express";
-import { PrismaClient } from "@prisma/client";
+import { Request, Response } from "express";
+import prisma from "../../../utilities/db";
 
-const prisma = new PrismaClient();
 
-declare module "express-session" {
-    interface SessionData {
-        sum: number;
-    }
-}
-
-// Function to generate new numbers and update the DB
-const generateNewCaptcha = async () => {
-    const num1 = Math.floor(Math.random() * 11);
-    const num2 = Math.floor(Math.random() * 11);
+async function generateNewCaptcha() {
+    const num1 = Math.floor(Math.random() * 10);
+    const num2 = Math.floor(Math.random() * 10);
     const sum = num1 + num2;
 
-    // Store in DB (Insert if no record exists, otherwise update)
-    const captchaRecord = await prisma.lab2captcha.findFirst();
-    
-    if (captchaRecord) {
-        await prisma.lab2captcha.update({
-            where: { id: captchaRecord.id },
-            data: { captcha: sum.toString() },
-        });
-    } else {
-        await prisma.lab2captcha.create({
-            data: { captcha: sum.toString() },
-        });
-    }
+    await prisma.lab2captcha.deleteMany(); // Clear previous captcha
 
-    return { num1, num2, sum };
-};
+    return prisma.lab2captcha.create({
+        data: { captcha: sum.toString() },
+    }).then(() => ({ num1, num2, sum }));
+}
 
 // Generate numbers and store sum in DB
 export const lab2controller = async (req: Request, res: Response) => {
     try {
         const { num1, num2, sum } = await generateNewCaptcha();
-
-        // Store sum in session
-        req.session.sum = sum;
 
         res.json({ num1, num2 });
     } catch (e) {
