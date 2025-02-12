@@ -33,7 +33,7 @@ export default function Captcha_third() {
       // Verify CAPTCHA with backend
       const verifyRes = await axios.post(
         "http://127.0.0.1:8080/api/capatchalab3",
-        { captchaResponse: captcha }
+        { token: captcha }
       );
 
       if (!verifyRes.data.success) {
