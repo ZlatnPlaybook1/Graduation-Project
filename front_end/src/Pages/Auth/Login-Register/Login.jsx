@@ -4,6 +4,7 @@ import Cookie from "cookie-universal";
 import Loading from "../../../Components/Loading/Loading";
 import "./form.css";
 import "./register-login.css";
+import videosForm from "./videos/Security.mp4";
 export default function Login() {
   // Handle States
   const [form, setForm] = useState({
@@ -52,6 +53,9 @@ export default function Login() {
 
   return (
     <body className="login-register-body">
+      <video autoPlay loop muted className="background-video">
+        <source src={videosForm} type="video/mp4" />
+      </video>
       {loading && <Loading />}
       <div className="container">
         <div className="rows hh-100">

@@ -17,7 +17,6 @@ export default function Topbar() {
 
   useEffect(() => {
     if (token) {
-      console.log("Token found:", token);
       axios
         .get("http://127.0.0.1:8080/api/user", {
           headers: {
@@ -25,7 +24,6 @@ export default function Topbar() {
           },
         })
         .then((res) => {
-          console.log("API response:", res);
           setName(res.data.data.name);
         })
         .catch((error) => {
@@ -33,7 +31,6 @@ export default function Topbar() {
           navigate("/login", { replace: true });
         });
     } else {
-      console.log("No token found, redirecting to login");
       navigate("/login", { replace: true });
     }
   }, [token, navigate]);
