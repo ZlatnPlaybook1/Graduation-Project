@@ -40,7 +40,7 @@ export default function Authenticate() {
       cookie.set("CuberWeb", token);
 
       if (response.status === 200) {
-        navigate("/dashboard/users");
+        navigate("/dashboard/personal-information");
       }
     } catch (error) {
       setLoading(false);
