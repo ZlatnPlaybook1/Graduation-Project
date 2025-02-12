@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import "../Captcha_labs.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
@@ -8,32 +8,21 @@ import axios from "axios";
 export default function Captcha_third() {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
-  const [captcha, setCaptcha] = useState(null); // User input for captcha token
+  const [captcha, setCaptcha] = useState(null); // Store captcha token
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
   const [id, setID] = useState(1);
-
   const recaptchaRef = useRef(null);
 
-  // Load reCAPTCHA script dynamically
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://www.google.com/recaptcha/api.js";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-  }, []);
-
-  // Handle the CAPTCHA token change
-  function handleCaptchaChange(response) {
-    setCaptcha(response);
+  function handleCaptchaChange(token) {
+    setCaptcha(token);
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     setErr("");
-    console.log(captcha);
+
     if (!captcha) {
       setErr("Please complete the CAPTCHA.");
       setLoading(false);
@@ -44,9 +33,7 @@ export default function Captcha_third() {
       // Verify CAPTCHA with backend
       const verifyRes = await axios.post(
         "http://127.0.0.1:8080/api/capatchalab3",
-        {
-          captchaResponse: captcha,
-        }
+        { captchaResponse: captcha }
       );
 
       if (!verifyRes.data.success) {
@@ -55,7 +42,7 @@ export default function Captcha_third() {
         return;
       }
 
-      // Add comment after CAPTCHA verification
+      // Add comment after successful CAPTCHA verification
       const newComment = { id, comment };
       await axios.post("http://127.0.0.1:8080/api/capatchalab3comments", {
         comment,
@@ -63,13 +50,12 @@ export default function Captcha_third() {
 
       setComments((prev) => [...prev, newComment]);
       setID((prevID) => prevID + 1);
-
-      // Reset form
       setComment("");
-      setCaptcha("");
+      setCaptcha(null);
 
+      // Properly Reset reCAPTCHA
       if (recaptchaRef.current) {
-        window.grecaptcha.reset(); // Reset reCAPTCHA
+        recaptchaRef.current.reset();
       }
 
       setLoading(false);
@@ -79,17 +65,22 @@ export default function Captcha_third() {
       console.error(error);
     }
   }
+
   async function deleteCaptcha() {
     setLoading(true);
     setErr("");
 
     try {
       await axios.delete("http://127.0.0.1:8080/api/capatchalab3");
-
       setComments([]);
       setComment("");
-      setCaptcha("");
+      setCaptcha(null);
       setID(1);
+
+      // Reset reCAPTCHA after delete
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
     } catch (error) {
       setErr(error.response?.data?.message || "Network Error");
       console.error("Error resetting captcha:", error);
@@ -123,15 +114,8 @@ export default function Captcha_third() {
                 </div>
                 <div className="form-group-captcha text-center my-3 text-white">
                   <h3>Captcha Verification</h3>
-                  {/* <div
-                    className="g-recaptcha"
-                    data-sitekey="6LeS-dEqAAAAAPpBMi_ZYtf2dHEF5m0GqtzRYzR1"
-                    data-callback={handleCaptchaChange}
-                    ref={recaptchaRef}
-                    name="captcha"
-                    value={captcha}
-                  ></div> */}
                   <ReCAPTCHA
+                    ref={recaptchaRef}
                     sitekey="6LeS-dEqAAAAAPpBMi_ZYtf2dHEF5m0GqtzRYzR1"
                     onChange={handleCaptchaChange}
                   />
@@ -150,7 +134,6 @@ export default function Captcha_third() {
               {loading ? "Resetting..." : "Reset"}
             </button>
           </div>
-
           <div className="comment-section">
             {comments.map((cmt) => (
               <div key={cmt.id} className="comment-card">

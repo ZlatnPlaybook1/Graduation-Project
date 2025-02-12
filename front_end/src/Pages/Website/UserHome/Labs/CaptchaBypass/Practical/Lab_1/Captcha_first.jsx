@@ -9,8 +9,6 @@ export default function Captcha_first() {
   const [comments, setComments] = useState([]);
   const [captcha, setCaptcha] = useState("");
   const [image, setImage] = useState("");
-  const [captchaID, setCaptchaID] = useState("");
-  const [storedCaptchaID, setStoredCaptchaID] = useState(""); // Store ID before submission
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
   const [nextId, setNextId] = useState(1);
@@ -28,8 +26,6 @@ export default function Captcha_first() {
         : `http://127.0.0.1:8080/${res.data.image}`;
 
       setImage(imgSrc);
-      setCaptchaID(res.data.id);
-      setStoredCaptchaID(res.data.id); // Store the ID for verification
       setErr("");
     } catch (error) {
       console.error("Error fetching captcha:", error);
@@ -62,6 +58,7 @@ export default function Captcha_first() {
       setNextId(1);
     }
   }
+
   async function deleteCaptcha() {
     setLoading(true);
     setErr("");
@@ -80,39 +77,54 @@ export default function Captcha_first() {
       setLoading(false);
     }
   }
+
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     setErr("");
 
+    // Debugging logs
+    console.log("Submitting Captcha:", { captcha, comment });
+
     try {
+      // Send only captcha input and comment (no Captcha ID)
       const verifyRes = await axios.post(
         "http://127.0.0.1:8080/api/capatchalab1",
         {
-          id: storedCaptchaID, // Use stored ID instead of captchaID
-          captcha: captcha,
-          comment: comment,
-        }
+          captcha: captcha,   // Only captcha input (no ID)
+          comment: comment,   // User's comment
+        },
+        // {
+        //   headers: { "Content-Type": "application/json" },
+        // }
       );
+
+      console.log("API Response:", verifyRes.data);
 
       if (!verifyRes.data.success) {
         setErr("Wrong captcha, try again.");
+        setTimeout(() => {
+          fetchCaptcha();
+          setErr(""); // Clear error after delay
+        }, 2000);
         setLoading(false);
-        fetchCaptcha(); // Refresh captcha if wrong
-        fetchComments(); // Refresh captcha if wrong
         return;
       }
-      await axios.post("http://127.0.0.1:8080/api/captchalab1comments", {
-        comment,
-      });
+
+      await axios.post(
+        "http://127.0.0.1:8080/api/capatchalab1comments",
+        { comment },
+        { headers: { "Content-Type": "application/json" } }
+      );
+
       setComments((prevComments) => [...prevComments, { id: nextId, comment }]);
       setNextId(nextId + 1);
       setComment("");
       setCaptcha("");
       fetchCaptcha();
     } catch (error) {
+      console.error("Error response:", error.response);
       setErr(error.response?.data?.message || "Network Error");
-      console.error(error);
     } finally {
       setLoading(false);
     }
