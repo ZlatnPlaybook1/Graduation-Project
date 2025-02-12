@@ -207,11 +207,11 @@ enum Role {
 }
 
 model Lab1RaceCondition {
-  id      String  @id @default(uuid())
-  email   String  @unique
-  name    String?
-  surname String?
-  tel     String?
+    id      Int    @id @default(autoincrement())
+    email   String 
+    name    String
+    surname String
+    tel     String
 }
 
 model Lab1captcha {
