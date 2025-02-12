@@ -207,7 +207,7 @@ enum Role {
 }
 
 model Lab1RaceCondition {
-    id      Int    @id @default(autoincrement())
+    id      String    @id @default(uuid())
     email   String 
     name    String
     surname String
