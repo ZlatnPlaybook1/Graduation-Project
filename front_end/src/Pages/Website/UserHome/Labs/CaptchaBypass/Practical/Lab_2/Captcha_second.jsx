@@ -85,7 +85,7 @@ console.log(comment);
   }
 
   return (
-    <div className="body">
+    <div className="body-captcha">
       <GoBack_Btn />
       <ShowHint_Btn
         hintText={`<p>Click inspect and try to beautify and deobfuscate script using:</p>
