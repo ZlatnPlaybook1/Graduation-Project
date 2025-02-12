@@ -5,7 +5,6 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import path from "path";
-import session from "express-session";
 import registerRouter from "./registerWithAuthentication/register.router";
 import loginRouter from "./login/login.router";
 import logoutRouter from "./logout/logout.router";
