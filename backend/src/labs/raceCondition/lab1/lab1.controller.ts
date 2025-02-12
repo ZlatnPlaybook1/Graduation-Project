@@ -11,8 +11,8 @@ export const register = async (req: Request, res: Response) => {
         await delay(1000); // 1 second delay
 
         console.log(`Checking if user with email ${email} exists...`);
-        const user = await prisma.lab1RaceCondition.findUnique({
-            where: { email },
+        const user = await prisma.lab1RaceCondition.findFirst({
+            where: { email }, // Use findFirst instead of findUnique
         });
         if (user) {
             console.log(`User with email ${email} already exists.`);
