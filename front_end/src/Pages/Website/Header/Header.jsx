@@ -97,12 +97,12 @@ const Header = () => {
                 >
                   <ul>
                     <li>
-                      <NavLink to="/dashboard">
+                      <NavLink to="/dashboard/personal-information">
                         <i className="fas fa-user"></i> View Profile
                       </NavLink>
                     </li>
                     <li>
-                      <NavLink to="/dashboard">
+                      <NavLink to="/dashboard/settings">
                         <i className="fas fa-gear"></i> Manage Account
                       </NavLink>
                     </li>

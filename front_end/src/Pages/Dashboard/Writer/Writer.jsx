@@ -19,6 +19,24 @@ export default function Writer() {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
   const [success, setSuccess] = useState("");
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("darkMode") === "true";
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    localStorage.setItem("darkMode", newMode);
+    document.body.classList.toggle("dark-mode");
+  };
 
   const calculateAge = (birthday) => {
     const birthDate = new Date(birthday);
@@ -37,7 +55,6 @@ export default function Writer() {
         });
 
         const data = res.data.data;
-        // Construct full image URL
         const imageUrl = data.image
           ? `http://127.0.0.1:8080/${data.image.path.replace("\\", "/")}`
           : "";
@@ -98,7 +115,6 @@ export default function Writer() {
     setErr("");
     setSuccess("");
 
-    // Prepare FormData to submit
     const submissionData = new FormData();
     submissionData.append("name", formData.name);
     submissionData.append("birthday", formData.birthday);
@@ -127,6 +143,9 @@ export default function Writer() {
 
   return (
     <div className="writer-form">
+      <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+        {darkMode ? "Light Mode" : "Dark Mode"}
+      </button>
       {loading && <p>Loading...</p>}
       {imagePreview && (
         <div className="image-preview">
@@ -202,8 +221,7 @@ export default function Writer() {
           Submit
         </button>
         {err && <p className="error-writer">{err}</p>}
-        {success && <p className="success-writer">{success}</p>}{" "}
-        {/* Display success message */}
+        {success && <p className="success-writer">{success}</p>}
       </form>
     </div>
   );
