@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import Cookie from "cookie-universal";
 import Loading from "../../Components/Loading/Loading";
-import Error403 from "./403";
+import Error403 from "./Page-403/403";
 import axios from "axios";
 
 export default function RequierAuth({ allowedRole }) {

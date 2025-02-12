@@ -47,13 +47,14 @@ export default function Settings() {
         }
       );
 
-      if (response?.data?.success) {
-        setSuccessMessage("Password reset successfully!");
+      if (response?.data?.msg) {
+        setSuccessMessage(response.data.msg);
         setShowSuccessMessage(true);
       } else {
-        setErrorMessage(response?.data?.message);
+        setErrorMessage("Unexpected response from server.");
       }
     } catch (error) {
+      console.error("API Error:", error.response?.data);
       setErrorMessage(
         error.response?.data?.message ||
           "Failed to reset password. Please try again."
@@ -65,20 +66,19 @@ export default function Settings() {
 
   return (
     <div className="settings-container">
-      {/* Success Message */}
-      {showSuccessMessage && (
-        <div className="success-message-box show">
-          <p>{successMessage}</p>
-          <button onClick={() => setShowSuccessMessage(false)}>Dismiss</button>
-        </div>
-      )}
-
-      {/* Reset Password Form */}
       <form className="reset-password-form" onSubmit={handleSubmit}>
         <h2>Reset Password</h2>
-
-        {/* Error Message */}
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {showSuccessMessage && (
+          <div className="success-message-box show">
+            <p>{successMessage}</p>
+            <button onClick={() => setShowSuccessMessage(false)}>
+              Dismiss
+            </button>
+          </div>
+        )}
+        {errorMessage && (
+          <p className="error-message-settings">{errorMessage}</p>
+        )}
 
         <div className="form-group">
           <label>Old Password</label>

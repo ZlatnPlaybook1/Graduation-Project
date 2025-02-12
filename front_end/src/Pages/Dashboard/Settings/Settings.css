@@ -14,6 +14,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   width: 100%;
+  margin-top: 5rem;
 }
 
 .reset-password-form h2 {
@@ -98,7 +99,7 @@
 }
 
 /* Error Message Box */
-.error-message {
+.error-message-settings {
   background-color: #f44336;
   color: white;
   padding: 15px;
@@ -111,7 +112,7 @@
 /* Adjustments for mobile responsiveness */
 @media (max-width: 768px) {
   .success-message-box,
-  .error-message {
+  .error-message-settings {
     font-size: 14px;
     padding: 12px;
   }
