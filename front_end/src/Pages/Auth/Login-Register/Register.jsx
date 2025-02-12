@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
 import Cookie from "cookie-universal";
-import Loading from "../../Components/Loading/Loading";
+import Loading from "../../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
-
+import "./form.css";
+import "./register-login.css";
 export default function Register() {
   // Handle States
   const [form, setForm] = useState({
@@ -91,7 +92,7 @@ export default function Register() {
                 />
                 <label htmlFor="password">Password:</label>
               </div>
-              <button type="submit" className="botton botton-primary">
+              <button type="submit" className="button-login-register">
                 Register
               </button>
               {err !== "" && <span className="error">{err}</span>}

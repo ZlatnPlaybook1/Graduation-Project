@@ -2,6 +2,9 @@
    -- Default Styling 
 * */
 :root {
+  --main2-color: #2a57d7;
+  --alt2-color: #7450fe;
+  --main-gradient: linear-gradient(to right, #21d397 0%, #7450fe 100%);
   --main-color: #212c42 !important;
   --sec-main-color: #a3ea2a !important;
   --alt-color: #151c2b !important;
@@ -15,6 +18,9 @@
     hsl(187, 85%, 43%),
     hsl(199, 100%, 33%)
   );
+  --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(201, 33%, 16%);
   --text-color: hsl(240, 4%, 36%);
@@ -24,44 +30,19 @@
   --bodyColor: rgb(240, 240, 246);
   --cardBG: rgb(225, 225, 235);
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 ul {
   list-style-type: none;
 }
-
 a {
   text-decoration: none;
-  color: #333;
-  font-size: 18px;
-  margin: 0 10px;
-  padding: 15px;
 }
 ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  font-size: 18px;
-}
-
-b {
-  display: inline-block;
-  margin: 0.4rem 0 0;
-}
-
-i {
-  color: inherit;
-  font-weight: normal;
 }
 
 html {
@@ -70,7 +51,6 @@ html {
 li {
   list-style: none;
 }
-
 .flex {
   display: flex;
   align-items: center;
@@ -95,7 +75,6 @@ li {
 .btn-page:hover {
   background: var(--SecondaryColor);
 }
-
 .container {
   margin: 0 auto;
 }

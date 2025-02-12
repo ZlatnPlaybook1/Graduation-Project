@@ -12,13 +12,13 @@ export default function Writer() {
     birthday: "",
     address: "",
     phoneNum: "",
-    image: null, // Store image as file object
+    image: null,
   });
 
   const [imagePreview, setImagePreview] = useState("");
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
-  const [success, setSuccess] = useState(""); // State for success message
+  const [success, setSuccess] = useState("");
 
   const calculateAge = (birthday) => {
     const birthDate = new Date(birthday);
@@ -48,10 +48,10 @@ export default function Writer() {
           birthday: data.birthday,
           address: data.address,
           phoneNum: data.phoneNum,
-          image: imageUrl, // Set the full image URL
+          image: imageUrl,
         }));
 
-        setImagePreview(imageUrl); // Set the preview image URL
+        setImagePreview(imageUrl);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -84,9 +84,9 @@ export default function Writer() {
       reader.onloadend = () => {
         setFormData((prevData) => ({
           ...prevData,
-          image: file, // Store the file object for form submission
+          image: file,
         }));
-        setImagePreview(reader.result); // Preview image using base64
+        setImagePreview(reader.result);
       };
       reader.readAsDataURL(file);
     }
@@ -96,7 +96,7 @@ export default function Writer() {
     e.preventDefault();
     setLoading(true);
     setErr("");
-    setSuccess(""); // Reset success message on new submission
+    setSuccess("");
 
     // Prepare FormData to submit
     const submissionData = new FormData();
@@ -106,29 +106,22 @@ export default function Writer() {
     submissionData.append("phoneNum", formData.phoneNum);
 
     if (formData.image) {
-      submissionData.append("image", formData.image); // Append image file
+      submissionData.append("image", formData.image);
     }
 
     try {
-      const res = await axios.post(
-        "http://127.0.0.1:8080/api/dataUser",
-        submissionData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "multipart/form-data", // Ensure it's set for file upload
-          },
-        }
-      );
+      await axios.post("http://127.0.0.1:8080/api/dataUser", submissionData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
-      const submittedData = res.data.data;
-      console.log("Response:", submittedData);
       setLoading(false);
-      setSuccess("Data submitted successfully!"); // Set success message
+      setSuccess("Data submitted successfully!");
     } catch (error) {
       setLoading(false);
       setErr("Error submitting data");
-      console.error("Error:", error);
     }
   };
 
@@ -140,10 +133,11 @@ export default function Writer() {
           <img src={imagePreview} alt="Preview" />
         </div>
       )}
-      <form onSubmit={handleSubmit}>
+      <form className="form-writer" onSubmit={handleSubmit}>
         <div>
-          <label>Name:</label>
+          <label className="label-writer">Name:</label>
           <input
+            className="input-type-writer"
             type="text"
             name="name"
             value={formData.name}
@@ -152,8 +146,9 @@ export default function Writer() {
           />
         </div>
         <div>
-          <label>Age:</label>
+          <label className="label-writer">Age:</label>
           <input
+            className="input-type-writer"
             type="number"
             name="age"
             value={calculateAge(formData.birthday)}
@@ -162,8 +157,9 @@ export default function Writer() {
           />
         </div>
         <div>
-          <label>Birthday:</label>
+          <label className="label-writer">Birthday:</label>
           <input
+            className="input-type-writer"
             type="date"
             name="birthday"
             value={formData.birthday}
@@ -172,8 +168,9 @@ export default function Writer() {
           />
         </div>
         <div>
-          <label>Address:</label>
+          <label className="label-writer">Address:</label>
           <input
+            className="input-type-writer"
             type="text"
             name="address"
             value={formData.address}
@@ -182,8 +179,9 @@ export default function Writer() {
           />
         </div>
         <div>
-          <label>Phone Number:</label>
+          <label className="label-writer">Phone Number:</label>
           <input
+            className="input-type-writer"
             type="tel"
             name="phoneNum"
             value={formData.phoneNum}
@@ -192,12 +190,19 @@ export default function Writer() {
           />
         </div>
         <div>
-          <label>Image:</label>
-          <input type="file" name="image" onChange={handleImageChange} />
+          <label className="label-writer">Image:</label>
+          <input
+            className="input-type-writer"
+            type="file"
+            name="image"
+            onChange={handleImageChange}
+          />
         </div>
-        <button type="submit">Submit</button>
-        {err && <p className="error">{err}</p>}
-        {success && <p className="success">{success}</p>}{" "}
+        <button className="button-writer" type="submit">
+          Submit
+        </button>
+        {err && <p className="error-writer">{err}</p>}
+        {success && <p className="success-writer">{success}</p>}{" "}
         {/* Display success message */}
       </form>
     </div>

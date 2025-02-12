@@ -57,8 +57,8 @@ export default function Topbar() {
   }
 
   return (
-    <div className="topbar d-flex justify-content-between align-items-center">
-      <div className="top-menu d-flex align-items-center">
+    <div className="topbar">
+      <div className="top-menu">
         <FontAwesomeIcon
           onClick={() => setIsOpen((prev) => !prev)}
           icon={faBars}
@@ -68,7 +68,7 @@ export default function Topbar() {
           Cyber Labs
         </Link>
       </div>
-      <div className="mb-0">
+      <div className="dropdown-basic-button">
         <DropdownButton id="dropdown-basic-button" title={name}>
           <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
         </DropdownButton>

@@ -1,12 +1,9 @@
 /* General Styles */
-
 /* Sidebar */
-
 .full-cont {
   display: flex;
   transition: all 0.3s ease-in-out;
 }
-
 .sidebar {
   position: fixed;
   top: 88px;
@@ -19,14 +16,12 @@
   overflow: hidden;
   z-index: 999;
 }
-
 .main-contents {
   flex-grow: 1;
   padding: 20px;
   transition: margin-left 0.3s ease-in-out;
   margin-left: 220px;
 }
-
 .side-bar-link {
   display: flex;
   align-items: center;
@@ -39,63 +34,38 @@
   border-radius: 6px;
   margin: 5px;
 }
-
 .side-bar-link:hover,
 .side-bar-link.active {
   background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
 }
-
 .side-bar-link .text {
   margin-left: 15px;
   transition: opacity 0.3s ease-in-out;
 }
-
 .sidebar .side-bar-link .text {
   display: none;
 }
-
 .sidebar:hover .side-bar-link .text {
   display: block;
 }
-
-.topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  padding: 12px 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
-}
-
 @media (max-width: 768px) {
   .sidebar {
     width: 60px;
   }
-
   .main-contents {
     margin-left: 0 !important;
   }
-
   .topbar {
     padding: 10px;
   }
-
   .Home-link {
     font-size: 16px;
   }
-
   .fabars-size {
     font-size: 20px;
   }
 }
-
 /* Topbar */
 .topbar {
   position: fixed;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Cookie from "cookie-universal";
 import { useNavigate } from "react-router-dom";
-import Loading from "../../Components/Loading/Loading";
+import Loading from "../../../Components/Loading/Loading";
 import "./Auth.css";
 
 export default function Authenticate() {

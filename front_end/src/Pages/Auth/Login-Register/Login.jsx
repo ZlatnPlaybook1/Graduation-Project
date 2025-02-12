@@ -1,17 +1,15 @@
 import axios from "axios";
 import React, { useState } from "react";
 import Cookie from "cookie-universal";
-import Loading from "../../Components/Loading/Loading";
-//import { useNavigate } from "react-router-dom";
-
+import Loading from "../../../Components/Loading/Loading";
+import "./form.css";
+import "./register-login.css";
 export default function Login() {
   // Handle States
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
-  //  Navigate
-  //   const navigate = useNavigate();
   // Cookies
   const cookie = Cookie();
   // Loading state
@@ -86,23 +84,25 @@ export default function Login() {
                 <label htmlFor="password">Password:</label>
               </div>
               <div className="social-icons">
-                <a href="{}" className="icon">
+                <a href="{}" className="icon-social-media">
                   <i className="fa-brands fa-google-plus-g"></i>
                 </a>
-                <a href="{}" className="icon">
+                <a href="{}" className="icon-social-media">
                   <i className="fa-brands fa-facebook-f"></i>
                 </a>
-                <a href="{}" className="icon">
+                <a href="{}" className="icon-social-media">
                   <i className="fa-brands fa-github"></i>
                 </a>
-                <a href="{}" className="icon">
+                <a href="{}" className="icon-social-media">
                   <i className="fa-brands fa-linkedin-in"></i>
                 </a>
               </div>
-              <button type="submit" className="botton botton-primary">
+              <button type="submit" className="button-login-register">
                 Login
               </button>
-              {err !== "" && <span className="error">{err}</span>}
+              {err !== "" && (
+                <span className="error-login-register">{err}</span>
+              )}
               <div className="register-link">
                 <p>
                   Not account yet? <a href="/register">Register</a>
