@@ -226,8 +226,21 @@ export async function resetPassword(req: Request, res: Response): Promise<Respon
     const userId = req.params.id;
     try {
 
+        const user = await prisma.user.findUnique({
+            where: {id: userId},
+        });
+
+        if (!user) {
+            return res.status(404).json({error: "User not found"});
+        }
+
+        if (user.password !== req.body.oldPassword) {
+            return res.status(400).json({error: "Old password is incorrect"});
+        }
+
         const hashedPassword = await hashPassword(req.body.newPassword);
-        const user = await prisma.user.update({
+        
+        const newPassword = await prisma.user.update({
             where: {id: userId},
             data: {
                 password: hashedPassword,
