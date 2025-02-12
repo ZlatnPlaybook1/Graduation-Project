@@ -8,10 +8,6 @@
   max-width: 1200px;
 }
 
-body {
-  font-family: "Poppins" !important;
-}
-
 /* Modern Wrapper with Gradient and Elevated Shadow */
 .unique-container-wrapper {
   background: linear-gradient(145deg, #ffffff, #f1f3f6);

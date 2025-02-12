@@ -1,11 +1,3 @@
-:root {
-  --main-color: #212c42;
-  --sec-main-color: #a3ea2a;
-  --alt-color: #151c2b;
-  --font-color: rgba(255, 255, 255, 0.5);
-  --font-color-hover: rgba(255, 255, 255, 0.75);
-  --main-transition: 0.5s;
-}
 * {
   margin: 0;
   box-sizing: border-box;

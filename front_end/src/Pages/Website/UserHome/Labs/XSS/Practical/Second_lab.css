@@ -1,17 +1,7 @@
-:root {
-  --main-color: #212c42;
-  --sec-main-color: #a3ea2a;
-  --alt-color: #151c2b;
-  --font-color: rgba(255, 255, 255, 0.5);
-  --font-color-hover: rgba(255, 255, 255, 0.75);
-  --main-transition: 0.5s;
-}
-
 .container-Second_lab {
   margin-left: auto;
   margin-right: auto;
 }
-
 
 /* Extra small */
 @media (min-width: 0px) {
@@ -20,14 +10,12 @@
   }
 }
 
-
 /* small */
 @media (min-width: 576px) {
   .container-Second_lab {
     max-width: 540px;
   }
 }
-
 
 /*  Medium */
 @media (min-width: 768px) {
@@ -62,7 +50,7 @@
 
 .course-Second_lab .row-practice {
   display: grid;
-  grid-template-columns: .9fr;
+  grid-template-columns: 0.9fr;
   grid-template-rows: auto auto auto;
   justify-content: center;
   margin-top: 30px;
@@ -87,7 +75,6 @@
   transform: scale(1.01);
 }
 
-
 .course-Second_lab .row-practice .card-Second_lab .card-text-Second_lab {
   padding: 20px 10px;
 }
@@ -108,14 +95,14 @@
   height: 300px;
   padding: 10px;
 }
-.course-Second_lab .row-practice .card-Second_lab  .form_input {
+.course-Second_lab .row-practice .card-Second_lab .form_input {
   display: block;
   margin: 30px 0;
   width: 400px;
   padding: 7px;
 }
 @media (max-width: 992px) {
-  .course-Second_lab .row-practice .card-Second_lab  .form_input {
+  .course-Second_lab .row-practice .card-Second_lab .form_input {
     width: 100%;
   }
 }
@@ -142,9 +129,13 @@
   top: 0;
 }
 .course-Second_lab .row-practice .card-Second_lab .comment-section {
-  margin-top: 50px; width: 100%;
+  margin-top: 50px;
+  width: 100%;
 }
-.course-Second_lab .row-practice .card-Second_lab .comment-card:not(:last-of-type) {
+.course-Second_lab
+  .row-practice
+  .card-Second_lab
+  .comment-card:not(:last-of-type) {
   border-bottom: 1px solid #eee;
 }
 .course-Second_lab .row-practice .card-Second_lab .comment-card {
@@ -155,7 +146,11 @@
 .course-Second_lab .row-practice .card-Second_lab .comment-card:hover {
   transform: scale(1.01);
 }
-.course-Second_lab .row-practice .card-Second_lab .comment-card .comment-header {
+.course-Second_lab
+  .row-practice
+  .card-Second_lab
+  .comment-card
+  .comment-header {
   display: flex;
   align-items: center;
   padding: 10px 0;
