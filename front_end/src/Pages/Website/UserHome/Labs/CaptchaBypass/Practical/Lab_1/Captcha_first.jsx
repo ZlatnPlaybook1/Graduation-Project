@@ -73,8 +73,6 @@ export default function Captcha_first() {
       setComment("");
       setCaptcha("");
       setNextId(1);
-
-      fetchCaptcha(); // Fetch a new captcha after deletion
     } catch (error) {
       setErr(error.response?.data?.message || "Network Error");
       console.error("Error resetting captcha:", error);
@@ -171,18 +169,14 @@ export default function Captcha_first() {
             </button>
           </div>
           <div className="comment-section">
-            {comments.length === 0 ? (
-              <p>No comments yet</p>
-            ) : (
-              comments.map((cmt) => (
-                <div key={cmt.id} className="comment-card">
-                  <div className="comment-header">
-                    <p className="name">#{cmt.id}</p>
-                  </div>
-                  <p className="comment-text">{cmt.comment}</p>
+            {comments.map((cmt) => (
+              <div key={cmt.id} className="comment-card">
+                <div className="comment-header">
+                  <p className="name">#{cmt.id}</p>
                 </div>
-              ))
-            )}
+                <p className="comment-text">{cmt.comment}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -79,6 +79,24 @@ export default function Captcha_third() {
       console.error(error);
     }
   }
+  async function deleteCaptcha() {
+    setLoading(true);
+    setErr("");
+
+    try {
+      await axios.delete("http://127.0.0.1:8080/api/capatchalab3");
+
+      setComments([]);
+      setComment("");
+      setCaptcha("");
+      setID(1);
+    } catch (error) {
+      setErr(error.response?.data?.message || "Network Error");
+      console.error("Error resetting captcha:", error);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <div className="body">
@@ -127,9 +145,8 @@ export default function Captcha_third() {
               </form>
             </div>
           </div>
-
           <div className="reset mb-5">
-            <button onClick={() => setCaptcha("")} disabled={loading}>
+            <button onClick={deleteCaptcha} disabled={loading}>
               {loading ? "Resetting..." : "Reset"}
             </button>
           </div>

@@ -1,114 +1,68 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Blog_item.css";
 import image_1 from "../../../../assets/img/practical_lab2/image_1.png";
 import icon from "../../../../assets/img/practical_lab2/icon.png";
 import Footer from "../../../../Footer/Footer";
-import axios from "axios";
 import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function BlogItem() {
   const hintMessage = `
-  <div style={{ textAlign: "left", fontSize: "1rem", lineHeight: "1.5", color: "#333" }}>
+    <div style={{ textAlign: "left", fontSize: "1rem", lineHeight: "1.5", color: "#333" }}>
       <p>Enter the following into the comment box:</p>
       <code style={{ display: "block", background: "#f8f9fa", padding: "10px", borderRadius: "5px", color: "#d63384" }}>
         &lt;script&gt;alert(1)&lt;/script&gt;
       </code>
-      <p>Enter a name, email, and website.</p>
+      <p>Enter a name, name, and website.</p>
       <p>Click "Post comment".</p>
       <p>Go back to the blog.</p>
     </div>
   `;
-  const [form, setForm] = useState({
-    email: "",
-    content: "",
-  });
-  const [data, setData] = useState([]);
+
+  const [form, setForm] = useState({ name: "", content: "" });
   const [comments, setComments] = useState([]);
-  const [scriptOutput, setScriptOutput] = useState("");
-  const [htmlOutput, setHtmlOutput] = useState(""); // New state to hold HTML output
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);
-  const fetchData = () => {
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const content = e.target.content.value;
+    const name = e.target.name.value;
+
+    setLoading(true);
+
     try {
-      const respone = axios.delete("http://127.0.0.1:8080/api/BlogItem");
-      console.log("Done");
-      setData(respone.data);
+      // Send the comment data to the backend API
+      const response = await axios.post(
+        "http://127.0.0.1:8080/api/sstiBlogComments",
+        {
+          content,
+          name,
+        }
+      );
+
+      const newComment = {
+        id: Date.now(), // Unique ID for each comment
+        name: response.data.name,
+        content: response.data.content,
+      };
+
+      setComments((prevComments) => [...prevComments, newComment]);
+      setErr(""); // Clear error message
     } catch (err) {
-      setLoading(false);
-      if (err.response) {
-        setErr(err.response.data);
-        console.error(err.response.data);
-      } else {
-        setErr("Network Error");
-        console.error(err);
-      }
+      setErr("Failed to submit the comment");
+      console.error("Error submitting comment:", err);
     } finally {
       setLoading(false);
     }
-  };
 
-  const handleSubmit = (e) => {
-    const respone = axios.delete("http://127.0.0.1:8080/api/BlogItem");
-    e.preventDefault();
-    const content = e.target.content.value;
-    const email = e.target.email.value;
-
-    // Allow scripts if the content contains <script> tags
-    if (content.includes("<script>") && content.includes("</script>")) {
-      const scriptContent = content
-        .replace("<script>", "")
-        .replace("</script>", "");
-      const newComment = {
-        id: Date.now(), // Unique ID for each comment
-        email: email || "Anonymous", // Default email
-        content: scriptContent, // Store raw HTML content
-        isScript: true, // Flag to indicate it's Script
-      };
-      setComments((prevComments) => [...prevComments, newComment]);
-      try {
-        // Run the script in a controlled environment
-        const result = eval(scriptContent);
-        setScriptOutput(
-          result !== undefined ? result.toString() : "Script executed."
-        );
-      } catch (err) {
-        setScriptOutput(`Error: ${err.message}`);
-      }
-    } else if (content.startsWith("<") && content.endsWith(">")) {
-      const newComment = {
-        id: Date.now(), // Unique ID for each comment
-        email: email || "Anonymous", // Default email
-        content: content, // Store raw HTML content
-        isHTML: true, // Flag to indicate it's HTML
-      };
-      setComments((prevComments) => [...prevComments, newComment]);
-    }
-    // Allow HTML rendering by setting it directly with dangerouslySetInnerHTML
-    else {
-      if (content) {
-        const newComment = {
-          id: Date.now(), // Unique ID for each comment
-          email: email || "Anonymous", // Default email
-          content: content, // Store plain text content
-          isHTML: false, // Flag to indicate it's plain text
-        };
-        setComments((prevComments) => [...prevComments, newComment]);
-        setErr("");
-      } else {
-        setErr("Please enter a comment.");
-      }
-    }
     // Reset the form after submission
-    setForm({ email: "", content: "" });
+    setForm({ name: "", content: "" });
   };
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   return (
     <>
-      {/* Start Courses  */}
       <div className="course-blog-item">
         <GoBack_Btn />
         <ShowHint hintText={hintMessage} />
@@ -179,70 +133,41 @@ export default function BlogItem() {
                   an even more integral role in our future.
                 </p>
               </div>
+
               <form onSubmit={handleSubmit}>
                 <textarea
                   name="content"
                   id="content"
-                  placeholder="Write Your Comment......"
+                  placeholder="Write Your Comment..."
                   required
                 ></textarea>
                 <input
-                  type="email"
-                  name="email"
-                  placeholder="Write Your Email"
+                  type="name"
+                  name="name"
+                  placeholder="Write Your Name"
                   className="form_input"
                 />
-                <button type="submit">Submit</button>
+                <button type="submit" disabled={loading}>
+                  {loading ? "Submitting..." : "Submit"}
+                </button>
                 {err && <span className="error">{err}</span>}
               </form>
+
               <div className="comment-section">
                 {comments?.map((comment) => (
                   <div key={comment.id} className="comment-card">
                     <div className="comment-header">
                       <img src={icon} className="icon" alt="Card" />
-                      <p className="name">{comment.email || "Anonymous"}</p>
+                      <p className="name">{comment.name || "Anonymous"}</p>
                     </div>
-                    {comment.isHTML ? (
-                      <p
-                        className="comment-text"
-                        dangerouslySetInnerHTML={{ __html: comment.content }}
-                      ></p>
-                    ) : (
-                      <p className="comment-text">
-                        {comment.content || scriptOutput}
-                      </p>
-                    )}
+                    <p className="comment-text">{comment.content}</p>
                   </div>
                 ))}
-                {data?.map((item) => (
-                  <div key={item.id} className="comment-card">
-                    <div className="comment-header">
-                      <img src={icon} className="icon" alt="Card" />
-                      <p className="name">{item.email}</p>
-                    </div>
-                    <p className="comment-text">{item.posts}</p>
-                  </div> // Adjust according to your data structure
-                ))}
-                <div className="comment-card">
-                  <div className="comment-header">
-                    <img src={icon} className="icon" alt="Card" />
-                    <p className="name">anonymous</p>
-                  </div>
-                  <p className="comment-text">comment 1</p>
-                </div>
-                <div className="comment-card">
-                  <div className="comment-header">
-                    <img src={icon} className="icon" alt="Card" />
-                    <p className="name">anonymous</p>
-                  </div>
-                  <p className="comment-text">comment 2</p>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* End Course Content  */}
       <Footer />
     </>
   );

@@ -76,7 +76,6 @@ console.log(comment);
       setCaptcha("");
       setID(1);
 
-      fetchCaptcha(); // Fetch a new captcha after deletion
     } catch (error) {
       setErr(error.response?.data?.message || "Network Error");
       console.error("Error resetting captcha:", error);
