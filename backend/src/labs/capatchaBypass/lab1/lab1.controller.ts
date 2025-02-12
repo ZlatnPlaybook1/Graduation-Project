@@ -84,7 +84,9 @@ export const getComments = async (req: Request, res: Response) => {
 
 export const deleteComments = async (req: Request, res: Response) => {
     try {
-        await prisma.lab1captcha.deleteMany({});
+        await prisma.lab1captcha.deleteMany({
+            where: { comment: { not: null } }, // Delete all rows with comments
+        });
 
         return res.status(200).json({ message: "All captchas and comments deleted successfully" });
     } catch (e) {
