@@ -1,3 +1,4 @@
+import axios from "axios";
 import Footer from "../../../../Footer/Footer";
 import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
 import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
@@ -15,7 +16,7 @@ export default function Learn_capital_2() {
 
     // Parse the file name from the URL query parameters
     const queryParams = new URLSearchParams(window.location.search);
-    const fileFromUrl = queryParams.get("file");
+    const fileFromUrl = queryParams.get("fruit");
 
     if (fileFromUrl) {
       // Fetch file data from the backend
@@ -23,20 +24,19 @@ export default function Learn_capital_2() {
     }
   }, []);
 
-  const fetchFileData = async (fileName) => {
+  const fetchFileData = async (fruit) => {
     try {
-      const response = await fetch(`/api/getFileData?file=${fileName}`);
-      if (!response.ok) {
-        throw new Error("File not found or access denied.");
-      }
-      const data = await response.json();
-      setFileContent(data.content);
-      setCapitalImage(data.image);
+      const response = await axios.get(
+        `http://127.0.0.1:8080/api/fileInclusionLab2?fruit=${fruit}`
+      );
+
+      // Use response.data directly without checking response.ok
+      setFileContent(response.data);
       setError("");
     } catch (err) {
-      setError(err.message);
+      console.error("Error fetching file:", err);
+      setError("File not found or access denied.");
       setFileContent("");
-      setCapitalImage("");
     }
   };
 
@@ -49,7 +49,7 @@ export default function Learn_capital_2() {
     e.preventDefault();
     if (selectedFile) {
       // Update the URL with the selected file as a query parameter
-      const newUrl = `${window.location.pathname}?file=${selectedFile}`;
+      const newUrl = `${window.location.pathname}?fruit=${selectedFile}`;
       window.history.pushState({}, "", newUrl);
 
       // Fetch file data from the backend
@@ -74,12 +74,18 @@ export default function Learn_capital_2() {
               <div className="text-center">
                 <h2>File Inclusion Demonstration</h2>
                 <p>
-                  Select a file to view its content and the image of Fruits. This simulates a file inclusion vulnerability in a controlled environment.
+                  Select a file to view its content and the image of Fruits.
+                  This simulates a file inclusion vulnerability in a controlled
+                  environment.
                 </p>
               </div>
               <form onSubmit={handleSubmit} style={{ flexDirection: "column" }}>
                 <div className="selection-style">
-                  <select name="file" onChange={handleFileChange} value={selectedFile}>
+                  <select
+                    name="file"
+                    onChange={handleFileChange}
+                    value={selectedFile}
+                  >
                     <option value="" disabled>
                       Select a File
                     </option>
@@ -98,20 +104,10 @@ export default function Learn_capital_2() {
               <div className="capital-info">
                 {fileContent && (
                   <div className="file-content">
-                    <h3>File Content:</h3>
-                    <pre>{fileContent}</pre>
-                  </div>
-                )}
-                {capitalImage && (
-                  <div className="capital-image">
-                    <h3>Friut Image:</h3>
-                    <img src={capitalImage} alt="Capital" style={{ maxWidth: "100%", height: "auto" }} />
-                  </div>
-                )}
-                {error && (
-                  <div className="error-message">
-                    <h3>Error:</h3>
-                    <p>{error}</p>
+                    {/* <h3>Rendered HTML:</h3> */}
+                    <div
+                      dangerouslySetInnerHTML={{ __html: fileContent }}
+                    ></div>
                   </div>
                 )}
               </div>
