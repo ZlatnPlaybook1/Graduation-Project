@@ -48,7 +48,7 @@ export default function Learn_capital_1() {
     e.preventDefault();
     if (selectedFile) {
       // Update the URL with the selected file as a query parameter
-      const newUrl = `${window.location.pathname}?city=${selectedFile}`;
+      const newUrl = `${window.location.pathname}?car=${selectedFile}`;
       window.history.pushState({}, "", newUrl);
       // submitFileData(selectedFile);
       // Fetch file data from the backend
