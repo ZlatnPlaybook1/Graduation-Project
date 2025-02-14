@@ -5,27 +5,46 @@ import GOBack from "../../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function BurpSuitLab4() {
+  const [userAnswers, setUserAnswers] = useState(
+    Array(data.data.length).fill("")
+  );
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [userInput, setUserInput] = useState("");
-  const [isCorrect, setIsCorrect] = useState(null);
   const [completed, setCompleted] = useState(false);
+  const [score, setScore] = useState(0);
 
-  const handleCheckAnswer = () => {
-    const correctAnswer = data.data[currentIndex].decoded_value.toUpperCase();
-    if (userInput.trim().toUpperCase() === correctAnswer) {
-      setIsCorrect(true);
-      setTimeout(() => {
-        if (currentIndex < data.data.length - 1) {
-          setCurrentIndex(currentIndex + 1);
-          setUserInput("");
-          setIsCorrect(null);
-        } else {
-          setCompleted(true);
-        }
-      }, 1000);
-    } else {
-      setIsCorrect(false);
+  const currentQuestion = data.data[currentIndex];
+  const progress = ((currentIndex + 1) / data.data.length) * 100;
+
+  const handleInputChange = (e) => {
+    const newAnswers = [...userAnswers];
+    newAnswers[currentIndex] = e.target.value;
+    setUserAnswers(newAnswers);
+  };
+
+  const handleNext = () => {
+    if (currentIndex < data.data.length - 1) {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
     }
+  };
+
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prevIndex) => prevIndex - 1);
+    }
+  };
+
+  const handleSubmit = () => {
+    let totalScore = 0;
+    userAnswers.forEach((answer, index) => {
+      if (
+        answer.trim().toUpperCase() ===
+        data.data[index].decoded_value.toUpperCase()
+      ) {
+        totalScore++;
+      }
+    });
+    setScore(totalScore);
+    setCompleted(true);
   };
 
   return (
@@ -35,6 +54,15 @@ export default function BurpSuitLab4() {
       <div className="burp-center">
         <div className="burp-container">
           <h2 className="burp-title">Decode & Verify</h2>
+
+          {/* Progress Bar */}
+          <div className="burp-progress-container">
+            <div
+              className="burp-progress-bar"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
+
           {!completed ? (
             <>
               <p className="burp-question">
@@ -42,31 +70,61 @@ export default function BurpSuitLab4() {
               </p>
               <ul className="burp-list">
                 <li className="burp-list-item">
-                  {data.data[currentIndex].encoded_data}
+                  {currentQuestion.encoded_data}
                 </li>
               </ul>
-              <input
-                type="text"
-                className="burp-input"
-                placeholder="Enter your answer"
-                value={userInput}
-                onChange={(e) => setUserInput(e.target.value)}
-              />
-              <button className="burp-button" onClick={handleCheckAnswer}>
-                Check Answer
-              </button>
-              {isCorrect !== null && (
-                <p className={isCorrect ? "burp-correct" : "burp-wrong"}>
-                  {isCorrect
-                    ? "Correct! 🎉 Moving to next question..."
-                    : "Incorrect! ❌"}
-                </p>
+
+              {currentIndex === 4 && currentQuestion.options ? (
+                <div className="burp-options">
+                  {currentQuestion.options.map((option, index) => (
+                    <label key={index} className="burp-option">
+                      <input
+                        type="radio"
+                        name="question5"
+                        value={option}
+                        checked={userAnswers[currentIndex] === option}
+                        onChange={handleInputChange}
+                      />
+                      {option}
+                    </label>
+                  ))}
+                </div>
+              ) : (
+                <input
+                  type="text"
+                  className="burp-input"
+                  placeholder="Enter your answer"
+                  value={userAnswers[currentIndex]}
+                  onChange={handleInputChange}
+                />
+              )}
+
+              <div className="burp-nav-buttons">
+                <button
+                  className="burp-button"
+                  onClick={handlePrevious}
+                  disabled={currentIndex === 0}
+                >
+                  Previous
+                </button>
+                <button
+                  className="burp-button"
+                  onClick={handleNext}
+                  disabled={currentIndex === data.data.length - 1}
+                >
+                  Next
+                </button>
+              </div>
+              {currentIndex === data.data.length - 1 && (
+                <button className="burp-button" onClick={handleSubmit}>
+                  Submit
+                </button>
               )}
             </>
           ) : (
             <p className="burp-completion">
-              🎉 Congratulations! You have successfully completed all questions.
-              🚀
+              🎉 You have completed the quiz! Your score: {score}/
+              {data.data.length}
             </p>
           )}
         </div>

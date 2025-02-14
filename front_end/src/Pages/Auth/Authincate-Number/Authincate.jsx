@@ -74,7 +74,7 @@ export default function Authenticate() {
                 />
                 <label htmlFor="number">6-Digit Number:</label>
               </div>
-              <button type="submit" className="botton botton-primary">
+              <button type="submit" className="button-login-register">
                 Submit
               </button>
               {error && <span className="error">{error}</span>}
