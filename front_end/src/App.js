@@ -52,7 +52,7 @@ import LINUX_FOURTH_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/thir
 // Access Control Vulnerability
 import AC_VULN from "./Pages/Website/UserHome/Labs/AC-Vuln/AC_Vuln.jsx";
 import AC_VULN_LABS from "./Pages/Website/UserHome/Labs/AC-Vuln/AC_Vuln_labs.jsx";
-import AC_VULN_FIRST_LAB from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/first_lab/First_Lab.jsx";
+import AC_VULN_FIRST_LAB from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/first_lab/First_Lab1.jsx";
 import AC_VULN_SECOND_LAB from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/second_lab/Second_Lab.jsx";
 import AC_VULN_THIRD_LAB from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/third_lab/Third_Lab.jsx";
 import AC_VULN_THIRD_LAB_LOGIN from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/third_lab/Third_Lab_LoginForm.jsx";
@@ -119,19 +119,24 @@ import BL_VULN_LABS from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln_labs.jsx
 import BL_VULN_FIRST_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/First_Lab.jsx";
 import BL_VULN_FIRST_LAB_CART from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/CartPage.jsx";
 import BL_VULN_FIRST_LAB_DETAIL_PAGE from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/DetailPage.jsx";
+import BL_VULN_FIRST_LAB_LOGIN from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/LoginPage.jsx";
+import BL_VULN_FIRST_LAB_MY_ACCOUNT from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/MyAccountPage.jsx";
 import BL_VULN_SECOND_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/second_lab/Second_Lab.jsx";
-import BL_VULN_THIRD_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/third_lab/Third_Lab.jsx";
+import BL_VULN_SECOND_LAB_CART from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/second_lab/CartPage.jsx";
+import BL_VULN_SECOND_LAB_DETAIL_PAGE from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/second_lab/DetailPage.jsx";
+import BL_VULN_SECOND_LAB_LOGIN from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/second_lab/LoginPage.jsx";
+import BL_VULN_SECOND_LAB_MY_ACCOUNT from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/second_lab/MyAccountPage.jsx";
 // End Business Logic Vulnerability
 
 // Digital Forensics
 import DIGITAL_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/Digital_Forensics.jsx";
 import DIGITAL_FORENSICS_LABS from "./Pages/Website/UserHome/Labs/Digital_Forensics/Digital_Forensics_Labs.jsx";
 import DIGITAL_FORENSICS_FIRST_LAB from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/first_lab/First_Lab.jsx";
-import BLOCKCHIN_AND_CRYPTOCURRENCY from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/BlockchainAndCryptocurrency.jsx";
+import BLOCK_CHIN_AND_CRYPTOCURRENCY from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/BlockchainAndCryptocurrency.jsx";
 import COMPUTER_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Computer.jsx";
 import CLOUD_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Cloud.jsx";
 import DATABASE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Database.jsx";
-import DATARECOVERY_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/DataRecovery.jsx";
+import DATA_RECOVERY_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/DataRecovery.jsx";
 import DRONE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Drone.jsx";
 import EMAIL_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Email.jsx";
 import GAMING_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Gaming.jsx";
@@ -140,7 +145,7 @@ import MALWARE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/p
 import MOBILE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Mobile.jsx";
 import MULTIMEDIA_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Multimedia.jsx";
 import NETWORK_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Network.jsx";
-import SOCIALMEDIA_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/SocialMedia.jsx";
+import SOCIAL_MEDIA_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/SocialMedia.jsx";
 import VEHICLE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Vehicle.jsx";
 
 // End Digital Forensics
@@ -418,12 +423,32 @@ function App() {
             element={<BL_VULN_FIRST_LAB_DETAIL_PAGE />}
           />
           <Route
+            path="/BL-Vuln/BL_Vuln_labs/first_lab/login"
+            element={<BL_VULN_FIRST_LAB_LOGIN />}
+          />
+          <Route
+            path="/BL-Vuln/BL_Vuln_labs/first_lab/myaccount"
+            element={<BL_VULN_FIRST_LAB_MY_ACCOUNT />}
+          />
+          <Route
             path="/BL-Vuln/BL_Vuln_labs/second_lab"
             element={<BL_VULN_SECOND_LAB />}
           />
           <Route
-            path="/BL-Vuln/BL_Vuln_labs/third_lab"
-            element={<BL_VULN_THIRD_LAB />}
+            path="/BL-Vuln/BL_Vuln_labs/second_lab/cart"
+            element={<BL_VULN_SECOND_LAB_CART />}
+          />
+          <Route
+            path="/BL-Vuln/BL_Vuln_labs/second_lab/ProductDetail/:id"
+            element={<BL_VULN_SECOND_LAB_DETAIL_PAGE />}
+          />
+          <Route
+            path="/BL-Vuln/BL_Vuln_labs/second_lab/login"
+            element={<BL_VULN_SECOND_LAB_LOGIN />}
+          />
+          <Route
+            path="/BL-Vuln/BL_Vuln_labs/second_lab/myaccount"
+            element={<BL_VULN_SECOND_LAB_MY_ACCOUNT />}
           />
           {/* End BL_Vuln */}
 
@@ -439,7 +464,7 @@ function App() {
           />
           <Route
             path="/Digital_Forensics/MCQ/BlockChain"
-            element={<BLOCKCHIN_AND_CRYPTOCURRENCY />}
+            element={<BLOCK_CHIN_AND_CRYPTOCURRENCY />}
           />
           <Route
             path="/Digital_Forensics/MCQ/Computer"
@@ -455,7 +480,7 @@ function App() {
           />
           <Route
             path="/Digital_Forensics/MCQ/DataRecovery"
-            element={<DATARECOVERY_FORENSICS />}
+            element={<DATA_RECOVERY_FORENSICS />}
           />
           <Route
             path="/Digital_Forensics/MCQ/Drone"
@@ -491,7 +516,7 @@ function App() {
           />
           <Route
             path="/Digital_Forensics/MCQ/SocialMedia"
-            element={<SOCIALMEDIA_FORENSICS />}
+            element={<SOCIAL_MEDIA_FORENSICS />}
           />
           <Route
             path="/Digital_Forensics/MCQ/Vehicle"

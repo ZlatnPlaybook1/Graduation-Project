@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../../Header/Header";
-import "./CSRF.css";
 import labImg from "../../assets/img/CSRF/lab1.jpeg";
 
 import Footer from "../../Footer/Footer";
@@ -16,8 +15,8 @@ export default function CSRF_labs() {
             <div className="course-text">
               <h1>Practice</h1>
               <p className="brief">
-                <i className="fa-solid fa-bullseye lab"></i>
-                Reinforce what you're learning
+                <i className="fa-solid fa-bullseye"></i> Reinforce what you're
+                learning
               </p>
               <p>
                 Put your knowledge into practice with gamified cyber security
@@ -25,11 +24,11 @@ export default function CSRF_labs() {
               </p>
             </div>
             <div className="course-icon">
-              <div className="border">
+              <div className="border-icon">
                 <div className="content">
-                  <i className="fas fa-book-open lab"></i>
+                  <i className="fas fa-book-open"></i>
                   <p>Practice</p>
-                  <i className="fas fa-bullseye lab"></i>
+                  <i className="fas fa-bullseye"></i>
                 </div>
               </div>
             </div>

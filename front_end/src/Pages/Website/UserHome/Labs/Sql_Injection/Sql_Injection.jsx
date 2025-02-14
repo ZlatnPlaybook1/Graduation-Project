@@ -5,16 +5,18 @@ import "../Page_Styles/Content.css";
 import background from "../../assets/img/SQL_Injection/bg.png";
 import courseImage from "../../assets/img/SQL_Injection/courseImage.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import OutOfBandImage from "../../assets/img/SQL_Injection/Out-of-Band SQLi.png";
 import tableImage from "../../assets/img/SQL_Injection/table.png";
-import DBServerImage from "../../assets/img/SQL_Injection/DBServer.png";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
+import Banner from "../../Banner/Banner.jsx";
+// import OutOfBandImage from "../../assets/img/SQL_Injection/Out-of-Band SQLi.png";
+// import DBServerImage from "../../assets/img/SQL_Injection/DBServer.png";
 
 export default function Sql_Injection() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
   return (
     <>
+      <Banner />
       <Header />
       {/* Start Landing */}
       <LandingLab

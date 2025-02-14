@@ -4,8 +4,7 @@ import Footer from "../../Footer/Footer";
 import "./Api_Hacking.css";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/course_image.png";
-//import logicflaw from "../../assets/img/Api_Hacking/apiImg1.svg";
-//import ExplainImg from "../../assets/img/Api_Hacking/apiImg2.svg";
+import Banner from "../../Banner/Banner.jsx";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function Api_Hacking() {
@@ -13,6 +12,7 @@ export default function Api_Hacking() {
 
   return (
     <>
+      <Banner />
       <Header />
       {/* Start Landing */}
       <LandingLab

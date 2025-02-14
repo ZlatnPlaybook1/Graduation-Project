@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import "./Regex.css";
+import Banner from "../../Banner/Banner.jsx";
 import "../Page_Styles/Content_sec.css";
 import background from "../../assets/img/Regex/background.png";
 import courseImage from "../../assets/img/Regex/courseImage.png";
@@ -14,6 +14,7 @@ export default function Regex() {
 
   return (
     <>
+      <Banner />
       <Header />
       {/* Start Landing */}
       <LandingLab

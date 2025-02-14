@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import "./CSRF.css";
+import Banner from "../../Banner/Banner";
 import background from "../../assets/img/background.png";
 import courseImage from "../../assets/img/CSRF/CourseImage.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
@@ -11,6 +11,7 @@ export default function CSRF() {
 
   return (
     <>
+      <Banner />
       <Header />
       {/* Start Landing */}
       <LandingLab

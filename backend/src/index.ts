@@ -5,6 +5,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import path from "path";
+import ejs from "ejs";
 import registerRouter from "./registerWithAuthentication/register.router";
 import loginRouter from "./login/login.router";
 import logoutRouter from "./logout/logout.router";
@@ -45,6 +46,9 @@ import lab2RaceCondition from "./labs/raceCondition/lab2/lab2.router";
 import lab1capatcha from "./labs/capatchaBypass/lab1/lab1.router";
 import lab2capatcha from "./labs/capatchaBypass/lab2/lab2.router";
 import lab3capatcha from "./labs/capatchaBypass/lab3/lab3.router";
+import lab1SSTI from "./labs/SSTI/lab1/lab1.router";
+import lab2SSTI from "./labs/SSTI/lab2/lab2.router";
+import bLVulnRouter from "./labs/BL-Vuln/Lab1/lab1.router";
 
 const app = express();
 app.use("/uploads", express.static("uploads"));
@@ -66,6 +70,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.set("view engine", "ejs");
+
 app.set("views", path.join(__dirname, "../views"));
 
 app.use("/api", registerRouter);
@@ -108,6 +113,9 @@ app.use("/api", lab2RaceCondition);
 app.use("/api", lab1capatcha);
 app.use("/api", lab2capatcha);
 app.use("/api", lab3capatcha);
+app.use("/api", lab1SSTI);
+app.use("/api", lab2SSTI);
+app.use("/api", bLVulnRouter);
 
 dotenv.config();
 

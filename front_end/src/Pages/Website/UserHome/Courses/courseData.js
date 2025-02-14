@@ -161,7 +161,7 @@ const courseData = [
     ],
     difficulty: "Intermediate",
     image: require("../assets/img/BLV/Landing.jpg"),
-    state: "not-published",
+    state: "semi-published",
     link: "/BL_Vuln",
   },
   {
@@ -349,7 +349,7 @@ const courseData = [
     ],
     difficulty: "Intermediate",
     image: require("../assets/img/File Inclusion/card_image.png"),
-    state: "pending",
+    state: "published",
     link: "/fileinclusion",
   },
   {

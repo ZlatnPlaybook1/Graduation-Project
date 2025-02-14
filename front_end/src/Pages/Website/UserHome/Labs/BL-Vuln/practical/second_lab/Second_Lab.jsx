@@ -1,49 +1,54 @@
-import React from "react";
-import "../Lab_Style.css";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
+import React, { useState, useEffect } from "react";
+import Navigation from "./Navigation";
+import ProductCard from "./ProductCard";
 
-export default function Second_Lab() {
-  const hintMessage = `
-  <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
-    <li>1.
-      With Burp running, log in and attempt to buy the leather jacket. The 
-order is rejected because you don't have enough store credit. 
-    </li>
-    \n
-    <li>2.
-      In Burp, go to "Proxy" > "HTTP history" and study the order process. 
-Notice that when you add an item to your cart, the corresponding 
-request contains a <code>price</code> parameter. Send the <code>POST /cart </code> request to 
-Burp Repeater.
-    </li>
-    \n
-    <li>3.
-      In Burp Repeater, change the price to an arbitrary integer and send the 
-request. Refresh the cart and confirm that the price has changed based 
-on your input.
-    </li>
-    \n
-    <li>4.
-       Repeat this process to set the price to any amount less than your 
-available store credit.
-    </li>
-    \n
-    <li>5.
-     Complete the order to solve the lab.
-</li>
-  </ul>
-`;
+const ProductsPage = () => {
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCart(storedCart);
+
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
+
+  const addToCart = (product) => {
+    const existingItem = cart.find((item) => item.id === product.id);
+    let updatedCart;
+    if (existingItem) {
+      updatedCart = cart.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+    } else {
+      updatedCart = [...cart, { ...product, quantity: 1 }];
+    }
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
 
   return (
-    <>
-      <GoBack_Btn />
-      <ShowHint_Btn hintText={hintMessage} />
-      <div className="container">
-        <h2 className="lab-header">successfully </h2>
-        <Go2TopBtn />
-      </div>
-    </>
+    <div className="products-page bg-light">
+      <Navigation />
+      <main className="container ">
+        <h1 className="my-5 products-page-title ">Our Products 🛍️ </h1>
+        <div className="row">
+          {products.map((product) => (
+            <div key={product.id} className="col-md-4 mb-4">
+              <ProductCard product={product} addToCart={addToCart} />
+            </div>
+          ))}
+        </div>
+      </main>
+      <footer className="bg-dark text-white text-center py-3 mt-4">
+        <div className="container">
+          <p className="mb-0">© 2025 ShopZone. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
   );
-}
+};
+
+export default ProductsPage;

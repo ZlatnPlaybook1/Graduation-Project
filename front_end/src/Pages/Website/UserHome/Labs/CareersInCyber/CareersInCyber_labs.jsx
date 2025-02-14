@@ -2,10 +2,12 @@ import React from "react";
 import Header from "../../Header/Header";
 import mcqData from "./MCQCards";
 import Footer from "../../Footer/Footer";
+import Banner from "../../Banner/Banner";
 import { Card } from "../../Card/Card";
 export default function Regex_labs() {
   return (
     <>
+      <Banner />
       <Header />
       {/* Start Landing */}
       <div className="landing">
@@ -39,7 +41,7 @@ export default function Regex_labs() {
       {/* Start Course */}
       <div className="course">
         <div className="container">
-          <h2>Regular Expressions Labs</h2>
+          <h2>Careers in Cyber MCQ Exams</h2>
           <p className="section-p">Test Your Hacking Skills</p>
           <div className="row">
             {mcqData.map((mcq, id) => (
