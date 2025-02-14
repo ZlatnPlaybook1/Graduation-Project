@@ -3,10 +3,9 @@ import axios from "axios";
 import { URLSearchParams } from "url";
 import * as dotenv from "dotenv";
 
-// Load environment variables from .env file
 dotenv.config();
 
-const SECRET_KEY = process.env.CAPTCHA_SECRET_KEY;
+const SECRET_KEY = process.env.CAPTCHA_SECRET_KEY || "6LfMedcqAAAAABH8Dukegd_iwTIZ9Y43qL9jNKBA";
 
 interface ReCaptchaResponse {
   success: boolean;
@@ -17,8 +16,9 @@ interface ReCaptchaResponse {
 
 export const verifyCaptcha = async (req: Request, res: Response) => {
   const { token } = req.body;
+
   if (!token) {
-    return res.status(400).json({ success: false, message: "No token provided" });
+    return res.status(400).json({ success: false, message: "No CAPTCHA token provided" });
   }
 
   try {
@@ -31,11 +31,12 @@ export const verifyCaptcha = async (req: Request, res: Response) => {
     );
 
     if (response.data.success) {
-      return res.json({ success: true, message: "reCAPTCHA verified!" });
+      return res.json({ success: true, message: "CAPTCHA verified!" });
     } else {
-      return res.json({ success: false, message: "reCAPTCHA failed" });
+      return res.status(400).json({ success: false, message: "Invalid CAPTCHA", errors: response.data['error-codes'] });
     }
   } catch (error) {
-    return res.status(500).json({ success: false, message: "Server error" });
+    console.error("Error verifying CAPTCHA:", error);
+    return res.status(500).json({ success: false, message: "Server error during CAPTCHA verification" });
   }
 };

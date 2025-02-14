@@ -1,19 +1,18 @@
 import React, { useState, useRef } from "react";
 import "../Captcha_labs.css";
 import ReCAPTCHA from "react-google-recaptcha";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
 import axios from "axios";
 
-export default function Captcha_third() {
+export default function CaptchaThird() {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
-  const [captcha, setCaptcha] = useState(null); // Store captcha token
+  const [captcha, setCaptcha] = useState(null);
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
   const [id, setID] = useState(1);
   const recaptchaRef = useRef(null);
-  const captchaSiteKey = "6LeS-dEqAAAAAPpBMi_ZYtf2dHEF5m0GqtzRYzR1";
+  const captchaSiteKey = "6LfMedcqAAAAAB6vOEc_r1EsoNceKP0jJvqB2aWD";
+
   function handleCaptchaChange(token) {
     setCaptcha(token);
   }
@@ -31,10 +30,8 @@ export default function Captcha_third() {
 
     try {
       // Verify CAPTCHA with backend
-      const verifyRes = await axios.post(
-        "http://127.0.0.1:8080/api/capatchalab3",
-        { token: captcha }
-      );
+      const verifyRes = await axios.post("http://127.0.0.1:8080/api/capatchalab3", { token: captcha });
+
       if (!verifyRes.data.success) {
         setErr("Captcha verification failed, try again.");
         setLoading(false);
@@ -43,25 +40,18 @@ export default function Captcha_third() {
 
       // Add comment after successful CAPTCHA verification
       const newComment = { id, comment };
-      await axios.post("http://127.0.0.1:8080/api/capatchalab3comments", {
-        comment,
-      });
+      await axios.post("http://127.0.0.1:8080/api/capatchalab3comments", { comment });
 
       setComments((prev) => [...prev, newComment]);
       setID((prevID) => prevID + 1);
       setComment("");
       setCaptcha(null);
-
-      // Properly Reset reCAPTCHA
-      if (recaptchaRef.current) {
-        recaptchaRef.current.reset();
-      }
-
-      setLoading(false);
+      recaptchaRef.current?.reset();
     } catch (error) {
-      setErr("Network Error: Could not submit the comment.");
+      console.error("Request error:", error);
+      setErr(error.response?.data?.message || "Network Error: Could not submit the comment.");
+    } finally {
       setLoading(false);
-      console.error(error);
     }
   }
 
@@ -70,16 +60,12 @@ export default function Captcha_third() {
     setErr("");
 
     try {
-      await axios.delete("http://127.0.0.1:8080/api/capatchalab3");
+      await axios.delete("http://127.0.0.1:8080/api/capatchalab3comments");
       setComments([]);
       setComment("");
       setCaptcha(null);
       setID(1);
-
-      // Reset reCAPTCHA after delete
-      if (recaptchaRef.current) {
-        recaptchaRef.current.reset();
-      }
+      recaptchaRef.current?.reset();
     } catch (error) {
       setErr(error.response?.data?.message || "Network Error");
       console.error("Error resetting captcha:", error);
@@ -90,12 +76,6 @@ export default function Captcha_third() {
 
   return (
     <div className="body-captcha">
-      <GoBack_Btn />
-      <ShowHint_Btn
-        hintText={`<p>Click inspect and try to beautify and deobfuscate script using:</p>
-          <a href="https://filipemgs.github.io/poisonjs/">De-obfuscate</a>
-          <a href="https://beautifier.io/">Beautifier.io</a>`}
-      />
       <div className="captcha_first">
         <div className="container-captcha">
           <div className="card-captcha">
