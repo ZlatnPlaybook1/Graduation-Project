@@ -88,9 +88,7 @@ console.log(comment);
     <div className="body-captcha">
       <GoBack_Btn />
       <ShowHint_Btn
-        hintText={`<p>Click inspect and try to beautify and deobfuscate script using:</p>
-          <a href="https://filipemgs.github.io/poisonjs/">De-obfuscate</a>
-          <a href="https://beautifier.io/">Beautifier.io</a>`}
+        hintText={`Hint`}
       />
       <div className="captcha_first">
         <div className="container-captcha">
