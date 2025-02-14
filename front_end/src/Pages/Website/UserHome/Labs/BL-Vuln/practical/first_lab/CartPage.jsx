@@ -1,47 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
-// Inline Navigation component
-const Navigation = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const isLoggedIn = localStorage.getItem("loggedIn") === "true";
-    setLoggedIn(isLoggedIn);
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.setItem("loggedIn", "false");
-    setLoggedIn(false);
-  };
-
-  return (
-    <nav className="custom-nav">
-      <ul className="custom-nav__list">
-        <li className="custom-nav__item">
-          <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/cart">Cart</Link>
-        </li>
-        <li className="custom-nav__item">
-          <Link to="/BL-Vuln/BL_Vuln_labs/first_lab">Shopping</Link>
-        </li>
-        <li className="custom-nav__item">
-          <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/myaccount">MyAcc</Link>
-        </li>
-        {loggedIn ? (
-          <li className="custom-nav__item">
-            <button onClick={handleLogout} className="btn btn-link">
-              Logout
-            </button>
-          </li>
-        ) : (
-          <li className="custom-nav__item">
-            <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/login">Login</Link>
-          </li>
-        )}
-      </ul>
-    </nav>
-  );
-};
+import Navigation from "./Navigation";
 
 const CartPage = () => {
   const [cart, setCart] = useState([]);
@@ -115,66 +73,98 @@ const CartPage = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <>
       <Navigation />
-      <h2>
-        Your Cart ({cart.reduce((acc, item) => acc + item.quantity, 0)}{" "}
-        {cart.reduce((acc, item) => acc + item.quantity, 0) === 1
-          ? "item"
-          : "items"}
-        )
-      </h2>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-            <th>Remove</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cart.map((item, index) => (
-            <tr key={item.id}>
-              <td>{item.title}</td>
-              <td>${item.price.toFixed(2)}</td>
-              <td>
-                <input
-                  type="number"
-                  value={item.quantity}
-                  min="1"
-                  onChange={(e) =>
-                    updateQuantity(index, parseInt(e.target.value, 10) || 1)
-                  }
-                  style={{ width: "60px" }}
-                />
-              </td>
-              <td>${(item.price * item.quantity).toFixed(2)}</td>
-              <td>
-                <button
-                  onClick={() => removeItem(index)}
-                  className="btn btn-danger btn-sm"
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <h4 className="text-end">
-        Grand Total: $
-        {cart
-          .reduce((total, item) => total + item.price * item.quantity, 0)
-          .toFixed(2)}
-      </h4>
-      <div className="text-end">
-        <button onClick={handleCheckout} className="btn btn-success">
-          Buy Now
-        </button>
+      <div className="container mt-5 d-flex flex-column min-vh-100">
+        <h2 className=" products-page-title mb-4 text-primary fw-bold">
+          <i className="fas fa-shopping-cart me-2"></i>
+          Your Cart{" "}
+          <span className=" text-danger">
+            ({cart.reduce((acc, item) => acc + item.quantity, 0)}{" "}
+            {cart.reduce((acc, item) => acc + item.quantity, 0) === 1
+              ? "item"
+              : "items"}
+            )
+          </span>
+        </h2>
+
+        {/* Card Wrapper for the Table */}
+        <div className="card shadow border-0 mb-4 w-100">
+          {/* Optional: Card header */}
+          <div className="card-header bg-primary text-white">
+            <strong>Shopping Details</strong>
+          </div>
+
+          {/* Card Body with Table */}
+          <div className="card-body p-0">
+            <table className="table table-hover align-middle mb-0">
+              <thead className="table-light">
+                <tr>
+                  <th scope="col">Item</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Total</th>
+                  <th scope="col">Remove</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cart.map((item, index) => (
+                  <tr key={item.id}>
+                    <td>{item.title}</td>
+                    <td>${item.price.toFixed(2)}</td>
+                    <td style={{ maxWidth: "80px" }}>
+                      <input
+                        type="number"
+                        value={item.quantity}
+                        min="1"
+                        onChange={(e) =>
+                          updateQuantity(
+                            index,
+                            parseInt(e.target.value, 10) || 1
+                          )
+                        }
+                        className="form-control form-control-sm"
+                      />
+                    </td>
+                    <td>${(item.price * item.quantity).toFixed(2)}</td>
+                    <td>
+                      <button
+                        onClick={() => removeItem(index)}
+                        className="btn btn-danger btn-sm d-flex align-items-center"
+                      >
+                        <i className="fas fa-trash me-1 text-white"></i>
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Grand Total & Checkout Button */}
+        <div className="d-flex justify-content-between align-items-center">
+          <h4 className="text-success">
+            Grand Total: $
+            {cart
+              .reduce((total, item) => total + item.price * item.quantity, 0)
+              .toFixed(2)}
+          </h4>
+          <button onClick={handleCheckout} className="btn btn-lg btn-success">
+            <i className="fas fa-cart-plus me-2 "></i>
+            Buy Now
+          </button>
+        </div>
       </div>
-    </div>
+
+      {/* Simple Footer */}
+      <footer className="bg-dark text-white text-center py-3 mt-auto">
+        <div className="container">
+          <p className="mb-0">© 2025 ShopZone. All rights reserved.</p>
+        </div>
+      </footer>
+    </>
   );
 };
 

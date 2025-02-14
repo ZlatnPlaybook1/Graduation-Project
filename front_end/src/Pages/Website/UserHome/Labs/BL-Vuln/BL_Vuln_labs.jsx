@@ -46,11 +46,15 @@ export default function BL_Vuln_labs() {
           <div className="row">
             {/* lab1 */}
             <Card
-            link={"/BL-Vuln/BL_Vuln_labs/first_lab"}
-            image={labImg}
-            title={"Excessive trust in client-side controls"}
-            brief={["This lab doesn't adequately validate user input. You can exploit a logic flaw in its purchasing workflow to buy items for an unintended price. To solve the lab, buy a 'Lightweight l33t leather jacket'. You can log in to your own account using the following credentials: ",<code>wiener:peter</code>,"."]}
-            difficulty={"Easy"}
+              link={"/BL-Vuln/BL_Vuln_labs/first_lab"}
+              image={labImg}
+              title={"Excessive trust in client-side controls"}
+              brief={[
+                "This lab doesn't adequately validate user input. You can exploit a logic flaw in its purchasing workflow to buy items for an unintended price. To solve the lab, buy a 'Lightweight l33t leather jacket'. You can log in to your own account using the following credentials: ",
+                <code>wiener:peter</code>,
+                ".",
+              ]}
+              difficulty={"Easy"}
             />
 
             {/* lab2 */}
@@ -65,20 +69,6 @@ export default function BL_Vuln_labs() {
               ]}
               difficulty={"Easy"}
             />
-
-            {/* Lab3 */}
-            <Card
-              link={"/BL-Vuln/BL_Vuln_labs/third_lab"}
-              image={labImg}
-              title={"Inconsistent security controls"}
-              brief={[
-                "This lab's flawed logic allows arbitrary users to access administrative functionality that should only be available to company employees. To solve the lab, access the admin panel and delete the user ",
-                <code>carlos</code>,
-                ".",
-              ]}
-              difficulty={"Easy"}
-            />
-
           </div>
         </div>
       </div>

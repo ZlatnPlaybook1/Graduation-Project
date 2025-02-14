@@ -1,5 +1,6 @@
 .my-product-card {
-  width: 370px;
+  width: 100%;
+  max-width: 350px;
   height: 500px;
   background: white;
   margin: auto;
@@ -8,6 +9,7 @@
   border-radius: 10px;
   box-shadow: 0;
   transform: scale(0.95);
+  transform-origin: center center; /* Ensure scaling happens from the center */
   transition: box-shadow 0.5s, transform 0.5s;
 }
 
@@ -15,6 +17,16 @@
   transform: scale(1);
   box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
 }
+
+/* Disable hover effects on devices that don't support hover */
+@media (hover: none) {
+  .my-product-card:hover {
+    transform: scale(0.95);
+    box-shadow: none;
+  }
+}
+
+/* ... rest of your CSS remains unchanged ... */
 
 .product-card__container {
   width: 100%;
@@ -26,10 +38,9 @@
   width: 100%;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 100%;
+  background-size: cover;
 }
 
-/* Element: bottom */
 .product-card__bottom {
   width: 200%;
   height: 20%;
@@ -46,7 +57,6 @@
   padding: 0;
 }
 
-/* Element: left */
 .product-card__left {
   height: 100%;
   width: 50%;
@@ -55,18 +65,16 @@
   float: left;
 }
 
-/* Element: details */
 .product-card__details {
   padding: 10px 5px;
   float: left;
-  width: calc(70% - 40px);
+  width: 70%;
 }
 
 .product-card__details--right {
   float: right;
 }
 
-/* Element: buy */
 .product-card__buy {
   float: right;
   width: calc(30% - 2px);
@@ -93,7 +101,6 @@
   color: #00394b;
 }
 
-/* Element: right */
 .product-card__right {
   width: 50%;
   background: #a6cdde;
@@ -109,7 +116,6 @@
   width: calc(70% - 40px);
 }
 
-/* Element: done */
 .product-card__done {
   width: calc(30% - 2px);
   float: left;
@@ -124,7 +130,6 @@
   color: white;
 }
 
-/* Element: remove */
 .product-card__remove {
   width: calc(30% - 1px);
   clear: both;
@@ -155,7 +160,6 @@
   transform: translateY(-100%);
 }
 
-/* Element: inside */
 .product-card__inside {
   z-index: 9;
   background: #92879b;
@@ -204,7 +208,6 @@
   transition: opacity 0.2s, transform 0.8s;
 }
 
-/* Custom styles for product info (replacing the table) */
 .product-card__info {
   display: flex;
   flex-direction: column;
@@ -226,44 +229,22 @@
   margin-left: 5px;
 }
 
-.products-page {
-  display: flex;
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .my-product-card {
+    max-width: 90%;
+    height: auto;
+  }
+  .product-card__top {
+    height: auto;
+    padding-top: 56.25%; /* Optional: 16:9 aspect ratio */
+  }
+  .product-card__bottom {
+    height: auto;
+  }
 }
 
-.products-page__sidebar {
-  width: 200px;
-  background: #f8f8f8;
-  padding: 5px;
-}
-
-.products-page__sidebar-list {
-  list-style: none;
-  padding: 0;
-}
-
-.products-page__sidebar-item {
-  margin-bottom: 10px;
-}
-.product-card__added {
-  color: #36cc63;
-}
-.products-page__sidebar-link {
-  text-decoration: none;
-  color: #333;
-}
-
-.products-page__main {
-  flex: 1;
-  padding: 5px;
-}
-
-.products-page__title {
-  margin-bottom: 20px;
-}
-
-.products-page__grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(350px, 1fr));
-  gap: 20px;
-  justify-items: center;
+/* Product Page Title */
+.products-page-title {
+  text-align: center;
 }
