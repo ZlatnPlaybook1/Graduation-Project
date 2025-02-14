@@ -1,5 +1,5 @@
 /* Modern BurpSuitLab3.css */
-.items-section {
+/* .items-section {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
@@ -88,7 +88,7 @@
   padding: 2rem;
 }
 /* Responsive Design */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .items-title {
     font-size: 2rem;
   }
@@ -103,7 +103,81 @@
   .item-name {
     font-size: 1.2rem;
   }
+}  */
+/* Stykle page */
+.question-wrapper {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
+
+.question-box h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.answer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.answer-item {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+
+.answer-item:hover {
+  background: #e3f2fd;
+}
+
+.answer-item label {
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+.btn-submit {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-submit:hover {
+  background: #0056b3;
+}
+
+.feedback-message {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.feedback-correct {
+  color: #28a745;
+}
+
+.feedback-wrong {
+  color: #dc3545;
+}
+
 /* BurpSuitDecription jsx style */
 .wallpaper-center {
   display: flex;
