@@ -26,7 +26,7 @@ const CartPage = () => {
   };
 
   const handleCheckout = async () => {
-    if (localStorage.getItem("loggedIn1") !== "true") {
+    if (localStorage.getItem("loggedIn2") !== "true") {
       alert("Please log in to checkout");
       return;
     }

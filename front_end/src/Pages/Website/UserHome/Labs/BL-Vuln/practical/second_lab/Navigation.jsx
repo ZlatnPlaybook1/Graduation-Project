@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./ProductsPage.css";
 const Navigation = () => {
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("loggedIn1") === "true";
+    const isLoggedIn = localStorage.getItem("loggedIn2") === "true";
     setLoggedIn(isLoggedIn);
   }, []);
 
   const handleLogout = () => {
-    localStorage.setItem("loggedIn1", "false");
+    localStorage.setItem("loggedIn2", "false");
     setLoggedIn(false);
   };
 
@@ -36,7 +35,7 @@ const Navigation = () => {
             <li className="nav-item">
               <Link
                 className="nav-link text-light"
-                to="/BL-Vuln/BL_Vuln_labs/first_lab/cart"
+                to="/BL-Vuln/BL_Vuln_labs/second_lab/cart"
               >
                 Cart 🛒
               </Link>
@@ -44,7 +43,7 @@ const Navigation = () => {
             <li className="nav-item">
               <Link
                 className="nav-link text-light"
-                to="/BL-Vuln/BL_Vuln_labs/first_lab"
+                to="/BL-Vuln/BL_Vuln_labs/second_lab"
               >
                 Shopping
               </Link>
@@ -52,7 +51,7 @@ const Navigation = () => {
             <li className="nav-item">
               <Link
                 className="nav-link text-light"
-                to="/BL-Vuln/BL_Vuln_labs/first_lab/myaccount"
+                to="/BL-Vuln/BL_Vuln_labs/second_lab/myaccount"
               >
                 My Account
               </Link>
@@ -67,7 +66,7 @@ const Navigation = () => {
               <li className="nav-item">
                 <Link
                   className=" btn btn-success px-3 ms-2 py-2"
-                  to="/BL-Vuln/BL_Vuln_labs/first_lab/login"
+                  to="/BL-Vuln/BL_Vuln_labs/second_lab/login"
                 >
                   🔑 Login
                 </Link>

@@ -2,9 +2,9 @@ import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import "./BL_Vuln.css";
-import background from "../../assets/img/background.png";
-import imagecourse from "../../assets/img/course_image.png";
-import logicflaw from "../../assets/img/BLV/logic-flaws.jpg";
+import background from "../../assets/img/BLV/background.png";
+import courseImage from "../../assets/img/BLV/course_image.png";
+import logicFlow from "../../assets/img/BLV/logic-flaws.jpg";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function BL_Vuln() {
@@ -16,7 +16,7 @@ export default function BL_Vuln() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        imagecourse={imagecourse}
+        imagecourse={courseImage}
         courseTitle="Business logic vulnerabilities"
         courseDescription="Learn how attackers exploit business logic vulnerabilities in
                 web applications, where legitimate processes are manipulated to
@@ -57,7 +57,7 @@ export default function BL_Vuln() {
                   >
                     Welcome to the Business logic Vulnerability Learning Room!
                   </h3>
-                  <img src={logicflaw} alt="logic flaw img" id="explain-img" />
+                  <img src={logicFlow} alt="logic flaw img" id="explain-img" />
                   <p>
                     In this section, we'll introduce the concept of business
                     logic vulnerabilities and explain how they can arise due to
@@ -78,12 +78,6 @@ export default function BL_Vuln() {
                         vulnerable targets, you can access all of the labs in
                         this topic from the link below. View all business logic
                         vulnerabilities labs. <br />
-                        <button
-                          onClick={() => handleGoToLab("/BL-Vuln/BL_Vuln_labs")}
-                          className="go-labs"
-                        >
-                          Go To Labs
-                        </button>
                       </b>
                     </i>
                   </div>
@@ -115,12 +109,6 @@ export default function BL_Vuln() {
                         vulnerabilities are also known as "application logic
                         vulnerabilities" or simply "logic flaws".
                         <br />
-                        <button
-                          onClick={() => handleGoToLab("/BL-Vuln/BL_Vuln_labs")}
-                          className="go-labs"
-                        >
-                          Go To Labs
-                        </button>
                       </b>
                     </i>
                   </div>
@@ -335,12 +323,6 @@ export default function BL_Vuln() {
                         link below. View all business logic vulnerabilities
                         labs.
                         <br />
-                        <button
-                          onClick={() => handleGoToLab("/BL-Vuln/BL_Vuln_labs")}
-                          className="go-labs"
-                        >
-                          Go To Labs
-                        </button>
                       </b>
                     </i>
                   </div>

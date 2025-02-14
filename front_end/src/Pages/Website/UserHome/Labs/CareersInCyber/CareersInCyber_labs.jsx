@@ -39,7 +39,7 @@ export default function Regex_labs() {
       {/* Start Course */}
       <div className="course">
         <div className="container">
-          <h2>Regular Expressions Labs</h2>
+          <h2>Careers in Cyber MCQ Exams</h2>
           <p className="section-p">Test Your Hacking Skills</p>
           <div className="row">
             {mcqData.map((mcq, id) => (

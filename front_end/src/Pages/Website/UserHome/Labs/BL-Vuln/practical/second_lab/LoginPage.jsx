@@ -24,12 +24,12 @@ const LoginPage = () => {
 
       if (response.ok) {
         // Save the returned user data in localStorage
-        localStorage.setItem("loggedIn1", "true");
+        localStorage.setItem("loggedIn2", "true");
         localStorage.setItem("userId", data.user.id);
         localStorage.setItem("userBalance", data.user.balance);
         localStorage.setItem("userEmail", data.user.email);
         localStorage.setItem("userName", data.user.name);
-        navigate("/BL-Vuln/BL_Vuln_labs/first_lab/myaccount");
+        navigate("/BL-Vuln/BL_Vuln_labs/second_lab/myaccount");
       } else {
         alert(data.message || "Invalid credentials");
       }

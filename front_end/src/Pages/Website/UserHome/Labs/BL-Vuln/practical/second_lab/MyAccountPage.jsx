@@ -11,10 +11,10 @@ const MyAccountPage = () => {
 
   useEffect(() => {
     // Check if the user is logged in
-    const loggedIn = localStorage.getItem("loggedIn1") === "true";
+    const loggedIn = localStorage.getItem("loggedIn2") === "true";
     if (!loggedIn) {
       // Redirect to login if not logged in
-      window.location.href = "/BL-Vuln/BL_Vuln_labs/first_lab/login";
+      window.location.href = "/BL-Vuln/BL_Vuln_labs/second_lab/login";
     } else {
       // Retrieve user details from localStorage
       const email = localStorage.getItem("userEmail") || "";

@@ -6,12 +6,12 @@ const Navigation = () => {
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("loggedIn1") === "true";
+    const isLoggedIn = localStorage.getItem("loggedIn2") === "true";
     setLoggedIn(isLoggedIn);
   }, []);
 
   const handleLogout = () => {
-    localStorage.setItem("loggedIn1", "false");
+    localStorage.setItem("loggedIn2", "false");
     setLoggedIn(false);
   };
 
@@ -19,13 +19,13 @@ const Navigation = () => {
     <nav className="custom-nav">
       <ul className="custom-nav__list">
         <li className="custom-nav__item">
-          <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/cart">Cart</Link>
+          <Link to="/BL-Vuln/BL_Vuln_labs/second_lab/cart">Cart</Link>
         </li>
         <li className="custom-nav__item">
-          <Link to="/BL-Vuln/BL_Vuln_labs/first_lab">Shopping</Link>
+          <Link to="/BL-Vuln/BL_Vuln_labs/second_lab">Shopping</Link>
         </li>
         <li className="custom-nav__item">
-          <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/myaccount">MyAcc</Link>
+          <Link to="/BL-Vuln/BL_Vuln_labs/second_lab/myaccount">MyAcc</Link>
         </li>
         {loggedIn ? (
           <li className="custom-nav__item">
@@ -35,7 +35,7 @@ const Navigation = () => {
           </li>
         ) : (
           <li className="custom-nav__item">
-            <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/login">Login</Link>
+            <Link to="/BL-Vuln/BL_Vuln_labs/second_lab/login">Login</Link>
           </li>
         )}
       </ul>
@@ -67,7 +67,7 @@ const DetailPage = () => {
       />
       <p>{product.description}</p>
       <h4>${product.price.toFixed(2)}</h4>
-      <Link to="/BL-Vuln/BL_Vuln_labs/first_lab" className="btn btn-primary">
+      <Link to="/BL-Vuln/BL_Vuln_labs/second_lab" className="btn btn-primary">
         Back to Shopping
       </Link>
     </div>
