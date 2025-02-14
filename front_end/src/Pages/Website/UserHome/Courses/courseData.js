@@ -446,7 +446,7 @@ const courseData = [
     ],
     difficulty: "Intermediate",
     image: require("../assets/img/Captcha Bypass/card_image.png"),
-    state: "pending",
+    state: "published",
     link: "/captchabypass",
   },
   {
