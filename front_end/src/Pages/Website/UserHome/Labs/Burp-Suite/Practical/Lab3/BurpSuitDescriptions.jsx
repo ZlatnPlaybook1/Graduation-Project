@@ -40,7 +40,12 @@ export default function BurpSuitDescriptions() {
     fetchWallpaperDetails();
   }, [id]);
 
-  if (!allowedIds.includes(id)) return <p>Not Found</p>;
+  if (!allowedIds.includes(id))
+    return (
+      <div className="not-found-container">
+        <p className="not-found-image">Not Found</p>
+      </div>
+    );
   if (loading) return <p>Loading wallpaper details...</p>;
   if (error) return <p className="text-danger">Error: {error}</p>;
   if (!wallpaper) return <p>Wallpaper not found.</p>;
