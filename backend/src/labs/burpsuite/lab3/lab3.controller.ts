@@ -5,7 +5,7 @@ export const images = async (req: Request, res: Response) => {
   try {
     const images = await prisma.burPSuiteLab3.findMany({
       where: {
-        id: { in: ["3", "6", "9"] }, // Convert IDs to strings
+        id: { in: ["3", "6", "9"] },
       },
     });
 
@@ -26,12 +26,13 @@ export const image = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
 
+    // Return 404 immediately if ID is not in allowed list
     if (!["3", "6", "9"].includes(id)) {
-      return res.status(403).send("Access denied");
+      return res.status(404).send("No image found");
     }
 
     const image = await prisma.burPSuiteLab3.findUnique({
-      where: { id }, // Use `id` as a string
+      where: { id },
     });
 
     if (!image) {
