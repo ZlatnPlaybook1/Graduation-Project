@@ -1,14 +1,15 @@
-.bannerContainer {
+.soonBannerContainer {
   width: 100vw;
   overflow: hidden;
-  background: var(--light-primary);
-  position: fixed;
-  top: 0;
-  left: 0;
+  background-color: #212c42;
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
   z-index: 1000;
   display: flex;
   align-items: center;
   font-size: 1rem;
+  box-shadow: 1px 1px 4px 0px #a3ea2a;
 }
 
 .soonBanner {
@@ -20,7 +21,7 @@
 .soonBannerText {
   width: 100vw;
   font-weight: bold;
-  color: var(--text-color);
+  color: #a3ea2a;
   display: flex;
   align-items: center;
   justify-content: center;

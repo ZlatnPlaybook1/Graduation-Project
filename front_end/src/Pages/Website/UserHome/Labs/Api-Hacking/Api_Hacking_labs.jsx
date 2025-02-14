@@ -2,12 +2,13 @@ import React from "react";
 import Header from "../../Header/Header";
 import "./Api_Hacking.css";
 import labImg from "../../assets/img/Api_Hacking/lab.jpg";
-
+import Banner from "../../Banner/Banner";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
 export default function AC_Vuln_labs() {
   return (
     <>
+      <Banner />
       <Header />
       {/* Start Landing */}
       <div className="landing">

@@ -1,17 +1,18 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import "./BL_Vuln.css";
 import background from "../../assets/img/BLV/background.png";
 import courseImage from "../../assets/img/BLV/course_image.png";
 import logicFlow from "../../assets/img/BLV/logic-flaws.jpg";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
+import Banner from "../../Banner/Banner.jsx";
 export default function BL_Vuln() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
   return (
     <>
+      <Banner />
       <Header />
       {/* Start Landing */}
       <LandingLab

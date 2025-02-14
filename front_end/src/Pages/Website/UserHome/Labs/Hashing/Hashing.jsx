@@ -1,8 +1,9 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
+import Banner from "../../Banner/Banner";
 import background from "../../assets/img/background.png";
-import imagecourse from "../../assets/img/course_image.png";
+import courseImage from "../../assets/img/course_image.png";
 import HashingVsEncryption from "../../assets/img/Hashing/hashing-vs-encryption.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
@@ -14,11 +15,12 @@ export default function Hashing() {
 
   return (
     <>
+      <Banner />
       <Header />
       {/* Start Landing */}
       <LandingLab
         background={background}
-        imagecourse={imagecourse}
+        imagecourse={courseImage}
         courseTitle="Hashing"
         courseDescription="Learn how attackers exploit access control vulnerabilities in web applications, gaining unauthorized access to sensitive areas or data, and the techniques used to detect and prevent these attacks."
         difficulty="Intermediate"

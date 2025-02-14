@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../../Header/Header";
-import "./BL_Vuln.css";
 import labImg from "../../assets/img/BLV/lab1.jpeg";
-
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
+import Banner from "../../Banner/Banner";
 export default function BL_Vuln_labs() {
   return (
     <>
+      <Banner />
       <Header />
       {/* Start Landing */}
       <div className="landing">

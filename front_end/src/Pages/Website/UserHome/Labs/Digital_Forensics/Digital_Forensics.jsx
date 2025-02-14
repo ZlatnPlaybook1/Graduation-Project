@@ -1,9 +1,10 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
+import Banner from "../../Banner/Banner";
 import "../Page_Styles/Content.css";
 import background from "../../assets/img/background.png";
-import imagecourse from "../../assets/img/course_image.png";
+import courseImage from "../../assets/img/course_image.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
 export default function Digital_Forensics() {
@@ -11,11 +12,12 @@ export default function Digital_Forensics() {
 
   return (
     <>
+      <Banner />
       <Header />
       {/* Start Landing */}
       <LandingLab
         background={background}
-        imagecourse={imagecourse}
+        imagecourse={courseImage}
         courseTitle="Digital Forensics"
         courseDescription="Learn how experts leverage digital forensics to investigate
                 cybercrimes, uncover evidence, and analyze digital footprints.

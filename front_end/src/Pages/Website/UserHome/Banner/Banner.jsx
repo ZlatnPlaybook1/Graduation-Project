@@ -2,7 +2,7 @@ import styles from "./Banner.module.css";
 
 function Banner() {
   const text =
-    "My site for My Frontend Mentor Projects is still in progress...";
+    "This Content is Coming Soon. Please check back later for updates.";
 
   return (
     <div className={styles.soonBannerContainer}>

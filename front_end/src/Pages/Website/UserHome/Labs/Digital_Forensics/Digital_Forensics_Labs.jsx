@@ -1,13 +1,14 @@
 import React from "react";
 import Header from "../../Header/Header";
-import "./Digital_Forensics.css";
 import mcqData from "./MCQCards";
 import labImg from "../../assets/img/DigitalForensics/Email.jpg";
 import Footer from "../../Footer/Footer";
+import Banner from "../../Banner/Banner";
 import { Card } from "../../Card/Card";
 export default function Digital_Forensics_labs() {
   return (
     <>
+      <Banner />
       <Header />
       {/* Start Landing */}
       <div className="landing">

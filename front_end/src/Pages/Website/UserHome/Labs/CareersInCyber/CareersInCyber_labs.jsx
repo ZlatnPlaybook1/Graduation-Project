@@ -2,10 +2,12 @@ import React from "react";
 import Header from "../../Header/Header";
 import mcqData from "./MCQCards";
 import Footer from "../../Footer/Footer";
+import Banner from "../../Banner/Banner";
 import { Card } from "../../Card/Card";
 export default function Regex_labs() {
   return (
     <>
+      <Banner />
       <Header />
       {/* Start Landing */}
       <div className="landing">
