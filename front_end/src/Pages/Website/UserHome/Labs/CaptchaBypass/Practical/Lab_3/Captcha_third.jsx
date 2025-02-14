@@ -13,7 +13,7 @@ export default function Captcha_third() {
   const [err, setErr] = useState("");
   const [id, setID] = useState(1);
   const recaptchaRef = useRef(null);
-
+  const captchaSiteKey = "6LeS-dEqAAAAAPpBMi_ZYtf2dHEF5m0GqtzRYzR1";
   function handleCaptchaChange(token) {
     setCaptcha(token);
   }
@@ -35,7 +35,6 @@ export default function Captcha_third() {
         "http://127.0.0.1:8080/api/capatchalab3",
         { token: captcha }
       );
-
       if (!verifyRes.data.success) {
         setErr("Captcha verification failed, try again.");
         setLoading(false);
@@ -116,7 +115,7 @@ export default function Captcha_third() {
                   <h3>Captcha Verification</h3>
                   <ReCAPTCHA
                     ref={recaptchaRef}
-                    sitekey="6LeS-dEqAAAAAPpBMi_ZYtf2dHEF5m0GqtzRYzR1"
+                    sitekey={captchaSiteKey}
                     onChange={handleCaptchaChange}
                   />
                 </div>
