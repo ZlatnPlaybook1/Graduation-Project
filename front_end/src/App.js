@@ -51,7 +51,7 @@ import LINUX_FOURTH_LAB from "./Pages/Website/UserHome/Labs/Linux/practical/thir
 // Access Control Vulnerability
 import AC_VULN from "./Pages/Website/UserHome/Labs/AC-Vuln/AC_Vuln.jsx";
 import AC_VULN_LABS from "./Pages/Website/UserHome/Labs/AC-Vuln/AC_Vuln_labs.jsx";
-import AC_VULN_FIRST_LAB from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/first_lab/First_Lab.jsx";
+import AC_VULN_FIRST_LAB from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/first_lab/First_Lab1.jsx";
 import AC_VULN_SECOND_LAB from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/second_lab/Second_Lab.jsx";
 import AC_VULN_THIRD_LAB from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/third_lab/Third_Lab.jsx";
 import AC_VULN_THIRD_LAB_LOGIN from "./Pages/Website/UserHome/Labs/AC-Vuln/practical/third_lab/Third_Lab_LoginForm.jsx";
