@@ -5,7 +5,6 @@
   padding: 0 1rem;
   text-align: center;
 }
-
 .items-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -16,7 +15,6 @@
   position: relative;
   display: inline-block;
 }
-
 .items-title::after {
   content: "";
   width: 50px;
@@ -26,14 +24,12 @@
   margin: 8px auto 0;
   border-radius: 2px;
 }
-
 .items-wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.5rem;
 }
-
 .item-card {
   background: #ffffff;
   border-radius: 15px;
@@ -45,7 +41,6 @@
   max-width: 300px;
   position: relative;
 }
-
 .item-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -63,7 +58,6 @@
   border-radius: 5px;
   text-transform: uppercase;
 }
-
 .item-image {
   width: 100%;
   height: 220px;
@@ -71,15 +65,12 @@
   border-bottom: 2px solid #eee;
   transition: opacity 0.3s ease;
 }
-
 .item-card:hover .item-image {
   opacity: 0.9;
 }
-
 .item-info {
   padding: 1.2rem;
 }
-
 .item-name {
   font-size: 1.4rem;
   font-weight: 600;
@@ -87,18 +78,15 @@
   margin: 0;
   transition: color 0.3s ease;
 }
-
 .item-card:hover .item-name {
   color: #ff6b6b;
 }
-
 .items-empty {
   font-size: 1.2rem;
   color: #777;
   text-align: center;
   padding: 2rem;
 }
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .items-title {
@@ -108,7 +96,6 @@
     max-width: 100%;
   }
 }
-
 @media (max-width: 480px) {
   .items-title {
     font-size: 1.75rem;
@@ -117,7 +104,6 @@
     font-size: 1.2rem;
   }
 }
-
 /* BurpSuitDecription jsx style */
 .wallpaper-center {
   display: flex;
@@ -164,7 +150,6 @@
   text-align: center;
   margin: 1rem 0 0.5rem;
 }
-
 .wallpaper-card__description {
   font-size: 1rem;
   background: linear-gradient(135deg, #1e293b, #0f172a);
@@ -175,7 +160,6 @@
   margin: 0 0 1.5rem;
   padding: 0 1.5rem;
 }
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .wallpaper-card {

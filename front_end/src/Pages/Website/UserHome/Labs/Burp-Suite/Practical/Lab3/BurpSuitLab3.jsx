@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "./BurpSuitLab3.css";
 import GOBack from "../../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
+import MCQQuiz from "../../../../MCQ_Form/MCQQuiz";
+import MCQData from "./BurpSuitLab3/BurpSuit.json";
 
 export default function BurpSuitLab3() {
   const navigate = useNavigate();
@@ -25,7 +27,7 @@ export default function BurpSuitLab3() {
           throw new Error("Invalid API response format");
         }
 
-        setWallpapers(data.data); // Store the array of wallpapers
+        setWallpapers(data.data);
       } catch (error) {
         setError("Failed to load wallpapers.");
       } finally {
@@ -53,34 +55,7 @@ export default function BurpSuitLab3() {
       <GOBack />
       <ShowHint hintText={hintMessage} />
 
-      <div className="items-section">
-        <h2 className="items-title">Item Details</h2>
-
-        {wallpapers.length > 0 ? (
-          <div className="items-wrapper">
-            {wallpapers
-              .filter((item) => [3, 6, 9].includes(Number(item.id)))
-              .map((item) => (
-                <div
-                  key={item.id}
-                  className="item-card"
-                  onClick={() => handleImageClick(item.id)}
-                >
-                  <img
-                    src={`http://127.0.0.1:8080/${item.path}`}
-                    alt={item.name}
-                    className="item-image"
-                  />
-                  <div className="item-info">
-                    <h5 className="item-name">{item.name}</h5>
-                  </div>
-                </div>
-              ))}
-          </div>
-        ) : (
-          <p className="items-empty">No items found.</p>
-        )}
-      </div>
+      <MCQQuiz questionsData={MCQData} />
     </>
   );
 }

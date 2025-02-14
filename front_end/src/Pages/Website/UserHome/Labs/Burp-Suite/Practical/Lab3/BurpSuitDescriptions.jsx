@@ -11,7 +11,15 @@ export default function BurpSuitDescriptions() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Allowed IDs
+  const allowedIds = ["3", "6", "9"];
+
   useEffect(() => {
+    if (!allowedIds.includes(id)) {
+      setLoading(false);
+      return;
+    }
+
     const fetchWallpaperDetails = async () => {
       try {
         const response = await fetch(
@@ -32,6 +40,7 @@ export default function BurpSuitDescriptions() {
     fetchWallpaperDetails();
   }, [id]);
 
+  if (!allowedIds.includes(id)) return <p>Not Found</p>;
   if (loading) return <p>Loading wallpaper details...</p>;
   if (error) return <p className="text-danger">Error: {error}</p>;
   if (!wallpaper) return <p>Wallpaper not found.</p>;
