@@ -230,3 +230,19 @@ model Lab2captchaComment {
   id      String  @id @default(uuid())
   comment String?
 }
+model BLVulnUser {
+  id        Int               @id @default(autoincrement())
+  email     String            @unique
+  name      String?
+  password  String            @default("") // New field with a default value
+  balance   Float             @default(0)
+  cartItems BLVulnCartItem[]
+}
+
+model BLVulnCartItem {
+  id        Int         @id @default(autoincrement())
+  productId Int
+  quantity  Int
+  user      BLVulnUser  @relation(fields: [userId], references: [id])
+  userId    Int
+}

@@ -13,7 +13,6 @@ const Navigation = () => {
   const handleLogout = () => {
     localStorage.setItem("loggedIn", "false");
     setLoggedIn(false);
-    // Optionally, you can add a redirect here
   };
 
   return (
@@ -46,14 +45,14 @@ const Navigation = () => {
 
 const CartPage = () => {
   const [cart, setCart] = useState([]);
+  // Base URL for backend API
+  const BASE_URL = "http://localhost:8080/api";
 
-  // Load cart from localStorage on mount
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(storedCart);
   }, []);
 
-  // Update quantity of a given cart item
   const updateQuantity = (index, newQuantity) => {
     const updatedCart = [...cart];
     updatedCart[index].quantity = newQuantity;
@@ -61,7 +60,6 @@ const CartPage = () => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  // Remove an item from the cart
   const removeItem = (index) => {
     const updatedCart = [...cart];
     updatedCart.splice(index, 1);
@@ -69,28 +67,45 @@ const CartPage = () => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  // Checkout functionality with API call
   const handleCheckout = async () => {
-    // Prepare order data: each item includes id, price, and quantity.
-    const orderItems = cart.map((item) => ({
+    if (localStorage.getItem("loggedIn") !== "true") {
+      alert("Please log in to checkout");
+      return;
+    }
+
+    const userBalance = parseFloat(localStorage.getItem("userBalance")) || 0;
+    const items = cart.map((item) => ({
       id: item.id,
       price: item.price,
       quantity: item.quantity,
     }));
+    const totalPrice = cart.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+
+    const payload = {
+      items,
+      totalPrice,
+      userBalance,
+    };
 
     try {
-      const response = await fetch("https://example.com/api/buy", {
-        // Replace with your actual API endpoint
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(orderItems),
-      });
-      if (!response.ok) {
-        throw new Error("Failed to place order");
-      }
+      const userId = localStorage.getItem("userId");
+      const response = await fetch(
+        `${BASE_URL}/bLVuln-cart/checkout/${userId}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
       const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.message || "Checkout failed");
+      }
       alert("Order placed successfully!");
       setCart([]);
       localStorage.removeItem("cart");
@@ -116,7 +131,7 @@ const CartPage = () => {
             <th>Price</th>
             <th>Quantity</th>
             <th>Total</th>
-            <th>Remove</th> {/* New column for delete functionality */}
+            <th>Remove</th>
           </tr>
         </thead>
         <tbody>

@@ -118,6 +118,8 @@ import BL_VULN_LABS from "./Pages/Website/UserHome/Labs/BL-Vuln/BL_Vuln_labs.jsx
 import BL_VULN_FIRST_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/First_Lab.jsx";
 import BL_VULN_FIRST_LAB_CART from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/CartPage.jsx";
 import BL_VULN_FIRST_LAB_DETAIL_PAGE from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/DetailPage.jsx";
+import BL_VULN_FIRST_LAB_LOGIN from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/LoginPage.jsx";
+import BL_VULN_FIRST_LAB_MYACCOUNT from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/first_lab/MyAccountPage.jsx";
 import BL_VULN_SECOND_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/second_lab/Second_Lab.jsx";
 import BL_VULN_THIRD_LAB from "./Pages/Website/UserHome/Labs/BL-Vuln/practical/third_lab/Third_Lab.jsx";
 // End Business Logic Vulnerability
@@ -415,6 +417,14 @@ function App() {
           <Route
             path="/BL-Vuln/BL_Vuln_labs/first_lab/ProductDetail/:id"
             element={<BL_VULN_FIRST_LAB_DETAIL_PAGE />}
+          />
+          <Route
+            path="/BL-Vuln/BL_Vuln_labs/first_lab/login"
+            element={<BL_VULN_FIRST_LAB_LOGIN />}
+          />
+          <Route
+            path="/BL-Vuln/BL_Vuln_labs/first_lab/myaccount"
+            element={<BL_VULN_FIRST_LAB_MYACCOUNT />}
           />
           <Route
             path="/BL-Vuln/BL_Vuln_labs/second_lab"

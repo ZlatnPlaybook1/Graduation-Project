@@ -5,7 +5,7 @@ import { useParams, Link } from "react-router-dom";
 const Navigation = () => {
   const [loggedIn, setLoggedIn] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const isLoggedIn = localStorage.getItem("loggedIn") === "true";
     setLoggedIn(isLoggedIn);
   }, []);
@@ -13,7 +13,6 @@ const Navigation = () => {
   const handleLogout = () => {
     localStorage.setItem("loggedIn", "false");
     setLoggedIn(false);
-    // Optionally add redirection here
   };
 
   return (

@@ -19,7 +19,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="custom-nav">
+    <div className="custom-nav">
       <ul className="custom-nav__list">
         <li className="custom-nav__item">
           <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/cart">Cart</Link>
@@ -42,7 +42,7 @@ const Navigation = () => {
           </li>
         )}
       </ul>
-    </nav>
+    </div>
   );
 };
 
@@ -132,7 +132,7 @@ const ProductCard = ({ product, addToCart }) => {
               <span className="product-card__info-text">
                 <Link
                   to={`/BL-Vuln/BL_Vuln_labs/first_lab/ProductDetail/${product.id}`}
-                  className="product-card__info-text text-danger"
+                  className="text-danger"
                 >
                   Click Here
                 </Link>

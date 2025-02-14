@@ -48,6 +48,7 @@ import lab2capatcha from "./labs/capatchaBypass/lab2/lab2.router";
 import lab3capatcha from "./labs/capatchaBypass/lab3/lab3.router";
 import lab1SSTI from "./labs/SSTI/lab1/lab1.router";
 import lab2SSTI from "./labs/SSTI/lab2/lab2.router";
+import bLVulnRouter from "./labs/BL-Vuln/Lab1/lab1.router";
 
 const app = express();
 app.use("/uploads", express.static("uploads"));
@@ -114,6 +115,7 @@ app.use("/api", lab2capatcha);
 app.use("/api", lab3capatcha);
 app.use("/api", lab1SSTI);
 app.use("/api", lab2SSTI);
+app.use("/api", bLVulnRouter);
 
 dotenv.config();
 

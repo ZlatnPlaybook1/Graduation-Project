@@ -1,10 +1,14 @@
-// import express from "express";
-// import { addToCart, getCart, checkoutCart } from "./lab1.controller";
+import express from "express";
+import { addToCart, getCart, checkoutCart, loginUser } from "./lab1.controller";
 
-// const cartRouter = express.Router();
+const bLVulnRouter = express.Router();
 
-// cartRouter.post("/cart", addToCart); // Add item to cart
-// cartRouter.get("/cart/:userId", getCart); // Get cart details
-// cartRouter.post("/cart/checkout/:userId", checkoutCart); // Checkout cart
+// Login endpoint
+bLVulnRouter.post("/bLVuln-login", loginUser);
 
-// export default cartRouter;
+// Cart endpoints
+bLVulnRouter.post("/bLVuln-cart", addToCart);
+bLVulnRouter.get("/bLVuln-cart/:userId", getCart);
+bLVulnRouter.post("/bLVuln-cart/checkout/:userId", checkoutCart);
+
+export default bLVulnRouter;
