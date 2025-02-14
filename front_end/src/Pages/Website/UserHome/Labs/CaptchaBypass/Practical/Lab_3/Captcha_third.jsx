@@ -31,20 +31,20 @@ export default function CaptchaThird() {
     }
 
     try {
-      // Verify CAPTCHA with backend
-      const verifyRes = await axios.post("http://127.0.0.1:8080/api/capatchalab3", { token: captcha });
+      // Send comment and CAPTCHA token together
+      const response = await axios.post("http://127.0.0.1:8080/api/capatchalab3comments", {
+        comment,
+        token: captcha, // ✅ Sent together in the same request
+      });
 
-      if (!verifyRes.data.success) {
+      if (!response.data.success) {
         setErr("Captcha verification failed, try again.");
         setLoading(false);
         return;
       }
 
       // Add comment after successful CAPTCHA verification
-      const newComment = { id, comment };
-      await axios.post("http://127.0.0.1:8080/api/capatchalab3comments", { comment });
-
-      setComments((prev) => [...prev, newComment]);
+      setComments((prev) => [...prev, { id, comment }]);
       setID((prevID) => prevID + 1);
       setComment("");
       setCaptcha(null);
@@ -57,31 +57,10 @@ export default function CaptchaThird() {
     }
   }
 
-  async function deleteCaptcha() {
-    setLoading(true);
-    setErr("");
-
-    try {
-      await axios.delete("http://127.0.0.1:8080/api/capatchalab3comments");
-      setComments([]);
-      setComment("");
-      setCaptcha(null);
-      setID(1);
-      recaptchaRef.current?.reset();
-    } catch (error) {
-      setErr(error.response?.data?.message || "Network Error");
-      console.error("Error resetting captcha:", error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
   return (
     <div className="body-captcha">
-            <GoBack_Btn />
-            <ShowHint_Btn
-              hintText={`Hint`}
-            />
+      <GoBack_Btn />
+      <ShowHint_Btn hintText={`Hint`} />
       <div className="captcha_first">
         <div className="container-captcha">
           <div className="card-captcha">
@@ -113,11 +92,6 @@ export default function CaptchaThird() {
                 </div>
               </form>
             </div>
-          </div>
-          <div className="reset mb-5">
-            <button onClick={deleteCaptcha} disabled={loading}>
-              {loading ? "Resetting..." : "Reset"}
-            </button>
           </div>
           <div className="comment-section">
             {comments.map((cmt) => (
