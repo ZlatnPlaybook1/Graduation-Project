@@ -42,7 +42,6 @@ export default function Robots() {
 
   return (
     <>
-      <Header />
       {/* Start Course Content */}
       <div className="course-Second_lab">
         <div className="container-Second_lab">
