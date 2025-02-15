@@ -9,6 +9,7 @@ export default function SSTI_store() {
   const [outOfStockMessage, setOutOfStockMessage] = useState(""); // State to hold the out-of-stock message
   const [resetMessage, setResetMessage] = useState("");
   const [messageFromURL, setMessageFromURL] = useState(""); // New state for URL message
+  const [htmlContent, setHtmlContent] = useState("");
 
   const hintMessage = ` 
     <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
@@ -39,23 +40,41 @@ export default function SSTI_store() {
     try {
       // Send the message to the backend (POST request)
       const response = await axios.post(
-        "http://127.0.0.1:8080/api/submitMessage", // Change this endpoint to your API
+        "http://127.0.0.1:8080/api/SSTIlab2/submitMessage", // Change this endpoint to your API
         { message } // Sending the message in the request body
       );
-      
+
       // Handle the response from the backend
       console.log("Message sent to backend:", response.data);
+      setHtmlContent(response.data);
       // You can update the UI based on the backend response if needed
     } catch (error) {
       console.error("Error sending message to backend:", error);
     }
   };
+  // const getMessageFromBackend = async () => {
+  //   try {
+  //     // Send the message to the backend (POST request)
+  //     const response = await axios.get(
+  //       "http://127.0.0.1:8080/api/submitMessage", // Change this endpoint to your API
+  //       { message } // Sending the message in the request body
+  //     );
+
+  //     // Handle the response from the backend
+  //     console.log("Message Got from backend:", response.data);
+  //     // You can update the UI based on the backend response if needed
+  //   } catch (error) {
+  //     console.error("Error sending message to backend:", error);
+  //   }
+  // };
 
   const labreset = async () => {
     try {
       // Call the backend API to reset
-      const response = await axios.get("http://127.0.0.1:8080/api/SSTIlab2Reset");
-      
+      const response = await axios.get(
+        "http://127.0.0.1:8080/api/SSTIlab2Reset"
+      );
+
       // Handle the response from the backend
       if (response.status === 200) {
         setResetMessage(response.data.message); // Display the success message from the backend
@@ -122,6 +141,12 @@ export default function SSTI_store() {
         >
           <h2>{outOfStockMessage}</h2>
         </div>
+      )}
+      {htmlContent && (
+        <div
+          className="backend-response"
+          dangerouslySetInnerHTML={{ __html: htmlContent }} // This will render the HTML content
+        />
       )}
 
       <div className="course-store-ssti">

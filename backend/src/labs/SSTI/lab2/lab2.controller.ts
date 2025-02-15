@@ -8,7 +8,7 @@ Handlebars.registerHelper("evil", function (code: string) {
 });
 
 export const lab2controller = async (req: Request, res: Response) => {
-  let userInput = req.params.payload;
+  let userInput = req.body.message;
   console.log("Lab Exercise - User Input:", userInput);
 
   const targetDir = path.resolve(__dirname, '../../../labs/SSTI/lab2/secretFolder');
