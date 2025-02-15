@@ -18,9 +18,12 @@ interface ReCaptchaResponse {
 export const submitComment = async (req: Request, res: Response) => {
   const { comment, token } = req.body;
 
-  if (!comment) {
-    return res.status(400).json({ success: false, message: "Comment cannot be empty" });
-  }
+            // CAPTCHA is valid, store the comment
+            await prisma.lab3captchaComment.create({
+              data: {
+                comment: comment,
+              },
+            }); 
 
   // ⚡ Bypass CAPTCHA verification for backend flexibility
   if (!token) {
@@ -38,16 +41,14 @@ export const submitComment = async (req: Request, res: Response) => {
       })
     );
 
+
+    
+
+
     if (!response.data.success) {
       return res.status(400).json({ success: false, message: "Invalid CAPTCHA", errors: response.data['error-codes'] });
     }
 
-    // CAPTCHA is valid, store the comment
-    await prisma.lab3captchaComment.create({
-      data: {
-        comment: comment,
-      },
-    }); 
 
     return res.status(200).json({ success: true, message: "Comment added successfully" });
   } catch (error) {
