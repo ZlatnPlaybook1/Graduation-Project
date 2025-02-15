@@ -52,7 +52,7 @@ export default function SSTI_lab() {
             difficulty={"Easy"}
             />
             <Card
-            link={"/SSTI/SSTI_lab/store"}
+            link={"/SSTI/SSTI_lab2/store"}
             image={image}
             title={"SSTI Store Vulnerability"}
             brief={"This lab is vulnerable to server-side template injection due to the unsafe construction of an ERB template."}

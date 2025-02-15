@@ -210,6 +210,7 @@ import CAPTCHABYPASS_3 from "./Pages/Website/UserHome/Labs/CaptchaBypass/Practic
 // JWT Attacks
 import JWTAttacks from "./Pages/Website/UserHome/Labs/JWTAttacks/JWTAttacks.jsx";
 import JWTATTACKS_LAB from "./Pages/Website/UserHome/Labs/JWTAttacks/JWTAttacks_lab.jsx";
+import JWT_LAB_FIRST from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Lab_1/lab1.jsx";
 // End JWT Attacks
 import Robots from "./Pages/Website/UserHome/Labs/XSS/Practical/Robots.jsx";
 import XSS_SEVEN from "./Pages/Website/UserHome/Labs/XSS/Practical/XSS_SEVEN.jsx";
@@ -275,7 +276,6 @@ import BurpSuitLab2 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab
 import BurpSuitLab3 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab3/BurpSuitLab3.jsx";
 import BurpSuitLab4 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab4/BurpSuitLab4.jsx";
 import BurpSuitDescriptions from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab3/BurpSuitDescriptions.jsx";
-import Test from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Lab_1/test.jsx";
 import RaceCondition from "./Pages/Website/UserHome/Labs/Condition_Race/RaceCondition.jsx";
 import RaceConditionLabs from "./Pages/Website/UserHome/Labs/Condition_Race/RaceConditionLabs.jsx";
 import RaceConditionInRegister from "./Pages/Website/UserHome/Labs/Condition_Race/Practical/Lab1/RC_In_Register.jsx";
@@ -1025,7 +1025,7 @@ function App() {
           <Route path="/SSTI/SSTI_lab/blog" element={<Blog />} />
           <Route path="/SSTI/SSTI_lab/blog-item" element={<BLOG_ITEM />} />
           <Route path="/SSTI/SSTI_lab/blog/login" element={<BLOG_LOGIN />} />
-          <Route path="/SSTI/SSTI_lab/store" element={<SSTI_STORE />} />
+          <Route path="/SSTI/SSTI_lab2/store" element={<SSTI_STORE />} />
           {/* End SSTI */}
           {/* Start CaptchaBypass */}
           <Route path="/captchabypass" element={<CaptchaBypass />} />
@@ -1052,8 +1052,11 @@ function App() {
             path="/jwtattacks/jwtattacks_lab"
             element={<JWTATTACKS_LAB />}
           />
+          <Route
+            path="/jwtattacks/jwtattacks_lab/lab1"
+            element={<JWT_LAB_FIRST />}
+          />
           {/* End JWTAttacks */}
-          <Route path="/test" element={<Test />} />
         </Route>
         {/* End Routes of Labs */}
 

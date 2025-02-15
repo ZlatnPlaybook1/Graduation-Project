@@ -8,6 +8,11 @@ import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function BlogItem() {
+  const [resetMessage, setResetMessage] = useState("");
+  const [form, setForm] = useState({ name: "", content: "" });
+  const [comments, setComments] = useState([]);
+  const [err, setErr] = useState("");
+  const [loading, setLoading] = useState(false);
   const hintMessage = `
     <div style={{ textAlign: "left", fontSize: "1rem", lineHeight: "1.5", color: "#333" }}>
       <p>Enter the following into the comment box:</p>
@@ -20,11 +25,6 @@ export default function BlogItem() {
     </div>
   `;
 
-  const [form, setForm] = useState({ name: "", content: "" });
-  const [comments, setComments] = useState([]);
-  const [err, setErr] = useState("");
-  const [loading, setLoading] = useState(false);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const content = e.target.content.value;
@@ -35,7 +35,7 @@ export default function BlogItem() {
     try {
       // Send the comment data to the backend API
       const response = await axios.post(
-        "http://127.0.0.1:8080/api/sstiBlogComments",
+        "http://127.0.0.1:8080/api/SSTI1Comments",
         {
           content,
           name,
@@ -50,22 +50,69 @@ export default function BlogItem() {
 
       setComments((prevComments) => [...prevComments, newComment]);
       setErr(""); // Clear error message
+      fetchComments(); // Fetch comments again to update the list
     } catch (err) {
       setErr("Failed to submit the comment");
       console.error("Error submitting comment:", err);
     } finally {
       setLoading(false);
     }
-
-    // Reset the form after submission
-    setForm({ name: "", content: "" });
   };
+
+  // Reset the form after submission
+  useEffect(() => {
+    setForm({ name: "", content: "" });
+  }, [comments]); // Only reset form when comments change
+
+  async function fetchComments() {
+    try {
+      const response = await axios.get(
+        "http://127.0.0.1:8080/api/SSTI1Comments"
+      );
+
+      if (Array.isArray(response.data.comments)) {
+        setComments(
+          response.data.comments.map((cmt, name) => ({
+            name: name,
+            ...cmt,
+          }))
+        );
+      } else {
+        setComments([]);
+      }
+    } catch (error) {
+      setErr("Failed to fetch comments.");
+      console.error("Error fetching comments:", error);
+      setComments([]);
+    }
+  }
+
+  const labreset = async () => {
+    try {
+      // Call the backend API to reset
+      const response = await axios.get(
+        "http://127.0.0.1:8080/api/SSTIlab1Reset"
+      );
+      // Handle the response from the backend
+      if (response.status === 200) {
+        setResetMessage(response.data.message); // Display the success message from the backend
+      }
+    } catch (error) {
+      console.error("Error resetting:", error);
+      setResetMessage("Error: Could not reset.");
+    }
+  };
+
+  useEffect(() => {
+    fetchComments();
+  }, []);
 
   return (
     <>
       <div className="course-blog-item">
         <GoBack_Btn />
         <ShowHint hintText={hintMessage} />
+
         <div className="container-blog-item">
           <div className="row-practice">
             <div className="card-blog-item">
@@ -164,6 +211,19 @@ export default function BlogItem() {
                   </div>
                 ))}
               </div>
+              <button
+                onClick={labreset}
+                className="reset-btn"
+                style={{
+                  width: "fit-content",
+                  marginTop: "20px",
+                  marginLeft: "20px",
+                  borderRadius: "5px",
+                  left: "0",
+                }}
+              >
+                Reset
+              </button>
             </div>
           </div>
         </div>
