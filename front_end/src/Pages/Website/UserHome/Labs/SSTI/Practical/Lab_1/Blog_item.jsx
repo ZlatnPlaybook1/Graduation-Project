@@ -27,7 +27,7 @@ export default function BlogItem() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const content = e.target.content.value;
+    const comment = e.target.content.value;
     const name = e.target.name.value;
 
     setLoading(true);
@@ -37,7 +37,7 @@ export default function BlogItem() {
       const response = await axios.post(
         "http://127.0.0.1:8080/api/SSTI1Comments",
         {
-          content,
+          comment,
           name,
         }
       );
