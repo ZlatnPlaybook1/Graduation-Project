@@ -116,7 +116,9 @@ export default function IDORLabComponent() {
 
         <form onSubmit={handleTransfer} className="idorlab-transfer-form">
           <div className="form-group">
-            <label htmlFor="transfer_amount">Transfer Amount:</label>
+            <label className="transferAmount" htmlFor="transfer_amount">
+              Transfer Amount:
+            </label>
             <input
               className="idor-number"
               type="number"
@@ -126,7 +128,9 @@ export default function IDORLabComponent() {
               required
             />
 
-            <label htmlFor="recipient_id">Recipient ID:</label>
+            <label className="transferAmount" htmlFor="recipient_id">
+              Recipient ID:
+            </label>
             <input
               type="number"
               id="recipient_id"
