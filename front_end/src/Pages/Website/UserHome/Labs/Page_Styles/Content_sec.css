@@ -342,6 +342,7 @@ b {
   font-weight: 400;
 }
 
+
 .faq-section-labd .section-text-labd .faq-body-labd a:not(.go-to) {
   color: var(--sec-main-color);
   text-decoration: underline;
@@ -603,7 +604,7 @@ b {
 }
 
 .pink-note {
-  display: inline;
+  display: inline-block!important;
   color: #d63384;
   font-weight: 400;
   text-transform: capitalize;

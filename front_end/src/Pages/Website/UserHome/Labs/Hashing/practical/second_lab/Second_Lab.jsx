@@ -24,7 +24,7 @@ const CyberLabTask = () => {
 
   // Fetching task instructions and correct answers from external files
   useEffect(() => {
-    fetch("./Hash Task.txt")
+    fetch(process.env.PUBLIC_URL + "/HashTask.txt")
       .then((response) => response.text())
       .then((data) => setInstructions(data));
 

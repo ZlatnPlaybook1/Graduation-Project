@@ -23,7 +23,7 @@ const HashingLab = () => {
       <div className="course">
         <div className="container mt-5">
           <div className="intro-card shadow-lg">
-            <div className="card-body">
+            <div className="card-body p-4">
               <h1 className="card-title my-4 display-5 title-gradient">
                 Hashing Lab
               </h1>

@@ -5,6 +5,8 @@ import Banner from "../../Banner/Banner";
 import background from "../../assets/img/CSRF/background.svg";
 import courseImage from "../../assets/img/CSRF/CourseImage.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
 import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn.jsx";
 export default function CSRF() {
@@ -66,26 +68,46 @@ export default function CSRF() {
                       data updates.
                     </p>
                   </div>
-                  <h4>Key Topics Covered:</h4>
+                  <mark>Key Topics Covered:</mark>
                   <ol>
                     <li>
-                      <b>Understanding CSRF</b>: Overview of how CSRF attacks
+                      <span className="pink-note">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        Understanding CSRF
+                      </span>
+                       : Overview of how CSRF attacks
                       work and their impact.
                     </li>
                     <li>
-                      <b>How CSRF Attacks Work</b>: Detailed mechanics and
+                      <span className="pink-note">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        How CSRF Attacks Work
+                      </span>
+                      : Detailed mechanics and
                       common techniques used in CSRF exploitation.
                     </li>
                     <li>
-                      <b>CSRF vs. XSS</b>: The differences between CSRF and
+                      <span className="pink-note">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        CSRF vs. XSS
+                      </span>
+                      : The differences between CSRF and
                       Cross-Site Scripting (XSS) attacks.
                     </li>
                     <li>
-                      <b>Real-World CSRF Examples</b>: Practical examples
+                      <span className="pink-note">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        Real-World CSRF Examples
+                      </span>
+                      : Practical examples
                       demonstrating the impact of CSRF vulnerabilities.
                     </li>
                     <li>
-                      <b>CSRF Prevention Techniques</b>: Best practices to
+                      <span className="pink-note">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        CSRF Prevention Techniques
+                      </span>
+                      : Best practices to
                       secure applications, such as CSRF tokens and SameSite
                       cookies.
                     </li>
