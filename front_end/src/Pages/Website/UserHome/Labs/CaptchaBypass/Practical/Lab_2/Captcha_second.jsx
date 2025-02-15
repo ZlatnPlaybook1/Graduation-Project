@@ -36,15 +36,6 @@ export default function Captcha_second() {
     setLoading(true);
     setErr("");
 
-    // // Check captcha locally before sending request
-    // if (parseInt(captcha) !== correctAnswer) {
-    //   setErr("Wrong captcha, try again.");
-    //   setLoading(false);
-    //   fetchCaptcha(); // Refresh captcha
-    //   return;
-    // }
-console.log(captcha);
-console.log(comment);
     try {
       await axios.post("http://127.0.0.1:8080/api/capatchalab2", {
         result: captcha,
@@ -75,7 +66,6 @@ console.log(comment);
       setComment("");
       setCaptcha("");
       setID(1);
-
     } catch (error) {
       setErr(error.response?.data?.message || "Network Error");
       console.error("Error resetting captcha:", error);
@@ -87,9 +77,7 @@ console.log(comment);
   return (
     <div className="body-captcha">
       <GoBack_Btn />
-      <ShowHint_Btn
-        hintText={`Hint`}
-      />
+      <ShowHint_Btn hintText={`Hint`} />
       <div className="captcha_first">
         <div className="container-captcha">
           <div className="card-captcha">

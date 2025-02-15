@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../Captcha_labs.css";
 import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
@@ -18,7 +18,51 @@ export default function CaptchaThird() {
   function handleCaptchaChange(token) {
     setCaptcha(token);
   }
+  useEffect(() => {
+    fetchComments();
+  }, []);
+  async function fetchComments() {
+    try {
+      const response = await axios.get(
+        "http://127.0.0.1:8080/api/capatchalab3comments"
+      );
 
+      if (Array.isArray(response.data.comments)) {
+        setComments(
+          response.data.comments.map((cmt, index) => ({
+            id: index + 1,
+            ...cmt,
+          }))
+        );
+        setID(response.data.comments.length + 1);
+      } else {
+        setComments([]);
+        setID(1);
+      }
+    } catch (error) {
+      setErr("Failed to fetch comments.");
+      console.error("Error fetching comments:", error);
+      setComments([]);
+      setID(1);
+    }
+  }
+  async function deleteCaptcha() {
+    setLoading(true);
+    setErr("");
+    try {
+      await axios.delete("http://127.0.0.1:8080/api/capatchalab3comments");
+      setComments([]);
+      setComment("");
+      setCaptcha(null);
+      setID(1);
+      recaptchaRef.current?.reset();
+    } catch (error) {
+      setErr(error.response?.data?.message || "Network Error");
+      console.error("Error resetting captcha:", error);
+    } finally {
+      setLoading(false);
+    }
+  }
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -32,10 +76,13 @@ export default function CaptchaThird() {
 
     try {
       // Send comment and CAPTCHA token together
-      const response = await axios.post("http://127.0.0.1:8080/api/capatchalab3comments", {
-        comment,
-        token: captcha, // ✅ Sent together in the same request
-      });
+      const response = await axios.post(
+        "http://127.0.0.1:8080/api/capatchalab3comments",
+        {
+          comment,
+          token: captcha, // ✅ Sent together in the same request
+        }
+      );
 
       if (!response.data.success) {
         setErr("Captcha verification failed, try again.");
@@ -51,7 +98,10 @@ export default function CaptchaThird() {
       recaptchaRef.current?.reset();
     } catch (error) {
       console.error("Request error:", error);
-      setErr(error.response?.data?.message || "Network Error: Could not submit the comment.");
+      setErr(
+        error.response?.data?.message ||
+          "Network Error: Could not submit the comment."
+      );
     } finally {
       setLoading(false);
     }
@@ -79,12 +129,12 @@ export default function CaptchaThird() {
                 <div className="form-group-captcha text-center my-3 text-white">
                   <h3>Captcha Verification</h3>
                   <div className="d-flex justify-content-center">
-                  <ReCAPTCHA
-                    ref={recaptchaRef}
-                    sitekey={captchaSiteKey}
-                    onChange={handleCaptchaChange}
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={captchaSiteKey}
+                      onChange={handleCaptchaChange}
                     />
-                    </div>
+                  </div>
                 </div>
                 <div className="form-group-captcha">
                   <button type="submit" disabled={loading}>
@@ -94,6 +144,11 @@ export default function CaptchaThird() {
                 </div>
               </form>
             </div>
+          </div>
+          <div className="reset mb-5">
+            <button onClick={deleteCaptcha} disabled={loading}>
+              {loading ? "Resetting..." : "Reset"}
+            </button>
           </div>
           <div className="comment-section">
             {comments.map((cmt) => (
