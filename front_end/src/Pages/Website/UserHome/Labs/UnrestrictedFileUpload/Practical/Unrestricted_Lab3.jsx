@@ -98,7 +98,7 @@ const UnrestrictedLab1 = () => {
       <ShowHint hintText={hintMessage} />
       <div className="unique-container">
         <div className="unique-container-wrapper">
-          <div className="row pt-5 mt-5 mb-3">
+          <div className="row-file pt-5 mt-5 mb-3">
             <div className="col-md-3"></div>
             <div className="col-md-6">
               <h1 className="mb-4">Subject: The Importance of Cybersecurity</h1>
@@ -119,25 +119,25 @@ const UnrestrictedLab1 = () => {
           <div className="row pt-3">
             <div className="col-md-3"></div>
             <div className="col-md-6">
-              <div className="card border-primary mb-4">
-                <div className="card-header text-primary">
+              <div className="card-file-upload border-primary mb-4">
+                <div className="card-header-file text-primary">
                   Supported Formats: <b>GIF, JPG, JPEG, PNG</b>
                 </div>
               </div>
               <h3 className="mb-3">Upload Your Files</h3>
 
               {status === "success" && (
-                <div className="alert alert-success" role="alert">
+                <div className="alert-file alert-success" role="alert">
                   <b>File uploaded successfully!</b>
                 </div>
               )}
               {status === "unsuccess" && (
-                <div className="alert alert-danger" role="alert">
+                <div className="alert-file alert-danger" role="alert">
                   <b>File upload failed. Please try again.</b>
                 </div>
               )}
               {status === "empty" && (
-                <div className="alert alert-danger" role="alert">
+                <div className="alert-file alert-danger" role="alert">
                   <b>No file selected. Please upload a file.</b>
                 </div>
               )}
