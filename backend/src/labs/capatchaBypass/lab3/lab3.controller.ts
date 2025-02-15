@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import axios from "axios";
 import { URLSearchParams } from "url";
 import * as dotenv from "dotenv";
+import prisma from "../../../utilities/db";
 
 dotenv.config();
 
@@ -14,9 +15,6 @@ interface ReCaptchaResponse {
   'error-codes'?: string[];
 }
 
-const comments: { id: number; comment: string }[] = [];
-let idCounter = 1;
-
 export const submitComment = async (req: Request, res: Response) => {
   const { comment, token } = req.body;
 
@@ -27,9 +25,7 @@ export const submitComment = async (req: Request, res: Response) => {
   // ⚡ Bypass CAPTCHA verification for backend flexibility
   if (!token) {
     console.log("Bypassing CAPTCHA verification...");
-    const newComment = { id: idCounter++, comment };
-    comments.push(newComment);
-    return res.json({ success: true, message: "Comment added successfully", comment: newComment });
+    return res.json({ success: true, message: "Comment added successfully"});
   }
 
   try {
@@ -47,16 +43,40 @@ export const submitComment = async (req: Request, res: Response) => {
     }
 
     // CAPTCHA is valid, store the comment
-    const newComment = { id: idCounter++, comment };
-    comments.push(newComment);
-    return res.json({ success: true, message: "Comment added successfully", comment: newComment });
+    await prisma.lab3captchaComment.create({
+      data: {
+        comment: comment,
+      },
+    }); 
 
+    return res.status(200).json({ success: true, message: "Comment added successfully" });
   } catch (error) {
     console.error("Error verifying CAPTCHA:", error);
     return res.status(500).json({ success: false, message: "Server error during CAPTCHA verification" });
   }
 };
 
-export const getComments = (req: Request, res: Response) => {
-  res.json(comments);
-};
+export const getComments = async (req: Request, res: Response) => {
+  try {
+    const comments = await prisma.lab3captchaComment.findMany({
+      select: {
+        comment: true,
+      },
+    });
+
+    return res.status(200).json(comments);
+  } catch (e) {
+    console.error(e);
+    return res.status(500).send("Internal Server Error");
+  }
+}
+
+export const deleteComments = async (req: Request, res: Response) => {
+  try {
+      await prisma.lab3captchaComment.deleteMany();
+      return res.status(200).json({ message: "Comments deleted" });
+  } catch (e) {
+      console.error(e);
+      return res.status(500).send("Internal Server Error");
+  }
+}
