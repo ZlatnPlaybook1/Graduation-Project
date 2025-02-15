@@ -54,3 +54,12 @@ export const lab2controller = (req: Request, res: Response) => {
     res.send(`<p>Error: ${err.message}</p>`);
   }
 };
+
+export const getStockStatus = (): string => {
+  return Math.random() > 0.5 ? "In Stock" : "Out of Stock";
+};
+
+// Example usage
+export const products = (req: Request, res: Response) => {
+  res.json({ message: getStockStatus() });
+};
