@@ -207,17 +207,17 @@ enum Role {
 }
 
 model Lab1RaceCondition {
-    id      String    @id @default(uuid())
-    email   String 
-    name    String
-    surname String
-    tel     String
+  id      String @id @default(uuid())
+  email   String
+  name    String
+  surname String
+  tel     String
 }
 
 model Lab1captcha {
   id      String  @id @default(uuid())
   comment String?
-  captcha String @unique
+  captcha String  @unique
 }
 
 model Lab2captcha {
@@ -230,24 +230,31 @@ model Lab2captchaComment {
   id      String  @id @default(uuid())
   comment String?
 }
+
 model BLVulnUser {
-  id        Int               @id @default(autoincrement())
-  email     String            @unique
+  id        Int              @id @default(autoincrement())
+  email     String           @unique
   name      String?
-  password  String            @default("") // New field with a default value
-  balance   Float             @default(0)
+  password  String           @default("") // New field with a default value
+  balance   Float            @default(0)
   cartItems BLVulnCartItem[]
 }
 
 model BLVulnCartItem {
-  id        Int         @id @default(autoincrement())
+  id        Int        @id @default(autoincrement())
   productId Int
   quantity  Int
-  user      BLVulnUser  @relation(fields: [userId], references: [id])
+  user      BLVulnUser @relation(fields: [userId], references: [id])
   userId    Int
 }
 
 model Lab3captchaComment {
   id      String  @id @default(uuid())
+  comment String?
+}
+
+model lab1SSTI1 {
+  id      String  @id @default(uuid())
+  name    String?
   comment String?
 }
