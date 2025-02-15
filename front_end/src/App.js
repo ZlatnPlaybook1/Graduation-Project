@@ -275,7 +275,6 @@ import BurpSuitLab2 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab
 import BurpSuitLab3 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab3/BurpSuitLab3.jsx";
 import BurpSuitLab4 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab4/BurpSuitLab4.jsx";
 import BurpSuitDescriptions from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab3/BurpSuitDescriptions.jsx";
-import Test from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Lab_1/test.jsx";
 import RaceCondition from "./Pages/Website/UserHome/Labs/Condition_Race/RaceCondition.jsx";
 import RaceConditionLabs from "./Pages/Website/UserHome/Labs/Condition_Race/RaceConditionLabs.jsx";
 import RaceConditionInRegister from "./Pages/Website/UserHome/Labs/Condition_Race/Practical/Lab1/RC_In_Register.jsx";
@@ -1053,7 +1052,6 @@ function App() {
             element={<JWTATTACKS_LAB />}
           />
           {/* End JWTAttacks */}
-          <Route path="/test" element={<Test />} />
         </Route>
         {/* End Routes of Labs */}
 

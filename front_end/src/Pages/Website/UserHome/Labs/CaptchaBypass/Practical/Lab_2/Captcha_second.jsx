@@ -29,6 +29,7 @@ export default function Captcha_second() {
 
   useEffect(() => {
     fetchCaptcha();
+    fetchComments();
   }, []);
 
   async function handleSubmit(e) {
@@ -42,16 +43,40 @@ export default function Captcha_second() {
         comment: comment,
       });
 
-      setComments((prevComments) => [...prevComments, { id, comment }]);
-      setID((prevID) => prevID + 1);
       setComment("");
       setCaptcha("");
       fetchCaptcha(); // Get new captcha after submission
+      fetchComments();
     } catch (error) {
       setErr(error.response?.data?.message || "Network Error");
       console.error("Error submitting comment:", error);
     } finally {
       setLoading(false);
+    }
+  }
+  async function fetchComments() {
+    try {
+      const response = await axios.get(
+        "http://127.0.0.1:8080/api/capatchalab2comments"
+      );
+
+      if (Array.isArray(response.data)) {
+        setComments(
+          response.data.map((cmt, index) => ({
+            id: index + 1,
+            comment:cmt.comment,
+          }))
+        );
+        setID(response.data.length + 1);
+      } else {
+        setComments([]);
+        setID(1);
+      }
+    } catch (error) {
+      setErr("Failed to fetch comments.");
+      console.error("Error fetching comments:", error);
+      setComments([]);
+      setID(1);
     }
   }
 
@@ -66,6 +91,7 @@ export default function Captcha_second() {
       setComment("");
       setCaptcha("");
       setID(1);
+
     } catch (error) {
       setErr(error.response?.data?.message || "Network Error");
       console.error("Error resetting captcha:", error);
@@ -77,7 +103,9 @@ export default function Captcha_second() {
   return (
     <div className="body-captcha">
       <GoBack_Btn />
-      <ShowHint_Btn hintText={`Hint`} />
+      <ShowHint_Btn
+        hintText={`Hint`}
+      />
       <div className="captcha_first">
         <div className="container-captcha">
           <div className="card-captcha">

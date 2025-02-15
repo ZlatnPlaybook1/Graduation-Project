@@ -26,26 +26,28 @@ export default function CaptchaThird() {
       const response = await axios.get(
         "http://127.0.0.1:8080/api/capatchalab3comments"
       );
-
-      if (Array.isArray(response.data.comments)) {
+  
+      // Ensure the response is an array
+      if (Array.isArray(response.data)) {
         setComments(
-          response.data.comments.map((cmt, index) => ({
-            id: index + 1,
-            ...cmt,
+          response.data.map((cmt, index) => ({
+            id: index + 1,   // Add an id field to each comment
+            comment: cmt.comment,  // Use the 'comment' field from each object
           }))
         );
-        setID(response.data.comments.length + 1);
+        setID(response.data.length + 1);  // Set the next ID based on the comments length
       } else {
-        setComments([]);
-        setID(1);
+        setComments([]);  // In case the response isn't the expected array
+        setID(1);  // Reset ID counter
       }
     } catch (error) {
       setErr("Failed to fetch comments.");
       console.error("Error fetching comments:", error);
-      setComments([]);
-      setID(1);
+      setComments([]);  // Reset comments on failure
+      setID(1);  // Reset ID on failure
     }
   }
+  
   async function deleteCaptcha() {
     setLoading(true);
     setErr("");
@@ -90,11 +92,9 @@ export default function CaptchaThird() {
         return;
       }
 
-      // Add comment after successful CAPTCHA verification
-      setComments((prev) => [...prev, { id, comment }]);
-      setID((prevID) => prevID + 1);
       setComment("");
       setCaptcha(null);
+      fetchComments();
       recaptchaRef.current?.reset();
     } catch (error) {
       console.error("Request error:", error);
