@@ -9,6 +9,7 @@ import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn.jsx";
 export default function Regex() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -459,6 +460,8 @@ export default function Regex() {
           </div>
         </div>
       </div>
+      {/* End Course */}
+      <Go2TopBtn />
       <Footer />
     </>
   );

@@ -4,6 +4,7 @@ import labImg from "../../assets/img/CSRF/lab1.jpeg";
 
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn";
 export default function CSRF_labs() {
   return (
     <>
@@ -110,6 +111,7 @@ export default function CSRF_labs() {
         </div>
       </div>
       {/* End Course */}
+      <Go2TopBtn />
       <Footer />
     </>
   );

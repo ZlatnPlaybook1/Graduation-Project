@@ -1,10 +1,9 @@
 import React from "react";
 import Header from "../../Header/Header";
-import "./Click_Jacking.css";
 import labImg from "../../assets/img/ACV/lab.jpeg";
-
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn";
 export default function Click_Jacking_Labs() {
   return (
     <>
@@ -58,6 +57,7 @@ export default function Click_Jacking_Labs() {
         </div>
       </div>
       {/* End Course */}
+      <Go2TopBtn />
       <Footer />
     </>
   );

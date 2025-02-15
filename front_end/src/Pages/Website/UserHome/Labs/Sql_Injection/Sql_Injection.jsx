@@ -8,6 +8,7 @@ import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import tableImage from "../../assets/img/SQL_Injection/table.png";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
 import Banner from "../../Banner/Banner.jsx";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn.jsx";
 // import OutOfBandImage from "../../assets/img/SQL_Injection/Out-of-Band SQLi.png";
 // import DBServerImage from "../../assets/img/SQL_Injection/DBServer.png";
 
@@ -800,6 +801,8 @@ Axe Makers Ltd  | 2b Makers Unit, Market Road | London | SE9 1KK`}
           </div>
         </div>
       </div>
+      {/* End Course */}
+      <Go2TopBtn />
       <Footer />
     </>
   );

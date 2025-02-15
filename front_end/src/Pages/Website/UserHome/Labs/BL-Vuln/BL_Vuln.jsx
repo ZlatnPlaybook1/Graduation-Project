@@ -7,6 +7,7 @@ import logicFlow from "../../assets/img/BLV/logic-flaws.jpg";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
 import Banner from "../../Banner/Banner.jsx";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn.jsx";
 export default function BL_Vuln() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -341,6 +342,8 @@ export default function BL_Vuln() {
           </div>
         </div>
       </div>
+      {/* End Course */}
+      <Go2TopBtn />
       <Footer />
     </>
   );

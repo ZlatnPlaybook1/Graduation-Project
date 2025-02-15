@@ -4,6 +4,7 @@ import labImg from "../../assets/img/ACV/lab.jpeg";
 import Banner from "../../Banner/Banner";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn";
 export default function AC_Vuln_labs() {
   return (
     <>
@@ -93,6 +94,7 @@ export default function AC_Vuln_labs() {
         </div>
       </div>
       {/* End Course */}
+      <Go2TopBtn />
       <Footer />
     </>
   );

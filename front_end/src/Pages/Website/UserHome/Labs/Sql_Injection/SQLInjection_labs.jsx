@@ -2,9 +2,9 @@ import React from "react";
 import Header from "../../Header/Header";
 import "../Page_Styles/Lab.css";
 import labImg from "../../assets/img/SQL_Injection/lab.png";
-
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn";
 export default function SQLInjection_lab() {
   return (
     <>
@@ -37,7 +37,6 @@ export default function SQLInjection_lab() {
         </div>
       </div>
       {/* End Landing */}
-
       {/* Start Course */}
       <div className="course">
         <div className="container">
@@ -115,6 +114,7 @@ export default function SQLInjection_lab() {
         </div>
       </div>
       {/* End Course */}
+      <Go2TopBtn />
       <Footer />
     </>
   );

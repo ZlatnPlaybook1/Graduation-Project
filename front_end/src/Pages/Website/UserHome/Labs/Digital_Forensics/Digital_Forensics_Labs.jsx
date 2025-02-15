@@ -5,6 +5,7 @@ import labImg from "../../assets/img/DigitalForensics/Email.jpg";
 import Footer from "../../Footer/Footer";
 import Banner from "../../Banner/Banner";
 import { Card } from "../../Card/Card";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn";
 export default function Digital_Forensics_labs() {
   return (
     <>
@@ -70,6 +71,7 @@ export default function Digital_Forensics_labs() {
         </div>
       </div>
       {/* End Course */}
+      <Go2TopBtn />
       <Footer />
     </>
   );

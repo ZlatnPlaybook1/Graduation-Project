@@ -4,6 +4,7 @@ import labImg from "../../assets/img/BLV/lab1.jpeg";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
 import Banner from "../../Banner/Banner";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn";
 export default function BL_Vuln_labs() {
   return (
     <>
@@ -69,6 +70,7 @@ export default function BL_Vuln_labs() {
         </div>
       </div>
       {/* End Course */}
+      <Go2TopBtn />
       <Footer />
     </>
   );

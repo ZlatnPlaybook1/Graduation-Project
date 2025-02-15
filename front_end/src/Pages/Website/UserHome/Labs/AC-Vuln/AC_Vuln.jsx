@@ -7,6 +7,7 @@ import courseImage from "../../assets/img/course_image.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import Banner from "../../Banner/Banner.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn.jsx";
 export default function AC_Vuln() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
@@ -185,6 +186,8 @@ export default function AC_Vuln() {
           </div>
         </div>
       </div>
+      {/* End Course */}
+      <Go2TopBtn />
       <Footer />
     </>
   );

@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import "./Click_Jacking.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import background from "../../assets/img/background.png";
-import imagecourse from "../../assets/img/course_image.png";
+import courseImage from "../../assets/img/course_image.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn.jsx";
 export default function Click_Jacking() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -17,7 +17,7 @@ export default function Click_Jacking() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        imagecourse={imagecourse}
+        imagecourse={courseImage}
         courseTitle="Click Jacking"
         courseDescription=" Learn how attackers exploit access control vulnerabilities in
                 web applications, gaining unauthorized access to sensitive areas
@@ -355,7 +355,8 @@ export default function Click_Jacking() {
           </div>
         </div>
       </div>
-
+      {/* End Course */}
+      <Go2TopBtn />
       <Footer />
     </>
   );

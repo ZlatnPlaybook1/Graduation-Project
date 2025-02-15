@@ -6,6 +6,7 @@ import background from "../../assets/img/background.png";
 import courseImage from "../../assets/img/CSRF/CourseImage.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn.jsx";
 export default function CSRF() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -368,6 +369,8 @@ export default function CSRF() {
           </div>
         </div>
       </div>
+      {/* End Course */}
+      <Go2TopBtn />
       <Footer />
     </>
   );
