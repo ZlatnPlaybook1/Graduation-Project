@@ -20,7 +20,10 @@ export default function Regex() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        imagecourse={courseImage}
+        backgroundStyle={{  objectFit:"cover",
+                            height: "100%",
+                            width: "100%",}}
+        courseImage={courseImage}
         courseTitle="Regular Expressions"
         courseDescription="Learn how attackers leverage regular expressions (regex) for
                 pattern matching in malicious scripts, data exfiltration, and

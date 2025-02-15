@@ -17,7 +17,10 @@ export default function Api_Hacking() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        imagecourse={courseImage}
+        backgroundStyle={{  objectFit:"cover",
+                                   height: "100%",
+                                   width: "100%",}}
+        courseImage={courseImage}
         courseTitle="API Hacking & Testing"
         courseDescription=" Learn how attackers exploit vulnerabilities in APIs to access
                 sensitive data, manipulate functionality, or bypass security

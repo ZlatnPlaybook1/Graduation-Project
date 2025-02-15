@@ -17,7 +17,11 @@ export default function Click_Jacking() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        imagecourse={courseImage}
+        backgroundStyle={{ left:"70%",objectFit:"cover",
+                            height: "100%",
+                            
+                                    }}
+        courseImage={courseImage}
         courseTitle="Click Jacking"
         courseDescription=" Learn how attackers exploit access control vulnerabilities in
                 web applications, gaining unauthorized access to sensitive areas

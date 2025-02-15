@@ -21,8 +21,10 @@ export default function CareersInCyber() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        backgroundSize="cover"
-        imagecourse={courseImage}
+        backgroundStyle={{  objectFit:"cover",
+            height: "100%",
+            width: "100%",}}
+        courseImage={courseImage}
         courseTitle="Careers in Cyber"
         courseDescription="Learn about the different careers in cyber security."
         difficulty="Intermediate"

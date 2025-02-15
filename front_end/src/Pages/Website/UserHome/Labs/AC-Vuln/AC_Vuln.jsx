@@ -17,7 +17,10 @@ export default function AC_Vuln() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        imagecourse={courseImage}
+        backgroundStyle={{  objectFit:"cover",
+                    height: "100%",
+                    width: "100%",}}
+        courseImage={courseImage}
         courseTitle="Access control vulnerability"
         courseDescription="Learn how attackers exploit access control vulnerabilities in
                 web applications, gaining unauthorized access to sensitive areas

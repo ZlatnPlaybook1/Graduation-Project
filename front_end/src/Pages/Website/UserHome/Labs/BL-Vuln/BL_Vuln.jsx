@@ -18,7 +18,10 @@ export default function BL_Vuln() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        imagecourse={courseImage}
+        backgroundStyle={{  objectFit:"cover",
+                            height: "100%",
+                            width: "100%",}}
+        courseImage={courseImage}
         courseTitle="Business logic vulnerabilities"
         courseDescription="Learn how attackers exploit business logic vulnerabilities in
                 web applications, where legitimate processes are manipulated to

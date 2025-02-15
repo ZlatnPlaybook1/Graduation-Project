@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 const LandingLab = ({
   background,
-  backgroundSize,
+  backgroundStyle,
   imagecourse,
+  courseImage,
   courseTitle = "Course Title",
   courseDescription = "Course Description",
   difficulty = "Course Difficulty",
@@ -58,11 +59,7 @@ const LandingLab = ({
         <img
           src={background}
           alt="background Image"
-          style={{
-            objectFit: backgroundSize | "cover",
-            height: "100%",
-            width: "100%",
-          }}
+          style={backgroundStyle}
         />
       </div>
       <div className="container-labd">
@@ -77,7 +74,7 @@ const LandingLab = ({
           </ul>
         </div>
         <div className="course-info">
-          <img src={imagecourse} alt="Course" />
+          <img src={imagecourse || courseImage} alt="Course" />
           <div className="course-text">
             <h1>{courseTitle}</h1>
             <p>{courseDescription}</p>

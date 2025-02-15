@@ -18,10 +18,13 @@ export default function Digital_Forensics() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        imagecourse={courseImage}
+        backgroundStyle={{  objectFit:"cover",
+                            height: "100%",
+                            width: "100%",}}
+        courseImage={courseImage}
         courseTitle="Digital Forensics"
         courseDescription="Learn how experts leverage digital forensics to investigate
-                cybercrimes, uncover evidence, and analyze digital footprints.
+                CyberCrimes, uncover evidence, and analyze digital footprints.
                 Explore the tools and techniques used to recover deleted data,
                 trace unauthorized access, and reconstruct malicious activities.
                 Master the skills needed to identify breaches, secure digital

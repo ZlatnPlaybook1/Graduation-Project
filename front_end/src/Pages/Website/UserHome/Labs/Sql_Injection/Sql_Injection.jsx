@@ -22,7 +22,10 @@ export default function Sql_Injection() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        imagecourse={courseImage}
+         backgroundStyle={{  objectFit:"cover",
+                    height: "100%",
+                    width: "100%",}}
+        courseImage={courseImage}
         courseTitle="SQL Injection"
         courseDescription="Learn how attackers exploit vulnerabilities in web applications
                 using SQL injection and understand the techniques to detect and

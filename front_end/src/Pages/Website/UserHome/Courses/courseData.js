@@ -1,7 +1,8 @@
 const courseData = [
   {
     id: 1,
-    category: "Career & Industry",
+    // category: "Career & Industry",
+    category: "My Courses",
     title: "Careers in Cyber",
     description:
       "Discover diverse cybersecurity careers, essential skills, and industry opportunities today.",
@@ -52,7 +53,8 @@ const courseData = [
   },
   {
     id: 4,
-    category: "Vulnerabilities",
+    // category: "Vulnerabilities",
+    category: "My Courses",
     title: "SQL Injection",
     description:
       "Identify SQL injection flaws, extract hidden data, and secure applications.",
@@ -103,7 +105,8 @@ const courseData = [
   },
   {
     id: 7,
-    category: "Vulnerabilities",
+    // category: "Vulnerabilities",
+    category: "My Courses",
     title: "Access Control Vulnerabilities",
     description:
       "Learn to detect and mitigate access control vulnerabilities in applications.",
@@ -149,7 +152,8 @@ const courseData = [
   },
   {
     id: 10,
-    category: "Vulnerabilities",
+    // category: "Vulnerabilities",
+    category: "My Courses",
     title: "Business Logic Vulnerabilities",
     description:
       "Analyze business logic flaws, exploitation methods, and strategies for mitigation.",
@@ -201,7 +205,8 @@ const courseData = [
   },
   {
     id: 13,
-    category: "Vulnerabilities",
+    // category: "Vulnerabilities",
+    category: "My Courses",
     title: "Cross Site Request Forgery (CSRF)",
     description:
       "Understand CSRF attack vectors, mitigation techniques, and prevention best practices.",
@@ -252,7 +257,8 @@ const courseData = [
   },
   {
     id: 16,
-    category: "Fundamentals",
+    // category: "Fundamentals",
+    category: "My Courses",
     title: "Regular expressions",
     description:
       "Craft effective regular expressions for text matching, searching, and parsing.",
@@ -303,7 +309,8 @@ const courseData = [
   },
   {
     id: 19,
-    category: "Fundamentals",
+    // category: "Fundamentals",
+    category: "My Courses",
     title: "Hashing",
     description:
       "Understand hashing concepts, algorithms, security implications, and best practices thoroughly.",
@@ -354,7 +361,8 @@ const courseData = [
   },
   {
     id: 22,
-    category: "Fundamentals",
+    // category: "Fundamentals",
+    category: "My Courses",
     title: "Digital Forensics",
     description:
       "Investigate digital evidence using forensic techniques for accurate cyber investigations.",
@@ -405,7 +413,8 @@ const courseData = [
   },
   {
     id: 25,
-    category: "Tools & Techniques",
+    // category: "Tools & Techniques",
+    category: "My Courses",
     title: "API Hacking & Testing",
     description:
       "Master API hacking techniques, testing methodologies, and security assessment procedures.",
@@ -451,7 +460,8 @@ const courseData = [
   },
   {
     id: 28,
-    category: "Vulnerabilities",
+    // category: "Vulnerabilities",
+    category: "My Courses",
     title: "click jacking",
     description:
       "Investigate click jacking strategies, analyze attack mechanisms, and implement countermeasures.",

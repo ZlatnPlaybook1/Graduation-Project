@@ -17,7 +17,10 @@ export default function CSRF() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        imagecourse={courseImage}
+        backgroundStyle={{  objectFit:"cover",
+                            height: "100%",
+                            width: "100%",}}
+                courseImage={courseImage}
         courseTitle="Cross-Site Request Forgery (CSRF)"
         courseDescription="Discover how attackers exploit CSRF vulnerabilities to perform
                 unauthorized actions on behalf of authenticated users without
