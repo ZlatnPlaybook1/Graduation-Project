@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {jwtDecode} from "jwt-decode"; // Import jwt-decode
 import "../../../../HackerLoginForm/HackerLoginForm.css";
 import { Link } from "react-router-dom";
 import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
 
-export default function JWTLogin  () {
+const JWTLogin = ({ apiEndpoint }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -17,10 +18,24 @@ export default function JWTLogin  () {
     e.preventDefault();
     setLoading(true);
     const data = { username, password };
+
+    // Post the login request to the API
     axios
-      .post("http://127.0.0.1:8080/api/Loginsqlinjection", data)
+      .post(apiEndpoint, data)
       .then((response) => {
-        navigate(`/Sql_Injection/sql_Injection_lab/Welcome`);
+        // Store the JWT token
+        const token = response.data.token; // Assume the token is returned in the 'token' field
+        localStorage.setItem("token", token); // Store the token in localStorage
+
+        // Decode the token to check if the user is an admin
+        const decodedToken = jwtDecode(token);
+
+        // Check if the user is an admin
+        if (decodedToken.role === "admin") {
+          navigate(`/admin-dashboard`); // Redirect to the admin dashboard
+        } else {
+          navigate(`/user-dashboard`); // Redirect to the user dashboard
+        }
       })
       .catch((error) => {
         setLoading(false);
@@ -37,22 +52,14 @@ export default function JWTLogin  () {
   const spanCount = 400;
   const hintMessage = `
     <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
-      <li>1. User is <mark><code>CyberLabs</code></mark> and you need to find the password.
-      </li>
-      \n
-      <li>2. 
-     Use your SQL injection skills to bypass the login form and get the password.
-      </li>\n
-      <li>3. you Remember How to skip the password! 
-      </li>
-      \n
-      <li>4. Try to search about SQL Injection and how to bypass the login form.
-      </li>
-      \n
-      <li>5. Good Luck!
-      </li>
+      <li>1. User is <mark><code>CyberLabs</code></mark> and you need to find the password.</li>
+      <li>2. Use your SQL injection skills to bypass the login form and get the password.</li>
+      <li>3. Remember How to skip the password!</li>
+      <li>4. Try to search about SQL Injection and how to bypass the login form.</li>
+      <li>5. Good Luck!</li>
     </ul>
   `;
+
   return (
     <div
       style={{
@@ -111,3 +118,5 @@ export default function JWTLogin  () {
     </div>
   );
 };
+
+export default JWTLogin;

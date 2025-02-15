@@ -44,9 +44,9 @@ export default function JWTAttacks_lab() {
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             <Card
-              link={""}
+              link={"/jwtattacks/jwtattacks_lab/lab1"}
               image={image}
-              title={""}
+              title={"First Lab"}
               brief={""}
               difficulty={""}
             />
