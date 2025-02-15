@@ -55,7 +55,6 @@ export async function updateLabEmail(req: Request, res: Response) {
 }
 
 // POST /clickJackLab1-delete-account
-// This endpoint exists but is NOT shown on the real page (simulates a dangerous action).
 export async function deleteAccount(req: Request, res: Response) {
   try {
     const { id, csrf } = req.body;
@@ -71,16 +70,83 @@ export async function deleteAccount(req: Request, res: Response) {
       return res.status(404).json({ message: "Account not found" });
     }
 
-    // Delete the account from DB (or simulate)
+    // Delete the account from the DB
     await prisma.clickJackLab1.delete({
       where: { id: Number(id) },
     });
 
-    res.status(200).json({ message: "Account deleted successfully" });
+    // Return an HTML page with SweetAlert2 that, on OK, redirects to the Affirmation page.
+    res.status(200).send(`
+      <html>
+        <head>
+          <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+          <meta http-equiv="Pragma" content="no-cache" />
+          <meta http-equiv="Expires" content="0" />
+        </head>
+        <body>
+          <script>
+            Swal.fire({
+              icon: 'success',
+              title: 'Lab successfully finished',
+              text: 'Your account has been deleted. Click OK to proceed to the login page.',
+              allowOutsideClick: false,
+              allowEscapeKey: false
+            }).then(() => {
+             window.location.replace("http://localhost:3000/Click_Jacking/Click_Jacking_labs/lab1/affirmation");
+            });
+          </script>
+        </body>
+      </html>
+    `);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Error deleting account." });
   }
+}
+
+// GET /affirmation
+export async function affirmation(req: Request, res: Response) {
+  res.status(200).send(`
+    <html>
+      <head>
+        <title>Lab Finished</title>
+        <style>
+          body { 
+            font-family: Arial, sans-serif; 
+            background: #f7f7f7; 
+            text-align: center; 
+            padding-top: 50px; 
+          }
+          .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+          }
+          a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+          }
+          a:hover {
+            background: #2980b9;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h1>Lab Finished</h1>
+          <p>Your account has been deleted. You must log in again to continue.</p>
+          <a href="/Click_Jacking/Click_Jacking_labs/lab1">Go to Login Page</a>
+        </div>
+      </body>
+    </html>
+  `);
 }
 
 // POST /clickJackLab1-apply-exploit
@@ -95,7 +161,6 @@ export async function applyExploit(req: Request, res: Response) {
       <html>
         <head>
           <title>Exploit Applied</title>
-          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         </head>
         <body>
           <h1>Exploit Applied</h1>
@@ -119,14 +184,12 @@ export async function applyExploit(req: Request, res: Response) {
 }
 
 // (Optional) GET /clickJackLab1-apply-exploit
-// If you want an iframe-based GET demonstration
 export async function getExploit(req: Request, res: Response) {
   try {
     res.status(200).send(`
       <html>
         <head>
           <title>Exploit Applied (GET)</title>
-          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         </head>
         <body>
           <h1>Exploit Applied (GET)</h1>

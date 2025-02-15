@@ -86,7 +86,7 @@ function EditInfo() {
         <button type="submit">Update Email</button>
       </form>
 
-      {/* New Button to navigate to Exploit Panel */}
+      {/* Button to navigate to Exploit Panel */}
       <button
         className="exploit-nav-btn"
         onClick={() =>

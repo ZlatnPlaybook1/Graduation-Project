@@ -41,30 +41,19 @@ export default function Click_Jacking_Labs() {
       {/* Start Course */}
       <div className="course">
         <div className="container">
-          <h2>Api Hacking</h2>
+          <h2>Click Jacking</h2>
           <p className="section-p">Test Your Hacking Skills</p>
           <div className="row">
             {/* lab1 */}
             <Card
               link={"/Click_Jacking/Click_Jacking_labs/lab1"}
               image={labImg}
-              title={"vulnerability allowing login bypass"}
+              title={"Basic clickjacking with CSRF token protection"}
               brief={
-                "This lab has an unprotected admin panel. Solve the lab by deleting the user carlos."
+                "This lab contains login functionality and a delete account button that is protected by a CSRF token. A user will click on elements that display the word 'click' on a decoy website.To solve the lab, craft some HTML that frames the account page and fools the user into deleting their account. The lab is solved when the account is deleted.You can log in to your own account using the following credentials: <mark>wiener:peter</mark>"
               }
               difficulty={"Easy"}
             />
-            {/* lab2 */}
-            <Card
-              link={"/Click_Jacking/Click_Jacking_labs/lab2"}
-              image={labImg}
-              title={"Unprotected admin functionality with unpredictable URL"}
-              brief={
-                "This lab has an unprotected admin panel. It's located at an unpredictable location, but the location is disclosed somewhere in the application. Solve the lab by accessing the admin panel, and using it to delete the user Carlos."
-              }
-              difficulty={"Easy"}
-            />
-            {/* Lab3 */}
           </div>
         </div>
       </div>

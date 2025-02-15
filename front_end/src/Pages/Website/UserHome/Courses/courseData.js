@@ -463,7 +463,7 @@ const courseData = [
     ],
     difficulty: "Intermediate",
     image: require("../assets/img/Click_Jacking/landing.jpg"),
-    state: "pending",
+    state: "semi-published",
     link: "/Click_Jacking",
   },
   {

@@ -1,21 +1,10 @@
-<style>
-  /* Nearly transparent iframe overlay */
-  #target-frame {
-    position: absolute;
-    width: 500px;
-    height: 700px;
-    opacity: 0.0001;
-    z-index: 2;
-    border: none;
-  }
-  /* Decoy content visible to the user */
-  #decoy-div {
-    position: relative;
-    z-index: 1;
-    background-color: #ccc;
-    padding: 20px;
-    text-align: center;
-  }
+<style> #deleteOverlay {   
+   position: absolute;
+   top: 21rem;   
+   left: 2.9rem;
+padding:.5rem 3.01rem;   
+   opacity: 1;
+   z-index: 9999;
+ }
 </style>
-<div id="decoy-div" onclick="alert('Hello ')">Click me!</div>
-<iframe id="target-frame" src="http://localhost:3000/Click_Jacking/Click_Jacking_labs/EditInfo"></iframe>
+<button id="deleteOverlay" type="submit" class="bg-danger">DELETE</button>
