@@ -63,7 +63,6 @@ export const getComments = async (req: Request, res: Response) => {
         comment: true,
       },
     });
-
     return res.status(200).json(comments);
   } catch (e) {
     console.error(e);

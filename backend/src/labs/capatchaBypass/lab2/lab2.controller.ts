@@ -60,6 +60,20 @@ export const verifySum = async (req: Request, res: Response) => {
     }
 };
 
+export const getComments = async (req: Request, res: Response) => {
+    try {
+        const comments = await prisma.lab2captchaComment.findMany({
+            select: {
+                comment: true,
+            },
+        });
+
+        return res.status(200).json(comments);
+    } catch (e) {
+        console.error(e);
+        return res.status(500).send("Internal Server Error");
+    }
+}
 
 export const deleteComments = async (req: Request, res: Response) => {
     try {
