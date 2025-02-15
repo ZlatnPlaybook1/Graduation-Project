@@ -1025,7 +1025,7 @@ function App() {
           <Route path="/SSTI/SSTI_lab/blog" element={<Blog />} />
           <Route path="/SSTI/SSTI_lab/blog-item" element={<BLOG_ITEM />} />
           <Route path="/SSTI/SSTI_lab/blog/login" element={<BLOG_LOGIN />} />
-          <Route path="/SSTI/SSTI_lab2/store" element={<SSTI_STORE />} />
+          <Route path="/SSTI/SSTIlab2/store" element={<SSTI_STORE />} />
           {/* End SSTI */}
           {/* Start CaptchaBypass */}
           <Route path="/captchabypass" element={<CaptchaBypass />} />
