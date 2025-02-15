@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "../Lab_Style.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ProductList from "../../../../ProductList/ProductList";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
 import products from "../data.json";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
 
 export default function Third_Lab() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate();
 
   // Utility function to get a cookie by name
   const getCookie = (name) => {
@@ -43,8 +42,8 @@ export default function Third_Lab() {
 
   return (
     <>
-      <GoBack_Btn />
-      <ShowHint_Btn hintText={hintMessage} />
+      <GoBackBtn />
+      <ShowHintBtn hintText={hintMessage} />
       <div className="container">
         <h1 style={{ textAlign: "center", marginBlock: "50px" }}>Products </h1>
         <Link to={`/AC-Vuln/AC_Vuln_labs/third_lab/login`}>Login</Link>

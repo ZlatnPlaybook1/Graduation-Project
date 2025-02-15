@@ -1,7 +1,7 @@
 import MCQQuiz from "../../../../MCQ_Form/MCQQuiz";
 import MCQData from "./MCQData.json";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
 export default function FirstLab() {
   const hintMessage = `
@@ -13,8 +13,8 @@ export default function FirstLab() {
   `;
   return (
     <>
-      <GoBack_Btn />
-      <ShowHint_Btn hintText={hintMessage} />
+      <GoBackBtn />
+      <ShowHintBtn hintText={hintMessage} />
       <div className="container">
         <h2 className="lab-header">Lab1</h2>
         <MCQQuiz questionsData={MCQData} />

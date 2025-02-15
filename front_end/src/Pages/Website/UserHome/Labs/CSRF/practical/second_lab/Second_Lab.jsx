@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 const CSRFLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -34,20 +34,29 @@ const CSRFLogin = () => {
             enteredPass: password,
           }
         );
+        if (response.data.success) {
+          Swal.fire({
+            icon: "success",
+            title: "Login Successful! & Lab finished",
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Login Failed!",
+          });
+        }
       } else {
-        //  Show error message using SweetAlert "User not found!"
-        // type your code here
+        Swal.fire({
+          icon: "error",
+          title: "User not found!",
+        });
       }
     } catch (error) {
       console.error("Login Error:", error);
     }
-    // if user enter correct user and password show success message using SweetAlert "Login Successful! & Lab finished"
-    // type your code here
   };
 
   return (
-    // style this using bootstrap for a good look
-
     <div>
       <h2>CSRF Lab Login</h2>
       <form onSubmit={handleSubmit}>

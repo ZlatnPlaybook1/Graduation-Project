@@ -6,7 +6,7 @@ export default function CSRF_FIRST_LAB() {
   const [account, setAccount] = useState(null);
   const [newPass, setNewPass] = useState("");
   const [message, setMessage] = useState("");
-  const [updatedId, setUpdatedId] = useState(null);
+  const [setUpdatedId] = useState(null);
 
   // Fetch account details by ID (if provided) or first account
   const fetchAccount = async (id = null) => {

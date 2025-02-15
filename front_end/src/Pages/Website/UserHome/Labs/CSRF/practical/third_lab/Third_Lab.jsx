@@ -8,7 +8,7 @@ export default function Third_Lab() {
   const [recipientName, setRecipientName] = useState("");
   const [recipientId, setRecipientId] = useState("");
   const [userId, setUserId] = useState("");
-  const [account, setAccount] = useState({});
+  const [setAccount] = useState({});
   const [message, setMessage] = useState("");
 
   // Fetch users on initial load

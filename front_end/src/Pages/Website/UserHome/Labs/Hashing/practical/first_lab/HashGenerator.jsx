@@ -10,8 +10,8 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import "./First_Lab.css";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
 const HashGenerator = () => {
   const [input, setInput] = useState("");
@@ -48,8 +48,8 @@ const HashGenerator = () => {
   return (
     <>
       {" "}
-      <GoBack_Btn />
-      <ShowHint_Btn hintText={hintMessage} />
+      <GoBackBtn />
+      <ShowHintBtn hintText={hintMessage} />
       <div className=" w-100 p-y5 mt-5">
         <div className="container p-0 my-5">
           <div className="card shadow-lg">

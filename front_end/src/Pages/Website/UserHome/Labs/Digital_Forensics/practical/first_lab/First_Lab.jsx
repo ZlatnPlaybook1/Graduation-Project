@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
 import "./First_Lab.css"; // Custom CSS file
 
@@ -47,8 +47,8 @@ const AudioForensicsLab = () => {
 
   return (
     <div className="audio-lab-container">
-      <GoBack_Btn />
-      <ShowHint_Btn hintText={hintMessage} />
+      <GoBackBtn />
+      <ShowHintBtn hintText={hintMessage} />
       <h1 className="title">Audio Forensics Lab</h1>
       <main className="main-content">
         <div className="content-wrapper">

@@ -1,9 +1,9 @@
 import React from "react";
 import "../Lab_Style.css";
 import ProductList from "../../../../ProductList/ProductList";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
 import products from "../data.json";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
 
 export default function Second_Lab() {
@@ -39,8 +39,8 @@ export default function Second_Lab() {
 
   return (
     <>
-      <GoBack_Btn />
-      <ShowHint_Btn hintText={hintMessage} />
+      <GoBackBtn />
+      <ShowHintBtn hintText={hintMessage} />
       <div className="container">
         <h1 style={{ textAlign: "center", marginBlock: "50px" }}>Products</h1>
         <ProductList products={products} />

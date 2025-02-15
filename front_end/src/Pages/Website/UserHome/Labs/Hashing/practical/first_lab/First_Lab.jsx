@@ -5,8 +5,8 @@ import ComparatorImage from "../../../../assets/img/Hashing/Comparator.jpg";
 import GeneratorImage from "../../../../assets/img/Hashing/Generator.jpg";
 import SaltingImage from "../../../../assets/img/Hashing/Salting.jpg";
 import { Card } from "../../../../Card/Card";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
 const HashingLab = () => {
   const hintMessage = `
@@ -18,8 +18,8 @@ const HashingLab = () => {
   `;
   return (
     <>
-      <GoBack_Btn />
-      <ShowHint_Btn hintText={hintMessage} />
+      <GoBackBtn />
+      <ShowHintBtn hintText={hintMessage} />
       <div className="course">
         <div className="container mt-5">
           <div className="card shadow-lg">

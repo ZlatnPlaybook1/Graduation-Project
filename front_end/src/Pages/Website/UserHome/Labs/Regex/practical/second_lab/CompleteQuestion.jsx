@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import "./CompleteQuestion.css"; // External CSS file
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
 const CompleteQuestion = ({ questionsData }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -76,8 +76,8 @@ const CompleteQuestion = ({ questionsData }) => {
   return (
     <div className="quiz-container">
       {/* Progress Bar */}
-      <GoBack_Btn />
-      <ShowHint_Btn hintText={hintMessage} />
+      <GoBackBtn />
+      <ShowHintBtn hintText={hintMessage} />
       <h2>Complete the questions</h2>
       <div className="progress-bar">
         <div
