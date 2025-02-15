@@ -225,14 +225,14 @@ export default function Second_lab_XSS() {
                 ))}
                 <div className="comment-card">
                   <div className="comment-header">
-                    <img src={icon} className="icon" alt="Card" />
+                    <img src={icon} className="icon-image" alt="Card" />
                     <p className="name">anonymous</p>
                   </div>
                   <p className="comment-text">comment 1</p>
                 </div>
                 <div className="comment-card">
                   <div className="comment-header">
-                    <img src={icon} className="icon" alt="Card" />
+                    <img src={icon} className="icon-image" alt="Card" />
                     <p className="name">anonymous</p>
                   </div>
                   <p className="comment-text">comment 2</p>
