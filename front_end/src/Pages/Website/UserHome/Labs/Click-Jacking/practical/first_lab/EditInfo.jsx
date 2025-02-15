@@ -1,67 +1,102 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import "./EditInfo.css"; // Custom styling
 
 function EditInfo() {
-  const [exploit, setExploit] = useState("");
+  const [account, setAccount] = useState(null);
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
+  // Fetch the account on mount
+  useEffect(() => {
+    async function fetchAccount() {
+      try {
+        const res = await fetch(
+          "http://127.0.0.1:8080/api/clickJackLab1-account"
+        );
+        if (res.ok) {
+          const data = await res.json();
+          setAccount(data.account);
+          setEmail(data.account.email || "");
+        } else {
+          console.error("Failed to fetch account data");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
+    fetchAccount();
+  }, []);
+
+  // Update email
   const handleEmailUpdate = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = { email: formData.get("email") };
-    const res = await fetch(
-      "http://127.0.0.1:8080/api/clickJackLab1-edit-info",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(data),
+    try {
+      const res = await fetch(
+        "http://127.0.0.1:8080/api/clickJackLab1-edit-info",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({
+            email,
+            id: account ? account.id : 1,
+          }),
+        }
+      );
+      if (res.ok) {
+        Swal.fire("Success", "Email updated successfully", "success");
+      } else {
+        Swal.fire("Error", "Failed to update email", "error");
       }
-    );
-    if (res.ok) {
-      alert("Email updated successfully");
-    } else {
-      alert("Error updating email");
-    }
-  };
-
-  const handleExploitSubmit = async (e) => {
-    e.preventDefault();
-    const res = await fetch(
-      "http://127.0.0.1:8080/api/clickJackLab1-apply-exploit",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ exploitCode: exploit }),
-      }
-    );
-    if (res.ok) {
-      // Optionally redirect or display the injected page
-      const html = await res.text();
-      document.body.innerHTML = html;
-    } else {
-      alert("Error applying exploit");
+    } catch (error) {
+      console.error(error);
+      Swal.fire("Error", "An error occurred", "error");
     }
   };
 
   return (
-    <div>
-      <h1>Edit Info</h1>
-      <form onSubmit={handleEmailUpdate}>
-        <input type="email" name="email" placeholder="New Email" required />
-        <br />
+    <div className="edit-info-container container">
+      <h1>Edit Account Information</h1>
+
+      {account ? (
+        <div className="account-details">
+          <p>
+            <strong>Username:</strong> {account.username}
+          </p>
+          <p>
+            <strong>Email:</strong> {account.email || "Not set"}
+          </p>
+        </div>
+      ) : (
+        <p>Loading account data...</p>
+      )}
+
+      <form onSubmit={handleEmailUpdate} className="update-form">
+        <label>
+          Update Email:
+          <input
+            type="email"
+            placeholder="New Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </label>
         <button type="submit">Update Email</button>
       </form>
-      <hr />
-      <h2>Exploit Panel</h2>
-      <form onSubmit={handleExploitSubmit}>
-        <textarea
-          rows="10"
-          cols="50"
-          placeholder="Paste your HTML & CSS here"
-          value={exploit}
-          onChange={(e) => setExploit(e.target.value)}
-        />
-        <br />
-        <button type="submit">Apply Exploit</button>
-      </form>
+
+      {/* New Button to navigate to Exploit Panel */}
+      <button
+        className="exploit-nav-btn"
+        onClick={() =>
+          navigate(
+            "/Click_Jacking/Click_Jacking_labs/lab1/EditInfo/ExploitPanel"
+          )
+        }
+      >
+        Go to Exploit Panel
+      </button>
     </div>
   );
 }

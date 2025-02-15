@@ -1,0 +1,65 @@
+.edit-info-container {
+  margin: 40px auto;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+}
+
+.edit-info-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.account-details {
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.update-form label {
+  font-weight: bold;
+}
+
+.update-form input {
+  margin-left: 10px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.update-form button {
+  width: 150px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+}
+
+.update-form button:hover {
+  background-color: #2980b9;
+}
+.exploit-nav-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.exploit-nav-btn:hover {
+  background-color: #c0392b;
+}
