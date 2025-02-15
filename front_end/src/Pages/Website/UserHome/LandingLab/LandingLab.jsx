@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const LandingLab = ({
   background,
+  backgroundSize,
   imagecourse,
   courseTitle = "Course Title",
   courseDescription = "Course Description",
@@ -54,7 +55,15 @@ const LandingLab = ({
   return (
     <div className="landing-labd">
       <div className="banner">
-        <img src={background} alt="" />
+        <img
+          src={background}
+          alt="background Image"
+          style={{
+            objectFit: backgroundSize | "cover",
+            height: "100%",
+            width: "100%",
+          }}
+        />
       </div>
       <div className="container-labd">
         <div className="breadcrumb">

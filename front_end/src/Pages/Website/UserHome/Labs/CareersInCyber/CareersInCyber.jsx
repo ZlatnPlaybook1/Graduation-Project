@@ -21,6 +21,7 @@ export default function CareersInCyber() {
       {/* Start Landing */}
       <LandingLab
         background={background}
+        backgroundSize="cover"
         imagecourse={courseImage}
         courseTitle="Careers in Cyber"
         courseDescription="Learn about the different careers in cyber security."

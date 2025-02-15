@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import Banner from "../../Banner/Banner";
-import background from "../../assets/img/background.png";
+import background from "../../assets/img/CSRF/background.svg";
 import courseImage from "../../assets/img/CSRF/CourseImage.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../LandingLab/LandingLab.jsx";
@@ -32,19 +32,19 @@ export default function CSRF() {
       />
       {/* End Landing */}
       {/* Start Course */}
-      <div className="course-lab1">
+      <div className="course-labd">
         <div className="container">
           <div className="row">
-            <div className="faq-section-lab1" ref={faqSectionRef}>
-              <dl className="section-text-lab1">
+            <div className="faq-section-labd" ref={faqSectionRef}>
+              <dl className="section-text-labd">
                 {/* Intro */}
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="wave-labd fadeInUp faq-header-labd"
                   id="border-left"
                 >
                   <span>Introduction </span> Introduction to CSRF
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <h3>
                     Welcome to the Cross-Site Request Forgery (CSRF) Learning
                     Room!
@@ -90,12 +90,12 @@ export default function CSRF() {
                 </dd>
                 {/* Topic 1 */}
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="wave-labd fadeInUp faq-header-labd"
                   id="border-left"
                 >
                   <span>Topic 1</span> Understanding CSRF
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       <b>Definition:</b>CSRF exploits the trust a web
@@ -117,12 +117,12 @@ export default function CSRF() {
                 </dd>
                 {/* Topic 2 */}
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="wave-labd fadeInUp faq-header-labd"
                   id="border-left"
                 >
                   <span>Topic 2</span> How CSRF Attacks Work
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       <b>Step-by-Step Breakdown:</b>
@@ -168,12 +168,12 @@ export default function CSRF() {
                 </dd>
                 {/* Topic 3 */}
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="wave-labd fadeInUp faq-header-labd"
                   id="border-left"
                 >
                   <span>Topic 3</span> CSRF vs. XSS
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <table border={3}>
                     <caption>
                       Simple Comparison between <b>CSRF</b> & <b>XSS</b>
@@ -223,12 +223,12 @@ export default function CSRF() {
                 </dd>
                 {/* Topic 4 */}
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="wave-labd fadeInUp faq-header-labd"
                   id="border-left"
                 >
                   <span>Topic 4</span> Real-World CSRF Examples
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       <b>Unauthorized Fund Transfers:</b> Example: A user logged
@@ -255,12 +255,12 @@ export default function CSRF() {
                 </dd>
                 {/* Topic 5 */}
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="wave-labd fadeInUp faq-header-labd"
                   id="border-left"
                 >
                   <span>Topic 5</span> CSRF Prevention Techniques
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body-labd" id="border-left">
                   <ul>
                     <li>
                       <b>CSRF Tokens (Synchronizer Token Pattern):</b>
