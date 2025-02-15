@@ -45,7 +45,7 @@ export default function SSTI_lab() {
           <div className="row">
             
           <Card
-            link={"/SSTI/SSTI_lab2/store"}
+            link={"/SSTI/SSTIlab2/store"}
             image={image}
             title={"SSTI Store Vulnerability"}
             brief={"This lab is vulnerable to server-side template injection due to the unsafe construction of an ERB template."}
