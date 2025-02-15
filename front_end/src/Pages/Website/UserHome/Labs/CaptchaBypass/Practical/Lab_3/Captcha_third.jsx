@@ -78,11 +78,13 @@ export default function CaptchaThird() {
                 </div>
                 <div className="form-group-captcha text-center my-3 text-white">
                   <h3>Captcha Verification</h3>
+                  <div className="d-flex justify-content-center">
                   <ReCAPTCHA
                     ref={recaptchaRef}
                     sitekey={captchaSiteKey}
                     onChange={handleCaptchaChange}
-                  />
+                    />
+                    </div>
                 </div>
                 <div className="form-group-captcha">
                   <button type="submit" disabled={loading}>
