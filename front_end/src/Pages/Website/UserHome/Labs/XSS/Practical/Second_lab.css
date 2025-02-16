@@ -66,12 +66,16 @@
   border-radius: 10px;
 }
 
-.course-Second_lab .row-practice .card-Second_lab img {
+.course-Second_lab .row-practice .card-Second_lab .robot-image {
   width: 100%;
   border-radius: 10px;
   transition: var(--main-transition);
 }
-.course-Second_lab .row-practice .card-Second_lab img:hover {
+.course-Second_lab .row-practice .card-Second_lab .icon-image {
+  width: 15%;
+  border-radius: 10px;
+}
+.course-Second_lab .row-practice .card-Second_lab .robot-image:hover {
   transform: scale(1.01);
 }
 
@@ -140,7 +144,6 @@
 }
 .course-Second_lab .row-practice .card-Second_lab .comment-card {
   padding: 10px 20px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   transition: var(--main-transition);
 }
 .course-Second_lab .row-practice .card-Second_lab .comment-card:hover {

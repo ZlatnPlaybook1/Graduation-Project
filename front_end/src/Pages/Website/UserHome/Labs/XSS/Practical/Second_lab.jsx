@@ -4,7 +4,7 @@ import image_1 from "../../../assets/img/practical_lab2/image_1.png";
 import icon from "../../../assets/img/practical_lab2/icon.png";
 import Footer from "../../../Footer/Footer";
 import axios from "axios";
-import GoBack_Btn from "../../../GoBack_Btn/GoBack_Btn";
+import GoBackBtn from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function Second_lab_XSS() {
@@ -19,16 +19,15 @@ export default function Second_lab_XSS() {
       <p>Go back to the blog.</p>
     </div>
   `;
-  const [form, setForm] = useState({
+  const [setForm] = useState({
     email: "",
     content: "",
   });
   const [data, setData] = useState([]);
   const [comments, setComments] = useState([]);
   const [scriptOutput, setScriptOutput] = useState("");
-  const [htmlOutput, setHtmlOutput] = useState(""); // New state to hold HTML output
   const [err, setErr] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [setLoading] = useState(false);
   const fetchData = () => {
     try {
       const respone = axios.delete("http://127.0.0.1:8080/api/comment");
@@ -49,7 +48,7 @@ export default function Second_lab_XSS() {
   };
 
   const handleSubmit = (e) => {
-    const respone = axios.delete("http://127.0.0.1:8080/api/comment");
+    axios.delete("http://127.0.0.1:8080/api/comment");
     e.preventDefault();
     const content = e.target.content.value;
     const email = e.target.email.value;
@@ -60,10 +59,10 @@ export default function Second_lab_XSS() {
         .replace("<script>", "")
         .replace("</script>", "");
       const newComment = {
-        id: Date.now(), // Unique ID for each comment
-        email: email || "Anonymous", // Default email
-        content: scriptContent, // Store raw HTML content
-        isScript: true, // Flag to indicate it's Script
+        id: Date.now(),
+        email: email || "Anonymous",
+        content: scriptContent,
+        isScript: true,
       };
       setComments((prevComments) => [...prevComments, newComment]);
       try {
@@ -77,10 +76,10 @@ export default function Second_lab_XSS() {
       }
     } else if (content.startsWith("<") && content.endsWith(">")) {
       const newComment = {
-        id: Date.now(), // Unique ID for each comment
-        email: email || "Anonymous", // Default email
-        content: content, // Store raw HTML content
-        isHTML: true, // Flag to indicate it's HTML
+        id: Date.now(),
+        email: email || "Anonymous",
+        content: content,
+        isHTML: true,
       };
       setComments((prevComments) => [...prevComments, newComment]);
     }
@@ -88,10 +87,10 @@ export default function Second_lab_XSS() {
     else {
       if (content) {
         const newComment = {
-          id: Date.now(), // Unique ID for each comment
-          email: email || "Anonymous", // Default email
-          content: content, // Store plain text content
-          isHTML: false, // Flag to indicate it's plain text
+          id: Date.now(),
+          email: email || "Anonymous",
+          content: content,
+          isHTML: false,
         };
         setComments((prevComments) => [...prevComments, newComment]);
         setErr("");
@@ -104,18 +103,18 @@ export default function Second_lab_XSS() {
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  });
 
   return (
     <>
       {/* Start Courses  */}
       <div className="course-Second_lab">
-        <GoBack_Btn />
+        <GoBackBtn />
         <ShowHint hintText={hintMessage} />
         <div className="container-Second_lab">
           <div className="row-practice">
             <div className="card-Second_lab">
-              <img src={image_1} alt="" />
+              <img className="robot-image" src={image_1} alt="" />
               <div className="card-text-Second_lab">
                 <h2>Robots in Our Lives</h2>
                 <p>
@@ -199,7 +198,7 @@ export default function Second_lab_XSS() {
                 {comments?.map((comment) => (
                   <div key={comment.id} className="comment-card">
                     <div className="comment-header">
-                      <img src={icon} className="icon" alt="Card" />
+                      <img src={icon} className="icon-image" alt="Card" />
                       <p className="name">{comment.email || "Anonymous"}</p>
                     </div>
                     {comment.isHTML ? (
@@ -217,11 +216,11 @@ export default function Second_lab_XSS() {
                 {data?.map((item) => (
                   <div key={item.id} className="comment-card">
                     <div className="comment-header">
-                      <img src={icon} className="icon" alt="Card" />
+                      <img src={icon} className="icon-image" alt="Card" />
                       <p className="name">{item.email}</p>
                     </div>
                     <p className="comment-text">{item.posts}</p>
-                  </div> // Adjust according to your data structure
+                  </div>
                 ))}
                 <div className="comment-card">
                   <div className="comment-header">

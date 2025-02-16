@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Third_lab.css";
-import Header from "../../../Header/Header";
 import image_1 from "../../../assets/img/practical_lab2/image_1.png";
 import image_2 from "../../../assets/img/practical_lab2/image_2.png";
 import image_3 from "../../../assets/img/practical_lab2/image_3.png";

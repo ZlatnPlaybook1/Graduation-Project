@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Fourth_lab.css";
-import Header from "../../../Header/Header";
 import image_1 from "../../../assets/img/practical_lab2/image_1.png";
 import icon from "../../../assets/img/practical_lab2/icon.png";
 import Footer from "../../../Footer/Footer";

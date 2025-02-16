@@ -1,6 +1,5 @@
 import React from "react";
 import "./XSS_SEVEN.css";
-import Header from "../../../Header/Header";
 import pyramidsImage from "../../../assets/img/seven_lab/Picture2.png";
 import eiffelTowerImage from "../../../assets/img/seven_lab/Picture3.jpg";
 import chichenItzaImage from "../../../assets/img/seven_lab/Picture4.jpg";
