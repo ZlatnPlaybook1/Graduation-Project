@@ -14,7 +14,6 @@ export default function AC_Vuln_labs() {
       {/* Start Landing */}
       <LandingPractice />
       {/* End Landing */}
-
       {/* Start Course */}
       <div className="course">
         <div className="container">

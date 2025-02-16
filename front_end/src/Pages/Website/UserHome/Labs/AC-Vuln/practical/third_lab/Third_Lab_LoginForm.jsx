@@ -21,8 +21,8 @@ export default function Third_Lab_LoginForm() {
     const correctPassword = "ahmed";
 
     if (username === correctUsername && password === correctPassword) {
-      setCookie("isLoggedIn", "true", 7); // Set login cookie for 7 days
-      setCookie("Admin", "false", 7); // Initially set Admin cookie to false
+      setCookie("isLoggedIn", "true", 7);
+      setCookie("Admin", "false", 7);
       navigate("/AC-Vuln/AC_Vuln_labs/third_lab/admin");
     } else {
       setError("Invalid username or password.");

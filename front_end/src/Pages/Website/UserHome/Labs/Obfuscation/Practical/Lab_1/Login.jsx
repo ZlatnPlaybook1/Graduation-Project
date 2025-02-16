@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import { useRef } from "react";
-import $ from "jquery";
 import "./Login.css";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
 
 export default function Obfuscation_login() {
-  const faqSectionRef = useRef(null);
   const [form, setForm] = useState({
     username: "",
     password: "",
   });
-  const [loading, setLoading] = useState(false);
+  const [setLoading] = useState(false);
   const [err, setErr] = useState("");
   const [right, setRight] = useState("");
   function handleChange(e) {
@@ -23,12 +20,6 @@ export default function Obfuscation_login() {
     setLoading(true);
     setErr("");
     try {
-      // const res = await axios.post(
-      //   "http://127.0.0.1:8080/api/Obfuscation_login",
-      //   form
-      // );
-      // setLoading(false);
-      // const role = res.data.role;
       if (form.username === "cyberlab" && form.password === "Obfuscation") {
         setLoading(false);
         setRight(`Congratz \n Flag: {0BFU5C4T10N_1S_4RT_4ND_PR0T3CT10N}`);
@@ -55,10 +46,12 @@ export default function Obfuscation_login() {
   return (
     <>
       <div className="body">
-        <GoBack_Btn />
-        <ShowHint_Btn hintText={
-          '<p>click inspect  and try to beautify and Deobfuscate  script use this : </p> <a href="https://filipemgs.github.io/poisonjs/">De-obfuscate</a> <a href="https://beautifier.io/">beautifier.io</a>' 
-          } />
+        <GoBackBtn />
+        <ShowHintBtn
+          hintText={
+            '<p>click inspect  and try to beautify and Deobfuscate  script use this : </p> <a href="https://filipemgs.github.io/poisonjs/">De-obfuscate</a> <a href="https://beautifier.io/">beautifier.io</a>'
+          }
+        />
         <div className="obfuscation_lab_body">
           <div className="obu-container">
             <div className="obu-card">
@@ -101,9 +94,7 @@ export default function Obfuscation_login() {
                     <button type="submit">Login</button>
                   </div>
                   {err !== "" && <span className="error">{err}</span>}
-                  {right !== `` && (
-                    <span className="right">{right}</span>
-                  )}
+                  {right !== `` && <span className="right">{right}</span>}
                 </form>
               </div>
             </div>

@@ -1,14 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-
-/* Modern Unique Container */
 .unique-container {
   margin: 0 auto;
   padding: 20px;
   width: 75%;
   max-width: 1200px;
 }
-
-/* Modern Wrapper with Gradient and Elevated Shadow */
 .unique-container-wrapper {
   background: linear-gradient(145deg, #ffffff, #f1f3f6);
   border-radius: 15px;
@@ -28,16 +23,12 @@
   font-family: "Poppins" !important;
   font-weight: 400;
 }
-
-/* Centered Rows */
 .row-file {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
-
-/* Cards */
 .card-file-upload {
   margin-bottom: 20px;
   border: none;
@@ -59,8 +50,6 @@
   color: #ffffff;
   padding: 15px;
 }
-
-/* Alerts */
 .alert-file {
   margin-top: 15px;
   border-radius: 8px;
@@ -81,8 +70,6 @@
   color: #721c24;
   border: 1px solid #f5c6cb;
 }
-
-/* Buttons */
 .style-btn {
   margin-top: 15px;
   font-size: 1rem;

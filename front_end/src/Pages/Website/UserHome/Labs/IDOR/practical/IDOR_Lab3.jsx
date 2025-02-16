@@ -18,24 +18,19 @@ export default function IDORLabComponent() {
   const [recipientId, setRecipientId] = useState("");
   const [message, setMessage] = useState("");
   const userId = 1;
-  const apiUrl = "http://127.0.0.1:8080/api"; // Base API URL
+  const apiUrl = "http://127.0.0.1:8080/api";
 
   useEffect(() => {
-    // PATCH request to update accounts
     axios
-      .patch(`${apiUrl}/accounts`, { updated: true }) // Replace `{ updated: true }` with the appropriate data for your API
+      .patch(`${apiUrl}/accounts`, { updated: true })
       .then(() => console.log("PATCH request successful"))
       .catch((error) =>
         console.error("Failed to execute PATCH request:", error)
       );
-
-    // Fetch account information for the current user
     axios
       .get(`${apiUrl}/account/${userId}`)
       .then((response) => setAccount(response.data.account))
       .catch((error) => console.error("Failed to fetch account:", error));
-
-    // Fetch all accounts
     axios
       .get(`${apiUrl}/accounts`)
       .then((response) => setUsers(response.data.money))
@@ -59,8 +54,6 @@ export default function IDORLabComponent() {
         setMessage(response.data.message);
         setTransferAmount("");
         setRecipientId("");
-
-        // Refresh account and user data
         axios
           .get(`${apiUrl}/account/${userId}`)
           .then((response) => setAccount(response.data.account));

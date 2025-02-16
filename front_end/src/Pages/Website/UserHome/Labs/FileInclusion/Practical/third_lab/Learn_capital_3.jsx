@@ -1,15 +1,14 @@
 import axios from "axios";
 import Footer from "../../../../Footer/Footer";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import "../../../Page_Styles/Practical_Flag_answers.css";
 import React, { useEffect, useState } from "react";
 
 export default function Learn_capital_3() {
   const [selectedFile, setSelectedFile] = useState("");
   const [fileContent, setFileContent] = useState("");
-  const [capitalImage, setCapitalImage] = useState("");
-  const [error, setError] = useState("");
+  const [setError] = useState("");
 
   // Simulated file system for educational purposes
 
@@ -24,7 +23,7 @@ export default function Learn_capital_3() {
       // Fetch file data from the backend
       fetchFileData(fileFromUrl);
     }
-  }, []);
+  });
 
   const fetchFileData = async (car) => {
     try {
@@ -64,8 +63,8 @@ export default function Learn_capital_3() {
   return (
     <>
       <div className="course-labcc">
-        <GoBack_Btn />
-        <ShowHint_Btn
+        <GoBackBtn />
+        <ShowHintBtn
           hintText={
             "This exercise demonstrates how file inclusion vulnerabilities work. Try to access files by manipulating the input. Always validate and sanitize user input to prevent such attacks!"
           }

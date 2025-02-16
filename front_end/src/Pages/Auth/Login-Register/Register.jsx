@@ -6,28 +6,19 @@ import { useNavigate } from "react-router-dom";
 import "./form.css";
 import "./register-login.css";
 export default function Register() {
-  // Handle States
   const [form, setForm] = useState({
     name: "",
     email: "",
     password: "",
   });
-  //  Navigate
   const navigate = useNavigate();
-  // Cookies
   const cookie = Cookie();
-  // Loading state
   const [loading, setLoading] = useState(false);
-  // Error state
   const [err, setErr] = useState("");
-
-  // Handle Form Change
   function handleChange(e) {
     e.preventDefault();
     setForm({ ...form, [e.target.name]: e.target.value });
   }
-
-  // Handle Form Submit
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);

@@ -1,6 +1,6 @@
 import Footer from "../../../../Footer/Footer";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import "../../../Page_Styles/Practical_Flag_answers.css";
 import React, { useEffect, useState } from "react";
 
@@ -30,11 +30,11 @@ export default function Stolen_flag() {
         }
       }
     `;
-    document.head.appendChild(style); // Inject CSS into the head
+    document.head.appendChild(style);
   };
   const checkAnswer = (e) => {
-    e.preventDefault(); // Prevent form submission
-    const answer = e.target.answer.value; // Get answer from input
+    e.preventDefault();
+    const answer = e.target.answer.value;
     if (answer === "Flag{D3c0d3_P4ck3t_Cyber_Lab}") {
       setShowSuccess(true);
       document.getElementById("check").disabled = true;
@@ -43,12 +43,12 @@ export default function Stolen_flag() {
       launchFireworks();
       setTimeout(() => {
         setShowSuccess(false);
-      }, 1500); // Hide success message after 3 seconds
+      }, 1500);
     } else {
       setShowFail(true);
       setTimeout(() => {
         setShowFail(false);
-      }, 1500); // Hide fail message after 3 seconds
+      }, 1500);
     }
   };
 
@@ -68,9 +68,9 @@ export default function Stolen_flag() {
       particle.style.animation = "explode 1.5s forwards";
 
       fireworkContainer.appendChild(particle);
-      setTimeout(() => particle.remove(), 1600); // Match the animation duration to particle removal
+      setTimeout(() => particle.remove(), 1600);
       particle.addEventListener("animationend", () => {
-        particle.remove(); // Remove particle after animation completes
+        particle.remove();
       });
     }
   };
@@ -78,8 +78,8 @@ export default function Stolen_flag() {
   return (
     <>
       <div className="course-labcc">
-        <GoBack_Btn />
-        <ShowHint_Btn hintText={"Search for HTTP POST and GET requests."} />
+        <GoBackBtn />
+        <ShowHintBtn hintText={"Search for HTTP POST and GET requests."} />
         <div className="firework" id="firework"></div>
         {showSuccess && <div className="message success">Congratulations!</div>}
         {showFail && <div className="message fail">Wrong!</div>}

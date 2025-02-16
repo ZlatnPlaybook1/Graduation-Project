@@ -4,30 +4,24 @@ import Cookie from "cookie-universal";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../../Components/Loading/Loading";
 import "./Auth.css";
-
 export default function Authenticate() {
   const [number, setNumber] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const cookie = Cookie();
-
   const handleNumberChange = (e) => {
     setNumber(e.target.value);
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
-
-    // Client-side validation
     if (!/^\d{6}$/.test(number)) {
       setError("The number must be 6 digits.");
       setLoading(false);
       return;
     }
-
     try {
       const response = await axios.post(
         "http://127.0.0.1:8080/api/authenticate",
@@ -35,10 +29,8 @@ export default function Authenticate() {
           number,
         }
       );
-
       const token = response.data.token;
       cookie.set("CuberWeb", token);
-
       if (response.status === 200) {
         navigate("/dashboard/personal-information");
       }
@@ -53,7 +45,6 @@ export default function Authenticate() {
       }
     }
   };
-
   return (
     <div className="login-register-body">
       {loading && <Loading />}

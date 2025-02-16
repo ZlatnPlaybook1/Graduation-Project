@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import { useRef } from "react";
-import $ from "jquery";
 import "./Login.css";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
 
 export default function SSTI_Login() {
-  const faqSectionRef = useRef(null);
   const [form, setForm] = useState({
     username: "",
     password: "",
   });
-  const [loading, setLoading] = useState(false);
+  const [setLoading] = useState(false);
   const [err, setErr] = useState("");
   const [right, setRight] = useState("");
   function handleChange(e) {
@@ -55,10 +52,12 @@ export default function SSTI_Login() {
   return (
     <>
       <div className="body">
-        <GoBack_Btn />
-        <ShowHint_Btn hintText={
-          '<p>click inspect  and try to beautify and Deobfuscate  script use this : </p> <a href="https://filipemgs.github.io/poisonjs/">De-obfuscate</a> <a href="https://beautifier.io/">beautifier.io</a>' 
-          } />
+        <GoBackBtn />
+        <ShowHintBtn
+          hintText={
+            '<p>click inspect  and try to beautify and Deobfuscate  script use this : </p> <a href="https://filipemgs.github.io/poisonjs/">De-obfuscate</a> <a href="https://beautifier.io/">beautifier.io</a>'
+          }
+        />
         <div className="ssti_lab_body">
           <div className="container">
             <div className="card">
@@ -101,9 +100,7 @@ export default function SSTI_Login() {
                     <button type="submit">Login</button>
                   </div>
                   {err !== "" && <span className="error">{err}</span>}
-                  {right !== `` && (
-                    <span className="right">{right}</span>
-                  )}
+                  {right !== `` && <span className="right">{right}</span>}
                 </form>
               </div>
             </div>

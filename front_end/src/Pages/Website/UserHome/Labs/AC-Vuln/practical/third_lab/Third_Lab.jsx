@@ -9,8 +9,6 @@ import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
 
 export default function Third_Lab() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // Utility function to get a cookie by name
   const getCookie = (name) => {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);

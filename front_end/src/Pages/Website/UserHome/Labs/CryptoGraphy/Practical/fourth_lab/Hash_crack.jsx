@@ -1,21 +1,17 @@
 import Footer from "../../../../Footer/Footer";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
-import Header from "../../../../Header/Header";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import "../../../Page_Styles/Practical_Flag_answers.css";
 import React, { useEffect, useState } from "react";
-
 export default function Hash_Crack() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showFail, setShowFail] = useState(false);
   const fileUrl = "/CryptoGraphy/hash crack.rar";
   const fileName = "Hash Crack.rar";
-
   useEffect(() => {
     document.title = "Hash Crack";
     injectKeyframes();
   }, []);
-
   const injectKeyframes = () => {
     const style = document.createElement("style");
     style.type = "text/css";
@@ -31,11 +27,11 @@ export default function Hash_Crack() {
         }
       }
     `;
-    document.head.appendChild(style); // Inject CSS into the head
+    document.head.appendChild(style);
   };
   const checkAnswer = (e) => {
-    e.preventDefault(); // Prevent form submission
-    const answer = e.target.answer.value; // Get answer from input
+    e.preventDefault();
+    const answer = e.target.answer.value;
     if (answer === "Iamtheflag") {
       setShowSuccess(true);
       document.getElementById("check").disabled = true;
@@ -44,15 +40,14 @@ export default function Hash_Crack() {
       launchFireworks();
       setTimeout(() => {
         setShowSuccess(false);
-      }, 1500); // Hide success message after 3 seconds
+      }, 1500);
     } else {
       setShowFail(true);
       setTimeout(() => {
         setShowFail(false);
-      }, 1500); // Hide fail message after 3 seconds
+      }, 1500);
     }
   };
-
   const launchFireworks = () => {
     const fireworkContainer = document.getElementById("firework");
     const numParticles = window.innerWidth > 768 ? 100 : 50;
@@ -67,11 +62,10 @@ export default function Hash_Crack() {
       particle.style.top = `${Math.random() * 100}%`;
       particle.style.willcChange = "transform, opacity";
       particle.style.animation = "explode 1.5s forwards";
-
       fireworkContainer.appendChild(particle);
-      setTimeout(() => particle.remove(), 1600); // Match the animation duration to particle removal
+      setTimeout(() => particle.remove(), 1600);
       particle.addEventListener("animationend", () => {
-        particle.remove(); // Remove particle after animation completes
+        particle.remove();
       });
     }
   };
@@ -79,8 +73,12 @@ export default function Hash_Crack() {
   return (
     <>
       <div className="course-labcc">
-        <GoBack_Btn />
-        <ShowHint_Btn hintText={" The answer is locked inside an MD5 hash , Maybe an MD5 cracker can help you break it? 💻🚀"} />
+        <GoBackBtn />
+        <ShowHintBtn
+          hintText={
+            " The answer is locked inside an MD5 hash , Maybe an MD5 cracker can help you break it? 💻🚀"
+          }
+        />
         <div className="firework" id="firework"></div>
         {showSuccess && <div className="message success">Congratulations!</div>}
         {showFail && <div className="message fail">Wrong!</div>}

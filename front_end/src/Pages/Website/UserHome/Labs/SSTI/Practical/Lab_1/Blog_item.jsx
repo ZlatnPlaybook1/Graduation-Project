@@ -4,12 +4,12 @@ import "./Blog_item.css";
 import image_1 from "../../../../assets/img/practical_lab2/image_1.png";
 import icon from "../../../../assets/img/practical_lab2/icon.png";
 import Footer from "../../../../Footer/Footer";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function BlogItem() {
-  const [resetMessage, setResetMessage] = useState("");
-  const [form, setForm] = useState({ name: "", content: "" });
+  const [setResetMessage] = useState("");
+  const [setForm] = useState({ name: "", content: "" });
   const [comments, setComments] = useState([]);
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);
@@ -24,16 +24,12 @@ export default function BlogItem() {
       <p>Go back to the blog.</p>
     </div>
   `;
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const comment = e.target.content.value;
     const name = e.target.name.value;
-
     setLoading(true);
-
     try {
-      // Send the comment data to the backend API
       const response = await axios.post(
         "http://127.0.0.1:8080/api/SSTI1Comments",
         {
@@ -41,16 +37,14 @@ export default function BlogItem() {
           name,
         }
       );
-
       const newComment = {
-        id: Date.now(), // Unique ID for each comment
+        id: Date.now(),
         name: response.data.name,
         content: response.data.content,
       };
-
       setComments((prevComments) => [...prevComments, newComment]);
-      setErr(""); // Clear error message
-      fetchComments(); // Fetch comments again to update the list
+      setErr("");
+      fetchComments();
     } catch (err) {
       setErr("Failed to submit the comment");
       console.error("Error submitting comment:", err);
@@ -58,11 +52,9 @@ export default function BlogItem() {
       setLoading(false);
     }
   };
-
-  // Reset the form after submission
   useEffect(() => {
     setForm({ name: "", content: "" });
-  }, [comments]); // Only reset form when comments change
+  }, [comments]);
 
   async function fetchComments() {
     try {
@@ -89,13 +81,11 @@ export default function BlogItem() {
 
   const labreset = async () => {
     try {
-      // Call the backend API to reset
       const response = await axios.get(
         "http://127.0.0.1:8080/api/SSTIlab1Reset"
       );
-      // Handle the response from the backend
       if (response.status === 200) {
-        setResetMessage(response.data.message); // Display the success message from the backend
+        setResetMessage(response.data.message);
       }
     } catch (error) {
       console.error("Error resetting:", error);
@@ -110,7 +100,7 @@ export default function BlogItem() {
   return (
     <>
       <div className="course-blog-item">
-        <GoBack_Btn />
+        <GoBackBtn />
         <ShowHint hintText={hintMessage} />
 
         <div className="container-blog-item">

@@ -25,7 +25,7 @@ export default function UserList() {
         });
         if (response.ok) {
           const data = await response.json();
-          setUsers(data); // Assuming API returns an array of objects with id and name
+          setUsers(data);
         } else {
           console.error("Failed to fetch users.");
         }
@@ -53,7 +53,7 @@ export default function UserList() {
       );
 
       if (response.ok) {
-        setUsers(users.filter((user) => user.id !== id)); // Update UI
+        setUsers(users.filter((user) => user.id !== id));
       } else {
         console.error("Failed to delete user.");
       }

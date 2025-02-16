@@ -4,7 +4,6 @@ import Header from "../../Header/Header";
 import image from "../../assets/img/Cryptography/card_image.png";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
-
 export default function CryptoGraphy_lab() {
   return (
     <>
@@ -51,34 +50,34 @@ export default function CryptoGraphy_lab() {
                 "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
               }
               difficulty={"Easy"}
-              />
-              <Card
-                  link={"/cryptography/cryptography_lab/decode-the-image"}
-                  image={image}
-                  title={"Decode the Image"}
-                  brief={
-                    "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
-                  }
-                  difficulty={"Easy"}
-              />
-              <Card
-                  link={"/cryptography/cryptography_lab/corrupted"}
-                  image={image}
-                  title={"Corrupted"}
-                  brief={
-                    "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
-                  }
-                  difficulty={"Easy"}
-              />
-              <Card
-                  link={"/cryptography/cryptography_lab/hash-crack"}
-                  image={image}
-                  title={"Hash Crack"}
-                  brief={
-                    "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
-                  }
-                  difficulty={"Easy"}
-              />
+            />
+            <Card
+              link={"/cryptography/cryptography_lab/decode-the-image"}
+              image={image}
+              title={"Decode the Image"}
+              brief={
+                "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
+              }
+              difficulty={"Easy"}
+            />
+            <Card
+              link={"/cryptography/cryptography_lab/corrupted"}
+              image={image}
+              title={"Corrupted"}
+              brief={
+                "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
+              }
+              difficulty={"Easy"}
+            />
+            <Card
+              link={"/cryptography/cryptography_lab/hash-crack"}
+              image={image}
+              title={"Hash Crack"}
+              brief={
+                "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
+              }
+              difficulty={"Easy"}
+            />
           </div>
         </div>
       </div>

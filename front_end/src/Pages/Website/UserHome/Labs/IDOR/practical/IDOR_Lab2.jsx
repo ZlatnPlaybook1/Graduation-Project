@@ -36,10 +36,8 @@ const IDOR_Lab2 = () => {
   `;
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
-  const [accountBalance, setAccountBalance] = useState(0); // Default balance set to 0
+  const [accountBalance, setAccountBalance] = useState(0);
   const ticketPrice = 10;
-
-  // Fetch the account balance when the component mounts
   useEffect(() => {
     const fetchAccountBalance = async () => {
       try {
@@ -47,7 +45,7 @@ const IDOR_Lab2 = () => {
         if (response.ok) {
           const data = await response.json();
           setAccountBalance(data.balance);
-          console.log("Fetched account balance:", data); // Log the response
+          console.log("Fetched account balance:", data);
         } else {
           setMessage("Failed to fetch account balance.");
         }
@@ -82,7 +80,7 @@ const IDOR_Lab2 = () => {
         const result = await response.json();
         setAccountBalance(result.balance);
         setMessage(result.message);
-        console.log("API Response after purchase:", result); // Log the response
+        console.log("API Response after purchase:", result);
       } else {
         setMessage("Failed to process the purchase. Please try again.");
       }

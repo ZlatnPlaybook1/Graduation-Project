@@ -11,40 +11,31 @@ export default function CommandInjectionLab2() {
   const hintMessage = `<p>Try to add “;” to the URL </p>`;
   const navigate = useNavigate();
   const location = useLocation();
-
   const [showStock, setShowStock] = useState(null);
   const [apiResponse, setApiResponse] = useState("");
-
-  // Extract and process query parameters from the URL
   const searchParams = new URLSearchParams(location.search);
   const productId = searchParams.get("product_id");
-  const queryParams = location.search; // Entire query string (including '&')
+  const queryParams = location.search;
 
   let ip = "";
   if (productId) {
     const match = productId.match(/^\d+(.*)$/);
     ip = match && match[1] ? match[1].trim() : "";
   }
-
-  // Relaxed hostname validation function allowing spaces, semicolons, and other special characters
   const isValidInput = (input) => {
-    const regex = /^[a-zA-Z0-9\s\.\-\;\:\,\=\(\)]+$/;
+    const regex = /^[a-zA-Z0-9\s.\-;:,=()]+$/;
     return regex.test(input);
   };
 
   useEffect(() => {
     if (ip) {
-      // Validate if the input is a valid format (allowing spaces and special characters)
       const validIp = isValidInput(ip) ? ip : "";
 
       if (!validIp) {
         setApiResponse("Error: Invalid input format");
         return;
       }
-
-      console.log("Sending valid input:", validIp); // Log the value being sent
-
-      // Log the data sent in the API request
+      console.log("Sending valid input:", validIp);
       const requestData = { ip: validIp, queryParams: queryParams };
       console.log("Request Data:", requestData);
 
@@ -53,7 +44,7 @@ export default function CommandInjectionLab2() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(requestData), // Send full query string
+        body: JSON.stringify(requestData),
       })
         .then((response) => {
           if (!response.ok) {
@@ -72,14 +63,11 @@ export default function CommandInjectionLab2() {
           setApiResponse("Error: Unable to connect to API");
         });
     }
-  }, [ip, queryParams]); // Added queryParams to dependency array
-
+  }, [ip, queryParams]);
   const generateStockMessage = (stockCount) => {
     return `Stock: ${stockCount} Pieces`;
   };
-
   const handleCardClick = (cardId) => {
-    // Reset the API response when clicking the card
     setApiResponse("");
     setShowStock(cardId);
     navigate(`?product_id=${cardId}`);

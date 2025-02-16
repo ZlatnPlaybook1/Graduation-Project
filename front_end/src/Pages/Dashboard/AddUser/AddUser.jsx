@@ -12,8 +12,6 @@ export default function AddUser() {
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-
-  // Handle Submit
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);

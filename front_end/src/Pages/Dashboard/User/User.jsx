@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
-
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Landing from "../../Website/UserHome/Landing/Landing";
-
 export default function User() {
   const { id } = useParams();
   const [name, setName] = useState("");
@@ -13,7 +11,6 @@ export default function User() {
   const [disable, setDisable] = useState(true);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
   useEffect(() => {
     setLoading(true);
     axios
@@ -30,8 +27,6 @@ export default function User() {
         navigate("/dashboard/users/page/404", { replace: true });
       });
   }, [id, navigate]);
-
-  // Handle Submit
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -47,7 +42,6 @@ export default function User() {
       console.error("Error submitting form:", error);
     }
   }
-
   return (
     <div className="container my-5">
       {loading && <Landing />}
@@ -67,7 +61,6 @@ export default function User() {
             placeholder="Name..."
           />
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -78,7 +71,6 @@ export default function User() {
             placeholder="name@example.com"
           />
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
           <Form.Label>Role</Form.Label>
           <Form.Select value={role} onChange={(e) => setRole(e.target.value)}>
@@ -89,7 +81,6 @@ export default function User() {
             <option value="writer">Writer</option>
           </Form.Select>
         </Form.Group>
-
         <Button disabled={disable} type="submit" className="btn btn-primary">
           Save
         </Button>

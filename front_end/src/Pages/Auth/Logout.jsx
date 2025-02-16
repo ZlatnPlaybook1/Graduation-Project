@@ -2,12 +2,10 @@ import React from "react";
 import Cookie from "cookie-universal";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
 export default function Logout() {
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
   const navigate = useNavigate();
-
   async function handleLogout() {
     try {
       const res = await axios.get("http://127.0.0.1:8080/api/logout", {
@@ -22,7 +20,6 @@ export default function Logout() {
       console.error(err);
     }
   }
-
   return (
     <button className="button button-primary" onClick={handleLogout}>
       Logout

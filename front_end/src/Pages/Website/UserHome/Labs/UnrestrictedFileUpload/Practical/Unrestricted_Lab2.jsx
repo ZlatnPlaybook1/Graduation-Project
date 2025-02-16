@@ -77,7 +77,7 @@ const UnrestrictedLab1 = () => {
       );
 
       if (response.ok) {
-        const data = await response.json();
+        await response.json();
         setStatus("success");
       } else {
         setStatus("unsuccess");

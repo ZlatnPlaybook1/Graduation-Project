@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cookie from "cookie-universal";
 import "./Settings.css";
-
 export default function Settings() {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -12,13 +11,11 @@ export default function Settings() {
   const [successMessage, setSuccessMessage] = useState("");
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [token, setToken] = useState("");
-
   useEffect(() => {
     const cookie = Cookie();
     const retrievedToken = cookie.get("CuberWeb");
     setToken(retrievedToken);
   }, []);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -26,12 +23,10 @@ export default function Settings() {
       setErrorMessage("New passwords do not match!");
       return;
     }
-
     setLoading(true);
     setErrorMessage("");
     setSuccessMessage("");
     setShowSuccessMessage(false);
-
     try {
       const response = await axios.post(
         "http://127.0.0.1:8080/api/reset-password",
@@ -46,7 +41,6 @@ export default function Settings() {
           },
         }
       );
-
       if (response?.data?.msg) {
         setSuccessMessage(response.data.msg);
         setShowSuccessMessage(true);
@@ -63,7 +57,6 @@ export default function Settings() {
       setLoading(false);
     }
   };
-
   return (
     <div className="settings-container">
       <form className="reset-password-form" onSubmit={handleSubmit}>
@@ -79,7 +72,6 @@ export default function Settings() {
         {errorMessage && (
           <p className="error-message-settings">{errorMessage}</p>
         )}
-
         <div className="form-group">
           <label>Old Password</label>
           <input
@@ -89,7 +81,6 @@ export default function Settings() {
             required
           />
         </div>
-
         <div className="form-group">
           <label>New Password</label>
           <input
@@ -99,7 +90,6 @@ export default function Settings() {
             required
           />
         </div>
-
         <div className="form-group">
           <label>Confirm New Password</label>
           <input
@@ -109,7 +99,6 @@ export default function Settings() {
             required
           />
         </div>
-
         <button type="submit" className="reset-button" disabled={loading}>
           {loading ? "Resetting..." : "Reset Password"}
         </button>

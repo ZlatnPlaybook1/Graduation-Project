@@ -7,16 +7,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Cookie from "cookie-universal";
 import "./Users.css";
-
 export default function Users() {
   const [userData, setUserData] = useState([]);
   const [deleteUser, setDeleteUser] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [NoUsers, setNoUsers] = useState(false);
-
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
-
   useEffect(() => {
     const fetchUserData = async () => {
       if (token) {
@@ -32,11 +29,8 @@ export default function Users() {
         }
       }
     };
-
     fetchUserData();
   }, [token]);
-
-  // Get All Users
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8080/api/users", {

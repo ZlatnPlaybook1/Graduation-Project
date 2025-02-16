@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import {jwtDecode} from "jwt-decode"; // Import jwt-decode
+import { jwtDecode } from "jwt-decode";
 import "../../../../HackerLoginForm/HackerLoginForm.css";
 import { Link } from "react-router-dom";
 import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
@@ -18,23 +18,16 @@ const JWTLogin = ({ apiEndpoint }) => {
     e.preventDefault();
     setLoading(true);
     const data = { username, password };
-
-    // Post the login request to the API
     axios
       .post(apiEndpoint, data)
       .then((response) => {
-        // Store the JWT token
-        const token = response.data.token; // Assume the token is returned in the 'token' field
-        localStorage.setItem("token", token); // Store the token in localStorage
-
-        // Decode the token to check if the user is an admin
+        const token = response.data.token;
+        localStorage.setItem("token", token);
         const decodedToken = jwtDecode(token);
-
-        // Check if the user is an admin
         if (decodedToken.role === "admin") {
-          navigate(`/admin-dashboard`); // Redirect to the admin dashboard
+          navigate(`/admin-dashboard`);
         } else {
-          navigate(`/user-dashboard`); // Redirect to the user dashboard
+          navigate(`/user-dashboard`);
         }
       })
       .catch((error) => {
@@ -48,7 +41,6 @@ const JWTLogin = ({ apiEndpoint }) => {
         }
       });
   };
-
   const spanCount = 400;
   const hintMessage = `
     <ul style="text-align: left; font-size: 16px; line-height: 1.8;">

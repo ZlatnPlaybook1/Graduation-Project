@@ -37,7 +37,7 @@ export default function UserList() {
       );
 
       if (response.ok) {
-        setUsers(users.filter((user) => user.id !== id)); // Update UI
+        setUsers(users.filter((user) => user.id !== id));
       } else {
         console.error("Failed to delete user.");
       }

@@ -103,6 +103,21 @@ const UnrestrictedLab1 = () => {
             <div className="col-md-6">
               <h1 className="mb-4">Subject: The Importance of Cybersecurity</h1>
               <p>
+                In today's digital age, cybersecurity plays a crucial role in
+                protecting sensitive information. With increasing threats like
+                phishing, malware, and ransomware, individuals and organizations
+                must implement strong security measures. This includes using
+                strong passwords, enabling multi-factor authentication, and
+                regularly updating software.
+              </p>
+              <p>
+                Moreover, cybersecurity awareness is vital. By educating people
+                about potential risks and safe online practices, we can minimize
+                the chances of successful cyberattacks. As technology evolves,
+                staying informed and proactive is the best defense against cyber
+                threats.
+              </p>
+              <p>
                 Would you like to share a photo or any related file? 😊 Please
                 upload your file!
               </p>

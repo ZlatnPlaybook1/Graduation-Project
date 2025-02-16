@@ -5,31 +5,22 @@ import React, { useState } from "react";
 import Cookie from "cookie-universal";
 import Loading from "../../../../../../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
-
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 export default function Login_page_second() {
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
-  //  Navigate
   const navigate = useNavigate();
-  // Cookies
   const cookie = Cookie();
-  // Loading state
   const [loading, setLoading] = useState(false);
-  // Error state
   const [err, setErr] = useState("");
-  const [userId, setUserId] = useState(cookie.get("userId") || "");
-
-  // Handle Form Change
+  const [userId] = useState(cookie.get("userId") || "");
   function handleChange(e) {
     e.preventDefault();
     setForm({ ...form, [e.target.name]: e.target.value });
   }
-
-  // Handle Form Submit
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -65,8 +56,6 @@ export default function Login_page_second() {
       }
     }
   }
-
-  // Effect to monitor changes in the 'role' state and redirect accordingly
   useEffect(() => {
     if (userId === "MQ==") {
       navigate(`/cookies/cookies_lab/second/admin`);
@@ -82,8 +71,10 @@ export default function Login_page_second() {
       {loading && <Loading />}
       {/* test comment */}
       <div className="login-page">
-        <GoBack_Btn />
-        <ShowHint_Btn  hintText={'<p>click inspect and cheak cookies value</p>' } />
+        <GoBackBtn />
+        <ShowHintBtn
+          hintText={"<p>click inspect and cheak cookies value</p>"}
+        />
         <div className="container-login">
           <div className="login-form">
             <h1>Login</h1>

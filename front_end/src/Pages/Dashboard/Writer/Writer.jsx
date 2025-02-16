@@ -47,6 +47,7 @@ export default function Writer() {
 
   useEffect(() => {
     const fetchData = async () => {
+      if (!token) return;
       try {
         const res = await axios.get(`http://127.0.0.1:8080/api/personalInfo`, {
           headers: {
@@ -75,7 +76,7 @@ export default function Writer() {
     };
 
     fetchData();
-  }, []);
+  }, [token]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./IDOR_LAB1.css";
 import GoBack from "../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
+
 export default function IDOR_Lab1() {
   const hintMessage = `
         <style>
@@ -34,6 +35,7 @@ export default function IDOR_Lab1() {
         <p>Look at the parameter that indicates the unique <span class="highlight">ID</span> of each invoice. We can modify this ID to view information from other customers.</p>
       </div>
   `;
+
   const strings = {
     title: "Invoice Viewer",
     card_alert: "Invoice Alert",
@@ -44,12 +46,6 @@ export default function IDOR_Lab1() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Helper function to parse query parameters
-  const getQueryParam = (param) => {
-    return new URLSearchParams(location.search).get(param);
-  };
-
-  // Fetch the invoice data (including the PDF path) from the backend
   const fetchInvoiceData = async (invoiceId) => {
     try {
       const response = await fetch(
@@ -76,10 +72,8 @@ export default function IDOR_Lab1() {
     }
   };
 
-  // Handle button click to update the URL and open the PDF in a new tab
   const handleViewClick = async (id) => {
     navigate(`?invoice_id=${id}`, { replace: true });
-
     const pdfUrl = await fetchInvoiceData(id);
     if (pdfUrl) {
       window.open(pdfUrl, "_blank");
@@ -88,8 +82,11 @@ export default function IDOR_Lab1() {
     }
   };
 
-  // Fetch the PDF on component load if query param exists
   useEffect(() => {
+    const getQueryParam = (param) => {
+      return new URLSearchParams(location.search).get(param);
+    };
+
     const invoiceId = getQueryParam("invoice_id");
     if (invoiceId) {
       fetchInvoiceData(invoiceId).then((pdfUrl) => {

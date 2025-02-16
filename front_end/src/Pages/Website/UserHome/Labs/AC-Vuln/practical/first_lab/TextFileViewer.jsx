@@ -8,7 +8,7 @@ export default function TextFileViewer() {
     fetch("/robots2.txt")
       .then((response) => response.text())
       .then((data) => {
-        setFileContent(data); // Set the file content to the state
+        setFileContent(data);
       })
       .catch((error) => {
         console.error("Error fetching robots.txt:", error);

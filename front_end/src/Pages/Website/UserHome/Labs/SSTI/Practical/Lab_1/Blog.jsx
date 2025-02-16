@@ -72,60 +72,12 @@ export default function Blog() {
       image: image_5,
     },
   ];
-
-  // Step 2: Create state for search query
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filteredCards, setFilteredCards] = useState(cards);
-  const [scriptOutput, setScriptOutput] = useState("");
-  const [htmlOutput, setHtmlOutput] = useState("");
-  const [hasSearched, setHasSearched] = useState(false);
-  const [isHTML, setIShtml] = useState(false);
-
-  // const handleSearch = (event) => {
-  //   event.preventDefault();
-  //   setScriptOutput("");
-  //   setHtmlOutput("");
-  //   setHasSearched(true);
-
-  //   // Check if the input contains <script> tags for JavaScript
-  //   if (
-  //     searchQuery.trim().startsWith("<script>") &&
-  //     searchQuery.trim().endsWith("</script>")
-  //   ) {
-  //     const code = searchQuery.replace("<script>", "").replace("</script>", "");
-  //     try {
-  //       // Use eval to run the script inside the <script> tags
-  //       const result = eval(code);
-  //       console.log(result);
-  //       setScriptOutput(
-  //         result !== undefined ? result.toString() : "Script executed"
-  //       );
-  //     } catch (err) {
-  //       setScriptOutput(`Error: ${err.message}`);
-  //     }
-  //   } else if (
-  //     searchQuery.trim().startsWith("<") &&
-  //     searchQuery.trim().endsWith(">")
-  //   ) {
-  //     setHtmlOutput(searchQuery);
-  //     setIShtml(true);
-  //   }
-  //   // Normal search functionality
-  //   else {
-  //     setIShtml(false);
-  //     const filtered = cards.filter(
-  //       (card) =>
-  //         card.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-  //         card.content.toLowerCase().includes(searchQuery.toLowerCase())
-  //     );
-
-  //     setFilteredCards(filtered);
-  //     if (filtered.length === 0) {
-  //       setHtmlOutput("<h1>No data found</h1>");
-  //     }
-  //   }
-  // };
-
+  const [searchQuery] = useState("");
+  const [filteredCards] = useState(cards);
+  const [scriptOutput] = useState("");
+  const [htmlOutput] = useState("");
+  const [hasSearched] = useState(false);
+  const [isHTML] = useState(false);
   return (
     <>
       <GoBack />
