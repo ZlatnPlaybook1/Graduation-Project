@@ -11,7 +11,7 @@ export default function Support() {
 
   const cookie = Cookie();
   // Loading state
-  const [userId, setUserId] = useState(cookie.get("userId") || "");
+  const [userId,setUserId] = useState(cookie.get("userId") || "");
 
 
   // Effect to monitor changes in the 'userId' state and redirect accordingly
@@ -23,7 +23,7 @@ export default function Support() {
     }else {
       navigate(`/cookies/cookies_lab/second/login`);
     }
-  }, [userId]);
+  }, [userId,navigate]);
   return (
     <>
       <div class="container-support">

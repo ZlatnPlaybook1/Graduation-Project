@@ -197,7 +197,6 @@ import SSTI from "./Pages/Website/UserHome/Labs/SSTI/SSTI.jsx";
 import SSTI_LAB from "./Pages/Website/UserHome/Labs/SSTI/SSTI_lab.jsx";
 import Blog from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_1/Blog.jsx";
 import BLOG_ITEM from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_1/Blog_item.jsx";
-import BLOG_LOGIN from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_1/Login.jsx";
 import SSTI_STORE from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_2/SSTI_store.jsx";
 // End SSTI
 // CaptchaBypass
@@ -1024,7 +1023,6 @@ function App() {
           <Route path="/SSTI/SSTI_lab" element={<SSTI_LAB />} />
           <Route path="/SSTI/SSTI_lab/blog" element={<Blog />} />
           <Route path="/SSTI/SSTI_lab/blog-item" element={<BLOG_ITEM />} />
-          <Route path="/SSTI/SSTI_lab/blog/login" element={<BLOG_LOGIN />} />
           <Route path="/SSTI/SSTIlab2/store" element={<SSTI_STORE />} />
           {/* End SSTI */}
           {/* Start CaptchaBypass */}

@@ -16,7 +16,7 @@ export default function Login_page_second() {
   const cookie = Cookie();
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
-  const [userId] = useState(cookie.get("userId") || "");
+  const [userId,setUserId] = useState(cookie.get("userId") || "");
   function handleChange(e) {
     e.preventDefault();
     setForm({ ...form, [e.target.name]: e.target.value });

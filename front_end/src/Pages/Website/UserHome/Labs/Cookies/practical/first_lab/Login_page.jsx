@@ -5,8 +5,8 @@ import React, { useState } from "react";
 import Cookie from "cookie-universal";
 import Loading from "../../../../../../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function Login_page() {
   const [form, setForm] = useState({
@@ -21,7 +21,7 @@ export default function Login_page() {
   const [loading, setLoading] = useState(false);
   // Error state
   const [err, setErr] = useState("");
-  const [role,  setRole] = useState(cookie.get("role") || "");
+  const [role,setRole] = useState(cookie.get("role") || "");
   
   // Handle Form Change
   function handleChange(e) {
@@ -80,9 +80,9 @@ export default function Login_page() {
     <>
       {loading && <Loading />}
     <div className="login-page">
-      <GoBack_Btn/>
+      <GoBackBtn/>
         
-      <ShowHint_Btn hintText={'<p>click inspect and cheak cookies value</p>' }/>
+      <ShowHintBtn hintText={'<p>click inspect and cheak cookies value</p>' }/>
       <div className="container-login">
         <div className="login-form">
             <h1>Login</h1>

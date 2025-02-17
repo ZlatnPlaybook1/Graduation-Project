@@ -8,8 +8,8 @@ import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function BlogItem() {
-  const [setResetMessage] = useState("");
-  const [setForm] = useState({ name: "", content: "" });
+  const [resetmessage,setResetMessage] = useState("");
+  const [form,setForm] = useState({ name: "", content: "" });
   const [comments, setComments] = useState([]);
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);

@@ -11,7 +11,7 @@ export default function Support() {
   const navigate = useNavigate();
   const cookie = Cookie();
   // Loading state
-  const [role, setRole] = useState(cookie.get("role") || "");
+  const [role,setRole] = useState(cookie.get("role") || "");
   // Effect to monitor changes in the 'role' state and redirect accordingly
   useEffect(() => {
     if (role === "admin") {

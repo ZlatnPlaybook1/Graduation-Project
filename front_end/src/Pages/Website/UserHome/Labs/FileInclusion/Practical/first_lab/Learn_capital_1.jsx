@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 export default function Learn_capital_1() {
   const [selectedFile, setSelectedFile] = useState("");
   const [fileContent, setFileContent] = useState("");
-  const [setError] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     document.title = "File Inclusion Demonstration";

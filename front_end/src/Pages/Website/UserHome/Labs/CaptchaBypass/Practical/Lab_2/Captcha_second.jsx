@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../Captcha_labs.css";
-import ShowHint_Btn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import GoBack_Btn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
 import axios from "axios";
 
 export default function Captcha_second() {
@@ -102,8 +102,8 @@ export default function Captcha_second() {
 
   return (
     <div className="body-captcha">
-      <GoBack_Btn />
-      <ShowHint_Btn
+      <GoBackBtn />
+      <ShowHintBtn
         hintText={`Hint`}
       />
       <div className="captcha_first">

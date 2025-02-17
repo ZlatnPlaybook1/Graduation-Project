@@ -85,11 +85,6 @@ export default function Blog() {
       {/* Start Courses */}
       <div className="course-ssti-lab2">
         <div className="container-ssti-lab2">
-          {/* Search Form */}
-          <div className="login-ssti-lab2">
-            <Link to="login">Login</Link>
-          </div>
-
           {/* Render Cards or "No data found" message */}
           <div className="row-practice">
             {hasSearched && (
