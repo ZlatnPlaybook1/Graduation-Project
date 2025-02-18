@@ -8,8 +8,8 @@ import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
 
 export default function BlogItem() {
-  const [resetmessage,setResetMessage] = useState("");
-  const [form,setForm] = useState({ name: "", content: "" });
+  const [resetmessage, setResetMessage] = useState("");
+  const [form, setForm] = useState({ name: "", content: "" });
   const [comments, setComments] = useState([]);
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);
@@ -61,23 +61,24 @@ export default function BlogItem() {
       const response = await axios.get(
         "http://127.0.0.1:8080/api/SSTI1Comments"
       );
-
-      if (Array.isArray(response.data.comments)) {
-        setComments(
-          response.data.comments.map((cmt, name) => ({
-            name: name,
-            ...cmt,
-          }))
-        );
+      
+      if (Array.isArray(response.data)) {
+        setComments(response.data.map((cmt) => ({
+          id: cmt.id,           // Use the id from the response
+          name: cmt.name,       // Use the name from the response
+          content: cmt.comment, // Map the comment to content
+        })));
       } else {
-        setComments([]);
+        setComments([]); // In case the response is not an array
       }
     } catch (error) {
       setErr("Failed to fetch comments.");
       console.error("Error fetching comments:", error);
-      setComments([]);
+      setComments([]); // Set comments to an empty array in case of error
     }
+    console.log(); // Check if the comments are in the expected structure
   }
+  
 
   const labreset = async () => {
     try {

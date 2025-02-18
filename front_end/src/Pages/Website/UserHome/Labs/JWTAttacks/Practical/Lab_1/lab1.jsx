@@ -1,12 +1,13 @@
 import React from "react";
-import JWTLogin from "../Components/JWTLogin";
+import JWTCheck from "../Components/JWTCheck";
 
 const SomeParentComponent = () => {
-  const apiEndpoint = "http://127.0.0.1:8080/api/JWT1Login";
+  const apiEndpoint = "http://127.0.0.1:8080/api/lab1jwt";
+  const lab = "lab1";
 
   return (
     <div>
-      <JWTLogin apiEndpoint={apiEndpoint} />
+      <JWTCheck apiEndpoint={apiEndpoint} lab={lab} />
     </div>
   );
 };

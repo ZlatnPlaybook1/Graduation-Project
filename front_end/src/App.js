@@ -195,9 +195,9 @@ import LEARN_CAPITAL_3 from "./Pages/Website/UserHome/Labs/FileInclusion/Practic
 // SSTI
 import SSTI from "./Pages/Website/UserHome/Labs/SSTI/SSTI.jsx";
 import SSTI_LAB from "./Pages/Website/UserHome/Labs/SSTI/SSTI_lab.jsx";
-import Blog from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_1/Blog.jsx";
-import BLOG_ITEM from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_1/Blog_item.jsx";
-import SSTI_STORE from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_2/SSTI_store.jsx";
+import Blog from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_2/Blog.jsx";
+import BLOG_ITEM from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_2/Blog_item.jsx";
+import SSTI_STORE from "./Pages/Website/UserHome/Labs/SSTI/Practical/Lab_1/SSTI_store.jsx";
 // End SSTI
 // CaptchaBypass
 import CaptchaBypass from "./Pages/Website/UserHome/Labs/CaptchaBypass/CaptchaBypass.jsx";

@@ -6,7 +6,7 @@ import products from "./data.json";
 import axios from "axios";
 export default function SSTI_store() {
   const [outOfStockMessage, setOutOfStockMessage] = useState("");
-  const [setResetMessage] = useState("");
+  const [resetMessage,setResetMessage] = useState("");
   const [messageFromURL, setMessageFromURL] = useState("");
   const [htmlContent, setHtmlContent] = useState("");
   const hintMessage = ` 
