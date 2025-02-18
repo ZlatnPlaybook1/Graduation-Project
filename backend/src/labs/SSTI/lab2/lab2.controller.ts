@@ -12,7 +12,7 @@ export const lab2controller = async (req: Request, res: Response) => {
   console.log("Lab Exercise - User Input:", userInput);
 
   const targetDir = path.resolve(__dirname, '../../../labs/SSTI/lab2/secretFolder');
-  const filePath = path.join(targetDir, 'x.txt');
+  const filePath = path.join(targetDir, 'secret.txt');
 
   try {
     userInput = decodeURIComponent(userInput);
@@ -39,13 +39,13 @@ export const lab2controller = async (req: Request, res: Response) => {
   }
 
   try {
-    const template = Handlebars.compile("<h1>Lab Result: {{evil name}}</h1>");
+    const template = Handlebars.compile("<h4>message: {{evil name}}</h4>");
     const output = template({ name: userInput });
 
     // Check file existence BEFORE sending response
     fs.access(filePath, fs.constants.F_OK, (err) => {
       if (err) {
-        res.send("<h1>Lab Result: </h1><p>congratulation</p>");
+        res.send("<h1>congratulation </h1>"+"\n"+`<h3> ${output}</h3>`);
       } else {
         res.send(output);
       }
@@ -68,7 +68,7 @@ export const products = (req: Request, res: Response) => {
 export const resetLab2 = (req: Request, res: Response) => {
   try {
     const folderPath = path.join(__dirname, "secretFolder");
-    const filePath = path.join(folderPath, "x.txt");
+    const filePath = path.join(folderPath, "secret.txt");
 
     // Ensure the folder exists
     if (!fs.existsSync(folderPath)) {
@@ -78,7 +78,7 @@ export const resetLab2 = (req: Request, res: Response) => {
     // Create the file with default content
     fs.writeFileSync(filePath, "Lab 2 reset file", "utf8");
 
-    res.status(200).json({ message: "x.txt has been created successfully!" });
+    res.status(200).json({ message: "secret.txt has been created successfully!" });
   } catch (error) {
     console.error("Error creating file:", error);
     res.status(500).json({ message: "Internal Server Error" });
