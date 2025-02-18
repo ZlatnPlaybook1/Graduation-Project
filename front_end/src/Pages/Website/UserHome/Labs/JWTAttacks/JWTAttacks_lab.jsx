@@ -50,6 +50,20 @@ export default function JWTAttacks_lab() {
               brief={""}
               difficulty={""}
             />
+            <Card
+              link={"/jwtattacks/jwtattacks_lab/lab2"}
+              image={image}
+              title={"Second Lab"}
+              brief={""}
+              difficulty={""}
+            />
+            <Card
+              link={"/jwtattacks/jwtattacks_lab/lab3"}
+              image={image}
+              title={"Third Lab"}
+              brief={""}
+              difficulty={""}
+            />
           </div>
         </div>
       </div>
