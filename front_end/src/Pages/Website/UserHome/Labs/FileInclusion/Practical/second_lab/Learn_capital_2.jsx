@@ -1,120 +1,24 @@
-import axios from "axios";
-import Footer from "../../../../Footer/Footer";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import "../../../Page_Styles/Practical_Flag_answers.css";
-import React, { useEffect, useState } from "react";
-
+import { SelectionLab } from "../../../../SelectionLab/SelectionLab";
 export default function Learn_capital_2() {
-  const [selectedFile, setSelectedFile] = useState("");
-  const [fileContent, setFileContent] = useState("");
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    document.title = "File Inclusion Demonstration";
-
-    // Parse the file name from the URL query parameters
-    const queryParams = new URLSearchParams(window.location.search);
-    const fileFromUrl = queryParams.get("fruit");
-
-    if (fileFromUrl) {
-      // Fetch file data from the backend
-      fetchFileData(fileFromUrl);
-    }
-  });
-
-  const fetchFileData = async (fruit) => {
-    try {
-      const response = await axios.get(
-        `http://127.0.0.1:8080/api/fileInclusionLab2?fruit=${fruit}`
-      );
-
-      // Use response.data directly without checking response.ok
-      setFileContent(response.data);
-      setError("");
-    } catch (err) {
-      console.error("Error fetching file:", err);
-      setError("File not found or access denied.");
-      setFileContent("");
-    }
-  };
-
-  const handleFileChange = (e) => {
-    setSelectedFile(e.target.value);
-    setError(""); // Clear any previous errors
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (selectedFile) {
-      // Update the URL with the selected file as a query parameter
-      const newUrl = `${window.location.pathname}?fruit=${selectedFile}`;
-      window.history.pushState({}, "", newUrl);
-
-      // Fetch file data from the backend
-      fetchFileData(selectedFile);
-    } else {
-      setError("Please select a file.");
-    }
-  };
-
   return (
-    <>
-      <div className="course-labcc">
-        <GoBackBtn />
-        <ShowHintBtn
-          hintText={
-            "This exercise demonstrates how file inclusion vulnerabilities work. Try to access files by manipulating the input. Always validate and sanitize user input to prevent such attacks!"
-          }
-        />
-        <div className="container-labcc">
-          <div className="faq-section-labcc">
-            <div className="question-div">
-              <div className="text-center">
-                <h2>File Inclusion Demonstration</h2>
-                <p>
-                  Select a file to view its content and the image of Fruits.
-                  This simulates a file inclusion vulnerability in a controlled
-                  environment.
-                </p>
-              </div>
-              <form onSubmit={handleSubmit} style={{ flexDirection: "column" }}>
-                <div className="selection-style">
-                  <select
-                    name="file"
-                    onChange={handleFileChange}
-                    value={selectedFile}
-                  >
-                    <option value="" disabled>
-                      Select a File
-                    </option>
-                    <option value="Apple">Apple</option>
-                    <option value="Banana">Banana</option>
-                    <option value="Guava">Guava</option>
-                    <option value="Mango">Mango</option>
-                    <option value="Strawberry">Strawberry</option>
-                    <option value="WaterMelon">WaterMelon</option>
-                  </select>
-                </div>
-                <button type="submit" id="check">
-                  <i className="fa-regular fa-file"></i> View File Content
-                </button>
-              </form>
-              <div className="capital-info">
-                {fileContent && (
-                  <div className="file-content">
-                    {/* <h3>Rendered HTML:</h3> */}
-                    <div
-                      dangerouslySetInnerHTML={{ __html: fileContent }}
-                    ></div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Footer />
-    </>
+    <SelectionLab
+      api={"http://127.0.0.1:8080/api/fileInclusionLab2"}
+      description={
+        "Select a file to view its content and the image of Fruits. This simulates a file inclusion vulnerability in a controlled environment."
+      }
+      hint={
+        "This exercise demonstrates how file inclusion vulnerabilities work. Try to access files by manipulating the input. Always validate and sanitize user input to prevent such attacks!"
+      }
+      options={[
+        "Apple",
+        "Banana",
+        "Guava",
+        "Mango",
+        "Strawberry",
+        "WaterMelon",
+      ]}
+      question={"What is The Fruit?"}
+      type={"fruit"}
+    />
   );
 }
