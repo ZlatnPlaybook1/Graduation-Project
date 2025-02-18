@@ -26,6 +26,7 @@ export const loginController = async (req: Request, res: Response) => {
         data: {token: token}
     });
 
+    console.log("User logged in successfully:" + token);
     return res.status(200).json({
         message: "User logged in successfully",
         data: {
@@ -80,3 +81,26 @@ export const deleteUser = async (req: Request, res: Response) => {
     });
     return res.status(200).send("User deleted successfully");
 }
+export const createUser = async (req: Request, res: Response) => {
+    try {
+        const { username, password } = req.body;
+
+        // Check if user already exists
+        const existingUser = await prisma.lab1jwt.findUnique({
+            where: { username }
+        });
+
+        if (existingUser) {
+            return res.status(409).send("User already exists");
+        }
+
+        // Create new user
+        const newUser = await prisma.lab1jwt.create({
+            data: { username, password } // Ensure your table has a 'password' column
+        });
+
+        return res.status(201).json({ message: "User created successfully", user: newUser });
+    } catch (error) {
+        return res.status(500).json({ error: "Internal Server Error" });
+    }
+};

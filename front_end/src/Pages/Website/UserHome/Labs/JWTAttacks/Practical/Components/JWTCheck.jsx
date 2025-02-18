@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
+import Cookie from "cookie-universal";
 import "../../../../HackerLoginForm/HackerLoginForm.css";
 import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
 import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
@@ -11,10 +12,12 @@ const JWTCheck = ({ apiEndpoint, lab }) => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
-  const [userRole, setUserRole] = useState(null); // To store the user's role
+  const [loggedusername, setLoggedUsername] = useState("");
   const [loadingDelete, setLoadingDelete] = useState(false); // For delete user button
   const [loadingCreateUser, setLoadingCreateUser] = useState(false); // For creating user "Ali"
   const url = `/jwtattacks/jwtattacks_lab/${lab}`;
+
+  const cookie = Cookie();
 
   // Handle login request
   const handleSubmit = (e) => {
@@ -26,10 +29,11 @@ const JWTCheck = ({ apiEndpoint, lab }) => {
     axios
       .post(`${apiEndpoint}/login`, data) // Replace with your login endpoint
       .then((response) => {
-        console.log("Login successful", response);
-        const token = response.data.token; // Assuming the token is in the 'token' field
+        const token = response.data.data.token; // Assuming the token is in the 'token' field
+        cookie.set("Token", token);
         const decodedToken = jwtDecode(token); // Decode the JWT token to get the user's role
-        setUserRole(decodedToken.username); // Set the user role based on the decoded token
+        setLoggedUsername(decodedToken.username); // Set the user role based on the decoded token
+        console.log("Login successful", decodedToken);
         setLoading(false); // Stop loading once the role is determined
 
         // Create the user "Ali" if the logged-in user is an admin
@@ -51,7 +55,7 @@ const JWTCheck = ({ apiEndpoint, lab }) => {
   const createUserAli = () => {
     setLoadingCreateUser(true);
     axios
-      .post(`${apiEndpoint}/create-user`, {
+      .post(`${apiEndpoint}/createuser`, {
         username: "Ali",
         password: "somepassword",
       }) // Create user endpoint
@@ -70,7 +74,7 @@ const JWTCheck = ({ apiEndpoint, lab }) => {
   const handleDeleteUser = () => {
     setLoadingDelete(true);
     axios
-      .delete(`${apiEndpoint}/delete-user`, { data: { username: "Ali" } }) // Delete user endpoint
+      .delete(`${apiEndpoint}/deleteuser`, { data: { username: "Ali" } }) // Delete user endpoint
       .then((response) => {
         console.log("User Ali deleted successfully", response);
         setLoadingDelete(false);
@@ -81,7 +85,7 @@ const JWTCheck = ({ apiEndpoint, lab }) => {
         console.error("Error deleting user Ali", error);
       });
   };
-
+  console.log(username);
   const spanCount = 400;
   const hintMessage = `
     <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
@@ -110,69 +114,59 @@ const JWTCheck = ({ apiEndpoint, lab }) => {
         ))}
 
         {/* Show Login Form if UserRole is null (not logged in yet) */}
-        {userRole === null ? (
-          <div className="hackerLogin-signin">
-            <div className="hackerLogin-content">
-              <h2>Sign In</h2>
-              <form onSubmit={handleSubmit} className="hacker-form">
-                <div className="hackerLogin-inputBox">
-                  <input
-                    type="text"
-                    required
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
-                  <i>Username</i>
-                </div>
-                <div className="hackerLogin-inputBox">
-                  <input
-                    type="password"
-                    required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <i>Password</i>
-                </div>
-                <div className="hackerLogin-links">
-                  <Link>Forgot Password?</Link>
-                  <Link>Sign Up</Link>
-                </div>
-                <div className="hackerLogin-inputBox">
-                  <input
-                    type="submit"
-                    value={loading ? "Logging in..." : "Login"}
-                    disabled={loading}
-                  />
-                </div>
-                {err && <span className="error">{err}</span>}
-              </form>
-            </div>
+        <div className="hackerLogin-signin">
+          <div className="hackerLogin-content">
+            {loggedusername === "admin" ? (
+              <>
+                <h2>Admin Dashboard</h2>
+                <button onClick={handleDeleteUser} disabled={loadingDelete}>
+                  {loadingDelete ? "Deleting..." : "Delete User Ali"}
+                </button>
+              </>
+            ) : loggedusername !== "admin" && loggedusername !== "" ? (
+              <>
+                <h2>Access Denied</h2>
+                <p>Only Admins Can Access This Page</p>
+              </>
+            ) : (
+              <>
+                <h2>Sign In</h2>
+                <form onSubmit={handleSubmit} className="hacker-form">
+                  <div className="hackerLogin-inputBox">
+                    <input
+                      type="text"
+                      required
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                    />
+                    <i>Username</i>
+                  </div>
+                  <div className="hackerLogin-inputBox">
+                    <input
+                      type="password"
+                      required
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <i>Password</i>
+                  </div>
+                  <div className="hackerLogin-links">
+                    <Link>Forgot Password?</Link>
+                    <Link>Sign Up</Link>
+                  </div>
+                  <div className="hackerLogin-inputBox">
+                    <input
+                      type="submit"
+                      value={loading ? "Logging in..." : "Login"}
+                      disabled={loading}
+                    />
+                  </div>
+                  {err && <span className="error">{err}</span>}
+                </form>
+              </>
+            )}
           </div>
-        ) : (
-          // After login, display based on user role (admin, user, or neither)
-          <div className="hackerLogin-signin">
-            <div className="hackerLogin-content">
-              {userRole === "admin" ? (
-                <>
-                  <h2>Admin Dashboard</h2>
-                  <button onClick={handleDeleteUser} disabled={loadingDelete}>
-                    {loadingDelete ? "Deleting..." : "Delete User Ali"}
-                  </button>
-                  <button onClick={createUserAli} disabled={loadingCreateUser}>
-                    {loadingCreateUser ? "Creating..." : "Create User Ali"}
-                  </button>
-                </>
-              ) : userRole === "user" ? (
-                <>
-                  <h2>Access Denied</h2>
-                  <p>Only Admins Can Access This Page</p>
-                </>
-              ) : (
-                <Link to={url}>You are not authorized. Please log in.</Link>
-              )}
-            </div>
-          </div>
-        )}
+        </div>
       </main>
     </div>
   );
