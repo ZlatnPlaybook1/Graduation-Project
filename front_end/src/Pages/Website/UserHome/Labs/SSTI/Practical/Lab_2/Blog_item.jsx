@@ -85,6 +85,7 @@ export default function BlogItem() {
       const response = await axios.get(
         "http://127.0.0.1:8080/api/SSTIlab1Reset"
       );
+      fetchComments();
       if (response.status === 200) {
         setResetMessage(response.data.message);
       }
