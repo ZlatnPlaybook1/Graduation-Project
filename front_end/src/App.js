@@ -1023,9 +1023,9 @@ function App() {
           {/* Start SSTI */}
           <Route path="/SSTI" element={<SSTI />} />
           <Route path="/SSTI/SSTI_lab" element={<SSTI_LAB />} />
-          <Route path="/SSTI/SSTI_lab/blog" element={<Blog />} />
-          <Route path="/SSTI/SSTI_lab/blog-item" element={<BLOG_ITEM />} />
-          <Route path="/SSTI/SSTIlab2/store" element={<SSTI_STORE />} />
+          <Route path="ssti/ssti_lab/SSTIlab2/blog" element={<Blog />} />
+          <Route path="ssti/ssti_lab/SSTIlab2/blog/blog-item" element={<BLOG_ITEM />} />
+          <Route path="ssti/ssti_lab/SSTIlab1/store" element={<SSTI_STORE />} />
           {/* End SSTI */}
           {/* Start CaptchaBypass */}
           <Route path="/captchabypass" element={<CaptchaBypass />} />

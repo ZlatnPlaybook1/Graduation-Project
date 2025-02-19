@@ -107,7 +107,7 @@ export default function Blog() {
                 <div className="card-ssti-lab2" key={card.id}>
                   <img src={card.image} alt={card.title} />
                   <div className="card-text-ssti-lab2">
-                    <Link to="../SSTI/SSTI_lab/blog-item">
+                    <Link to="blog-item">
                       <h2>{card.title}</h2>
                     </Link>
                     <p>{card.content}</p>

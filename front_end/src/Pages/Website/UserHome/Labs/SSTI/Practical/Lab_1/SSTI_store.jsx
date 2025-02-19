@@ -49,6 +49,12 @@ export default function SSTI_store() {
       );
       if (response.status === 200) {
         setResetMessage(response.data.message);
+        window.history.replaceState(
+          {},
+          "",
+          window.location.pathname
+        );
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error resetting:", error);

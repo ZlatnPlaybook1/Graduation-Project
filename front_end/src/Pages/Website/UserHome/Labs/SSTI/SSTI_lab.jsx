@@ -44,7 +44,7 @@ export default function SSTI_lab() {
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             <Card
-              link={"/SSTI/SSTIlab2/store"}
+              link={"SSTIlab1/store"}
               image={image}
               title={"SSTI Store Vulnerability"}
               brief={
@@ -54,7 +54,7 @@ export default function SSTI_lab() {
             />
 
             <Card
-              link={"/SSTI/SSTI_lab/blog"}
+              link={"SSTIlab2/blog"}
               image={image}
               title={"Basic server-side template injection"}
               brief={
