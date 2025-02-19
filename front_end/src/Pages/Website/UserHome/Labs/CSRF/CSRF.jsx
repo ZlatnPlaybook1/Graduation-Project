@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import Banner from "../../Banner/Banner";
+import Banner from "../../Components/Banner/Banner";
 import background from "../../assets/img/CSRF/background.svg";
 import courseImage from "../../assets/img/CSRF/CourseImage.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
-import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 export default function CSRF() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -19,10 +19,8 @@ export default function CSRF() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        backgroundStyle={{  objectFit:"cover",
-                            height: "100%",
-                            width: "100%",}}
-                courseImage={courseImage}
+        backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
+        courseImage={courseImage}
         courseTitle="Cross-Site Request Forgery (CSRF)"
         courseDescription="Discover how attackers exploit CSRF vulnerabilities to perform
                 unauthorized actions on behalf of authenticated users without
@@ -75,41 +73,39 @@ export default function CSRF() {
                         <FontAwesomeIcon icon={faArrowRight} className="me-2" />
                         Understanding CSRF
                       </span>
-                       : Overview of how CSRF attacks
-                      work and their impact.
+                      : Overview of how CSRF attacks work and their impact.
                     </li>
                     <li>
                       <span className="pink-note">
                         <FontAwesomeIcon icon={faArrowRight} className="me-2" />
                         How CSRF Attacks Work
                       </span>
-                      : Detailed mechanics and
-                      common techniques used in CSRF exploitation.
+                      : Detailed mechanics and common techniques used in CSRF
+                      exploitation.
                     </li>
                     <li>
                       <span className="pink-note">
                         <FontAwesomeIcon icon={faArrowRight} className="me-2" />
                         CSRF vs. XSS
                       </span>
-                      : The differences between CSRF and
-                      Cross-Site Scripting (XSS) attacks.
+                      : The differences between CSRF and Cross-Site Scripting
+                      (XSS) attacks.
                     </li>
                     <li>
                       <span className="pink-note">
                         <FontAwesomeIcon icon={faArrowRight} className="me-2" />
                         Real-World CSRF Examples
                       </span>
-                      : Practical examples
-                      demonstrating the impact of CSRF vulnerabilities.
+                      : Practical examples demonstrating the impact of CSRF
+                      vulnerabilities.
                     </li>
                     <li>
                       <span className="pink-note">
                         <FontAwesomeIcon icon={faArrowRight} className="me-2" />
                         CSRF Prevention Techniques
                       </span>
-                      : Best practices to
-                      secure applications, such as CSRF tokens and SameSite
-                      cookies.
+                      : Best practices to secure applications, such as CSRF
+                      tokens and SameSite cookies.
                     </li>
                   </ol>
                 </dd>

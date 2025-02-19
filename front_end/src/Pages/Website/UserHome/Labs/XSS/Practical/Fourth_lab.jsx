@@ -7,8 +7,8 @@ import image_4 from "../../../assets/img/practical_lab2/image_4.png";
 import image_5 from "../../../assets/img/practical_lab2/image_5.png";
 import Footer from "../../../Footer/Footer";
 import { Link } from "react-router-dom";
-import GoBack from "../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
+import GoBack from "../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 export default function XSS_FOURTH() {
   const hintMessage = `

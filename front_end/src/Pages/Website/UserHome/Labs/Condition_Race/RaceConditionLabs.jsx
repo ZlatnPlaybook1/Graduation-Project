@@ -3,6 +3,7 @@ import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import Auth_Photo from "../../assets/img/Condition_Race/Race Condition Background.png";
 import { Card } from "../../Card/Card";
+import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 export default function RaceConditionLabs() {
   return (
     <>
@@ -64,6 +65,7 @@ export default function RaceConditionLabs() {
           </div>
         </div>
       </div>
+      <GoTop />
       <Footer />
     </>
   );

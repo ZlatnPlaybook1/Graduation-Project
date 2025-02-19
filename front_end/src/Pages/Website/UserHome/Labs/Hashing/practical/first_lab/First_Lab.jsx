@@ -5,9 +5,9 @@ import ComparatorImage from "../../../../assets/img/Hashing/Comparator.jpg";
 import GeneratorImage from "../../../../assets/img/Hashing/Generator.jpg";
 import SaltingImage from "../../../../assets/img/Hashing/Salting.jpg";
 import { Card } from "../../../../Card/Card";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import Go2TopBtn from "../../../../Components/Go2Top_Btn/Go2Top_Btn";
 const HashingLab = () => {
   const hintMessage = `
     <ul style="text-align: left; font-size: 16px; line-height: 1.8;">

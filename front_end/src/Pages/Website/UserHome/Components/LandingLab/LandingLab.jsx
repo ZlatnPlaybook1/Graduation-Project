@@ -56,11 +56,7 @@ const LandingLab = ({
   return (
     <div className="landing-labd">
       <div className="banner">
-        <img
-          src={background}
-          alt="background Image"
-          style={backgroundStyle}
-        />
+        <img src={background} alt="background Image" style={backgroundStyle} />
       </div>
       <div className="container-labd">
         <div className="breadcrumb">

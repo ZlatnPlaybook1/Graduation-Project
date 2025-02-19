@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./ShoppingCart.css";
-import GoBack from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 export default function ShoppingCart() {
   const [products, setProducts] = useState([]);

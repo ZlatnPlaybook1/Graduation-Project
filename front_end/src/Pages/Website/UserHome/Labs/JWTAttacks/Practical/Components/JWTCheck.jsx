@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import Cookie from "cookie-universal";
-import "../../../../HackerLoginForm/HackerLoginForm.css";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import "../../../../Components/HackerLoginForm/HackerLoginForm.css";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import { Link } from "react-router-dom";
 
 const JWTCheck = ({ apiEndpoint, lab }) => {

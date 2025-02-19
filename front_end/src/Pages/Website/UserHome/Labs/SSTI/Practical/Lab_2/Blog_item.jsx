@@ -4,8 +4,8 @@ import "./Blog_item.css";
 import image_1 from "../../../../assets/img/practical_lab2/image_1.png";
 import icon from "../../../../assets/img/practical_lab2/icon.png";
 import Footer from "../../../../Footer/Footer";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 export default function BlogItem() {
   const [resetmessage, setResetMessage] = useState("");
@@ -61,13 +61,15 @@ export default function BlogItem() {
       const response = await axios.get(
         "http://127.0.0.1:8080/api/SSTI1Comments"
       );
-      
+
       if (Array.isArray(response.data)) {
-        setComments(response.data.map((cmt) => ({
-          id: cmt.id,           // Use the id from the response
-          name: cmt.name,       // Use the name from the response
-          content: cmt.comment, // Map the comment to content
-        })));
+        setComments(
+          response.data.map((cmt) => ({
+            id: cmt.id, // Use the id from the response
+            name: cmt.name, // Use the name from the response
+            content: cmt.comment, // Map the comment to content
+          }))
+        );
       } else {
         setComments([]); // In case the response is not an array
       }
@@ -78,7 +80,6 @@ export default function BlogItem() {
     }
     console.log(); // Check if the comments are in the expected structure
   }
-  
 
   const labreset = async () => {
     try {

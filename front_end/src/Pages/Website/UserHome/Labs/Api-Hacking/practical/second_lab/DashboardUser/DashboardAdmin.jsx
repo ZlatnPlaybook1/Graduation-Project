@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
 import "./DashboardAdmin.css";
-import GOBack from "../../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../../../ShowHint_Btn/ShowHint_Btn";
+import GOBack from "../../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 export default function DashboardAdmin() {
   const { id: userId } = useParams();

@@ -1,4 +1,4 @@
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import data from "./Data.json";
 export default function Finish_test() {
   return (

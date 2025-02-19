@@ -1,4 +1,4 @@
-import { FileDownloader } from "../../../../FileDwnLodrLab/FileDownloader";
+import { FileDownloader } from "../../../../Components/FileDwnLodrLab/FileDownloader";
 export default function Hash_Crack() {
   return (
     <FileDownloader

@@ -4,7 +4,7 @@ import Header from "../../Header/Header";
 import imagecourse from "../../assets/img/cookies/Cookies_transparent.png";
 import background from "../../assets/img/background.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 import inLab3 from "../../assets/img/inLab3.png";
 import Footer from "../../Footer/Footer";
 
@@ -304,8 +304,8 @@ export default function Cookies() {
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">
-                        First, we create a function that stores the
-                        name of the visitor in a cookie variable:
+                        First, we create a function that stores the name of the
+                        visitor in a cookie variable:
                       </div>
                       <pre
                         className="terminal-code language-shell-session"
@@ -329,22 +329,24 @@ export default function Cookies() {
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
-                                {"        "}d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                                {"        "}d.setTime(d.getTime() +
+                                (exdays*24*60*60*1000));
                               </span>
                             </span>
                           </span>
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
-                                {"        "}var expires = "expires="+ d.toUTCString();
+                                {"        "}var expires = "expires="+
+                                d.toUTCString();
                               </span>
                             </span>
                           </span>
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
-                                {"        "}document.cookie = cname + "=" + cvalue + ";" +
-                                expires + ";path=/";
+                                {"        "}document.cookie = cname + "=" +
+                                cvalue + ";" + expires + ";path=/";
                               </span>
                             </span>
                           </span>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import GOBack from "../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
+import GOBack from "../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
 import "./CommandInjectionLabs.css";
 import Image1 from "../../../assets/img/Command Injection/resim.jpg";
 import Image2 from "../../../assets/img/Command Injection/resim2.jpg";

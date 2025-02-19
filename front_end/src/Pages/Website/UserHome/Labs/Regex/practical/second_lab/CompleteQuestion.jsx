@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import "./CompleteQuestion.css"; // External CSS file
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import Go2TopBtn from "../../../../Components/Go2Top_Btn/Go2Top_Btn";
 const CompleteQuestion = ({ questionsData }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswer, setUserAnswer] = useState("");

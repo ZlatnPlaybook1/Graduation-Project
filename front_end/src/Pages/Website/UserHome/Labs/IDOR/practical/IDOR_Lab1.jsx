@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./IDOR_LAB1.css";
-import GoBack from "../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
+import GoBack from "../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 export default function IDOR_Lab1() {
   const hintMessage = `

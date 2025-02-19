@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import "../Lab_Style.css";
 import { Link } from "react-router-dom";
 import ProductList from "../../../../ProductList/ProductList";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import Go2TopBtn from "../../../../Components/Go2Top_Btn/Go2Top_Btn";
 import products from "../data.json";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
 
 export default function Third_Lab() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

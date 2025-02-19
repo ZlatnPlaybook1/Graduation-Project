@@ -5,7 +5,9 @@ import imagecourse from "../../assets/img/Command Injection/Icon_Command_Injecti
 import Footer from "../../Footer/Footer";
 import "./CommandInjection.css";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
+
 export default function CommandInjection() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
@@ -175,6 +177,7 @@ export default function CommandInjection() {
           </div>
         </div>
       </div>
+      <GoTop />
       <Footer />
     </>
   );

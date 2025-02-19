@@ -7,7 +7,7 @@ import Footer from "../../Footer/Footer";
 import exampleImage1 from "../../assets/img/Server Side Template Injection/1.png";
 import exampleImage2 from "../../assets/img/Server Side Template Injection/2.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 
 export default function SSTI() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
@@ -127,8 +127,9 @@ export default function SSTI() {
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
-                                $output = $twig-{">"}render("Dear (first_name),",
-                                array("first_name" ={">"} $user.first_name) );
+                                $output = $twig-{">"}render("Dear
+                                (first_name),", array("first_name" ={">"}{" "}
+                                $user.first_name) );
                               </span>
                             </span>
                           </span>

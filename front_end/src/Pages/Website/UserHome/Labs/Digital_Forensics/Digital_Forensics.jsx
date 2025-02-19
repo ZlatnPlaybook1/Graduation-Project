@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import Banner from "../../Banner/Banner";
+import Banner from "../../Components/Banner/Banner";
 import "../Page_Styles/Content.css";
 import background from "../../assets/img/DigitalForensics/background.png";
 import courseImage from "../../assets/img/DigitalForensics/courseImage.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
-import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 export default function Digital_Forensics() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -18,9 +18,7 @@ export default function Digital_Forensics() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        backgroundStyle={{  objectFit:"cover",
-                            height: "100%",
-                            width: "100%",}}
+        backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
         courseImage={courseImage}
         courseTitle="Digital Forensics"
         courseDescription="Learn how experts leverage digital forensics to investigate

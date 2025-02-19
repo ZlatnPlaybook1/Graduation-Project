@@ -5,7 +5,9 @@ import imagecourse from "../../assets/img/Burp_Suit/Icon_Burp_Suit.png";
 import Footer from "../../Footer/Footer";
 import "./BurpSuit.css";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
+
 export default function BurpSuit() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
@@ -47,6 +49,7 @@ export default function BurpSuit() {
           </div>
         </div>
       </div>
+      <GoTop />
       <Footer />
     </>
   );

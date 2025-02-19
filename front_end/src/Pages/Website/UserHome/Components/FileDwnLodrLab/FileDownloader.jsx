@@ -1,5 +1,5 @@
 import "./FileDownloader.css";
-import Footer from "../Footer/Footer";
+import Footer from "../../Footer/Footer";
 import React, { useEffect, useState } from "react";
 import GoBackBtn from "../GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../ShowHint_Btn/ShowHint_Btn";
@@ -89,8 +89,9 @@ export const FileDownloader = ({
           <div className="faq-section-labcc">
             {labInfo && (
               <div className="fileViewer">
-                <p id="lab-info"
-                dangerouslySetInnerHTML={{ __html: labInfo }}
+                <p
+                  id="lab-info"
+                  dangerouslySetInnerHTML={{ __html: labInfo }}
                 ></p>
               </div>
             )}

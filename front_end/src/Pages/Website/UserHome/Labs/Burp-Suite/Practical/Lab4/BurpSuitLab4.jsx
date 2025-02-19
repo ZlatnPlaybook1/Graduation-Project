@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import data from "./questions.json";
 import "./BurpSuitLab4.css";
-import GOBack from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GOBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 export default function BurpSuitLab4() {
   const [userAnswers, setUserAnswers] = useState(

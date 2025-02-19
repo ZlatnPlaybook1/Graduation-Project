@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./FileUplode.css";
 import Cookie from "cookie-universal";
-import GOBack from "../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
+import GOBack from "../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 const UnrestrictedLab1 = () => {
   const hintMessage = `

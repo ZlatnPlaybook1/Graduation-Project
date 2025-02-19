@@ -5,7 +5,9 @@ import imagecourse from "../../assets/img/Condition_Race/race condition icon.jpg
 import Footer from "../../Footer/Footer";
 import "./RaceCondition.css";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
+
 export default function RaceCondition() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
@@ -49,6 +51,7 @@ export default function RaceCondition() {
           </div>
         </div>
       </div>
+      <GoTop />
       <Footer />
     </>
   );

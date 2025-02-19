@@ -1,8 +1,8 @@
-import MCQQuiz from "../../../../MCQ_Form/MCQQuiz";
+import MCQQuiz from "../../../../Components/MCQ_Form/MCQQuiz";
 import MCQData from "./MCQData.json";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import Go2TopBtn from "../../../../Components/Go2Top_Btn/Go2Top_Btn";
 export default function FirstLab() {
   const hintMessage = `
     <ul style="text-align: left; font-size: 16px; line-height: 1.8;">

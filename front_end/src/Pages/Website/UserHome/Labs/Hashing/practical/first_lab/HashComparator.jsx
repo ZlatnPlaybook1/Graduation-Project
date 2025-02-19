@@ -8,9 +8,9 @@ import {
   faSyncAlt,
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import Go2TopBtn from "../../../../Components/Go2Top_Btn/Go2Top_Btn";
 import "./First_Lab.css";
 
 const HashComparator = () => {

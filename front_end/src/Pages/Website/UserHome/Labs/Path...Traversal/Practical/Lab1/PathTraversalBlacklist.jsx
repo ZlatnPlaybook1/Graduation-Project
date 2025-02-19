@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./PathTraversalBlacklist.css";
-import GOBack from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GOBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 export default function PathTraversalBlacklist() {
   const hintMessage = `

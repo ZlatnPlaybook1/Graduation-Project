@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./BurpSuitLab2.css";
-import GOBack from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 export default function BurpSuitLab2() {
   const hintMessage = `<p>Add Something</p>`;
@@ -41,7 +41,7 @@ export default function BurpSuitLab2() {
 
   return (
     <>
-      <GOBack />
+      <GoBack />
       <ShowHint hintText={hintMessage} />
       <div className="bs-lab2-container">
         <div className="bs-lab2-card">

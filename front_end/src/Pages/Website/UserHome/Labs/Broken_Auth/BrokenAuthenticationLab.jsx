@@ -3,6 +3,7 @@ import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import Auth_Photo from "../../assets/img/Broken Authentication/Auth_Icon.png";
 import { Card } from "../../Card/Card";
+import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 export default function BrokenAuthenticationLab() {
   return (
     <>
@@ -71,6 +72,7 @@ export default function BrokenAuthenticationLab() {
           </div>
         </div>
       </div>
+      <GoTop />
       <Footer />
     </>
   );

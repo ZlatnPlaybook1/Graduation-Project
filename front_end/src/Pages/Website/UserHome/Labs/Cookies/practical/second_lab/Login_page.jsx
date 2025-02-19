@@ -5,8 +5,8 @@ import React, { useState } from "react";
 import Cookie from "cookie-universal";
 import Loading from "../../../../../../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 export default function Login_page_second() {
   const [form, setForm] = useState({
     email: "",
@@ -16,7 +16,7 @@ export default function Login_page_second() {
   const cookie = Cookie();
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
-  const [userId,setUserId] = useState(cookie.get("userId") || "");
+  const [userId, setUserId] = useState(cookie.get("userId") || "");
   function handleChange(e) {
     e.preventDefault();
     setForm({ ...form, [e.target.name]: e.target.value });

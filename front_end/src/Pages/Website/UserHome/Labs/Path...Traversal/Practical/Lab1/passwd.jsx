@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import GOBack from "../../../../GoBack_Btn/GoBack_Btn";
+import GOBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import "./ShowProducts.css";
 
 export default function Passwd() {

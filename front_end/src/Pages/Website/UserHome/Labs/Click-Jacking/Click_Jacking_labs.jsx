@@ -3,8 +3,8 @@ import Header from "../../Header/Header";
 import labImg from "../../assets/img/ACV/lab.jpeg";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
-import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn";
-import LandingPractice from "../../LandingPractice/LandingPractice";
+import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
+import LandingPractice from "../../Components/LandingPractice/LandingPractice";
 export default function Click_Jacking_Labs() {
   return (
     <>

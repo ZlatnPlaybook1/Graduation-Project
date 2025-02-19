@@ -4,8 +4,8 @@ import image_1 from "../../../assets/img/practical_lab2/image_1.png";
 import icon from "../../../assets/img/practical_lab2/icon.png";
 import Footer from "../../../Footer/Footer";
 import axios from "axios";
-import GoBackBtn from "../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 export default function Second_lab_XSS() {
   const hintMessage = `

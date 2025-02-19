@@ -5,7 +5,7 @@ import imagecourse from "../../assets/img/Insecure_Deserialization/Icon_Insecure
 import Footer from "../../Footer/Footer";
 import "./InsecureDeserialization.css";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 export default function InsecureDeserialization() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (

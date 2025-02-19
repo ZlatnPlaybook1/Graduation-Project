@@ -3,9 +3,9 @@ import Header from "../../Header/Header";
 import labImg from "../../assets/img/BLV/lab1.jpeg";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Card/Card";
-import Banner from "../../Banner/Banner";
-import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn";
-import LandingPractice from "../../LandingPractice/LandingPractice";
+import Banner from "../../Components/Banner/Banner";
+import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
+import LandingPractice from "../../Components/LandingPractice/LandingPractice";
 export default function BL_Vuln_labs() {
   return (
     <>

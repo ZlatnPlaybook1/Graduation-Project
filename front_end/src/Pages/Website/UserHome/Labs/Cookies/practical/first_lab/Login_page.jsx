@@ -5,8 +5,8 @@ import React, { useState } from "react";
 import Cookie from "cookie-universal";
 import Loading from "../../../../../../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 export default function Login_page() {
   const [form, setForm] = useState({
@@ -14,28 +14,31 @@ export default function Login_page() {
     password: "",
   });
   //  Navigate
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   // Cookies
   const cookie = Cookie();
   // Loading state
   const [loading, setLoading] = useState(false);
   // Error state
   const [err, setErr] = useState("");
-  const [role,setRole] = useState(cookie.get("role") || "");
-  
+  const [role, setRole] = useState(cookie.get("role") || "");
+
   // Handle Form Change
   function handleChange(e) {
     e.preventDefault();
     setForm({ ...form, [e.target.name]: e.target.value });
   }
-  
+
   // Handle Form Submit
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     setErr("");
     try {
-      const res = await axios.post("http://127.0.0.1:8080/api/cookie_login", form);
+      const res = await axios.post(
+        "http://127.0.0.1:8080/api/cookie_login",
+        form
+      );
       setLoading(false);
       const role = res.data.role;
       cookie.set("role", role);
@@ -43,8 +46,7 @@ export default function Login_page() {
         navigate(`/cookies/cookies_lab/first/admin`);
       } else if (role === "support") {
         navigate(`/cookies/cookies_lab/first/support`);
-      }
-      else  {
+      } else {
         navigate(`/cookies/cookies_lab/first/login`);
       }
     } catch (error) {
@@ -62,8 +64,6 @@ export default function Login_page() {
       }
     }
   }
-  
-
 
   // Effect to monitor changes in the 'role' state and redirect accordingly
   useEffect(() => {
@@ -71,51 +71,58 @@ export default function Login_page() {
       navigate(`/cookies/cookies_lab/first/admin`);
     } else if (role === "support") {
       navigate(`/cookies/cookies_lab/first/support`);
-    }
-    else  {
+    } else {
       navigate(`/cookies/cookies_lab/first/login`);
     }
-  }, [role,navigate]);
+  }, [role, navigate]);
   return (
     <>
       {loading && <Loading />}
-    <div className="login-page">
-      <GoBackBtn/>
-        
-      <ShowHintBtn hintText={'<p>click inspect and cheak cookies value</p>' }/>
-      <div className="container-login">
-        <div className="login-form">
+      <div className="login-page">
+        <GoBackBtn />
+
+        <ShowHintBtn
+          hintText={"<p>click inspect and cheak cookies value</p>"}
+        />
+        <div className="container-login">
+          <div className="login-form">
             <h1>Login</h1>
-            <form  onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input type="email"
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
                   id="email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
                   required
-                  placeholder="Enter Your Email.."/>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input type="password"
+                  placeholder="Enter Your Email.."
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
                   id="password"
                   name="password"
                   value={form.password}
                   onChange={handleChange}
                   required
                   minLength={6}
-                  placeholder="Enter Your Password.."/>
-                </div>
-                <div className="form-group">
-                    <button type="submit" className="btn-login">Login</button>
-                </div>
-                    {err !== "" && <span className="error">{err}</span>}
+                  placeholder="Enter Your Password.."
+                />
+              </div>
+              <div className="form-group">
+                <button type="submit" className="btn-login">
+                  Login
+                </button>
+              </div>
+              {err !== "" && <span className="error">{err}</span>}
             </form>
+          </div>
         </div>
-    </div>
-    </div>
+      </div>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import "./Second_Lab.css";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import image_1 from "../../../../assets/img/SQL_2nd_Lab/image_1.png";
 import image_2 from "../../../../assets/img/SQL_2nd_Lab/image_2.png";
 import image_3 from "../../../../assets/img/SQL_2nd_Lab/image_3.png";
@@ -8,7 +8,7 @@ import image_5 from "../../../../assets/img/SQL_2nd_Lab/image_5.png";
 import image_6 from "../../../../assets/img/SQL_2nd_Lab/image_6.png";
 import image_7 from "../../../../assets/img/SQL_2nd_Lab/image_7.png";
 import image_8 from "../../../../assets/img/SQL_2nd_Lab/image_8.png";
-import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
+import Go2TopBtn from "../../../../Components/Go2Top_Btn/Go2Top_Btn";
 
 export default function With_Stock() {
   return (

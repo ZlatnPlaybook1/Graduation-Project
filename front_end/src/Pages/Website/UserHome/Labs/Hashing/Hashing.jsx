@@ -1,15 +1,15 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import Banner from "../../Banner/Banner";
+import Banner from "../../Components/Banner/Banner";
 import background from "../../assets/img/Hashing/background.png";
 import courseImage from "../../assets/img/Hashing/courseImage.png";
 import HashingVsEncryption from "../../assets/img/Hashing/hashing-vs-encryption.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn.jsx";
+import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 export default function Hashing() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -20,9 +20,7 @@ export default function Hashing() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        backgroundStyle={{  objectFit:"cover",
-                            height: "100%",
-                            width: "100%",}}
+        backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
         courseImage={courseImage}
         courseTitle="Hashing"
         courseDescription="Learn how attackers exploit access control vulnerabilities in web applications, gaining unauthorized access to sensitive areas or data, and the techniques used to detect and prevent these attacks."

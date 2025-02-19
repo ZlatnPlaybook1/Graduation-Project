@@ -1,4 +1,4 @@
-import { SelectionLab } from "../../../../SelectionLab/SelectionLab";
+import { SelectionLab } from "../../../../Components/SelectionLab/SelectionLab";
 export default function Learn_capital_2() {
   return (
     <SelectionLab

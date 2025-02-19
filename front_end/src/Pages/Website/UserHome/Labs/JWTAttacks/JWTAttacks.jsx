@@ -7,7 +7,7 @@ import Footer from "../../Footer/Footer";
 import exampleImage1 from "../../assets/img/JWT attacks/image_1.webp";
 import exampleImage2 from "../../assets/img/JWT attacks/image_2.webp";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 export default function JWTAttacks() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (

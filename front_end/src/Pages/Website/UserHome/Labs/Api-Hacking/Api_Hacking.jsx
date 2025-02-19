@@ -3,10 +3,10 @@ import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import background from "../../assets/img/Api_Hacking/background.png";
 import courseImage from "../../assets/img/Api_Hacking/courseImage.png";
-import Banner from "../../Banner/Banner.jsx";
+import Banner from "../../Components/Banner/Banner.jsx";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
-import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 export default function Api_Hacking() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -17,9 +17,7 @@ export default function Api_Hacking() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-        backgroundStyle={{  objectFit:"cover",
-                                   height: "100%",
-                                   width: "100%",}}
+        backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
         courseImage={courseImage}
         courseTitle="API Hacking & Testing"
         courseDescription=" Learn how attackers exploit vulnerabilities in APIs to access

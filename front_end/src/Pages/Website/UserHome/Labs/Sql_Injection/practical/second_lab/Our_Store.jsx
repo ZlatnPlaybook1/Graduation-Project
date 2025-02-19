@@ -1,5 +1,5 @@
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import "./Second_Lab.css";
 import image_1 from "../../../../assets/img/SQL_2nd_Lab/image_1.png";
 import image_2 from "../../../../assets/img/SQL_2nd_Lab/image_2.png";

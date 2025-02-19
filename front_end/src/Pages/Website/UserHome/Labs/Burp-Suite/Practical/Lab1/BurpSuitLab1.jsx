@@ -1,8 +1,8 @@
 import "./BurpSuitLab1.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import GoBack from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 export default function MoneyTransferLab() {
   const hintMessage = `
@@ -22,13 +22,11 @@ export default function MoneyTransferLab() {
   useEffect(() => {
     // PATCH request to update accounts
     axios
-      .patch(`${apiUrl}/accounts`, { updated: true }) // Replace `{ updated: true }` with the appropriate data for your API
+      .patch(`${apiUrl}/accounts`, { updated: true })
       .then(() => console.log("PATCH request successful"))
       .catch((error) =>
         console.error("Failed to execute PATCH request:", error)
       );
-
-    // Fetch account information for the current user
     axios
       .get(`${apiUrl}/account/${userId}`)
       .then((response) => setAccount(response.data.account))

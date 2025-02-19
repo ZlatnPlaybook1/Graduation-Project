@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./auth_lab.css";
-import GOBack from "../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
+import GOBack from "../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 export default function Auth_lab3() {
   const hintMessage = `<p>Add Something</p>`;

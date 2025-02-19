@@ -6,8 +6,8 @@ import chichenItzaImage from "../../../assets/img/seven_lab/Picture4.jpg";
 import tajMahalImage from "../../../assets/img/seven_lab/Picture5.jpg";
 import hawaiiImage from "../../../assets/img/seven_lab/Picture6.jpg";
 import colosseumImage from "../../../assets/img/seven_lab/Picture7.jpg";
-import GoBack from "../../../GoBack_Btn/GoBack_Btn";
-import ShowHint from "../../../ShowHint_Btn/ShowHint_Btn";
+import GoBack from "../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 const cardData = [
   {

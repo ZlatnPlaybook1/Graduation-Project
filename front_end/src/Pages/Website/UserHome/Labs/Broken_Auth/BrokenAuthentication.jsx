@@ -6,7 +6,9 @@ import "../../Components/Topics CSS/topics.css";
 import background from "../../assets/img/Broken Authentication/broken_authentication_blogpost.png";
 import imagecourse from "../../assets/img/Broken Authentication/broken-authentication.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
+
 export default function BrokenAuthentication() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -480,6 +482,7 @@ export default function BrokenAuthentication() {
           </div>
         </div>
       </div>
+      <GoTop />
       <Footer />
     </>
   );

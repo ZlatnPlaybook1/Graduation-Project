@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 
 export default function Obfuscation_login() {
   const [form, setForm] = useState({

@@ -9,7 +9,7 @@ import exampleImage2 from "../../assets/img/Obfuscation/2.png";
 import exampleImage3 from "../../assets/img/Obfuscation/3.png";
 import exampleImage4 from "../../assets/img/Obfuscation/4.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 
 export default function Obfuscation() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();

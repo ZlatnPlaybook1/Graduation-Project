@@ -1,6 +1,6 @@
 import data from "./Data.json";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 export default function Show_prices() {
   const hintMessage = `
     <ul style="text-align: left; font-size: 16px; line-height: 1.8;">

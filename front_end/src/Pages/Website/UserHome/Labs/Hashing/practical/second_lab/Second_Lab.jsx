@@ -10,9 +10,9 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import "../first_lab/First_Lab.css";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import Go2TopBtn from "../../../../Components/Go2Top_Btn/Go2Top_Btn";
 const CyberLabTask = () => {
   const [instructions, setInstructions] = useState("");
   const [answerText, setAnswerText] = useState("");
@@ -60,7 +60,7 @@ const CyberLabTask = () => {
       const hashedWord = matches[2];
       extractedAnswers.push({
         word: `word${wordNumber}`,
-        hashed_algorithm: "MD5/SHA-1/SHA-256", 
+        hashed_algorithm: "MD5/SHA-1/SHA-256",
       });
     }
     setJsonAnswer(extractedAnswers);
@@ -137,9 +137,11 @@ const CyberLabTask = () => {
       <ShowHintBtn hintText={hintMessage} />
       <div className=" w-100 p-y5 my-5">
         <div className="container mt-5">
-          <div style={{
-            height: "2rem",
-          }}></div>
+          <div
+            style={{
+              height: "2rem",
+            }}
+          ></div>
           <div className="intro-card shadow-lg">
             <div className="card-body mt-5">
               {/* Title */}

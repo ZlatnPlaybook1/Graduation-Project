@@ -6,9 +6,9 @@ import background from "../../assets/img/SQL_Injection/bg.png";
 import courseImage from "../../assets/img/SQL_Injection/courseImage.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
 import tableImage from "../../assets/img/SQL_Injection/table.png";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
-import Banner from "../../Banner/Banner.jsx";
-import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import Banner from "../../Components/Banner/Banner.jsx";
+import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 // import OutOfBandImage from "../../assets/img/SQL_Injection/Out-of-Band SQLi.png";
 // import DBServerImage from "../../assets/img/SQL_Injection/DBServer.png";
 
@@ -22,9 +22,7 @@ export default function Sql_Injection() {
       {/* Start Landing */}
       <LandingLab
         background={background}
-         backgroundStyle={{  objectFit:"cover",
-                    height: "100%",
-                    width: "100%",}}
+        backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
         courseImage={courseImage}
         courseTitle="SQL Injection"
         courseDescription="Learn how attackers exploit vulnerabilities in web applications

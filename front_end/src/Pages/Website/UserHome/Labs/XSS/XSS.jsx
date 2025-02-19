@@ -7,7 +7,7 @@ import imagecourse from "../../assets/img/Cross_Site_Scripting/Broken Authentica
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 export default function XSS() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (

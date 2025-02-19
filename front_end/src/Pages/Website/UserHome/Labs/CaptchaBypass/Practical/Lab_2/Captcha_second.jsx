@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../Captcha_labs.css";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import axios from "axios";
 
 export default function Captcha_second() {
@@ -64,7 +64,7 @@ export default function Captcha_second() {
         setComments(
           response.data.map((cmt, index) => ({
             id: index + 1,
-            comment:cmt.comment,
+            comment: cmt.comment,
           }))
         );
         setID(response.data.length + 1);
@@ -91,7 +91,6 @@ export default function Captcha_second() {
       setComment("");
       setCaptcha("");
       setID(1);
-
     } catch (error) {
       setErr(error.response?.data?.message || "Network Error");
       console.error("Error resetting captcha:", error);
@@ -103,9 +102,7 @@ export default function Captcha_second() {
   return (
     <div className="body-captcha">
       <GoBackBtn />
-      <ShowHintBtn
-        hintText={`Hint`}
-      />
+      <ShowHintBtn hintText={`Hint`} />
       <div className="captcha_first">
         <div className="container-captcha">
           <div className="card-captcha">

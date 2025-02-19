@@ -1,6 +1,6 @@
 import React from "react";
 import welcome from "../../../../assets/img/welcome.png";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 export default function Welcome() {
   return (
     <>

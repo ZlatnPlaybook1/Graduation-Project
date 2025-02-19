@@ -8,7 +8,7 @@ import imagecourse from "../../assets/img/IDOR/idorIcon.jpg";
 import background from "../../assets/img/IDOR/IDOR.jpg";
 import IDOR_Vulerability from "../../assets/img/IDOR/InsecureDirectObjectReference(IDOR)Vulnerability.png";
 import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../LandingLab/LandingLab.jsx";
+import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 export default function InsecureDirectObjectReference() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 

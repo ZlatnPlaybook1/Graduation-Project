@@ -3,8 +3,8 @@ import "../Lab_Style.css";
 import ProductList from "../../../../ProductList/ProductList";
 import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
 import products from "../data.json";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import Go2TopBtn from "../../../../Go2Top_Btn/Go2Top_Btn";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import Go2TopBtn from "../../../../Components/Go2Top_Btn/Go2Top_Btn";
 
 export default function First_Lab() {
   const hintMessage = `

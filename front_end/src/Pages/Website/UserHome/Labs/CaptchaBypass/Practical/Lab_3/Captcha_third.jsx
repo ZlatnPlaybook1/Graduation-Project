@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../Captcha_labs.css";
-import ShowHintBtn from "../../../../ShowHint_Btn/ShowHint_Btn";
-import GoBackBtn from "../../../../GoBack_Btn/GoBack_Btn";
+import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 
@@ -26,28 +26,28 @@ export default function CaptchaThird() {
       const response = await axios.get(
         "http://127.0.0.1:8080/api/capatchalab3comments"
       );
-  
+
       // Ensure the response is an array
       if (Array.isArray(response.data)) {
         setComments(
           response.data.map((cmt, index) => ({
-            id: index + 1,   // Add an id field to each comment
-            comment: cmt.comment,  // Use the 'comment' field from each object
+            id: index + 1, // Add an id field to each comment
+            comment: cmt.comment, // Use the 'comment' field from each object
           }))
         );
-        setID(response.data.length + 1);  // Set the next ID based on the comments length
+        setID(response.data.length + 1); // Set the next ID based on the comments length
       } else {
-        setComments([]);  // In case the response isn't the expected array
-        setID(1);  // Reset ID counter
+        setComments([]); // In case the response isn't the expected array
+        setID(1); // Reset ID counter
       }
     } catch (error) {
       setErr("Failed to fetch comments.");
       console.error("Error fetching comments:", error);
-      setComments([]);  // Reset comments on failure
-      setID(1);  // Reset ID on failure
+      setComments([]); // Reset comments on failure
+      setID(1); // Reset ID on failure
     }
   }
-  
+
   async function deleteCaptcha() {
     setLoading(true);
     setErr("");
