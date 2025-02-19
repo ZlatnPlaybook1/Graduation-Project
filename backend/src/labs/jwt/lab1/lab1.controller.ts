@@ -1,5 +1,5 @@
 import jwt, {JwtPayload} from 'jsonwebtoken'
-import e, {NextFunction, Request, Response} from "express";
+import {NextFunction, Request, Response} from "express";
 import {comparePasswords, createJWT} from "./lab1.service";
 import prisma from "../../../utilities/db";
 

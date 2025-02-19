@@ -262,7 +262,15 @@ model lab1SSTI1 {
 model lab1jwt {
   id       String  @id @default(uuid(7))
   username String  @unique
-  email    String?  @unique
+  email    String? @unique
+  password String
+  token    String?
+}
+
+model lab2jwt {
+  id       String  @id @default(uuid(7))
+  username String  @unique
+  email    String? @unique
   password String
   token    String?
 }
