@@ -51,6 +51,7 @@ import lab2SSTI from "./labs/SSTI/lab2/lab2.router";
 import bLVulnRouter from "./labs/BL-Vuln/Lab1/lab1.router";
 import lab1jwtRouter from "./labs/jwt/lab1/lab1.router";
 import lab2jwtRouter from "./labs/jwt/lab2/lab2.router";
+import lab3jwtRouter from "./labs/jwt/lab3/lab3.router";
 
 const app = express();
 app.use("/uploads", express.static("uploads"));
@@ -120,6 +121,7 @@ app.use("/api", lab2SSTI);
 app.use("/api", bLVulnRouter);
 app.use("/api", lab1jwtRouter);
 app.use("/api", lab2jwtRouter);
+app.use("/api", lab3jwtRouter);
 
 dotenv.config();
 

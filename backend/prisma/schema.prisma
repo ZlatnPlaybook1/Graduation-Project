@@ -274,3 +274,11 @@ model lab2jwt {
   password String
   token    String?
 }
+
+model lab3jwt {
+  id       String  @id @default(uuid(7))
+  username String  @unique
+  email    String? @unique
+  password String
+  token    String?
+}
