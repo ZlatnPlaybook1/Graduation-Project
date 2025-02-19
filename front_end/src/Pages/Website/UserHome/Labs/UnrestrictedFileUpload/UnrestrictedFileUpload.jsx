@@ -2,6 +2,7 @@ import React from "react";
 import "./UnrestrictedFileUpload.css";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
+import "../../Components/Topics CSS/topics.css";
 import photo2 from "../../assets/img/Unrestricted File Upload/Post&GetImage.png";
 import code1 from "../../assets/img/Unrestricted File Upload/code1FileUpload.png";
 import code2 from "../../assets/img/Unrestricted File Upload/code2FileUpload.png";
@@ -29,23 +30,23 @@ export default function UnrestrictedFileUpload() {
       />
       {/* End Landing */}
       {/* Start Content */}
-      <div className="UnrestrictedContent">
-        <div className="container-lab2" ref={faqSectionRef}>
-          <div className="row-lab2">
-            <div className="faq-section-unrestricted">
-              <dl className="section-text-lab2">
+      <div className="SecureUploadContent">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="secure-row">
+            <div className="secure-faq-section">
+              <dl className="secure-section-text">
                 {/* Single FAQ Area  */}
-                <dt className="wave-lab2 fadeInUp faq-header-lab2">
+                <dt className="secure-wave fadeInUp secure-faq-header">
                   <span>Task 1</span> Description
                 </dt>
-                <dd className="fadeInUp faq-body-lab2">
+                <dd className="fadeInUp Auth-faq-body">
                   <ul>
                     <img
                       className="imageUnrest"
                       src={photo2}
                       alt="unrestricted"
                     />
-                    <li>
+                    <li className="style">
                       <p>
                         <div class="modern-title">
                           Unrestricted File Upload{" "}
@@ -65,7 +66,7 @@ export default function UnrestrictedFileUpload() {
                       <p>
                         The OWASP Top 10 refers to{" "}
                         <p>
-                          <span class="highlight">
+                          <span class="highlight-UnRestrict">
                             Unrestricted File Uploads
                           </span>{" "}
                           as a significant risk
@@ -81,12 +82,12 @@ export default function UnrestrictedFileUpload() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="wave-lab2 fadeInUp faq-header-lab2">
+                <dt className="secure-wave fadeInUp secure-faq-header">
                   <span>Task 2</span>Impact
                 </dt>
-                <dd className="faq-body-lab2">
+                <dd className="fadeInUp Auth-faq-body">
                   <ul>
-                    <li>
+                    <li className="style-modern-fileUpload">
                       The impact of an Unrestricted File Upload vulnerability is
                       usually high given that it facilitates code execution on
                       target systems and web applications. Malicious actors
@@ -95,10 +96,10 @@ export default function UnrestrictedFileUpload() {
                       attack other servers, and be used as a staging point to
                       pivot to other clients in the network.
                     </li>
-                    <li>
+                    <li className="style-modern-fileUpload">
                       In 2017, a security researcher participating in a bug
                       bounty run by PayPal was able to{" "}
-                      <span class="highlight">
+                      <span class="highlight-UnRestrict">
                         leverage an Unrestricted File Upload
                       </span>{" "}
                       vulnerability to execute remote code on the application.
@@ -110,7 +111,7 @@ export default function UnrestrictedFileUpload() {
                       systemic problem that arises far earlier in the
                       development cycle at the implementation stage.
                     </li>
-                    <li>
+                    <li className="style-modern-fileUpload">
                       Elaborating on the impacts, Unrestricted File Uploads can
                       lead to Command Injection, XSS attacks, Denial of Service
                       attacks, the creation of phishing pages, and other kinds
@@ -120,12 +121,12 @@ export default function UnrestrictedFileUpload() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="wave-lab2 fadeInUp faq-header-lab2">
+                <dt className="secure-wave fadeInUp secure-faq-header">
                   <span>Task 3</span>Scenarios
                 </dt>
-                <dd className="faq-body-lab2">
+                <dd className="fadeInUp Auth-faq-body">
                   <ul>
-                    <li>
+                    <li className="scnarios-fileUplode">
                       Unrestricted File Upload vulnerabilities can be exploited
                       in a variety of ways depending on the language used and
                       the specific flaw exposed. Countermeasures and validation
@@ -147,15 +148,15 @@ export default function UnrestrictedFileUpload() {
                         <span>• Image header checks </span>
                       </li>
                     </ol>
-                    <li>
+                    <li className="scnarios-fileUplode">
                       The following elaborates on Unrestricted File Upload
                       manipulation as a result of non-existent validations in a
                       PHP script.
                     </li>
-                    <li>
+                    <li className="scnarios-fileUplode">
                       A user is authorized by the following code to upload a
                       picture of a flag{" "}
-                      <span class="highlight">
+                      <span class="highlight-UnRestrict">
                         {" "}
                         (a SecureFlag picture even!)
                       </span>
@@ -177,7 +178,7 @@ export default function UnrestrictedFileUpload() {
                       </p>
                     </li>
                     <img src={code2} alt="code2" className="code1" />
-                    <li>
+                    <li className="scnarios-fileUplode">
                       Unfortunately, the above code does not validate the file
                       type being uploaded, and if the{" "}
                       <div className="upload-location">flagpics/</div> directory
@@ -189,7 +190,7 @@ export default function UnrestrictedFileUpload() {
                       send:
                     </li>
                     <img src={code3} alt="code3" className="code1" />
-                    <li>
+                    <li className="scnarios-fileUplode">
                       If this file is successfully installed by the attacker,
                       they will be able to run arbitrary commands using a URL to
                       execute, such as:
@@ -201,12 +202,12 @@ export default function UnrestrictedFileUpload() {
                     </li>
                   </ul>
                 </dd>
-                <dt className="wave-lab2 fadeInUp faq-header-lab2">
+                <dt className="secure-wave fadeInUp secure-faq-header">
                   <span>Task 3</span> Prevention
                 </dt>
-                <dd className="faq-body-lab2">
+                <dd className="fadeInUp Auth-faq-body">
                   <ul>
-                    <li>
+                    <li className="scnarios-fileUplode">
                       Developers must review upload functionality to determine
                       if uploaded content is ever returned to other application
                       users and whether that is due to normal application usage
@@ -231,7 +232,7 @@ export default function UnrestrictedFileUpload() {
                         escapable with a crafted filename.
                       </li>
                     </ul>
-                    <li>
+                    <li className="scnarios-fileUplode">
                       There are numerous steps toward a more robust upload code
                       architecture that developers must consider in their
                       design:
@@ -277,7 +278,6 @@ export default function UnrestrictedFileUpload() {
                 {/* Single FAQ Area  */}
               </dl>
             </div>
-
             <div className="go-to-section">
               <button
                 onClick={() =>

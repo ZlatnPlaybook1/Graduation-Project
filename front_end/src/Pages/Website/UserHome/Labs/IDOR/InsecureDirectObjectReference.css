@@ -1,176 +1,39 @@
-/* Start Course Content */
-.SecureUploadContent .secure-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: column;
-  margin-bottom: 70px;
-}
-.SecureUploadContent .course-section .arrow {
-  background-color: inherit !important;
-  float: right !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-}
-.secure-faq-section {
-  margin-top: 75px;
-  display: block;
-  width: 70%;
-  margin: auto;
-  margin-top: 15px;
-}
-@media (max-width: 991px) {
-  .secure-faq-section .secure-section-text {
-    margin-left: 0;
-  }
-}
-.secure-faq-section .secure-section-text .secure-faq-header {
-  border-radius: 5px 5px 0 0;
-  color: white;
-  background-color: #212c42;
-  font-size: 16px;
-  overflow: hidden;
-  cursor: pointer;
-  line-height: 20px;
-  padding: 10px 25px;
-  font-weight: 400;
-  position: relative;
-  width: 100%;
-  margin-top: 20px;
-}
-@media (max-width: 991px) {
-  .secure-faq-section .secure-section-text .secure-faq-header {
-    font-size: 16px;
-  }
-}
-.secure-faq-section .secure-section-text .secure-faq-header span {
-  color: var(--sec-main-color);
-  margin-right: 40px;
-  position: relative;
-}
-.secure-faq-section .secure-section-text .secure-faq-header span::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background-color: transparent;
-  border: 1px solid #777;
-  border-radius: 50%;
-  position: absolute;
-  right: -45%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.secure-faq-section .secure-section-text .secure-faq-body {
-  font-size: 16px !important;
-  font-family: "poppins", sans-serif !important;
-  padding: 15px 25px;
-  font-weight: 400 !important;
-  line-height: 1.9;
-  border-left: 4px solid red;
-  box-shadow: 1px 2px rgb(0, 0, 0, 0.1);
-  border-radius: 0 0 5px 5px;
-  background-color: white;
-  color: rgb(21, 28, 43);
-}
-@media (max-width: 991px) {
-  .secure-faq-section .secure-section-text .secure-faq-body {
-    font-size: 16px;
-  }
-}
-.go-to-section-lab {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.go-to-lab {
-  margin-top: 50px;
-  border-radius: 5px;
-  max-width: 100%;
-  font-size: 16px;
-  padding: 7px 16px;
-  background-color: transparent;
-  color: rgb(21, 28, 43);
-  border: 1px solid rgb(163, 234, 42);
-  transition: var(--main-transition);
-}
-.go-to-lab:hover {
-  background-color: rgb(163, 234, 42);
-}
-/* End Course Content */
-
-/* 
-Here Styling the content at every tasks 
-          -------------Good Luck--------------
- */
-.secure-faq-body ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .secure-list li {
   position: relative;
   margin-bottom: 20px;
   padding-left: 30px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.8;
   color: #2c3e50;
 }
-
 .secure-list li::before {
-  content: "\2022";
+  content: "•";
   position: absolute;
   left: 0;
   color: #3498db;
-  font-size: 22px;
-  top: 6px;
+  font-size: 1.375rem;
+  top: 0.375rem;
 }
-
 .secure-highlight {
   font-weight: 400;
-  color: #e74c3c !important;
+  color: #e74c3c;
 }
-
 .secure-link {
-  color: #2980b9 !important;
+  color: #2980b9;
   font-weight: 400;
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 .secure-link:hover {
-  color: #1abc9c !important;
+  color: #1abc9c;
   text-decoration: underline;
 }
-
-.secure-faq-body li p {
-  margin: 0;
-  color: #7f8c8d !important;
-  font-size: 16px;
-}
-
-.secure-faq-body li span {
-  font-style: italic;
-  font-size: 16px;
-}
-
-.secure-faq-body li a {
-  font-size: 16px;
-}
-
 .secure-list li:hover {
   background-color: #ecf0f1;
   border-radius: 5px;
   padding-left: 35px;
   transition: all 0.3s ease;
-}
-
-.secure-faq-body ul li p {
-  font-size: 16px;
-  color: #34495e;
 }
 .secure-faq-content {
   margin-bottom: 20px;
@@ -180,8 +43,8 @@ Here Styling the content at every tasks
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .secure-faq-content p {
-  font-size: 16px !important;
-  font-weight: 400 !important;
+  font-size: 1rem;
+  font-weight: 400;
 }
 .secure-faq-actions {
   margin-top: 20px;
@@ -189,20 +52,17 @@ Here Styling the content at every tasks
   padding: 15px;
   border-radius: 8px;
 }
-
 .secure-faq-actions p {
-  font-size: 16px;
+  font-size: 1rem;
   color: #34495e;
   font-weight: 400;
 }
-
 .secure-faq-actions ul {
   list-style-type: square;
   padding-left: 20px;
 }
-
 .secure-faq-actions ul li {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   color: #34495e;
   line-height: 1.6;
@@ -215,47 +75,4 @@ Here Styling the content at every tasks
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   display: block;
   margin: 0 auto 20px;
-}
-
-.secure-link {
-  color: #2980b9;
-  font-weight: 400;
-  text-decoration: none;
-}
-
-.secure-link:hover {
-  text-decoration: underline;
-  color: #1abc9c;
-}
-
-.secure-highlight {
-  font-weight: 400;
-  color: #e74c3c;
-}
-.modern-p-XSS {
-  font-size: 16px;
-  color: #333;
-  line-height: 1.6;
-  margin-top: 8px;
-  margin-bottom: 16px;
-  text-transform: capitalize;
-  font-family: "poppins", sans-serif;
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.modern-p-XSS:hover {
-  color: #007bff;
-  transform: scale(1.05);
-}
-
-.course-card-XSS {
-  border: 1px solid #e0e0e0;
-  padding: 20px;
-  border-radius: 8px;
-  transition: box-shadow 0.3s ease;
-}
-
-.course-card-XSS:hover {
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
 }

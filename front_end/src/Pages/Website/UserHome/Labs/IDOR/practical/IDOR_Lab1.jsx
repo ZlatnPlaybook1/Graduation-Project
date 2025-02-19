@@ -132,7 +132,7 @@ export default function IDOR_Lab1() {
                     <button
                       className="idor-btn idor-btn-primary"
                       type="button"
-                      onClick={() => handleViewClick(1)} // Example with invoice_id = 1
+                      onClick={() => handleViewClick(1)}
                     >
                       {strings.button}
                     </button>

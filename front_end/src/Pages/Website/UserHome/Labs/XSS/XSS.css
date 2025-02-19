@@ -1,134 +1,3 @@
-a {
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  margin: 0 10px;
-  padding: 15px;
-}
-
-/* Start Course Content */
-.SecureUploadContent .secure-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: column;
-  margin-bottom: 70px;
-}
-
-.SecureUploadContent .course-section .arrow {
-  background-color: inherit !important;
-  float: right !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-}
-
-.SecureUploadContent .course-section-lab2 {
-  background-color: inherit;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.secure-faq-section {
-  margin-top: 75px;
-  display: block;
-  width: 70%;
-  margin: auto;
-  margin-top: 15px;
-}
-
-@media (max-width: 991px) {
-  .secure-faq-section .secure-section-text {
-    margin-left: 0;
-  }
-
-  .secure-faq-section .image-lab2 {
-    display: none;
-  }
-}
-
-.faq-item-lab2 {
-  margin-bottom: 30px;
-}
-
-.secure-faq-section .secure-section-text .secure-faq-header {
-  border-radius: 5px 5px 0 0;
-  color: white;
-  background-color: #212c42;
-  font-size: 16px;
-  overflow: hidden;
-  cursor: pointer;
-  line-height: 20px;
-  padding: 10px 25px;
-  font-weight: 400;
-  position: relative;
-  width: 100%;
-  margin-top: 20px;
-}
-
-@media (max-width: 991px) {
-  .secure-faq-section .secure-section-text .secure-faq-header {
-    font-size: 16px;
-  }
-}
-
-.secure-faq-section .secure-section-text .secure-faq-header span {
-  color: var(--sec-main-color);
-  margin-right: 40px;
-  position: relative;
-}
-
-.secure-faq-section .secure-section-text .secure-faq-header span::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background-color: transparent;
-  border: 1px solid #777;
-  border-radius: 50%;
-  position: absolute;
-  right: -45%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.secure-faq-section .secure-section-text .Auth-faq-body {
-  font-size: 16px !important;
-  padding: 15px 25px;
-  line-height: 1.9;
-  color: rgb(21, 28, 43);
-  animation: fadeInUp 0.5s ease-out;
-  font-family: "poppins", sans-serif;
-  padding: 1rem;
-  padding-left: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-weight: 400 !important;
-}
-
-@media (max-width: 991px) {
-  .secure-faq-section .secure-section-text .Auth-faq-body {
-    font-size: 16px;
-    font-weight: 400;
-  }
-}
-
-.secure-faq-section .secure-section-text .Auth-faq-body img {
-  width: 25%;
-  margin-left: auto;
-  margin-right: auto;
-  display: inherit;
-  margin-bottom: 30px;
-}
-
-.secure-faq-section .secure-section-text .Auth-faq-body ul li {
-  list-style: "- ";
-  margin-bottom: 10px;
-  font-size: 16px;
-  font-weight: 400;
-}
-
 .secure-faq-section .secure-section-text .Auth-faq-body ol li {
   list-style: decimal;
   margin-bottom: 10px;
@@ -142,15 +11,12 @@ a {
   color: #ff4747;
   text-decoration: underline;
 }
-
 .secure-faq-section .secure-section-text .Auth-faq-body ul li span {
   color: blue;
 }
-
 .secure-faq-section .secure-section-text .Auth-faq-body li h2 {
   color: #ff4747;
 }
-
 .secure-faq-section .secure-section-text .Auth-faq-body ul pre {
   padding: 25px 20px;
   margin: 15px 0;
@@ -161,93 +27,30 @@ a {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-
 .secure-faq-section .secure-section-text .Auth-faq-body ul pre code {
   display: flex;
   align-items: start;
   flex-direction: column;
 }
-
 .secure-faq-section .secure-section-text .Auth-faq-body ul pre span {
   color: green;
   display: inline;
   white-space: normal;
 }
-
-.secure-faq-section .secure-section-text .Auth-faq-body form {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-}
-
-.secure-faq-section .secure-section-text .Auth-faq-body form input {
-  flex: 3 1 0%;
-  padding: 7px 12px;
-  width: 100%;
-  height: auto;
+.xss-style-li {
+  font-family: "Poppins", serif;
   font-size: 16px;
-  color: rgb(28, 37, 56);
-  border-radius: 5px;
-  background-color: white;
-  outline: none;
-  border: 0.1rem solid rgb(212, 216, 223);
-  margin-right: 20px;
+  font-weight: 400;
+  padding: 12px 18px;
+  margin: 6px 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-.secure-faq-section .secure-section-text .Auth-faq-body form button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1 1 0%;
-  cursor: pointer;
-  gap: 6px;
-  height: 36px;
-  min-width: 300px;
-  border-radius: 5px;
-  max-width: 100%;
-  font-size: 16px;
-  padding: 7px 16px;
-  text-decoration: none;
-  pointer-events: initial;
-  border-width: 1px;
-  border-style: solid;
-  background-color: transparent;
-  color: rgb(21, 28, 43);
-  border-color: rgb(163, 234, 42);
-  transition: 0.2s ease-in-out;
+.xss-style-li:hover {
+  background: linear-gradient(135deg, #2a2a72, #0056b3);
+  color: #fff;
+  transform: translateY(-2px);
 }
-
-.secure-faq-section
-  .secure-section-text
-  .Auth-faq-body
-  form
-  button:hover:not(:disabled) {
-  background-color: rgb(163, 234, 42);
-}
-
-.go-to-section-lab2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.go-to-lab2 {
-  margin-top: 50px;
-  border-radius: 5px;
-  max-width: 100%;
-  font-size: 16px;
-  padding: 7px 16px;
-  background-color: transparent;
-  color: rgb(21, 28, 43);
-  border: 1px solid rgb(163, 234, 42);
-  transition: var(--main-transition);
-}
-
-.go-to-lab2:hover {
-  background-color: rgb(163, 234, 42);
-}
-
 /* End Course Content */

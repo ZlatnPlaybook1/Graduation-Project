@@ -6,7 +6,7 @@ import courseData from "./courseData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import PaginatedCourses from "./PaginatedCourses";
-import Go2TopBtn from "../Go2Top_Btn/Go2Top_Btn";
+import Go2TopBtn from "../../Go2Top_Btn/Go2Top_Btn";
 
 const Courses = () => {
   const [isOpen, setIsOpen] = useState(true);

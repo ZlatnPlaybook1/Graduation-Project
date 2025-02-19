@@ -1,4 +1,4 @@
-import Courses from "./Courses/Courses";
+import Courses from "./Components/Courses/Courses";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Landing from "./Landing/Landing";

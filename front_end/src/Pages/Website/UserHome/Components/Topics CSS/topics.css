@@ -1,0 +1,78 @@
+/* Start Content Topics */
+.SecureUploadContent .secure-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+.secure-faq-section {
+  margin-top: 75px;
+  display: block;
+  width: 70%;
+  margin: auto;
+  margin-top: 15px;
+}
+@media (max-width: 991px) {
+  .secure-faq-section .secure-section-text {
+    margin-left: 0;
+  }
+}
+.secure-faq-section .secure-section-text .secure-faq-header {
+  border-radius: 5px 5px 0 0;
+  color: white;
+  background-color: #212c42;
+  font-size: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  line-height: 20px;
+  padding: 10px 25px;
+  font-weight: 400;
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (max-width: 991px) {
+  .secure-faq-section .secure-section-text .secure-faq-header {
+    font-size: 16px;
+  }
+}
+.secure-faq-section .secure-section-text .secure-faq-header span {
+  color: var(--sec-main-color);
+  margin-right: 40px;
+  position: relative;
+}
+.secure-faq-section .secure-section-text .secure-faq-header span::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 1px solid #777;
+  border-radius: 50%;
+  position: absolute;
+  right: -45%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.secure-faq-section .secure-section-text .Auth-faq-body {
+  font-size: 16px !important;
+  padding: 15px 25px;
+  line-height: 1.9;
+  color: rgb(21, 28, 43);
+  animation: fadeInUp 0.5s ease-out;
+  font-family: "poppins", sans-serif;
+  padding: 1rem;
+  padding-left: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-weight: 400 !important;
+}
+@media (max-width: 991px) {
+  .secure-faq-section .secure-section-text .Auth-faq-body {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+/* End Content Topics */

@@ -1,19 +1,4 @@
 /* Start Course Content */
-.UnrestrictedContent .row-lab2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: column;
-  margin-bottom: 70px;
-}
-.UnrestrictedContent .imageUnrest {
-  margin: 20px 0;
-  height: 100% !important;
-  position: relative;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%, -50%);
-}
 .modern-title {
   font-family: "poppins", sans-serif;
   font-size: 24px;
@@ -31,47 +16,75 @@
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.highlight {
+.highlight-UnRestrict {
   font-weight: 600;
   text-transform: uppercase;
 }
-.UnrestrictedContent .imageUnrest {
+.SecureUploadContent .imageUnrest {
   width: 100%;
   max-width: 400px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  left: 30%;
+  left: 33% !important;
+  margin: 20px 0;
+  height: 100% !important;
+  right: 0;
+  transform: translateY(-50%, -50%);
+}
+.Files-first {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.style-modern-fileUpload {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  background: #f8f9fa;
+  margin-bottom: 1rem;
+  padding: 12px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
-.UnrestrictedContent .imageUnrest:hover {
+.style-modern-fileUpload:hover {
+  background: #eef2f7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.scnarios-fileUplode {
+  font-size: 16px;
+  font-weight: 400;
+}
+.SecureUploadContent .imageUnrest:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .UnrestrictedContent .imageUnrest {
+  .SecureUploadContent .imageUnrest {
     max-width: 350px;
     left: 20%;
   }
 }
-
 @media (max-width: 768px) {
-  .UnrestrictedContent .imageUnrest {
+  .SecureUploadContent .imageUnrest {
     max-width: 100%;
     left: 0%;
   }
 }
-
 @media (max-width: 480px) {
-  .UnrestrictedContent .imageUnrest {
+  .SecureUploadContent .imageUnrest {
     max-width: 90%;
     left: 5%;
   }
 }
 /* Style for the code image */
-.faq-body-lab2 .code1 {
+.Auth-faq-body .code1 {
   width: 100%;
   max-width: 600px;
   margin: 20px 0;
@@ -81,15 +94,12 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-/* Responsive Image Style */
 @media (max-width: 768px) {
-  .faq-body-lab2 .code1 {
+  .Auth-faq-body .code1 {
     max-width: 100%;
     margin: 15px 0;
   }
 }
-/* General Styling */
 .upload-location {
   display: inline-block;
   background-color: #f4f4f9;
@@ -102,21 +112,16 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-
-/* Hover Effect */
 .upload-location:hover {
   background-color: #e1e1f2;
   border-color: #a3a3d1;
 }
-
-/* Responsive Styling for Smaller Screens */
 @media (max-width: 768px) {
   .upload-location {
     font-size: 1rem;
     padding: 4px 8px;
   }
 }
-/* General Styling for the Command URL */
 .command-url {
   display: block;
   background-color: #f7f7f7;
@@ -133,14 +138,10 @@
   margin: 10px 0;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-
-/* Hover Effect for Command URL */
 .command-url:hover {
   background-color: #eaeaea;
   border-color: #a1a1a1;
 }
-
-/* Styling for the Command Text */
 .command {
   display: inline-block;
   background-color: #f0f0f0;
@@ -153,8 +154,6 @@
   margin-left: 10px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
-
-/* Responsive Design */
 @media (max-width: 768px) {
   .command-url,
   .command {
@@ -162,15 +161,12 @@
     padding: 6px 10px;
   }
 }
-/* Style for the Unordered List */
 .styled-list {
   list-style-type: none;
   padding-left: 0;
   margin: 20px 0;
   font-family: "poppins", sans-serif;
 }
-
-/* Style for List Items */
 .styled-list li {
   font-size: 1rem;
   padding: 10px 15px;
@@ -181,22 +177,17 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-
-/* Hover effect for List Items */
 .styled-list li:hover {
   background-color: #e3f2fd;
   border-left-color: #2980b9;
   transform: translateX(5px);
 }
-
-/* Responsive Design for smaller screens */
 @media (max-width: 768px) {
   .styled-list li {
     font-size: 0.9rem;
     padding: 8px 12px;
   }
 }
-/* Style for the Unordered List */
 .security-measures-list {
   list-style-type: none;
   padding-left: 0;
@@ -205,8 +196,6 @@
   font-size: 1rem;
   line-height: 1.6;
 }
-
-/* Style for List Items */
 .security-measures-list li {
   padding: 12px 20px;
   margin-bottom: 12px;
@@ -216,15 +205,11 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-
-/* Hover effect for List Items */
 .security-measures-list li:hover {
   background-color: #e9f7ef;
   border-left-color: #2ecc71;
   transform: translateX(5px);
 }
-
-/* Add a checkmark icon before each list item for visual emphasis */
 .security-measures-list li::before {
   content: "\2022";
   color: #2ecc71;
@@ -233,8 +218,6 @@
   display: inline-block;
   font-weight: bold;
 }
-
-/* Responsive Design for smaller screens */
 @media (max-width: 768px) {
   .security-measures-list {
     font-size: 0.9rem;
@@ -245,231 +228,4 @@
     padding: 10px 15px;
   }
 }
-
-.UnrestrictedContent .course-section .arrow {
-  background-color: inherit !important;
-  float: right !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-}
-
-.UnrestrictedContent .course-section-lab2 {
-  background-color: inherit;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.faq-section-unrestricted {
-  margin-top: 75px;
-  display: block;
-  width: 70%;
-  margin: auto;
-  margin-top: 15px;
-}
-
-@media (max-width: 991px) {
-  .faq-section-unrestricted .section-text-lab2 {
-    margin-left: 0;
-  }
-
-  .faq-section-unrestricted .image-lab2 {
-    display: none;
-  }
-}
-
-.faq-item-lab2 {
-  margin-bottom: 30px;
-}
-
-.faq-section-unrestricted .section-text-lab2 .faq-header-lab2 {
-  border-radius: 5px 5px 0 0;
-  color: white;
-  background-color: #212c42;
-  font-size: 16px;
-  overflow: hidden;
-  cursor: pointer;
-  line-height: 20px;
-  padding: 10px 25px;
-  font-weight: 400;
-  position: relative;
-  width: 100%;
-  margin-top: 20px;
-}
-
-@media (max-width: 991px) {
-  .faq-section-unrestricted .section-text-lab2 .faq-header-lab2 {
-    font-size: 16px;
-  }
-}
-
-.faq-section-unrestricted .section-text-lab2 .faq-header-lab2 span {
-  color: var(--sec-main-color);
-  margin-right: 40px;
-  position: relative;
-}
-
-.faq-section-unrestricted .section-text-lab2 .faq-header-lab2 span::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background-color: transparent;
-  border: 1px solid #777;
-  border-radius: 50%;
-  position: absolute;
-  right: -45%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.faq-section-unrestricted .section-text-lab2 .faq-body-lab2 {
-  font-size: 16px;
-  font-weight: 400;
-  padding: 15px 25px;
-  font-family: "poppins", sans-serif;
-  line-height: 1.9;
-  border-left: 4px solid red;
-  box-shadow: 1px 2px rgb(0, 0, 0, 0.1);
-  border-radius: 0 0 5px 5px;
-  background-color: white;
-  color: rgb(21, 28, 43);
-}
-
-@media (max-width: 991px) {
-  .faq-section-unrestricted .section-text-lab2 .faq-body-lab2 {
-    font-size: 14px;
-  }
-}
-
-.faq-section-unrestricted .section-text-lab2 .faq-body-lab2 ul li {
-  list-style: "- ";
-  margin-bottom: 10px;
-  font-family: "poppins", sans-serif;
-  font-weight: 400 !important;
-  font-size: 16px !important;
-}
-.faq-section-unrestricted .section-text-lab2 .faq-body-lab2 .Files-first {
-  font-family: "poppins", sans-serif;
-  font-weight: 400 !important;
-  font-size: 16px !important;
-}
-.faq-section-unrestricted .section-text-lab2 .faq-body-lab2 ol li {
-  list-style: decimal;
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-.faq-section-unrestricted .section-text-lab2 .faq-body-lab2 ul li a {
-  color: #ff4747;
-  text-decoration: underline;
-}
-
-.faq-section-unrestricted .section-text-lab2 .faq-body-lab2 ul li span {
-  color: blue;
-}
-
-.faq-section-unrestricted .section-text-lab2 .faq-body-lab2 li h2 {
-  color: #ff4747;
-}
-
-.faq-section-unrestricted .section-text-lab2 .faq-body-lab2 ul pre {
-  padding: 25px 20px;
-  margin: 15px 0;
-  border-radius: 0;
-  border: none;
-  background-color: #272822;
-  text-align: left;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-.faq-section-unrestricted .section-text-lab2 .faq-body-lab2 ul pre code {
-  display: flex;
-  align-items: start;
-  flex-direction: column;
-}
-
-.faq-section-unrestricted .section-text-lab2 .faq-body-lab2 ul pre span {
-  color: green;
-  display: inline;
-  white-space: normal;
-}
-
-.faq-section-unrestricted .section-text-lab2 .faq-body-lab2 form {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-}
-
-.faq-section-unrestricted .section-text-lab2 .faq-body-lab2 form input {
-  flex: 3 1 0%;
-  padding: 7px 12px;
-  width: 100%;
-  height: auto;
-  font-size: 16px;
-  color: rgb(28, 37, 56);
-  border-radius: 5px;
-  background-color: white;
-  outline: none;
-  border: 0.1rem solid rgb(212, 216, 223);
-  margin-right: 20px;
-}
-
-.faq-section-unrestricted .section-text-lab2 .faq-body-lab2 form button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1 1 0%;
-  cursor: pointer;
-  gap: 6px;
-  height: 36px;
-  min-width: 300px;
-  border-radius: 5px;
-  max-width: 100%;
-  font-size: 16px;
-  padding: 7px 16px;
-  text-decoration: none;
-  pointer-events: initial;
-  border-width: 1px;
-  border-style: solid;
-  background-color: transparent;
-  color: rgb(21, 28, 43);
-  border-color: rgb(163, 234, 42);
-  transition: 0.2s ease-in-out;
-}
-
-.faq-section-unrestricted
-  .section-text-lab2
-  .faq-body-lab2
-  form
-  button:hover:not(:disabled) {
-  background-color: rgb(163, 234, 42);
-}
-
-.go-to-section-lab2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.go-to-lab2 {
-  margin-top: 50px;
-  border-radius: 5px;
-  max-width: 100%;
-  font-size: 16px;
-  padding: 7px 16px;
-  background-color: transparent;
-  color: rgb(21, 28, 43);
-  border: 1px solid rgb(163, 234, 42);
-  transition: var(--main-transition);
-}
-
-.go-to-lab2:hover {
-  background-color: rgb(163, 234, 42);
-}
-
 /* End Course Content */
