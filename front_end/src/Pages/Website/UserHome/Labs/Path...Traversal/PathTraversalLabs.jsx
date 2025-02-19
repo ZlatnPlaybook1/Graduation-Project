@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import Auth_Photo from "../../assets/img/Path__Traversal/Photo_Labs_Path_Traversal.png";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 export default function PathTraversalLabs() {
   return (
     <>

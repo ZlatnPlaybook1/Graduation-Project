@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../Lab_Style.css";
 import { Link } from "react-router-dom";
-import ProductList from "../../../../ProductList/ProductList";
+import ProductList from "../../../../Components/ProductList/ProductList";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import products from "../data.json";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";

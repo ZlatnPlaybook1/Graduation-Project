@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import Auth_Photo from "../../assets/img/Insecure_Deserialization/Labs_Photo_Insecure.png";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 export default function InsecureDeserializationLabs() {
   return (
     <>

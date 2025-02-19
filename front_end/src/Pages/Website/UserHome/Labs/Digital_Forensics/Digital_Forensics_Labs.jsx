@@ -4,7 +4,7 @@ import mcqData from "./MCQCards";
 import labImg from "../../assets/img/DigitalForensics/Email.jpg";
 import Footer from "../../Footer/Footer";
 import Banner from "../../Components/Banner/Banner";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/LandingPractice/LandingPractice";
 export default function Digital_Forensics_labs() {

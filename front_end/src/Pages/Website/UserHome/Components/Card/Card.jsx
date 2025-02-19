@@ -3,7 +3,7 @@ import "./Card.css";
 export const Card = ({
   link,
   image,
-  alt="Example",
+  alt = "Example",
   title,
   brief,
   difficulty,

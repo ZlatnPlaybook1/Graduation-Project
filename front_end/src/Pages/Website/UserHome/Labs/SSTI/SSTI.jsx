@@ -6,7 +6,7 @@ import imagecourse from "../../assets/img/Server Side Template Injection/course_
 import Footer from "../../Footer/Footer";
 import exampleImage1 from "../../assets/img/Server Side Template Injection/1.png";
 import exampleImage2 from "../../assets/img/Server Side Template Injection/2.png";
-import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 
 export default function SSTI() {

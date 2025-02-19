@@ -3,7 +3,7 @@ import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets//img/Obfuscation/card_image.png";
 import Footer from "../../Footer/Footer";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 
 export default function WireShark_lab() {
   return (
@@ -44,25 +44,31 @@ export default function WireShark_lab() {
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             <Card
-            link={"/wireshark/wireshark_lab/arp-trick"}
-            image={image}
-            title={"ARP Trick"}
-            brief={"Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments"}
-            difficulty={"Easy"}
+              link={"/wireshark/wireshark_lab/arp-trick"}
+              image={image}
+              title={"ARP Trick"}
+              brief={
+                "Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments"
+              }
+              difficulty={"Easy"}
             />
             <Card
-            link={"/wireshark/wireshark_lab/tcp-intrusion"}
-            image={image}
-            title={"TCP Intrusion"}
-            brief={"Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments"}
-            difficulty={"Intermediate"}
+              link={"/wireshark/wireshark_lab/tcp-intrusion"}
+              image={image}
+              title={"TCP Intrusion"}
+              brief={
+                "Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments"
+              }
+              difficulty={"Intermediate"}
             />
             <Card
-            link={"/wireshark/wireshark_lab/stolen-flag"}
-            image={image}
-            title={"Stolen Flag"}
-            brief={"Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments"}
-            difficulty={"Hard"}
+              link={"/wireshark/wireshark_lab/stolen-flag"}
+              image={image}
+              title={"Stolen Flag"}
+              brief={
+                "Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments"
+              }
+              difficulty={"Hard"}
             />
           </div>
         </div>

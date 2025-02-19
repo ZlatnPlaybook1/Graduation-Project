@@ -3,7 +3,7 @@ import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets/img/Cryptography/card_image.png";
 import Footer from "../../Footer/Footer";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 export default function CryptoGraphy_lab() {
   return (
     <>

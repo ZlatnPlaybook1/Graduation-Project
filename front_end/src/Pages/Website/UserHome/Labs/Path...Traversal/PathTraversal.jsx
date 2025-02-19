@@ -4,7 +4,7 @@ import background from "../../assets/img/Path__Traversal/what-is-path-traversal-
 import imagecourse from "../../assets/img/Path__Traversal/Directory_Traversal.png";
 import Footer from "../../Footer/Footer";
 import "./PathTraversal.css";
-import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 export default function PathTraversal() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();

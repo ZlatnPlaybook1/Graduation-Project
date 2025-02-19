@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../Header/Header";
 import labImg from "../../assets/img/BLV/lab1.jpeg";
 import Footer from "../../Footer/Footer";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 import Banner from "../../Components/Banner/Banner";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/LandingPractice/LandingPractice";

@@ -4,7 +4,7 @@ import Footer from "../../Footer/Footer";
 import "../Page_Styles/Content.css";
 import background from "../../assets/img/SQL_Injection/bg.png";
 import courseImage from "../../assets/img/SQL_Injection/courseImage.png";
-import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import tableImage from "../../assets/img/SQL_Injection/table.png";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 import Banner from "../../Components/Banner/Banner.jsx";

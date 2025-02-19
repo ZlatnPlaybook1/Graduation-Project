@@ -4,7 +4,7 @@ import Banner from "../../Components/Banner/Banner";
 import Footer from "../../Footer/Footer";
 import "../Page_Styles/Lab.css";
 import labImg from "../../assets/img/Hashing/Generator.jpg";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/LandingPractice/LandingPractice";
 export default function Hashing_labs() {

@@ -4,7 +4,7 @@ import Header from "../../Header/Header";
 import imagecourse from "../../assets/img/linux/linux_logo.png";
 import background from "../../assets/img/background.png";
 import Footer from "../../Footer/Footer";
-import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 export default function Linux() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();

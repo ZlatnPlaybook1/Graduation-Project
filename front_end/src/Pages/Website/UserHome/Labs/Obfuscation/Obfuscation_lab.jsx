@@ -3,7 +3,7 @@ import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets//img/Obfuscation/card_image.png";
 import Footer from "../../Footer/Footer";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 
 export default function Obfuscation_lab() {
   return (
@@ -44,13 +44,13 @@ export default function Obfuscation_lab() {
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             <Card
-            link={"/Obfuscation/obfuscation_lab/login"}
-            image={image}
-            title={"Legendary Process"}
-            brief={
-              "Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments"
-            }
-            difficulty={"Easy"}
+              link={"/Obfuscation/obfuscation_lab/login"}
+              image={image}
+              title={"Legendary Process"}
+              brief={
+                "Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments"
+              }
+              difficulty={"Easy"}
             />
           </div>
         </div>

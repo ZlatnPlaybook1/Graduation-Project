@@ -2,7 +2,7 @@ import React from "react";
 import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets//img/File Inclusion/card_image.png";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 import Footer from "../../Footer/Footer";
 
 export default function FileInclusion_lab() {
@@ -54,14 +54,18 @@ export default function FileInclusion_lab() {
               link={"/fileinclusion/fileinclusion_lab/Learn-the-capital-2"}
               image={image}
               title={"Learn Fruits"}
-              brief={"We have taken some security measures. Let's see if you can access the admin page without permission."}
+              brief={
+                "We have taken some security measures. Let's see if you can access the admin page without permission."
+              }
               difficulty={"Intermediate"}
             />
             <Card
               link={"/fileinclusion/fileinclusion_lab/Learn-the-capital-3"}
               image={image}
               title={"Learn  Car Brand Logos"}
-              brief={"We have increased our security measures. Now it's not easy to access the admin page :)"}
+              brief={
+                "We have increased our security measures. Now it's not easy to access the admin page :)"
+              }
               difficulty={"Hard"}
             />
           </div>

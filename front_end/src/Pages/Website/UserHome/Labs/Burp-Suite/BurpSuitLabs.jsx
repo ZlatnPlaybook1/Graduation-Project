@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import Auth_Photo from "../../assets/img/Burp_Suit/Labs-Burp-Suit.jpg";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 export default function BurpSuitLabs() {
   return (

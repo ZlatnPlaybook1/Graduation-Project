@@ -13,7 +13,7 @@ import exampleImage6 from "../../assets/img/Cryptography/6.svg";
 import exampleImage7 from "../../assets/img/Cryptography/7.svg";
 import exampleImage8 from "../../assets/img/Cryptography/8.svg";
 import exampleImage9 from "../../assets/img/Cryptography/9.svg";
-import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 export default function CryptoGraphy() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();

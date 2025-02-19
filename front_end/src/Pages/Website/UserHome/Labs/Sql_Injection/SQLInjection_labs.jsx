@@ -3,7 +3,7 @@ import Header from "../../Header/Header";
 import "../Page_Styles/Lab.css";
 import labImg from "../../assets/img/SQL_Injection/lab.png";
 import Footer from "../../Footer/Footer";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/LandingPractice/LandingPractice";
 export default function SQLInjection_lab() {

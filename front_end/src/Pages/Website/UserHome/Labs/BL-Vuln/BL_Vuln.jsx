@@ -4,7 +4,7 @@ import Footer from "../../Footer/Footer";
 import background from "../../assets/img/BLV/background.png";
 import courseImage from "../../assets/img/BLV/course_image.png";
 import logicFlow from "../../assets/img/BLV/logic-flaws.jpg";
-import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 import Banner from "../../Components/Banner/Banner.jsx";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";

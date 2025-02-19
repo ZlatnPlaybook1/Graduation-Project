@@ -3,7 +3,7 @@ import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets/img/linux/linux_logo.png";
 import Footer from "../../Footer/Footer";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 
 export default function Linux_lab() {
   useEffect(() => {

@@ -3,7 +3,7 @@ import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets/img/cookies/Cookies_logo.png";
 import Footer from "../../Footer/Footer";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 
 export default function Cookies_lab() {
   return (
@@ -44,18 +44,18 @@ export default function Cookies_lab() {
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
             <Card
-            link="/cookies/cookies_lab/first/login"
-            image={image}
-            title="Admin has the power"
-            brief="try to login as admin"
-            difficulty="Easy"
+              link="/cookies/cookies_lab/first/login"
+              image={image}
+              title="Admin has the power"
+              brief="try to login as admin"
+              difficulty="Easy"
             />
             <Card
-            link="/cookies/cookies_lab/second/login"
-            image={image}
-            title="Hashing"
-            brief="try to login as admin"
-            difficulty="Easy"
+              link="/cookies/cookies_lab/second/login"
+              image={image}
+              title="Hashing"
+              brief="try to login as admin"
+              difficulty="Easy"
             />
           </div>
         </div>

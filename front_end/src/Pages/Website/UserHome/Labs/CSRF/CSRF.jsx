@@ -4,7 +4,7 @@ import Footer from "../../Footer/Footer";
 import Banner from "../../Components/Banner/Banner";
 import background from "../../assets/img/CSRF/background.svg";
 import courseImage from "../../assets/img/CSRF/CourseImage.png";
-import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";

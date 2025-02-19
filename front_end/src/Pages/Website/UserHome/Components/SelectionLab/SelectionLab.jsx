@@ -2,7 +2,7 @@ import axios from "axios";
 import Footer from "../../Footer/Footer";
 import GoBackBtn from "../GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../ShowHint_Btn/ShowHint_Btn";
-import "../../FileDwnLodrLab/FileDownloader.css";
+import "../../Components/FileDwnLodrLab/FileDownloader.css";
 import React, { useEffect, useState } from "react";
 
 export const SelectionLab = ({

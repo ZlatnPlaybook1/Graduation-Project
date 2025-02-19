@@ -6,7 +6,7 @@ import background from "../../assets/img/Cross_Site_Scripting/cors1.png";
 import imagecourse from "../../assets/img/Cross_Site_Scripting/Broken Authentication.webp";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
-import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 export default function XSS() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();

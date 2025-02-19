@@ -5,7 +5,7 @@ import Banner from "../../Components/Banner/Banner";
 import "../Page_Styles/Content.css";
 import background from "../../assets/img/DigitalForensics/background.png";
 import courseImage from "../../assets/img/DigitalForensics/courseImage.png";
-import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 export default function Digital_Forensics() {

@@ -3,7 +3,7 @@ import Header from "../../Header/Header";
 import mcqData from "./MCQCards";
 import Footer from "../../Footer/Footer";
 import Banner from "../../Components/Banner/Banner";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 import Go2TopBtn from "../../Components/GoBack_Btn/GoBack_Btn";
 import LandingPractice from "../../Components/LandingPractice/LandingPractice";
 export default function Regex_labs() {

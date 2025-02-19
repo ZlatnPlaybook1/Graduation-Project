@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import Idor_cover from "../../assets/img/IDOR/IDOR_Cover.jpg";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 export default function InsecureDirectObjectReferenceLabs() {
   return (
     <>
@@ -43,7 +43,9 @@ export default function InsecureDirectObjectReferenceLabs() {
           <div className="row">
             {/* lab1 */}
             <Card
-              link={"/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab1"}
+              link={
+                "/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab1"
+              }
               image={Idor_cover}
               title={"Invoices"}
               brief={"Gain unauthorized access to other users' invoices"}
@@ -51,7 +53,9 @@ export default function InsecureDirectObjectReferenceLabs() {
             />
             {/* lab2 */}
             <Card
-              link={"/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab2"}
+              link={
+                "/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab2"
+              }
               image={Idor_cover}
               title={"Ticket Sales"}
               brief={"Buy tickets for less than the regular price"}
@@ -59,10 +63,14 @@ export default function InsecureDirectObjectReferenceLabs() {
             />
             {/* lab3 */}
             <Card
-              link={"/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab3"}
+              link={
+                "/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs/lab3"
+              }
               image={Idor_cover}
               title={"Money Transfer"}
-              brief={"Transfer money from another user's account to your own account without any permission"}
+              brief={
+                "Transfer money from another user's account to your own account without any permission"
+              }
               difficulty={"Easy"}
             />
           </div>

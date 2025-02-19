@@ -3,7 +3,7 @@ import "../Page_Styles/Content_sec.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/background.png";
 import imagecourse from "../../assets/img/bash/full_colored_dark (1).png";
-import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 import Footer from "../../Footer/Footer";
 import exampleImage1 from "../../assets/img/bash/carbon-8.png";

@@ -3,7 +3,7 @@ import "./XSS.css";
 import Header from "../../Header/Header";
 import lab_Cover from "../../assets/img/Cross_Site_Scripting/labs_cover.jpg";
 import Footer from "../../Footer/Footer";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 
 export default function XSS_lab() {
   return (

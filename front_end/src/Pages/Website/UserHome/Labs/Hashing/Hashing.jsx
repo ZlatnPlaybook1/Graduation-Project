@@ -5,7 +5,7 @@ import Banner from "../../Components/Banner/Banner";
 import background from "../../assets/img/Hashing/background.png";
 import courseImage from "../../assets/img/Hashing/courseImage.png";
 import HashingVsEncryption from "../../assets/img/Hashing/hashing-vs-encryption.png";
-import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";

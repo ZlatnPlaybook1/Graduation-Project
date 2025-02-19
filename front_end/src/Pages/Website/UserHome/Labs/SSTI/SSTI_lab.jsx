@@ -1,9 +1,9 @@
 import React from "react";
-import  "../Page_Styles/Lab.css";
+import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
 import image from "../../assets//img/Server Side Template Injection/card_image.png";
 import Footer from "../../Footer/Footer";
-import { Card } from "../../Card/Card";
+import { Card } from "../../Components/Card/Card";
 
 export default function SSTI_lab() {
   return (
@@ -43,27 +43,26 @@ export default function SSTI_lab() {
           <h2>SSTI Lab</h2>
           <p className="section-p">Test Your Hacking skills</p>
           <div className="row">
-            
-          <Card
-            link={"/SSTI/SSTIlab2/store"}
-            image={image}
-            title={"SSTI Store Vulnerability"}
-            brief={"This lab is vulnerable to server-side template injection due to the unsafe construction of an ERB template."}
-            difficulty={"Intermediate"}
+            <Card
+              link={"/SSTI/SSTIlab2/store"}
+              image={image}
+              title={"SSTI Store Vulnerability"}
+              brief={
+                "This lab is vulnerable to server-side template injection due to the unsafe construction of an ERB template."
+              }
+              difficulty={"Intermediate"}
             />
-
-
-
 
             <Card
-            link={"/SSTI/SSTI_lab/blog"}
-            image={image}
-            title={"Basic server-side template injection"}
-            brief={"This lab is vulnerable to server-side template injection due to the way it unsafely uses a Tornado template."}
-            difficulty={"Easy"}
+              link={"/SSTI/SSTI_lab/blog"}
+              image={image}
+              title={"Basic server-side template injection"}
+              brief={
+                "This lab is vulnerable to server-side template injection due to the way it unsafely uses a Tornado template."
+              }
+              difficulty={"Easy"}
             />
-        
-            
+
             {/* <Card
             link={""}
             image={image}

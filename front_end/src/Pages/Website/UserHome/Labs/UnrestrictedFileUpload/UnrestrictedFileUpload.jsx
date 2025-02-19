@@ -9,7 +9,7 @@ import code2 from "../../assets/img/Unrestricted File Upload/code2FileUpload.png
 import code3 from "../../assets/img/Unrestricted File Upload/code3FileUpload.png";
 import imagecourse from "../../assets/img/Unrestricted File Upload/FileUploadIcon.png";
 import background from "../../assets/img/Unrestricted File Upload/background_File_Upload.jpg";
-import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 export default function UnrestrictedFileUpload() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();

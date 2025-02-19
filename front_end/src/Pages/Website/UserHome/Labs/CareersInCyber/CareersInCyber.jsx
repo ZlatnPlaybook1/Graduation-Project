@@ -6,7 +6,7 @@ import "../Page_Styles/Content_sec.css";
 import background from "../../assets/img/CareersInCyber/background.png";
 import courseImage from "../../assets/img/CareersInCyber/courseImage.png";
 import CareerImag from "../../assets/img/CareersInCyber/courseImage.png";
-import UseFaqSection from "../../UseFaqSection/UseFaqSection.jsx";
+import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
