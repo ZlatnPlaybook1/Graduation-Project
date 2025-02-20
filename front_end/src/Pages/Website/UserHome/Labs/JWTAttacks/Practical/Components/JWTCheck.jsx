@@ -7,7 +7,7 @@ import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import { Link } from "react-router-dom";
 
-const JWTCheck = ({ apiEndpoint,hint }) => {
+const JWTCheck = ({ apiEndpoint, hint, tokenName, tokenPath }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -17,9 +17,12 @@ const JWTCheck = ({ apiEndpoint,hint }) => {
   const [loadingCreateUser, setLoadingCreateUser] = useState(false);
   const cookie = Cookie();
 
+  // Static expiration time (.25 hour)
+  const staticExpireTime = 900000; // .25 hour in milliseconds
+
   // Check token on page load
   useEffect(() => {
-    const token = cookie.get("Token");
+    const token = cookie.get(tokenName);
     if (token) {
       try {
         const decodedToken = jwtDecode(token);
@@ -29,12 +32,12 @@ const JWTCheck = ({ apiEndpoint,hint }) => {
         setLoggedUsername("");
       }
     }
-  }, []);
+  }, [tokenName]);
 
   // Watch for token changes
   useEffect(() => {
     const interval = setInterval(() => {
-      const token = cookie.get("Token");
+      const token = cookie.get(tokenName);
       if (token) {
         try {
           const decodedToken = jwtDecode(token);
@@ -50,7 +53,7 @@ const JWTCheck = ({ apiEndpoint,hint }) => {
     }, 1000); // Check every second
 
     return () => clearInterval(interval);
-  }, [loggedusername]);
+  }, [loggedusername, tokenName]);
 
   // Handle login request
   const handleSubmit = (e) => {
@@ -62,7 +65,11 @@ const JWTCheck = ({ apiEndpoint,hint }) => {
       .post(`${apiEndpoint}/login`, data)
       .then((response) => {
         const token = response.data.data.token;
-        cookie.set("Token", token);
+
+        // Set the token cookie with specific name and path, and static expiration time
+        const expiresIn = new Date(Date.now() + staticExpireTime);
+        cookie.set(tokenName, token, { path: tokenPath, expires: expiresIn });
+
         const decodedToken = jwtDecode(token);
         setLoggedUsername(decodedToken.username);
         setLoading(false);
@@ -106,7 +113,14 @@ const JWTCheck = ({ apiEndpoint,hint }) => {
   const hintMessage = hint;
 
   return (
-    <div style={{ backgroundColor: "#000", position: "relative", width: "100vw", height: "100vh" }}>
+    <div
+      style={{
+        backgroundColor: "#000",
+        position: "relative",
+        width: "100vw",
+        height: "100vh",
+      }}
+    >
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
       <main className="hacker-login">
@@ -133,11 +147,21 @@ const JWTCheck = ({ apiEndpoint,hint }) => {
                 <h2>Sign In</h2>
                 <form onSubmit={handleSubmit} className="hacker-form">
                   <div className="hackerLogin-inputBox">
-                    <input type="text" required value={username} onChange={(e) => setUsername(e.target.value)} />
+                    <input
+                      type="text"
+                      required
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                    />
                     <i>Username</i>
                   </div>
                   <div className="hackerLogin-inputBox">
-                    <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input
+                      type="password"
+                      required
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
                     <i>Password</i>
                   </div>
                   <div className="hackerLogin-links">
@@ -145,7 +169,11 @@ const JWTCheck = ({ apiEndpoint,hint }) => {
                     <Link>Sign Up</Link>
                   </div>
                   <div className="hackerLogin-inputBox">
-                    <input type="submit" value={loading ? "Logging in..." : "Login"} disabled={loading} />
+                    <input
+                      type="submit"
+                      value={loading ? "Logging in..." : "Login"}
+                      disabled={loading}
+                    />
                   </div>
                   {err && <span className="error">{err}</span>}
                 </form>
