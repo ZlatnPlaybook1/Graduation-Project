@@ -9,8 +9,9 @@ import { jwtDecode } from "jwt-decode";
 const AdminPage = ({ apiEndpoint, setErr, condition, tokenName }) => {
   const [loadingDelete, setLoadingDelete] = useState(false);
   const [logged, setLogged] = useState(false);
+  const [token, setToken] = useState(null);
   const cookie = Cookie();
-  const token = jwtDecode(cookie.get(tokenName));
+  if (token) setToken(jwtDecode(cookie.get(tokenName)));
   const handleDeleteUser = () => {
     setLoadingDelete(true);
     axios
@@ -27,7 +28,7 @@ const AdminPage = ({ apiEndpoint, setErr, condition, tokenName }) => {
       setLogged(true);
     }
     console.log(logged);
-    if (logged == false) {
+    if (logged === false) {
       navigate("/jwtattacks/jwtattacks_lab/lab1");
     }
   }, [logged, token]);

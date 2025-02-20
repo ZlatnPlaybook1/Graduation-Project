@@ -41,7 +41,7 @@ export default function BlogItem() {
       console.log(response);
       if (response.status === 200) {
         setHtml(response.data);
-      }else {
+      } else {
         setHtml("");
       }
       const newComment = {
@@ -200,18 +200,6 @@ export default function BlogItem() {
                 </button>
                 {err && <span className="error">{err}</span>}
               </form>
-              {html && <div dangerouslySetInnerHTML={{ __html: html }}></div>}
-              <div className="comment-section">
-                {comments?.map((comment) => (
-                  <div key={comment.id} className="comment-card">
-                    <div className="comment-header">
-                      <img src={icon} className="icon" alt="Card" />
-                      <p className="name">{comment.name || "Anonymous"}</p>
-                    </div>
-                    <p className="comment-text">{comment.content}</p>
-                  </div>
-                ))}
-              </div>
               <button
                 onClick={labreset}
                 className="reset-btn"
@@ -225,6 +213,18 @@ export default function BlogItem() {
               >
                 Reset
               </button>
+              {html && <div dangerouslySetInnerHTML={{ __html: html }}></div>}
+              <div className="comment-section">
+                {comments?.map((comment) => (
+                  <div key={comment.id} className="comment-card">
+                    <div className="comment-header">
+                      <img src={icon} className="icon" alt="Card" />
+                      <p className="name">{comment.name || "Anonymous"}</p>
+                    </div>
+                    <p className="comment-text">{comment.content}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
