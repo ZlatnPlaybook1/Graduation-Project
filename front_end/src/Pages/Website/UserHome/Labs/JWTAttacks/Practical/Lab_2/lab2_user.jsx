@@ -1,5 +1,5 @@
 import React from "react";
-import JWTLogin from "../Components/JWTLogin";
+import JWTUser from "../Components/JWTUser";
 
 export default function JWTAttacks_lab2() {
   const apiEndpoint = "http://127.0.0.1:8080/api/lab2jwt";
@@ -8,11 +8,8 @@ export default function JWTAttacks_lab2() {
   const lab = "lab2";
   return (
     <div>
-      <JWTLogin
-        apiEndpoint={apiEndpoint}
+      <JWTUser
         hint={hint}
-        lab={lab}
-        tokenName={tokenName}
       />
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import JWTAdmin from "../Components/JWTAdmin";
 import { jwtDecode } from "jwt-decode";
 import Cookie from "cookie-universal";
@@ -7,16 +7,24 @@ export default function JWTAttacks_lab1() {
   const tokenName = "jwtToken_1";
   const [username, setUsername] = useState("");
   const cookie = Cookie();
-  const [token, setToken] = useState(null);
-  if (token) {
-    setToken(jwtDecode(cookie.get(tokenName)));
-    setUsername(token.username);
-  }
+
+  useEffect(() => {
+    const storedToken = cookie.get(tokenName);
+    if (storedToken) {
+      try {
+        const decoded = jwtDecode(storedToken);
+        setUsername(decoded.username);
+      } catch (error) {
+        console.error("Invalid token:", error);
+      }
+    }
+  }, [tokenName]); // Runs only when tokenName changes
+
   const apiEndpoint = "http://127.0.0.1:8080/api/lab1jwt";
-  // const tokenPath = "jwtToken_1";
   const hint = "lab1";
   const lab = "lab1";
   const condition = username === "admin";
+
   return (
     <div>
       <JWTAdmin

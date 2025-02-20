@@ -5,7 +5,7 @@ let lab3jwtRouter = Router();
 
 lab3jwtRouter.post("/lab3jwt/login", loginController);
 
-lab3jwtRouter.delete("/lab3jwt/deleteuser",isAdmin, deleteUser );
+lab3jwtRouter.delete("/lab3jwt/deleteuser", deleteUser );
 lab3jwtRouter.post("/lab3jwt/createuser", createUser );
 
 

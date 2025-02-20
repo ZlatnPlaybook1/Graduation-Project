@@ -14,6 +14,7 @@ const JWTLogin = ({ apiEndpoint, hint, tokenName, lab }) => {
   const [decodedToken, setDecodedToken] = useState("null");
   const [loading, setLoading] = useState(false);
   const [loadingCreateUser, setLoadingCreateUser] = useState(false);
+  const [login, setLogin] = useState(false);
   const [err, setErr] = useState("");
   const cookie = Cookie();
   const navigate = useNavigate();
@@ -30,11 +31,12 @@ const JWTLogin = ({ apiEndpoint, hint, tokenName, lab }) => {
       .post(`${apiEndpoint}/login`, data)
       .then((response) => {
         const token = response.data.data.token;
-
+        console.log(data);
         // Set the token cookie with specific name and path, and static expiration time
         const expiresIn = new Date(Date.now() + staticExpireTime);
         if (token) {
           cookie.set(tokenName, token, { expires: expiresIn });
+          setLogin(true);
           try {
             setDecodedToken(jwtDecode(token)); // Decode only if token is valid
           } catch (e) {
@@ -43,11 +45,10 @@ const JWTLogin = ({ apiEndpoint, hint, tokenName, lab }) => {
         }
 
         setLoading(false);
-
         if (decodedToken.username === "admin") {
           createUserAli();
           navigate(adminurl); // Redirect to admin page
-        } else {
+        } else if (decodedToken.username !== "admin" && login === true) {
           navigate(userurl); // Redirect to user page
         }
       })
@@ -88,7 +89,6 @@ const JWTLogin = ({ apiEndpoint, hint, tokenName, lab }) => {
       }
     } else {
       console.log("No token found.");
-      navigate(userurl); // Redirect to the user page if no token exists
     }
   }, [tokenName, cookie, navigate]);
 
