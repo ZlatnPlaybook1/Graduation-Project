@@ -62,7 +62,7 @@ export const lab1controller = async (req: Request, res: Response) => {
     });
 
   } catch (err) {
-    res.send(`<p>Error: ${err.message}</p>`);
+    res.status(201).send(`<p>Error: ${err.message}</p>`);
   }
 };
 

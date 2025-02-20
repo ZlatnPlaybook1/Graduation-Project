@@ -7,7 +7,7 @@ import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import { Link } from "react-router-dom";
 
-const JWTCheck = ({ apiEndpoint, hint, tokenName, tokenPath }) => {
+const JWTCheck = ({ apiEndpoint, hint, tokenName }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -68,7 +68,7 @@ const JWTCheck = ({ apiEndpoint, hint, tokenName, tokenPath }) => {
 
         // Set the token cookie with specific name and path, and static expiration time
         const expiresIn = new Date(Date.now() + staticExpireTime);
-        cookie.set(tokenName, token, { path: tokenPath, expires: expiresIn });
+        cookie.set(tokenName, token, { expires: expiresIn });
 
         const decodedToken = jwtDecode(token);
         setLoggedUsername(decodedToken.username);

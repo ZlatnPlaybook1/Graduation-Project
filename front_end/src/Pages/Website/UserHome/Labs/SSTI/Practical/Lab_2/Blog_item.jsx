@@ -13,6 +13,7 @@ export default function BlogItem() {
   const [comments, setComments] = useState([]);
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);
+  const [html, setHtml] = useState("");
   const hintMessage = `
     <div style={{ textAlign: "left", fontSize: "1rem", lineHeight: "1.5", color: "#333" }}>
       <p>Enter the following into the comment box:</p>
@@ -37,6 +38,12 @@ export default function BlogItem() {
           name,
         }
       );
+      console.log(response);
+      if (response.status === 200) {
+        setHtml(response.data);
+      }else {
+        setHtml("");
+      }
       const newComment = {
         id: Date.now(),
         name: response.data.name,
@@ -89,6 +96,7 @@ export default function BlogItem() {
       fetchComments();
       if (response.status === 200) {
         setResetMessage(response.data.message);
+        setHtml("");
       }
     } catch (error) {
       console.error("Error resetting:", error);
@@ -192,7 +200,7 @@ export default function BlogItem() {
                 </button>
                 {err && <span className="error">{err}</span>}
               </form>
-
+              {html && <div dangerouslySetInnerHTML={{ __html: html }}></div>}
               <div className="comment-section">
                 {comments?.map((comment) => (
                   <div key={comment.id} className="comment-card">
