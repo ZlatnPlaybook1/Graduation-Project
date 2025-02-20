@@ -1,7 +1,7 @@
 import React from "react";
 import "../Page_Styles/Content_sec.css";
 import Header from "../../Header/Header";
-import background from "../../assets/img/background.png";
+import background from "../../assets/img/wireshark/baner_lap.png";
 import imagecourse from "../../assets/img/wireshark/course_image.png";
 import Footer from "../../Footer/Footer";
 import exampleImage1 from "../../assets/img/wireshark/course_image.png";

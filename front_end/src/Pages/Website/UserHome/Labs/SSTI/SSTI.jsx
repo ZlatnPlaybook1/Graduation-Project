@@ -1,7 +1,7 @@
 import React from "react";
 import "../Page_Styles/Content.css";
 import Header from "../../Header/Header";
-import background from "../../assets/img/background.png";
+import background from "../../assets/img/Server Side Template Injection/baner_lap.png";
 import imagecourse from "../../assets/img/Server Side Template Injection/course_image.png";
 import Footer from "../../Footer/Footer";
 import exampleImage1 from "../../assets/img/Server Side Template Injection/1.png";
@@ -19,7 +19,7 @@ export default function SSTI() {
         background={background}
         imagecourse={imagecourse}
         courseTitle="Server Side Template Injection (SSTI)"
-        courseDescription="Server-Side Template Injection (SSTI) is a web vulnerability that arises when user input is improperly handled within a server-side template engine. Attackers can exploit this flaw to execute arbitrary code, potentially leaking sensitive information or performing unauthorized actions on the system. This can lead to severe security risks, including data breaches, remote code execution, and server compromise."
+        courseDescription = "Server-Side Template Injection (SSTI) is a web vulnerability that arises when user input is improperly handled within a server-side template engine.Attackers can exploit this flaw to execute arbitrary code, potentially leaking sensitive information or performing unauthorized actions on the system.\nThis can lead to severe security risks, including data breaches, remote code execution, and server compromise."
         difficulty="Intermediate"
         duration="30 min"
         onSaveRoom={() => console.log("Room Saved!")}

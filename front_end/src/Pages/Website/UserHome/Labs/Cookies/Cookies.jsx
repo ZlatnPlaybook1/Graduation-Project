@@ -2,7 +2,7 @@ import React from "react";
 import "../Page_Styles/Content.css";
 import Header from "../../Header/Header";
 import imagecourse from "../../assets/img/cookies/Cookies_transparent.png";
-import background from "../../assets/img/background.png";
+import background from "../../assets/img/cookies/baner_lap.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 import inLab3 from "../../assets/img/inLab3.png";

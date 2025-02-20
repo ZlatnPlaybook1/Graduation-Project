@@ -2,7 +2,7 @@ import React from "react";
 import "../Page_Styles/Content_sec.css";
 import Header from "../../Header/Header";
 import imagecourse from "../../assets/img/linux/linux_logo.png";
-import background from "../../assets/img/background.png";
+import background from "../../assets/img/linux/baner_lap.png";
 import Footer from "../../Footer/Footer";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";

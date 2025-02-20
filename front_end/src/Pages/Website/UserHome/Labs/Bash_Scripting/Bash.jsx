@@ -1,7 +1,7 @@
 import React from "react";
 import "../Page_Styles/Content_sec.css";
 import Header from "../../Header/Header";
-import background from "../../assets/img/background.png";
+import background from "../../assets/img/bash/baner_lap.png";
 import imagecourse from "../../assets/img/bash/full_colored_dark (1).png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
