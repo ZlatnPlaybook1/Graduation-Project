@@ -31,7 +31,7 @@ const JWTLogin = ({ apiEndpoint, hint, tokenName, lab }) => {
       .post(`${apiEndpoint}/login`, data)
       .then((response) => {
         const token = response.data.data.token;
-
+        console.log(data);
         // Set the token cookie with specific name and path, and static expiration time
         const expiresIn = new Date(Date.now() + staticExpireTime);
         if (token) {
@@ -43,7 +43,7 @@ const JWTLogin = ({ apiEndpoint, hint, tokenName, lab }) => {
             console.error("Failed to decode token:", e);
           }
         }
-        
+
         setLoading(false);
         if (decodedToken.username === "admin") {
           createUserAli();

@@ -13,14 +13,16 @@ export default function JWTAttacks_lab2() {
     setUsername(token.username);
   }
   const apiEndpoint = "http://127.0.0.1:8080/api/lab2jwt";
-  const hint = "lab2";
   const lab = "lab2";
+  const condition = username === "admin";
+
   return (
     <div>
       <JWTAdmin
         apiEndpoint={apiEndpoint}
         lab={lab}
         tokenName={tokenName}
+        condition={condition}
       />
     </div>
   );

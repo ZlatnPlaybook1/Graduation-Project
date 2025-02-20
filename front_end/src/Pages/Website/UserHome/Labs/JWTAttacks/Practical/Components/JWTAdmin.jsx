@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import Swal from "sweetalert2";
 
-const AdminPage = ({ apiEndpoint, tokenName, lab,hint }) => {
+const AdminPage = ({ apiEndpoint, tokenName, lab, hint, condition }) => {
   const [loadingDelete, setLoadingDelete] = useState(false);
   const [loadingCreateUser, setLoadingCreateUser] = useState(false);
   const [err, setErr] = useState("");
@@ -18,7 +18,7 @@ const AdminPage = ({ apiEndpoint, tokenName, lab,hint }) => {
   const cookie = Cookie();
   const navigate = useNavigate();
   const loginURL = `/jwtattacks/jwtattacks_lab/${lab}`;
-
+  const sentToken = cookie.get(tokenName);
   // Fetch and decode token
   useEffect(() => {
     const storedToken = cookie.get(tokenName);
@@ -48,10 +48,19 @@ const AdminPage = ({ apiEndpoint, tokenName, lab,hint }) => {
   const createUserAli = () => {
     setLoadingCreateUser(true);
     axios
-      .post(`${apiEndpoint}/createuser`, {
-        username: "Ali",
-        password: "somepassword",
-      })
+      .post(
+        `${apiEndpoint}/createuser`,
+        {
+          username: "Ali",
+          password: "somepassword",
+        }, // This is the request body
+        {
+          headers: {
+            Authorization: `Bearer ${sentToken}`, // Attach JWT token
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then(() => {
         setLoadingCreateUser(false);
       })
@@ -64,15 +73,23 @@ const AdminPage = ({ apiEndpoint, tokenName, lab,hint }) => {
   const handleDeleteUser = () => {
     setLoadingDelete(true);
     axios
-      .delete(`${apiEndpoint}/deleteuser`, { data: { username: "Ali" } })
+      .delete(
+        `${apiEndpoint}/deleteuser`, 
+        {
+          headers: {
+            Authorization: `Bearer ${sentToken}`, // Attach JWT token
+            "Content-Type": "application/json",
+          },
+          data: { username: "Ali" }, // Correct placement of request body
+        }
+      )
       .then(() => {
         setLoadingDelete(false);
-        setMessage(
-          `<i className="fas fa-lightbulb show-hint-btn-icon"></i> User Ali has been deleted.`
-        );
+        const successMessage =
+          `<i class="fas fa-lightbulb show-hint-btn-icon"></i> User Ali has been deleted.`; // Fixed HTML class syntax
         Swal.fire({
           title: "Congratulations!",
-          html: message,
+          html: successMessage, // Use the updated message
           icon: "info",
           confirmButtonText: "Got it!",
         });
@@ -82,8 +99,8 @@ const AdminPage = ({ apiEndpoint, tokenName, lab,hint }) => {
         setLoadingDelete(false);
       });
   };
+  
 
-  const isAdmin = decoded?.username === "admin";
   const spanCount = 400;
 
   return (
@@ -103,7 +120,7 @@ const AdminPage = ({ apiEndpoint, tokenName, lab,hint }) => {
         ))}
         <div className="hackerLogin-signin">
           <div className="hacker-login-content text-center">
-            {isAdmin ? (
+            {condition ? (
               <>
                 {message && (
                   <div dangerouslySetInnerHTML={{ __html: message }}></div>

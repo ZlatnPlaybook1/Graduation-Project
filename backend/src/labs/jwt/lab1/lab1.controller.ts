@@ -40,6 +40,7 @@ export const loginController = async (req: Request, res: Response) => {
 
 export const isAdmin = (req: Request, res: Response, next: NextFunction) => {
     const bearer = req.headers.authorization;
+    console.log(bearer);
     if (!bearer)
         {
             return res.status(401).json({message:'not authorized'});

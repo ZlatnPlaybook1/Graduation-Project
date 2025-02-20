@@ -211,10 +211,10 @@ import JWTAttacks from "./Pages/Website/UserHome/Labs/JWTAttacks/JWTAttacks.jsx"
 import JWTATTACKS_LAB from "./Pages/Website/UserHome/Labs/JWTAttacks/JWTAttacks_lab.jsx";
 import JWTATTACKS_ADMIN1 from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Lab_1/lab1_admin.jsx";
 import JWTATTACKS_USER1 from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Lab_1/lab1_user.jsx";
-import JWTATTACKS_ADMIN2 from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Components/JWTAdmin.jsx";
-import JWTATTACKS_USER2 from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Components/JWTUser.jsx";
-import JWTATTACKS_ADMIN3 from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Components/JWTAdmin.jsx";
-import JWTATTACKS_USER3 from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Components/JWTUser.jsx";
+import JWTATTACKS_ADMIN2 from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Lab_2/lab2_admin.jsx";
+import JWTATTACKS_USER2 from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Lab_2/lab2_user.jsx";
+import JWTATTACKS_ADMIN3 from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Lab_3/lab3_admin.jsx";
+import JWTATTACKS_USER3 from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Lab_3/lab3_user.jsx";
 import JWT_LAB_FIRST from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Lab_1/lab1.jsx";
 import JWT_LAB_SECOND from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Lab_2/lab2.jsx";
 import JWT_LAB_THIRD from "./Pages/Website/UserHome/Labs/JWTAttacks/Practical/Lab_3/lab3.jsx";
