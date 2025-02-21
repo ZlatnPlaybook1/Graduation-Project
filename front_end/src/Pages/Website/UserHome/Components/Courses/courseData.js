@@ -99,7 +99,7 @@ const courseData = [
       "Introduction to Shell Operators",
     ],
     difficulty: "Beginner",
-    image: require("../../assets/img/linux/linux_logo.png"),
+    image: require("../../assets/img/linux/card_image.png"),
     state: "published",
     link: "/linux",
   },

@@ -121,7 +121,7 @@ export default function Captcha_first() {
   return (
     <div className="body-captcha">
       <GoBackBtn />
-      <ShowHintBtn />
+      <ShowHintBtn hintText=" Look 🔍 at how CAPTCHA values are stored and verified.The CAPTCHA values are stored in array." />
       <div className="captcha_first">
         <div className="container-captcha">
           <div className="card-captcha">

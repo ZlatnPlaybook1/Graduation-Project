@@ -10,30 +10,7 @@ import GoBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import { Link } from "react-router-dom";
 export default function Blog() {
-  const hintMessage = `
-    <div
-      style={{
-        textAlign: "left",
-        fontSize: "1rem",
-        lineHeight: "1.5",
-        color: "#333",
-      }}
-    >
-      <p>Copy and paste the following into the search box:</p>
-      <code
-        style={{
-          display: "block",
-          background: "#f8f9fa",
-          padding: "10px",
-          borderRadius: "5px",
-          color: "#d63384",
-        }}
-      >
-        &lt;script&gt;alert(1)&lt;/script&gt;
-      </code>
-      <p>Click "Search".</p>
-    </div>
-  `;
+  const hintMessage = `<span>This lab is vulnerable to server-side template injection due to the unsafe construction of an Handlebars template.To solve the lab, review the Handlebars documentation to find out how to execute arbitrary code, then delete the</span><strong> secret.txt</strong>`;
   // Step 1: Define the card data in an array
   const cards = [
     {

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "../Page_Styles/Lab.css";
 import Header from "../../Header/Header";
-import image from "../../assets/img/linux/linux_logo.png";
+import image from "../../assets/img/linux/card_image.png";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Components/Card/Card";
 
@@ -49,7 +49,7 @@ export default function Linux_lab() {
             <Card
               link="/linux/linux_lab/patient"
               image={image}
-              title="be Patient"
+              title="Be Patient or Skillful"
               brief="Try to Capture the Flag"
               difficulty={"Easy"}
             />

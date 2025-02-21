@@ -110,7 +110,7 @@ export default function CaptchaThird() {
   return (
     <div className="body-captcha">
       <GoBackBtn />
-      <ShowHintBtn hintText={`Hint`} />
+      <ShowHintBtn hintText=" Inspect the request and try removing the CAPTCHA field to see if validation still happens! 🚀" />
       <div className="captcha_first">
         <div className="container-captcha">
           <div className="card-captcha">

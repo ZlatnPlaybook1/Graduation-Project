@@ -48,7 +48,7 @@ export default function SSTI_lab() {
               image={image}
               title={"SSTI Store Vulnerability"}
               brief={
-                "This lab is vulnerable to server-side template injection due to the unsafe construction of an ERB template."
+                "This lab is vulnerable to server-side template injection due to the unsafe construction of an Handlebars template."
               }
               difficulty={"Intermediate"}
             />
@@ -58,7 +58,7 @@ export default function SSTI_lab() {
               image={image}
               title={"Basic server-side template injection"}
               brief={
-                "This lab is vulnerable to server-side template injection due to the way it unsafely uses a Tornado template."
+                "This lab is vulnerable to server-side template injection due to the way it unsafely uses a Handlebars template."
               }
               difficulty={"Easy"}
             />

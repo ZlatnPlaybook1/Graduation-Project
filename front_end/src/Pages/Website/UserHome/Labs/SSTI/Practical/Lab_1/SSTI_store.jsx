@@ -9,12 +9,7 @@ export default function SSTI_store() {
   const [resetMessage, setResetMessage] = useState("");
   const [messageFromURL, setMessageFromURL] = useState("");
   const [htmlContent, setHtmlContent] = useState("");
-  const hintMessage = ` 
-    <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
-      <li>1. Use Burp Suite to intercept and modify the request that sets the product category filter.</li>
-      <li>2. Modify the <mark><code>category </code></mark> parameter, giving it the value <mark><code>'+OR+1=1--</code></mark></li>
-      <li>3. Submit the request, and verify that the response now contains one or more unreleased products.</li>
-    </ul>
+  const hintMessage = `<span>This lab is vulnerable to server-side template injection due to the unsafe construction of an Handlebars template.To solve the lab, review the Handlebars documentation to find out how to execute arbitrary code, then delete the</span><strong> secret.txt</strong>
   `;
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);

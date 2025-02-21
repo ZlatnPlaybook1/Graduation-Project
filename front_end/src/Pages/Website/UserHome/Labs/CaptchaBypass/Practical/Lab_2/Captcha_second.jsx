@@ -102,7 +102,7 @@ export default function Captcha_second() {
   return (
     <div className="body-captcha">
       <GoBackBtn />
-      <ShowHintBtn hintText={`Hint`} />
+      <ShowHintBtn hintText="The CAPTCHA values stay the same in the session until solved. Try brute-forcing different answers until you get it right! 🚀" />
       <div className="captcha_first">
         <div className="container-captcha">
           <div className="card-captcha">
