@@ -1,0 +1,44 @@
+import React from "react";
+import "./Landing.css";
+
+const CourseLanding = () => {
+  return (
+    <div className="my-landing">
+      <div className="landing__overlay"></div>
+      <div className="landing__content">
+        <div className="landing__text">
+          <h1 className="landing__title">Course Info</h1>
+          <h2 className="landing__subtitle">Dive into Vulnerabilities</h2>
+          <p className="landing__description">
+            Explore detailed explanations of main topics, vulnerabilities, 
+            and best practices to secure your applications and systems.
+          </p>
+          <button className="landing__cta">Start Course</button>
+        </div>
+
+        <div className="landing__icon">
+          <div className="landing__icon-border">
+            {/* Edge Icons */}
+            <div className="landing__edge-icon landing__edge-icon--top landing__edge-icon--active">
+              <i className="fas fa-info-circle"></i>
+            </div>
+            <div className="landing__edge-icon landing__edge-icon--right">
+              <i className="fas fa-list-alt"></i>
+            </div>
+            <div className="landing__edge-icon landing__edge-icon--bottom">
+              <i className="fas fa-exclamation-triangle"></i>
+            </div>
+            <div className="landing__edge-icon landing__edge-icon--left">
+              <i className="fas fa-shield-alt"></i>
+            </div>
+
+            {/* Center Circle */}
+            <div className="landing__icon-circle">Course Info</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CourseLanding;

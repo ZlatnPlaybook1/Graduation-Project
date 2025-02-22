@@ -401,7 +401,7 @@
   .faq-body-lab1
   form
   button:hover:not(:disabled) {
-  background-color: rgb(163, 234, 42) !important;
+  /* background-color: rgb(163, 234, 42) !important; */
 }
 
 .go-to-section {
@@ -418,13 +418,13 @@
   font-size: 16px !important;
   padding: 7px 16px !important;
   background-color: transparent !important;
-  color: rgb(21, 28, 43) !important;
-  border: 1px solid rgb(163, 234, 42) !important;
+  /* color: rgb(21, 28, 43) !important; */
+  /* border: 1px solid rgb(163, 234, 42) !important; */
   transition: var(--main-transition) !important;
 }
 
 .go-to:hover {
-  background-color: rgb(163, 234, 42) !important;
+  /* background-color: rgb(163, 234, 42) !important; */
 }
 
 /* End Course Content */
