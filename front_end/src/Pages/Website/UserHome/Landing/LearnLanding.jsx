@@ -20,14 +20,14 @@ const LearnLanding = () => {
           <div className="landing__icon-border">
             {/* Edge Icons */}
             <div className="landing__edge-icon landing__edge-icon--top landing__edge-icon--active">
-              <i className="fas fa-book-open"></i>
+              <i className="fas fa-user-secret"></i>
             </div>
             <div className="landing__edge-icon landing__edge-icon--right">
-              <i className="fas fa-graduation-cap"></i>
+              <i className="fas fa-book-open"></i>
             </div>
-            <div className="landing__edge-icon landing__edge-icon--bottom">
+            {/* <div className="landing__edge-icon landing__edge-icon--bottom">
               <i className="fas fa-chalkboard-teacher"></i>
-            </div>
+            </div> */}
             <div className="landing__edge-icon landing__edge-icon--left">
               <i className="fas fa-lightbulb"></i>
             </div>

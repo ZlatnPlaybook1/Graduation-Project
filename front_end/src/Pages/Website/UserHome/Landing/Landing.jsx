@@ -28,9 +28,9 @@ const Landing = () => {
             <div className="landing__edge-icon landing__edge-icon--right">
               <i className="fas fa-lock"></i>
             </div>
-            <div className="landing__edge-icon landing__edge-icon--bottom">
+            {/* <div className="landing__edge-icon landing__edge-icon--bottom">
               <i className="fas fa-shield-alt"></i>
-            </div>
+            </div> */}
             <div className="landing__edge-icon landing__edge-icon--left">
               <i className="fas fa-bug"></i>
             </div>

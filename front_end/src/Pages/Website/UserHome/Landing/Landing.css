@@ -34,7 +34,7 @@
 --------------------------------- */
 .my-landing {
   position: relative;
-  height: 60vh;
+  height: 38vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -42,7 +42,7 @@
   color: #fff;
   overflow: hidden;
   /* You can set a default background or override per page */
-  background: url('./bgg.jpg') center/cover no-repeat;
+  background: url('./bg.jpg') center/cover no-repeat;
 }
 
 .landing__overlay {
@@ -53,8 +53,8 @@
   height: 100%;
   background: linear-gradient(
     135deg,
-     #210e11d9 0%,
-    #71141d87 100%
+     #3d3c3cd9 0%,
+    #1d1c1c87 100%
   );
   z-index: 1;
 }
@@ -166,23 +166,23 @@
 
 /* Positions */
 .landing__edge-icon--top {
-  top: -20px;
-  left: 50%;
+  top: 5px;
+  left: 190px;
   transform: translateX(-50%) rotate(45deg);
 }
 .landing__edge-icon--right {
-  top: 50%;
-  right: -20px;
+  top: 93%;
+  right: 30px;
   transform: translateY(-50%) rotate(45deg);
 }
-.landing__edge-icon--bottom {
+/* .landing__edge-icon--bottom {
   bottom: -20px;
   left: 50%;
   transform: translateX(-50%) rotate(45deg);
-}
+} */
 .landing__edge-icon--left {
-  top: 50%;
-  left: -20px;
+  top: 25%;
+  left: -10px;
   transform: translateY(-50%) rotate(45deg);
 }
 
