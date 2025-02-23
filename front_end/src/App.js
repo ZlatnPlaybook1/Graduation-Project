@@ -168,6 +168,7 @@ import BASH_QUIZ from "./Pages/Website/UserHome/Labs/Bash_Scripting/second_lab/B
 import Obfuscation from "./Pages/Website/UserHome/Labs/Obfuscation/Obfuscation.jsx";
 import OBFUSCATION_LAB from "./Pages/Website/UserHome/Labs/Obfuscation/Obfuscation_lab.jsx";
 import OBFUSCATION_LOGIN from "./Pages/Website/UserHome/Labs/Obfuscation/Practical/Lab_1/Login.jsx";
+import OBFUSCATION_QUIZ from "./Pages/Website/UserHome/Labs/Obfuscation/Practical/Lab_2/Ob_quiz.jsx";
 // End Obfuscation
 // CryptoGraphy
 import CryptoGraphy from "./Pages/Website/UserHome/Labs/CryptoGraphy/CryptoGraphy.jsx";
@@ -966,6 +967,10 @@ function App() {
           <Route
             path="/Obfuscation/obfuscation_lab/login"
             element={<OBFUSCATION_LOGIN />}
+          />
+          <Route
+            path="/Obfuscation/obfuscation_lab/quiz"
+            element={<OBFUSCATION_QUIZ />}
           />
           {/* End Obfuscation */}
           {/* Start CryptoGraphy */}

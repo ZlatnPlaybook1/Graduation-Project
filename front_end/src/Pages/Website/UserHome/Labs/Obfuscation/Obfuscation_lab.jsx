@@ -52,6 +52,15 @@ export default function Obfuscation_lab() {
               }
               difficulty={"Easy"}
             />
+            <Card
+              link={"/Obfuscation/obfuscation_lab/quiz"}
+              image={image}
+              title={"Legendary Process"}
+              brief={
+                "Master the basics of obfuscation, a powerful technique for securing code and protecting intellectual property in cybersecurity environments"
+              }
+              difficulty={"Easy"}
+            />
           </div>
         </div>
       </div>
