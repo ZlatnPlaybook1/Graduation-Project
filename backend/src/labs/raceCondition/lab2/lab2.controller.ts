@@ -69,14 +69,14 @@ export const isValidCoupon = async (req: Request, res: Response) => {
                 data: { price: priceAfterDiscount }
             });
 
-            // Mark coupon as invalid if it was never used before
+            // Mark the coupon as used
             if (!storedCoupon.usedAt) {
                 await tx.lab2RaceCondition.update({
                     where: { id: storedCoupon.id },
                     data: { usedAt: new Date(), isValid: true }
                 });
 
-                // After 10 seconds, re-enable the coupon
+                // After 1 seconds, disable the coupon
                 setTimeout(async () => {
                     await prisma.lab2RaceCondition.update({
                         where: { id: storedCoupon.id },
