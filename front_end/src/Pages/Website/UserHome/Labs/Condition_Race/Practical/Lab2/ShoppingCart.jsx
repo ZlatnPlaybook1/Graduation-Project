@@ -15,6 +15,11 @@ export default function ShoppingCart() {
   const [discount, setDiscount] = useState(
     parseInt(localStorage.getItem("discount")) || 0
   );
+  const [totalPrice, setTotalPrice] = useState(
+    (JSON.parse(localStorage.getItem("cart")) || []).reduce(
+      (sum, price) => sum + price, 0
+    ) - discount
+  );
 
   useEffect(() => {
     axios
@@ -27,9 +32,18 @@ export default function ShoppingCart() {
   }, []);
 
   useEffect(() => {
+    const cartTotal = cart.reduce((sum, price) => sum + price, 0) - discount;
+    setTotalPrice(cartTotal); // Update total before applying coupon
+    updateTotalOnServer(cartTotal);
     localStorage.setItem("cart", JSON.stringify(cart));
     localStorage.setItem("discount", discount);
   }, [cart, discount]);
+
+  const updateTotalOnServer = (updatedTotal) => {
+    axios
+      .post("http://127.0.0.1:8080/api/ShoppingCart/price", { totalPrice: updatedTotal })
+      .catch((error) => console.error("Error updating total:", error));
+  };
 
   const addToCart = (price) => {
     const updatedCart = [...cart, price];
@@ -44,6 +58,7 @@ export default function ShoppingCart() {
       .then((response) => {
         setMessage(response.data.message);
         setDiscount(response.data.discount || 0);
+        setTotalPrice(response.data.totalPrice); // Receive total from backend
       })
       .catch((error) => console.error("Error applying discount:", error));
   };
@@ -52,6 +67,10 @@ export default function ShoppingCart() {
     setDiscount(0);
     setUserCoupon("");
     setMessage("");
+
+    const updatedTotal = cart.reduce((sum, price) => sum + price, 0);
+    setTotalPrice(updatedTotal);
+    updateTotalOnServer(updatedTotal);
   };
 
   const resetCart = () => {
@@ -61,9 +80,10 @@ export default function ShoppingCart() {
     setMessage("");
     localStorage.removeItem("cart");
     localStorage.removeItem("discount");
-  };
 
-  const total = cart.reduce((sum, price) => sum + price, 0) - discount;
+    setTotalPrice(0);
+    updateTotalOnServer(0);
+  };
 
   return (
     <>
@@ -111,7 +131,7 @@ export default function ShoppingCart() {
               {discount > 0 && (
                 <p className="discount">Discount: {discount} units</p>
               )}
-              <p className="total">Total: {total} units</p>
+              <p className="total">Total: {totalPrice} units</p>
             </div>
 
             <button className="reset-btn" onClick={resetCart}>

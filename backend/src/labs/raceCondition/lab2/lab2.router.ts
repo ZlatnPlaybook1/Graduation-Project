@@ -1,11 +1,13 @@
 import {Router} from "express";
-import { isValidCopoun, shoppingCart } from "./lab2.controller";
+import { isValidCoupon, setPrice, shoppingCart } from "./lab2.controller";
 
 let lab2RaceCondition = Router();
 
 
 lab2RaceCondition.get("/ShoppingCart",shoppingCart);
 
-lab2RaceCondition.post("/ShoppingCart",isValidCopoun );
+lab2RaceCondition.post("/ShoppingCart/price",setPrice );
+
+lab2RaceCondition.post("/ShoppingCart",isValidCoupon );
 
 export default lab2RaceCondition;
