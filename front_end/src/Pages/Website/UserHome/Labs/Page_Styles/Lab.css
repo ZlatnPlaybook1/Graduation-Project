@@ -135,24 +135,4 @@
   font-size: 18px;
 }
 
-.course .row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto auto;
-  margin-top: 30px;
-  gap: 20px;
-}
-
-@media (max-width: 991px) {
-  .course .row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 767px) {
-  .course .row {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* End Course  */

@@ -7,7 +7,7 @@ import PaginatedCourses from "./PaginatedCourses";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
 
 const Courses = () => {
-  const [searchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(""); // In case you later add a search input
   const [selectedCategory, setSelectedCategory] = useState("All Courses");
 
   useEffect(() => {
@@ -35,34 +35,35 @@ const Courses = () => {
     const term = searchTerm.toLowerCase();
     const matchesSearchTerm = course.title.toLowerCase().includes(term);
     const matchesCategory =
-      selectedCategory === "All Courses" ||
-      course.category === selectedCategory;
+      selectedCategory === "All Courses" || course.category === selectedCategory;
 
     return matchesSearchTerm && matchesCategory;
   });
 
-
   return (
     <div className="course">
       <div className="container">
-        {/* Category Buttons and Search Bar */}
-           <ul className="category-menu  w-100">
-              {categories.map((category) => (
-                <li key={category}>
-                  <button
-                    className={`category-btn ${
-                      selectedCategory === category ? "active" : ""
-                    }`}
-                    onClick={() => handleCategorySelect(category)}
-                  >
-                    {category}
-                  </button>
-                </li>
-              ))}
-            </ul>
-
-        {/* Display Filtered Courses */}
-        <PaginatedCourses filteredCourses={filteredCourses} />
+        {/* Category Buttons and (optionally) a Search Bar */}
+        <div className="menu-row">
+          <ul className="category-menu w-100">
+            {categories.map((category) => (
+              <li key={category}>
+                <button
+                  className={`category-btn ${
+                    selectedCategory === category ? "active" : ""
+                  }`}
+                  onClick={() => handleCategorySelect(category)}
+                >
+                  {category}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* Courses Grid using Bootstrap’s row */}
+        <div className="row row-center">
+          <PaginatedCourses filteredCourses={filteredCourses} />
+        </div>
       </div>
       <Go2TopBtn />
     </div>

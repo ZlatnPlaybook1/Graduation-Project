@@ -16,7 +16,6 @@ const PaginatedCourses = ({ filteredCourses }) => {
 
   // Toggle favorite status for a course and update in DB.
   const toggleFavorite = async (courseId) => {
-    // Optimistically update UI.
     const currentStatus = favorites[courseId];
     setFavorites((prevFavorites) => ({
       ...prevFavorites,
@@ -35,7 +34,6 @@ const PaginatedCourses = ({ filteredCourses }) => {
       if (!response.ok) {
         throw new Error(data.message || "Failed to update favorite");
       }
-      // Optionally handle success response here.
     } catch (error) {
       console.error("Error updating favorite:", error);
       // Revert optimistic update on error.
@@ -53,7 +51,6 @@ const PaginatedCourses = ({ filteredCourses }) => {
 
   // Display course details using SweetAlert.
   const handleInfoClick = (course, e) => {
-    // Prevent navigation since the whole card is an anchor.
     e.preventDefault();
     e.stopPropagation();
     Swal.fire({
@@ -89,7 +86,6 @@ const PaginatedCourses = ({ filteredCourses }) => {
       );
     } catch (error) {
       console.error("Error registering course:", error);
-      // Swal.fire("Error", error.message, "error");
       Swal.fire(
         "Error",
         "Could not register for the course.\n DB not Ready! Please try again later.",
@@ -105,109 +101,79 @@ const PaginatedCourses = ({ filteredCourses }) => {
 
   return (
     <>
-      <div className="row">
-        {displayedCourses.map((course, index) => (
-          <div
-            className="row-course"
-            key={course.id}
-            data-aos={
-              index % 3 === 0
-                ? "fade-right"
-                : index % 3 === 1
-                ? "fade-up"
-                : "fade-left"
-            }
-          >
-            <a
-              href={course.link}
-              className="course-card"
-              style={{ position: "relative" }}
+      {displayedCourses.map((course, index) => (
+        <div
+          key={course.id}
+          className="col-lg-4 col-md-6 col-sm-12 mb-4"
+          data-aos={
+            index % 3 === 0
+              ? "fade-right"
+              : index % 3 === 1
+              ? "fade-up"
+              : "fade-left"
+          }
+        >
+          <a href={course.link} className="course-card d-block position-relative">
+            {/* Top right icons */}
+            <div
+              className="course-icons position-absolute top-0 end-0 d-flex flex-column gap-2 p-2"
+              style={{ zIndex: 1, fontSize: "1.5rem" }}
             >
-              {/* Top right icons */}
-              <div
-                className="course-icons"
-                style={{
-                  position: "absolute",
-                  top: "10px",
-                  right: "10px",
-                  display: "flex",
-                  gap: "5px",
-                  zIndex: 1,
-                  flexDirection: "column",
-                  fontSize: "1.5rem",
+              {/* Favorite Icon */}
+              <span
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  toggleFavorite(course.id);
                 }}
+                style={{ cursor: "pointer" }}
               >
-                {/* Favorite Icon */}
-                <span
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    toggleFavorite(course.id);
-                  }}
-                  style={{ cursor: "pointer" }}
-                >
-                  <i
-                    className={
-                      favorites[course.id]
-                        ? "fa-solid fa-heart text-danger"
-                        : "fa-regular fa-heart"
-                    }
-                  ></i>
-                </span>
-                {/* Info Icon */}
-                <span
-                  onClick={(e) => handleInfoClick(course, e)}
-                  style={{ cursor: "pointer" }}
-                >
-                  <i className="fa-solid fa-info-circle"></i>
-                </span>
-              </div>
+                <i
+                  className={
+                    favorites[course.id]
+                      ? "fa-solid fa-heart text-danger"
+                      : "fa-regular fa-heart"
+                  }
+                ></i>
+              </span>
+              {/* Info Icon */}
+              <span
+                onClick={(e) => handleInfoClick(course, e)}
+                style={{ cursor: "pointer" }}
+              >
+                <i className="fa-solid fa-info-circle"></i>
+              </span>
+            </div>
 
-              <div className="course-image">
-                <img src={course.image} alt={course.title} />
-                {course.state === "not-published" ? (
-                  <div className="ribbon coming-soon">
-                    <span>Coming Soon</span>
-                  </div>
-                ) : course.state === "published" ? (
-                  <div className="ribbon published">
-                    <span>Published</span>
-                  </div>
-                ) : course.state === "semi-published" ? (
-                  <div className="ribbon semi-published">
-                    <span>Semi Published</span>
-                  </div>
-                ) : (
-                  <div className="ribbon pending">
-                    <span>Pending</span>
-                  </div>
-                )}
-              </div>
+            <div className="course-image">
+              <img src={course.image} alt={course.title} className="img-fluid" />
+              {course.state === "not-published" ? (
+                <div className="ribbon coming-soon">
+                  <span>Coming Soon</span>
+                </div>
+              ) : course.state === "published" ? (
+                <div className="ribbon published">
+                  <span>Published</span>
+                </div>
+              ) : course.state === "semi-published" ? (
+                <div className="ribbon semi-published">
+                  <span>Semi Published</span>
+                </div>
+              ) : (
+                <div className="ribbon pending">
+                  <span>Pending</span>
+                </div>
+              )}
+            </div>
 
-              <div className="course-text">
-                <h3>{course.title}</h3>
-                <p>{course.description}</p>
-                {/* Register Button */}
-                {/* <div className="register-container">
-                  <button
-                    className="btn btn-primary"
-                    onClick={(e) => handleRegister(course, e)}
-                  >
-                    Register
-                  </button>
-                </div> */}
-              </div>
-
-              {/* <div className="easy">
-                <i className="fa-solid fa-signal"></i>
-                <p>{course.difficulty}</p>
-              </div> */}
-            </a>
-          </div>
-        ))}
-      </div>
-
-      <div className="pagination d-flex justify-content-center align-items-center gap-2 my-4">
+            <div className="course-text">
+              <h3>{course.title}</h3>
+              <p>{course.description}</p>
+            </div>
+          </a>
+        </div>
+      ))}
+      <div className="pagination d-flex justify-content-center align-items-center gap-2 my-4 w-100">
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index + 1}
