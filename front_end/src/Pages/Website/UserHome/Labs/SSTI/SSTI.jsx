@@ -27,17 +27,17 @@ export default function SSTI() {
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-labd">
-        <div className="container" ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area  */}
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Step 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h1>Welcome to Server Side Template Injection (SSTI)</h1>
 
                   <h2>What is server-side template injection?</h2>
@@ -87,10 +87,10 @@ export default function SSTI() {
                   <br></br>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Step 2</span> SSTI vulnerabilities
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
                   <h1>server-side template injection vulnerabilities</h1>
                   <h2>
@@ -246,10 +246,10 @@ export default function SSTI() {
                   <br></br>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Step 2</span> Constructing a SSTI attack
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
                   <h1>Constructing a server-side template injection attack</h1>
                   <br></br>
@@ -652,10 +652,10 @@ export default function SSTI() {
                   </p>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Step 4</span> How to prevent SSTI vulnerabilities
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
                   <h1>
                     How to prevent server-side template injection

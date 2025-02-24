@@ -32,16 +32,16 @@ export default function Hashing() {
       />
       {/* End Landing */}
       {/* Start Course */}
-      <div className="course-labd">
-        <div className="container " ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Topic 1 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 1</span>What is hashing in cybersecurity?
                 </dt>
-                <dd className="fadeInUp faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       <mark>Hashing</mark> is a one-way function that takes a
@@ -115,10 +115,10 @@ export default function Hashing() {
                 </dd>
 
                 {/* Topic 2*/}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 2</span>Types of hashing
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       Hashing is not singular in nature. In fact, there are a
@@ -205,10 +205,10 @@ export default function Hashing() {
                 </dd>
 
                 {/* Topic 3 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 3</span>Hashing use cases in cybersecurity
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       <mark>Hashing</mark> plays an important role in many
@@ -341,10 +341,10 @@ export default function Hashing() {
                 </dd>
 
                 {/* Topic 4*/}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 4</span>Hashing benefits in cybersecurity
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       <mark>Hashing</mark> is an essential component within many
@@ -437,10 +437,10 @@ export default function Hashing() {
                 </dd>
 
                 {/* Topic 5 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 5</span>Limitations of hashing
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       <mark>Though hashing</mark> is a useful tool, it has its
@@ -504,10 +504,10 @@ export default function Hashing() {
                   </div>
                 </dd>
                 {/* Topic 6 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 6</span>Hashing vs. encryption
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       <FontAwesomeIcon

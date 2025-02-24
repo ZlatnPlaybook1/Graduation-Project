@@ -31,16 +31,16 @@ export default function Obfuscation() {
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-labd">
-        <div className="container" ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area  */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h1>Welcome to Obfuscation</h1>
 
                   <h2>What will you learn?</h2>
@@ -52,10 +52,10 @@ export default function Obfuscation() {
                   </ol>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 2</span> What are Obfuscation & Deobfuscation ?
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     <br></br>
                   </p>
@@ -132,10 +132,10 @@ export default function Obfuscation() {
                   </p>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span> Topic 3</span>Javascript Obfuscation{" "}
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
                   <h1>Javascript Obfuscation </h1>
                   <p>

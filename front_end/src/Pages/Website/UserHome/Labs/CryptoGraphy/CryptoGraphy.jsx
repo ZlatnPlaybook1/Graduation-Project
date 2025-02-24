@@ -36,17 +36,17 @@ export default function CryptoGraphy() {
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-labd">
-        <div className="container" ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area  */}
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>step 1</span> Introduction to Cryptography
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h1>Welcome to Introduction to Cryptography</h1>
                   <br></br>
                   <h2>What will you learn?</h2>
@@ -60,10 +60,10 @@ export default function CryptoGraphy() {
                   </ol>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span> step 2</span> What is Cryptography?
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     <br></br>
                   </p>
@@ -104,10 +104,10 @@ export default function CryptoGraphy() {
                   <br></br>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span> step 3</span> What is Steganography?{" "}
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
                   <h1>What is Steganography?</h1>
                   <p>
@@ -215,10 +215,10 @@ export default function CryptoGraphy() {
                   <br></br>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span> step 4</span> Plaintext to Ciphertext{" "}
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
                   <p>
                     Let’s start with an illustration before introducing the key
@@ -290,10 +290,10 @@ export default function CryptoGraphy() {
                   </ol>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span> step 5</span> Historical Ciphers{" "}
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     <br></br>
                   </p>
@@ -369,10 +369,10 @@ export default function CryptoGraphy() {
                   </ol>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span> step 6</span> Types of Encryption{" "}
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     <br></br>
                   </p>

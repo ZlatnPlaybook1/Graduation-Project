@@ -38,16 +38,16 @@ export default function Regex() {
       />
       {/* End Landing */}
       {/* Start Course */}
-      <div className="course-labd">
-        <div className="container" ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Topic 1 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 1</span>Introduction
                 </dt>
-                <dd className="fadeInUp faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       <mark>What are regular expressions?</mark> <br />
@@ -103,10 +103,10 @@ export default function Regex() {
                 </dd>
 
                 {/* Topic 2*/}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 2</span>Charsets
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       When searching for a specific string in a file or block of
@@ -189,10 +189,10 @@ export default function Regex() {
                 </dd>
 
                 {/* Topic 3 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 3</span>Wildcards and optional characters
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       The wildcard that is used to match any single character
@@ -230,10 +230,10 @@ export default function Regex() {
                 </dd>
 
                 {/* Topic 4*/}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 4</span>Metacharacters and repetitions
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       There are easier ways to match bigger charsets. For
@@ -348,11 +348,11 @@ export default function Regex() {
                 </dd>
 
                 {/* Topic 5 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 5</span>Starts with/ ends with, groups, and
                   either/ or
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       Sometimes it's very useful to specify that we want to
@@ -423,10 +423,10 @@ export default function Regex() {
                   </div>
                 </dd>
                 {/* Topic 6 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 6</span>Conclusion
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <div className="pink-note">Well done.</div>
                     <p>

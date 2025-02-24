@@ -32,22 +32,19 @@ export default function Api_Hacking() {
       />
       {/* End Landing */}
       {/* Start Course */}
-      <div className="course-lab1">
-        <div className="container">
-          <div className="row">
-            <div className="faq-section-lab1" ref={faqSectionRef}>
-              <dl className="section-text-lab1">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/*Intro*/}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
-                  <span>Introduction</span>Intro to API Testing
+                <dt className="fadeInUp faq-header" id="border-left">
+                  <span>Intro</span> Intro to API Testing
                 </dt>
-                <dd className="fadeInUp faq-body-lab1">
+                <dd className="fadeInUp faq-body">
                   <h3>Welcome to the API Testing Learning Room!</h3>
                   {/* <img src={logicflaw} alt="logic flaw img" id="explain-img" /> */}
-                  <div className="desc">
+                  <div>
                     <p>
                       In this section, we'll introduce the concept of API
                       testing, focusing on how APIs enable communication between
@@ -68,13 +65,10 @@ export default function Api_Hacking() {
                   </p>
                 </dd>
                 {/* Topic 1 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 1</span> What is API Testing?
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <ul>
                     <li>
                       <b>API testing</b> is a critical aspect of ensuring the
@@ -101,13 +95,10 @@ export default function Api_Hacking() {
                   </ul>
                 </dd>
                 {/* Topic 2 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 2</span> How Do APIs Work?
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   {/* <img src={ExplainImg} alt="logic flaw img" id="explain-img" /> */}
                   <p>
                     To begin testing an API, you need to understand how it
@@ -145,13 +136,10 @@ export default function Api_Hacking() {
                   </p>
                 </dd>
                 {/* Topic 3 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 3</span>Discovering API Documentation
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     API documentation provides developers with the information
                     needed to interact with the API. This documentation can be
@@ -182,13 +170,10 @@ export default function Api_Hacking() {
                   </p>
                 </dd>
                 {/* Topic 4 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 4</span> Common API Vulnerabilities
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     APIs can be vulnerable to a variety of attacks if not
                     properly tested. These include:
@@ -217,13 +202,10 @@ export default function Api_Hacking() {
                   </p>
                 </dd>
                 {/* Topic 5 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 5</span> How to Test APIs
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     To test an API effectively, you must simulate real-world
                     interactions. This involves:
@@ -246,13 +228,10 @@ export default function Api_Hacking() {
                   </ul>
                 </dd>
                 {/* Topic 6 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 6:</span> Best Practices for API Testing
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     To prevent vulnerabilities, adhere to these best practices:
                   </p>
@@ -280,13 +259,10 @@ export default function Api_Hacking() {
                     </li>
                   </ul>
                 </dd>
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 7: </span>Conclusion
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     API testing is essential for securing web applications and
                     preventing unauthorized access to sensitive data. By

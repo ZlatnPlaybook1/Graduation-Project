@@ -24,16 +24,16 @@ export default function PathTraversal() {
         onDislike={() => console.log("Disliked!")}
       />
       {/* End Landing */}
-      <div className="SecureUploadContent">
+      <div className="Content">
         <div className="secure-container" ref={faqSectionRef}>
-          <div className="secure-row">
-            <div className="secure-faq-section">
-              <dl className="secure-section-text">
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 1</span>Definition
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul className="security-vuln-list">
                     <li className="security-vuln-item">
                       <span className="highlighted-text">
@@ -50,10 +50,10 @@ export default function PathTraversal() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 2</span>Cause
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <div className="path-traversal-info">
                     <p className="path-traversal-text">
                       This vulnerability typically occurs because of
@@ -80,10 +80,10 @@ export default function PathTraversal() {
                   </div>
                 </dd>
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 3</span>Impact
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <div className="vulnerability-details">
                     <p className="vulnerability-text">
                       This vulnerability typically occurs because of
@@ -109,10 +109,10 @@ export default function PathTraversal() {
                   </div>
                 </dd>
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 4</span>Prevention
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <div className="security-section">
                     <h2 className="security-heading">
                       Preventing Path Traversal Vulnerabilities

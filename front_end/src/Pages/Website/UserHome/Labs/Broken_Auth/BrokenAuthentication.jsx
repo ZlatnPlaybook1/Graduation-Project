@@ -28,16 +28,16 @@ export default function BrokenAuthentication() {
         onDislike={() => console.log("Disliked!")}
       />
       {/* End Landing */}
-      <div className="SecureUploadContent">
+      <div className="Content">
         <div className="secure-container" ref={faqSectionRef}>
-          <div className="secure-row">
-            <div className="secure-faq-section">
-              <dl className="secure-section-text">
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 1</span>Description
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul className="auth-issues-list">
                     <li className="auth-issue-item">
                       <span className="special-highlight">
@@ -79,10 +79,10 @@ export default function BrokenAuthentication() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 2</span> Impact
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul className="impact-list">
                     <div class="auth-consequences-title">
                       Consequences of Broken Authentication:
@@ -139,10 +139,10 @@ export default function BrokenAuthentication() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 3</span> Scenarios
                 </dt>
-                <dd className="fadeInUp auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul className="scenario-list">
                     {/* Scenario 1 */}
                     <li className="scenario-item">
@@ -247,10 +247,10 @@ export default function BrokenAuthentication() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 4</span> Prevention
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul className="security-list">
                     <li className="security-item">
                       <div className="intro-text">
@@ -407,11 +407,11 @@ export default function BrokenAuthentication() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span> Task 5</span>
                   Tools for Testing and Prevention
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul className="security-list">
                     <li className="security-item">
                       <span className="section-title">

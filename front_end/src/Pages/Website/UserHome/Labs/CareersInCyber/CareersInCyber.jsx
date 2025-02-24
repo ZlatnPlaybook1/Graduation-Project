@@ -33,16 +33,16 @@ export default function CareersInCyber() {
       />
       {/* End Landing */}
       {/* Start Course */}
-      <div className="course-labd">
-        <div className="container" ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Topic 1 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <div className="faq-image">
                       <img src={CareerImag} alt="Careers In Cyber" />
@@ -96,10 +96,10 @@ export default function CareersInCyber() {
                 </dd>
 
                 {/* Topic 2*/}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 2</span>Security Analyst
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <div className="faq-image">
                       <img
@@ -225,10 +225,10 @@ export default function CareersInCyber() {
                 </dd>
 
                 {/* Topic 3 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 3</span>Security Engineer
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <div className="faq-image">
                       <img
@@ -340,10 +340,10 @@ export default function CareersInCyber() {
                   </div>
                 </dd>
                 {/* Topic 4*/}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 4</span>Incident Responder
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <div className="faq-image">
                       <img
@@ -416,10 +416,10 @@ export default function CareersInCyber() {
                   </div>
                 </dd>
                 {/* Topic 5 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 5</span>Digital Forensics Examiner
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <div className="faq-image">
                       <img
@@ -472,10 +472,10 @@ export default function CareersInCyber() {
                   </div>
                 </dd>
                 {/* Topic 6 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 6</span>Malware Analyst
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <div className="faq-image">
                       <img
@@ -532,10 +532,10 @@ export default function CareersInCyber() {
                   </div>
                 </dd>
                 {/* Topic 7 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 7</span>Penetration Tester
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <div className="faq-image">
                       <img
@@ -630,10 +630,10 @@ export default function CareersInCyber() {
                   </div>
                 </dd>
                 {/* Topic 8 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 8</span>Red Teamer
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <div className="faq-image">
                       <img
@@ -719,10 +719,10 @@ export default function CareersInCyber() {
                   </div>
                 </dd>
                 {/* Topic 9 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 9</span>Quiz
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       This room has provided you with a general overview of the

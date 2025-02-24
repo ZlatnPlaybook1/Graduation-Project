@@ -25,17 +25,17 @@ export default function CaptchaBypass() {
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-labd">
-        <div className="container" ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area  */}
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Module 1</span> Introduction to Captcha & Its Purpose
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     <br></br>
                   </p>
@@ -139,10 +139,10 @@ export default function CaptchaBypass() {
                   <br></br>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Module 2</span> Understanding Captcha Bypass Techniques
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     <br></br>
                   </p>
@@ -220,10 +220,10 @@ export default function CaptchaBypass() {
                   <br></br>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Module 3</span> Bypassing Simple Captchas using Python
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     <br></br>
                   </p>
@@ -439,11 +439,11 @@ export default function CaptchaBypass() {
                   <br></br>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Module 4</span> Advanced Captcha Bypass – reCAPTCHA v2 &
                   v3
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     <br></br>
                   </p>

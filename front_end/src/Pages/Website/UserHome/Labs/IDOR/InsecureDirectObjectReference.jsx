@@ -29,17 +29,17 @@ export default function InsecureDirectObjectReference() {
       />
       {/* End Landing */}
       {/* Start Content */}
-      <div className="SecureUploadContent">
+      <div className="Content">
         <div className="secure-container" ref={faqSectionRef}>
-          <div className="secure-row">
-            <div className="secure-faq-section">
-              <dl className="secure-section-text">
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 1</span> What does insecure direct object reference
                   mean?
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul className="secure-list">
                     <li>
                       The term{" "}
@@ -70,10 +70,10 @@ export default function InsecureDirectObjectReference() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 2</span> How do IDOR vulnerabilities happen?
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <img
                     src={IDOR_Vulerability}
                     alt="IDOR Vulnerability"
@@ -177,10 +177,10 @@ export default function InsecureDirectObjectReference() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 3</span> How to detect IDOR vulnerabilities?
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul className="secure-list">
                     <li>
                       Insecure direct object references are a type of access
@@ -194,10 +194,10 @@ export default function InsecureDirectObjectReference() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 4</span> How to prevent IDOR attacks?
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <div className="secure-faq-content">
                     <p>
                       The only way to protect against IDORs is to implement

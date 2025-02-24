@@ -38,19 +38,16 @@ export default function BL_Vuln() {
       />
       {/* End Landing */}
       {/* Start Course */}
-      <div className="course-lab1">
-        <div className="container">
-          <div className="row">
-            <div className="faq-section-lab1" ref={faqSectionRef}>
-              <dl className="section-text-lab1">
+      <div className="Content">
+        <div className="secure-container">
+          <div className="content-row">
+            <div className="content-section" ref={faqSectionRef}>
+              <dl className="topics-text">
                 {/* Intro */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Intro to </span> Business logic vulnerabilities
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h3
                     style={{
                       textAlign: "center",
@@ -86,13 +83,10 @@ export default function BL_Vuln() {
                   </div>
                 </dd>
                 {/* Topic 1 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 1 </span> What are business logic vulnerabilities?
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     Business logic vulnerabilities are flaws in the design and
                     implementation of an application that allow an attacker to
@@ -148,14 +142,11 @@ export default function BL_Vuln() {
                   </p>
                 </dd>
                 {/* Topic 2 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 2 </span> How do business logic vulnerabilities
                   arise?
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     Business logic vulnerabilities can arise in a number of
                     ways. Some common causes include:
@@ -198,14 +189,11 @@ export default function BL_Vuln() {
                   </p>
                 </dd>
                 {/* Topic 3 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 3 </span> How can business logic vulnerabilities
                   be exploited?
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     Business logic vulnerabilities can be exploited in a variety
                     of ways, depending on the specific flaw and the application
@@ -243,14 +231,11 @@ export default function BL_Vuln() {
                   </p>
                 </dd>
                 {/* Topic 4 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 4 </span> How can business logic vulnerabilities
                   be prevented?
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     Preventing business logic vulnerabilities requires a
                     combination of secure coding practices, thorough testing,
@@ -298,13 +283,10 @@ export default function BL_Vuln() {
                   </p>
                 </dd>
                 {/* Topic 5 */}
-                <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 5 </span> Conclusion
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     Business logic vulnerabilities are a common type of security
                     flaw that can have serious consequences if exploited by

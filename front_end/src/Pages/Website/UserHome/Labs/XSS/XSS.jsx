@@ -28,16 +28,16 @@ export default function XSS() {
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="SecureUploadContent">
+      <div className="Content">
         <div className="secure-container" ref={faqSectionRef}>
-          <div className="secure-row">
-            <div className="secure-faq-section">
-              <dl className="secure-section-text">
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 1</span> What is cross-site scripting (XSS)?
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li className="xss-style-li">
                       <p>
@@ -73,10 +73,10 @@ export default function XSS() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 2</span>How does cross-site scripting work?
                 </dt>
-                <dd className="Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li className="xss-style-li">
                       Most websites and web applications run client-side code in
@@ -161,10 +161,10 @@ export default function XSS() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 3</span>What are the types of XSS attacks?
                 </dt>
-                <dd className="Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li className="xss-style-li">
                       There are three main types of XSS attacks. These are:
@@ -191,10 +191,10 @@ export default function XSS() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 4</span>Reflected cross-site scripting
                 </dt>
-                <dd className="Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li className="xss-style-li">
                       Reflected XSS is the simplest variety of cross-site
@@ -238,10 +238,10 @@ export default function XSS() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 5</span>Stored cross-site scripting
                 </dt>
-                <dd className="Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li className="xss-style-li">
                       Stored XSS (also known as persistent or second-order XSS)
@@ -292,10 +292,10 @@ export default function XSS() {
                     </pre>
                   </ul>
                 </dd>
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 6</span>DOM-based cross-site scripting
                 </dt>
-                <dd className="Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li className="xss-style-li">
                       DOM-based XSS (also known as DOM XSS) arises when an
@@ -343,11 +343,11 @@ export default function XSS() {
                     </li>
                   </ul>
                 </dd>
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 7</span>Examples of known cross-site scripting
                   vulnerabilities
                 </dt>
-                <dd className="Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li className="xss-style-li">
                       The 2005 Samy worm – in October 2005, Samy Kamkar, a user
@@ -390,10 +390,10 @@ export default function XSS() {
                     </li>
                   </ul>
                 </dd>
-                <dt className="wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 8</span>What can XSS be used for?
                 </dt>
-                <dd className="Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li className="xss-style-li">
                       An attacker who exploits a cross-site scripting
@@ -421,10 +421,10 @@ export default function XSS() {
                     </ol>
                   </ul>
                 </dd>
-                <dt className="wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 9</span>How XSS Attacks Work?
                 </dt>
-                <dd className="Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li className="xss-style-li">
                       <h2>User Input: </h2>A user interacts with a web
@@ -451,10 +451,10 @@ export default function XSS() {
                     </li>
                   </ul>
                 </dd>
-                <dt className="wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 10</span>Consequences of XSS Attacks
                 </dt>
-                <dd className="Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li className="xss-style-li">
                       <h2>Data Theft: </h2>Attackers can steal sensitive
@@ -481,10 +481,10 @@ export default function XSS() {
                     </li>
                   </ul>
                 </dd>
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 11</span>How to prevent XSS attacks?
                 </dt>
-                <dd className="Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li className="xss-style-li">
                       Preventing cross-site scripting is trivial in some cases

@@ -33,24 +33,21 @@ export default function AC_Vuln() {
       />
       {/* End Landing */}
       {/* Start Course */}
-      <div className="course-labd">
-        <div className="container" ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Task 1 */}
-                {/* <dt className="wave-labd fadeInUp faq-header-labd">
-                  <span></span>  
-                </dt> */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Intro </span> Introduction to Access Control
                   Vulnerabilities
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h3>
                     Welcome to the Access Control Vulnerability Learning Room!
                   </h3>
-                  <div className="desc">
+                  <div>
                     <h4>What is an Access Control Vulnerability?</h4>
                     <p>
                       Access control vulnerabilities occur when an application
@@ -82,10 +79,10 @@ export default function AC_Vuln() {
                   </ol>
                 </dd>
                 {/* Topic 1 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 1</span> Understanding Access Control
                 </dt>
-                <dd className="faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <ul>
                     <li>
                       <b>Definition:</b> Access control ensures users can only
@@ -111,10 +108,10 @@ export default function AC_Vuln() {
                   </ul>
                 </dd>
                 {/* Topic 2 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 2</span> Types of Access Control Flaws
                 </dt>
-                <dd className="faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <ul>
                     <li>
                       <b>Horizontal Privilege Escalation:</b> A user accesses
@@ -132,10 +129,10 @@ export default function AC_Vuln() {
                   </ul>
                 </dd>
                 {/* Topic 3 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 3</span> Examples of Exploits
                 </dt>
-                <dd className="faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <ul>
                     <li>
                       <b>Accessing Other Users' Data:</b> Viewing or modifying
@@ -152,10 +149,10 @@ export default function AC_Vuln() {
                   </ul>
                 </dd>
                 {/* Topic 4 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 4</span> Access Control Best Practices
                 </dt>
-                <dd className="faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <ul>
                     <li>
                       <b>Principle of Least Privilege:</b> Grant users only the

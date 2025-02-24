@@ -28,16 +28,16 @@ export default function JWTAttacks() {
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-labd">
-        <div className="container" ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area  */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h1>Welcome to JWT Attacks</h1>
 
                   <h2>What will you learn?</h2>
@@ -49,10 +49,10 @@ export default function JWTAttacks() {
                   </ol>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 2</span> Token-Based Authentication
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <div className="subject-section">
                     <p>
                       <b>APIs</b> — those behind-the-scenes heroes of modern
@@ -198,10 +198,10 @@ export default function JWTAttacks() {
                   </div>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 3</span>JSON Web Tokens
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <div className="subject-section">
                     <img src={exampleImage1} alt="Example" />
                     <p>
@@ -292,10 +292,10 @@ export default function JWTAttacks() {
                     </p>
                   </div>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 4</span>Sensitive Information Disclosure
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <div className="subject-section">
                     <p>
                       JWTs are great for securely transmitting information, but
@@ -544,10 +544,10 @@ export default function JWTAttacks() {
                     </p>
                   </div>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 5</span>Signature Validation Mistakes
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <div className="subject-section">
                     <h4> Not Verifying the Signature</h4>
                     <h2>Problem</h2>
@@ -1018,10 +1018,10 @@ export default function JWTAttacks() {
                     </p>
                   </div>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 6</span>JWT Lifetimes
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <div className="subject-section">
                     <p>
                       The lifetime of a <b>JWT</b> is a critical security
@@ -1463,10 +1463,10 @@ export default function JWTAttacks() {
                     </p>
                   </div>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 7</span>Cross-Service Relay Attacks
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <div className="subject-section">
                     <img src={exampleImage2} alt="Example" />
                     <p>
@@ -1903,11 +1903,11 @@ export default function JWTAttacks() {
                     </p>
                   </div>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 8</span>Conclusion: JWTs — Not Just a Fancy
                   Acronym for “Just Wait, Trouble!”
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <div className="subject-section">
                     <p>
                       This room was a rollercoaster ride through the world of

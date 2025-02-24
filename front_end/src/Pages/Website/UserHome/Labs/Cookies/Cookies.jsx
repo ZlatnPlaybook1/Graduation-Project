@@ -27,16 +27,16 @@ export default function Cookies() {
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-labd">
-        <div className="container" ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area  */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 1</span> What Are Cookies?
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     Cookies are data that browsers store in small text files on
                     your computer.
@@ -79,10 +79,10 @@ export default function Cookies() {
                   </p>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 2</span>What are Cookies Used For?
                 </dt>
-                <dd className="faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h2>Session Management:</h2>
                   <p>
                     Cookies store things like items in your shopping cart or
@@ -116,10 +116,10 @@ export default function Cookies() {
                   <img src={inLab3} alt="" />
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 3</span>Where are Cookies Stored?
                 </dt>
-                <dd className="faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     Cookies are stored on your device in special folders or
                     files within your web browser. Here’s where they can
@@ -152,10 +152,10 @@ export default function Cookies() {
                   </ol>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 4</span>Cookies Manipulation
                 </dt>
-                <dd className="faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h2>Create a Cookie With JavaScript:</h2>
                   <div className="terminal-container">
                     <div className="terminal-content">

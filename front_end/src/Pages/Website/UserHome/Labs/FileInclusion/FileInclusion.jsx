@@ -31,16 +31,16 @@ export default function FileInclusion() {
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-labd">
-        <div className="container" ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area  */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h1>Welcome to File Inclusion</h1>
                   <p>
                     This room aims to equip you with the essential knowledge to
@@ -101,10 +101,10 @@ export default function FileInclusion() {
                     used in tandem to gain remote command execution (RCE).
                   </p>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 2</span> Path Traversal
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     Also known as Directory traversal, a web security
                     vulnerability allows an attacker to read operating system
@@ -185,10 +185,10 @@ export default function FileInclusion() {
                   </p>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 3</span>Local File Inclusion (LFI) #1
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     LFI attacks against web applications are often due to a
                     developers’ lack of security awareness. With PHP, using
@@ -336,10 +336,10 @@ export default function FileInclusion() {
                     </li>
                   </ol>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 4</span>Local File Inclusion (LFI) #2
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     In this task, we go a little bit deeper into LFI. We
                     discussed a couple of techniques to bypass the filter within
@@ -575,10 +575,10 @@ export default function FileInclusion() {
                     </li>
                   </ol>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 5</span>Remote File Inclusion (RFI)
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     The risk of RFI is higher than LFI since RFI vulnerabilities
                     allow an attacker to gain Remote Command Execution (RCE) on
@@ -649,10 +649,10 @@ export default function FileInclusion() {
                     to try out an RFI attack.
                   </p>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 6</span>Remediation
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     As a developer, it’s important to be aware of web
                     application vulnerabilities, how to find them, and

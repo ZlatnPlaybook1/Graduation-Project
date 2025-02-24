@@ -32,16 +32,16 @@ export default function Click_Jacking() {
       />
       {/* End Landing */}
       {/* Start Course */}
-      <div className="course-labd">
-        <div className="container " ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Topic 1 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 1</span>What is Clickjacking in Cybersecurity?
                 </dt>
-                <dd className="fadeInUp faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       <mark>Clickjacking</mark> is a malicious technique where
@@ -75,10 +75,10 @@ export default function Click_Jacking() {
                 </dd>
 
                 {/* Topic 2*/}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 2</span>Common Clickjacking Techniques
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       There are various techniques attackers use to execute a
@@ -113,10 +113,10 @@ export default function Click_Jacking() {
                 </dd>
 
                 {/* Topic 3 */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 3</span>How to Prevent Clickjacking Attacks
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       Preventing clickjacking attacks requires a combination of
@@ -155,10 +155,10 @@ export default function Click_Jacking() {
                 </dd>
 
                 {/* Topic 4*/}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 4</span>Impact of Clickjacking on Cybersecurity
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       Clickjacking is a significant cybersecurity threat that
@@ -215,10 +215,10 @@ export default function Click_Jacking() {
                     </ol>
                   </div>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 5</span>Detecting Clickjacking Vulnerabilities
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       Detecting clickjacking vulnerabilities in a website or web
@@ -255,11 +255,11 @@ export default function Click_Jacking() {
                     </p>
                   </div>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 6</span>Real-World Examples of Clickjacking
                   Attacks
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       There have been several well-documented real-world
@@ -299,11 +299,11 @@ export default function Click_Jacking() {
                     </p>
                   </div>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 7</span>Legal and Ethical Implications of
                   Clickjacking
                 </dt>
-                <dd className="faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
                       Clickjacking attacks not only pose a technical threat but

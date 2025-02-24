@@ -26,16 +26,16 @@ export default function RaceCondition() {
         onDislike={() => console.log("Disliked!")}
       />
       {/* End Landing */}
-      <div className="SecureUploadContent">
+      <div className="Content">
         <div className="secure-container" ref={faqSectionRef}>
-          <div className="secure-row">
-            <div className="secure-faq-section">
-              <dl className="secure-section-text">
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="fadeInUp faq-header">
                   <span>Task 1</span>Definition
                 </dt>
-                <dd className="fadeInUp Auth-faq-body"></dd>
+                <dd className="fadeInUp faq-body"></dd>
               </dl>
             </div>
             <div className="go-to-section">

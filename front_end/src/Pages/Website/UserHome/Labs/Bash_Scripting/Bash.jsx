@@ -46,16 +46,16 @@ export default function Bash() {
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-labd">
-        <div className="container" ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area  */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h1>Welcome to the introductory bash scripting room!</h1>
                   <img src={exampleImage18} alt="Example" />
                   <h2>What is bash?</h2>
@@ -79,10 +79,10 @@ export default function Bash() {
                     <li>Conditionals</li>
                   </ol>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 2</span> Our first simple bash scripts
                 </dt>
-                <dd className="fadeInUp faq-body-labd">
+                <dd className="fadeInUp faq-body">
                   <h1>
                     Ok now that we have had a brief introduction to what bash is
                     and what it is used for let's jump right into some examples!
@@ -131,10 +131,10 @@ export default function Bash() {
                     And then we run it using <span>./</span>
                   </p>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 3</span> Variables
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h1>
                     Now we are moving onto variables,in bash these are quite
                     simple and we create them
@@ -279,10 +279,10 @@ export default function Bash() {
                     </button>
                   </div>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 4</span> Parameters
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h1>
                     We will now look at one of the main features of bash and
                     that's using parameters.
@@ -349,10 +349,10 @@ export default function Bash() {
                     </button>
                   </div>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 5</span> Arrays
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h1>Arrays</h1>
                   <p>
                     For this module i suggest you follow along in a standard
@@ -460,10 +460,10 @@ export default function Bash() {
                     </button>
                   </div>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 6</span> Conditionals
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <img id="img-full" src={exampleImage13} alt="Example" />
                   <p>
                     When we talk about conditionals it means that a certain

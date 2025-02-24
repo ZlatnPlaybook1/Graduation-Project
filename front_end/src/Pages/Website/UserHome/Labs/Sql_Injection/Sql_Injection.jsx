@@ -36,16 +36,16 @@ export default function Sql_Injection() {
       {/* End Landing */}
 
       {/* Start Course */}
-      <div className="course-labd">
-        <div className="container" ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Topic 1: Brief */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 1</span>Brief
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <div className="faq-content">
                     <p>
                       SQL (Structured Query Language) Injection, mostly referred
@@ -71,10 +71,10 @@ export default function Sql_Injection() {
                 </dd>
 
                 {/* Topic 2: What is a Database? */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 2</span>What is a Database?
                 </dt>
-                <dd className="faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <div className="faq-content">
                     <p>
                       If you're not used to working with databases or exploiting
@@ -170,10 +170,10 @@ export default function Sql_Injection() {
                 </dd>
 
                 {/* Topic 3: What is SQL? */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 3</span>What is SQL?
                 </dt>
-                <dd className="faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <div className="faq-content">
                     <p>
                       SQL (Structured Query Language) is a feature-rich language
@@ -447,10 +447,10 @@ Axe Makers Ltd  | 2b Makers Unit, Market Road | London | SE9 1KK`}
                 </dd>
 
                 {/* Topic 4: What is SQL Injection? */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 4</span>What is SQL Injection?
                 </dt>
-                <dd className="faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <div className="faq-content">
                     <p>
                       The point wherein a web application using SQL can turn
@@ -530,10 +530,10 @@ Axe Makers Ltd  | 2b Makers Unit, Market Road | London | SE9 1KK`}
                 </dd>
 
                 {/* Topic 5: In-Band SQLi */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 5</span>In-Band SQLi
                 </dt>
-                <dd className="faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <div className="faq-content">
                     <p>
                       In-Band SQL Injection is the easiest type to detect and
@@ -707,10 +707,10 @@ Axe Makers Ltd  | 2b Makers Unit, Market Road | London | SE9 1KK`}
                 </dd>
 
                 {/* Topic 6: Blind SQLi - Authentication Bypass */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 6</span>Blind SQLi - Authentication Bypass
                 </dt>
-                <dd className="faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <div className="faq-content">
                     <p>
                       Unlike In-Band SQL injection, where we can see the results

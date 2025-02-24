@@ -26,17 +26,16 @@ export default function Linux() {
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-labd">
-        <div className="container" ref={faqSectionRef}>
-          <div className="row">
-            {/* <div className="container> */}
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area  */}
-                <dt className="faq-header-labd wave-labd fadeInUp">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 1</span>Running Your First few Commands
                 </dt>
-                <dd className="faq-body-labd fadeInUp" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <ul>
                     <li>
                       <p>
@@ -185,10 +184,10 @@ export default function Linux() {
                     </li>
                   </ul>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 2</span>Interacting With the Filesystem!
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <ul>
                     <li>
                       <p>
@@ -590,10 +589,10 @@ export default function Linux() {
                     </li>
                   </ul>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 3</span>Searching for Files
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <ul>
                     <li>
                       <p>
@@ -989,10 +988,10 @@ export default function Linux() {
                     </li>
                   </ul>
                 </dd>
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>Topic 4</span>An Introduction to Shell Operators
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <ul>
                     <li>
                       <p>

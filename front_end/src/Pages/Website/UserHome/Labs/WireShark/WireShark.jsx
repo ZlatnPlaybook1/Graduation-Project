@@ -58,16 +58,16 @@ export default function WireShark() {
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="course-labd">
-        <div className="container" ref={faqSectionRef}>
-          <div className="row">
-            <div className="faq-section-labd">
-              <dl className="section-text-labd">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area  */}
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>step 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h2>Wireshark Fundamentals</h2>
                   <br></br>
                   <p>
@@ -114,10 +114,10 @@ export default function WireShark() {
                   </p>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span>step 2</span> Wireshark Overview
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <h2>Wireshark Overview :</h2>
                   <br></br>
                   <p>
@@ -220,10 +220,10 @@ export default function WireShark() {
                   <br></br>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span> step 3</span>Collection Methods
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     Before going into detail about how to analyze each protocol
                     in a PCAP we need to understand the ways to gather a PCAP
@@ -320,10 +320,10 @@ export default function WireShark() {
                   <br></br>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span> step 4</span> Filtering Captures{" "}
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
                   <h3>Filtering Captures :</h3>
                   <p>
@@ -458,10 +458,10 @@ export default function WireShark() {
                   </p>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span> Step 6 </span> Packet Dissection
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
                   <p>
                     This section covers how Wireshark uses OSI layers to break
@@ -566,10 +566,10 @@ export default function WireShark() {
                   <br></br>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span> Step 7</span>ARP Traffic{" "}
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
                   <h4>ARP Overview </h4>
                   <p>
@@ -646,10 +646,10 @@ export default function WireShark() {
                   <br></br>
                 </dd>
 
-                <dt className="wave-labd fadeInUp faq-header-labd">
+                <dt className="fadeInUp faq-header">
                   <span> Step 8 </span> ICMP & TCP Traffic{" "}
                 </dt>
-                <dd className="fadeInUp faq-body-labd" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
                   <h2>ICMP Overview</h2>
                   <p>

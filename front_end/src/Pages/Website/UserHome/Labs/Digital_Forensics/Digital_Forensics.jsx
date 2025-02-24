@@ -35,19 +35,19 @@ export default function Digital_Forensics() {
       />
       {/* End Landing */}
       {/* Start Course */}
-      <div className="course-lab1">
-        <div className="container">
-          <div className="row">
-            <div className="faq-section-lab1" ref={faqSectionRef}>
-              <dl className="section-text-lab1">
+      <div className="Content">
+        <div className="secure-container" ref={faqSectionRef}>
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/*Intro*/}
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="fadeInUp faq-header"
                   id="border-left"
                 >
-                  <span>Introduction</span>Intro to Digital Forensics
+                  <span>Intro</span>Intro to Digital Forensics
                 </dt>
-                <dd className="fadeInUp faq-body-lab1">
+                <dd className="fadeInUp faq-body">
                   <h3>Welcome to the Digital Forensics Learning Room!</h3>
                   {/* <img src={logicflaw} alt="logic flaw img" id="explain-img" /> */}
                   <div className="desc">
@@ -69,12 +69,12 @@ export default function Digital_Forensics() {
                 </dd>
                 {/* Topic 1 */}
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="fadeInUp faq-header"
                   id="border-left"
                 >
                   <span>Topic 1:</span> What is Digital Forensics?
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     Digital forensics is the process of identifying, preserving,
                     analyzing, and presenting digital evidence in
@@ -101,12 +101,12 @@ export default function Digital_Forensics() {
                 </dd>
                 {/* Topic 2 */}
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="fadeInUp faq-header"
                   id="border-left"
                 >
                   <span>Topic 2:</span>Types of Digital Forensics
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   {/* <img src={ExplainImg} alt="logic flaw img" id="explain-img" /> */}
                   <p>
                     Digital forensics is a diverse discipline with many branches
@@ -318,12 +318,12 @@ export default function Digital_Forensics() {
                 </dd>
                 {/* Topic 3 */}
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="fadeInUp faq-header"
                   id="border-left"
                 >
                   <span>Topic 3</span>Metadata Analysis
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <ul>
                     <b>What You’ll Learn::</b>
 
@@ -337,12 +337,12 @@ export default function Digital_Forensics() {
                 </dd>
                 {/* Topic 4 */}
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="fadeInUp faq-header"
                   id="border-left"
                 >
                   <span>Topic 4</span> Network Traffic Analysis
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>Focus:</p>
                   <ul>
                     <li>
@@ -367,12 +367,12 @@ export default function Digital_Forensics() {
                 </dd>
                 {/* Topic 5 */}
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="fadeInUp faq-header"
                   id="border-left"
                 >
                   <span>Topic 5</span> Common Digital Forensic Tools
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>Key Tools:</p>
                   <ul>
                     <li>
@@ -397,12 +397,12 @@ export default function Digital_Forensics() {
                 </dd>
                 {/* Topic 6 */}
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="fadeInUp faq-header"
                   id="border-left"
                 >
                   <span>Topic 6:</span> Detecting Hidden Data (Steganography)
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <ul>
                     <li>
                       <b>Concept:</b> Hiding data within other media (images,
@@ -420,12 +420,12 @@ export default function Digital_Forensics() {
                   </ul>
                 </dd>
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="fadeInUp faq-header"
                   id="border-left"
                 >
                   <span>Topic 7:</span> Best Practices in Digital Forensics
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p></p>
                   <ul>
                     <li>
@@ -446,12 +446,12 @@ export default function Digital_Forensics() {
                   </ul>
                 </dd>
                 <dt
-                  className="wave-lab1 fadeInUp faq-header-lab1"
+                  className="fadeInUp faq-header"
                   id="border-left"
                 >
                   <span>Topic 8:</span> Conclusion
                 </dt>
-                <dd className="fadeInUp faq-body-lab1" id="border-left">
+                <dd className="fadeInUp faq-body" id="border-left">
                   <p>
                     <b>Summary:</b>Mastering digital forensics methodologies,
                     tools, and best practices allows for effective cybercrime
