@@ -41,13 +41,13 @@
 }
 
 /* Start course-labd Content */
-/* .course-labd .row {
+.course-labd .row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
   margin-bottom: 70px;
-} */
+}
 
 .course-labd .course-labd-section {
   background-color: inherit;
@@ -520,6 +520,8 @@ tr:hover {
 
 /* Will be Deleted  */
 
+
+
 .landing-labd .banner {
   position: absolute;
   height: 100%;
@@ -695,6 +697,6 @@ tr:hover {
 
 .landing-labd .options .like button:first-of-type {
   border-right: 1px solid rgb(62, 71, 90);
-}
+} */
 
 /* End landing-labd */

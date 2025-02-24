@@ -3,7 +3,7 @@ import "../../assets/css/Landing.css";
 
 const LearnLanding = () => {
   return (
-    <div className="my-landing">
+    <div className="my-landing" style={{ backgroundImage: `url(${require("../../assets/css/bg.jpg").default })` }}>
       <div className="landing__overlay"></div>
       <div className="landing__content">
         <div className="landing__text">

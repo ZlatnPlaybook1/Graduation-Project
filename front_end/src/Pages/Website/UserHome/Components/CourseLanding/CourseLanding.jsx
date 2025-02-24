@@ -1,10 +1,10 @@
 import React from "react";
 import "../../assets/css/Landing.css";
-
+import bg from "../../assets/css/bg.jpg";
 
 const CourseLanding = () => {
   return (
-    <div className="my-landing">
+    <div className="my-landing" style={{ backgroundImage: bg }}>
       <div className="landing__overlay"></div>
       <div className="landing__content">
         <div className="landing__text">
