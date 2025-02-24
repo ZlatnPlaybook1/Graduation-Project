@@ -1,33 +1,32 @@
-
 /* Updated Root */
 :root {
-    --primary-bg: #0f0f0f;
-    --secondary-bg: #1b1b1bd0;
-    --neon-red: #ff073a;
-    --crimson-red: #dc143c;
-    --burnt-orange: #ff7034;
-    --text-opacity: 0.85;
-    --main-color: #00e77f;
-    --primary-text: #ffffff;
-    --secondary-text: #c4c2c2;
-    --main-color2: #00e77fcc;
-    --main-color4: #06995769;
-    --border-color: #1e1e1e;
-    --highlight-color: #1aff8c;
-    --shadow-color: rgba(0, 0, 0, 0.5);
-    --glass-effect: rgba(255, 255, 255, 0.1);
-    --font-family: 'Helvetica Neue', Arial, sans-serif;
-    --transition-speed: 0.3s;
-    --border-radius: 4px;
-    --max-width: 1200px;
-    --font-size-base: 16px;
-    --hover-primary-bg: #1a1a1a;
-    --hover-secondary-bg: #2a2a2ad0;
-    --hover-main-color: #00c16f;
-    --hover-border-color: #2b2b2b;
-    --hover-highlight-color: #1aff99;
-    --hover-shadow-color: rgba(0, 0, 0, 0.7);
-      --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  --primary-bg: #0f0f0f;
+  --secondary-bg: #1b1b1bd0;
+  --neon-red: #ff073a;
+  --crimson-red: #dc143c;
+  --burnt-orange: #ff7034;
+  --text-opacity: 0.85;
+  --main-color: #00e77f;
+  --primary-text: #ffffff;
+  --secondary-text: #c4c2c2;
+  --main-color2: #00e77fcc;
+  --main-color4: #06995769;
+  --border-color: #1e1e1e;
+  --highlight-color: #1aff8c;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --glass-effect: rgba(255, 255, 255, 0.1);
+  --font-family: "Helvetica Neue", Arial, sans-serif;
+  --transition-speed: 0.3s;
+  --border-radius: 4px;
+  --max-width: 1200px;
+  --font-size-base: 16px;
+  --hover-primary-bg: #1a1a1a;
+  --hover-secondary-bg: #2a2a2ad0;
+  --hover-main-color: #00c16f;
+  --hover-border-color: #2b2b2b;
+  --hover-highlight-color: #1aff99;
+  --hover-shadow-color: rgba(0, 0, 0, 0.7);
+  --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
   --glass-bg: rgba(255, 255, 255, 0.15);
   --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   --whiteColor: hsl(0, 0%, 100%);
@@ -54,7 +53,7 @@
   --black: hsla(0, 0%, 0%, 1);
   --black-alpha-80: hsla(0, 0%, 0%, 0.8);
   --black-alpha-15: hsla(0, 0%, 0%, 0.15);
-   /* font-weight */
+  /* font-weight */
   --weight-regular: 400;
   --weight-bold: 700;
   /* line-height */
@@ -86,7 +85,7 @@
   --transition-1: 250ms ease;
   --transition-2: 500ms ease;
   --transition-3: 1000ms ease;
-  --main-transition: all .3s ease-in-out;
+  --main-transition: all 0.3s ease-in-out;
 }
 
 * {
