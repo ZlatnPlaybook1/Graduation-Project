@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./bars.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFaceSmile,
