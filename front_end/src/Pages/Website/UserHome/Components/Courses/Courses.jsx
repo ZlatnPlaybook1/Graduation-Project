@@ -7,7 +7,6 @@ import PaginatedCourses from "./PaginatedCourses";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
 
 const Courses = () => {
-  // const [searchIsOpen, setSearchIsOpen] = useState(false);
   const [searchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Courses");
 
@@ -30,7 +29,6 @@ const Courses = () => {
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
-    // setSearchIsOpen(false);
   };
 
   const filteredCourses = (courseData || []).filter((course) => {
@@ -48,12 +46,7 @@ const Courses = () => {
     <div className="course">
       <div className="container">
         {/* Category Buttons and Search Bar */}
-        <div className="menu-row w-100 ">
-          <div
-            className="category-nav "
-            id="categoryNav"
-          >
-            <ul className="category-menu">
+           <ul className="category-menu  w-100">
               {categories.map((category) => (
                 <li key={category}>
                   <button
@@ -67,9 +60,6 @@ const Courses = () => {
                 </li>
               ))}
             </ul>
-           
-          </div>
-        </div>
 
         {/* Display Filtered Courses */}
         <PaginatedCourses filteredCourses={filteredCourses} />
