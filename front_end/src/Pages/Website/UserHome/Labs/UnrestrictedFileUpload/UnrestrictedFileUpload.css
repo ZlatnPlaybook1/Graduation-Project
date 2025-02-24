@@ -36,12 +36,15 @@
 .Files-first {
   font-size: 1rem;
   font-weight: 400;
+  color: var(--primary-text);
+}
+.parag-un {
+  color: var(--primary-text);
 }
 .style-modern-fileUpload {
   font-size: 16px;
   font-weight: 400;
-  color: #333;
-  background: #f8f9fa;
+  color: var(--primary-text);
   margin-bottom: 1rem;
   padding: 12px 20px;
   border-radius: 8px;
@@ -53,12 +56,13 @@
 }
 
 .style-modern-fileUpload:hover {
-  background: #eef2f7;
+  background: var(--primary-bg);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 .scnarios-fileUplode {
   font-size: 16px;
   font-weight: 400;
+  color: var(--primary-text);
 }
 .SecureUploadContent .imageUnrest:hover {
   transform: scale(1.05);

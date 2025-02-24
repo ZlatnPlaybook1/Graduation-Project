@@ -12,7 +12,7 @@
   text-decoration: underline;
 }
 .secure-faq-section .secure-section-text .Auth-faq-body ul li span {
-  color: blue;
+  color: var(--main-color2);
 }
 .secure-faq-section .secure-section-text .Auth-faq-body li h2 {
   color: #ff4747;
@@ -33,23 +33,24 @@
   flex-direction: column;
 }
 .secure-faq-section .secure-section-text .Auth-faq-body ul pre span {
-  color: green;
+  color: green !important;
   display: inline;
   white-space: normal;
 }
 .xss-style-li {
   font-family: "Poppins", serif;
+  color: var(--secondary-text);
   font-size: 16px;
   font-weight: 400;
   padding: 12px 18px;
   margin: 6px 0;
   border-radius: 8px;
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  background: linear-gradient(135deg, var(--secondary-bg), var(--primary-bg));
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .xss-style-li:hover {
-  background: linear-gradient(135deg, #2a2a72, #0056b3);
+  background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
   color: #fff;
   transform: translateY(-2px);
 }
