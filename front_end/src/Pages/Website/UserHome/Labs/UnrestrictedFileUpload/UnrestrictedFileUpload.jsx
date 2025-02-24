@@ -30,16 +30,16 @@ export default function UnrestrictedFileUpload() {
       />
       {/* End Landing */}
       {/* Start Content */}
-      <div className="SecureUploadContent">
+      <div className="Content">
         <div className="secure-container" ref={faqSectionRef}>
-          <div className="secure-row">
-            <div className="secure-faq-section">
-              <dl className="secure-section-text">
+          <div className="content-row">
+            <div className="content-section">
+              <dl className="topics-text">
                 {/* Single FAQ Area  */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="secure-wave fadeInUp faq-header">
                   <span>Task 1</span> Description
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <img
                       className="imageUnrest"
@@ -82,10 +82,10 @@ export default function UnrestrictedFileUpload() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="secure-wave fadeInUp faq-header">
                   <span>Task 2</span>Impact
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li className="style-modern-fileUpload">
                       The impact of an Unrestricted File Upload vulnerability is
@@ -121,10 +121,10 @@ export default function UnrestrictedFileUpload() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="secure-wave fadeInUp faq-header">
                   <span>Task 3</span>Scenarios
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li className="scnarios-fileUplode">
                       Unrestricted File Upload vulnerabilities can be exploited
@@ -202,10 +202,10 @@ export default function UnrestrictedFileUpload() {
                     </li>
                   </ul>
                 </dd>
-                <dt className="secure-wave fadeInUp secure-faq-header">
+                <dt className="secure-wave fadeInUp faq-header">
                   <span>Task 3</span> Prevention
                 </dt>
-                <dd className="fadeInUp Auth-faq-body">
+                <dd className="fadeInUp faq-body">
                   <ul>
                     <li className="scnarios-fileUplode">
                       Developers must review upload functionality to determine

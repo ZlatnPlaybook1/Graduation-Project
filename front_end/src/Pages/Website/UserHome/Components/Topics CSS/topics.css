@@ -1,12 +1,12 @@
 /* Start Content Topics */
-.SecureUploadContent .secure-row {
+.Content .content-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
   background-color: var(--primary-bg);
 }
-.secure-faq-section {
+.content-section {
   margin-top: 75px;
   display: block;
   width: 70%;
@@ -14,11 +14,11 @@
   margin-top: 15px;
 }
 @media (max-width: 991px) {
-  .secure-faq-section .secure-section-text {
+  .content-section .topics-text {
     margin-left: 0;
   }
 }
-.secure-faq-section .secure-section-text .secure-faq-header {
+.content-section .topics-text .faq-header {
   border-radius: 5px 5px 0 0;
   color: var(--white);
   background-color: var(--faq-header);
@@ -34,16 +34,16 @@
 }
 
 @media (max-width: 991px) {
-  .secure-faq-section .secure-section-text .secure-faq-header {
+  .content-section .topics-text .faq-header {
     font-size: 16px;
   }
 }
-.secure-faq-section .secure-section-text .secure-faq-header span {
+.content-section .topics-text .faq-header span {
   color: var(--main-color);
   margin-right: 40px;
   position: relative;
 }
-.secure-faq-section .secure-section-text .secure-faq-header span::after {
+.content-section .topics-text .faq-header span::after {
   content: "";
   width: 10px;
   height: 10px;
@@ -55,7 +55,7 @@
   top: 50%;
   transform: translateY(-50%);
 }
-.secure-faq-section .secure-section-text .Auth-faq-body {
+.content-section .topics-text .faq-body {
   font-size: 16px !important;
   padding: 15px 25px;
   line-height: 1.9;
@@ -70,7 +70,7 @@
   font-weight: 400 !important;
 }
 @media (max-width: 991px) {
-  .secure-faq-section .secure-section-text .Auth-faq-body {
+  .content-section .topics-text .faq-body {
     font-size: 16px;
     font-weight: 400;
   }
