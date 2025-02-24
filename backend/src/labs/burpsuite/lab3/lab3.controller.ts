@@ -3,6 +3,11 @@ import prisma from "../../../utilities/db";
 
 export const images = async (req: Request, res: Response) => {
   try {
+    // Disable caching
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+
     const images = await prisma.burPSuiteLab3.findMany({
       where: {
         id: { in: ["3", "6", "9"] },
@@ -24,6 +29,11 @@ export const images = async (req: Request, res: Response) => {
 
 export const image = async (req: Request, res: Response) => {
   try {
+    // Disable caching
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+
     const { id } = req.params;
 
     // Return 404 immediately if ID is not in allowed list
