@@ -2,14 +2,14 @@
 .landing {
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  background-color: #262c36 !important;
+  background-color: var(--secondary-bg) !important;
   position: relative;
   overflow: hidden;
 }
 
 @media (max-width: 991px) {
   .landing {
-    background-color: #a2d156 !important;
+    background-color: var(--main-color) !important;
   }
 }
 

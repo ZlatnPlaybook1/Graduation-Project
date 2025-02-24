@@ -3,7 +3,7 @@ import Header from "./Header/Header";
 import Services from "./Services/Services";
 import Platform from "./Platform/Platform";
 import Team from "./Team/Team";
-import Footer from "./UserHome/Footer/Footer";
+import Footer from "./Footer/FooterHome";
 import Landing from "./Landing/Landing";
 export default function HomePage() {
   return (

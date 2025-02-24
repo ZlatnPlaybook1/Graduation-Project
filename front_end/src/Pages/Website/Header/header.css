@@ -6,7 +6,7 @@ header {
   z-index: 3;
   height: 70px;
   transition: all 0.3s ease;
-  background: #212c42;
+  background: var(--primary-bg);
 }
 
 header .navbar {
@@ -22,38 +22,6 @@ header .navbar {
   gap: 12px;
   padding-right: 160px;
   margin-left: 120px;
-}
-
-.navbar .links .text {
-  color: #3b444b;
-  font-size: 16px;
-  font-weight: 500;
-  text-decoration: none;
-  position: relative;
-  transition: color 0.3s ease;
-  overflow: hidden;
-}
-
-.navbar .links .text::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  bottom: 0;
-  left: 0;
-  background-color: #3b444b;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-.navbar .links .text:hover::before {
-  transform: scaleX(1) !important;
-  transform-origin: left;
-}
-
-header .links .text:hover {
-  color: #253529 !important;
 }
 
 .navbar .logo {
@@ -74,29 +42,29 @@ header .log_reg {
   right: 0;
 }
 header .log_reg .login {
-  color: black;
+  color: var(--primary-bg);
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   padding: 10px 20px;
   min-width: 100px;
-  background: #eee;
+  background: var(--primary-text);
   border-radius: 7px;
-  border: 1px solid #fff;
+  border: 1px solid var(--secondary-text);
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px var(--primary-bg);
 }
 
 header .log_reg .login:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px var(--black-alpha-80);
 }
 header .icon {
-  color: white;
+  color: var(--primary-text);
 }
 .navbar .toggle_btn {
-  color: #fff;
+  color: var(--secondary-text);
   font-size: 1.5rem;
   cursor: pointer;
   display: none;
@@ -123,7 +91,7 @@ header .icon {
     right: 2rem;
     top: 60px;
     width: 300px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--glass-effect);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
@@ -151,7 +119,7 @@ header .icon {
     text-transform: uppercase;
     padding: 10px 20px;
     min-width: 100px;
-    background: var(--main-gradient);
+    background: var(--primary-gradient);
     border-radius: 7px;
     border: 2px solid #fff;
     letter-spacing: 1px;
@@ -173,30 +141,9 @@ header .icon {
 }
 
 /* End Header */
-
-/* overlay css */
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-}
-
-@media (max-width: 991px) {
-  .overlay.visible {
-    display: block;
-  }
-}
-
-/* End Header */
-
 /* Link Style */
 .navbar .links a {
-  color: white;
+  color: var(--primary-text);
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
@@ -206,8 +153,6 @@ header .icon {
   display: inline-block;
   overflow: hidden;
 }
-
-/* Underline effect */
 .navbar .links a::before {
   content: "";
   position: absolute;
@@ -215,25 +160,19 @@ header .icon {
   height: 3px;
   bottom: 0;
   left: 0;
-  background-color: #3b444b;
+  background-color: var(--glass-effect);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
 }
-
-/* Hover underline */
 .navbar .links a:hover::before {
   transform: scaleX(1);
   transform-origin: left;
 }
-
-/* Hover effect */
 .navbar .links a:hover {
   color: white;
   letter-spacing: 0.5px;
 }
-
-/* Animated background on hover */
 .navbar .links a::after {
   content: "";
   position: absolute;
@@ -251,17 +190,13 @@ header .icon {
   transform: translate(-50%, -50%) scale(1);
 }
 /*  *------*/
-/*  */
-/*  */
-/*  */
-
 .navbar .row-home .profile_links {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
 }
 .navbar .profile_links .user-name {
-  color: #eee;
+  color: var(--whiteColor);
   position: absolute;
   top: 18px;
   right: 6rem;
@@ -273,7 +208,7 @@ header .icon {
 }
 
 .navbar .profile {
-  border: 2px solid rgba(82, 90, 106) !important;
+  border: 2px solid var(--text-color) !important;
   width: 56px;
   background: transparent;
   height: 56px;
@@ -284,7 +219,7 @@ header .icon {
 
 .navbar .profile_links .profile-section .profile_list {
   position: absolute;
-  background-color: white;
+  background-color: var(--primary-bg);
   width: 200px;
   padding: 10px;
   right: 0;
@@ -292,12 +227,12 @@ header .icon {
 }
 
 .navbar .profile_links .profile-section .profile_list ul:not(:last-child) {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--primary-text);
 }
 
 .navbar .profile_links .profile-section .profile_list ul li a {
   padding: 10px 0;
-  color: #777;
+  color: var(--secondary-text);
   width: 100%;
   display: block;
   text-align: start;
@@ -309,11 +244,11 @@ header .icon {
 }
 
 .navbar .profile:hover {
-  border: 2px solid var(--sec-main-color) !important;
+  border: 2px solid var(--main-color) !important;
 }
 
 .navbar .profile img {
-  background-color: rgba(44, 50, 62);
+  background-color: var(--secondary-bg);
   width: 100%;
   border-radius: 50%;
 }

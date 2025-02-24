@@ -28,35 +28,7 @@ export default function Landing() {
                       width: "250px",
                       display: "inline",
                     }}
-                  >
-                    {/* <b
-                   className="gradient-text cyan bolder is-hidden"
-                   style={{
-                     width: "250px",
-                     display: "block",
-                   }}
-                 >
-                   Hands-On Practical Labs
-                 </b>
-                 <b
-                   className="gradient-text cyan bolder is-visible"
-                   style={{
-                     width: "250px",
-                     display: "block",
-                   }}
-                 >
-                   Real-World Cybersecurity Scenarios
-                 </b>
-                 { <b
-                   className="gradient-text cyan bolder is-hidden"
-                   style={{
-                     width: "250px",
-                     display: "block",
-                   }}
-                 >
-                   Expert Guidance
-                 </b> } */}
-                  </span>
+                  ></span>
                 </h1>
               </div>
               <p>

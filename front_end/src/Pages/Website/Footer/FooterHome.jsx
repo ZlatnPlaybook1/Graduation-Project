@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./footer.css";
 import logo from "../assets/img/core-img/logo.png";
 
-export default function Footer() {
+export default function FooterHome() {
   return (
     <div id="contact" className="footer section">
       <div className="container">
@@ -14,7 +14,9 @@ export default function Footer() {
               <h2>Cyber Labs</h2>
             </div>
             <p>
-              Your trusted partner in cybersecurity education. We empower individuals with the knowledge and skills to combat cyber threats and secure the digital landscape.
+              Your trusted partner in cybersecurity education. We empower
+              individuals with the knowledge and skills to combat cyber threats
+              and secure the digital landscape.
             </p>
             <ul className="links">
               <li>
