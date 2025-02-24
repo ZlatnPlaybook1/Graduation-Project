@@ -4,11 +4,14 @@ import "./Header.css";
 import axios from "axios";
 import Cookie from "cookie-universal";
 import logo from "../../assets/img/core-img/logo.png";
+import SearchIcon from "../Components/SearchIcon/SearchIcon";
+
 const Header = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const [profileListVisible, setProfileListVisible] = useState(false);
   const [userImage, setUserImage] = useState("");
   const [userName, setUserName] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
@@ -25,7 +28,6 @@ const Header = () => {
     setProfileListVisible(!profileListVisible);
   };
 
-  // Fetch the user profile image
   // Fetch the user profile data
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -112,6 +114,7 @@ const Header = () => {
 
           {/* Profile section */}
           <div className="profile_links">
+            <SearchIcon searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <h3 className="name-profile">Hello! {userName}</h3>
             <div className="profile-section">
               <button className="profile" onClick={toggleProfileList}>
