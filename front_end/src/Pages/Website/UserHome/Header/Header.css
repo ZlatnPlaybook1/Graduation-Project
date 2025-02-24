@@ -1,6 +1,6 @@
 /* Start Header */
 .header-home {
-  background-color: var(--secondary-bg);
+  background-color: var(--primary-bg);
   color: var(--primary-text);
   position: sticky;
   width: 100%;

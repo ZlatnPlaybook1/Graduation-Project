@@ -1,5 +1,5 @@
 import Preload from "./Preload/Preload";
-import Header from "./Header/Header";
+import Header from "./Header/HeaderHome";
 import Services from "./Services/Services";
 import Platform from "./Platform/Platform";
 import Team from "./Team/Team";

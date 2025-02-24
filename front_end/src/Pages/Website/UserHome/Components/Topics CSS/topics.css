@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
-  margin-bottom: 70px;
+  background-color: var(--primary-bg);
 }
 .secure-faq-section {
   margin-top: 75px;
@@ -20,8 +20,8 @@
 }
 .secure-faq-section .secure-section-text .secure-faq-header {
   border-radius: 5px 5px 0 0;
-  color: white;
-  background-color: #212c42;
+  color: var(--white);
+  background-color: var(--faq-header);
   font-size: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -39,7 +39,7 @@
   }
 }
 .secure-faq-section .secure-section-text .secure-faq-header span {
-  color: var(--sec-main-color);
+  color: var(--main-color);
   margin-right: 40px;
   position: relative;
 }
@@ -64,7 +64,7 @@
   font-family: "poppins", sans-serif;
   padding: 1rem;
   padding-left: 2rem;
-  background-color: #f9f9f9;
+  background-color: var(--secondary-bg);
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-weight: 400 !important;

@@ -8,7 +8,7 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Cookie from "cookie-universal";
 import axios from "axios";
 
-const Header = () => {
+const HeaderHome = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [profileListVisible, setProfileListVisible] = useState(false);
   const [userImage, setUserImage] = useState("");
@@ -210,4 +210,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderHome;

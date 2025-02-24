@@ -1,5 +1,8 @@
 .container-labd {
-  margin-inline:auto;
+  margin-inline: auto;
+}
+.course-labd {
+  background-color: var(--primary-bg);
 }
 
 /* Extra small */
@@ -36,7 +39,6 @@
     max-width: 1170px;
   }
 }
-
 
 /* Start course-labd Content */
 /* .course-labd .row {
@@ -76,8 +78,8 @@
 
 .faq-section-labd .section-text-labd .faq-header-labd {
   border-radius: 5px 5px 0 0;
-  color: white;
-  background-color: #212c42;
+  color: var(--white);
+  background-color: var(--faq-header);
   font-size: 18px;
   overflow: hidden;
   cursor: pointer;
@@ -96,7 +98,7 @@
 }
 
 .faq-section-labd .section-text-labd .faq-header-labd span {
-  color: var(--sec-main-color);
+  color: var(--main-color);
   margin-right: 40px;
   position: relative;
 }
@@ -106,7 +108,7 @@
   width: 10px;
   height: 10px;
   background-color: transparent;
-  border: 1px solid #777;
+  border: 1px solid var(--secondary-text);
   border-radius: 50%;
   position: absolute;
   right: -45%;
@@ -118,10 +120,10 @@
   font-size: 18px;
   padding: 25px;
   line-height: 1.9;
-  border-left: 4px solid var(--sec-main-color);
+  border-left: 4px solid var(--main-color);
   box-shadow: 1px 2px rgb(0, 0, 0, 0.1);
   border-radius: 0 0 5px 5px;
-  background-color: white;
+  background-color: var(--secondary-bg);
   color: rgb(21, 28, 43);
 }
 
@@ -151,9 +153,8 @@
   font-weight: 400;
 }
 
-
 .faq-section-labd .section-text-labd .faq-body-labd a:not(.go-to) {
-  color: var(--sec-main-color);
+  color: var(--main-color);
   text-decoration: underline;
   padding: 0;
   margin: 0;
@@ -181,7 +182,7 @@
 }
 
 .faq-section-labd .section-text-labd .faq-body-labd h2 {
-  color: var(--sec-main-color);
+  color: var(---main-color);
   font-size: 20px;
 }
 
@@ -375,20 +376,20 @@
   border-style: solid;
   background-color: transparent;
   color: rgb(21, 28, 43);
-  border-color: rgb(163, 234, 42);
+  border-color: var(--main-color2);
   transition: 0.2s ease-in-out;
 }
 
 #border-left,
 dd {
-  border-left: 4px solid #a3ea2a !important;
+  border-left: 4px solid var(--main-color) !important;
 }
 .faq-section-labd
   .section-text-labd
   .faq-body-labd
   form
   button:hover:not(:disabled) {
-  background-color: rgb(163, 234, 42);
+  background-color: var(--main-color);
 }
 
 .go-to-section {
@@ -406,18 +407,18 @@ dd {
   font-size: 16px;
   padding: 7px 16px;
   background-color: transparent;
-  color: rgb(21, 28, 43);
-  border: 1px solid rgb(163, 234, 42);
+  color: var(--primary-bg);
+  border: 1px solid var(---main-color);
   transition: var(--main-transition);
 }
 
 .go-to:hover {
-  background-color: rgb(163, 234, 42);
+  background-color: var(---main-color);
   color: white;
 }
 
 .pink-note {
-  display: inline-block!important;
+  display: inline-block !important;
   color: #d63384;
   font-weight: 400;
   text-transform: capitalize;
@@ -515,15 +516,9 @@ tr:hover {
   background-color: #a8e08e;
 }
 
-
-
-
 /* End course-labd Content */
 
-
 /* Will be Deleted  */
-
-
 
 .landing-labd .banner {
   position: absolute;
