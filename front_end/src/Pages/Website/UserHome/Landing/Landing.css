@@ -1,7 +1,7 @@
 :root {
     /* Primary Colors */
-    --primary-bg: ;  
-    --secondary-bg: ; 
+    --primary-bg: #0f0f0f;  
+    --secondary-bg: #1b1b1b; 
     
     /* Accent Colors */
     --neon-red: ;  
@@ -9,8 +9,9 @@
     --burnt-orange: ; 
 
     /* Text Colors */
-    --text-primary: ; 
-    --text-secondary: ;  
+    --main-color: #00E77F;
+    --primary-text: #fff; 
+    --secondary-text: #c4c2c2;  
 
     /* Borders & Highlights */
     --border-color: ;  
@@ -27,7 +28,9 @@
     --black: #0f0f0f;
     --light-bg: #1b1b1b;
 } */
-
+/* body{
+  background-color:  #1b1b1b;
+} */
 
 /* ---------------------------------
    Main Landing Block
