@@ -3,6 +3,9 @@ import "../../assets/css/Landing.css";
 
 
 const PracticeLanding = () => {
+  const handleTryLab = () => {
+    console.log("Try a Lab");
+  }
   return (
     <div className="my-landing">
       <div className="landing__overlay"></div>
@@ -13,7 +16,7 @@ const PracticeLanding = () => {
           <p className="landing__description">
             Put your knowledge into action by solving hands-on lab challenges. Sharpen your skills against real vulnerabilities.
           </p>
-          <button className="landing__cta">Try a Lab</button>
+          <button className="landing__cta" onClick={handleTryLab}>Try a Lab</button>
         </div>
 
         <div className="landing__icon">
@@ -25,9 +28,6 @@ const PracticeLanding = () => {
             <div className="landing__edge-icon landing__edge-icon--right">
               <i className="fas fa-book-open"></i>
             </div>
-            {/* <div className="landing__edge-icon landing__edge-icon--bottom">
-              <i className="fas fa-chalkboard-teacher"></i>
-            </div> */}
             <div className="landing__edge-icon landing__edge-icon--left landing__edge-icon--active ">
               <i className="fas fa-lightbulb"></i>
             </div>

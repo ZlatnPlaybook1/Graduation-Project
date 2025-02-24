@@ -1,10 +1,6 @@
-
-
 /* ===============================
    Start Course Styles
 =============================== */
-
-/* Menu Row for Category & Search Bar */
 .menu-row {
   width: 100%;
   display: flex;
@@ -14,20 +10,17 @@
   flex-wrap: wrap;
 }
 
-/* Section text styling */
 .course .section-p {
   color: var(--primary-text);
   font-weight: var(--weight-regular);
   margin-top: 15px;
 }
 
-/* Custom wrapper for cards (if needed) */
 .row-center {
   margin-left: -10px;
   margin-right: -10px;
 }
 
-/* Course Card Styles */
 .course .course-card {
   position: relative;
   background-color: var(--secondary-bg);
@@ -35,31 +28,36 @@
   overflow: hidden;
   box-shadow: 0 0 10px var(--glass-bg);
   transition: transform var(--transition-speed);
+  padding: 0.3rem !important;
+  display: flex;
+  flex-direction: column;
+  height: 380px;
 }
 
 .course .course-card:hover {
   transform: scale(1.02);
 }
 
-.course .course-card img {
+.course .course-card .course-image {
+  height: 200px;
   width: 100%;
-  height: auto;
+  overflow: hidden;
+}
+
+.course .course-card .course-image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .course .course-card .course-text {
-  padding: 20px;
+  flex-grow: 1;
+  padding: 15px 20px 20px;
   background-color: var(--secondary-bg);
   color: var(--primary-text);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  position: static;
   transition: var(--main-transition);
-}
-
-.course .course-card:hover .course-text {
-  transform: translateY(0);
 }
 
 .course .course-card h3 {
@@ -82,7 +80,6 @@
   font-weight: var(--weight-regular);
 }
 
-/* Additional info (e.g., difficulty) */
 .course .course-card .easy {
   position: absolute;
   bottom: 10px;
@@ -97,7 +94,6 @@
   margin-right: 5px;
 }
 
-/* Ribbon Badge Styles */
 .ribbon {
   position: absolute;
   top: 1rem;
@@ -133,8 +129,6 @@
 /* ===============================
    Category Menu & Search Bar
 =============================== */
-
-/* Updated Category Menu Container */
 .category-menu {
   background-color: var(--secondary-bg);
   padding: 10px 15px;
@@ -147,12 +141,10 @@
   box-shadow: 0 2px 5px var(--glass-bg), 0 0 10px var(--glass-bg);
 }
 
-/* Each Category Item */
 .category-menu li {
   list-style: none;
 }
 
-/* Updated Category Buttons */
 .category-btn {
   background-color: transparent;
   color: var(--primary-text);
@@ -163,7 +155,6 @@
   transition: background var(--transition-speed), border-color var(--transition-speed), color var(--transition-speed);
 }
 
-/* Hover & Active State for Professional Look */
 .category-btn:hover,
 .category-btn.active {
   background-color: var(--main-color);
@@ -171,7 +162,6 @@
   color: var(--primary-text);
 }
 
-/* Responsive Adjustments for Smaller Screens */
 @media (max-width: 576px) {
   .category-menu {
     overflow-x: auto;
@@ -186,6 +176,7 @@
     font-size: 0.875rem;
   }
 }
+
 /* ===============================
    Pagination Styles
 =============================== */
@@ -227,38 +218,31 @@
 }
 
 /* ===============================
-   Responsive Adjustments
-   (Using Bootstrap Breakpoints)
+   Responsive Adjustments (Using Bootstrap Breakpoints)
 =============================== */
-
-/* Large devices (lg, ≥992px) */
 @media (min-width: 992px) {
   .course .course-card {
     height: 380px;
   }
 }
 
-/* Medium devices (md, ≥768px) */
 @media (min-width: 768px) and (max-width: 991px) {
   .course .course-card {
     height: 350px;
   }
 }
 
-/* Small devices (sm, ≥576px) */
 @media (min-width: 576px) and (max-width: 767px) {
   .course .course-card {
     height: 320px;
   }
 }
 
-/* Extra small devices (xs, <576px) */
 @media (max-width: 575px) {
   .course .course-card {
     height: auto;
   }
   .course .course-card .course-text {
-    position: static;
     padding: 15px;
   }
 }

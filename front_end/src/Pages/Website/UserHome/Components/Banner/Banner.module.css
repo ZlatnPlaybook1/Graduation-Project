@@ -1,7 +1,7 @@
 .soonBannerContainer {
   width: 100vw;
   overflow: hidden;
-  background-color: #212c42;
+  background-color: var(--primary-bg);
   position: sticky !important;
   top: 0 !important;
   left: 0 !important;
@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   font-size: 1rem;
-  box-shadow: 1px 1px 4px 0px #a3ea2a;
+  box-shadow: 1px 1px 4px 0px var(--main-color);
 }
 
 .soonBanner {
@@ -21,7 +21,7 @@
 .soonBannerText {
   width: 100vw;
   font-weight: bold;
-  color: #a3ea2a;
+  color: var(--main-color);
   display: flex;
   align-items: center;
   justify-content: center;
