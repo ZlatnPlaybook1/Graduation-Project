@@ -4,8 +4,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   margin-bottom: 20px;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 .course {
   padding: 70px 0;
