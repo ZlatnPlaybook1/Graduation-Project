@@ -1,5 +1,5 @@
 .footer-footer {
-  background-color: var(--main-color);
+  background-color: var(--primary-bg);
   padding: 30px 0;
   text-align: center;
   position: relative;
@@ -29,7 +29,7 @@
 
 .copyright {
   font-size: 14px;
-  color: #ddd;
+  color: var(--primary-text);
 }
 
 .links-footer ul {
@@ -48,16 +48,16 @@
   color: #ddd;
   font-size: 22px;
   padding: 10px;
-  transition: color 0.3s ease, background-color 0.3s ease;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: var(--main-transition);
 }
 
 .links-footer ul li a:hover {
   color: #fff;
-  background-color: #1da1f2;
+  background-color: var(--hover-main-color);
 }
 
 @media (min-width: 768px) {

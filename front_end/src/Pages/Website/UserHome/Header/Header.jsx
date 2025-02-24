@@ -73,7 +73,7 @@ const Header = () => {
 
   return (
     <div className="header-home">
-      <div className="container-home">
+      <div className="container">
         <div className="row-home">
           {/* Sidebar toggle button */}
           <i className="fa-solid fa-bars" onClick={showSidebar}></i>
