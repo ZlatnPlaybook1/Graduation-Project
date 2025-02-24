@@ -56,7 +56,7 @@
 .landing .container .row .text .text-header {
   font-size: 18px !important;
   text-transform: capitalize !important;
-  color: white !important;
+  color: var(--white) !important;
   padding-left: 35px !important;
   position: relative !important;
 }
@@ -72,14 +72,14 @@
   position: absolute !important;
   width: 25px !important;
   height: 2px !important;
-  background: white !important;
+  background: var(--white) !important;
   left: 0 !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
 }
 
 .landing .container .row .text h1 {
-  color: white !important;
+  color: var(--white) !important;
   text-transform: capitalize !important;
   margin-top: 26px !important;
   margin-bottom: 30px !important;
@@ -92,21 +92,11 @@
   }
 }
 
-.landing .container .row .text h1 .wrapper .is-visible {
-  color: #00ffff !important;
-  padding: 11px 8px !important;
-  border-right: 1px solid #ddd !important;
-  font-size: 28px !important;
-}
-
-.landing .container .row .text h1 .wrapper .is-hidden {
-  display: none !important;
-}
 .landing .cd-words-wrapper {
   max-height: 48px !important;
 }
 .landing .container .row .text p {
-  color: white !important;
+  color: var(--white) !important;
   line-height: 30px !important;
   font-size: 16px !important;
   margin-right: 15px !important;
@@ -126,7 +116,7 @@
 
 .landing .container .row .text .learn-more .learn-btn {
   background-color: #272425 !important;
-  color: white !important;
+  color: var(--white) !important;
   border-radius: 15rem !important;
   font-size: 14px !important;
   padding: 15px 30px !important;
@@ -140,17 +130,7 @@
 }
 
 .landing .container .row .text .learn-more .play {
-  color: white !important;
-}
-
-.landing .container .row .text .learn-more .play-btn {
-  color: #fff !important;
-  position: relative !important;
-  padding: 15px !important;
-  margin-right: 10px !important;
-  border-radius: 50% !important;
-  background: var(--main-gradient) !important;
-  border: 1px solid #fff !important;
+  color: var(--white) !important;
 }
 
 .landing .container .row .image {
@@ -170,33 +150,5 @@
   transform: translateY(0) !important;
   animation: bouncing 3s infinite !important;
   top: -3% !important;
-}
-.landing .shield {
-  position: absolute !important;
-  width: 8% !important;
-  left: 88% !important;
-  transform: translateY(0) !important;
-  animation: bouncing 3s infinite !important;
-  top: -4% !important;
-}
-
-@keyframes bouncing {
-  0% {
-    transform: translateY(0) !important;
-  }
-
-  50% {
-    transform: translateY(-5px) !important;
-  }
-
-  100% {
-    transform: translateY(0) !important;
-  }
-}
-
-@media (max-width: 991px) {
-  .landing .shield {
-    display: none !important;
-  }
 }
 /* End Landing */

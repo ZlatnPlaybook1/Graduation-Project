@@ -142,7 +142,7 @@ header .icon {
 
 /* End Header */
 /* Link Style */
-.navbar .links a {
+.navbar .links .links-style {
   color: var(--primary-text);
   font-size: 16px;
   font-weight: 500;
@@ -153,7 +153,7 @@ header .icon {
   display: inline-block;
   overflow: hidden;
 }
-.navbar .links a::before {
+.navbar .links .links-style::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -165,15 +165,15 @@ header .icon {
   transform-origin: right;
   transition: transform 0.3s ease;
 }
-.navbar .links a:hover::before {
+.navbar .links .links-style:hover::before {
   transform: scaleX(1);
   transform-origin: left;
 }
-.navbar .links a:hover {
+.navbar .links .links-style:hover {
   color: white;
   letter-spacing: 0.5px;
 }
-.navbar .links a::after {
+.navbar .links .links-style::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -186,7 +186,7 @@ header .icon {
   transform: translate(-50%, -50%) scale(0);
 }
 
-.navbar .links a:hover::after {
+.navbar .links .links-style:hover::after {
   transform: translate(-50%, -50%) scale(1);
 }
 /*  *------*/
