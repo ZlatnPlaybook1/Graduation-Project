@@ -58,6 +58,7 @@ const LandingLab = ({
       <div className="banner">
         <img src={background} alt="background Image" style={backgroundStyle} />
       </div>
+      
       <div className="container-labd">
         <div className="breadcrumb">
           <ul>
