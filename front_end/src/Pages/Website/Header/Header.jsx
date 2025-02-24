@@ -62,21 +62,31 @@ const Header = () => {
           <ul className="links">
             {token ? (
               <li>
-                <a href="/home">Home Labs</a>
+                <a className="links-style" href="/home">
+                  Home Labs
+                </a>
               </li>
             ) : (
               <li>
-                <a href="/">Home</a>
+                <a className="links-style" href="/">
+                  Home
+                </a>
               </li>
             )}
             <li>
-              <a href="#about">About Us</a>
+              <a className="links-style" href="#about">
+                About Us
+              </a>
             </li>
             <li>
-              <a href="#learningPath">Learning Path</a>
+              <a className="links-style" href="#learningPath">
+                Learning Path
+              </a>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <a className="links-style" href="#contact">
+                Contact
+              </a>
             </li>
           </ul>
           {token ? (
