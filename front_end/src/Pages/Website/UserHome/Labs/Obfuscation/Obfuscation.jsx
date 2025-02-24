@@ -1,5 +1,4 @@
 import React from "react";
-import "../Page_Styles/Content.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/Obfuscation/baner_lap.png";
 import imagecourse from "../../assets/img/Obfuscation/course_image.png";

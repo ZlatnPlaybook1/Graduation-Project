@@ -5,7 +5,7 @@ import Footer from "../../Footer/Footer";
 import { Card } from "../../Components/Card/Card";
 import Banner from "../../Components/Banner/Banner";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
-import LandingPractice from "../../Components/LandingPractice/LandingPractice";
+import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 export default function BL_Vuln_labs() {
   return (
     <>

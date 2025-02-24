@@ -188,14 +188,14 @@ const PaginatedCourses = ({ filteredCourses }) => {
                 <h3>{course.title}</h3>
                 <p>{course.description}</p>
                 {/* Register Button */}
-                <div className="register-container">
+                {/* <div className="register-container">
                   <button
                     className="btn btn-primary"
                     onClick={(e) => handleRegister(course, e)}
                   >
                     Register
                   </button>
-                </div>
+                </div> */}
               </div>
 
               <div className="easy">

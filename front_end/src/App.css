@@ -1,6 +1,3 @@
-/* *  
-   -- Default Styling 
-* */
 
 /* Updated Root */
 :root {
@@ -14,6 +11,7 @@
     --primary-text: #ffffff;
     --secondary-text: #c4c2c2;
     --main-color2: #00e77fcc;
+    --main-color4: #06995769;
     --border-color: #1e1e1e;
     --highlight-color: #1aff8c;
     --shadow-color: rgba(0, 0, 0, 0.5);

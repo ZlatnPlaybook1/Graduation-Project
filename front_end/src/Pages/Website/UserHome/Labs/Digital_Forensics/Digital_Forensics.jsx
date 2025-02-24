@@ -2,7 +2,6 @@ import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import Banner from "../../Components/Banner/Banner";
-import "../Page_Styles/Content.css";
 import background from "../../assets/img/DigitalForensics/background.png";
 import courseImage from "../../assets/img/DigitalForensics/courseImage.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";

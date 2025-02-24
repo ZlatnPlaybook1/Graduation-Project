@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import "../Page_Styles/Content.css";
 import background from "../../assets/img/SQL_Injection/bg.png";
 import courseImage from "../../assets/img/SQL_Injection/courseImage.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";

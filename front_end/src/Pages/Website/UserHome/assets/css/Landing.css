@@ -1,36 +1,3 @@
-:root {
-    /* Primary Colors */
-    --primary-bg: #0f0f0f;  
-    --secondary-bg: #1b1b1b; 
-    
-    /* Accent Colors */
-    --neon-red: ;  
-    --crimson-red: ;  
-    --burnt-orange: ; 
-
-    /* Text Colors */
-    --main-color: #00E77F;
-    --primary-text: #fff; 
-    --secondary-text: #c4c2c2;  
-
-    /* Borders & Highlights */
-    --border-color: ;  
-    --highlight-color: ;  
-
-    /* Shadows & Effects */
-    --shadow-color: ;  
-    --glass-effect: ;  
-}
-/* :root {
-    --green: #00E77F;
-    --white: #fff;
-    --light-white: #c4c2c2;
-    --black: #0f0f0f;
-    --light-bg: #1b1b1b;
-} */
-/* body{
-  background-color:  #1b1b1b;
-} */
 
 /* ---------------------------------
    Main Landing Block
@@ -42,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--primary-text);
   overflow: hidden;
   /* You can set a default background or override per page */
   background: url('./bg.jpg') center/cover no-repeat;
@@ -96,7 +63,7 @@
   margin: 2rem 0;
 }
 .landing__cta {
-  background-color: #fff;
+  background-color: var(--primary-text);
   color: rgb(8, 96, 138);
   border: none;
   padding: 12px 30px;
@@ -129,10 +96,10 @@
   height: 230px;
   border-radius: 50%;
   border: 5px solid;
-  border-top-color: rgb(8, 96, 138);
-  border-right-color: rgb(62, 71, 90);
-  border-bottom-color: rgb(62, 71, 90);
-  border-left-color: rgb(62, 71, 90);
+  border-top-color: var(--main-color);
+  border-right-color: var(--main-color4);
+  border-bottom-color: var(--main-color4);
+  border-left-color: var(--main-color4);
   display: flex;
   align-items: center;
   justify-content: center;

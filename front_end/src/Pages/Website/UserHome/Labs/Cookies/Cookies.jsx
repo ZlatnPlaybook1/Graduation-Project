@@ -1,5 +1,4 @@
 import React from "react";
-import "../Page_Styles/Content.css";
 import Header from "../../Header/Header";
 import imagecourse from "../../assets/img/cookies/Cookies_transparent.png";
 import background from "../../assets/img/cookies/baner_lap.png";

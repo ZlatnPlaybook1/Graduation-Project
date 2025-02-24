@@ -1,5 +1,6 @@
 import React from "react";
-import "./Landing.css";
+import "../../assets/css/Landing.css";
+
 
 const PracticeLanding = () => {
   return (
