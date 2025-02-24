@@ -519,8 +519,8 @@ tr:hover {
 /* End course-labd Content */
 
 /* Will be Deleted  */
-
-.landing-labd .banner {
+/* 
+ .banner {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -528,7 +528,7 @@ tr:hover {
   overflow: hidden;
 }
 
-.landing-labd .banner::after {
+ .banner::after {
   content: "";
   position: absolute;
   inset: 0px;
@@ -542,49 +542,49 @@ tr:hover {
   );
 }
 
-.landing-labd .banner img {
+ .banner img {
   position: absolute;
   left: 30%;
 }
 
-.landing-labd .container-labd {
+ .container-labd {
   padding: 24px 12px;
 }
 
-.landing-labd .breadcrumb ul {
+ .breadcrumb ul {
   display: flex;
   gap: 0.5rem;
 }
 
-.landing-labd .breadcrumb ul li:first-of-type::before {
+ .breadcrumb ul li:first-of-type::before {
   content: "";
 }
 
-.landing-labd .breadcrumb ul li::before {
+ .breadcrumb ul li::before {
   content: ">";
   color: rgb(184, 190, 201);
   padding-right: 5px;
 }
 
-.landing-labd .breadcrumb ul li a {
+ .breadcrumb ul li a {
   font-size: 12px;
   color: rgb(184, 190, 201);
   padding: 0;
   margin: 0;
 }
 
-.landing-labd .breadcrumb ul li span.active-breadcrumb {
+ .breadcrumb ul li span.active-breadcrumb {
   font-size: 12px;
   padding: 0;
   margin: 0;
   color: rgb(99, 110, 129);
 }
 
-.landing-labd .breadcrumb ul li a:hover {
+ .breadcrumb ul li a:hover {
   text-decoration: underline;
 }
 
-.landing-labd .course-info {
+ .course-info {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -594,22 +594,22 @@ tr:hover {
   color: white;
 }
 
-.landing-labd .course-info img {
+ .course-info img {
   width: 90px;
 }
 
-.landing-labd .course-info .course-text {
+ .course-info .course-text {
   margin-left: 20px;
 }
 
-.landing-labd .course-info .course-text p {
+ .course-info .course-text p {
   margin-top: 5px;
   font-size: 12px;
   display: inline-block;
   padding-left: 10px;
 }
 
-.landing-labd .course-info .course-icons {
+ .course-info .course-icons {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -619,27 +619,27 @@ tr:hover {
   color: white;
 }
 
-.landing-labd .course-info .course-icons i.fa-signal {
+ .course-info .course-icons i.fa-signal {
   color: green;
 }
 
-.landing-labd .course-info .course-icons i.fa-signal + p {
+ .course-info .course-icons i.fa-signal + p {
   display: inline-block;
   color: green;
 }
 
-.landing-labd .course-info .course-icons .diff,
-.landing-labd .course-info .course-icons .duration {
+ .course-info .course-icons .diff,
+ .course-info .course-icons .duration {
   display: inline-block;
   margin-right: 20px;
 }
 
-.landing-labd .course-info .course-icons i.fa-clock + p {
+ .course-info .course-icons i.fa-clock + p {
   display: inline-block;
   padding-left: 10px;
 }
 
-.landing-labd .options {
+ .options {
   display: flex;
   justify-content: start;
   gap: 12px;
@@ -647,7 +647,7 @@ tr:hover {
   flex-direction: row;
 }
 
-.landing-labd .options .like {
+ .options .like {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -656,7 +656,7 @@ tr:hover {
   border-radius: 4px;
 }
 
-.landing-labd .options button {
+ .options button {
   background-color: var(--alt-color);
   border-color: rgb(62, 71, 90);
   color: white;
@@ -676,25 +676,25 @@ tr:hover {
   transition: var(--main-transition);
 }
 
-.landing-labd .options button:hover,
-.landing-labd .options button:focus,
-.landing-labd .options button:active,
-.landing-labd .options button.active {
+ .options button:hover,
+ .options button:focus,
+ .options button:active,
+ .options button.active {
   background-color: white;
   color: var(--alt-color);
 }
 
-.landing-labd .options .like button {
+ .options .like button {
   border-radius: 4px 0px 0px 4px;
   border: none;
 }
 
-.landing-labd .options button p {
+ .options button p {
   margin: 0;
 }
 
-.landing-labd .options .like button:first-of-type {
+ .options .like button:first-of-type {
   border-right: 1px solid rgb(62, 71, 90);
-}
+} */
 
 /* End landing-labd */

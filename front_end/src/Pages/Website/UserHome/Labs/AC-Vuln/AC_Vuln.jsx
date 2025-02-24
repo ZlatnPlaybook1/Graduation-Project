@@ -14,9 +14,9 @@ export default function AC_Vuln() {
     <>
       <Banner />
       <Header />
-      <Landing />
+      {/* <Landing /> */}
       {/* Start Landing */}
-      {/* <LandingLab
+      <Landing
         background={background}
         backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
         courseImage={courseImage}
@@ -30,7 +30,7 @@ export default function AC_Vuln() {
         onSaveRoom={() => console.log("Room Saved!")}
         onLike={() => console.log("Liked!")}
         onDislike={() => console.log("Disliked!")}
-      /> */}
+      />
       {/* End Landing */}
       {/* Start Course */}
       <div className="course-labd">

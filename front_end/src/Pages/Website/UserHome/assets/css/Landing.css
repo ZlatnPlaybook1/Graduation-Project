@@ -235,7 +235,7 @@
   }
 }
 
-.my-landing i{
+.landing__edge-icon i{
   padding: 1rem;
   background-color: #17483a;
   border-radius: 50%;
@@ -243,3 +243,123 @@
 }
 
 
+/* ---------------------------------
+   Additional Classes for CourseLanding
+--------------------------------- */
+
+/* Breadcrumb Styles */
+.breadcrumb {
+  margin-bottom: 1rem;
+}
+.breadcrumb ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.breadcrumb li {
+  color: var(--primary-text);
+}
+.breadcrumb li a {
+  color: var(--primary-text);
+  text-decoration: none;
+}
+.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+/* Course Info Section */
+.course-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 1rem;
+}
+.course-info img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+}
+.course-text {
+  max-width: 600px;
+}
+.course-text h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-text);
+}
+.course-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--primary-text);
+}
+
+/* Course Icons (Difficulty & Duration) */
+.course-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.course-icons .diff,
+.course-icons .duration {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.course-icons .easy p,
+.course-icons .duration p,
+.course-icons .time {
+  font-size: 0.9rem;
+  margin: 0;
+  color: var(--primary-text);
+}
+
+/* Options: Favorite, Like, Dislike */
+.options {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.options button {
+  background-color: var(--primary-text);
+  color: rgb(8, 96, 138);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.options button.active {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--primary-text);
+}
+.options .like button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.options .like button.active {
+  color: #ffd700;
+}
+
+/* Landing Banner (if background image is used as a separate element) */
+.landing__banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.landing__banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
