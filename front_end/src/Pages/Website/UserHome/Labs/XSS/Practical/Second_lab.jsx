@@ -27,7 +27,7 @@ export default function Second_lab_XSS() {
   const [comments, setComments] = useState([]);
   const [scriptOutput, setScriptOutput] = useState("");
   const [err, setErr] = useState("");
-  const [setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const fetchData = () => {
     try {
       const respone = axios.delete("http://127.0.0.1:8080/api/comment");

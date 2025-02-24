@@ -63,7 +63,7 @@ export default function UnrestrictedFileUpload() {
                       </p>
                     </li>
                     <li>
-                      <p>
+                      <p className="parag-un">
                         The OWASP Top 10 refers to{" "}
                         <p>
                           <span class="highlight-UnRestrict">
@@ -165,7 +165,7 @@ export default function UnrestrictedFileUpload() {
                     </li>
                     <img src={code1} alt="code1" className="code1" />
                     <li>
-                      <p>
+                      <p className="parag-un">
                         Upon submission, the form then sends the file to
                         <div className="upload-location">
                           upload_flagpics.php

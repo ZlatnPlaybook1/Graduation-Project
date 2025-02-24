@@ -406,14 +406,14 @@ dd {
   max-width: 100%;
   font-size: 16px;
   padding: 7px 16px;
-  background-color: transparent;
-  color: var(--primary-bg);
-  border: 1px solid var(---main-color);
+  background-color: var(--main-color);
+  color: var(--white);
+  border: 1px solid var(---main-color2);
   transition: var(--main-transition);
 }
 
 .go-to:hover {
-  background-color: var(---main-color);
+  background-color: var(--hover-main-color);
   color: white;
 }
 
