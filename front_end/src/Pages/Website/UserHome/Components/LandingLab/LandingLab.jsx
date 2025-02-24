@@ -91,7 +91,7 @@ const LandingLab = ({
         <div className="options">
           <button
             onClick={toggleSaveRoom}
-            className={isSaved ? "active" : ""} // Add "active" class if saved
+            className={isSaved ? "active" : ""}
           >
             <i className="far fa-bookmark"></i>
             <p>{isSaved ? "Remove from Favorite" : "Add to Favorite"}</p>
@@ -99,13 +99,13 @@ const LandingLab = ({
           <div className="like">
             <button
               onClick={toggleLike}
-              className={isLiked ? "active" : ""} // Add "active" class if liked
+              className={isLiked ? "active" : ""} 
             >
               <i className="fas fa-thumbs-up"></i>
             </button>
             <button
               onClick={toggleDislike}
-              className={isDisliked ? "active" : ""} // Add "active" class if disliked
+              className={isDisliked ? "active" : ""}
             >
               <i className="fas fa-thumbs-down"></i>
             </button>

@@ -25,9 +25,6 @@ const CourseLanding = () => {
             <div className="landing__edge-icon landing__edge-icon--right landing__edge-icon--active ">
               <i className="fas fa-book-open"></i>
             </div>
-            {/* <div className="landing__edge-icon landing__edge-icon--bottom">
-              <i className="fas fa-chalkboard-teacher"></i>
-            </div> */}
             <div className="landing__edge-icon landing__edge-icon--left">
               <i className="fas fa-lightbulb"></i>
             </div>
