@@ -4,38 +4,14 @@ import Header from "../../Header/Header";
 import lab_Cover from "../../assets/img/Cross_Site_Scripting/labs_cover.jpg";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Components/Card/Card";
+import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 
 export default function XSS_lab() {
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <div className="landing">
-        <div className="container">
-          <div className="course-info">
-            <div className="course-text">
-              <h1>Practice</h1>
-              <p className="brief">
-                <i className="fa-solid fa-bullseye lab"></i> Reinforce what
-                you're learning
-              </p>
-              <p>
-                Put your knowledge into practice with gamified cyber security
-                challenges.
-              </p>
-            </div>
-            <div className="course-icon">
-              <div className="border-icon">
-                <div className="content">
-                  <i className="fas fa-book-open lab"></i>
-                  <p>Practice</p>
-                  <i className="fas fa-bullseye lab"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <LandingPractice />
       {/* End Landing */}
       {/* Start Courses  */}
       <div class="course">
