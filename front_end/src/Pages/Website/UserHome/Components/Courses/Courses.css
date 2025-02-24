@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin-bottom: 20px;
   flex-wrap: wrap;
 }
@@ -56,6 +55,7 @@
   transition: var(--main-transition);
   margin-bottom: 30px;
   transform: translateY(-20%);
+  background-color: var(--secondary-bg);
 }
 
 @media (max-width: 991px) {
@@ -169,6 +169,7 @@
 
 /* Category List */
 .category-menu {
+  background-color: var(--secondary-bg);
   display: flex;
   list-style-type: none;
   padding: 10px;

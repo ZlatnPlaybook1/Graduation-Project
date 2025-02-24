@@ -198,10 +198,10 @@ const PaginatedCourses = ({ filteredCourses }) => {
                 </div> */}
               </div>
 
-              <div className="easy">
+              {/* <div className="easy">
                 <i className="fa-solid fa-signal"></i>
                 <p>{course.difficulty}</p>
-              </div>
+              </div> */}
             </a>
           </div>
         ))}
