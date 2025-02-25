@@ -4,7 +4,7 @@ import Header from "../../Header/Header";
 import background from "../../assets/img/bash/baner_lap.png";
 import imagecourse from "../../assets/img/bash/full_colored_dark (1).png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import Footer from "../../Footer/Footer";
 import exampleImage1 from "../../assets/img/bash/carbon-8.png";
 import exampleImage2 from "../../assets/img/bash/carbon-9.png";
@@ -31,7 +31,7 @@ export default function Bash() {
     <>
       <Header />
       {/* Start Landing  */}
-      <LandingLab
+      <CourseLanding
         background={background}
         imagecourse={imagecourse}
         courseTitle="Bash Scripting"

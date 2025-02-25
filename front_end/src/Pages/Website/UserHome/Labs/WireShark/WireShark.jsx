@@ -35,7 +35,7 @@ import exampleImage28 from "../../assets/img/wireshark/28.png";
 import exampleImage29 from "../../assets/img/wireshark/29.png";
 import exampleImage30 from "../../assets/img/wireshark/30.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 
 export default function WireShark() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
@@ -43,7 +43,7 @@ export default function WireShark() {
     <>
       <Header />
       {/* Start Landing  */}
-      <LandingLab
+      <CourseLanding
         background={background}
         imagecourse={imagecourse}
         courseTitle="Wire Shark"

@@ -7,7 +7,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import background from "../../assets/img/Click_Jacking/background.svg";
 import courseImage from "../../assets/img/Click_Jacking/courseImage.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 export default function Click_Jacking() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
@@ -16,7 +16,7 @@ export default function Click_Jacking() {
     <>
       <Header />
       {/* Start Landing */}
-      <LandingLab
+      <CourseLanding
         background={background}
         backgroundStyle={{ left: "70%", objectFit: "cover", height: "100%" }}
         courseImage={courseImage}

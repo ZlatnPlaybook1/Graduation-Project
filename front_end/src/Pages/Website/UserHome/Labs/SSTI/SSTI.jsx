@@ -7,7 +7,7 @@ import "../../Components/Topics CSS/topics.css";
 import exampleImage1 from "../../assets/img/Server Side Template Injection/1.png";
 import exampleImage2 from "../../assets/img/Server Side Template Injection/2.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 
 export default function SSTI() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
@@ -15,7 +15,7 @@ export default function SSTI() {
     <>
       <Header />
       {/* Start Landing  */}
-      <LandingLab
+      <CourseLanding
         background={background}
         imagecourse={imagecourse}
         courseTitle="Server Side Template Injection (SSTI)"

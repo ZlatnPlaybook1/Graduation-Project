@@ -8,7 +8,7 @@ import courseImage from "../../assets/img/CSRF/CourseImage.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 export default function CSRF() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
@@ -18,7 +18,7 @@ export default function CSRF() {
       <Banner />
       <Header />
       {/* Start Landing */}
-      <LandingLab
+      <CourseLanding
         background={background}
         backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
         courseImage={courseImage}

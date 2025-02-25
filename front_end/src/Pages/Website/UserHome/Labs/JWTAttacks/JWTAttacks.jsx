@@ -7,14 +7,14 @@ import "../../Components/Topics CSS/topics.css";
 import exampleImage1 from "../../assets/img/JWT attacks/image_1.webp";
 import exampleImage2 from "../../assets/img/JWT attacks/image_2.webp";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 export default function JWTAttacks() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <LandingLab
+      <CourseLanding
         background={background}
         imagecourse={imagecourse}
         courseTitle="JWT Attacks"

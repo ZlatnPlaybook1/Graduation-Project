@@ -6,7 +6,7 @@ import background from "../../assets/img/ACV/background.png";
 import courseImage from "../../assets/img/ACV/courseImage.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import Banner from "../../Components/Banner/Banner.jsx";
-import Landing from "../../Components/CourseLanding/CourseLanding.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 export default function AC_Vuln() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
@@ -16,7 +16,7 @@ export default function AC_Vuln() {
       <Header />
       {/* <Landing /> */}
       {/* Start Landing */}
-      <Landing
+      <CourseLanding
         background={background}
         backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
         courseImage={courseImage}

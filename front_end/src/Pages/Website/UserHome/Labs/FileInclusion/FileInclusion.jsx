@@ -12,14 +12,14 @@ import exampleImage5 from "../../assets/img/File Inclusion/image_5.webp";
 import exampleImage6 from "../../assets/img/File Inclusion/image_6.webp";
 import exampleImage7 from "../../assets/img/File Inclusion/image_7.webp";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 export default function FileInclusion() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <LandingLab
+      <CourseLanding
         background={background}
         imagecourse={imagecourse}
         courseTitle="File Inclusion"

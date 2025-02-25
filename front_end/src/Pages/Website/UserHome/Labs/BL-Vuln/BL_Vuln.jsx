@@ -6,7 +6,7 @@ import background from "../../assets/img/BLV/background.png";
 import courseImage from "../../assets/img/BLV/course_image.png";
 import logicFlow from "../../assets/img/BLV/logic-flaws.jpg";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import Banner from "../../Components/Banner/Banner.jsx";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 export default function BL_Vuln() {
@@ -17,7 +17,7 @@ export default function BL_Vuln() {
       <Banner />
       <Header />
       {/* Start Landing */}
-      <LandingLab
+      <CourseLanding
         background={background}
         backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
         courseImage={courseImage}

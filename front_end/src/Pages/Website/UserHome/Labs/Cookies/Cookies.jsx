@@ -4,7 +4,7 @@ import "../../Components/Topics CSS/topics.css";
 import imagecourse from "../../assets/img/cookies/Cookies_transparent.png";
 import background from "../../assets/img/cookies/baner_lap.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import inLab3 from "../../assets/img/inLab3.png";
 import Footer from "../../Footer/Footer";
 
@@ -14,7 +14,7 @@ export default function Cookies() {
     <>
       <Header />
       {/* Start Landing  */}
-      <LandingLab
+      <CourseLanding
         background={background}
         imagecourse={imagecourse}
         courseTitle="Cookies"

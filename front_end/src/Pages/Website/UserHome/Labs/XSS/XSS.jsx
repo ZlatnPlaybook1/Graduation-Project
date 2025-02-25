@@ -7,14 +7,14 @@ import imagecourse from "../../assets/img/Cross_Site_Scripting/Broken Authentica
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 export default function XSS() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <LandingLab
+      <CourseLanding
         background={background}
         imagecourse={imagecourse}
         courseTitle="Cross-Site Scripting"

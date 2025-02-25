@@ -5,14 +5,14 @@ import imagecourse from "../../assets/img/Path__Traversal/Directory_Traversal.pn
 import Footer from "../../Footer/Footer";
 import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 export default function PathTraversal() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <LandingLab
+      <CourseLanding
         background={background}
         imagecourse={imagecourse}
         courseTitle="Path Traversal"

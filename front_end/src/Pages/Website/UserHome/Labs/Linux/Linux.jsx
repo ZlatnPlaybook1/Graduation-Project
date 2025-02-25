@@ -5,14 +5,14 @@ import imagecourse from "../../assets/img/linux/linux_logo.png";
 import background from "../../assets/img/linux/baner_lap.png";
 import Footer from "../../Footer/Footer";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 export default function Linux() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <LandingLab
+      <CourseLanding
         background={background}
         imagecourse={imagecourse}
         courseTitle="Linux Fundamentals"

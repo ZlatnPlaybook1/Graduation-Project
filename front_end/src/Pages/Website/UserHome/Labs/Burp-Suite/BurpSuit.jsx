@@ -5,7 +5,7 @@ import imagecourse from "../../assets/img/Burp_Suit/Icon_Burp_Suit.png";
 import Footer from "../../Footer/Footer";
 import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 
 export default function BurpSuit() {
@@ -14,7 +14,7 @@ export default function BurpSuit() {
     <>
       <Header />
       {/* Start Landing */}
-      <LandingLab
+      <CourseLanding
         background={background}
         imagecourse={imagecourse}
         courseTitle="Burp Suit"

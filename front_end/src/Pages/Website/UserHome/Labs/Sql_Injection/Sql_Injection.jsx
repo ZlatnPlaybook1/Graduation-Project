@@ -8,6 +8,7 @@ import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import tableImage from "../../assets/img/SQL_Injection/table.png";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 import Banner from "../../Components/Banner/Banner.jsx";
+import "../Page_Styles/Content_sec.css"
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 // import OutOfBandImage from "../../assets/img/SQL_Injection/Out-of-Band SQLi.png";
 // import DBServerImage from "../../assets/img/SQL_Injection/DBServer.png";

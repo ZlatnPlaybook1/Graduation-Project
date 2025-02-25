@@ -1,9 +1,10 @@
 import React from "react";
 import "../../assets/css/Landing.css";
+import defaultBg from "../../assets/css/bg.jpg";
 
 const LearnLanding = () => {
   return (
-    <div className="my-landing" style={{ backgroundImage: `url(${require("../../assets/css/bg.jpg").default })` }}>
+    <div className="my-landing" style={{ backgroundImage:`url(${defaultBg})`, backgroundSize: "cover", backgroundPosition: "center" } }>
       <div className="landing__overlay"></div>
       <div className="landing__content">
         <div className="landing__text">

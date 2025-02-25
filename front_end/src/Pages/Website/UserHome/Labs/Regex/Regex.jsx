@@ -6,7 +6,7 @@ import "../../Components/Topics CSS/topics.css";
 import background from "../../assets/img/Regex/background.png";
 import courseImage from "../../assets/img/Regex/courseImage.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
@@ -18,7 +18,7 @@ export default function Regex() {
       <Banner />
       <Header />
       {/* Start Landing */}
-      <LandingLab
+      <CourseLanding
         background={background}
         backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
         courseImage={courseImage}
