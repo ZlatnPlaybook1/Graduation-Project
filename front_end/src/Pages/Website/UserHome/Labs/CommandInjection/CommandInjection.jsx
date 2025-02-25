@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import background from "../../assets/img/Command Injection/What-is-a-Command-Injection.png";
-import imagecourse from "../../assets/img/Command Injection/Icon_Command_Injection.png";
+import courseImage from "../../assets/img/Command Injection/Icon_Command_Injection.png";
 import Footer from "../../Footer/Footer";
 import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
@@ -16,7 +16,7 @@ export default function CommandInjection() {
       {/* Start Landing */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle=" Command Injection"
         courseDescription="Discover how attackers exploit Command Injection vulnerabilities to execute arbitrary system commands, gain unauthorized access, and manipulate application behavior. Learn how security professionals detect and mitigate these attacks through input validation, parameterized commands, and least privilege enforcement. Master techniques to prevent command injection by sanitizing user inputs, restricting system calls, and implementing secure coding practices to protect applications from exploitation."
         difficulty="Intermediate"

@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import background from "../../assets/img/Path__Traversal/what-is-path-traversal-attack.png";
-import imagecourse from "../../assets/img/Path__Traversal/Directory_Traversal.png";
+import courseImage from "../../assets/img/Path__Traversal/Directory_Traversal.png";
 import Footer from "../../Footer/Footer";
 import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
@@ -14,7 +14,7 @@ export default function PathTraversal() {
       {/* Start Landing */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Path Traversal"
         courseDescription="Learn how attackers exploit path traversal vulnerabilities to access restricted files and directories. Understand the risks, detection techniques, and mitigation strategies, including input validation, secure file handling, and access controls to prevent unauthorized access."
         difficulty="Intermediate"

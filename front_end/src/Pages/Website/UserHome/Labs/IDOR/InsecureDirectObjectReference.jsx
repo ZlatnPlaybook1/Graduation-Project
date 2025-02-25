@@ -4,7 +4,7 @@ import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import "./InsecureDirectObjectReference.css";
 import "../../Components/Topics CSS/topics.css";
-import imagecourse from "../../assets/img/IDOR/idorIcon.jpg";
+import courseImage from "../../assets/img/IDOR/idorIcon.jpg";
 import background from "../../assets/img/IDOR/IDOR.jpg";
 import IDOR_Vulerability from "../../assets/img/IDOR/InsecureDirectObjectReference(IDOR)Vulnerability.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
@@ -18,7 +18,7 @@ export default function InsecureDirectObjectReference() {
       {/* Start Landing */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Insecure Direct Object Reference (IDOR)"
         courseDescription="Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce."
         difficulty="Intermediate"

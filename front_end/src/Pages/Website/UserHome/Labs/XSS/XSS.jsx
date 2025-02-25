@@ -3,7 +3,7 @@ import "./XSS.css";
 import "../../Components/Topics CSS/topics.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/Cross_Site_Scripting/cors1.png";
-import imagecourse from "../../assets/img/Cross_Site_Scripting/Broken Authentication.webp";
+import courseImage from "../../assets/img/Cross_Site_Scripting/Broken Authentication.webp";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
@@ -16,7 +16,7 @@ export default function XSS() {
       {/* Start Landing  */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Cross-Site Scripting"
         courseDescription=" Hack your first website (legally in a safe environment) and
                 experience an ethical hacker's job."

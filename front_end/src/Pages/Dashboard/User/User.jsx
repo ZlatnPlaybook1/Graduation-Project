@@ -3,6 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Landing from "../../Website/UserHome/Landing/Landing";
+import "../../../App.css";
 export default function User() {
   const { id } = useParams();
   const [name, setName] = useState("");
@@ -11,6 +12,7 @@ export default function User() {
   const [disable, setDisable] = useState(true);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
   useEffect(() => {
     setLoading(true);
     axios
@@ -27,6 +29,7 @@ export default function User() {
         navigate("/dashboard/users/page/404", { replace: true });
       });
   }, [id, navigate]);
+
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -42,38 +45,77 @@ export default function User() {
       console.error("Error submitting form:", error);
     }
   }
+
   return (
     <div className="container my-5">
       {loading && <Landing />}
       <Form
-        className="bg-light p-4 border rounded shadow-sm"
+        className="p-4 border rounded shadow-sm"
         onSubmit={handleSubmit}
+        style={{ backgroundColor: "var(--primary-bg)" }}
       >
-        <h2 className="mb-4">Edit User</h2>
+        <h2 className="mb-4" style={{ color: "var(--primary-text)" }}>
+          Edit User
+        </h2>
 
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>User Name</Form.Label>
+        <Form.Group className="mb-3">
+          <Form.Label
+            style={{ fontWeight: "bold", color: "var(--secondary-text)" }}
+          >
+            User Name
+          </Form.Label>
           <Form.Control
             value={name}
             required
             onChange={(e) => setName(e.target.value)}
             type="text"
             placeholder="Name..."
+            style={{
+              border: "1px solid var(--border-color)",
+              fontFamily: "Montserrat, sans-serif",
+              backgroundColor: "var(--secondary-bg)",
+              color: "var(--primary-text)",
+            }}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-          <Form.Label>Email</Form.Label>
+
+        <Form.Group className="mb-3">
+          <Form.Label
+            style={{ fontWeight: "bold", color: "var(--secondary-text)" }}
+          >
+            Email
+          </Form.Label>
           <Form.Control
             value={email}
             required
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="name@example.com"
+            style={{
+              border: "1px solid var(--border-color)",
+              fontFamily: "Montserrat, sans-serif",
+              backgroundColor: "var(--secondary-bg)",
+              color: "var(--primary-text)",
+            }}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
-          <Form.Label>Role</Form.Label>
-          <Form.Select value={role} onChange={(e) => setRole(e.target.value)}>
+
+        <Form.Group className="mb-3">
+          <Form.Label
+            style={{ fontWeight: "bold", color: "var(--secondary-text)" }}
+          >
+            Role
+          </Form.Label>
+          <Form.Select
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+            style={{
+              border: "1px solid var(--border-color)",
+              fontFamily: "Montserrat, sans-serif",
+              backgroundColor: "var(--secondary-bg)",
+              color: "var(--primary-text)",
+            }}
+          >
             <option disabled value="">
               Select Role
             </option>
@@ -81,7 +123,19 @@ export default function User() {
             <option value="writer">Writer</option>
           </Form.Select>
         </Form.Group>
-        <Button disabled={disable} type="submit" className="btn btn-primary">
+
+        <Button
+          disabled={disable}
+          type="submit"
+          className="btn"
+          style={{
+            backgroundColor: "var(--main-color)",
+            borderColor: "var(--main-color)",
+            color: "var(--primary-text)",
+            fontFamily: "Montserrat, sans-serif",
+            transition: "var(--transition-speed)",
+          }}
+        >
           Save
         </Button>
       </Form>

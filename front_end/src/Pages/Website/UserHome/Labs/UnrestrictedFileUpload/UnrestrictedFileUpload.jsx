@@ -7,7 +7,7 @@ import photo2 from "../../assets/img/Unrestricted File Upload/Post&GetImage.png"
 import code1 from "../../assets/img/Unrestricted File Upload/code1FileUpload.png";
 import code2 from "../../assets/img/Unrestricted File Upload/code2FileUpload.png";
 import code3 from "../../assets/img/Unrestricted File Upload/code3FileUpload.png";
-import imagecourse from "../../assets/img/Unrestricted File Upload/FileUploadIcon.png";
+import courseImage from "../../assets/img/Unrestricted File Upload/FileUploadIcon.png";
 import background from "../../assets/img/Unrestricted File Upload/background_File_Upload.jpg";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
@@ -19,7 +19,7 @@ export default function UnrestrictedFileUpload() {
       {/* Start Landing */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Unrestricted File Upload"
         courseDescription="In this course, you will explore the security risks associated with unrestricted file uploads in web applications. We will cover how attackers can exploit vulnerabilities in file upload mechanisms and the potential consequences, including unauthorized access and data breaches. You will learn about the best practices to mitigate such risks, ensuring safe file handling and improving the overall security posture of web applications."
         difficulty="Intermediate"

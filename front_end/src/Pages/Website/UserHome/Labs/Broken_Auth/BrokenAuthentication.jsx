@@ -4,7 +4,7 @@ import Footer from "../../Footer/Footer";
 import "./BrokenAuthentication.css";
 import "../../Components/Topics CSS/topics.css";
 import background from "../../assets/img/Broken Authentication/broken_authentication_blogpost.png";
-import imagecourse from "../../assets/img/Broken Authentication/broken-authentication.png";
+import courseImage from "../../assets/img/Broken Authentication/broken-authentication.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 
@@ -19,7 +19,7 @@ export default function BrokenAuthentication() {
       {/* Start Landing */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Broken Authentication"
         courseDescription="This course delves into the common vulnerabilities in authentication systems that can lead to security breaches. You will learn about the flaws in authentication mechanisms, such as weak password policies, improper session management, and failure to validate user inputs, and how these weaknesses can be exploited by attackers. By the end of the course, you will understand how to strengthen authentication systems, implement secure login processes, and protect user identities against unauthorized access."
         difficulty="Intermediate"

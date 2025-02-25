@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import background from "../../assets/img/Condition_Race/Race Condition back.jpg";
-import imagecourse from "../../assets/img/Condition_Race/race condition icon.jpg";
+import courseImage from "../../assets/img/Condition_Race/race condition icon.jpg";
 import Footer from "../../Footer/Footer";
 import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
@@ -16,7 +16,7 @@ export default function RaceCondition() {
       {/* Start Landing */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Race Condition"
         courseDescription="In this course, you’ll learn about Insecure Deserialization, a vulnerability where untrusted data is deserialized without proper validation, allowing attackers to manipulate data or execute harmful actions. The course covers the risks, how deserialization works, common attack techniques, and best practices for preventing these security issues."
         difficulty="Intermediate"

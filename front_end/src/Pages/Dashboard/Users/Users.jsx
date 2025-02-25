@@ -99,18 +99,18 @@ export default function Users() {
     <div className="table-container">
       <h2 className="table-title">User List</h2>
       <div className="d-flex justify-content-start">
-        <Link className="btn btn-primary" to={"/dashboard/user/add"}>
+        <Link className="btn-add btn-primary-add" to={"/dashboard/user/add"}>
           Add User
         </Link>
       </div>
       <Table responsive="sm" className="modern-table">
         <thead>
           <tr>
-            <th>id</th>
-            <th>User Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Action</th>
+            <th className="tr-color">id</th>
+            <th className="tr-color">User Name</th>
+            <th className="tr-color">Email</th>
+            <th className="tr-color">Role</th>
+            <th className="tr-color">Action</th>
           </tr>
         </thead>
         <tbody>
