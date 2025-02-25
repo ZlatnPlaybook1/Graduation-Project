@@ -63,7 +63,7 @@ export default function AddUser() {
             placeholder="Name..."
             style={{
               backgroundColor: "var(--inputColor)",
-              color: "var(--smoky-black-3)",
+              color: "var(--primary-text)",
             }}
           />
         </Form.Group>
@@ -85,7 +85,7 @@ export default function AddUser() {
             placeholder="name@example.com"
             style={{
               backgroundColor: "var(--inputColor)",
-              color: "var(--smoky-black-3)",
+              color: "var(--primary-text)",
             }}
           />
         </Form.Group>
@@ -107,7 +107,7 @@ export default function AddUser() {
             placeholder="password..."
             style={{
               backgroundColor: "var(--inputColor)",
-              color: "var(--smoky-black-3)",
+              color: "var(--primary-text)",
             }}
           />
         </Form.Group>
@@ -126,7 +126,7 @@ export default function AddUser() {
             onChange={(e) => setRole(e.target.value)}
             style={{
               backgroundColor: "var(--inputColor)",
-              color: "var(--smoky-black-3)",
+              color: "var(--primary-text)",
             }}
           >
             <option disabled value="">
