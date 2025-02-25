@@ -1,13 +1,14 @@
-/* Container for the customizer */
 .theme-customizer {
-  position: relative;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
   display: inline-block;
 }
 
-/* The toggle button (you can replace ⚙️ with an icon if desired) */
 .theme-toggle-btn {
-  background: var(--primary);
-  color: var(--txt-color);
+  background: var(--main-color);
+  color: var(--primary-text);
   border: none;
   padding: 0.5rem;
   font-size: 1.5rem;
@@ -15,13 +16,13 @@
   cursor: pointer;
 }
 
-/* The panel that appears when the settings are toggled */
 .theme-panel {
   position: absolute;
   top: 110%;
   right: 0;
-  background: var(--bg-color);
+  background: var(--secondary-bg);
   border: 1px solid var(--link-bg);
+  color: var(--primary-text);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   padding: 1rem;
@@ -29,13 +30,6 @@
   min-width: 250px;
 }
 
-/* Header styling */
-.theme-panel h4 {
-  margin: 0 0 0.5rem;
-  color: var(--txt-color);
-}
-
-/* Container for the preset buttons */
 .preset-options {
   display: flex;
   gap: 0.5rem;
@@ -51,19 +45,19 @@
   cursor: pointer;
   flex-grow: 1;
 }
-
+.preset-btn:hover {
+  background: var(--main-color4);
+}
 .preset-btn.active {
-  background: var(--primary);
+  background: var(--main-color);
 }
 
-/* Container for custom color pickers */
 .custom-colors {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-/* Individual color picker container */
 .color-picker {
   display: flex;
   align-items: center;

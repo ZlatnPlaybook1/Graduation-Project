@@ -4,39 +4,26 @@ import "./ThemeCustomizer.css";
 // Define three preset themes. (Using hex values for all colors so that the color pickers work.)
 const presets = {
   dark: {
-    "main": "#ffffff", 
-    "--bg-color": "#242424",
-    "--light-primary": "#747bff",
-    "--primary": "#646cff",
-    "--dark-primary": "#535bf2",
-    "--link-bg": "#1a1a1a",
+    "--primary-bg": "#0f0f0f", 
+    "--secondary-bg": "#1b1b1bd0",
+    "--primary-text": "#ffffff",
+    "--secondary-text": "#c4c2c2",
   },
   light: {
-    "--txt-color": "#000000",
-    "--bg-color": "#ffffff",
-    "--light-primary": "#9fa8da",
-    "--primary": "#3f51b5",
-    "--dark-primary": "#303f9f",
-    "--link-bg": "#e0e0e0",
-  },
-  blue: {
-    "--txt-color": "#ffffff",
-    "--bg-color": "#001f3f",
-    "--light-primary": "#0074D9",
-    "--primary": "#005fa3",
-    "--dark-primary": "#004080",
-    "--link-bg": "#003366",
-  },
+    "--primary-bg": "#ffffff", 
+    "--secondary-bg": "#c4c2c2",
+    "--primary-text": "#0f0f0f",
+    "--secondary-text": "#1b1b1bd0",
+  }
 };
 
 // List of all CSS custom properties you want to control.
 const cssKeys = [
-  "--txt-color",
-  "--bg-color",
-  "--light-primary",
-  "--primary",
-  "--dark-primary",
-  "--link-bg",
+  "--primary-bg",
+  "--secondary-bg",
+  "--primary-text",
+  "--secondary-text",
+  "--main-color",
 ];
 
 function ThemeCustomizer() {
@@ -103,7 +90,6 @@ function ThemeCustomizer() {
       </button>
       {panelVisible && (
         <div className="theme-panel">
-          <h4>Select a Preset Theme</h4>
           <div className="preset-options">
             {Object.keys(presets).map((presetName) => (
               <button

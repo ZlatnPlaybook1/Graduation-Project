@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import background from "../../assets/img/Burp_Suit/Background_Burp_suit.jpg";
-import imagecourse from "../../assets/img/Burp_Suit/Icon_Burp_Suit.png";
+import courseImage from "../../assets/img/Burp_Suit/Icon_Burp_Suit.png";
 import Footer from "../../Footer/Footer";
 import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
@@ -16,7 +16,7 @@ export default function BurpSuit() {
       {/* Start Landing */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Burp Suit"
         courseDescription="In this course, you’ll learn about Insecure Deserialization, a vulnerability where untrusted data is deserialized without proper validation, allowing attackers to manipulate data or execute harmful actions. The course covers the risks, how deserialization works, common attack techniques, and best practices for preventing these security issues."
         difficulty="Intermediate"
