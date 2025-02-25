@@ -3,7 +3,7 @@ import Header from "../../Header/Header";
 import background from "../../assets/img/Command Injection/What-is-a-Command-Injection.png";
 import imagecourse from "../../assets/img/Command Injection/Icon_Command_Injection.png";
 import Footer from "../../Footer/Footer";
-import "./CommandInjection.css";
+import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";

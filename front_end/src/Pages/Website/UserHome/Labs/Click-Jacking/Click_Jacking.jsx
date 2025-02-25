@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
+import "../../Components/Topics CSS/topics.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import background from "../../assets/img/Click_Jacking/background.svg";

@@ -3,7 +3,7 @@ import Header from "../../Header/Header";
 import background from "../../assets/img/Path__Traversal/what-is-path-traversal-attack.png";
 import imagecourse from "../../assets/img/Path__Traversal/Directory_Traversal.png";
 import Footer from "../../Footer/Footer";
-import "./PathTraversal.css";
+import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 export default function PathTraversal() {

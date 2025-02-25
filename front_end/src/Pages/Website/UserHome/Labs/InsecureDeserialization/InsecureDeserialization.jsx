@@ -3,7 +3,7 @@ import Header from "../../Header/Header";
 import background from "../../assets/img/Insecure_Deserialization/Insecure_Photo_Background.jpg";
 import imagecourse from "../../assets/img/Insecure_Deserialization/Icon_Insecure.png";
 import Footer from "../../Footer/Footer";
-import "./InsecureDeserialization.css";
+import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 export default function InsecureDeserialization() {

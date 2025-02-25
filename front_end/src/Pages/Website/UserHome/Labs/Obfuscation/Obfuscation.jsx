@@ -1,8 +1,9 @@
 import React from "react";
 import Header from "../../Header/Header";
+import Footer from "../../Footer/Footer";
+import "../../Components/Topics CSS/topics.css";
 import background from "../../assets/img/Obfuscation/baner_lap.png";
 import imagecourse from "../../assets/img/Obfuscation/course_image.png";
-import Footer from "../../Footer/Footer";
 import exampleImage1 from "../../assets/img/Obfuscation/1.png";
 import exampleImage2 from "../../assets/img/Obfuscation/2.png";
 import exampleImage3 from "../../assets/img/Obfuscation/3.png";

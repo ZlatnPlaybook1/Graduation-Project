@@ -3,6 +3,7 @@ import Header from "../../Header/Header";
 import background from "../../assets/img/Server Side Template Injection/baner_lap.png";
 import imagecourse from "../../assets/img/Server Side Template Injection/course_image.png";
 import Footer from "../../Footer/Footer";
+import "../../Components/Topics CSS/topics.css";
 import exampleImage1 from "../../assets/img/Server Side Template Injection/1.png";
 import exampleImage2 from "../../assets/img/Server Side Template Injection/2.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";

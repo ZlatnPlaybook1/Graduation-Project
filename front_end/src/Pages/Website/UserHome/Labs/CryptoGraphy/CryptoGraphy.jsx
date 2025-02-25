@@ -1,5 +1,5 @@
 import React from "react";
-import "../Page_Styles/Content_sec.css";
+import "../../Components/Topics CSS/topics.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/Cryptography/baner_lap.png";
 import imagecourse from "../../assets/img/Cryptography/course_image.png";

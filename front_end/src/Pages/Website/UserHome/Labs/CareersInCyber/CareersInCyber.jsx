@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import Banner from "../../Components/Banner/Banner";
-import "../Page_Styles/Content_sec.css";
+import "../../Components/Topics CSS/topics.css";
 import background from "../../assets/img/CareersInCyber/background.png";
 import courseImage from "../../assets/img/CareersInCyber/courseImage.png";
 import CareerImag from "../../assets/img/CareersInCyber/courseImage.png";

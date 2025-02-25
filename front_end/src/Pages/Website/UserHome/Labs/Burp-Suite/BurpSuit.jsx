@@ -3,7 +3,7 @@ import Header from "../../Header/Header";
 import background from "../../assets/img/Burp_Suit/Background_Burp_suit.jpg";
 import imagecourse from "../../assets/img/Burp_Suit/Icon_Burp_Suit.png";
 import Footer from "../../Footer/Footer";
-import "./BurpSuit.css";
+import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";

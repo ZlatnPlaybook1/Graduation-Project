@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import Banner from "../../Components/Banner/Banner";
+import "../../Components/Topics CSS/topics.css";
 import background from "../../assets/img/DigitalForensics/background.png";
 import courseImage from "../../assets/img/DigitalForensics/courseImage.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
@@ -41,10 +42,7 @@ export default function Digital_Forensics() {
             <div className="content-section">
               <dl className="topics-text">
                 {/*Intro*/}
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Intro</span>Intro to Digital Forensics
                 </dt>
                 <dd className="fadeInUp faq-body">
@@ -68,10 +66,7 @@ export default function Digital_Forensics() {
                   </p>
                 </dd>
                 {/* Topic 1 */}
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 1:</span> What is Digital Forensics?
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
@@ -100,10 +95,7 @@ export default function Digital_Forensics() {
                   </ul>
                 </dd>
                 {/* Topic 2 */}
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 2:</span>Types of Digital Forensics
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
@@ -317,10 +309,7 @@ export default function Digital_Forensics() {
                   </p>
                 </dd>
                 {/* Topic 3 */}
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 3</span>Metadata Analysis
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
@@ -336,10 +325,7 @@ export default function Digital_Forensics() {
                   </ul>
                 </dd>
                 {/* Topic 4 */}
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 4</span> Network Traffic Analysis
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
@@ -366,10 +352,7 @@ export default function Digital_Forensics() {
                   </p>
                 </dd>
                 {/* Topic 5 */}
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 5</span> Common Digital Forensic Tools
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
@@ -396,10 +379,7 @@ export default function Digital_Forensics() {
                   </ul>
                 </dd>
                 {/* Topic 6 */}
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 6:</span> Detecting Hidden Data (Steganography)
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
@@ -419,10 +399,7 @@ export default function Digital_Forensics() {
                     </li>
                   </ul>
                 </dd>
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 7:</span> Best Practices in Digital Forensics
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
@@ -445,10 +422,7 @@ export default function Digital_Forensics() {
                     </li>
                   </ul>
                 </dd>
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 8:</span> Conclusion
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">

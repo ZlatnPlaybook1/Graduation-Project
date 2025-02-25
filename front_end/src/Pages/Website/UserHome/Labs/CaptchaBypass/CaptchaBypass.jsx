@@ -3,6 +3,7 @@ import Header from "../../Header/Header";
 import background from "../../assets/img/Captcha Bypass/baner_lap.png";
 import imagecourse from "../../assets/img/Captcha Bypass/course_image.png";
 import Footer from "../../Footer/Footer";
+import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 export default function CaptchaBypass() {

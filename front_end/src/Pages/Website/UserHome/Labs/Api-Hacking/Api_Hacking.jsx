@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
+import "../../Components/Topics CSS/topics.css";
 import background from "../../assets/img/Api_Hacking/background.png";
 import courseImage from "../../assets/img/Api_Hacking/courseImage.png";
 import Banner from "../../Components/Banner/Banner.jsx";

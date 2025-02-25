@@ -3,7 +3,7 @@ import Header from "../../Header/Header";
 import background from "../../assets/img/Condition_Race/Race Condition back.jpg";
 import imagecourse from "../../assets/img/Condition_Race/race condition icon.jpg";
 import Footer from "../../Footer/Footer";
-import "./RaceCondition.css";
+import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";

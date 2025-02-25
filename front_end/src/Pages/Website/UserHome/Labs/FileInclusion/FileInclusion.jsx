@@ -3,6 +3,7 @@ import Header from "../../Header/Header";
 import background from "../../assets/img/File Inclusion/baner_lap.png";
 import imagecourse from "../../assets/img/File Inclusion/course_image.png";
 import Footer from "../../Footer/Footer";
+import "../../Components/Topics CSS/topics.css";
 import exampleImage1 from "../../assets/img/File Inclusion/image_1.webp";
 import exampleImage2 from "../../assets/img/File Inclusion/image_2.webp";
 import exampleImage3 from "../../assets/img/File Inclusion/image_3.webp";

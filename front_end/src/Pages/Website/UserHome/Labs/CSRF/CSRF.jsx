@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
+import "../../Components/Topics CSS/topics.css";
 import Banner from "../../Components/Banner/Banner";
 import background from "../../assets/img/CSRF/background.svg";
 import courseImage from "../../assets/img/CSRF/CourseImage.png";
@@ -41,10 +42,7 @@ export default function CSRF() {
             <div className="content-section">
               <dl className="topics-text">
                 {/* Intro */}
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Intro </span> Introduction to CSRF
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
@@ -110,10 +108,7 @@ export default function CSRF() {
                   </ol>
                 </dd>
                 {/* Topic 1 */}
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 1</span> Understanding CSRF
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
@@ -137,10 +132,7 @@ export default function CSRF() {
                   </ul>
                 </dd>
                 {/* Topic 2 */}
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 2</span> How CSRF Attacks Work
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
@@ -188,10 +180,7 @@ export default function CSRF() {
                   </ul>
                 </dd>
                 {/* Topic 3 */}
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 3</span> CSRF vs. XSS
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
@@ -243,10 +232,7 @@ export default function CSRF() {
                   </table>
                 </dd>
                 {/* Topic 4 */}
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 4</span> Real-World CSRF Examples
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
@@ -275,10 +261,7 @@ export default function CSRF() {
                   </ul>
                 </dd>
                 {/* Topic 5 */}
-                <dt
-                  className="fadeInUp faq-header"
-                  id="border-left"
-                >
+                <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 5</span> CSRF Prevention Techniques
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
