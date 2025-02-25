@@ -26,9 +26,9 @@
   background-color: var(--secondary-bg);
   border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: 0 0 10px var(--glass-bg);
+  box-shadow: var(--box-shadow);
   transition: transform var(--transition-speed);
-  padding: 0.3rem !important;
+  padding: 0.3rem ;
   display: flex;
   flex-direction: column;
   height: 380px;
@@ -42,6 +42,7 @@
   height: 200px;
   width: 100%;
   overflow: hidden;
+  background-color: var(--primary-text);
 }
 
 .course .course-card .course-image img {
@@ -68,7 +69,7 @@
 .course .course-card p {
   font-size: 1rem;
   font-weight: var(--weight-regular);
-  color: var(--white-alpha-20);
+  color: var(--secondary-text);
   margin-bottom: 20px;
 }
 
@@ -96,14 +97,14 @@
 
 .ribbon {
   position: absolute;
-  top: 1rem;
-  left: -1.5rem;
-  width: 150px;
+      top: 1.8rem;
+    left: -2.5rem;
+    width: 180px;
   padding: 0.5rem 0;
   text-align: center;
   background-color: var(--neon-red);
   transform: rotate(-45deg);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px var(--glass-bg);
   z-index: 1;
 }
 
@@ -194,7 +195,7 @@
   border-radius: 50%;
   cursor: pointer;
   transition: all var(--transition-speed);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px var(--glass-bg);
   margin: 0 5px;
 }
 
@@ -202,7 +203,7 @@
   background-color: var(--main-color);
   color: var(--primary-text);
   transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 4px 10px var(--hover-main-color);
 }
 
 .pagination-button.active {

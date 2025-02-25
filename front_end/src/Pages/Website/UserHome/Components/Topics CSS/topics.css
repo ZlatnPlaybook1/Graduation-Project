@@ -65,7 +65,7 @@
   padding: 1rem;
   padding-left: 2rem;
   background-color: var(--secondary-bg);
-  border-radius: 12px;
+  border-radius: 0px 0px 12px 12px ;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-weight: 400 !important;
 }
