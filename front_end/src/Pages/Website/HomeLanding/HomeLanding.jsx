@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import image2 from "./landingImage.png";
-import "./landing.css";
+import image2 from "../assets/img/landingImage.png";
+import "./HomeLanding.css";
 
 const ParticlesComponent = () => {
   useEffect(() => {
-    // Dynamically load the particles.js script
     const script = document.createElement("script");
     script.src = "https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js";
     script.async = true;
@@ -78,13 +77,10 @@ const ParticlesComponent = () => {
 
   return (
     <div className="landing-section">
-      {/* Particles background */}
       <div id="particles-js"></div>
 
-      {/* Main content container */}
       <div className="container py-5">
         <div className="row align-items-center">
-          {/* Text Section */}
           <div className="col-lg-6 col-12 landing-text mb-4 mb-lg-0">
             <h3 className="landing-text__header">
               Elevate Your Cybersecurity Skills
@@ -109,7 +105,6 @@ const ParticlesComponent = () => {
             </div>
           </div>
 
-          {/* Image Section */}
           <div className="col-lg-6 col-12 text-center landing-image">
             <img
               src={image2}

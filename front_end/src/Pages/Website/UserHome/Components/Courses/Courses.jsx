@@ -7,7 +7,7 @@ import PaginatedCourses from "./PaginatedCourses";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
 
 const Courses = () => {
-  const [searchTerm, setSearchTerm] = useState(""); // In case you later add a search input
+  const [searchTerm, setSearchTerm] = useState(""); 
   const [selectedCategory, setSelectedCategory] = useState("All Courses");
 
   useEffect(() => {

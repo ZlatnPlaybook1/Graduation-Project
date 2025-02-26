@@ -8,12 +8,9 @@ import Cookie from "cookie-universal";
 import axios from "axios";
 
 const HeaderHome = () => {
-  // Controls the mobile navbar collapse
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  // Controls the profile dropdown for logged-in users
   const [profileListVisible, setProfileListVisible] = useState(false);
   const [userImage, setUserImage] = useState("");
-  // State to track if the page has been scrolled
   const [isScrolled, setIsScrolled] = useState(false);
 
   const cookie = Cookie();
@@ -27,7 +24,6 @@ const HeaderHome = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  // Fetch user profile image (if logged in)
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
@@ -46,10 +42,9 @@ const HeaderHome = () => {
     if (token) fetchUserProfile();
   }, [token]);
 
-  // Listen for scroll events to update header container and sticky styling
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) { // adjust threshold as needed
+      if (window.scrollY > 50) { 
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
