@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
 .services {
   font-family: 'Open Sans', sans-serif;
 }
@@ -41,6 +43,7 @@
 }
 
 .services__card {
+
   position: relative;
   background: var(--secondary-bg);
   display: flex;
@@ -48,6 +51,8 @@
   align-items: center;
   overflow: hidden;
   height: 350px;
+  max-width: 360px;
+  margin: 0 auto;
   border-radius: 6px; 
   transition: transform 0.3s ease;
 }
