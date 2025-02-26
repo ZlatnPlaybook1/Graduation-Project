@@ -130,9 +130,7 @@ li {
 .btn-page:hover {
   background: var(--SecondaryColor);
 }
-.container {
-  margin: 0 auto;
-}
+
 .hh-100 {
   height: 100vh;
 }
