@@ -15,11 +15,9 @@ export default function FirstLab() {
     <>
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
-      <div className="container">
-        <h2 className="lab-header">Lab1</h2>
-        <MCQQuiz questionsData={MCQData} />
-        <Go2TopBtn />
-      </div>
+      {/* <h2 className="lab-header">Lab1</h2> */}
+      <MCQQuiz questionsData={MCQData} />
+      <Go2TopBtn />
     </>
   );
 }

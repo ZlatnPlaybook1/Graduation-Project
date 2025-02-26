@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import useSound from "use-sound";
 import Swal from "sweetalert2";
-// import "./MCQ.css";
+import "./MCQ.css";
 
 // Import your local sound files
 import downSound from "./sound-effects/down.mp3";
@@ -61,7 +61,9 @@ const MCQQuiz = ({ questionsData }) => {
   const soundVolume = 0.5;
 
   // Sound hooks
-  const [playDown, { stop: stopDown }] = useSound(downSound, { volume: soundVolume });
+  const [playDown, { stop: stopDown }] = useSound(downSound, {
+    volume: soundVolume,
+  });
   const [playCorrect] = useSound(correctSound, { volume: soundVolume });
   const [playWrong] = useSound(wrongSound, { volume: soundVolume });
   const [playPassed] = useSound(passedSound, { volume: soundVolume });
@@ -227,97 +229,103 @@ const MCQQuiz = ({ questionsData }) => {
   // Welcome screen before the quiz starts
   if (!quizStarted) {
     return (
-      <div className="quiz-container welcome">
-        <h2>Welcome to the Quiz!</h2>
-        <button
-          className="btn start-btn"
-          onClick={() => {
-            ShowInitialAlert(() => setQuizStarted(true));
-          }}
-        >
-          Start Quiz
-        </button>
+      <div className="quiz-body">
+        <div className="quiz-container welcome">
+          <h2>Welcome to the Quiz!</h2>
+          <button
+            className="btn start-btn"
+            onClick={() => {
+              ShowInitialAlert(() => setQuizStarted(true));
+            }}
+          >
+            Start Quiz
+          </button>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="quiz-container">
-      {/* Timer Display */}
-      <div className="timer-display">
-        <p>
-          Time Remaining:{" "}
-          {displayTimer !== null ? displayTimer : "20 (waiting...)"} sec
-        </p>
-      </div>
-
-      {/* Progress Bar */}
-      <div className="progress-bar">
-        <div
-          className="progress"
-          style={{
-            width: `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`,
-          }}
-        ></div>
-      </div>
-      <div className="progress-text">
-        Question {currentQuestionIndex + 1} of {totalQuestions}
-      </div>
-
-      {/* Question and Options */}
-      <div className="question-container">
-        <h2 className="question">{currentQuestion.question}</h2>
-        <div className="options">
-          {currentQuestion.options.map((option, index) => (
-            <button
-              key={index}
-              className={`option-button ${
-                showAnswer && option === currentQuestion.answer
-                  ? "correct"
-                  : ""
-              } ${
-                showAnswer &&
-                selectedOption === option &&
-                option !== currentQuestion.answer
-                  ? "incorrect"
-                  : ""
-              }`}
-              onClick={() => handleOptionSelect(option)}
-              disabled={showAnswer}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-        {showAnswer && (
-          <p className="feedback">
-            {selectedOption === currentQuestion.answer ? "Correct!" : "Wrong!"}
+    <div className="quiz-body">
+      <div className="quiz-container">
+        {/* Timer Display */}
+        <div className="timer-display">
+          <p>
+            Time Remaining:{" "}
+            {displayTimer !== null ? displayTimer : "20 (waiting...)"} sec
           </p>
-        )}
-      </div>
+        </div>
 
-      {/* Navigation Buttons */}
-      <div className="navigation-buttons">
-        <button
-          className="btn nav-btn"
-          onClick={handlePrevious}
-          disabled={currentQuestionIndex === 0}
-        >
-          Previous
-        </button>
-        {currentQuestionIndex === totalQuestions - 1 ? (
-          <button className="btn nav-btn submit-btn" onClick={handleSubmit}>
-            Submit
-          </button>
-        ) : (
+        {/* Progress Bar */}
+        <div className="progress-bar">
+          <div
+            className="progress"
+            style={{
+              width: `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`,
+            }}
+          ></div>
+        </div>
+        <div className="progress-text">
+          Question {currentQuestionIndex + 1} of {totalQuestions}
+        </div>
+
+        {/* Question and Options */}
+        <div className="question-container">
+          <h2 className="question">{currentQuestion.question}</h2>
+          <div className="options">
+            {currentQuestion.options.map((option, index) => (
+              <button
+                key={index}
+                className={`option-button ${
+                  showAnswer && option === currentQuestion.answer
+                    ? "correct"
+                    : ""
+                } ${
+                  showAnswer &&
+                  selectedOption === option &&
+                  option !== currentQuestion.answer
+                    ? "incorrect"
+                    : ""
+                }`}
+                onClick={() => handleOptionSelect(option)}
+                disabled={showAnswer}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+          {showAnswer && (
+            <p className="feedback">
+              {selectedOption === currentQuestion.answer
+                ? "Correct!"
+                : "Wrong!"}
+            </p>
+          )}
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="navigation-buttons">
           <button
             className="btn nav-btn"
-            onClick={handleNext}
-            disabled={!showAnswer}
+            onClick={handlePrevious}
+            disabled={currentQuestionIndex === 0}
           >
-            Next
+            Previous
           </button>
-        )}
+          {currentQuestionIndex === totalQuestions - 1 ? (
+            <button className="btn nav-btn submit-btn" onClick={handleSubmit}>
+              Submit
+            </button>
+          ) : (
+            <button
+              className="btn nav-btn"
+              onClick={handleNext}
+              disabled={!showAnswer}
+            >
+              Next
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

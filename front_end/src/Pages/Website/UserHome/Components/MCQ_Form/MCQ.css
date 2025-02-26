@@ -1,4 +1,13 @@
-
+.quiz-body {
+  background: #1e1e2f;
+  color: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .quiz-container {
   /* max-width: 800px; */
   margin: 40px auto;
