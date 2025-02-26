@@ -1,7 +1,7 @@
 import React from "react";
 import "../../Components/Topics CSS/topics.css";
 import Header from "../../Header/Header";
-import imagecourse from "../../assets/img/linux/linux_logo.png";
+import courseImage from "../../assets/img/linux/linux_logo.png";
 import background from "../../assets/img/linux/baner_lap.png";
 import Footer from "../../Footer/Footer";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
@@ -14,7 +14,7 @@ export default function Linux() {
       {/* Start Landing  */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Linux Fundamentals"
         courseDescription="Build a solid foundation in Linux, the operating system at the
                 core of many cybersecurity tools and infrastructures."

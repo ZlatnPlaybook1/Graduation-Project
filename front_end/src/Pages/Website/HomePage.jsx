@@ -8,8 +8,8 @@ import Landing from "./Landing/Landing";
 export default function HomePage() {
   return (
     <div
-      className="bg-round"
-      style={{ overflowX: "hidden", backgroundColor: "#262c36" }}
+      className="bg-round home__page--bg"
+      style={{ overflowX: "hidden" }}
     >
       <Preload />
       <Header />

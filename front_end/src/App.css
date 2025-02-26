@@ -1,7 +1,7 @@
 /* Updated Root */
 :root {
   --primary-bg: #0f0f0f;
-  --secondary-bg: #1b1b1bd0;
+  --secondary-bg: #2e2e2e;
   --faq-header: #212c42;
   --neon-red: #ff073a;
   --crimson-red: #dc143c;
@@ -140,4 +140,8 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.home__page--bg{
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
 }

@@ -1,8 +1,6 @@
-/* Dark theme background and font styling */
 
-/* Main quiz container with dark, creative style */
 .quiz-container {
-  max-width: 800px;
+  /* max-width: 800px; */
   margin: 40px auto;
   background: #2a2a3d;
   border-radius: 15px;

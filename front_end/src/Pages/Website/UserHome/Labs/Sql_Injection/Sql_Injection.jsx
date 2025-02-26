@@ -6,7 +6,7 @@ import background from "../../assets/img/SQL_Injection/bg.png";
 import courseImage from "../../assets/img/SQL_Injection/courseImage.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import tableImage from "../../assets/img/SQL_Injection/table.png";
-import LandingLab from "../../Components/LandingLab/LandingLab.jsx";
+import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import Banner from "../../Components/Banner/Banner.jsx";
 import "../Page_Styles/Content_sec.css"
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
@@ -21,7 +21,7 @@ export default function Sql_Injection() {
       <Banner />
       <Header />
       {/* Start Landing */}
-      <LandingLab
+      <CourseLanding
         background={background}
         backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
         courseImage={courseImage}

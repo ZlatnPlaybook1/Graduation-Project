@@ -8,12 +8,14 @@ const presets = {
     "--secondary-bg": "#1b1b1bd0",
     "--primary-text": "#ffffff",
     "--secondary-text": "#c4c2c2",
+    "--main-color": "#00e77f",
   },
   light: {
     "--primary-bg": "#ffffff", 
     "--secondary-bg": "#c4c2c2",
     "--primary-text": "#0f0f0f",
     "--secondary-text": "#1b1b1bd0",
+    "--main-color": "#00e77f",
   }
 };
 
@@ -89,7 +91,7 @@ function ThemeCustomizer() {
         ⚙️
       </button>
       {panelVisible && (
-        <div className="theme-panel">
+        <div className="theme-panel my-panal">
           <div className="preset-options">
             {Object.keys(presets).map((presetName) => (
               <button
