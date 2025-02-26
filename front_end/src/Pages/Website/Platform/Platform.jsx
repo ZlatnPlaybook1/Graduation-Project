@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./platform.css";
-import about1 from "../assets/img/core-img/about-2.png";
+import FaqSection0 from "../assets/img/core-img/Faq-Section0.jpg";
+import FaqSection1 from "../assets/img/core-img/Faq-Section1.jpg";
+import FaqSection2 from "../assets/img/core-img/Faq-Section2.jpg";
+import FaqSection3 from "../assets/img/core-img/Faq-Section3.jpg";
+import FaqSection4 from "../assets/img/core-img/Faq-Section4.jpg";
 
 export default function Platform() {
   const [activeIndex, setActiveIndex] = useState(null);
-
-  const toggleFAQ = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
+  const [imageIndex, setImageIndex] = useState(0);
 
   const faqData = [
     {
@@ -24,45 +25,86 @@ export default function Platform() {
       question: "Why is this Platform important to me?",
       answer:
         "This platform is crucial for anyone looking to build a career in cybersecurity or strengthen their knowledge in protecting systems and networks from modern threats.",
-    }
+    },
+    {
+      question: "What are the most common cyber threats?",
+      answer:
+        "Common threats include phishing, ransomware, malware, social engineering, and denial-of-service attacks.",
+    },
   ];
-  
+
+  const faqImages = [
+    FaqSection0,
+    FaqSection1,
+    FaqSection2,
+    FaqSection3,
+    FaqSection4,
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setImageIndex((prevIndex) => (prevIndex + 1) % faqImages.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  });
+
+  const toggleFAQ = (index) => {
+    setActiveIndex(index === activeIndex ? null : index);
+  };
 
   return (
-    <div className="striples-bg">
-      <div className="platform section">
-        <div className="container">
-          <div className="section-row">
-            <div className="text">
-              <h2 className="first-header section-header">Our Platform FAQ</h2>
-              <h2 className="second-header">Frequently Asked Questions</h2>
+    <div className="our-faqs home-our-faqs">
+      <div className="container">
+        <div className="section-title text-center">
+          <h3 className="faq-text-h3">Our Platform FAQ</h3>
+          <h2 className="faq-text-h2" data-wow-delay="0.2s">
+            Cybersecurity questions answered clearly
+          </h2>
+        </div>
+
+        <div className="row">
+          {/* Left Image Section */}
+          <div className="col-lg-6">
+            <div className="faq-image-container text-center">
+              <img
+                src={faqImages[imageIndex]}
+                alt="FAQ Section"
+                className="faq-image img-fluid"
+              />
             </div>
           </div>
-          <div className="faq-section">
-            <div className="image">
-              <img src={about1} alt="About" />
+
+          {/* Right FAQ Section */}
+          <div className="col-lg-6">
+            <div className="faq-section">
+              <div className="faq-accordion">
+                {faqData.map((faq, index) => (
+                  <div key={index} className="accordion-item">
+                    <h2 className="accordion-header">
+                      <button
+                        className={`accordion-button ${
+                          activeIndex === index ? "" : "collapsed"
+                        }`}
+                        type="button"
+                        onClick={() => toggleFAQ(index)}
+                      >
+                        {faq.question}
+                      </button>
+                    </h2>
+                    <div
+                      className={`accordion-collapse collapse ${
+                        activeIndex === index ? "show" : ""
+                      }`}
+                    >
+                      <div className="accordion-body">
+                        <p>{faq.answer}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <dl className="section-text">
-              {faqData.map((faq, index) => (
-                <div key={index} className="faq-item">
-                  <dt
-                    className={`wavee faq-header ${
-                      activeIndex === index ? "active" : ""
-                    }`}
-                    onClick={() => toggleFAQ(index)}
-                  >
-                    {faq.question}
-                  </dt>
-                  <dd
-                    className={`faq-body ${
-                      activeIndex === index ? "active" : ""
-                    }`}
-                  >
-                    <p>{faq.answer}</p>
-                  </dd>
-                </div>
-              ))}
-            </dl>
           </div>
         </div>
       </div>
