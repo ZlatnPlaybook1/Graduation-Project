@@ -22,9 +22,13 @@ export default function BurpSuitDescriptions() {
 
     const fetchWallpaperDetails = async () => {
       try {
-        const response = await fetch(
-          `http://127.0.0.1:8080/api/burpsuitelab3/${id}`
-        );
+        const response = await fetch(`http://127.0.0.1:8080/api/burpsuitelab3/${id}`, {
+          headers: {
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache",
+          }
+        });
+        
         if (!response.ok) {
           throw new Error("Failed to fetch wallpaper details");
         }
