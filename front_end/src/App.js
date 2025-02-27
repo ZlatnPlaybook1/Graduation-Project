@@ -15,7 +15,7 @@ import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
 import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
-// import Contact from "./Pages/Website/Contact/Contact.jsx";
+import Contact from "./Pages/Website/Contact/Contact.jsx";
 import SQL_INJECTION from "./Pages/Website/UserHome/Labs/Sql_Injection/Sql_Injection.jsx";
 import SQLInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/SQLInjection_labs.jsx";
 import LoginSqlInjection from "./Pages/Website/UserHome/Labs/Sql_Injection/practical/first_lab/LoginSqlInjection.jsx";
@@ -302,7 +302,7 @@ function App() {
         <Route path="/authenticate" element={<Authincate />} />
         {/* </Route> */}
         <Route path="/*" element={<Error404 />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
+        <Route path="/contact" element={<Contact />} />
         {/* Home - Labs - Routes */}
         <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
           <Route path="/home" element={<UserHome />} />
@@ -1035,7 +1035,10 @@ function App() {
           <Route path="/SSTI" element={<SSTI />} />
           <Route path="/SSTI/SSTI_lab" element={<SSTI_LAB />} />
           <Route path="ssti/ssti_lab/SSTIlab2/blog" element={<Blog />} />
-          <Route path="ssti/ssti_lab/SSTIlab2/blog/blog-item" element={<BLOG_ITEM />} />
+          <Route
+            path="ssti/ssti_lab/SSTIlab2/blog/blog-item"
+            element={<BLOG_ITEM />}
+          />
           <Route path="ssti/ssti_lab/SSTIlab1/store" element={<SSTI_STORE />} />
           {/* End SSTI */}
           {/* Start CaptchaBypass */}

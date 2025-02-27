@@ -44,7 +44,7 @@ const HeaderHome = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) { 
+      if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -76,7 +76,9 @@ const HeaderHome = () => {
             />
           </button>
           <div
-            className={`collapse navbar-collapse ${isDropdownOpen ? "show" : ""}`}
+            className={`collapse navbar-collapse ${
+              isDropdownOpen ? "show" : ""
+            }`}
             id="main-navbar"
           >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -102,9 +104,12 @@ const HeaderHome = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#contact">
+                <NavLink className="nav-link" to="/contact">
                   Contact
-                </a>
+                </NavLink>
+                {/* <a className="nav-link" href="../Contact/Contact.jsx">
+                  Contact
+                </a> */}
               </li>
             </ul>
             {token ? (

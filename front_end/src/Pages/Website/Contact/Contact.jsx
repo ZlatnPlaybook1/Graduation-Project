@@ -1,178 +1,193 @@
-// Contact.jsx
 import React from "react";
-import {
-  FaMapMarkerAlt,
-  FaPhone,
-  FaEnvelope,
-  FaTwitter,
-  FaFacebookF,
-  FaYoutube,
-} from "react-icons/fa";
-
-const ContactDetails = () => {
-  const contactInfo = [
-    {
-      icon: <FaMapMarkerAlt />,
-      label: "My office:",
-      value: "123 Street, New York, USA",
-    },
-    {
-      icon: <FaPhone />,
-      label: "Call me:",
-      value: "+012 345 6789",
-    },
-    {
-      icon: <FaEnvelope />,
-      label: "Mail me:",
-      value: "info@example.com",
-    },
-  ];
-
-  const socialMediaIcons = [
-    <FaTwitter key="twitter" />,
-    <FaFacebookF key="facebook" />,
-    <FaYoutube key="youtube" />,
-  ];
-
-  return (
-    <div className="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-      {contactInfo.map((info, index) => (
-        <React.Fragment key={index}>
-          <p className="mb-2">{info.label}</p>
-          <h3 className="fw-bold">
-            {info.icon} {info.value}
-          </h3>
-          <hr className="w-100" />
-        </React.Fragment>
-      ))}
-      <p className="mb-2">Follow me:</p>
-      <div className="d-flex pt-2">
-        {socialMediaIcons.map((icon, index) => (
-          <a key={index} className="btn btn-square btn-primary me-2" href="">
-            {icon}
-          </a>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const Form = () => {
-  return (
-    <div className="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-      <p className="mb-4">
-        The contact form is currently inactive. Get a functional and working
-        contact form with Ajax &amp; PHP in a few minutes. Just copy and paste
-        the files, add a little code and you&apos;re done.{" "}
-        <a href="https://htmlcodex.com/contact-form">Download Now</a>.
-      </p>
-      <form>
-        <div className="row g-3">
-          <div className="col-md-6">
-            <div className="form-floating">
-              <input
-                type="text"
-                className="form-control"
-                id="firstName"
-                placeholder="Your First Name"
-                required
-              />
-              <label htmlFor="firstName">Your First Name</label>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-floating">
-              <input
-                type="text"
-                className="form-control"
-                id="lastName"
-                placeholder="Your Last Name"
-                required
-              />
-              <label htmlFor="lastName">Your Last Name</label>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-floating">
-              <input
-                type="email"
-                className="form-control"
-                id="email"
-                placeholder="Your Email"
-                required
-              />
-              <label htmlFor="email">Your Email</label>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-floating">
-              <input
-                type="tel"
-                className="form-control"
-                id="phone"
-                placeholder="Your Phone Number"
-                required
-              />
-              <label htmlFor="phone">Your Phone Number</label>
-            </div>
-          </div>
-          <div className="col-12">
-            <div className="form-floating">
-              <input
-                type="text"
-                className="form-control"
-                id="subject"
-                placeholder="Subject"
-                required
-              />
-              <label htmlFor="subject">Subject</label>
-            </div>
-          </div>
-          <div className="col-12">
-            <div className="form-floating">
-              <textarea
-                className="form-control"
-                placeholder="Leave a message here"
-                id="message"
-                style={{ height: 100 }}
-                required
-              />
-              <label htmlFor="message">Message</label>
-            </div>
-          </div>
-          <div className="col-12">
-            <button className="btn btn-primary py-3 px-5" type="submit">
-              Send Message
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  );
-};
+import Header from "../Header/HeaderHome";
+import Footer from "../Footer/FooterHome";
+import phoneIcon from "./icon-phone-accent.svg";
+import mailIcon from "./icon-mail-accent.svg";
+import locationIcon from "./icon-location.svg";
+import "./Contact.css";
 
 const Contact = () => {
   return (
-    <div>
-      <div className="container-xxl pb-5" id="contact">
-        <div className="container py-5">
-          <div className="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div className="col-lg-6">
-              <h1 className="display-5 mb-0">Let&apos;s Work Together</h1>
+    <>
+      <Header />
+      <div className="page-header parallaxie">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-12">
+              <div className="page-header-box">
+                <h1>Contact us</h1>
+                <nav>
+                  <ol className="breadcrumb">
+                    <li className="breadcrumb-item">
+                      <a href="/">home</a>
+                    </li>
+                    <li className="breadcrumb-item active" aria-current="page">
+                      contact us
+                    </li>
+                  </ol>
+                </nav>
+              </div>
             </div>
-            <div className="col-lg-6 text-lg-end">
-              <a className="btn btn-primary py-3 px-5" href="">
-                Say Hello
-              </a>
-            </div>
-          </div>
-          <div className="row g-5">
-            <ContactDetails />
-            <Form />
           </div>
         </div>
       </div>
-    </div>
+
+      <div className="page-contact-us">
+        <div className="container">
+          <div className="row section-row">
+            <div className="col-lg-12">
+              <div className="section-title">
+                <h3>contact us</h3>
+                <h2>
+                  Do you have questions? <span>ask us anytime</span>
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="page-contact-box parallaxie">
+                <div className="contact-info-list">
+                  <div className="contact-info-item">
+                    <div className="icon-box">
+                      <img src={phoneIcon} alt="Phone Icon" />
+                    </div>
+                    <div className="contact-info-content">
+                      <h3>contact us</h3>
+                      <p>
+                        <a href="tel:+91123456789">+20 127 894 3656</a>
+                      </p>
+                      <p>
+                        <a href="tel:+91123456789">+15 557 265 387</a>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="contact-info-item">
+                    <div className="icon-box">
+                      <img src={mailIcon} alt="Mail Icon" />
+                    </div>
+                    <div className="contact-info-content">
+                      <h3>e-mail us</h3>
+                      <p>
+                        <a href="mailto:infodomainname@gmail.com">
+                          as4349124@gmail.com
+                        </a>
+                      </p>
+                      <p>
+                        <a href="mailto:domainname@gmail.com">
+                          as43491241@gmail.com
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="contact-info-item">
+                    <div className="icon-box">
+                      <img src={locationIcon} alt="Location Icon" />
+                    </div>
+                    <div className="contact-info-content">
+                      <h3>our location</h3>
+                      <p>12345 Unity Avenue Suite 100 Springfield, USA 54321</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="contact-us-form">
+                  <div className="section-title dark-section">
+                    <h2>Get in touch with us</h2>
+                  </div>
+
+                  <div className="member-contact-form contact-form">
+                    <form id="contactForm" action="#" method="POST">
+                      <div className="row">
+                        <div className="form-group col-md-6 mb-4">
+                          <input
+                            type="text"
+                            name="fname"
+                            className="form-control"
+                            placeholder="First name"
+                            required
+                          />
+                        </div>
+
+                        <div className="form-group col-md-6 mb-4">
+                          <input
+                            type="text"
+                            name="lname"
+                            className="form-control"
+                            placeholder="Last name"
+                            required
+                          />
+                        </div>
+
+                        <div className="form-group col-md-6 mb-4">
+                          <input
+                            type="text"
+                            name="phone"
+                            className="form-control"
+                            placeholder="Enter Your Phone No."
+                            required
+                          />
+                        </div>
+
+                        <div className="form-group col-md-6 mb-4">
+                          <input
+                            type="email"
+                            name="email"
+                            className="form-control"
+                            placeholder="Enter Your E-mail"
+                            required
+                          />
+                        </div>
+
+                        <div className="form-group col-md-12 mb-5">
+                          <textarea
+                            name="message"
+                            className="form-control"
+                            rows="4"
+                            placeholder="Write Message"
+                          ></textarea>
+                        </div>
+
+                        <div className="col-md-12">
+                          <button
+                            type="submit"
+                            className="btn-default btn-highlighted"
+                          >
+                            <span>submit message</span>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="google-map">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="google-map-iframe">
+                <iframe
+                  title="Google Map Location"
+                  src="https://www.google.com/maps/embed?..."
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 
