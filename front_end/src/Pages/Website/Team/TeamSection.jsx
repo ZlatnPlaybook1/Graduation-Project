@@ -2,6 +2,7 @@ import React from "react";
 import "./team.css";
 import image1 from "../assets/img/team-img/member1.jpg";
 import imageButen from "../assets/img/team-img/Buten.jpg";
+import Mo from "../assets/img/team-img/carousel_avater5.png";
 const teamMembers = [
   {
     id: 1,
@@ -44,7 +45,7 @@ const teamMembers = [
     name: "M'omen Mustafa",
     role: "Backend Developer",
     department: "Backend",
-    image: image1,
+    image: Mo,
     links: {
       fb: "https://www.facebook.com/",
       twit: "https://www.twitter.com/",
