@@ -22,7 +22,7 @@ export default function BrokenAuthenticationLab() {
               link={"/broken-auth/Broken_Authentication_Lab/lab1"}
               image={Auth_Photo}
               title={"Brute Force 1"}
-              brief={"Find the password of the admin"}
+              brief={"Can you find the correct password?"}
               difficulty={"Easy"}
             />
             {/* lab2 */}
@@ -31,7 +31,7 @@ export default function BrokenAuthenticationLab() {
               image={Auth_Photo}
               title={"Brute Force 2"}
               brief={
-                "Developers forgot to add exit function when redirecting. Good luck!"
+                "Can you find the correct username and password?"
               }
               difficulty={"Easy"}
             />
@@ -41,8 +41,7 @@ export default function BrokenAuthenticationLab() {
               image={Auth_Photo}
               title={"No Redirect"}
               brief={
-                "Developers forgot to add exit function when redirecting. Good luck!"
-              }
+                "Can you bypass the login?"}
               difficulty={"Easy"}
             />
           </div>
