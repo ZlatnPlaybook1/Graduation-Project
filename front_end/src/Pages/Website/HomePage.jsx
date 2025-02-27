@@ -2,7 +2,7 @@ import Preload from "./Preload/Preload";
 import Header from "./Header/HeaderHome";
 import Services from "./Services/Services";
 import Platform from "./Platform/Platform";
-import Team from "./Team/Team";
+import Team from "./Team/TeamSection";
 import Footer from "./Footer/FooterHome";
 import HomeLanding from "./HomeLanding/HomeLanding";
 import Go2TopBtn from "./UserHome/Components/Go2Top_Btn/Go2Top_Btn";
