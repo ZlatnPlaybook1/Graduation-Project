@@ -233,7 +233,7 @@ const MCQQuiz = ({ questionsData }) => {
         <div className="quiz-container welcome">
           <h2>Welcome to the Quiz!</h2>
           <button
-            className="btn start-btn"
+            className="mcq-btn start-btn"
             onClick={() => {
               ShowInitialAlert(() => setQuizStarted(true));
             }}
@@ -306,19 +306,19 @@ const MCQQuiz = ({ questionsData }) => {
         {/* Navigation Buttons */}
         <div className="navigation-buttons">
           <button
-            className="btn nav-btn"
+            className="mcq-btn nav-btn"
             onClick={handlePrevious}
             disabled={currentQuestionIndex === 0}
           >
             Previous
           </button>
           {currentQuestionIndex === totalQuestions - 1 ? (
-            <button className="btn nav-btn submit-btn" onClick={handleSubmit}>
+            <button className="mcq-btn nav-btn submit-btn" onClick={handleSubmit}>
               Submit
             </button>
           ) : (
             <button
-              className="btn nav-btn"
+              className="mcq-btn nav-btn"
               onClick={handleNext}
               disabled={!showAnswer}
             >

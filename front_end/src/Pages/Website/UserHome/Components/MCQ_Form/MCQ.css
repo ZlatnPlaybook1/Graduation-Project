@@ -126,7 +126,7 @@ h2 {
 }
 
 /* Button styles */
-.btn {
+.mcq-btn {
   background: #bb86fc;
   color: #1e1e2f;
   border: none;
@@ -137,12 +137,12 @@ h2 {
   transition: background 0.3s, transform 0.2s;
 }
 
-.btn:hover {
+.mcq-btn:hover {
   background: #9a67ea;
   transform: translateY(-2px);
 }
 
-.btn:disabled {
+.mcq-btn:disabled {
   background: #555;
   cursor: not-allowed;
 }
