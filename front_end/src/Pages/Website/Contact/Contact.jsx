@@ -176,11 +176,12 @@ const Contact = () => {
               <div className="google-map-iframe">
                 <iframe
                   title="Google Map Location"
-                  src="https://www.google.com/maps/embed?..."
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3438.683131312215!2d30.928948424793457!3d30.473411974710334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14587e447c6fc38b%3A0xc47ca8046df9b6d6!2sEMATECH!5e0!3m2!1sar!2seg!4v1740655745370!5m2!1sar!2seg"
+                  style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+                />
               </div>
             </div>
           </div>
