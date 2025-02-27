@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import "../../Components/Topics CSS/topics.css";
+// import "../../Components/Topics CSS/topics.css";
 import background from "../../assets/img/ACV/background.png";
 import courseImage from "../../assets/img/ACV/courseImage.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
@@ -34,7 +34,7 @@ export default function AC_Vuln() {
       {/* End Landing */}
       {/* Start Course */}
       <div className="Content">
-        <div className="secure-container" ref={faqSectionRef}>
+        <div className="secure-container" ref={faqSectionRef} >
           <div className="content-row">
             <div className="content-section">
               <dl className="topics-text">

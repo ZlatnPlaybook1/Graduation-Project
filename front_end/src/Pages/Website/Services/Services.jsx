@@ -1,7 +1,6 @@
 import React from 'react';
 import './services.css';
 
-// Single service card component
 const ServiceCard = ({ iconClass, title, description, path, color }) => {
   return (
     <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-4">
@@ -23,29 +22,28 @@ const ServiceCard = ({ iconClass, title, description, path, color }) => {
   );
 };
 
-// Services section component with header
 const ServicesSection = () => {
   const servicesData = [
     {
-      iconClass: 'fa fa-shield-alt', // Cybersecurity Fundamentals
+      iconClass: 'fa fa-shield-alt', 
       title: 'Cybersecurity Fundamentals',
       description: 'Learn key concepts and best practices for cybersecurity.',
       path: '/cybersecurity-fundamentals',
-      color: '#007BFF', // Blue
+      color: '#007BFF', 
     },
     {
-      iconClass: 'fa fa-network-wired', // Network Security
+      iconClass: 'fa fa-network-wired', 
       title: 'Network Security',
       description: 'Master techniques to protect and monitor networks.',
       path: '/network-security',
-      color: '#28a745', // Green
+      color: '#28a745', 
     },
     {
-      iconClass: 'fa fa-exclamation-triangle', // Threat Detection & Response
+      iconClass: 'fa fa-exclamation-triangle', 
       title: 'Threat Detection & Response',
       description: 'Identify and counter security threats effectively.',
       path: '/threat-detection-response',
-      color: '#dc3545', // Red
+      color: '#dc3545', 
     },
     {
       iconClass: 'fa fa-user-secret', // Ethical Hacking & Pen Testing
@@ -72,7 +70,7 @@ const ServicesSection = () => {
 
   return (
     <section className="services">
-      <div className="container py-5">
+      <div className="container py-5"> 
         <div className="services__header text-center mb-5">
           <h2 className="services__header__title">Our Cybersecurity Learning Pathways</h2>
           <h4 className="services__header__subtitle">Explore Our Courses</h4>
