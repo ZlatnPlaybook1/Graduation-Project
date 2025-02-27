@@ -101,15 +101,13 @@ a {
   color: inherit;
   
 }
-ul {
+ul li{
   list-style: none;
 }
 body {
   overflow-x: hidden;
 }
-li {
-  list-style: none;
-}
+
 .flex {
   display: flex;
   align-items: center;
