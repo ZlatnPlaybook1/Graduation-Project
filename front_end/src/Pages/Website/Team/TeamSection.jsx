@@ -1,46 +1,95 @@
-import React from 'react';
-import './team.css';
-import image1 from '../assets/img/team-img/member1.jpg';
+import React from "react";
+import "./team.css";
+import image1 from "../assets/img/team-img/member1.jpg";
+import imageButen from "../assets/img/team-img/Buten.jpg";
 const teamMembers = [
   {
-    id: 1, name: "A7med Hussien", role: "Full Stack Developer", department: "Frontend", image: image1, links: {
+    id: 1,
+    name: "A7med Hussien",
+    role: "Full Stack Developer",
+    department: "Frontend",
+    image: image1,
+    links: {
       fb: "https://www.facebook.com/",
       twit: "https://www.twitter.com/",
-      linkedin: "https://www.linkedin.com/"
-   } },
-  { id: 2, name: "Ahmed Sherif", role: "Frontend Developer", department: "Frontend", image: image1, links: {
+      linkedin: "https://www.linkedin.com/",
+    },
+  },
+  {
+    id: 2,
+    name: "Ahmed Sherif",
+    role: "Frontend Developer",
+    department: "Frontend",
+    image: imageButen,
+    links: {
       fb: "https://www.facebook.com/",
       twit: "https://www.twitter.com/",
-      linkedin: "https://www.linkedin.com/"
-   } },
-  { id: 3, name: "Ebrahiem Gamal", role: "Frontend Developer", department: "Frontend",image: image1, links: {
+      linkedin: "https://www.linkedin.com/",
+    },
+  },
+  {
+    id: 3,
+    name: "Ebrahiem Gamal",
+    role: "Frontend Developer",
+    department: "Frontend",
+    image: image1,
+    links: {
       fb: "https://www.facebook.com/",
       twit: "https://www.twitter.com/",
-      linkedin: "https://www.linkedin.com/"
-   } },
-  { id: 4, name: "M'omen Mustafa", role: "Backend Developer", department: "Backend", image: image1, links: {
+      linkedin: "https://www.linkedin.com/",
+    },
+  },
+  {
+    id: 4,
+    name: "M'omen Mustafa",
+    role: "Backend Developer",
+    department: "Backend",
+    image: image1,
+    links: {
       fb: "https://www.facebook.com/",
       twit: "https://www.twitter.com/",
-      linkedin: "https://www.linkedin.com/"
-   } },
-  { id: 5, name: "Ebrahim Nassar", role: "Cyber Security Specialist", department: "Cyber" ,image: image1, links: {
+      linkedin: "https://www.linkedin.com/",
+    },
+  },
+  {
+    id: 5,
+    name: "Ebrahim Nassar",
+    role: "Cyber Security Specialist",
+    department: "Cyber",
+    image: image1,
+    links: {
       fb: "https://www.facebook.com/",
       twit: "https://www.twitter.com/",
-      linkedin: "https://www.linkedin.com/"
-   } },
-  { id: 6, name: "Ahmed Rdwan", role: "Cyber Security Specialist", department: "Cyber" ,image: image1, links: {
+      linkedin: "https://www.linkedin.com/",
+    },
+  },
+  {
+    id: 6,
+    name: "Ahmed Rdwan",
+    role: "Cyber Security Specialist",
+    department: "Cyber",
+    image: image1,
+    links: {
       fb: "https://www.facebook.com/",
       twit: "https://www.twitter.com/",
-      linkedin: "https://www.linkedin.com/"
-   } },
-  { id: 7, name: "Mohamed Emad", role: "Cyber Security Specialist", department: "Cyber",image: image1, links: {
+      linkedin: "https://www.linkedin.com/",
+    },
+  },
+  {
+    id: 7,
+    name: "Mohamed Emad",
+    role: "Cyber Security Specialist",
+    department: "Cyber",
+    image: image1,
+    links: {
       fb: "https://www.facebook.com/",
       twit: "https://www.twitter.com/",
-      linkedin: "https://www.linkedin.com/"
-   } },
+      linkedin: "https://www.linkedin.com/",
+    },
+  },
 ];
 
-const departments = ["Cyber","Frontend", "Backend"];
+const departments = ["Cyber", "Frontend", "Backend"];
 
 const TeamSection = () => {
   return (
@@ -48,41 +97,48 @@ const TeamSection = () => {
       <div className="container">
         <h2 className="team-section__title text-center mb-5">Our Team</h2>
         {departments.map((dept) => {
-          const deptMembers = teamMembers.filter(member => member.department === dept);
+          const deptMembers = teamMembers.filter(
+            (member) => member.department === dept
+          );
           return (
             <div key={dept} className="team-section__department mb-5">
-              <h3 className="team-section__department-title text-center mb-4">{dept} Team</h3>
+              <h3 className="team-section__department-title text-center mb-4">
+                {dept} Team
+              </h3>
 
               <div className="row justify-content-center gap-5 ">
-                {deptMembers.map(member => (
-                  <div key={member.id} className="col-md-4 col-sm-6 mb-4 team-section__member-wrapper  team-section__member card bg-transparent col-md-4 col-sm-6 mb-4">
+                {deptMembers.map((member) => (
+                  <div
+                    key={member.id}
+                    className="col-md-4 col-sm-6 mb-4 team-section__member-wrapper  team-section__member card bg-transparent col-md-4 col-sm-6 mb-4"
+                  >
                     {/* <div className="team-section__member card bg-transparent col-md-4 col-sm-6 mb-4"> */}
-                      <div className="team-section__member-img card-img-top">
-                        <img 
-                        // src="https://bit.ly/3kPjqKZ" 
+                    <div className="team-section__member-img card-img-top">
+                      <img
+                        // src="https://bit.ly/3kPjqKZ"
                         src={member.image}
-                          alt={member.name} 
-                          className="img-fluid" 
-                        />
+                        alt={member.name}
+                        className="img-fluid"
+                      />
+                    </div>
+                    <div className="team-section__member-content card-body text-center">
+                      <h4 className="team-section__member-name card-title">
+                        {member.name} <br />
+                        <span className="team-section__member-role card-text">
+                          {member.role}
+                        </span>
+                      </h4>
+                      <div className="team-section__member-social">
+                        <a href={member.links.fb} className="mx-2">
+                          <i className="fab fa-facebook-f"></i>
+                        </a>
+                        <a href={member.links.twit} className="mx-2">
+                          <i className="fab fa-twitter"></i>
+                        </a>
+                        <a href={member.links.linkedin} className="mx-2">
+                          <i className="fab fa-linkedin-in"></i>
+                        </a>
                       </div>
-                      <div className="team-section__member-content card-body text-center">
-                        <h4 className="team-section__member-name card-title">{member.name} <br />
-                        <span className="team-section__member-role card-text">{member.role}</span></h4>
-                        <div className="team-section__member-social">
-                          <a href={member.links.fb} className="mx-2">
-                            <i className="fab fa-facebook-f"></i>
-                          </a>
-                        <a href={
-                          member.links.twit
-                          } className="mx-2">
-                            <i className="fab fa-twitter"></i>
-                          </a>
-                        <a href={
-                          member.links.linkedin
-                          } className="mx-2">
-                            <i className="fab fa-linkedin-in"></i>
-                          </a>
-                        </div>
                       {/* </div> */}
                     </div>
                   </div>
