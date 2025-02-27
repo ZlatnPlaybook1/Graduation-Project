@@ -88,7 +88,7 @@ export default function ShoppingCart() {
   return (
     <>
       <GoBack />
-      <ShowHint hintText="Use the provided coupon code to get a discount!" />
+      <ShowHint hintText="Use Repeater to send the same coupon request multiple times." />
       <div className="cart-center">
         <div className="shopping-cart">
           <div className="info-bar">

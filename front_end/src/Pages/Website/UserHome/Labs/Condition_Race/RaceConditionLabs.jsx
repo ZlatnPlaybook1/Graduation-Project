@@ -23,9 +23,9 @@ export default function RaceConditionLabs() {
             <Card
               link={"/Race_Condition/Race_Condition_Labs/Lab1"}
               image={Auth_Photo}
-              title={"Race Condition in the registration form"}
+              title={"Race Attack: Multi-Accounts, One Email"}
               brief={
-                "When ‘user’ isn’t enough—forge the cookie and become admin"
+                "Exploit a race condition to create multiple accounts using the same email. Bypass validation, break logic, and understand why timing is critical in security."
               }
               difficulty={"Easy"}
             />
@@ -33,9 +33,9 @@ export default function RaceConditionLabs() {
             <Card
               link={"/Race_Condition/Race_Condition_Labs/Lab2"}
               image={Auth_Photo}
-              title={"Discount Code Aoolication in Shopping Cart"}
+              title={"Race Attack: One Coupon, Infinite Uses"}
               brief={
-                "A lab where cookies aren’t snacks… they’re keys to admin power."
+                "Exploit a race condition to reuse a single coupon multiple times. Break payment logic, drain resources, and understand why atomicity is crucial."
               }
               difficulty={"Easy"}
             />
