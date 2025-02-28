@@ -5,7 +5,6 @@ import lab_Cover from "../../assets/img/Cross_Site_Scripting/labs_cover.jpg";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
-
 export default function XSS_lab() {
   return (
     <>
@@ -16,8 +15,12 @@ export default function XSS_lab() {
       {/* Start Courses  */}
       <div class="course">
         <div class="container">
-          <h2>XSS Labs</h2>
-          <p class="section-p">Test Your Hacking skills</p>
+          <div className="width-text">
+            <div class="labs-section-text">
+              <h2>XSS Labs</h2>
+              <p class="section-p">Test Your Hacking Skills</p>
+            </div>
+          </div>
           <div class="row">
             {/* lab1 */}
             <Card
