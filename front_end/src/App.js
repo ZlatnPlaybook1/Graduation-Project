@@ -13,7 +13,7 @@ import Writer from "./Pages/Dashboard/Writer/Writer.jsx";
 import Error404 from "./Pages/Auth/Page-404/404.jsx";
 import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
-import Aboutus from "./Pages/Dashboard/AboutUs/Aboutus.jsx";
+import PlatformInfo from "./Pages/Dashboard/AboutUs/PlatformInfo.jsx";
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Contact from "./Pages/Website/Contact/Contact.jsx";
 import SQL_INJECTION from "./Pages/Website/UserHome/Labs/Sql_Injection/Sql_Injection.jsx";
@@ -289,6 +289,7 @@ import RaceConditionLabs from "./Pages/Website/UserHome/Labs/Condition_Race/Race
 import RaceConditionInRegister from "./Pages/Website/UserHome/Labs/Condition_Race/Practical/Lab1/RC_In_Register.jsx";
 import ViewRegistes from "./Pages/Website/UserHome/Labs/Condition_Race/Practical/Lab1/ViewRegistes.jsx";
 import ShoppingCart from "./Pages/Website/UserHome/Labs/Condition_Race/Practical/Lab2/ShoppingCart.jsx";
+import AboutUs from "./Pages/Website/AboutUs/AboutUs.jsx";
 
 function App() {
   return (
@@ -303,6 +304,7 @@ function App() {
         {/* </Route> */}
         <Route path="/*" element={<Error404 />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about-us" element={<AboutUs />} />
         {/* Home - Labs - Routes */}
         <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
           <Route path="/home" element={<UserHome />} />
@@ -1117,7 +1119,7 @@ function App() {
             <Route element={<RequierAuth allowedRole={["writer", "admin"]} />}>
               <Route path="personal-information" element={<Writer />} />
               <Route path="settings" element={<Settings />} />
-              <Route path="about" element={<Aboutus />} />
+              <Route path="Platform-information" element={<PlatformInfo />} />
             </Route>
           </Route>
         </Route>

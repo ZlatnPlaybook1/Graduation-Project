@@ -1,7 +1,7 @@
 import React from "react";
-import "./Aboutus.css";
+import "./PlatformInfo.css";
 
-export default function AboutUs() {
+export default function PlatformInfo() {
   return (
     <div className="aboutus-container">
       <h1>About Our Cybersecurity Learning Platform</h1>

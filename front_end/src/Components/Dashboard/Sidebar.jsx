@@ -170,7 +170,7 @@ const Sidebar = () => {
                   </span>
                 </NavLink>
                 <NavLink
-                  to="/dashboard/about"
+                  to="/dashboard/Platform-information"
                   className="navlink active side-bar-link"
                 >
                   <FontAwesomeIcon
