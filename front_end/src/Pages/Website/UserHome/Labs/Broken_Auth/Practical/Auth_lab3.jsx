@@ -4,7 +4,7 @@ import GOBack from "../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 export default function Auth_lab3() {
-  const hintMessage = `<p>Add Something</p>`;
+  const hintMessage = `<p>The next badge is hidden somewhere after login. Try to locate and access it directly.</p>`;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");

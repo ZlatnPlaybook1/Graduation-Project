@@ -5,7 +5,7 @@ import GOBack from "../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
 
 export default function Auth_lab2() {
-  const hintMessage = `<p>Add Something</p>`;
+  const hintMessage = `<p>Use the wordlist in Burp Suite's Intruder to discover the correct username and password.</p>`;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
