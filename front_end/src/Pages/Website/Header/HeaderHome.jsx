@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Cookie from "cookie-universal";
 import axios from "axios";
-import SearchIcon from "../UserHome/Components/SearchIcon/SearchIcon";
 import Aos from "aos";
 const HeaderHome = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -98,7 +97,7 @@ const HeaderHome = () => {
               <li className="nav-item">
                 {token ? (
                   <NavLink className="nav-link" to="/home">
-                    Home Labs
+                    Learning
                   </NavLink>
                 ) : (
                   <NavLink className="nav-link" to="/home">
@@ -120,9 +119,7 @@ const HeaderHome = () => {
                 <NavLink className="nav-link" to="/contact">
                   Contact
                 </NavLink>
-                {/* <a className="nav-link" href="../Contact/Contact.jsx">
-                  Contact
-                </a> */}
+                
               </li>
             </ul>
 
