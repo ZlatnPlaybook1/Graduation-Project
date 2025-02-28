@@ -15,8 +15,12 @@ export default function UnrestrictedFileUploadLabs() {
       {/* Start Courses */}
       <div className="course">
         <div className="container">
-          <h2>Unrestricted File Upload Labs</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+          <div className="width-text">
+            <div class="labs-section-text">
+              <h2>Unrestricted File Upload Labs</h2>
+              <p class="section-p">Test Your Hacking Skills</p>
+            </div>
+          </div>
           <div className="row">
             {/* lab1 */}
             <Card
