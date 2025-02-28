@@ -6,10 +6,12 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import MenuContext from "./Context/MenuContext";
+import { GlobalSearchProvider } from "./Context/GlobalSearchContext";
 import WindowContext from "./Context/WindowContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <GlobalSearchProvider>
   <React.StrictMode>
     <WindowContext>
       <MenuContext>
@@ -18,5 +20,7 @@ root.render(
         </Router>
       </MenuContext>
     </WindowContext>
-  </React.StrictMode>
+    </React.StrictMode>
+  </GlobalSearchProvider>
+    
 );
