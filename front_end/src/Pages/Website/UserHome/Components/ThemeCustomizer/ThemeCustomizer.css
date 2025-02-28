@@ -1,7 +1,8 @@
 .theme-customizer {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  position: fixed;
+    z-index: 1;
+    right: 0;
+    top: 150px;
   z-index: 100;
   display: inline-block;
 }

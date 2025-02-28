@@ -1,159 +1,199 @@
-import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import "./Header.css";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Cookie from "cookie-universal";
-import logo from "../../assets/img/core-img/logo.png";
-import SearchIcon from "../Components/SearchIcon/SearchIcon";
-
+import axios from "axios";
+import SearchIcon from "../Components/SearchIcon/SearchIcon"; 
+import Aos from "aos";
 const Header = () => {
-  const [sidebarVisible, setSidebarVisible] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [profileListVisible, setProfileListVisible] = useState(false);
   const [userImage, setUserImage] = useState("");
-  const [userName, setUserName] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [searchTerm, setSearchTerm] = useState(""); 
 
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
-
-  const showSidebar = () => {
-    setSidebarVisible(true);
-  };
-
-  const hideSidebar = () => {
-    setSidebarVisible(false);
-  };
 
   const toggleProfileList = () => {
     setProfileListVisible(!profileListVisible);
   };
 
-  // Fetch the user profile data
+  const toggleNavbar = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
         const res = await axios.get("http://127.0.0.1:8080/api/personalInfo", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { Authorization: `Bearer ${token}` },
         });
-
         const data = res.data.data;
         const imageUrl = data.image
           ? `http://127.0.0.1:8080/${data.image.path.replace("\\", "/")}`
           : "";
-
         setUserImage(imageUrl);
-        setUserName(data.name); // Set the user's name
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
     };
-
-    fetchUserProfile();
+    if (token) fetchUserProfile();
   }, [token]);
 
-  async function handleLogout() {
-    try {
-      await axios.post(
-        "http://127.0.0.1:8080/api/logout",
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      cookie.remove("CuberWeb");
-      window.location.pathname = "/";
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+ useEffect(() => {
+      Aos.init({ duration: 1000 });
+    }, []);
   return (
-    <div className="header-home">
-      <div className="container">
-        <div className="row-home">
-          {/* Sidebar toggle button */}
-          <i className="fa-solid fa-bars" onClick={showSidebar}></i>
-          {/* Sidebar */}
-          <div
-            className={`sidebarr ${sidebarVisible ? "visible" : ""}`}
-            style={{ left: sidebarVisible ? 0 : "-100%" }}
+    <header
+      className={`header ${isScrolled ? "sticky" : ""}`}
+      data-aos="fade-down"
+      data-aos-duration="500"
+    >
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <div className={isScrolled ? "container" : "container-fluid"}>
+          {/* Logo */}
+          <Link className="navbar-brand header__logo" to="/">
+            <h2 className="header__logo-title">
+              Cyber <span>Labs</span>
+            </h2>
+          </Link>
+
+          {/* Toggler */}
+          <button
+            className="navbar-toggler"
+            type="button"
+            onClick={toggleNavbar}
+            aria-controls="main-navbar"
+            aria-expanded={isDropdownOpen}
+            aria-label="Toggle navigation"
           >
-            <div className="sidebar_links">
-              {/* Close button */}
-              <i className="fa-solid fa-xmark" onClick={hideSidebar}></i>
-              <NavLink to="/">
-                {/* Display user profile image or default logo */}
-                <img src={logo} alt="Logo" />
-              </NavLink>
-              <NavLink to="/home">
-                <i className="fa-solid fa-window-maximize"></i>Home
-              </NavLink>
-              <NavLink to="/learn">
-                <i className="fa-solid fa-book-open"></i>Learn
-              </NavLink>
-            </div>
-          </div>
+            <FontAwesomeIcon
+              icon={isDropdownOpen ? faXmark : faBars}
+              className="text-white"
+            />
+          </button>
 
-          {/* Logo and navigation links */}
-          <div className="logo_links">
-            <NavLink to="/">
-              {/* Display user profile image or default logo */}
-              <img src={logo} alt="Logo" />
-            </NavLink>
-            <NavLink to="/home">
-              <i className="fa-solid fa-window-maximize"></i>Home
-            </NavLink>
-            <NavLink to="/learn">
-              <i className="fa-solid fa-book-open"></i>Learn
-            </NavLink>
-          </div>
+          {/* Nav Links */}
+          <div
+            className={`collapse navbar-collapse ${
+              isDropdownOpen ? "show" : ""
+            }`}
+            id="main-navbar"
+          >
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+              <li className="nav-item">
+                <a className="nav-link" href="/">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                {token ? (
+                  <NavLink className="nav-link " to="/home">
+                    Learning
+                  </NavLink>
+                ) : (
+                  <NavLink className="nav-link" to="/">
+                    Learning
+                  </NavLink>
+                )}
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/about-us">
+                  About Us
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#learningPath">
+                  Learning Path
+                </a>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/contact">
+                  Contact
+                </NavLink>
+              </li>
 
-          {/* Profile section */}
-          <div className="profile_links">
-            <SearchIcon searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            <h3 className="name-profile">Hello! {userName}</h3>
-            <div className="profile-section">
-              <button className="profile" onClick={toggleProfileList}>
-                <img
-                  src={userImage || "../assets/img/profile.png"}
-                  alt="Profile"
-                />
-              </button>
+              {/* Search Icon for small screens - placed in dropdown area */}
+              <li className="nav-item dropdown-search-icon d-block d-md-none">
+                <SearchIcon searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+              </li>
+            </ul>
 
-              {/* Profile list dropdown */}
-              <div
-                className="profile_list"
-                style={{ display: profileListVisible ? "block" : "none" }}
-              >
-                <ul>
-                  <li>
-                    <NavLink to="/dashboard/personal-information">
-                      <i className="fas fa-user"></i> View Profile
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/dashboard/settings">
-                      <i className="fas fa-gear"></i> Manage Account
-                    </NavLink>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <NavLink onClick={handleLogout}>
-                      <i className="fas fa-right-from-bracket"></i> Log Out
-                    </NavLink>
-                  </li>
-                </ul>
+            {/* Right side (Search + Profile or Login/Register) */}
+            <div className="d-flex align-items-center gap-3">
+              {/* Search Icon for medium+ screens */}
+              <div className="search-icon-container d-none d-md-flex">
+                <SearchIcon searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
               </div>
+
+              {token ? (
+                <div className="header__profile">
+                  <button
+                    className="header__profile-btn"
+                    onClick={toggleProfileList}
+                  >
+                    {userImage ? (
+                      <img
+                        src={userImage}
+                        alt="Profile"
+                        className="rounded-circle"
+                        style={{ width: "50px", height: "50px" }}
+                      />
+                    ) : (
+                      <i className="fa-solid fa-user text-white"></i>
+                    )}
+                  </button>
+                  {profileListVisible && (
+                    <div className="header__profile-dropdown">
+                      <ul>
+                        <li>
+                          <NavLink
+                            to="/dashboard/personal-information"
+                            className="dropdown-item"
+                          >
+                            View Profile
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            to="/dashboard/settings"
+                            className="dropdown-item"
+                          >
+                            Manage Account
+                          </NavLink>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div className="d-flex gap-2">
+                  <Link to="/login" className="btn btn-outline-light">
+                    Login
+                  </Link>
+                  <Link to="/register" className="btn btn-success">
+                    Register
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 };
 
