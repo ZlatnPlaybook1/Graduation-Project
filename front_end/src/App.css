@@ -97,11 +97,10 @@ html {
   scroll-behavior: smooth;
 }
 a {
-  text-decoration: none!important;
+  text-decoration: none !important;
   color: inherit;
-  
 }
-ul li{
+ul li {
   list-style: none;
 }
 body {
@@ -146,7 +145,6 @@ body {
   color: var(--primary-text);
 }
 
-
 section,
 .section {
   color: var(--default-color);
@@ -157,7 +155,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 66px;
