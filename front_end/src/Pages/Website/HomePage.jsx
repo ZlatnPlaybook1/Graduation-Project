@@ -4,11 +4,11 @@ import CountsSection  from "./CountsSection/CountsSection";
 import Services from "./Services/Services";
 import Platform from "./Platform/Platform";
 import PopularCoursesSection from "./PopularCoursesSection/PopularCoursesSection";
-import Team from "./Team/TeamSection";
 import Footer from "./Footer/FooterHome";
 import HomeLanding from "./HomeLanding/HomeLanding";
 import TestimonialsSection from "./TestimonialsSection/TestimonialsSection";
 import Go2TopBtn from "./UserHome/Components/Go2Top_Btn/Go2Top_Btn";
+import ThemeSwitcher from "./UserHome/Components/ThemeSwitcher/ThemeSwitcher";
 export default function HomePage() {
   return (
     <div
@@ -16,6 +16,7 @@ export default function HomePage() {
       style={{ overflowX: "hidden", }}
     >
       <Go2TopBtn />
+      <ThemeSwitcher />
       <Preload />
       <Header />
       <HomeLanding />
