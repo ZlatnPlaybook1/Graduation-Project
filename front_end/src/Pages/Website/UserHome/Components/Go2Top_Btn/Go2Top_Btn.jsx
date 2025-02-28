@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Go2Top_Btn.css";
-
+import Aos from "aos";
 export default function Go2TopBtn() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -23,11 +23,14 @@ export default function Go2TopBtn() {
       window.removeEventListener("scroll", toggleVisibility);
     };
   }, []);
-
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <button
       className={`go-to-top-btn ${isVisible ? "show" : ""}`}
       onClick={scrollToTop}
+      data-aos="fade-up"
     >
       <i className="fas fa-arrow-up go-to-top-btn-icon"></i>
     </button>

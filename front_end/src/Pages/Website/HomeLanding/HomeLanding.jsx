@@ -6,7 +6,8 @@ import "./HomeLanding.css";
 const ParticlesComponent = () => {
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js";
+    script.src =
+      "https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js";
     script.async = true;
     script.onload = () => {
       if (window.particlesJS) {
@@ -14,30 +15,30 @@ const ParticlesComponent = () => {
           particles: {
             number: {
               value: 90,
-              density: { enable: true, value_area: 500 }
+              density: { enable: true, value_area: 500 },
             },
             color: { value: "#00e77f" },
             shape: {
               type: "circle",
               stroke: { width: 0, color: "#00e77f" },
-              polygon: { nb_sides: 5 }
+              polygon: { nb_sides: 5 },
             },
             opacity: {
               value: 0.5,
               random: false,
-              anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
+              anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
             },
             size: {
               value: 5,
               random: true,
-              anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
+              anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
             },
             line_linked: {
               enable: true,
               distance: 150,
               color: "#00e77f",
               opacity: 0.4,
-              width: 1
+              width: 1,
             },
             move: {
               enable: true,
@@ -46,25 +47,31 @@ const ParticlesComponent = () => {
               random: false,
               straight: false,
               out_mode: "out",
-              attract: { enable: false, rotateX: 600, rotateY: 1200 }
-            }
+              attract: { enable: false, rotateX: 600, rotateY: 1200 },
+            },
           },
           interactivity: {
             detect_on: "canvas",
             events: {
               onhover: { enable: true, mode: "repulse" },
               onclick: { enable: true, mode: "push" },
-              resize: true
+              resize: true,
             },
             modes: {
               grab: { distance: 400, line_linked: { opacity: 1 } },
-              bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+              bubble: {
+                distance: 400,
+                size: 40,
+                duration: 2,
+                opacity: 8,
+                speed: 3,
+              },
               repulse: { distance: 200 },
               push: { particles_nb: 4 },
-              remove: { particles_nb: 2 }
-            }
+              remove: { particles_nb: 2 },
+            },
           },
-          retina_detect: true
+          retina_detect: true,
         });
       }
     };
@@ -96,8 +103,8 @@ const ParticlesComponent = () => {
             </p>
 
             <div className="mt-4">
-              <Link to="#" className="btn btn-custom me-3 mb-2">
-                Discover Our Cybersecurity Courses
+              <Link to="#courses" className="btn btn-custom me-3 mb-2">
+                Discover Our Popular Courses
               </Link>
               <Link to="#" className="text-white fw-bold mb-2 d-inline-block">
                 <i className="fas fa-play me-2"></i>Watch Demo

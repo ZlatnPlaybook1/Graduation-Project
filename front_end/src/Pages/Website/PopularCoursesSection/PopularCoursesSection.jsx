@@ -1,22 +1,22 @@
-import React from 'react';
-import './PopularCoursesSection.css';
-import teamImage from '../assets/img/team-img/member1.jpg';
-import courseImage1 from '../UserHome/assets/img/bash/bash_course_logo.png'
-import courseImage2 from '../UserHome/assets/img/bash/bash_course_logo.png'
-import courseImage3 from '../UserHome/assets/img/bash/bash_course_logo.png'
-import Aos from 'aos';
+import React from "react";
+import "./PopularCoursesSection.css";
+import teamImage from "../assets/img/team-img/member1.jpg";
+import courseImage1 from "../UserHome/assets/img/bash/bash_course_logo.png";
+import courseImage2 from "../UserHome/assets/img/bash/bash_course_logo.png";
+import courseImage3 from "../UserHome/assets/img/bash/bash_course_logo.png";
+import Aos from "aos";
 const coursesData = [
   {
     id: 1,
-    category: 'Web Vulnerability',
-    price: 'free',
-    title: 'Business Logic Vulnerability',
+    category: "Web Vulnerability",
+    price: "free",
+    title: "Business Logic Vulnerability",
     description:
-      'Analyze business logic flaws, exploitation methods, and strategies for mitigation.',
+      "Analyze business logic flaws, exploitation methods, and strategies for mitigation.",
     image: courseImage1,
-    detailsLink: 'course-details.html',
+    detailsLink: "course-details.html",
     trainer: {
-      name: 'Smara ',
+      name: "Smara ",
       image: teamImage,
       userCount: 50,
       heartCount: 65,
@@ -25,15 +25,15 @@ const coursesData = [
   },
   {
     id: 2,
-    category: 'Fundamentals',
-    price: 'free',
-    title: 'Bash Scripting',
+    category: "Fundamentals",
+    price: "free",
+    title: "Bash Scripting",
     description:
-      'Develop efficient Bash scripts to automate tasks and system management.',
+      "Develop efficient Bash scripts to automate tasks and system management.",
     image: courseImage2,
-    detailsLink: 'course-details.html',
+    detailsLink: "course-details.html",
     trainer: {
-      name: 'Nsar',
+      name: "Nsar",
       image: teamImage,
       userCount: 35,
       heartCount: 42,
@@ -42,15 +42,15 @@ const coursesData = [
   },
   {
     id: 3,
-    category: 'Web Security',
-    price: '$180',
-    title: 'Cross Site Scripting',
+    category: "Web Security",
+    price: "$180",
+    title: "Cross Site Scripting",
     description:
-      'Understand CSRF attack vectors, mitigation techniques, and prevention best practices.',
+      "Understand CSRF attack vectors, mitigation techniques, and prevention best practices.",
     image: courseImage3,
-    detailsLink: 'course-details.html',
+    detailsLink: "course-details.html",
     trainer: {
-      name: ' Emad',
+      name: " Emad",
       image: teamImage,
       userCount: 20,
       heartCount: 85,
@@ -88,8 +88,16 @@ const PopularCoursesSection = () => {
                 />
                 <div className="popular-courses__item-content">
                   <div className="popular-courses__item-header d-flex justify-content-between align-items-center mb-3">
-                    <p className="popular-courses__item-category">{course.category}</p>
-                    <p className={`popular-courses__item-price ${course.price === 'free' ? 'free' : ''}`}>{course.price}</p>
+                    <p className="popular-courses__item-category">
+                      {course.category}
+                    </p>
+                    <p
+                      className={`popular-courses__item-price ${
+                        course.price === "free" ? "free" : ""
+                      }`}
+                    >
+                      {course.price}
+                    </p>
                   </div>
                   <h3 className="popular-courses__item-title">
                     <a
@@ -109,18 +117,20 @@ const PopularCoursesSection = () => {
                         alt={course.trainer.name}
                         className="popular-courses__item-trainer-image img-fluid"
                       />
-                      <a href="#" className="popular-courses__item-trainer-link">
+                      <a
+                        href="#"
+                        className="popular-courses__item-trainer-link"
+                      >
                         {course.trainer.name}
                       </a>
                     </div>
-                              <div className="popular-courses__item-trainer-rank d-flex align-items-center">
-  <i className="fa-regular fa-user popular-courses__item-trainer-icon popular-courses__item-trainer-icon--user"></i>
-  &nbsp;<span>{course.trainer.userCount}</span>
-  &nbsp;&nbsp;
-  <i className="fa-regular fa-heart popular-courses__item-trainer-icon popular-courses__item-trainer-icon--heart"></i>
-  &nbsp;<span>{course.trainer.heartCount}</span>
-</div>
-
+                    <div className="popular-courses__item-trainer-rank d-flex align-items-center">
+                      <i className="fa-regular fa-user popular-courses__item-trainer-icon popular-courses__item-trainer-icon--user"></i>
+                      &nbsp;<span>{course.trainer.userCount}</span>
+                      &nbsp;&nbsp;
+                      <i className="fa-regular fa-heart popular-courses__item-trainer-icon popular-courses__item-trainer-icon--heart"></i>
+                      &nbsp;<span>{course.trainer.heartCount}</span>
+                    </div>
                   </div>
                 </div>
               </div>

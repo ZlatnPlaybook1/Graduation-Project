@@ -85,7 +85,7 @@ const HeaderHome = () => {
               <li className="nav-item">
                 {token ? (
                   <NavLink className="nav-link" to="/home">
-                    Home Labs
+                    Learning
                   </NavLink>
                 ) : (
                   <NavLink className="nav-link" to="/">
@@ -99,17 +99,14 @@ const HeaderHome = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#learningPath">
-                  Learning Path
+                <a className="nav-link" href="#allLabs">
+                  All Labs
                 </a>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/contact">
                   Contact
                 </NavLink>
-                {/* <a className="nav-link" href="../Contact/Contact.jsx">
-                  Contact
-                </a> */}
               </li>
             </ul>
             {token ? (
