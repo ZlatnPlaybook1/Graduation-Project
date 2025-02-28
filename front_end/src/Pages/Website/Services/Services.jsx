@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './services.css';
+import Aos from 'aos';
 
 const ServiceCard = ({ iconClass, title, description, path, color }) => {
+  // Aos
+  useEffect(() => {
+      Aos.init({ duration: 1000 });
+    }, []);
   return (
-    <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-4">
-      <div className="services__card" style={{ '--clr': color }}>
+    <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-4" >
+      <div className="services__card" style={{ '--clr': color }} data-aos="zoom-in">
         <div className="services__card__content">
           <div className="services__card__icon">
             <i className={iconClass}></i>
@@ -69,19 +74,15 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="services">
-      <div className="container py-5"> 
-        <div className="services__header text-center mb-5">
-          <h2 className="services__header__title">Our Cybersecurity Learning Pathways</h2>
-          <h4 className="services__header__subtitle">Explore Our Courses</h4>
-          <p className="services__header__description">
-            Our platform offers a variety of learning pathways designed to equip you 
-            with the skills needed to excel in the field of cybersecurity.
-          </p>
-        </div>
+    <section id="services" className="services section">
+      <div className="container"> 
+            <div className="courses__header container" data-aos="fade-up">
+        <h2 className="courses__title">Learning Pathways </h2>
+        <p className="courses__subtitle">Our Learning Pathways</p>
+      </div>
         <div className="row justify-content-center">
           {servicesData.map((service, index) => (
-            <ServiceCard key={index} {...service} />
+            <ServiceCard key={index} {...service}  />
           ))}
         </div>
       </div>

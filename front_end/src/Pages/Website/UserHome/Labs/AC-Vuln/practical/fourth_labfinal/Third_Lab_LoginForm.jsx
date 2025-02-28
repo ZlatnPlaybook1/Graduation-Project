@@ -24,7 +24,7 @@ export default function Third_Lab_LoginForm() {
   return (
     <div className="lab-container">
       <h2>Login Form</h2>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} className="lab-form">
         <label htmlFor="username">Username</label>
         <input
           type="text"

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Aboutus.css";
 
-export default function Aboutus() {
+export default function AboutUs() {
   return (
     <div className="aboutus-container">
       <h1>About Our Cybersecurity Learning Platform</h1>

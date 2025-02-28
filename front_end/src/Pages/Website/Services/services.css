@@ -4,44 +4,6 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.services__header {
-  position: relative;
-  text-align: center;
-  padding: 20px;
-  margin-bottom: 3rem;
-}
-
-.services__header::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 3px;
-  background: var(--main-color);
-  margin: 20px auto 0;
-  border-radius: 2px;
-}
-
-.services__header__title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--primary-text);
-}
-
-.services__header__subtitle {
-  font-size: 1.4rem;
-  color: var(--secondary-text);
-  margin-bottom: 15px;
-}
-
-.services__header__description {
-  font-size: 1rem;
- color: var(--secondary-text);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
 .services__card {
 
   position: relative;

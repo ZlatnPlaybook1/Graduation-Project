@@ -9,39 +9,6 @@
   position: relative;
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 4rem;
-  color: var(--primary-text);
-  margin-bottom: 3rem !important;
-}
-.section-title::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 3px;
-  background: var(--main-color);
-  margin: 20px auto 0;
-  border-radius: 2px;
-}
-.section-title .faq-text-h3 {
-  font-size: 2.75rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: var(--primary-text);
-  animation: fadeInUpFaq 1s ease-in-out;
-}
-
-.section-title .faq-text-h2 {
-  font-size: 1.75rem;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.8;
-  font-weight: 500;
-  text-align: center;
-  color: var(--secondary-text);
-  animation: fadeInUpFaq 1.2s ease-in-out;
-}
 
 .faq-image-container {
   display: flex;
