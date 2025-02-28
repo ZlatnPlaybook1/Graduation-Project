@@ -7,6 +7,11 @@ import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
+import exampleImage1 from "../../assets/img/Burp_Suit/1.png";
+import exampleImage2 from "../../assets/img/Burp_Suit/2.png";
+import exampleImage3 from "../../assets/img/Burp_Suit/3.png";
+import exampleImage4 from "../../assets/img/Burp_Suit/4.png";
+
 
 export default function BurpSuit() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
@@ -33,41 +38,58 @@ export default function BurpSuit() {
               <dl className="topics-text">
                 {/* Single FAQ Area - Proxy */}
                 <dt className="fadeInUp faq-header">
-                  <span className="topic-number">📡 Topic 1</span> Proxy
+                  <span>Module 3</span> Bypassing Simple Captchas using Python
                 </dt>
-                <dd className="fadeInUp faq-body">
-                  <div className="faq-content">
-                    <h3>Definition</h3>
-                    <p>The Burp Suite Proxy <span className="highlight">intercepts and modifies HTTP/S traffic</span> between a browser and the target server.</p>
-                    <h3>Usage</h3>
-                    <p>It allows <span className="highlight">security testing of web applications</span> by capturing and manipulating requests and responses.</p>
-                    <div className="step-section">
-                      <h4>🔍 Intercepting a Request</h4>
-                      <p>Burp Proxy lets you intercept HTTP requests and responses sent between Burp's browser and the target server.</p>
-                      <div className="step">
-                        <h5>🚀 Step 1: Launch Burp's browser</h5>
-                        <p>Go to the <strong>Proxy &gt; Intercept</strong> tab.</p>
-                        <p>Set the intercept toggle to <strong>Intercept on</strong>.</p>
-                        <p>Click <strong>Open Browser</strong>.</p>
-                      </div>
-                      <div className="step">
-                        <h5>🛑 Step 2: Intercept a request</h5>
-                        <p>Using Burp's browser, try to visit <code>https://portswigger.net</code> and observe the interception.</p>
-                      </div>
-                      <div className="step">
-                        <h5>⏩ Step 3: Forward the request</h5>
-                        <p>Click the <strong>Forward</strong> button.</p>
-                      </div>
-                      <div className="step">
-                        <h5>⏹️ Step 4: Switch off interception</h5>
-                        <p>Set the intercept toggle to <strong>Intercept off</strong>.</p>
-                      </div>
-                      <div className="step">
-                        <h5>📚 Step 5: View the HTTP history</h5>
-                        <p>Go to the <strong>Proxy &gt; HTTP history</strong> tab.</p>
-                      </div>
-                    </div>
-                  </div>
+                <dd className="fadeInUp faq-body" id="border-left">
+                  <br></br>
+                  <h2>Intercepting a request</h2>
+                  <br></br>
+                  <p>Burp Proxy lets you intercept HTTP requests and responses sent between Burp's browser and the target server. This enables you to study how the website behaves when you perform different actions.</p>
+                  <br></br>
+                  <h2>Step 1: Launch Burp's browser</h2>
+                  <br></br>
+                  <p>Go to the Proxy > Intercept tab.</p>
+                  <p>Set the intercept toggle to Intercept on.</p>
+                  <br></br>
+                  <img src={exampleImage1} alt="Example" />
+                  <br></br>
+                  <br></br>
+                  <p>Click Open Browser. This launches Burp's browser, which is preconfigured to work with Burp right out of the box.</p>
+                  <p>Position the windows so that you can see both Burp and Burp's browser.</p>
+                  <br></br>
+                  <h2>Step 2: Intercept a request</h2>
+                  <br></br>
+                  <p>Using Burp's browser, try to visit <a href="https://portswigger.net">portswigger.net</a> and observe that the site doesn't load. Burp Proxy has intercepted the HTTP request that was issued by the browser before it could reach the server. You can see this intercepted request on the Proxy > Intercept tab.</p>
+                  <br></br>
+                  <img src={exampleImage2} alt="Example" />
+                  <br></br>
+                  <br></br>
+                  <p>The request is held here so that you can study it, and even modify it, before forwarding it to the target server.</p>
+                  <br></br>
+                  <h2>Step 3: Forward the request</h2>
+                  <br></br>
+                  <p>Click the Forward button to send the intercepted request. Click Forward again to send any subsequent requests that are intercepted, until the page loads in Burp's browser. The Forward button sends all the selected requests</p>
+                  <br></br>
+                  <h2>Step 4: Switch off interception</h2>
+                  <br></br>
+                  <p>Due to the number of requests browsers typically send, you often won't want to intercept every single one of them. Set the intercept toggle to Intercept off.</p>
+                  <br></br>
+                  <img src={exampleImage3} alt="Example" />
+                  <br></br>
+                  <br></br>
+                  <p>Go back to the browser and confirm that you can now interact with the site as normal.</p>
+                  <br></br>
+                  <h2>Step 5: View the HTTP history</h2>
+                  <br></br>
+                  <p>In Burp, go to the <strong>Proxy > HTTP</strong> history tab. Here, you can see the history of all HTTP traffic that has passed through Burp Proxy, even while intercept was switched off.</p>
+                  <p>Click on any entry in the history to view the raw HTTP request, along with the corresponding response from the server.</p>
+                  <br></br>
+                  <img src={exampleImage4} alt="Example" />
+                  <br></br>
+                  <br></br>
+                  <p>This lets you explore the website as normal and study the interactions between Burp's browser and the server afterward, which is more convenient in many cases.</p>
+                  <br></br>
+
                 </dd>
 
                 {/* Single FAQ Area - Intruder */}
@@ -171,3 +193,16 @@ export default function BurpSuit() {
     </>
   );
 }
+
+
+// ............
+
+// card 
+
+// <dt className="fadeInUp faq-header">
+// <span>Module 3</span> Bypassing Simple Captchas using Python
+// </dt>
+// <dd className="fadeInUp faq-body" id="border-left">
+// </dd>
+
+// ..............
