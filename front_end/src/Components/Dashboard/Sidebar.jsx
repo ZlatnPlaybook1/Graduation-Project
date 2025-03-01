@@ -5,6 +5,7 @@ import {
   faGear,
   faHouse,
   faPlus,
+  faSun,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -133,6 +134,21 @@ const Sidebar = () => {
                     style={{ display: isOpen ? "block" : "none" }}
                   >
                     Settings
+                  </span>
+                </NavLink>
+                 <NavLink
+                  to="/dashboard/Theme"
+                  className="navlink active side-bar-link"
+                >
+                  <FontAwesomeIcon
+                    icon={faSun}
+                    style={{ padding: isOpen ? "10px 0px 10px 30px" : "0 0px" }}
+                  />
+                  <span
+                    className="text"
+                    style={{ display: isOpen ? "block" : "none" }}
+                  >
+                  ThemeCustomize
                   </span>
                 </NavLink>
               </>

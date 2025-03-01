@@ -13,6 +13,7 @@ import Writer from "./Pages/Dashboard/Writer/Writer.jsx";
 import Error404 from "./Pages/Auth/Page-404/404.jsx";
 import UserHome from "./Pages/Website/UserHome/UserHome.jsx";
 import Settings from "./Pages/Dashboard/Settings/Settings.jsx";
+import Theme from "./Pages/Dashboard/Theme/Theme.jsx";
 import PlatformInfo from "./Pages/Dashboard/AboutUs/PlatformInfo.jsx";
 // import RequireBack from "./Pages/Auth/RequireBack.jsx";
 import Contact from "./Pages/Website/Contact/Contact.jsx";
@@ -1120,6 +1121,7 @@ function App() {
               <Route path="personal-information" element={<Writer />} />
               <Route path="settings" element={<Settings />} />
               <Route path="Platform-information" element={<PlatformInfo />} />
+              <Route path="theme" element={<Theme />} />
             </Route>
           </Route>
         </Route>

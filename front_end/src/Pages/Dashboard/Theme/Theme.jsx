@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from "react";
-import "./ThemeCustomizer.css";
+import "./Theme.css";
 
-// Define three preset themes. (Using hex values for all colors so that the color pickers work.)
+// Define preset themes (using hex values).
 const presets = {
   dark: {
-    "--primary-bg": "#0f0f0f", 
+    "--primary-bg": "#0f0f0f",
     "--secondary-bg": "#1b1b1bd0",
     "--primary-text": "#ffffff",
     "--secondary-text": "#c4c2c2",
     "--main-color": "#00e77f",
   },
   light: {
-    "--primary-bg": "#ffffff", 
+    "--primary-bg": "#ffffff",
     "--secondary-bg": "#c4c2c2",
     "--primary-text": "#0f0f0f",
     "--secondary-text": "#1b1b1bd0",
     "--main-color": "#00e77f",
-  }
+  },
 };
 
-// List of all CSS custom properties you want to control.
+// List of all CSS custom properties to control.
 const cssKeys = [
   "--primary-bg",
   "--secondary-bg",
@@ -33,20 +33,17 @@ function ThemeCustomizer() {
   const [selectedPreset, setSelectedPreset] = useState("dark");
   // Holds the current theme values (preset or custom).
   const [customTheme, setCustomTheme] = useState(presets.dark);
-  // Controls the visibility of the theme settings panel.
-  const [panelVisible, setPanelVisible] = useState(false);
 
-  // When customTheme or selectedPreset change, apply the values to the document root
+  // Apply the theme to the document and save to localStorage.
   useEffect(() => {
     Object.entries(customTheme).forEach(([key, value]) => {
       document.documentElement.style.setProperty(key, value);
     });
-    // Save the current state to localStorage so it persists between reloads.
     localStorage.setItem("selectedPreset", selectedPreset);
     localStorage.setItem("customTheme", JSON.stringify(customTheme));
   }, [customTheme, selectedPreset]);
 
-  // On component mount, try to load a saved theme from localStorage
+  // Load saved theme from localStorage on mount.
   useEffect(() => {
     const savedPreset = localStorage.getItem("selectedPreset");
     const savedTheme = localStorage.getItem("customTheme");
@@ -64,14 +61,13 @@ function ThemeCustomizer() {
     }
   }, []);
 
-  // When a preset button is clicked, apply that preset
+  // When a preset is selected.
   const handlePresetSelect = (presetName) => {
     setSelectedPreset(presetName);
     setCustomTheme(presets[presetName]);
   };
 
-  // When a user changes a color via the color picker, update that key.
-  // Also, mark the theme as "custom."
+  // Update theme colors on color picker change.
   const handleColorChange = (key, newColor) => {
     setSelectedPreset("custom");
     setCustomTheme((prevTheme) => ({
@@ -81,48 +77,48 @@ function ThemeCustomizer() {
   };
 
   return (
-    <div className="theme-customizer">
-      {/* Button (or icon) to toggle the settings panel */}
-      <button
-        className="theme-toggle-btn"
-        onClick={() => setPanelVisible((prev) => !prev)}
-        aria-label="Toggle theme settings"
-      >
-        ⚙️
-      </button>
-      {panelVisible && (
-        <div className="theme-panel my-panal">
-          <div className="preset-options">
-            {Object.keys(presets).map((presetName) => (
-              <button
-                key={presetName}
-                className={`preset-btn ${
-                  selectedPreset === presetName ? "active" : ""
-                }`}
-                onClick={() => handlePresetSelect(presetName)}
-              >
-                {presetName.charAt(0).toUpperCase() + presetName.slice(1)}
-              </button>
-            ))}
+    <div className="settings-container">
+      <div className="theme-customizer-form card">
+        <div className="card-body">
+          <h2 className="card-title">Theme Customizer</h2>
+          <div className="preset-options mb-4">
+            <div className="btn-group d-flex">
+              {Object.keys(presets).map((presetName) => (
+                <button
+                  key={presetName}
+                  className={`btn ${
+                    selectedPreset === presetName
+                      ? "btn-primary"
+                      : "btn-outline-primary"
+                  } flex-fill`}
+                  onClick={() => handlePresetSelect(presetName)}
+                >
+                  {presetName.charAt(0).toUpperCase() +
+                    presetName.slice(1)}
+                </button>
+              ))}
+            </div>
           </div>
-          <hr />
-          <h4>Customize Colors</h4>
           <div className="custom-colors">
             {cssKeys.map((key) => (
-              <div className="color-picker" key={key}>
-                <label>
-                  {key}
+              <div className="form-group row" key={key}>
+                <label className="col-sm-4 col-form-label">{key}</label>
+                <div className="col-sm-8">
                   <input
                     type="color"
+                    className="form-control form-control-color"
                     value={customTheme[key]}
-                    onChange={(e) => handleColorChange(key, e.target.value)}
+                    onChange={(e) =>
+                      handleColorChange(key, e.target.value)
+                    }
+                    title={`Choose ${key} color`}
                   />
-                </label>
+                </div>
               </div>
             ))}
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
