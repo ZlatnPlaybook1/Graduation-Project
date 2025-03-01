@@ -284,6 +284,15 @@ import BurpSuitLab2 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab
 import BurpSuitLab3 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab3/BurpSuitLab3.jsx";
 import BurpSuitLab4 from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab4/BurpSuitLab4.jsx";
 import BurpSuitDescriptions from "./Pages/Website/UserHome/Labs/Burp-Suite/Practical/Lab3/BurpSuitDescriptions.jsx";
+// End Burp Suit
+//Start SSRF
+import SSRF from "./Pages/Website/UserHome/Labs/SSRF/SSRF.jsx";
+import SSRFLab from "./Pages/Website/UserHome/Labs/SSRF/SSRF_lab.jsx";
+import SSRFLab1 from "./Pages/Website/UserHome/Labs/SSRF/Practical/Lab_1/SSRF_store.jsx";
+import SSRFLab2 from "./Pages/Website/UserHome/Labs/SSRF/Practical/Lab_2/SSRF_store.jsx";
+import SSRFLab1Admin from "./Pages/Website/UserHome/Labs/SSRF/Practical/Lab_1/SSRF_admin.jsx";
+import SSRFLab2Admin from "./Pages/Website/UserHome/Labs/SSRF/Practical/Lab_2/SSRF_admin.jsx";
+//End SSRF
 import RaceCondition from "./Pages/Website/UserHome/Labs/Condition_Race/RaceCondition.jsx";
 import RaceConditionLabs from "./Pages/Website/UserHome/Labs/Condition_Race/RaceConditionLabs.jsx";
 import RaceConditionInRegister from "./Pages/Website/UserHome/Labs/Condition_Race/Practical/Lab1/RC_In_Register.jsx";
@@ -1105,6 +1114,20 @@ function App() {
             element={<JWT_LAB_THIRD />}
           />
           {/* End JWTAttacks */}
+          {/* Start SSRF */}
+          <Route path="/ssrf" element={<SSRF />} />
+          <Route path="/ssrf/ssrf_lab" element={<SSRFLab />} />
+          <Route path="/ssrf/ssrf_lab/ssrf_lab1/store" element={<SSRFLab1 />} />
+          <Route path="/ssrf/ssrf_lab/ssrf_lab2/store" element={<SSRFLab2 />} />
+          <Route
+            path="/ssrf/ssrf_lab/ssrf_lab1/store/admin"
+            element={<SSRFLab1Admin />}
+          />
+          <Route
+            path="/ssrf/ssrf_lab/ssrf_lab2/store/admin"
+            element={<SSRFLab2Admin />}
+          />
+          {/* End SSRF */}
         </Route>
         {/* End Routes of Labs */}
 
