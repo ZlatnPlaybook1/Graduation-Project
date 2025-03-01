@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { Form, Button, Alert } from "react-bootstrap";
-import Loading from "../../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Preloader from "../../Website/Preloader/Preloader";
 
 export default function AddUser() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
-  const [loading, setLoading] = useState(false);
+   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -31,10 +31,15 @@ export default function AddUser() {
       console.error("Error submitting form:", error);
     }
   }
-
+   useEffect(() => {
+        const timer = setTimeout(() => {
+          setLoading(false);
+        }, 2000);
+        return () => clearTimeout(timer);
+      }, []);
   return (
     <div className="container my-5">
-      {loading && <Loading />}
+      {loading && <Preloader loading={loading} />}
       {error && <Alert variant="danger">{error}</Alert>}
       <Form
         className="p-4 border rounded shadow-sm"

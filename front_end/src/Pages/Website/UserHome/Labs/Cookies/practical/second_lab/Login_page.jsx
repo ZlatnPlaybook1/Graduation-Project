@@ -3,10 +3,10 @@ import "../Login_page.css";
 import axios from "axios";
 import React, { useState } from "react";
 import Cookie from "cookie-universal";
-import Loading from "../../../../../../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import Preloader from "../../../../../Preloader/Preloader";
 export default function Login_page_second() {
   const [form, setForm] = useState({
     email: "",
@@ -14,7 +14,7 @@ export default function Login_page_second() {
   });
   const navigate = useNavigate();
   const cookie = Cookie();
-  const [loading, setLoading] = useState(false);
+   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState("");
   const [userId, setUserId] = useState(cookie.get("userId") || "");
   function handleChange(e) {
@@ -65,10 +65,15 @@ export default function Login_page_second() {
       navigate(`/cookies/cookies_lab/second/login`);
     }
   }, [userId, navigate]);
-
+useEffect(() => {
+        const timer = setTimeout(() => {
+          setLoading(false);
+        }, 2000);
+        return () => clearTimeout(timer);
+      }, []);
   return (
     <>
-      {loading && <Loading />}
+      {loading && <Preloader loading={loading}/>}
       {/* test comment */}
       <div className="login-page">
         <GoBackBtn />

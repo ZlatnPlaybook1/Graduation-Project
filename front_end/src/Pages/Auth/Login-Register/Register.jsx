@@ -1,10 +1,10 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Cookie from "cookie-universal";
-import Loading from "../../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 import "./form.css";
 import "./register-login.css";
+import Preloader from "../../Website/Preloader/Preloader";
 export default function Register() {
   const [form, setForm] = useState({
     name: "",
@@ -13,7 +13,7 @@ export default function Register() {
   });
   const navigate = useNavigate();
   const cookie = Cookie();
-  const [loading, setLoading] = useState(false);
+   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState("");
   function handleChange(e) {
     e.preventDefault();
@@ -37,10 +37,15 @@ export default function Register() {
       }
     }
   }
-
+useEffect(() => {
+        const timer = setTimeout(() => {
+          setLoading(false);
+        }, 2000);
+        return () => clearTimeout(timer);
+      }, []);
   return (
     <body className="login-register-body">
-      {loading && <Loading />}
+      {loading && <Preloader loading={loading} />}
       <div className="container">
         <div className="rows hh-100">
           <form className="form" onSubmit={handleSubmit}>

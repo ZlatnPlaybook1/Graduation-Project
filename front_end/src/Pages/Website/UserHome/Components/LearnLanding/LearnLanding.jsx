@@ -6,7 +6,7 @@ const LearnLanding = () => {
   return (
     <div className="my-landing" style={{ backgroundImage:`url(${defaultBg})`, backgroundSize: "cover", backgroundPosition: "center" } }>
       <div className="landing__overlay"></div>
-      <div className="landing__content">
+      <div className="landing__content section">
         <div className="landing__text">
           <h1 className="landing__title">Learn Cybersecurity</h1>
           <h2 className="landing__subtitle">Hands-on Hacking</h2>

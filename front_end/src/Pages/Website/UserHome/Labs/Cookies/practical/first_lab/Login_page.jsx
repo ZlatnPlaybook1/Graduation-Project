@@ -3,10 +3,10 @@ import "../Login_page.css";
 import axios from "axios";
 import React, { useState } from "react";
 import Cookie from "cookie-universal";
-import Loading from "../../../../../../../Components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import Preloader from "../../../../../Preloader/Preloader";
 
 export default function Login_page() {
   const [form, setForm] = useState({
@@ -17,8 +17,9 @@ export default function Login_page() {
   const navigate = useNavigate();
   // Cookies
   const cookie = Cookie();
-  // Loading state
-  const [loading, setLoading] = useState(false);
+   const [loading, setLoading] = useState(true);
+    
+     
   // Error state
   const [err, setErr] = useState("");
   const [role, setRole] = useState(cookie.get("role") || "");
@@ -75,9 +76,15 @@ export default function Login_page() {
       navigate(`/cookies/cookies_lab/first/login`);
     }
   }, [role, navigate]);
+   useEffect(() => {
+        const timer = setTimeout(() => {
+          setLoading(false);
+        }, 2000);
+        return () => clearTimeout(timer);
+      }, []);
   return (
     <>
-      {loading && <Loading />}
+      {loading && <Preloader loading={loading}/>}
       <div className="login-page">
         <GoBackBtn />
 

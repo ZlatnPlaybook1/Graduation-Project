@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import Cookie from "cookie-universal";
-import Loading from "../../Components/Loading/Loading";
 import Error403 from "./Page-403/403";
 import axios from "axios";
+import Preloader from "../Website/Preloader/Preloader";
 export default function RequierAuth({ allowedRole }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
+   useEffect(() => {
+        const timer = setTimeout(() => {
+          setLoading(false);
+        }, 2000);
+        return () => clearTimeout(timer);
+      }, []);
   useEffect(() => {
     const fetchUserData = async () => {
       if (token) {
@@ -34,7 +40,7 @@ export default function RequierAuth({ allowedRole }) {
     fetchUserData();
   }, [token, navigate]);
   if (loading) {
-    return <Loading />;
+    return <Preloader loading={loading} />;
   }
   return user ? (
     allowedRole.includes(user.role) ? (

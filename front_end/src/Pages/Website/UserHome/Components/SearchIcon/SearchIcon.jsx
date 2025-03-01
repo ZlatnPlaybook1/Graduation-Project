@@ -11,7 +11,8 @@ const SearchIcon = ({ searchTerm, setSearchTerm }) => {
         const lowerQuery = searchTerm.toLowerCase();
         return (
           item.title.toLowerCase().includes(lowerQuery) ||
-          item.description.toLowerCase().includes(lowerQuery)
+          item.description.toLowerCase().includes(lowerQuery) ||
+          item.category.toLowerCase().includes(lowerQuery)||item.topics.toLowerCase().includes(lowerQuery)|| item.difficulty.toLowerCase().includes(lowerQuery)|| item.state.toLowerCase().includes(lowerQuery)
         );
       });
 

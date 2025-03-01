@@ -1,4 +1,5 @@
-import Preload from "./Preload/Preload";
+import React, { useEffect, useState } from "react";
+import Preloader  from "./Preloader/Preloader";
 import Header from "./Header/HeaderHome";
 import CountsSection  from "./CountsSection/CountsSection";
 import Services from "./Services/Services";
@@ -10,6 +11,14 @@ import TestimonialsSection from "./TestimonialsSection/TestimonialsSection";
 import Go2TopBtn from "./UserHome/Components/Go2Top_Btn/Go2Top_Btn";
 import ThemeSwitcher from "./UserHome/Components/ThemeSwitcher/ThemeSwitcher";
 export default function HomePage() {
+  const [loading, setLoading] = useState(true);
+  
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }, []);
   return (
     <div
       className=" home__page--bg"
@@ -17,7 +26,7 @@ export default function HomePage() {
     >
       <Go2TopBtn />
       <ThemeSwitcher />
-      <Preload />
+      <Preloader  loading={loading}/>
       <Header />
       <HomeLanding />
       <Services />

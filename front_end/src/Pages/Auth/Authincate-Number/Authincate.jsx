@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import axios from "axios";
 import Cookie from "cookie-universal";
 import { useNavigate } from "react-router-dom";
-import Loading from "../../../Components/Loading/Loading";
+import Preloader from "../../Website/Preloader/Preloader"
 import "./Auth.css";
 export default function Authenticate() {
   const [number, setNumber] = useState("");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const cookie = Cookie();
   const handleNumberChange = (e) => {
@@ -45,9 +45,15 @@ export default function Authenticate() {
       }
     }
   };
+   useEffect(() => {
+       const timer = setTimeout(() => {
+         setLoading(false);
+       }, 2000);
+       return () => clearTimeout(timer);
+     }, []);
   return (
     <div className="login-register-body">
-      {loading && <Loading />}
+      {loading && <Preloader loading={loading} />}
       <div className="container">
         <div className="rows hh-100">
           <form className="form" onSubmit={handleSubmit}>
