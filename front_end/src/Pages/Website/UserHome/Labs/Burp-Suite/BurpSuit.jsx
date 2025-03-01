@@ -11,6 +11,17 @@ import exampleImage1 from "../../assets/img/Burp_Suit/1.png";
 import exampleImage2 from "../../assets/img/Burp_Suit/2.png";
 import exampleImage3 from "../../assets/img/Burp_Suit/3.png";
 import exampleImage4 from "../../assets/img/Burp_Suit/4.png";
+import exampleImage5 from "../../assets/img/Burp_Suit/5.png";
+import exampleImage6 from "../../assets/img/Burp_Suit/6.png";
+import exampleImage7 from "../../assets/img/Burp_Suit/7.png";
+import exampleImage8 from "../../assets/img/Burp_Suit/8.png";
+import exampleImage9 from "../../assets/img/Burp_Suit/9.png";
+import exampleImage10 from "../../assets/img/Burp_Suit/10.png";
+import exampleImage11 from "../../assets/img/Burp_Suit/11.png";
+import exampleImage12 from "../../assets/img/Burp_Suit/12.png";
+import exampleImage13 from "../../assets/img/Burp_Suit/13.png";
+import exampleImage14 from "../../assets/img/Burp_Suit/14.png";
+
 
 
 export default function BurpSuit() {
@@ -38,7 +49,7 @@ export default function BurpSuit() {
               <dl className="topics-text">
                 {/* Single FAQ Area - Proxy */}
                 <dt className="fadeInUp faq-header">
-                  <span>Module 3</span> Bypassing Simple Captchas using Python
+                  <span>Module 3</span> Proxy
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
@@ -89,7 +100,7 @@ export default function BurpSuit() {
                   <br></br>
                   <p>This lets you explore the website as normal and study the interactions between Burp's browser and the server afterward, which is more convenient in many cases.</p>
                   <br></br>
-
+                  
                 </dd>
 
                 {/* Single FAQ Area - Intruder */}
@@ -98,52 +109,75 @@ export default function BurpSuit() {
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <div className="faq-content">
-                    <h3>Definition</h3>
+                    <br></br>
+                    <h2>What is Burp Intruder?</h2>
                     <p>
-                      Burp Suite Intruder is an{" "}
-                      <span className="highlight">automation tool</span> for
-                      launching attacks like brute-force, fuzzing, and
-                      enumeration.
-                    </p>
-                    <h3>Usage</h3>
+                      Burp Intruder is a powerful tool for performing highly customizable, automated attacks against websites. It enables you to configure attacks that send the same request over and over again, inserting different payloads into predefined positions each time. Among other things, you can use Intruder to:
+                    </p><ul>
+                      <li>Fuzz for input-based vulnerabilities.</li>
+                      <li>Perform brute-force attacks.</li>
+                      <li>Enumerate valid identifiers and other inputs.</li>
+                      <li>Harvest useful data.</li>
+                    </ul>
                     <p>
-                      It tests vulnerabilities by sending{" "}
-                      <span className="highlight">
-                        multiple requests with different inputs
-                      </span>
-                      .
+                      The best way to understand how Burp Intruder works is to see it in action. You can follow the tutorial below to launch your first Intruder attack.
+                    </p><p>
+                      For more detailed information about the features and attack types of Burp Intruder, please see <a href="https://portswigger.net/burp/documentation/desktop/tools/intruder/uses">Typical uses for Burp Intruder</a>.
                     </p>
-                    <div className="step-section">
-                      <h4>🎯 Configuring an Attack</h4>
-                      <p>
-                        Select a request, define payload positions, and choose
-                        an attack type.
-                      </p>
-                      <h4>📦 Using Payloads</h4>
-                      <p>
-                        Configure payloads such as wordlists, numbers, or custom
-                        data.
-                      </p>
-                      <h4>🔫 Intruder Attack Types</h4>
-                      <ul className="attack-types">
-                        <li>
-                          <strong>🎯 Sniper:</strong> Tests one payload position
-                          at a time.
-                        </li>
-                        <li>
-                          <strong>💥 Battering Ram:</strong> Uses a single
-                          payload across all positions.
-                        </li>
-                        <li>
-                          <strong>🎭 Pitchfork:</strong> Uses multiple payloads
-                          in parallel.
-                        </li>
-                        <li>
-                          <strong>💣 Cluster Bomb:</strong> Combines multiple
-                          payload sets for exhaustive testing.
-                        </li>
-                      </ul>
-                    </div>
+                    <br></br>
+                    <h2>Access the lab</h2>
+                    <br></br>
+                    <p>Open Burp's browser, and use it to access the following URL:
+
+                      <a href="http://localhost:3000/Burp_Suit/Burp_Suit_Labs/lab2">http://localhost:3000/Burp_Suit/Burp_Suit_Labs/lab2</a>
+                      Click Access the lab and log in to your PortSwigger account if prompted. This opens your own instance of a deliberately vulnerable blog website.</p>
+                    <br></br>
+                    <h2>Try to log in</h2>
+                    <br></br>
+                    <p> try to log in using an invalid username and password.</p>
+                    <img src={exampleImage5} alt="Example" />
+                    <br></br>
+                    <p>In Burp Suite, go to the<strong> Proxy > HTTP </strong> history tab. This shows the requests you have made in Burp's browser since opening it.
+
+                      Find the<strong> POST /login</strong> request. Highlight the value of the username parameter, then right-click the request and select Send to Intruder.</p>
+                    <br></br>
+                    <h2>Set the payload position</h2>
+                    <br></br>
+                    <p>Go to Intruder. Observe that there is now a tab displaying the POST /login request. We'll use this as the base request for our attack.
+
+                      Notice that the value of the username parameter that you previously highlighted is now marked as a payload position. This is indicated by the § characters at the beginning and end of the value. Burp Intruder will insert payloads at this position during the attack.</p>
+                    <img src={exampleImage6} alt="Example" />
+                    <br></br>
+                    <h2>Select an attack type</h2>
+                    <p>At the top of the screen, you can select different attack types. For now, just make sure this is set to <strong>Sniper attack</strong> .</p>
+                    <img src={exampleImage7} alt="Example" />
+                    <h2>Add the payloads</h2>
+                    <br></br>
+                    <p>You now just need to configure the list of payloads that you want to use. For this demonstration, we'll try sending the request with different usernames to test how the login mechanism behaves.</p>
+                    <br></br>
+                    <p>In the Payloads side panel, leave the Payload type set to Simple list.
+
+                      In the Payload configuration field, click Paste to add the copied usernames to the list. Notice that the Payload count and Request count update to 101. These values reflect the number of payloads added and the requests the attack will send.</p>
+                    <img src={exampleImage8} alt="Example" />
+                    <br></br>
+                    <br></br>
+                    <h2>Start the attack</h2>
+                    
+                    <p>Click<strong>  Start attack</strong>. This opens a new attack window in which you can see each of the requests that Burp Intruder is making.
+
+                      If you select one of the entries in the table, you can view the request and response in the message editor. Notice that the username parameter contains a different value from our payload list in each request.</p>
+                    <img src={exampleImage9} alt="Example" />
+                    <br></br>
+                    <br></br>
+                    <h2>Look for any irregular responses</h2>
+                  <br></br>
+                  <p>The attack window contains several columns displaying key information about each response.Wait for the attack to finish, then click the heading of the Length column to sort the results. As you can see, one of the responses is a different length.</p>
+                  <img src={exampleImage10} alt="Example" />
+                  <br></br>
+                  <br></br>
+                  <h2>What next?</h2>
+                  <p>Now that you have a potentially correct username, the next logical step is to try to brute-force the password.Try repeating this attack, using the username you have identified and this list of candidate passwords.</p>
+                  <img src={exampleImage11} alt="Example" />
                   </div>
                 </dd>
 
@@ -153,49 +187,25 @@ export default function BurpSuit() {
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <div className="faq-content">
-                    <h3>Definition</h3>
-                    <p>
-                      The Repeater tool allows{" "}
-                      <span className="highlight">
-                        modifying and resending HTTP requests
-                      </span>
-                      .
-                    </p>
-                    <h3>Usage</h3>
-                    <p>
-                      It helps in{" "}
-                      <span className="highlight">
-                        testing and debugging web applications
-                      </span>{" "}
-                      by manually modifying requests.
-                    </p>
-                    <div className="step-section">
-                      <h4>✏️ Manual Request Modification</h4>
-                      <p>
-                        Edit headers, parameters, cookies, or body and resend
-                        the request.
-                      </p>
-                      <h4>🔁 Repeat Requests</h4>
-                      <p>
-                        Send the same request multiple times with or without
-                        modifications.
-                      </p>
-                      <h4>📄 View Responses</h4>
-                      <p>
-                        Analyze server responses in real-time in various
-                        formats.
-                      </p>
-                      <h4>📊 Compare Requests and Responses</h4>
-                      <p>
-                        Open multiple tabs to compare different requests side by
-                        side.
-                      </p>
-                      <h4>🔗 Integration with Other Tools</h4>
-                      <p>
-                        Send requests from Proxy, Intruder, or Scanner to
-                        Repeater for further testing.
-                      </p>
-                    </div>
+                    <h2>Reissue requests with Burp Repeater</h2>
+                    <p>In this tutorial, you'll use Burp Repeater to send an interesting request over and over again. This lets you study the target website's response to different input without having to intercept the request each time. This makes it much simpler to probe for vulnerabilities, or confirm ones that were identified by Burp Scanner, for example.</p>
+                    <h2>Sending a request to Burp Repeater</h2>
+                    <p>The most common way of using Burp Repeater is to send it a request from another of Burp's tools. In this example, we'll send a request from the HTTP history in Burp Proxy.</p>
+                    <h3>Step 1: Identify an interesting request</h3>
+                    <p>In the previous tutorial, you browsed a fake shopping website. Notice that each time you accessed a product page, the browser sent a GET /product request with a productId query parameter.</p>
+                    <img src={exampleImage12} alt="Example" />
+                    <br></br>
+                    <br></br>
+                    <h3>Step 2: Send the request to Burp Repeater</h3>
+                    <p>Right-click on any of the GET /product?productId=[...] requests and select Send to Repeater.</p>
+                    <img src={exampleImage13} alt="Example" />
+                    <br></br>
+                    <p>Go to the Repeater tab to see that your request is waiting for you in its own numbered tab.</p>
+                    <br></br>
+                    <h3>Step 3: Send the request and view the response</h3>
+                    <p>Click Send and view the response from the server. You can resend this request as many times as you like and the response will be updated each time.</p>
+                    <img src={exampleImage14} alt="Example" />
+
                   </div>
                 </dd>
 
@@ -289,7 +299,7 @@ export default function BurpSuit() {
 
 // ............
 
-// card 
+// card
 
 // <dt className="fadeInUp faq-header">
 // <span>Module 3</span> Bypassing Simple Captchas using Python
