@@ -5,9 +5,16 @@ import "./Courses.css";
 import courseData from "./courseData";
 import PaginatedCourses from "./PaginatedCourses";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
-
+import {
+  FaBook,
+  FaBug,
+  FaTools,
+  FaUserGraduate,
+  FaHeart,
+  FaLayerGroup,
+} from "react-icons/fa";
 const Courses = () => {
-  const [searchTerm, setSearchTerm] = useState(""); 
+  const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Courses");
 
   useEffect(() => {
@@ -19,12 +26,12 @@ const Courses = () => {
   }, []);
 
   const categories = [
-    "All Courses",
-    "Fundamentals",
-    "Vulnerabilities",
-    "Tools & Techniques",
-    "My Courses",
-    "Fav Topics",
+    { name: "All Courses", icon: <FaLayerGroup /> },
+    { name: "Fundamentals", icon: <FaBook /> },
+    { name: "Vulnerabilities", icon: <FaBug /> },
+    { name: "Tools & Techniques", icon: <FaTools /> },
+    { name: "My Courses", icon: <FaUserGraduate /> },
+    { name: "Fav Topics", icon: <FaHeart /> },
   ];
 
   const handleCategorySelect = (category) => {
@@ -35,7 +42,8 @@ const Courses = () => {
     const term = searchTerm.toLowerCase();
     const matchesSearchTerm = course.title.toLowerCase().includes(term);
     const matchesCategory =
-      selectedCategory === "All Courses" || course.category === selectedCategory;
+      selectedCategory === "All Courses" ||
+      course.category === selectedCategory;
 
     return matchesSearchTerm && matchesCategory;
   });
@@ -47,14 +55,15 @@ const Courses = () => {
         <div className="menu-row">
           <ul className="category-menu w-100">
             {categories.map((category) => (
-              <li key={category}>
+              <li key={category.name}>
                 <button
                   className={`category-btn ${
-                    selectedCategory === category ? "active" : ""
+                    selectedCategory === category.name ? "active" : ""
                   }`}
-                  onClick={() => handleCategorySelect(category)}
+                  onClick={() => handleCategorySelect(category.name)}
                 >
-                  {category}
+                  <span className="category-icon">{category.icon}</span>
+                  <span className="category-text">{category.name}</span>
                 </button>
               </li>
             ))}

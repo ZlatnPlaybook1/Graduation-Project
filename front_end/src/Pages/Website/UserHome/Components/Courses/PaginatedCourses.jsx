@@ -113,10 +113,10 @@ const PaginatedCourses = ({ filteredCourses }) => {
               : "fade-left"
           }
         >
-          <a href={course.link} className="course-card d-block position-relative">
+          <a href={course.link} className="course-card">
             {/* Top right icons */}
             <div
-              className="course-icons position-absolute top-0 end-0 d-flex flex-column gap-2 p-2"
+              className="course-icons"
               style={{ zIndex: 1, fontSize: "1.5rem" }}
             >
               {/* Favorite Icon */}
@@ -146,7 +146,11 @@ const PaginatedCourses = ({ filteredCourses }) => {
             </div>
 
             <div className="course-image">
-              <img src={course.image} alt={course.title} className="img-fluid" />
+              <img
+                src={course.image}
+                alt={course.title}
+                className="img-fluid"
+              />
               {course.state === "not-published" ? (
                 <div className="ribbon coming-soon">
                   <span>Coming Soon</span>
