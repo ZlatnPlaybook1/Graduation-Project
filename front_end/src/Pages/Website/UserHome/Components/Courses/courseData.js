@@ -479,14 +479,14 @@ const courseData = [
   {
     id: 29,
     category: "Fundamentals",
-    title: "Temp Subject",
+    title: "Server Side Request Forgery (SSRF)",
     description:
       "Placeholder course offering preliminary topics, soon updated with comprehensive content.",
     topics: ["Topic 1", "Topic 2", "Topic 3", "Topic 4"],
     difficulty: "Beginner",
     image: require("../../assets/img/Lab2.jpg"),
     state: "not-published",
-    link: "/infoDisc",
+    link: "/ssrf",
   },
   {
     id: 30,

@@ -10,7 +10,7 @@ export default function UserHome() {
     useEffect(() => {
       const timer = setTimeout(() => {
         setLoading(false);
-      }, 2000);
+      }, 300);
       return () => clearTimeout(timer);
     }, []);
   return (
