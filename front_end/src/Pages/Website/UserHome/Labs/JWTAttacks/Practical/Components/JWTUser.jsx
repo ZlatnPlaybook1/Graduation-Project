@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 const UserPage = ({ hint }) => {
@@ -15,7 +15,7 @@ const UserPage = ({ hint }) => {
         }}
       >
         <GoBackBtn />
-        <ShowHintBtn />
+        <ShowHintBtn hintText={hintMessage} />
         <main className="hacker-login">
           {Array.from({ length: spanCount }).map((_, index) => (
             <span key={index} className="hackerLogin-gridSpan"></span>

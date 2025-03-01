@@ -9,12 +9,10 @@ import Swal from "sweetalert2";
 
 const AdminPage = ({ apiEndpoint, tokenName, lab, hint, condition }) => {
   const [loadingDelete, setLoadingDelete] = useState(false);
-  const [loadingCreateUser, setLoadingCreateUser] = useState(false);
-  const [err, setErr] = useState("");
-  const [logged, setLogged] = useState(false);
-  const [token, setToken] = useState(null);
   const [decoded, setDecoded] = useState(null);
-  const [message, setMessage] = useState(null);
+  const [message] = useState(
+    `<i class="fas fa-lightbulb show-hint-btn-icon"></i> User Ali has been deleted.`
+  );
   const cookie = Cookie();
   const navigate = useNavigate();
   const loginURL = `/jwtattacks/jwtattacks_lab/${lab}`;
@@ -26,8 +24,6 @@ const AdminPage = ({ apiEndpoint, tokenName, lab, hint, condition }) => {
       try {
         const decodedToken = jwtDecode(storedToken);
         setDecoded(decodedToken);
-        setToken(decodedToken);
-        setLogged(true);
       } catch (error) {
         console.error("Invalid token:", error);
         cookie.remove(tokenName);
@@ -36,7 +32,7 @@ const AdminPage = ({ apiEndpoint, tokenName, lab, hint, condition }) => {
     } else {
       navigate(loginURL); // Redirect if no token is found
     }
-  }, [tokenName, navigate]);
+  }, [tokenName, navigate, loginURL]);
 
   // Create user "Ali" if it doesn't exist and the logged user is an admin
   useEffect(() => {
@@ -46,7 +42,6 @@ const AdminPage = ({ apiEndpoint, tokenName, lab, hint, condition }) => {
   }, [decoded]);
 
   const createUserAli = () => {
-    setLoadingCreateUser(true);
     axios
       .post(
         `${apiEndpoint}/createuser`,
@@ -61,45 +56,36 @@ const AdminPage = ({ apiEndpoint, tokenName, lab, hint, condition }) => {
           },
         }
       )
-      .then(() => {
-        setLoadingCreateUser(false);
-      })
       .catch(() => {
-        setErr("Error creating user Ali.");
-        setLoadingCreateUser(false);
+        console.log("Error creating user Ali.");
       });
   };
 
   const handleDeleteUser = () => {
     setLoadingDelete(true);
     axios
-      .delete(
-        `${apiEndpoint}/deleteuser`, 
-        {
-          headers: {
-            Authorization: `Bearer ${sentToken}`, // Attach JWT token
-            "Content-Type": "application/json",
-          },
-          data: { username: "Ali" }, // Correct placement of request body
-        }
-      )
+      .delete(`${apiEndpoint}/deleteuser`, {
+        headers: {
+          Authorization: `Bearer ${sentToken}`, // Attach JWT token
+          "Content-Type": "application/json",
+        },
+        data: { username: "Ali" }, // Correct placement of request body
+      })
       .then(() => {
         setLoadingDelete(false);
-        const successMessage =
-          `<i class="fas fa-lightbulb show-hint-btn-icon"></i> User Ali has been deleted.`; // Fixed HTML class syntax
+        console.log(message);
         Swal.fire({
           title: "Congratulations!",
-          html: successMessage, // Use the updated message
+          html: message, // Use the updated message
           icon: "info",
           confirmButtonText: "Got it!",
         });
       })
       .catch(() => {
-        setErr("Error deleting user Ali.");
+        console.log("Error deleting user Ali.");
         setLoadingDelete(false);
       });
   };
-  
 
   const spanCount = 400;
 

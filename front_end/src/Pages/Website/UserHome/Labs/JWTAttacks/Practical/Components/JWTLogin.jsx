@@ -13,7 +13,6 @@ const JWTLogin = ({ apiEndpoint, hint, tokenName, lab }) => {
   const [password, setPassword] = useState("");
   const [decodedToken, setDecodedToken] = useState("null");
   const [loading, setLoading] = useState(false);
-  const [loadingCreateUser, setLoadingCreateUser] = useState(false);
   const [login, setLogin] = useState(false);
   const [err, setErr] = useState("");
   const cookie = Cookie();
@@ -46,7 +45,6 @@ const JWTLogin = ({ apiEndpoint, hint, tokenName, lab }) => {
 
         setLoading(false);
         if (decodedToken.username === "admin") {
-          createUserAli();
           navigate(adminurl); // Redirect to admin page
         } else if (decodedToken.username !== "admin" && login === true) {
           navigate(userurl); // Redirect to user page
@@ -58,27 +56,12 @@ const JWTLogin = ({ apiEndpoint, hint, tokenName, lab }) => {
       });
   };
 
-  // Function to create a user "Ali" (can be triggered if the logged-in user is admin)
-  const createUserAli = () => {
-    setLoadingCreateUser(true);
-    axios
-      .post(`${apiEndpoint}/createuser`, {
-        username: "Ali",
-        password: "somepassword",
-      })
-      .then(() => setLoadingCreateUser(false))
-      .catch(() => {
-        setErr("Error creating user Ali.");
-        setLoadingCreateUser(false);
-      });
-  };
 
   // UseEffect to handle token on page load (for example, when refreshing the page)
   React.useEffect(() => {
     const token = cookie.get(tokenName);
     if (token) {
       try {
-        const decodedToken = jwtDecode(token); // Decode token only if it exists
         // Token is valid, handle decoded token here (if needed)
       } catch (e) {
         // If decoding the token fails, delete the invalid token from cookies
