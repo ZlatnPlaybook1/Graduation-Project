@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "../Header/HeaderHome";
 import Footer from "../Footer/FooterHome";
-import phoneIcon from "./icon-phone-accent.svg";
-import mailIcon from "./icon-mail-accent.svg";
-import locationIcon from "./icon-location.svg";
+import phoneIcon from "../assets/img/contact-img/icon-phone-accent.svg";
+import mailIcon from "../assets/img/contact-img/icon-mail-accent.svg";
+import locationIcon from "../assets/img/contact-img/icon-location.svg";
 import "./Contact.css";
 
 const Contact = () => {
@@ -56,10 +56,10 @@ const Contact = () => {
                     <div className="contact-info-content">
                       <h3>contact us</h3>
                       <p>
-                        <a href="tel:+91123456789">+20 127 894 3656</a>
+                        <a href="tel:+91123456789">+40 455 258 2728</a>
                       </p>
                       <p>
-                        <a href="tel:+91123456789">+15 557 265 387</a>
+                        <a href="tel:+91123456789">+91 221 8224 387</a>
                       </p>
                     </div>
                   </div>
@@ -72,12 +72,12 @@ const Contact = () => {
                       <h3>e-mail us</h3>
                       <p>
                         <a href="mailto:infodomainname@gmail.com">
-                          as4349124@gmail.com
+                          xokaso4969@bnsteps.com
                         </a>
                       </p>
                       <p>
                         <a href="mailto:domainname@gmail.com">
-                          as43491241@gmail.com
+                          domainname@gmail.com
                         </a>
                       </p>
                     </div>

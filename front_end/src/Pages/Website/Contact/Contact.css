@@ -1,6 +1,6 @@
 .page-header {
   position: relative;
-  background-image: url("./page-header-bg.jpg");
+  background-image: url("../assets/img/contact-img/page-header-bg.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -104,7 +104,7 @@
 .page-contact-box {
   position: relative;
   padding: 0 120px 120px 120px;
-  background: url("./contact-box-bg.jpg") no-repeat;
+  background: url("../assets/img/contact-img/contact-box-bg.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
   border: 1px solid var(--divider-color);
