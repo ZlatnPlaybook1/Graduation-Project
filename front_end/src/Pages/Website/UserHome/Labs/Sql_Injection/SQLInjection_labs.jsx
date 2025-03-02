@@ -17,7 +17,7 @@ export default function SQLInjection_lab() {
       {/* Start Course */}
       <div className="course">
         <div className="container">
-          <PracticeTitle />
+          <PracticeTitle title={"SQL Injection"}/>
           <div className="row">
             {/* lab1 */}
             <Card
