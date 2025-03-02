@@ -29,88 +29,50 @@ export default function PathTraversal() {
           <div className="content-row">
             <div className="content-section">
               <dl className="topics-text">
-                {/* Single FAQ Area */}
+                {/* Single FAQ Area - Decoder */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 1</span>Definition
+                  <span className="topic-number"> Topic 1</span> Testing for directory traversal
                 </dt>
                 <dd className="fadeInUp faq-body">
-                  <ul className="security-vuln-list">
-                    <li className="security-vuln-item">
-                      <span className="highlighted-text">
-                        Path traversal (or directory traversal)
-                      </span>
-                      is a security vulnerability that occurs when an attacker
-                      manipulates file paths in a web application. This
-                      manipulation allows the attacker to access files and
-                      directories outside the intended directory. For example,
-                      by using sequences like <code>../</code> (dot-dot-slash),
-                      an attacker might navigate to sensitive areas of the
-                      server's file system.
-                    </li>
-                  </ul>
-                </dd>
-                {/* Single FAQ Area */}
-                <dt className="fadeInUp faq-header">
-                  <span>Task 2</span>Cause
-                </dt>
-                <dd className="fadeInUp faq-body">
-                  <div className="path-traversal-info">
-                    <p className="path-traversal-text">
-                      This vulnerability typically occurs because of
-                      <span className="highlight-word">
-                        improper input validation
-                      </span>
-                      . When a web application accepts user input (such as a{" "}
-                      <span className="highlight-word">file name</span> or a{" "}
-                      <span className="highlight-word">path</span>) without
-                      properly checking or sanitizing it, an attacker can
-                      include
-                      <span className="danger-word">
-                        malicious characters
-                      </span>{" "}
-                      or sequences. These sequences trick the application into
-                      navigating to{" "}
-                      <span className="highlight-word">
-                        unauthorized directories
-                      </span>
-                      . Failing to use{" "}
-                      <span className="danger-word">secure functions</span> that
-                      correctly handle file paths increases this risk.
+                  <div className="faq-content">
+                    <p>
+                      Directory traversal vulnerabilities (also known as file path vulnerabilities) allow an attacker to read arbitrary files on the server that is running an application. This might include application code and data, credentials for back-end systems, and sensitive operating system files.
+                    </p><p>
+                      You can use Burp to test for these vulnerabilities:
+                    </p><ul>
+                      <li><label class="label-edition is-professional">Professional</label> Use Burp Scanner to automatically flag potential directory traversal vulnerabilities.</li>
+                      <li>Use Burp Intruder to insert a list of directory traversal fuzz strings into a request. The strings may enable you to read arbitrary files on the server.</li>
+                    </ul><h2 id="steps">Steps</h2><p>
+                      You can follow this process using the <a href="http://localhost:3000/Path__Traversal/Path_Traversal_Labs/lab1">File path traversal, traversal sequences stripped with superfluous
+                        URL-decode</a> lab from our Web Security Academy.
+                    </p><h3 id="scanning-for-directory-traversal-vulnerabilities">Scanning for directory traversal vulnerabilities</h3><p>
+                      If you're using Burp Suite Professional, you can use Burp Scanner to test for directory traversal vulnerabilities:
+                    </p><ol>
+                      <li>In <strong>Proxy &gt; HTTP history</strong>, identify a request that you want to investigate.</li>
+                      <li>Right-click the request and select <strong>Do active scan</strong>. Burp Scanner audits the request.</li>
+                      <li>Review the <strong>Issues</strong> list on the <strong>Dashboard</strong> to identify any directory traversal issues that Burp Scanner flags.</li>
+                    </ol><h3 id="fuzzing-for-directory-traversal-vulnerabilities">Fuzzing for directory traversal vulnerabilities</h3><p>
+                      You can alternatively use Burp Intruder to test for directory traversal vulnerabilities. This process also enables you to closely investigate any issues that Burp Scanner has identified:
                     </p>
+                      <li>In <strong>Proxy &gt; HTTP history</strong> identify a request you want to investigate.</li>
+                      <li>Right-click the request and select <strong>Send to Intruder</strong>.</li>
+                      <li>Go to <strong>Intruder</strong>.</li>
+                      <li>Highlight the parameter that you want to test and click <strong>Add §</strong> to mark it as a payload position.</li>
+                      <li>
+                        <p>In the <strong>Payloads</strong> side panel, under <strong>Payload configuration</strong>, add a list of directory traversal fuzz strings:</p>
+                        <ol>
+                          <li>If you're using Burp Suite Professional, select the built-in <strong>Fuzzing - path traversal</strong> wordlist.</li>
+                          <li>If you're using Burp Suite Community Edition, manually add a list.</li>
+                        </ol>
+                      </li>
+                      <li>Click <strong><span class="icon-play-circle-outline"></span> Start attack</strong>. The attack starts running in a new dialog. Intruder sends a request for each fuzz string on the list.</li>
+                      <li>When the attack is finished, study the responses to look for any noteworthy behavior. For example, look for responses with a longer length. These may contain data that has been returned from the requested file.</li>
                   </div>
                 </dd>
+                
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 3</span>Impact
-                </dt>
-                <dd className="fadeInUp faq-body">
-                  <div className="vulnerability-details">
-                    <p className="vulnerability-text">
-                      This vulnerability typically occurs because of
-                      <span className="highlight">
-                        improper input validation
-                      </span>
-                      . When a web application accepts user input (such as a{" "}
-                      <span className="highlight">file name</span> or a{" "}
-                      <span className="highlight">path</span>) without properly
-                      checking or sanitizing it, an attacker can inject
-                      <span className="danger">malicious characters</span> or
-                      sequences. These sequences trick the application into
-                      navigating to{" "}
-                      <span className="highlight">
-                        unauthorized directories
-                      </span>
-                      , exposing <span className="danger">sensitive files</span>
-                      . Failing to use{" "}
-                      <span className="important">secure functions</span>
-                      that correctly handle file paths significantly increases
-                      this risk.
-                    </p>
-                  </div>
-                </dd>
-                {/* Single FAQ Area */}
-                <dt className="fadeInUp faq-header">
-                  <span>Task 4</span>Prevention
+                  <span>Topic 2</span>Prevention
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <div className="security-section">

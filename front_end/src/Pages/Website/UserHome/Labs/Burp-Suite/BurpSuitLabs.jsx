@@ -23,9 +23,9 @@ export default function BurpSuitLabs() {
             <Card
               link={"/Burp_Suit/Burp_Suit_Labs/lab1"}
               image={Auth_Photo}
-              title={"Bake Your Own Cookies"}
+              title={"Proxy"}
               brief={
-                "When ‘user’ isn’t enough—forge the cookie and become admin"
+                "gain many instead of buying by proxy manipulation and traffic control."
               }
               difficulty={"Easy"}
             />
@@ -33,9 +33,9 @@ export default function BurpSuitLabs() {
             <Card
               link={"/Burp_Suit/Burp_Suit_Labs/lab2"}
               image={Auth_Photo}
-              title={"Cookie Cracking Cascade"}
+              title={"Intruder"}
               brief={
-                "A lab where cookies aren’t snacks… they’re keys to admin power."
+                "Can you find the correct username and password using Intruder?"
               }
               difficulty={"Easy"}
             />
@@ -43,9 +43,9 @@ export default function BurpSuitLabs() {
             <Card
               link={"/Burp_Suit/Burp_Suit_Labs/lab3"}
               image={Auth_Photo}
-              title={"Cookie Cracking Cascade"}
+              title={"Repeater"}
               brief={
-                "A lab where cookies aren’t snacks… they’re keys to admin power."
+                "Find the valid padges"
               }
               difficulty={"Easy"}
             />
@@ -53,9 +53,9 @@ export default function BurpSuitLabs() {
             <Card
               link={"/Burp_Suit/Burp_Suit_Labs/lab4"}
               image={Auth_Photo}
-              title={"Cookie Cracking Cascade"}
+              title={"Decoder"}
               brief={
-                "A lab where cookies aren’t snacks… they’re keys to admin power."
+                "Try to decode massages and find the hidden password."
               }
               difficulty={"Easy"}
             />
