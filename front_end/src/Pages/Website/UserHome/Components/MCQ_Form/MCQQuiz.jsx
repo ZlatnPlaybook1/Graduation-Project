@@ -1,214 +1,123 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
-import useSound from "use-sound";
+import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import "./MCQ.css";
+import "./MCQQuiz.css";
 
-// Import your local sound files
-import downSound from "./sound-effects/down.mp3";
+// Sound imports
 import correctSound from "./sound-effects/correct-ans.mp3";
 import wrongSound from "./sound-effects/wrong-ans.mp3";
 import passedSound from "./sound-effects/quiz-passed.mp3";
 import failedSound from "./sound-effects/quiz-failed.mp3";
 
-// Function to show initial quiz rules using SweetAlert2
-const ShowInitialAlert = (onStart) => {
-  return Swal.fire({
-    title: "Rules of this Quiz",
-    html: `
-      <ul style="text-align:left;">
-        <li>You have <strong>30 seconds</strong> per question.</li>
-        <li>Once you choose an answer, it cannot be changed.</li>
-        <li>If time runs out, the correct answer will be auto‑selected.</li>
-        <li>You cannot exit the quiz while playing.</li>
-        <li>Earn points for correct answers!</li>
-      </ul>
-    `,
-    icon: "info",
-    showCancelButton: true,
-    confirmButtonText: "Start Quiz",
-    cancelButtonText: "Go Back",
-    allowOutsideClick: false,
-    allowEscapeKey: false,
-  }).then((result) => {
-    if (result.isConfirmed) {
-      onStart();
-    } else {
-      window.history.back();
-    }
-  });
-};
+// Replace with your own image
+import quizImage from "./side.jpg";
 
 const MCQQuiz = ({ questionsData }) => {
-  const questions = questionsData.questions;
-  const totalQuestions = questions.length;
-
-  // Quiz state
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [selectedAnswers, setSelectedAnswers] = useState({});
   const [quizStarted, setQuizStarted] = useState(false);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedOption, setSelectedOption] = useState("");
-  const [showAnswer, setShowAnswer] = useState(false);
-  const [userAnswers, setUserAnswers] = useState([]);
-  const [score, setScore] = useState(0);
+  const [timer, setTimer] = useState(60);
+  const [submitted, setSubmitted] = useState(false); // Prevent multiple submissions
 
-  // Timers: internalTimer (30 sec for auto‑select) and displayTimer (20 sec for UI)
-  const [internalTimer, setInternalTimer] = useState(30);
-  const [displayTimer, setDisplayTimer] = useState(null);
+  const maxStepsToShow = 5;
 
-  const internalIntervalRef = useRef(null);
-  const displayIntervalRef = useRef(null);
-  const displayTimeoutRef = useRef(null);
-  const currentQuestion = questions[currentQuestionIndex];
-  const soundVolume = 0.5;
+  const getAnimationClass = (index) => {
+    const delays = ['', 'delay-100', 'delay-200', 'delay-300'];
+    return `mcq-quiz__bounce-left ${delays[index] || ''}`;
+  };
 
-  // Sound hooks
-  const [playDown, { stop: stopDown }] = useSound(downSound, {
-    volume: soundVolume,
-  });
-  const [playCorrect] = useSound(correctSound, { volume: soundVolume });
-  const [playWrong] = useSound(wrongSound, { volume: soundVolume });
-  const [playPassed] = useSound(passedSound, { volume: soundVolume });
-  const [playFailed] = useSound(failedSound, { volume: soundVolume });
+  // Show start alert on mount
+  useEffect(() => {
+    Swal.fire({
+      title: "Welcome!",
+      text: "Are you ready to start the quiz?",
+      icon: "info",
+      showCancelButton: true,
+      confirmButtonText: "Start",
+      cancelButtonText: "Cancel",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setQuizStarted(true);
+      }
+    });
+  }, []);
 
-  // Start timers for the current question
-  const startTimers = useCallback(() => {
-    // Reset timer values
-    setInternalTimer(30);
-    setDisplayTimer(null);
-
-    // Clear any previous timers
-    if (internalIntervalRef.current) {
-      clearInterval(internalIntervalRef.current);
-      internalIntervalRef.current = null;
-    }
-    if (displayIntervalRef.current) {
-      clearInterval(displayIntervalRef.current);
-      displayIntervalRef.current = null;
-    }
-    if (displayTimeoutRef.current) {
-      clearTimeout(displayTimeoutRef.current);
-      displayTimeoutRef.current = null;
-    }
-
-    // Start the internal timer immediately
-    internalIntervalRef.current = setInterval(() => {
-      setInternalTimer((prev) => prev - 1);
-    }, 1000);
-
-    playDown();
-
-    // After 3 seconds, start the display timer for the user
-    displayTimeoutRef.current = setTimeout(() => {
-      setDisplayTimer(20);
-      displayIntervalRef.current = setInterval(() => {
-        setDisplayTimer((prev) => {
-          if (prev <= 1) {
-            clearInterval(displayIntervalRef.current);
-            displayIntervalRef.current = null;
-            return 0;
-          }
-          return prev - 1;
-        });
+  // Timer countdown and auto-submit when time is up
+  useEffect(() => {
+    let interval = null;
+    if (quizStarted && timer > 0) {
+      interval = setInterval(() => {
+        setTimer((prev) => prev - 1);
       }, 1000);
-    }, 3000);
-  }, [playDown]);
-
-  // Stop all timers and sound
-  const stopTimers = useCallback(() => {
-    if (internalIntervalRef.current) {
-      clearInterval(internalIntervalRef.current);
-      internalIntervalRef.current = null;
     }
-    if (displayIntervalRef.current) {
-      clearInterval(displayIntervalRef.current);
-      displayIntervalRef.current = null;
+    if (quizStarted && timer === 0 && !submitted) {
+      handleSubmit(true);
     }
-    if (displayTimeoutRef.current) {
-      clearTimeout(displayTimeoutRef.current);
-      displayTimeoutRef.current = null;
+    return () => clearInterval(interval);
+  }, [quizStarted, timer, submitted]);
+
+  const playSound = (sound) => {
+    new Audio(sound).play();
+  };
+
+  const handleOptionChange = (e) => {
+    const answer = e.target.value;
+    setSelectedAnswers({
+      ...selectedAnswers,
+      [questionsData[currentQuestion].id]: answer,
+    });
+  };
+
+  const goToNextQuestion = (e) => {
+    e.preventDefault();
+    if (!selectedAnswers[questionsData[currentQuestion].id]) {
+      Swal.fire({
+        title: "Error!",
+        text: "Please choose an option!",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+      return;
     }
-    stopDown();
-  }, [stopDown]);
-
-  // Start timers when quiz starts or when moving to a new question (if answer is not yet shown)
-  useEffect(() => {
-    if (quizStarted && !showAnswer) {
-      startTimers();
-    }
-    // Stop timers on cleanup to avoid stray callbacks
-    return () => stopTimers();
-  }, [quizStarted, currentQuestionIndex, showAnswer, startTimers, stopTimers]);
-
-  // Auto-select answer when internal timer runs out
-  useEffect(() => {
-    if (!quizStarted) return;
-    if (internalTimer <= 0 && !showAnswer) {
-      // Auto-select the correct answer for the current question
-      setSelectedOption(currentQuestion.answer);
-      setShowAnswer(true);
-      playWrong();
-
-      const newAnswers = [...userAnswers];
-      newAnswers[currentQuestionIndex] = currentQuestion.answer;
-      setUserAnswers(newAnswers);
-
-      stopTimers();
-    }
-  }, [
-    internalTimer,
-    quizStarted,
-    showAnswer,
-    currentQuestionIndex,
-    currentQuestion.answer,
-    userAnswers,
-    playWrong,
-    stopTimers,
-  ]);
-
-  // Handle user option selection
-  const handleOptionSelect = (option) => {
-    if (showAnswer) return;
-    setSelectedOption(option);
-    setShowAnswer(true);
-    stopTimers();
-
-    const newAnswers = [...userAnswers];
-    newAnswers[currentQuestionIndex] = option;
-    setUserAnswers(newAnswers);
-
-    if (option === currentQuestion.answer) {
-      setScore((prev) => prev + 1);
-      playCorrect();
-    } else {
-      playWrong();
+    if (currentQuestion < questionsData.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
     }
   };
 
-  // Navigation: Next and Previous
-  const handleNext = () => {
-    // Stop timers before moving to next question
-    stopTimers();
-    if (currentQuestionIndex < totalQuestions - 1) {
-      setCurrentQuestionIndex((prev) => prev + 1);
-      setSelectedOption("");
-      setShowAnswer(false);
+  const goToPreviousQuestion = (e) => {
+    e.preventDefault();
+    if (currentQuestion > 0) {
+      setCurrentQuestion(currentQuestion - 1);
     }
   };
 
-  const handlePrevious = () => {
-    stopTimers();
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex((prev) => prev - 1);
-      setSelectedOption("");
-      setShowAnswer(false);
-    }
+  const computeScore = () => {
+    let score = 0;
+    questionsData.forEach((question) => {
+      if (selectedAnswers[question.id] === question.answer) {
+        score += 5;
+      }
+    });
+    return score;
   };
 
-  // On submit, stop timers and show final feedback via SweetAlert2
-  const handleSubmit = () => {
-    stopTimers();
-    const finalScore = score;
-    if (finalScore >= 15) {
-      playPassed();
+  // forceSubmit flag bypasses validation for unanswered current question
+  const handleSubmit = (forceSubmit = false, e) => {
+    if (e) e.preventDefault();
+    if (submitted) return;
+    if (!selectedAnswers[questionsData[currentQuestion].id] && !forceSubmit) {
+      Swal.fire({
+        title: "Error!",
+        text: "Please choose an option!",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
+    setSubmitted(true);
+    const finalScore = computeScore();
+    const passingScore = questionsData.length * 5 * 0.75;
+    if (finalScore >= passingScore) {
+      playSound(passedSound);
       Swal.fire({
         title: "Congratulations!",
         text: `Your level is fair! Final score: ${finalScore}`,
@@ -216,7 +125,7 @@ const MCQQuiz = ({ questionsData }) => {
         confirmButtonText: "OK",
       });
     } else {
-      playFailed();
+      playSound(failedSound);
       Swal.fire({
         title: "Try again!",
         text: `You failed. Final score: ${finalScore}.\n\nPlease try again.`,
@@ -226,107 +135,116 @@ const MCQQuiz = ({ questionsData }) => {
     }
   };
 
-  // Welcome screen before the quiz starts
   if (!quizStarted) {
-    return (
-      <div className="quiz-body">
-        <div className="quiz-container welcome">
-          <h2>Welcome to the Quiz!</h2>
-          <button
-            className="mcq-btn start-btn"
-            onClick={() => {
-              ShowInitialAlert(() => setQuizStarted(true));
-            }}
-          >
-            Start Quiz
-          </button>
-        </div>
-      </div>
-    );
+    return null;
   }
 
+  const currentQuestionData = questionsData[currentQuestion];
+
+  // Calculate sliding window for steps progress
+  const totalQuestions = questionsData.length;
+  let startIndex = Math.max(0, currentQuestion - Math.floor(maxStepsToShow / 2));
+  if (startIndex + maxStepsToShow > totalQuestions) {
+    startIndex = Math.max(0, totalQuestions - maxStepsToShow);
+  }
+  const stepsToDisplay = questionsData.slice(startIndex, startIndex + maxStepsToShow);
+
   return (
-    <div className="quiz-body">
-      <div className="quiz-container">
-        {/* Timer Display */}
-        <div className="timer-display">
-          <p>
-            Time Remaining:{" "}
-            {displayTimer !== null ? displayTimer : "20 (waiting...)"} sec
-          </p>
-        </div>
+    <div className="overflow-hidden">
+      <main className="mcq-quiz__main">
+        <div className="quiz-container row">
+          {/* Left Side - Image & Steps */}
+          <div className="col-md-5 tab-100 order-tab tab-none">
+            <div className="mcq-quiz__side">
+              <div className="mcq-quiz__side--image">
+                <div className="mcq-quiz__border-up"></div>
+                <img src={quizImage} alt="Quiz Visual" />
+                <div className="mcq-quiz__border-down"></div>
+              </div>
 
-        {/* Progress Bar */}
-        <div className="progress-bar">
-          <div
-            className="progress"
-            style={{
-              width: `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`,
-            }}
-          ></div>
-        </div>
-        <div className="progress-text">
-          Question {currentQuestionIndex + 1} of {totalQuestions}
-        </div>
-
-        {/* Question and Options */}
-        <div className="question-container">
-          <h2 className="question">{currentQuestion.question}</h2>
-          <div className="options">
-            {currentQuestion.options.map((option, index) => (
-              <button
-                key={index}
-                className={`option-button ${
-                  showAnswer && option === currentQuestion.answer
-                    ? "correct"
-                    : ""
-                } ${
-                  showAnswer &&
-                  selectedOption === option &&
-                  option !== currentQuestion.answer
-                    ? "incorrect"
-                    : ""
-                }`}
-                onClick={() => handleOptionSelect(option)}
-                disabled={showAnswer}
-              >
-                {option}
-              </button>
-            ))}
+              {/* Steps Progress */}
+              <div className="mcq-quiz__step-count">
+                <div className="mcq-quiz__step-count-inner">
+                  {stepsToDisplay.map((_, index) => {
+                    const actualIndex = startIndex + index;
+                    return (
+                      <div
+                        key={actualIndex}
+                        className={`step-single ${actualIndex <= currentQuestion ? 'active' : ''}`}
+                      >
+                        <div className="step-line">
+                          <div className="fill"></div>
+                        </div>
+                        <div className="step-number">{actualIndex + 1}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
           </div>
-          {showAnswer && (
-            <p className="feedback">
-              {selectedOption === currentQuestion.answer
-                ? "Correct!"
-                : "Wrong!"}
-            </p>
-          )}
+
+          {/* Right Side - Quiz Content */}
+          <div className="col-md-7 tab-100">
+            <form className="mcq-quiz__form" onSubmit={(e) => e.preventDefault()}>
+              <div className="mcq-quiz__show-section mcq-quiz__wrapper">
+                <section className="mcq-quiz__steps">
+                  <h1 className="mcq-quiz__question">
+                    {currentQuestionData.question}
+                  </h1>
+
+                  <fieldset className="mcq-quiz__options">
+                    {currentQuestionData.options.map((option, idx) => (
+                      <div
+                        className={`mcq-quiz__radio-field mcq-quiz__bounce-left ${getAnimationClass(idx)}`}
+                        key={idx}
+                      >
+                        <input
+                          className="mcq-quiz__radio"
+                          type="radio"
+                          name={`question_${currentQuestionData.id}`}
+                          value={option}
+                          checked={selectedAnswers[currentQuestionData.id] === option}
+                          onChange={handleOptionChange}
+                        />
+                        <label className={`mcq-quiz__op op${idx + 1}`}>{option}</label>
+                      </div>
+                    ))}
+                  </fieldset>
+
+                  {/* Navigation Buttons */}
+                  <div className="mcq-quiz__next-prev">
+                    {currentQuestion > 0 && (
+                      <button className="mcq-quiz__prev" onClick={goToPreviousQuestion}>
+                        <i className="fa-solid fa-arrow-left"></i> Last Question
+                      </button>
+                    )}
+                    {currentQuestion < questionsData.length - 1 ? (
+                      <button className="mcq-quiz__next" onClick={goToNextQuestion}>
+                        Next Question <i className="fa-solid fa-arrow-right"></i>
+                      </button>
+                    ) : (
+                      <button className="mcq-quiz__next" onClick={handleSubmit}>
+                        Submit <i className="fa-solid fa-arrow-right"></i>
+                      </button>
+                    )}
+                  </div>
+                </section>
+              </div>
+              {/* Timer */}
+              <div className="mcq-quiz__countdown">
+                <h3>
+                  <span id="mcq-quiz__countdown-timer">{timer}</span> sec
+                </h3>
+              </div>
+            </form>
+          </div>
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="navigation-buttons">
-          <button
-            className="mcq-btn nav-btn"
-            onClick={handlePrevious}
-            disabled={currentQuestionIndex === 0}
-          >
-            Previous
-          </button>
-          {currentQuestionIndex === totalQuestions - 1 ? (
-            <button className="mcq-btn nav-btn submit-btn" onClick={handleSubmit}>
-              Submit
-            </button>
-          ) : (
-            <button
-              className="mcq-btn nav-btn"
-              onClick={handleNext}
-              disabled={!showAnswer}
-            >
-              Next
-            </button>
-          )}
-        </div>
-      </div>
+        {/* Footer Line */}
+        <div className="mcq-quiz__footer-line"></div>
+      </main>
+      {/* <div id="error"></div> */}
     </div>
   );
 };
