@@ -6,6 +6,7 @@ import Footer from "../../Footer/Footer";
 import { Card } from "../../Components/Card/Card";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 export default function SQLInjection_lab() {
   return (
     <>
@@ -16,8 +17,7 @@ export default function SQLInjection_lab() {
       {/* Start Course */}
       <div className="course">
         <div className="container">
-          <h2>SQL Injection Labs</h2>
-          <p className="section-p">Test Your Hacking Skills</p>
+          <PracticeTitle />
           <div className="row">
             {/* lab1 */}
             <Card
