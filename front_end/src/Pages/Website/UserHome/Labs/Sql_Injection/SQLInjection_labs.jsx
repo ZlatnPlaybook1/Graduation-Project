@@ -8,7 +8,7 @@ import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 export default function SQLInjection_lab() {
-  const title = "SQL Injection";
+  // const title2 = "SQL Injection";
   return (
     <>
       <Header />
@@ -18,7 +18,7 @@ export default function SQLInjection_lab() {
       {/* Start Course */}
       <div className="course">
         <div className="container">
-          <PracticeTitle title={title}/>
+          <PracticeTitle title={ "SQL Injection"} />
           <div className="row">
             {/* lab1 */}
             <Card
