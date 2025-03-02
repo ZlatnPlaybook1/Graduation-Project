@@ -5,6 +5,7 @@ import image from "../../assets//img/Server Side Template Injection/card_image.p
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 
 export default function SSRF_lab() {
   return (
@@ -16,8 +17,8 @@ export default function SSRF_lab() {
       {/* Start Courses  */}
       <div className="course">
         <div className="container">
-          <h2>SSRF Lab</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+        <PracticeTitle title={"SSRF"} />
+          
           <div className="row">
             <Card
               link={"ssrf_lab1/store"}

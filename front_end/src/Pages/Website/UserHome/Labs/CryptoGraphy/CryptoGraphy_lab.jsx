@@ -5,6 +5,7 @@ import image from "../../assets/img/Cryptography/card_image.png";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 
 export default function CryptoGraphy_lab() {
   return (
@@ -16,8 +17,7 @@ export default function CryptoGraphy_lab() {
       {/* Start Courses  */}
       <div className="course">
         <div className="container">
-          <h2>CryptoGraphy Lab</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+          <PracticeTitle title={"CryptoGraphy"} />
           <div className="row">
             <Card
               link={"/cryptography/cryptography_lab/top-secret"}

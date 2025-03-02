@@ -5,6 +5,7 @@ import Auth_Photo from "../../assets/img/Command Injection/command-injection-lab
 import { Card } from "../../Components/Card/Card";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 export default function CommandInjectionLabs() {
   return (
     <>
@@ -15,8 +16,7 @@ export default function CommandInjectionLabs() {
       {/* Start Course */}
       <div className="course">
         <div className="container">
-          <h2>Command Injection Labs</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+          <PracticeTitle title={"Command Injection"} />
           <div className="row">
             {/* lab1 */}
             <Card

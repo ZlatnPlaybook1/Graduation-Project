@@ -4,6 +4,7 @@ import Footer from "../../Footer/Footer";
 import Idor_cover from "../../assets/img/IDOR/IDOR_Cover.jpg";
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 
 export default function InsecureDirectObjectReferenceLabs() {
   return (
@@ -15,8 +16,7 @@ export default function InsecureDirectObjectReferenceLabs() {
       {/* Start Courses */}
       <div className="course">
         <div className="container">
-          <h2>Insecure Direct Object Reference (IDOR) Labs</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+          <PracticeTitle title={"Insecure Direct Object Reference (IDOR)"} />
           <div className="row">
             {/* lab1 */}
             <Card

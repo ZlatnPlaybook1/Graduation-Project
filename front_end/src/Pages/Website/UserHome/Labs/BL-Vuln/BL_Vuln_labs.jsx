@@ -6,6 +6,7 @@ import { Card } from "../../Components/Card/Card";
 import Banner from "../../Components/Banner/Banner";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 export default function BL_Vuln_labs() {
   return (
     <>
@@ -18,8 +19,7 @@ export default function BL_Vuln_labs() {
       {/* Start Course */}
       <div className="course">
         <div className="container">
-          <h2>Business logic vulnerabilities Labs</h2>
-          <p className="section-p">Test Your Hacking Skills</p>
+          <PracticeTitle title={"Business logic vulnerabilities"} />
           <div className="row">
             {/* lab1 */}
             <Card

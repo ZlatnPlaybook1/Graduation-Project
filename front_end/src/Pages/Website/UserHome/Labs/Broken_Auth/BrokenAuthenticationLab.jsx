@@ -5,6 +5,7 @@ import Auth_Photo from "../../assets/img/Broken Authentication/Auth_Icon.png";
 import { Card } from "../../Components/Card/Card";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 export default function BrokenAuthenticationLab() {
   return (
     <>
@@ -14,8 +15,7 @@ export default function BrokenAuthenticationLab() {
       {/* End Landing */}
       <div className="course">
         <div className="container">
-          <h2>Broken Authentication Labs</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+          <PracticeTitle title={"Broken Authentication"} />
           <div className="row">
             {/* lab1 */}
             <Card

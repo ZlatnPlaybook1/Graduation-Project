@@ -5,6 +5,7 @@ import image from "../../assets//img/File Inclusion/card_image.png";
 import { Card } from "../../Components/Card/Card";
 import Footer from "../../Footer/Footer";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 
 export default function FileInclusion_lab() {
   return (
@@ -16,8 +17,7 @@ export default function FileInclusion_lab() {
       {/* Start Courses  */}
       <div className="course">
         <div className="container">
-          <h2>Obfuscation Lab</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+          <PracticeTitle title={"File Inclusion"} />
           <div className="row">
             <Card
               link={"/fileinclusion/fileinclusion_lab/Learn-the-capital-1"}

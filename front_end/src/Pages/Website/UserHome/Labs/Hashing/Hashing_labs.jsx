@@ -7,6 +7,7 @@ import labImg from "../../assets/img/Hashing/Generator.jpg";
 import { Card } from "../../Components/Card/Card";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 export default function Hashing_labs() {
   return (
     <>
@@ -19,8 +20,7 @@ export default function Hashing_labs() {
       {/* Start Course */}
       <div className="course">
         <div className="container">
-          <h2>Hashing</h2>
-          <p className="section-p">Test Your Hacking Skills</p>
+          <PracticeTitle title={"Hashing"} />
           <div className="row">
             {/* lab1 */}
             <Card

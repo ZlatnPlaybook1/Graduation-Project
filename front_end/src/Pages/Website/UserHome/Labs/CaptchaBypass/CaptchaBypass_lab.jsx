@@ -5,6 +5,7 @@ import image from "../../assets//img/Captcha Bypass/card_image.png";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 
 export default function CaptchaBypass_lab() {
   return (
@@ -16,8 +17,7 @@ export default function CaptchaBypass_lab() {
       {/* Start Courses  */}
       <div className="course">
         <div className="container">
-          <h2>Captcha Bypass Lab</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+          <PracticeTitle title={"Captcha Bypass"} />
           <div className="row">
             <Card
               link={"/captchabypass/captchabypass_lab/lab1"}

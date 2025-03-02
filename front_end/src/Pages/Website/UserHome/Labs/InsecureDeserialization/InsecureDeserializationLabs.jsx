@@ -4,6 +4,7 @@ import Footer from "../../Footer/Footer";
 import Auth_Photo from "../../assets/img/Insecure_Deserialization/Labs_Photo_Insecure.png";
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 
 export default function InsecureDeserializationLabs() {
   return (
@@ -15,8 +16,7 @@ export default function InsecureDeserializationLabs() {
       {/* Start Course */}
       <div className="course">
         <div className="container">
-          <h2>Insecure Deserialization Labs</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+          <PracticeTitle title={"Insecure Deserialization"} />
           <div className="row">
             {/* lab1 */}
             <Card

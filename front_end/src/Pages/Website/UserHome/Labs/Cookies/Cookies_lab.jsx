@@ -5,6 +5,7 @@ import image from "../../assets/img/cookies/Cookies_logo.png";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 
 
 export default function Cookies_lab() {
@@ -17,8 +18,7 @@ export default function Cookies_lab() {
       {/* Start Courses  */}
       <div className="course">
         <div className="container">
-          <h2>Cookies Lab</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+          <PracticeTitle title={"Cookies"} />
           <div className="row">
             <Card
               link="/cookies/cookies_lab/first/login"

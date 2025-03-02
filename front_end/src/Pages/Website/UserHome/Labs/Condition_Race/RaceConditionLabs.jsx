@@ -5,6 +5,7 @@ import Auth_Photo from "../../assets/img/Condition_Race/Race Condition Backgroun
 import { Card } from "../../Components/Card/Card";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 
 export default function RaceConditionLabs() {
   return (
@@ -16,8 +17,7 @@ export default function RaceConditionLabs() {
       {/* Start Course */}
       <div className="course">
         <div className="container">
-          <h2>Race Condition Labs</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+          <PracticeTitle title={"Race Condition"} />
           <div className="row">
             {/* lab1 */}
             <Card

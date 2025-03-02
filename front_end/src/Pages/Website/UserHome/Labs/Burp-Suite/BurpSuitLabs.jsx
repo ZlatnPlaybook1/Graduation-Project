@@ -5,6 +5,7 @@ import Auth_Photo from "../../assets/img/Burp_Suit/Labs-Burp-Suit.jpg";
 import { Card } from "../../Components/Card/Card";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 
 export default function BurpSuitLabs() {
   return (
@@ -16,8 +17,7 @@ export default function BurpSuitLabs() {
       {/* Start Course */}
       <div className="course">
         <div className="container">
-          <h2>Burp Suit Labs</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+          <PracticeTitle title={"Burp Suit"} />
           <div className="row">
             {/* lab1 */}
             <Card

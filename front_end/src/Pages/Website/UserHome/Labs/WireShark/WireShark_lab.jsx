@@ -5,6 +5,7 @@ import image from "../../assets//img/Obfuscation/card_image.png";
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 
 export default function WireShark_lab() {
   return (
@@ -16,8 +17,7 @@ export default function WireShark_lab() {
       {/* Start Courses  */}
       <div className="course">
         <div className="container">
-          <h2>Wire Shark Lab</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+          <PracticeTitle title={"Wire Shark"} />
           <div className="row">
             <Card
               link={"/wireshark/wireshark_lab/arp-trick"}

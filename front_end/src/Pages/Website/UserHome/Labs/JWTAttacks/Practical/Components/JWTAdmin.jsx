@@ -23,7 +23,7 @@ const AdminPage = ({ apiEndpoint, tokenName, lab, hint, condition }) => {
     if (storedToken) {
       try {
         const decodedToken = jwtDecode(storedToken);
-        setDecoded(decodedToken);
+        // setDecoded(decodedToken);
       } catch (error) {
         console.error("Invalid token:", error);
         cookie.remove(tokenName);
@@ -32,11 +32,12 @@ const AdminPage = ({ apiEndpoint, tokenName, lab, hint, condition }) => {
     } else {
       navigate(loginURL); // Redirect if no token is found
     }
-  }, [tokenName, navigate, loginURL]);
+  }, [tokenName, navigate, loginURL,cookie]);
 
   // Create user "Ali" if it doesn't exist and the logged user is an admin
   useEffect(() => {
-    if (decoded?.username === "admin") {
+    if (condition) {
+      console.log("Creating user Ali...");
       createUserAli();
     }
   }, [decoded]);

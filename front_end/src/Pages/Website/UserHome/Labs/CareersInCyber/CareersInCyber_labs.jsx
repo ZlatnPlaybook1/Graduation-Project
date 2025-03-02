@@ -6,6 +6,7 @@ import Banner from "../../Components/Banner/Banner";
 import { Card } from "../../Components/Card/Card";
 import Go2TopBtn from "../../Components/GoBack_Btn/GoBack_Btn";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 export default function Regex_labs() {
   return (
     <>
@@ -18,8 +19,7 @@ export default function Regex_labs() {
       {/* Start Course */}
       <div className="course">
         <div className="container">
-          <h2>Careers in Cyber MCQ Exams</h2>
-          <p className="section-p">Test Your Hacking Skills</p>
+          <PracticeTitle title={"Careers in Cyber"} />
           <div className="row">
             {mcqData.map((mcq, id) => (
               <Card

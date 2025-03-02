@@ -5,19 +5,19 @@ import image from "../../assets//img/Server Side Template Injection/card_image.p
 import Footer from "../../Footer/Footer";
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 
 export default function SSTI_lab() {
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <LandingPractice/>
+      <LandingPractice />
       {/* End Landing  */}
       {/* Start Courses  */}
       <div className="course">
         <div className="container">
-          <h2>SSTI Lab</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+          <PracticeTitle title={"SSTI"} />
           <div className="row">
             <Card
               link={"SSTIlab1/store"}

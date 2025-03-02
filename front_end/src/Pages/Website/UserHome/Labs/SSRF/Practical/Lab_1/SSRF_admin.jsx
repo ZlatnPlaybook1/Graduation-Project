@@ -176,7 +176,7 @@ export default function SSRF_AdminLab() {
             marginTop: "20px",
           }}
         >
-          <h2>File x.txt deleted successfully!</h2>
+          <h2>File secret.txt deleted successfully!</h2>
         </div>
       )}
       {!isDeleted && (
@@ -189,7 +189,7 @@ export default function SSRF_AdminLab() {
             marginTop: "20px",
           }}
         >
-          <h2>Failed to delete file x.txt.</h2>
+          <h2>Failed to delete file secret.txt.</h2>
         </div>
       )}
 
@@ -209,7 +209,7 @@ export default function SSRF_AdminLab() {
                 <div className="ssrf__course-store__card-store--card-text-store">
                   <button
                     onClick={() => checkStock(product)} // Send the request when clicked
-                    className="text-black bg-transparent"
+                    className="text-black bg-transparent border-0"
                   >
                     {product.title}
                   </button>
@@ -249,7 +249,7 @@ export default function SSRF_AdminLab() {
         </button>
       </div>
 
-      {/* Button to delete the file x.txt */}
+      {/* Button to delete the file secret.txt */}
       <div style={{ textAlign: "center", marginTop: "20px" }}>
         <button
           onClick={deleteFile}
@@ -262,7 +262,7 @@ export default function SSRF_AdminLab() {
             cursor: "pointer",
           }}
         >
-          Delete x.txt
+          Delete secret.txt
         </button>
       </div>
     </div>

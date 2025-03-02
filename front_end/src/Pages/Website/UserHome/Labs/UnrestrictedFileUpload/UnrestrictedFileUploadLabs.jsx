@@ -4,6 +4,7 @@ import Footer from "../../Footer/Footer";
 import lab_Cover from "../../assets/img/Unrestricted File Upload/file-upload-vector.jpg";
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 
 export default function UnrestrictedFileUploadLabs() {
   return (
@@ -15,12 +16,7 @@ export default function UnrestrictedFileUploadLabs() {
       {/* Start Courses */}
       <div className="course">
         <div className="container">
-          <div className="width-text">
-            <div class="labs-section-text">
-              <h2>Unrestricted File Upload Labs</h2>
-              <p class="section-p">Test Your Hacking Skills</p>
-            </div>
-          </div>
+          <PracticeTitle title={ "Unrestricted File Upload"} />
           <div className="row">
             {/* lab1 */}
             <Card

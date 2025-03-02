@@ -4,6 +4,7 @@ import Footer from "../../Footer/Footer";
 import Auth_Photo from "../../assets/img/Path__Traversal/Photo_Labs_Path_Traversal.png";
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
+import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 
 export default function PathTraversalLabs() {
   return (
@@ -14,8 +15,8 @@ export default function PathTraversalLabs() {
       {/* End Landing */}
       <div className="course">
         <div className="container">
-          <h2>Path Traversal Labs</h2>
-          <p className="section-p">Test Your Hacking skills</p>
+          <PracticeTitle title={"Path Traversal"} />
+
           <div className="row">
             {/* lab1 */}
             <Card

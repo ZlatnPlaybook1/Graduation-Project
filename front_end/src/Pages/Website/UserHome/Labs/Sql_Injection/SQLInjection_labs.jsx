@@ -8,7 +8,6 @@ import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 export default function SQLInjection_lab() {
-  // const title2 = "SQL Injection";
   return (
     <>
       <Header />
