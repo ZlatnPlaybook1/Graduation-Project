@@ -21,6 +21,11 @@ import exampleImage11 from "../../assets/img/Burp_Suit/11.png";
 import exampleImage12 from "../../assets/img/Burp_Suit/12.png";
 import exampleImage13 from "../../assets/img/Burp_Suit/13.png";
 import exampleImage14 from "../../assets/img/Burp_Suit/14.png";
+import exampleImage15 from "../../assets/img/Burp_Suit/15.png";
+import exampleImage16 from "../../assets/img/Burp_Suit/16.png";
+import exampleImage17 from "../../assets/img/Burp_Suit/17.png";
+import exampleImage18 from "../../assets/img/Burp_Suit/18.png";
+import exampleImage19 from "../../assets/img/Burp_Suit/19.png";
 
 
 
@@ -205,7 +210,32 @@ export default function BurpSuit() {
                     <h3>Step 3: Send the request and view the response</h3>
                     <p>Click Send and view the response from the server. You can resend this request as many times as you like and the response will be updated each time.</p>
                     <img src={exampleImage14} alt="Example" />
-
+                    <br></br>
+                    <br></br>
+                    <h3>Testing different input with Burp Repeater</h3>
+                    <p>By resending the same request with different input each time, you can identify and confirm a variety of input-based vulnerabilities. This is one of the most common tasks you will perform during manual testing with Burp Suite.</p>
+                    <h4>Step 1: Resend the request with different input</h4>
+                    <p>Change the number in the <strong>productId</strong>  parameter and resend the request. Try this with a few arbitrary numbers, including a couple of larger ones.</p>
+                    <img src={exampleImage15} alt="Example" />
+                    <br></br>
+                    <h4>Step 2: View the request history</h4>
+                    <p>Use the arrows to step back and forth through the history of requests that you've sent, along with their matching responses. The drop-down menu next to each arrow also lets you jump to a specific request in the history.</p>
+                    <img src={exampleImage16} alt="Example" />
+                    <br></br>
+                    <h4>Step 3: Try sending unexpected input</h4>
+                    <p>The server seemingly expects to receive an integer value via this <strong>productId</strong>  parameter. Let's see what happens if we send a different data type.</p>
+                    <p>Send another request where the productId is a string of characters.</p>
+                    <img src={exampleImage17} alt="Example" />
+                    <br></br>
+                    <h4>Step 4: Study the response</h4>
+                    <p>Observe that sending a non-integer productId has caused an exception. The server has sent a verbose error response containing a stack trace.</p>
+                    <img src={exampleImage18} alt="Example" />
+                    <br></br>
+                    <p>Notice that the response tells you that the website is using the Apache Struts framework - it even reveals which version.</p>
+                    <img src={exampleImage19} alt="Example" />
+                    <br></br>
+                    <p>In a real scenario, this kind of information could be useful to an attacker, especially if the named version is known to contain additional vulnerabilities.</p>
+                    
                   </div>
                 </dd>
 
@@ -215,67 +245,45 @@ export default function BurpSuit() {
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <div className="faq-content">
-                    <h3>Definition</h3>
-                    <p>
-                      Burp Decoder enables you to{" "}
-                      <span className="highlight">transform data</span> using
-                      common encoding and decoding formats.
-                    </p>
-                    <h3>Usage</h3>
-                    <p>
-                      It allows{" "}
-                      <span className="highlight">
-                        manual and automatic decoding, encoding, and hashing
-                      </span>{" "}
-                      of data.
-                    </p>
-                    <div className="step-section">
-                      <h4>🛠️ Carrying out transformations</h4>
-                      <p>
-                        You can send data to Burp Decoder from the message
-                        editor in various Burp tools, such as HTTP history. To
-                        transform data using Burp Decoder:
-                      </p>
-                      <ul className="transformation-steps">
-                        <li>📍 Locate the data you want to analyze.</li>
-                        <li>
-                          🖱️ Right-click the data in the message editor and
-                          select Send to Decoder.
-                        </li>
-                        <li>
-                          📂 Go to the Decoder tab where the data appears in the
-                          top panel.
-                        </li>
-                        <li>
-                          ⚙️ Select an operation from the controls beside the
-                          data panel, such as Encode as or Smart decode.
-                        </li>
-                        <li>👀 View the data in either Text or Hex form.</li>
-                      </ul>
-                      <h4>🔧 Operations</h4>
-                      <ul className="operations-list">
-                        <li>
-                          <strong>🔓 Decode as:</strong> Apply a decoding
-                          function.
-                        </li>
-                        <li>
-                          <strong>🔒 Encode as:</strong> Apply an encoding
-                          function.
-                        </li>
-                        <li>
-                          <strong>🔐 Hash:</strong> Apply a hash function.
-                        </li>
-                        <li>
-                          <strong>🤖 Smart decode:</strong> Automatically detect
-                          and decode layers.
-                        </li>
-                      </ul>
-                      <h4>📜 Available Encoding and Decoding Formats</h4>
-                      <p>
-                        URL, HTML, Base64, ASCII hex, Hex, Octal, Binary, GZIP.
-                      </p>
-                    </div>
-                  </div>
+                    <p>Burp Decoder enables you to transform data using common encoding and decoding formats. You can use Decoder to:</p>
+                    <ul>
+                      <li>Manually decode data.</li>
+                      <li>Automatically identify and decode recognizable encoding formats, such as URL-encoding.</li>
+                      <li>Transform raw data into various encoded and hashed formats.</li>
+                    </ul>  
+                    <p>Decoder enables you to apply layers of transformations to the same data. This enables you to unpack or apply complex encoding schemes. For example, to generate modified data in the correct format for an attack, you could:</p>
+                    <ul>
+                      <li>Apply URL-decoding, then HTML-decoding.</li>
+                      <li>Edit the decoded data.</li>
+                      <li>Reapply the HTML-encoding, then the URL-encoding.</li>
+                    </ul>
+                    <h3>Carrying out transformations</h3>
+                    <p>You can send data to Burp Decoder from the message editor in various Burp tools, such as HTTP history. To carry out a data transformation using Burp Decoder:</p>
+                    <ul>
+                      <li>1. Locate the data that you want to analyze.</li>
+                      <li>2. Right-click the data in the message editor and select <strong>Send to Decoder</strong>.</li>
+                      <li>3. Go to the Decoder tab. The data is in the top panel.</li>
+                      <li>4. Apply the transformation you want to use.Select the operation you want to perform on the data from the controls beside the data panel. For example, Encode as or Smart decode.</li>
+                    </ul>
+                     <p>When you carry out a transformation, a new editor panel opens with the transformed data. You can then apply further transformations as required. For each transformation, the following applies:</p>
+                    <ul>
+                      <li>The transformation applies to the whole data set. To apply the transformation to only a portion of the data, select the relevant section before you choose an operation.</li>
+                      <li>The data is color-coded to indicate the type of encoding or decoding that is applied.</li>
+                      <li>Any parts of the data that aren't transformed are copied into the new panel in their raw form.</li>
+
+                    </ul>
+                    <p>The following decode and encode functions are available:</p>
+                    <ul>
+                      <li>URL</li>
+                      <li>HTML</li>
+                      <li>Base64</li>
+                      <li>ASCII hex</li>
+                      <li>Hex</li>
+                      <li>Octal</li>
+                      <li>Binary</li>
+                      <li>GZIP</li>
+                    </ul>
+                 </div>   
                 </dd>
               </dl>
             </div>
