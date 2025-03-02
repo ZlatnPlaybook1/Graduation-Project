@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-import "./MCQ.css"; // Assuming this is where the CSS is defined
+// import "./MCQ.css"; // Assuming this is where the CSS is defined
 
 const MCQQuiz = ({ questionsData }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
