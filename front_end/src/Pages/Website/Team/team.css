@@ -49,7 +49,8 @@
 .team-section__member-content h4 span {
   color: var(--secondary-text);
   letter-spacing: 2px;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-weight: 400;
   font-style: italic;
 }
 
