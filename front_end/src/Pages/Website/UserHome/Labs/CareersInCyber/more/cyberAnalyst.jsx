@@ -101,14 +101,14 @@ export default function AC_Vuln() {
             <p>
               Cyber Analysts gather and analyze data from various threat intelligence sources. This helps in identifying attacker tactics, techniques, and procedures (TTPs) to predict and mitigate future risks.
             </p>
-            <ul>
+            <ol>
               <li>
                 <b>Data Sources:</b> OSINT, commercial feeds, and industry reports.
               </li>
               <li>
                 <b>Analysis Tools:</b> Platforms that correlate and visualize threat data.
               </li>
-            </ul>
+            </ol>
             
           </dd>
           {/* Topic 2 */}
