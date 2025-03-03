@@ -7,14 +7,6 @@ import UseFaqSection from "../../../Components/UseFaqSection/UseFaqSection.jsx";
 import Banner from "../../../Components/Banner/Banner.jsx";
 import CourseLanding from "../../../Components/CourseLanding/CourseLanding.jsx";
 import Go2TopBtn from "../../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
-import SocialEngImage from "../../../assets/img/ACV/topic2.png"
-import VulnExploitImage from "../../../assets/img/ACV/DAC.png"
-import MacImage from "../../../assets/img/ACV/MAC.png"
-import RbacImage from "../../../assets/img/ACV/RBAC.png"
-import CareerPathImage from "../../../assets/img/ACV/ABAC.png"
-import PenTestImage from "../../../assets/img/ACV/access-control.svg"
-import RedTeamIntroImage from "../../../assets/img/ACV/BrokeAcc.png"
-import RealWorldImage from "../../../assets/img/ACV/IDOR.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
@@ -56,8 +48,7 @@ export default function AC_Vuln() {
             <p>
               A Red Teamer is a cybersecurity professional who simulates adversarial attacks to identify vulnerabilities before malicious actors can exploit them. They adopt an offensive mindset to assess, challenge, and improve an organization’s security posture.
             </p>
-            <img src={RedTeamIntroImage} alt="Red Team Introduction" className="img-fluid w-50 mx-auto d-block" />
-            <hr />
+           
             <p>
               A career in Red Teaming involves a mix of technical skills, creative problem-solving, and continuous learning. Red Teamers work across areas such as penetration testing, social engineering, vulnerability assessments, and exploit development.
             </p>
@@ -127,8 +118,7 @@ export default function AC_Vuln() {
             <p>
               These stages help organizations understand their security weaknesses and implement better defenses.
             </p>
-            <img src={PenTestImage} alt="Penetration Testing" className="img-fluid w-50 mx-auto d-block" />
-            <hr />
+           
           </dd>
           {/* Topic 2 */}
           <dt className="fadeInUp faq-header">
@@ -156,8 +146,7 @@ export default function AC_Vuln() {
             <p>
               These techniques are designed to test and improve an organization’s awareness and resilience to social attacks.
             </p>
-            <img src={SocialEngImage} alt="Social Engineering" className="img-fluid w-50 mx-auto d-block" />
-            <hr />
+            
           </dd>
           {/* Topic 3 */}
           <dt className="fadeInUp faq-header">
@@ -183,8 +172,7 @@ export default function AC_Vuln() {
                 <b>Research and Development:</b> Keeping abreast of new techniques and zero-day vulnerabilities.
               </li>
             </ul>
-            <img src={VulnExploitImage} alt="Vulnerability and Exploit" className="img-fluid w-75 mx-auto d-block" />
-            <hr />
+            
           </dd>
           {/* Topic 4 */}
           <dt className="fadeInUp faq-header">
@@ -209,8 +197,7 @@ export default function AC_Vuln() {
                 <b>Mentorship:</b> Learning from experienced professionals in the field.
               </li>
             </ul>
-            <img src={CareerPathImage} alt="Career Path" className="img-fluid w-75 mx-auto d-block" />
-            <hr />
+         
             <p>
               Continuous learning and practical experience are vital to advance your career in this rapidly evolving field.
             </p>
@@ -275,8 +262,7 @@ export default function AC_Vuln() {
             <p>
               These real-world scenarios not only test technical skills but also the ability to communicate findings and suggest practical improvements.
             </p>
-            <img src={RealWorldImage} alt="Real World Challenges" className="img-fluid w-75 mx-auto d-block" />
-            <hr />
+          
           </dd>
           {/* Topic 7 */}
           <dt className="fadeInUp faq-header">

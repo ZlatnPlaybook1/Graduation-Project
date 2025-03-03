@@ -7,14 +7,7 @@ import UseFaqSection from "../../../Components/UseFaqSection/UseFaqSection.jsx";
 import Banner from "../../../Components/Banner/Banner.jsx";
 import CourseLanding from "../../../Components/CourseLanding/CourseLanding.jsx";
 import Go2TopBtn from "../../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
-import IntroImage from "../../../assets/img/ACV/topic2.png"
-import DacImage from "../../../assets/img/ACV/DAC.png"
-import MacImage from "../../../assets/img/ACV/MAC.png"
-import RbacImage from "../../../assets/img/ACV/RBAC.png"
-import AbacImage from "../../../assets/img/ACV/ABAC.png"
-import ACVImage from "../../../assets/img/ACV/access-control.svg"
-import BrokenAccImage from "../../../assets/img/ACV/BrokeAcc.png"
-import IdorImage from "../../../assets/img/ACV/IDOR.png"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
@@ -31,11 +24,8 @@ export default function AC_Vuln() {
         background={background}
         backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
         courseImage={courseImage}
-        courseTitle="Access control vulnerability"
-        courseDescription="Learn how attackers exploit access control vulnerabilities in
-                web applications, gaining unauthorized access to sensitive areas
-                or data, and the techniques used to detect and prevent these
-                attacks."
+        courseTitle="Digital Forensics Examiner"
+        courseDescription="Learn how to investigate cybercrimes by analyzing digital evidence."
         difficulty="Intermediate"
         duration="20 min"
         onSaveRoom={() => console.log("Room Saved!")}
@@ -45,120 +35,198 @@ export default function AC_Vuln() {
       {/* End Landing */}
       {/* Start Course */}
 
-      <div className="Content">
+      <div className="Content ">
   <div className="secure-container" ref={faqSectionRef}>
     <div className="content-row">
       <div className="content-section">
         <dl className="topics-text">
+          {/* Intro */}
           <dt className="fadeInUp faq-header">
-            <span>Security Analyst</span>
+            <span>Intro </span> Introduction to Digital Forensics Examiner Career
           </dt>
           <dd className="fadeInUp faq-body open-sans" id="border-left">
-            <h3 className="content__title">Who is a Security Analyst? What do they do?</h3>
+            <h3 className="content__title">What is a Digital Forensics Examiner?</h3>
             <p>
-              Security analysts are experts who identify and fix problems within security systems by analyzing risks, vulnerabilities, threats, and incidents. They perform in-depth security assessments to recommend solutions for preventing cyberattacks.
+              A Digital Forensics Examiner specializes in the recovery, investigation, and analysis of data from digital devices. They work to uncover evidence related to cybercrimes, data breaches, or other incidents, ensuring that digital evidence is preserved and analyzed in accordance with legal standards.
             </p>
-            <h3 className="content__title">Security Analyst Responsibilities and Duties</h3>
-            <ul>
-              <li>Securing the company’s assets: Protecting sensitive data, including customer and employee information.</li>
-              <li>Overseeing the systems: Monitoring and ensuring systems are up to date with the latest security patches.</li>
-              <li>Performing security assessments: Conducting vulnerability tests and risk analysis to detect weaknesses.</li>
-              <li>Analyzing data breaches: Investigating incidents to determine the cause and strengthen security controls.</li>
-              <li>Collaborating with third-party vendors: Ensuring compliance with security standards.</li>
-            </ul>
-            <h3 className="content__title">Skills Needed to Become a Security Analyst</h3>
-            <ul>
-              <li>Ethical hacking</li>
-              <li>Data scripting (Python, PowerShell)</li>
-              <li>Intrusion prevention and monitoring</li>
-              <li>Incident response and management</li>
-              <li>Computer forensics</li>
-              <li>Reverse engineering and malware analysis</li>
-              <li>Soft skills: Analytical thinking, problem-solving, communication</li>
-            </ul>
-            <h3 className="content__title">Salary of a Security Analyst</h3>
+       
             <p>
-              The median annual wage for Information Security Analysts was $102,600 in May 2021. Other reports indicate:
+              This role requires a blend of technical expertise in data recovery, meticulous attention to detail, and a deep understanding of legal and regulatory frameworks to ensure that evidence is admissible in court.
             </p>
-            <ul>
-              <li>ZipRecruiter: $93,645 annually (April 2023)</li>
-              <li>Glassdoor: $78,213 annually (April 2023)</li>
-            </ul>
-            <h3 className="content__title">Security Analyst Certifications</h3>
-            <ul>
-              <li>CompTIA Cybersecurity Analyst (CySA+)</li>
-              <li>CCIE Security by Cisco</li>
-              <li>CISSP by ISC2</li>
-              <li>GIAC Information Security Fundamentals (GISF)</li>
-            </ul>
-            <h3 className="content__title">Summing up the Security Analyst Role</h3>
-            <p>
-              Companies should hire security analysts to protect their sensitive information and prevent cyberattacks. With the increasing frequency of cyber threats, having dedicated security analysts ensures the organization’s ability to:
-            </p>
-            <ul>
-              <li>Identify vulnerabilities in systems and applications.</li>
-              <li>Detect and respond to security incidents efficiently.</li>
-              <li>Stay ahead of emerging cybersecurity threats.</li>
-            </ul>
+            <h3 className="content__title">Key Areas in a Digital Forensics Examiner Career</h3>
+            <ol>
+              <li>
+                <b className="content__subtitle">Evidence Collection & Preservation:</b> &nbsp;
+                Securely gathering digital evidence while maintaining its integrity.
+                <ul>
+                  <li>
+                    <FontAwesomeIcon icon={faArrowRight} className="me-2 my-0 text-warning" /> Example: Using write-blockers and proper imaging tools to capture data.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b className="content__subtitle">Data Analysis & Recovery:</b> &nbsp;
+                Analyzing recovered data to uncover critical information and hidden artifacts.
+                <ul>
+                  <li>
+                    <FontAwesomeIcon icon={faArrowRight} className="me-2 my-0 text-warning" /> Example: Utilizing forensic software to recover deleted files and trace digital footprints.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b className="content__subtitle">Documentation & Reporting:</b> &nbsp;
+                Meticulously documenting findings and preparing reports for legal proceedings.
+                <ul>
+                  <li>
+                    <FontAwesomeIcon icon={faArrowRight} className="me-2 my-0 text-warning" /> Example: Creating chain-of-custody reports and detailed forensic analysis documentation.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b className="content__subtitle">Courtroom Testimony & Legal Support:</b> &nbsp;
+                Presenting forensic findings in legal settings and providing expert opinions.
+                <ul>
+                  <li>
+                    <FontAwesomeIcon icon={faArrowRight} className="me-2 my-0 text-warning" /> Example: Delivering clear and concise testimony to support legal cases.
+                  </li>
+                </ul>
+              </li>
+            </ol>
           </dd>
+          {/* Topic 1 */}
           <dt className="fadeInUp faq-header">
-            <span>Digital Forensics Examiner</span>
+            <span>Topic 1</span> Evidence Collection & Preservation
           </dt>
           <dd className="fadeInUp faq-body open-sans" id="border-left">
-            <h3 className="content__title">Who is a Digital Forensics Examiner? What do they do?</h3>
+            <h3 className="content__subtitle">Collection & Preservation:</h3>
             <p>
-              Digital Forensics Examiners specialize in investigating cybercrimes by analyzing digital evidence. Their work is crucial in legal cases, corporate investigations, and cybersecurity incidents.
-            </p>
-            <h3 className="content__title">Digital Forensics Examiner Responsibilities and Duties</h3>
-            <ul>
-              <li>Collecting digital evidence: Acquiring and preserving electronic data from various sources.</li>
-              <li>Analyzing compromised systems: Examining devices to identify the source and impact of cyber incidents.</li>
-              <li>Recovering lost or deleted data: Using forensic tools to retrieve crucial digital information.</li>
-              <li>Preparing forensic reports: Documenting findings for legal or corporate proceedings.</li>
-              <li>Collaborating with law enforcement: Assisting agencies in cybercrime investigations.</li>
-            </ul>
-            <h3 className="content__title">Skills Needed to Become a Digital Forensics Examiner</h3>
-            <ul>
-              <li>Computer Forensics</li>
-              <li>Network Security</li>
-              <li>Malware Analysis</li>
-              <li>Cryptography</li>
-              <li>Incident Response</li>
-              <li>Legal and Regulatory Knowledge</li>
-              <li>Soft skills: Analytical Thinking, Attention to Detail, Problem-Solving</li>
-            </ul>
-            <h3 className="content__title">Salary of a Digital Forensics Examiner</h3>
-            <p>
-              Digital Forensics Examiners earn competitive salaries, with the average annual wage in the U.S. being $95,000+. Other reports indicate:
+              The foundation of digital forensics is the proper collection and preservation of evidence. This involves using standardized procedures to ensure that data remains unaltered and legally admissible.
             </p>
             <ul>
-              <li>ZipRecruiter: $98,000 annually (2023)</li>
-              <li>Glassdoor: $85,000 annually (2023)</li>
+              <li>
+                <b>Write-Blockers:</b> Prevent any changes to storage media during imaging.
+              </li>
+              <li>
+                <b>Imaging Tools:</b> Create bit-for-bit copies of digital evidence.
+              </li>
             </ul>
-            <h3 className="content__title">Digital Forensics Examiner Certifications</h3>
-            <ul>
-              <li>Certified Computer Examiner (CCE)</li>
-              <li>GIAC Certified Forensic Examiner (GCFE)</li>
-              <li>Certified Forensic Computer Examiner (CFCE)</li>
-              <li>EnCase Certified Examiner (EnCE)</li>
-            </ul>
-            <h3 className="content__title">Summing up the Digital Forensics Examiner Role</h3>
+           
+          </dd>
+          {/* Topic 2 */}
+          <dt className="fadeInUp faq-header">
+            <span>Topic 2</span> Data Analysis & Recovery
+          </dt>
+          <dd className="fadeInUp faq-body open-sans" id="border-left">
+            <h3 className="content__subtitle">Analysis & Recovery:</h3>
             <p>
-              Digital Forensics Examiners play a vital role in cybercrime investigations, helping organizations and law enforcement:
+              After collecting data, the next step is thorough analysis and recovery. Forensics experts use a variety of tools to extract deleted, hidden, or encrypted information.
             </p>
             <ul>
-              <li>Recover and analyze digital evidence.</li>
-              <li>Identify and track cybercriminal activities.</li>
-              <li>Ensure legal compliance in investigations.</li>
+              <li>
+                <b>Forensic Software:</b> Tools like EnCase, FTK, and Autopsy help in analyzing large datasets.
+              </li>
+              <li>
+                <b>Data Carving:</b> Recovering files based on known file signatures.
+              </li>
             </ul>
+            
+          </dd>
+          {/* Topic 3 */}
+          <dt className="fadeInUp faq-header">
+            <span>Topic 3</span> Documentation & Reporting
+          </dt>
+          <dd className="fadeInUp faq-body open-sans" id="border-left">
+            <h3 className="content__subtitle">Documentation & Reporting:</h3>
+            <p>
+              Accurate documentation is critical in digital forensics. Every step must be recorded to establish a clear chain-of-custody and provide evidence that stands up in court.
+            </p>
+            <ul>
+              <li>
+                <b>Chain-of-Custody:</b> Detailed logs that track every access and transfer of evidence.
+              </li>
+              <li>
+                <b>Forensic Reports:</b> Comprehensive documents that summarize findings and analysis.
+              </li>
+            </ul>
+            
+          </dd>
+          {/* Topic 4 */}
+          <dt className="fadeInUp faq-header">
+            <span>Topic 4</span> Courtroom Testimony & Legal Support
+          </dt>
+          <dd className="fadeInUp faq-body open-sans" id="border-left">
+            <h3 className="content__subtitle">Legal Support & Testimony:</h3>
+            <p>
+              Digital Forensics Examiners often serve as expert witnesses in court. They must be able to present their findings in a clear, unbiased manner to support legal proceedings.
+            </p>
+            <ul>
+              <li>
+                <b>Expert Testimony:</b> Clearly explaining technical evidence to a non-technical audience.
+              </li>
+              <li>
+                <b>Collaboration with Legal Teams:</b> Assisting in building strong cases through detailed reports.
+              </li>
+            </ul>
+         
+          </dd>
+          {/* Topic 5 */}
+          <dt className="fadeInUp faq-header">
+            <span>Topic 5</span> Career Path & Certifications
+          </dt>
+          <dd className="fadeInUp faq-body open-sans" id="border-left">
+            <h3 className="content__title">Career Path and Professional Development:</h3>
+            <p>
+              Advancing as a Digital Forensics Examiner requires a solid foundation in IT, continuous education, and certifications. Key steps include:
+            </p>
+            <ul>
+              <li>
+                <b>Certifications:</b> Earning credentials such as CFCE, EnCE, or CHFI to validate your expertise.
+              </li>
+              <li>
+                <b>Hands-On Labs:</b> Gaining practical experience by working on simulated forensic investigations.
+              </li>
+              <li>
+                <b>Continual Learning:</b> Staying updated with evolving digital threats and forensic technologies.
+              </li>
+              <li>
+                <b>Professional Networking:</b> Engaging with industry groups and attending forensic conferences.
+              </li>
+            </ul>
+            <div className="note">
+              Read more from this link 👉🏻 
+              <a href="https://www.example.com/digital-forensics-examiner-career" className="border-0 bg-transparent link-primary text-decoration-underline">
+                Digital Forensics Examiner Career Resources
+              </a>
+            </div>
+          </dd>
+          {/* Topic 6 */}
+          <dt className="fadeInUp faq-header">
+            <span>Topic 6</span> Hands-On Labs & Continuous Learning
+          </dt>
+          <dd className="fadeInUp faq-body open-sans" id="border-left">
+            <h3 className="content__title">Practical Experience:</h3>
+            <p>
+              Regular practice is essential in mastering digital forensics. Engage in labs and real-world simulations to sharpen your investigative skills.
+            </p>
+            <ul>
+              <li>
+                <b>Lab Simulations:</b> Use controlled environments to simulate forensic investigations.
+              </li>
+              <li>
+                <b>Workshops & Webinars:</b> Attend training sessions focused on the latest forensic techniques.
+              </li>
+              <li>
+                <b>CTF Challenges:</b> Participate in competitions that test your analytical and recovery skills.
+              </li>
+            </ul>
+           
           </dd>
         </dl>
       </div>
       <div className="go-to-section">
-        <button
-          onClick={() => handleGoToLab("/AC-Vuln/AC_Vuln_labs")}
-          className="go-to"
-        ></button>
+        <button onClick={() => handleGoToLab("/digital-forensics-examiner/labs")} className="go-to">
+          Go To Labs
+        </button>
       </div>
     </div>
   </div>
