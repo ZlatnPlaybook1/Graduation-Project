@@ -20,7 +20,6 @@ export default function AC_Vuln_labs() {
         <div className="container">
           <PracticeTitle title={"Access control vulnerability"} />
           <div className="row">
-            {/* lab1 */}
             <Card
               link={"/AC-Vuln/AC_Vuln_labs/first_lab"}
               image={labImg}
