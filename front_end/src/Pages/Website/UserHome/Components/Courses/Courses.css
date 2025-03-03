@@ -226,7 +226,7 @@
 /* ===============================
    Start Icons Style
 =============================== */
-.course-icons {
+.course-icons-cards {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -238,7 +238,7 @@
   z-index: 1;
 }
 
-.course-icons span {
+.course-icons-cards span {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -249,24 +249,24 @@
   cursor: pointer;
 }
 
-.course-icons span:hover {
+.course-icons-cards span:hover {
   background-color: rgba(0, 0, 0, 0.1);
   transform: scale(1.1);
 }
 
-.course-icons i {
+.course-icons-cards i {
   transition: color 0.3s ease;
 }
 
-.course-icons .fa-heart.text-danger {
+.course-icons-cards .fa-heart.text-danger {
   color: red;
 }
 
-.course-icons span:hover .fa-heart {
+.course-icons-cards span:hover .fa-heart {
   color: #ff4d4d;
 }
 
-.course-icons span:hover .fa-info-circle {
+.course-icons-cards span:hover .fa-info-circle {
   color: #007bff;
 }
 /* ===============================

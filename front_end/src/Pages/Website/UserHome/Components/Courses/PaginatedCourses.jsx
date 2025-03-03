@@ -116,7 +116,7 @@ const PaginatedCourses = ({ filteredCourses }) => {
           <a href={course.link} className="course-card">
             {/* Top right icons */}
             <div
-              className="course-icons"
+              className="course-icons-cards"
               style={{ zIndex: 1, fontSize: "1.5rem" }}
             >
               {/* Favorite Icon */}
