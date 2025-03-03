@@ -15,7 +15,6 @@
     color: var(--main-color3);
     background: var(--glass-effect);
     width: fit-content;
-    /* padding: .5rem 0.2rem; */
 }
 .content__code{
     margin-block: 1rem;
