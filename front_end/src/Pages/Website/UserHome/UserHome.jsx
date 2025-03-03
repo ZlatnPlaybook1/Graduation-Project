@@ -16,8 +16,8 @@ export default function UserHome() {
   return (
     <div style={{position: "relative"}}>
       <Header />
-      <Preloader  loading={loading}/>
       <ThemeSwitcher />
+      <Preloader  loading={loading}/>
       <Landing />
       <Courses />
       <Footer />
