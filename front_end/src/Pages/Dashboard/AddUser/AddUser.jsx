@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -8,7 +8,7 @@ export default function AddUser() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
-   const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -31,12 +31,12 @@ export default function AddUser() {
       console.error("Error submitting form:", error);
     }
   }
-   useEffect(() => {
-        const timer = setTimeout(() => {
-          setLoading(false);
-        }, 2000);
-        return () => clearTimeout(timer);
-      }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <div className="container my-5">
       {loading && <Preloader loading={loading} />}
@@ -45,7 +45,7 @@ export default function AddUser() {
         className="p-4 border rounded shadow-sm"
         onSubmit={handleSubmit}
         style={{
-          backgroundColor: "var(--secondary-bg)",
+          backgroundColor: "var(--primary-bg)",
           color: "var(--primary-text)",
         }}
       >
@@ -54,7 +54,7 @@ export default function AddUser() {
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label
             style={{
-              backgroundColor: "var(--secondary-bg)",
+              backgroundColor: "var(--primary-bg)",
               color: "var(--primary-text)",
             }}
           >
@@ -76,7 +76,7 @@ export default function AddUser() {
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
           <Form.Label
             style={{
-              backgroundColor: "var(--secondary-bg)",
+              backgroundColor: "var(--primary-bg)",
               color: "var(--primary-text)",
             }}
           >
@@ -98,7 +98,7 @@ export default function AddUser() {
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
           <Form.Label
             style={{
-              backgroundColor: "var(--secondary-bg)",
+              backgroundColor: "var(--primary-bg)",
               color: "var(--primary-text)",
             }}
           >
@@ -120,7 +120,7 @@ export default function AddUser() {
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
           <Form.Label
             style={{
-              backgroundColor: "var(--secondary-bg)",
+              backgroundColor: "var(--primary-bg)",
               color: "var(--primary-text)",
             }}
           >
@@ -130,7 +130,7 @@ export default function AddUser() {
             value={role}
             onChange={(e) => setRole(e.target.value)}
             style={{
-              backgroundColor: "var(--inputColor)",
+              backgroundColor: "var(--primary-bg)",
               color: "var(--primary-text)",
             }}
           >
@@ -160,7 +160,7 @@ export default function AddUser() {
             transition: "var(--transition-speed)",
           }}
           onMouseOver={(e) =>
-            (e.target.style.backgroundColor = "var(--hover-main-color)")
+            (e.target.style.backgroundColor = "var(--main-color)")
           }
           onMouseOut={(e) =>
             (e.target.style.backgroundColor = "var(--main-color)")

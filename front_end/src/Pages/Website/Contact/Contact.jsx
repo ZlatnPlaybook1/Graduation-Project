@@ -36,7 +36,7 @@ const Contact = () => {
         <div className="container">
           <div className="row section-row">
             <div className="col-lg-12">
-              <div className="section-title">
+              <div className="section-title-contant">
                 <h3>contact us</h3>
                 <h2>
                   Do you have questions? <span>ask us anytime</span>
@@ -95,7 +95,7 @@ const Contact = () => {
                 </div>
 
                 <div className="contact-us-form">
-                  <div className="section-title dark-section">
+                  <div className="section-title-contant dark-section">
                     <h2>Get in touch with us</h2>
                   </div>
 

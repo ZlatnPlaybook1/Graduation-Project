@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cookie from "cookie-universal";
 import "./Writer.css";
+import Preloader from "../../Website/Preloader/Preloader";
 
 export default function Writer() {
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
+  const [loadingPage, setLoadingPage] = useState(true);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -30,7 +32,12 @@ export default function Writer() {
       document.body.classList.remove("dark-mode");
     }
   }, [darkMode]);
-
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoadingPage(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
@@ -143,87 +150,91 @@ export default function Writer() {
   };
 
   return (
-    <div className="writer-form">
-      <button className="dark-mode-toggle" onClick={toggleDarkMode}>
-        {darkMode ? "Light Mode" : "Dark Mode"}
-      </button>
-      {loading && <p>Loading...</p>}
-      {imagePreview && (
-        <div className="image-preview">
-          <img src={imagePreview} alt="Preview" />
-        </div>
-      )}
-      <form className="form-writer" onSubmit={handleSubmit}>
-        <div>
-          <label className="label-writer">Name:</label>
-          <input
-            className="input-type-writer"
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label className="label-writer">Age:</label>
-          <input
-            className="input-type-writer"
-            type="number"
-            name="age"
-            value={calculateAge(formData.birthday)}
-            disabled
-            required
-          />
-        </div>
-        <div>
-          <label className="label-writer">Birthday:</label>
-          <input
-            className="input-type-writer"
-            type="date"
-            name="birthday"
-            value={formData.birthday}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label className="label-writer">Address:</label>
-          <input
-            className="input-type-writer"
-            type="text"
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label className="label-writer">Phone Number:</label>
-          <input
-            className="input-type-writer"
-            type="tel"
-            name="phoneNum"
-            value={formData.phoneNum}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label className="label-writer">Image:</label>
-          <input
-            className="input-type-writer"
-            type="file"
-            name="image"
-            onChange={handleImageChange}
-          />
-        </div>
-        <button className="button-writer" type="submit">
-          Submit
+    <>
+      {loadingPage && <Preloader loading={loadingPage} />}
+
+      <div className="writer-form">
+        <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+          {darkMode ? "Light Mode" : "Dark Mode"}
         </button>
-        {err && <p className="error-writer">{err}</p>}
-        {success && <p className="success-writer">{success}</p>}
-      </form>
-    </div>
+        {loading && <p>Loading...</p>}
+        {imagePreview && (
+          <div className="image-preview">
+            <img src={imagePreview} alt="Preview" />
+          </div>
+        )}
+        <form className="form-writer" onSubmit={handleSubmit}>
+          <div>
+            <label className="label-writer">Name:</label>
+            <input
+              className="input-type-writer"
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label className="label-writer">Age:</label>
+            <input
+              className="input-type-writer"
+              type="number"
+              name="age"
+              value={calculateAge(formData.birthday)}
+              disabled
+              required
+            />
+          </div>
+          <div>
+            <label className="label-writer">Birthday:</label>
+            <input
+              className="input-type-writer"
+              type="date"
+              name="birthday"
+              value={formData.birthday}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label className="label-writer">Address:</label>
+            <input
+              className="input-type-writer"
+              type="text"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label className="label-writer">Phone Number:</label>
+            <input
+              className="input-type-writer"
+              type="tel"
+              name="phoneNum"
+              value={formData.phoneNum}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label className="label-writer">Image:</label>
+            <input
+              className="input-type-writer"
+              type="file"
+              name="image"
+              onChange={handleImageChange}
+            />
+          </div>
+          <button className="button-writer" type="submit">
+            Submit
+          </button>
+          {err && <p className="error-writer">{err}</p>}
+          {success && <p className="success-writer">{success}</p>}
+        </form>
+      </div>
+    </>
   );
 }

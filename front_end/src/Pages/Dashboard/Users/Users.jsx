@@ -7,11 +7,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Cookie from "cookie-universal";
 import "./Users.css";
+import Preloader from "../../Website/Preloader/Preloader";
 export default function Users() {
   const [userData, setUserData] = useState([]);
   const [deleteUser, setDeleteUser] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [NoUsers, setNoUsers] = useState(false);
+  const [loadingPage, setLoadingPage] = useState(true);
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
   useEffect(() => {
@@ -46,7 +48,12 @@ export default function Users() {
         console.log(err);
       });
   }, [deleteUser, token]);
-
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoadingPage(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
   // Mapping on users
   const userShow = userData.map((user, key) => (
     <tr key={user.id}>
@@ -96,41 +103,44 @@ export default function Users() {
   }
 
   return (
-    <div className="table-container">
-      <h2 className="table-title">User List</h2>
-      <div className="d-flex justify-content-start">
-        <Link className="btn-add btn-primary-add" to={"/dashboard/user/add"}>
-          Add User
-        </Link>
+    <>
+      {loadingPage && <Preloader loading={loadingPage} />}
+      <div className="table-container">
+        <h2 className="table-title">User List</h2>
+        <div className="d-flex justify-content-start">
+          <Link className="btn-add btn-primary-add" to={"/dashboard/user/add"}>
+            Add User
+          </Link>
+        </div>
+        <Table responsive="sm" className="modern-table">
+          <thead>
+            <tr>
+              <th className="tr-color">id</th>
+              <th className="tr-color">User Name</th>
+              <th className="tr-color">Email</th>
+              <th className="tr-color">Role</th>
+              <th className="tr-color">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {userData.length === 0 ? (
+              <tr>
+                <td colSpan={5} className="text-center">
+                  Loading...
+                </td>
+              </tr>
+            ) : NoUsers ? (
+              <tr>
+                <td colSpan={5} className="text-center">
+                  No Users Found
+                </td>
+              </tr>
+            ) : (
+              userShow
+            )}
+          </tbody>
+        </Table>
       </div>
-      <Table responsive="sm" className="modern-table">
-        <thead>
-          <tr>
-            <th className="tr-color">id</th>
-            <th className="tr-color">User Name</th>
-            <th className="tr-color">Email</th>
-            <th className="tr-color">Role</th>
-            <th className="tr-color">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {userData.length === 0 ? (
-            <tr>
-              <td colSpan={5} className="text-center">
-                Loading...
-              </td>
-            </tr>
-          ) : NoUsers ? (
-            <tr>
-              <td colSpan={5} className="text-center">
-                No Users Found
-              </td>
-            </tr>
-          ) : (
-            userShow
-          )}
-        </tbody>
-      </Table>
-    </div>
+    </>
   );
 }

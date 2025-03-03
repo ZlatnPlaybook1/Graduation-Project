@@ -10,7 +10,7 @@ body.dark-mode {
 }
 
 .dark-mode .label-writer {
-  color: var(--text-dark);
+  color: var(--highlight-color);
 }
 
 .dark-mode .input-type-writer {
@@ -24,17 +24,17 @@ body.dark-mode {
 }
 
 .dark-mode .input-type-writer:focus {
-  border-color: var(--primary-color);
+  border-color: var(--main-color);
   box-shadow: 0 0 8px rgba(108, 99, 255, 0.5);
 }
 
 .dark-mode .button-writer {
-  background-color: var(--primary-color);
+  background-color: var(--main-color);
   color: white;
 }
 
 .dark-mode .button-writer:hover {
-  background-color: #4a43b3;
+  background-color: var(--main-color);
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
 }
 
@@ -91,24 +91,25 @@ body.dark-mode {
 
 .writer-form .input-type-writer:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: var(--main-color);
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
 
 .writer-form .button-writer {
   padding: 12px 20px;
-  background-color: #007bff;
+  background-color: var(--main-color);
   color: white;
   font-size: 16px;
   font-weight: bold;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 1rem;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .writer-form .button-writer:hover {
-  background-color: #0056b3;
+  background-color: var(--main-color2);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -153,7 +154,7 @@ body.dark-mode {
 
 .dark-mode-toggle {
   padding: 10px 15px;
-  background-color: #2a57d7;
+  background-color: var(--main-color);
   color: white;
   font-size: 14px;
   font-weight: bold;
@@ -164,6 +165,6 @@ body.dark-mode {
 }
 
 .dark-mode-toggle:hover {
-  background-color: #4a43b3;
+  background-color: var(--main-color2);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
