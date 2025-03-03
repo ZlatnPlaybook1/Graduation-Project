@@ -129,7 +129,7 @@ const TeamSection = () => {
                         className="img-fluid"
                       />
                     </div>
-                    <div className="team-section__member-content card-body text-center">
+                    <div className="team-section__member-content card-body">
                       <h4 className="team-section__member-name card-title">
                         {member.name} <br />
                         <span className="team-section__member-role card-text">
