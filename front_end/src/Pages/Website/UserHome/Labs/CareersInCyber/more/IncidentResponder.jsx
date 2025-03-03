@@ -51,68 +51,93 @@ export default function AC_Vuln() {
       <div className="content-section">
         <dl className="topics-text">
           <dt className="fadeInUp faq-header">
-            <span>Who is a Security Analyst? What do they do?</span>
+           Topic 1 <span>  Who is an Incident Responder? What do they do?</span>
           </dt>
           <dd className="fadeInUp faq-body open-sans" id="border-left">
             <p>
-              Security analysts are experts who identify and fix problems within security systems by analyzing risks, vulnerabilities, threats, and incidents. They perform in-depth security assessments to recommend solutions for preventing cyberattacks.
+             Incident responders are cybersecurity professionals who detect,
+          investigate, and respond to security incidents. Their primary goal is
+          to minimize damage and restore normal operations as quickly as
+          possible.
             </p>
           </dd>
           <dt className="fadeInUp faq-header">
-            <span>Security Analyst Responsibilities and Duties</span>
+          Topic 1  <span>  Incident Responder Responsibilities and Duties</span>
           </dt>
           <dd className="fadeInUp faq-body open-sans" id="border-left">
             <ul>
-              <li>Securing the company’s assets: Protecting sensitive data, including customer and employee information.</li>
-              <li>Overseeing the systems: Monitoring and ensuring systems are up to date with the latest security patches.</li>
-              <li>Performing security assessments: Conducting vulnerability tests and risk analysis to detect weaknesses.</li>
-              <li>Analyzing data breaches: Investigating incidents to determine the cause and strengthen security controls.</li>
-              <li>Collaborating with third-party vendors: Ensuring compliance with security standards.</li>
+              <li><b>Monitoring security events:</b>Continuously analyzing
+            logs and alerts for potential security breaches.</li>
+              <li><strong>Investigating security incidents:</strong> Conducting
+            forensic analysis to determine the root cause and scope of attacks.</li>
+              <li><strong>Containing and mitigating threats:</strong> Implementing
+            immediate response strategies to prevent further damage.</li>
+              <li>  <strong>Developing incident response plans:</strong> Creating
+            protocols to ensure a quick and efficient reaction to security
+            threats.</li>
+              <li><strong>Collaborating with cybersecurity teams:</strong> Working
+            with security engineers, analysts, and management to improve
+            defenses.</li>
             </ul>
           </dd>
           <dt className="fadeInUp faq-header">
-            <span>Skills Needed to Become a Security Analyst</span>
+           Topic 1 <span> Skills Needed to Become an Incident Responder</span>
           </dt>
           <dd className="fadeInUp faq-body open-sans" id="border-left">
             <ul>
-              <li>Ethical hacking</li>
-              <li>Data scripting (Python, PowerShell)</li>
-              <li>Intrusion prevention and monitoring</li>
-              <li>Incident response and management</li>
-              <li>Computer forensics</li>
-              <li>Reverse engineering and malware analysis</li>
-              <li>Soft skills: Analytical thinking, problem-solving, communication</li>
+              <li>Threat Intelligence</li>
+              <li >Digital Forensics</li>
+          <li >Network Security</li>
+          <li >Malware Analysis</li>
+          <li >Intrusion Detection</li>
+          <li >Incident Handling</li>
+          <li >
+            Soft skills: Communication, Problem-Solving, Attention to Detail
+          </li>
             </ul>
           </dd>
           <dt className="fadeInUp faq-header">
-            <span>Salary of a Security Analyst</span>
+            Topic 1 <span>Salary of an Incident Responder</span>
           </dt>
           <dd className="fadeInUp faq-body open-sans" id="border-left">
             <p>
-              The median annual wage for Information Security Analysts was $102,600 in May 2021. Other reports indicate:
+             Incident responders earn competitive salaries, with the average annual
+          wage in the U.S. being <strong>$95,000+</strong>. Other reports
+          indicate:
             </p>
             <ul>
-              <li>ZipRecruiter: $93,645 annually (April 2023)</li>
-              <li>Glassdoor: $78,213 annually (April 2023)</li>
+              <li className="list-group-item">
+            ZipRecruiter: <strong>$100,000</strong> annually (2023)
+          </li>
+          <li className="list-group-item">
+            Glassdoor: <strong>$90,000</strong> annually (2023)
+          </li>
             </ul>
           </dd>
           <dt className="fadeInUp faq-header">
-            <span>Security Analyst Certifications</span>
+           Topic 1 <span>Incident Responder Certifications</span>
           </dt>
           <dd className="fadeInUp faq-body open-sans" id="border-left">
             <ul>
-              <li>CompTIA Cybersecurity Analyst (CySA+)</li>
-              <li>CCIE Security by Cisco</li>
-              <li>CISSP by ISC2</li>
-              <li>GIAC Information Security Fundamentals (GISF)</li>
+              <li className="list-group-item">
+            Certified Incident Handler (GCIH) by GIAC
+          </li>
+          <li className="list-group-item">
+            Certified Information Systems Security Professional (CISSP)
+          </li>
+          <li className="list-group-item">Certified Ethical Hacker (CEH)</li>
+          <li className="list-group-item">
+            CompTIA Cybersecurity Analyst (CySA+)
+          </li>
             </ul>
           </dd>
           <dt className="fadeInUp faq-header">
-            <span>Summing up the Security Analyst Role</span>
+           Topic 1 <span>Summing up the Incident Responder Role</span>
           </dt>
           <dd className="fadeInUp faq-body open-sans" id="border-left">
             <p>
-              Companies should hire security analysts to protect their sensitive information and prevent cyberattacks. With the increasing frequency of cyber threats, having dedicated security analysts ensures the organization’s ability to:
+             Incident responders are critical in detecting and mitigating cyber
+          threats. Their expertise helps businesses:
             </p>
             <ul>
               <li>Identify vulnerabilities in systems and applications.</li>

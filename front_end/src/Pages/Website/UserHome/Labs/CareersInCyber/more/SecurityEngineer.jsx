@@ -31,11 +31,8 @@ export default function AC_Vuln() {
         background={background}
         backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
         courseImage={courseImage}
-        courseTitle="Access control vulnerability"
-        courseDescription="Learn how attackers exploit access control vulnerabilities in
-                web applications, gaining unauthorized access to sensitive areas
-                or data, and the techniques used to detect and prevent these
-                attacks."
+        courseTitle="Security Engineer"
+        courseDescription="Learn how to secure systems and protect data from cyber threats."
         difficulty="Intermediate"
         duration="20 min"
         onSaveRoom={() => console.log("Room Saved!")}
