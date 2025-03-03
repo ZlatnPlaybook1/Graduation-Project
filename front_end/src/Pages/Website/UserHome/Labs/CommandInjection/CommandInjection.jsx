@@ -8,6 +8,9 @@ import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 
+import exampleImage1 from "../../assets/img/Command Injection/1.png";
+
+
 export default function CommandInjection() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
@@ -18,7 +21,8 @@ export default function CommandInjection() {
         background={background}
         courseImage={courseImage}
         courseTitle=" Command Injection"
-        courseDescription="Discover how attackers exploit Command Injection vulnerabilities to execute arbitrary system commands, gain unauthorized access, and manipulate application behavior. Learn how security professionals detect and mitigate these attacks through input validation, parameterized commands, and least privilege enforcement. Master techniques to prevent command injection by sanitizing user inputs, restricting system calls, and implementing secure coding practices to protect applications from exploitation."
+        courseDescription="In this section, we explain what OS command injection is, and describe how vulnerabilities can be detected and exploited. We also show you some useful commands and techniques for different operating systems, and describe how to prevent OS command injection."
+
         difficulty="Intermediate"
         duration="30 min"
         onSaveRoom={() => console.log("Room Saved!")}
@@ -33,137 +37,142 @@ export default function CommandInjection() {
               <dl className="topics-text">
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 1</span>Definition
+                  <span>Task 1</span>What is OS command injection ?
                 </dt>
                 <dd className="fadeInUp faq-body">
-                  <ul className="command-injection-list">
-                    <li className="command-injection-item">
-                      <span className="highlight-text">Command injection</span>{" "}
-                      is a vulnerability where an attacker is able to execute
-                      arbitrary commands on a host operating system via a
-                      vulnerable application. This happens when user input is
-                      incorrectly handled.
-                    </li>
-                    <li className="command-injection-item">
-                      <ul className="command-injection-causes-list">
-                        <p>How it work?</p>
-                        <li className="command-injection-cause-item">
-                          <span className="highlight-text">
-                            Insecure Input Handling:
-                          </span>{" "}
-                          Applications that pass user-supplied input (e.g., form
-                          fields, URL parameters) directly into system commands
-                          (e.g., exec(), system(), popen() in code) without
-                          proper validation or sanitization.
-                        </li>
-                        <li className="command-injection-cause-item">
-                          <span className="highlight-text">
-                            Command Chaining:
-                          </span>{" "}
-                          Attackers inject malicious commands using command
-                          separators like:
-                          <ul className="command-injection-separator-list">
-                            <li className="separator-item">
-                              ; (Unix) or & (Windows)
-                            </li>
-                            <li className="separator-item">
-                              | (pipe), &&, ||, $(), backticks (``), or newline
-                              characters
-                            </li>
-                          </ul>
-                        </li>
-                        <li className="command-injection-cause-item">
-                          <span className="highlight-text">Example:</span>{" "}
-                          <code>input=example.com; cat /etc/passwd</code> →
-                          Executes <code>cat /etc/passwd</code> after the
-                          intended command.
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
+                  <p>OS command injection is also known as shell injection. It allows an attacker to execute operating system (OS) commands on the server that is running an application, and typically fully compromise the application and its data. Often, an attacker can leverage an OS command injection vulnerability to compromise other parts of the hosting infrastructure, and exploit trust relationships to pivot the attack to other systems within the organization.</p>
+                  <img src={exampleImage1} alt="Example" />
+                  <br></br>
+
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 2</span>Impact
+                  <span>Task 2</span>Injecting OS commands
                 </dt>
                 <dd className="fadeInUp faq-body">
-                  <ul className="injection-impact-list">
-                    <li className="injection-impact-item">
-                      <span className="emphasis-text">
-                        Full System Compromise:
-                      </span>{" "}
-                      Execute commands with the same privileges as the
-                      vulnerable application (e.g., delete files, install
-                      malware, or pivot to other systems).
+                  <p>
+                    In this example, a shopping application lets the user view whether an item is in stock in a particular store. This information is accessed via a URL:
+                  </p><code class="code-scrollable">https://insecure-website.com/stockStatus?productID=381&amp;storeID=29</code><p>
+                    To provide the stock information, the application must query various legacy systems. For historical reasons, the functionality is implemented by calling out to a shell command with the product and store IDs as arguments:
+                  </p><code class="code-scrollable">stockreport.pl 381 29</code><p>
+                    This command outputs the stock status for the specified item, which is returned to the user.
+                  </p><p id="injecting-os-commands-7Y9A">
+                    The application implements no defenses against OS command injection, so an attacker can submit the following input to execute an arbitrary command:
+                  </p><code class="code-scrollable">&amp; echo aiwefwlguh &amp;</code><p>
+                    If this input is submitted in the <code>productID</code> parameter, the command executed by the application is:
+                  </p><code class="code-scrollable">stockreport.pl &amp; echo aiwefwlguh &amp; 29</code><p>
+                    The <code>echo</code> command causes the supplied string to be echoed in the output. This is a useful way to test for some types of OS command injection. The <code>&amp;</code> character is a shell command separator. In this example, it causes three separate commands to execute, one after another. The output returned to the user is:
+                  </p><code class="code-scrollable">Error - productID was not provided
+                    aiwefwlguh
+                    29: command not found</code><p>
+                    The three lines of output demonstrate that:
+                  </p><ul>
+                    <li>
+                      The original <code>stockreport.pl</code> command was executed without its expected arguments, and so returned an error message.
                     </li>
-                    <li className="injection-impact-item">
-                      <span className="emphasis-text">Data Theft:</span>{" "}
-                      Exfiltrate sensitive files (e.g., /etc/passwd, database
-                      credentials).
+                    <li>
+                      The injected <code>echo</code> command was executed, and the supplied string was echoed in the output.
                     </li>
-                    <li className="injection-impact-item">
-                      <span className="emphasis-text">Persistence:</span> Create
-                      backdoors, cron jobs, or reverse shells.
+                    <li>
+                      The original argument <code>29</code> was executed as a command, which caused an error.
                     </li>
-                    <li className="injection-impact-item">
-                      <span className="emphasis-text">
-                        Denial of Service (DoS):
-                      </span>{" "}
-                      Crash the system with commands like <code>rm -rf /</code>{" "}
-                      or fork bombs.
-                    </li>
-                  </ul>
+                  </ul><p>
+                    Placing the additional command separator <code>&amp;</code> after the injected command is useful because it separates the injected command from whatever follows the injection point. This reduces the chance that what follows will prevent the injected command from executing.
+                  </p>
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 2</span>Prevention
+                  <span>Task 2</span>Useful commands
                 </dt>
                 <dd className="fadeInUp faq-body">
-                  <ul className="prevention-list">
-                    <li className="prevention-item">
-                      <span className="highlight-text">
-                        Avoid Direct Command Execution:
-                      </span>{" "}
-                      Use built-in library functions instead of OS commands
-                      (e.g., subprocess in Python with shell=False).
-                    </li>
-                    <li className="prevention-item">
-                      <span className="highlight-text">Input Validation:</span>
-                      <ul className="input-validation-list">
-                        <li className="input-validation-item">
-                          <span className="highlight-text">Allowlists:</span>{" "}
-                          Restrict input to predefined safe values (e.g., only
-                          alphanumeric characters).
-                        </li>
-                        <li className="input-validation-item">
-                          <span className="highlight-text">
-                            Block Dangerous Characters:
-                          </span>{" "}
-                          Filter ;, &, |, $(), and other command separators.
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="prevention-item">
-                      <span className="highlight-text">
-                        Escape/Encode Input:
-                      </span>{" "}
-                      Use proper escaping for shell metacharacters (e.g.,
-                      shlex.quote() in Python).
-                    </li>
-                    <li className="prevention-item">
-                      <span className="highlight-text">Least Privilege:</span>{" "}
-                      Run applications with minimal OS permissions (avoid
-                      root/admin access).
-                    </li>
-                    <li className="prevention-item">
-                      <span className="highlight-text">Sandboxing:</span>{" "}
-                      Isolate processes in containers or restricted environments
-                      (e.g., Docker, chroot jails).
-                    </li>
-                  </ul>
+                  <p>fter you identify an OS command injection vulnerability, it's useful to execute some initial commands to obtain information about the system. Below is a summary of some commands that are useful on Linux and Windows platforms:</p>
+
+                 <table class="is-nonresponsive-table">
+            <tbody><tr>
+                <th>
+                    Purpose of command
+                </th>
+                <th>
+                    Linux
+                </th>
+                <th>
+                    Windows
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Name of current user
+                </td>
+                <td><code>
+                    whoami
+                </code></td>
+                <td><code>
+                    whoami
+                </code></td>
+            </tr>
+            <tr>
+                <td>
+                    Operating system
+                </td>
+                <td><code>
+                    uname -a
+                </code></td>
+                <td><code>
+                    ver
+                </code></td>
+            </tr>
+            <tr>
+                <td>
+                    Network configuration
+                </td>
+                <td><code>
+                    ifconfig
+                </code></td>
+                <td><code>
+                    ipconfig /all
+                </code></td>
+            </tr>
+            <tr>
+                <td>
+                    Network connections
+                </td>
+                <td><code>
+                    netstat -an
+                </code></td>
+                <td><code>
+                    netstat -an
+                </code></td>
+            </tr>
+            <tr>
+                <td>
+                    Running processes
+                </td>
+                <td><code>
+                    ps -ef
+                </code></td>
+                <td><code>
+                    tasklist
+                </code></td>
+            </tr>
+        </tbody></table>                  
                 </dd>
+                {/* Single FAQ Area */}
+                <dt className="fadeInUp faq-header">
+                  <span>Task 2</span>Blind OS command injection vulnerabilities
+                </dt>
+                <dd className="fadeInUp faq-body">
+                  <p>Many instances of OS command injection are blind vulnerabilities. This means that the application does not return the output from the command within its HTTP response. Blind vulnerabilities can still be exploited, but different techniques are required.</p>
+                  <p>As an example, imagine a website that lets users submit feedback about the site. The user enters their email address and feedback message. The server-side application then generates an email to a site administrator containing the feedback. To do this, it calls out to the mail program with the submitted details:</p>
+                  <code class="code-scrollable">mail -s "This site is great" -aFrom:peter@normal-user.net feedback@vulnerable-website.com"</code>
+                  <p>The output from the mail command (if any) is not returned in the application's responses, so using the echo payload won't work. In this situation, you can use a variety of other techniques to detect and exploit a vulnerability.</p>
+                  <br></br>
+                  <h2>Detecting blind OS command injection using time delays</h2>
+                  <p>You can use an injected command to trigger a time delay, enabling you to confirm that the command was executed based on the time that the application takes to respond. The ping command is a good way to do this, because lets you specify the number of ICMP packets to send. This enables you to control the time taken for the command to run:</p>
+                  <code class="code-scrollable">& ping -c 10 127.0.0.1 & </code>
+                 </dd>
               </dl>
             </div>
+            
             <div className="go-to-section">
               <button
                 onClick={() =>
