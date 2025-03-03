@@ -44,7 +44,7 @@
 }
 
 .course .course-card .course-image {
-  height: 220px;
+  max-height: 180px;
   width: 100%;
   border-radius: 15px;
   overflow: hidden;
@@ -70,13 +70,13 @@
 .course .course-card h3 {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--white);
+  color: var(--primary-text);
   margin-bottom: 10px;
 }
 
 .course .course-card p {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--secondary-text);
   margin-bottom: 15px;
 }
 
@@ -319,6 +319,12 @@
   border-radius: 50%;
   z-index: 0;
   opacity: 0.2;
+}
+.category-menu .category-text {
+  color: var(--primary-text) !important;
+}
+.category-menu .category-icon {
+  color: var(--primary-text) !important;
 }
 .category-btn:hover::before {
   width: 100%;
