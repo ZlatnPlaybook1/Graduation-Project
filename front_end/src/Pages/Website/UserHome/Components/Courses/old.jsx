@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import "./Courses.css";
 import courseData from "./courseData";
 import PaginatedCourses from "./PaginatedCourses";
-import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
+import Go2TopBtn from "../Go2Top_Btn/Go2Top_Btn";
 import {
   FaBook,
   FaBug,
@@ -14,6 +14,7 @@ import {
   FaLayerGroup,
 } from "react-icons/fa";
 const Courses = () => {
+  const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Courses");
 
   useEffect(() => {
@@ -38,35 +39,38 @@ const Courses = () => {
   };
 
   const filteredCourses = (courseData || []).filter((course) => {
+    const term = searchTerm.toLowerCase();
+    const matchesSearchTerm = course.title.toLowerCase().includes(term);
     const matchesCategory =
       selectedCategory === "All Courses" ||
       course.category === selectedCategory;
 
-    return  matchesCategory;
+    return matchesSearchTerm && matchesCategory;
   });
 
   return (
     <div className="course">
-      
       <div className="container">
+        {/* Category Buttons and (optionally) a Search Bar */}
         <div className="menu-row">
-          <div className="category-menu-container">
-  <ul className="category-list">
-    {categories.map((category) => (
-      <li className="category-item" key={category.name}>
-        <button
-          className={`category-button ${selectedCategory === category.name ? "active" : ""}`}
-          onClick={() => handleCategorySelect(category.name)}
-        >
-          <span className="category-icon">{category.icon}</span>
-          <span className="category-text">{category.name}</span>
-        </button>
-      </li>
-    ))}
-  </ul>
-</div>
+          <ul className="category-menu w-100">
+            {categories.map((category) => (
+              <li key={category.name}>
+                <button
+                  className={`category-btn ${
+                    selectedCategory === category.name ? "active" : ""
+                  }`}
+                  onClick={() => handleCategorySelect(category.name)}
+                >
+                  <span className="category-icon">{category.icon}</span>
+                  <span className="category-text">{category.name}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="row ">
+        {/* Courses Grid using Bootstrap’s row */}
+        <div className="row row-center">
           <PaginatedCourses filteredCourses={filteredCourses} />
         </div>
       </div>

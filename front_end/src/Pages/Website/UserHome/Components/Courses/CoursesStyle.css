@@ -29,7 +29,7 @@
 .ribbon.published {
   background-color: #2ed573;
 }
-.semi-published {
+.ribbon.semi-published {
   background-color: #0267ff;
 }
 .ribbon.pending {
