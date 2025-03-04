@@ -55,7 +55,7 @@ export default function AC_Vuln() {
                 <dt className="fadeInUp faq-header">
                   <span>Intro </span> introduction to Access Control
                 </dt>
-                <dd className="fadeInUp faq-body open-sans open-sans" id="border-left">
+                <dd className="fadeInUp faq-body open-sans" id="border-left">
                   <h3 className="content__title">What is Access Control?</h3>
                   <p>Access control is a security mechanism used to control which users or systems are allowed to access a particular resource or system. Access control is implemented in computer systems to ensure that only authorized users have access to resources, such as files, directories, databases, and web pages. The primary goal of access control is to protect sensitive data and ensure that it is only accessible to those who are authorized to access it.</p>
 
@@ -112,7 +112,7 @@ export default function AC_Vuln() {
                 <dt className="fadeInUp faq-header">
                   <span>Topic 1</span>  Discretionary Access Control (DAC)
                 </dt>
-                <dd className="fadeInUp faq-body open-sans open-sans" id="border-left">
+                <dd className="fadeInUp faq-body open-sans" id="border-left">
                   <p>
                      <h3 className="content__subtitle">Discretionary Access Control (DAC):</h3> In this type of access control, the resource owner or administrator determines who is allowed to access a resource and what actions they are allowed to perform. DAC is commonly used in operating systems and file systems. In layman’s terms, imagine a castle where the king can give keys to his advisors, allowing them to open any doors they like, whenever they want. That’s DAC for you. It’s the liberty to control access to your own resources. The one in charge, like the king of the castle, can hand out permissions to whomever they please, dictating who can come in and out.
                  </p>
@@ -124,7 +124,7 @@ export default function AC_Vuln() {
                 <dt className="fadeInUp faq-header">
                   <span>Topic 2</span> Mandatory Access Control (MAC)
                 </dt>
-                <dd className="fadeInUp faq-body open-sans open-sans" id="border-left">
+                <dd className="fadeInUp faq-body open-sans" id="border-left">
                   <p><h3 className="content__subtitle">Mandatory Access Control (MAC):</h3>
                      In this type of access control, access to resources is determined by a set of predefined rules or policies that are enforced by the system. MAC is commonly used in highly secure environments, such as government and military systems. In layman’s terms, picture a fort with an iron-clad security protocol. Only specific individuals with particular security clearances can access certain areas, and this is non-negotiable. The high commander sets the rules, and they are rigorously followed. That’s how MAC works. It’s like the stern security officer who allows no exceptions to the rule.</p>
                       <img src={MacImage} alt="" className="img-fluid w-50 mx-auto d-block" />
@@ -134,7 +134,7 @@ export default function AC_Vuln() {
                 <dt className="fadeInUp faq-header">
                   <span>Topic 3</span> Role-Based Access Control (RBAC)
                 </dt>
-                <dd className="fadeInUp faq-body open-sans open-sans" id="border-left">
+                <dd className="fadeInUp faq-body open-sans" id="border-left">
                   <p><h3 className="content__subtitle">Role-Based Access Control (RBAC):</h3>
                      In this type of access control, users are assigned roles that define their level of access to resources. RBAC is commonly used in enterprise systems, where users have different levels of authority based on their job responsibilities. In layman’s terms, imagine a modern corporation. You have your managers, your executives, your sales staff, etc. They each have different access to the building. Some can enter the boardroom, others can access the sales floor, and so on. That’s the essence of RBAC - assigning access based on a person’s role within an organization.</p>
                       <img src={RbacImage} alt="" className="img-fluid w-75 mx-auto d-block" />

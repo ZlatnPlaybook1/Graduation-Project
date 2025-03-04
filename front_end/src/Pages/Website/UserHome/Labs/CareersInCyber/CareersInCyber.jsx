@@ -6,6 +6,13 @@ import "../../Components/Topics CSS/topics.css";
 import background from "../../assets/img/CareersInCyber/background.png";
 import courseImage from "../../assets/img/CareersInCyber/courseImage.png";
 import CareerImag from "../../assets/img/CareersInCyber/courseImage.png";
+import RedTeamerImg from "../../assets/img/CareersInCyber/Red Teamer.png";
+import PenetrationTesterImg from "../../assets/img/CareersInCyber/Penetration Tester.png";
+import MalwareAnalystImg from "../../assets/img/CareersInCyber/Malware Analyst.png";
+import DigitalForensicsExaminerImg from "../../assets/img/CareersInCyber/Digital Forensics Examiner.png";
+import IncidentResponderImg from "../../assets/img/CareersInCyber/Incident Responder.png";
+import SecurityEngineerImg from "../../assets/img/CareersInCyber/Security Engineer.png";
+import SecurityAnalystImg from "../../assets/img/CareersInCyber/Security Analyst.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,7 +40,7 @@ export default function CareersInCyber() {
       />
       {/* End Landing */}
       {/* Start Course */}
-      <div className="Content">
+      <div className="Content ">
         <div className="secure-container" ref={faqSectionRef}>
           <div className="content-row">
             <div className="content-section">
@@ -42,48 +49,52 @@ export default function CareersInCyber() {
                 <dt className="fadeInUp faq-header">
                   <span>Topic 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body open-sans">
                   <div className="faq-content">
-                    <div className="faq-image">
-                      <img src={CareerImag} alt="Careers In Cyber" />
-                      <p className="image-caption">Careers In Cyber</p>
+                    <h3 className="content__title"> Career In CyberSecurity</h3>
+                    <div className="Content__img--box">
+                      <img className="img-fluid w-25 mx-auto d-block"  src={CareerImag} alt="Career In CyberSecurity" />
+                      
                     </div>
+                                       <hr />
                     <p>
                       Cyber security careers are becoming more in demand and
                       offer high salaries. There are many different jobs within
-                      the security industry, from offensive pentesting (hacking
+                      the security industry, from offensive PenTesting (hacking
                       machines and reporting on vulnerabilities) to defensive
                       security (defending against and investigating
-                      cyberattacks).
+                      cyberAttacks).
                     </p>
                     <p>
-                      Why get a career in cyber:
-                      <ol className="oList">
-                        <li style={{ listStyleType: "none" }}>
+                      <h3 className="content__title">
+                         Why get a career in cyber:
+                     </h3>
+                      <ul >
+                        <li >
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2 pink-note"
+                            className="me-2 text-warning"
                           />
-                          High Pay - jobs in security have high starting
+                         <b className="content__subtitle"> High Pay</b> - jobs in security have high starting
                           salaries
                         </li>
-                        <li style={{ listStyleType: "none" }}>
+                        <li >
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2 pink-note"
-                          />
-                          Exciting - work can include legally hacking systems or
+                            className="me-2 text-warning"
+                          /><b className="content__subtitle"> Exciting </b>
+                         - work can include legally hacking systems or
                           defending against cyber attacks
                         </li>
-                        <li style={{ listStyleType: "none" }}>
+                        <li >
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2 pink-note"
-                          />
-                          Be in demand - there are over 3.5 million unfilled
+                            className="me-2 text-warning"
+                          /><b className="content__subtitle"> Be in demand </b>
+                           - there are over 3.5 million unfilled
                           cyber positions
                         </li>
-                      </ol>
+                      </ul>
                     </p>
 
                     <p className="note">
@@ -99,34 +110,34 @@ export default function CareersInCyber() {
                 <dt className="fadeInUp faq-header">
                   <span>Topic 2</span>Security Analyst
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body open-sans">
                   <div className="faq-content">
-                    <div className="faq-image">
-                      <img
-                        src={CareerImag}
-                        alt="Responsible for maintaining the security of an organisation's data"
-                      />
-                      <p className="image-caption">
+                    <h3 className="content__title"> who is Security Analyst?</h3>
+                    <div className="Content__img--box">
+                      <img className="img-fluid w-25 mx-auto d-block"  src={SecurityAnalystImg} alt="Responsible for maintaining the security of an
+                        organization's data"  />
+                       <p className="image-caption">
                         Responsible for maintaining the security of an
-                        organisation's data
+                        organization's data
                       </p>
+                     
                     </div>
+                                       <hr />
                     <p>
                       Security analysts are integral to constructing security
-                      measures across organisations to protect the company from
+                      measures across organizations to protect the company from
                       attacks. Analysts explore and evaluate company networks to
                       uncover actionable data and recommendations for engineers
                       to develop preventative measures. This job role requires
                       working with various stakeholders to gain an understanding
                       of security requirements and the security landscape.
                     </p>
-                    <mark>Responsibilities</mark>
-                    <p>
-                      <ol className="oList">
+                    <h3 className="content__title">Responsibilities</h3>
+                    <ul>
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Working with various stakeholders to analyse the cyber
                           security throughout the company
@@ -134,7 +145,7 @@ export default function CareersInCyber() {
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Compile ongoing reports about the safety of networks,
                           documenting security issues and measures taken in
@@ -143,96 +154,95 @@ export default function CareersInCyber() {
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Develop security plans, incorporating research on new
                           attack tools and trends, and measures needed across
                           teams to maintain data security.
                         </li>
-                      </ol>
-                    </p>
-                    <mark>Learning Paths</mark>
+                    </ul>
+                    <div className="note">
+                      <b className="text-danger">Note! :</b> The Following Links From TryHackMe Website
+                    </div>
+                    <b className="content__title">Learning Paths</b>
                     <p>
                       TryHackMe's learning paths will give you both the
                       fundamental technical knowledge and hands-on experience,
                       which is crucial to becoming a successful Security
                       Analyst.
                     </p>
-                    <ol className="oList">
+                    <ul>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="https://tryhackme.com/path/outline/introtocyber">
                           Introduction to Cyber Security
                         </a>
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="https://tryhackme.com/path/outline/presecurity/">
                           Pre Security
                         </a>
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">SOC Level 1</a>
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="https://tryhackme.com/path/outline/soclevel1">SOC Level 1</a>
                       </li>
-                    </ol>
-                    <mark>Relevant Career Guides</mark>
-                    <ol className="oList">
+                    </ul>
+                    <b className="content__title">Relevant Career Guides</b>
+                    <ul>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="https://tryhackme.com/r/careers/cyber-security-analyst">
                           Becoming a Cyber Security Analyst
                         </a>
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="https://tryhackme.com/r/resources/blog/become-level-1-soc-analyst">
                           How to Become a Level 1 SOC Analyst
                         </a>
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="https://tryhackme.com/r/resources/blog/interview-with-soc-analyst">
                           A Day in the Life of a SOC Analyst
                         </a>
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="https://tryhackme.com/r/resources/blog/soc-analyst-interview-guide">
                           The Ultimate SOC L1 Analyst Interview Guide
                         </a>
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="https://tryhackme.com/r/resources/blog/haydens-success-story">
                           From Student to SOC Analyst: Hayden’s Success Story
                         </a>
                       </li>
-                    </ol>
+                    </ul>
                   </div>
-                  <div className="go-to-section">
-                    <button
-                      onClick={() =>
-                        handleGoToLab(
-                          "/CareersInCyber/CareersInCyber_labs/ShowMore1"
-                        )
-                      }
-                      className="go-to"
-                    >
-                      Go To Labs
-                    </button>
-                  </div>
+                  <div className="note fit-content">
+                  For More Info Follow This link 👉🏻    <button
+                onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")}
+                      className="go-to my-2"
+              >
+                Security Analyst
+              </button>
+                </div>
+                 
                 </dd>
-
                 {/* Topic 3 */}
                 <dt className="fadeInUp faq-header">
-                  <span>Topic 3</span>Security Engineer
+                 <span>Topic 3</span>Security Engineer
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body open-sans">
                   <div className="faq-content">
-                    <div className="faq-image">
-                      <img
-                        src={CareerImag}
+                     <h3 className="content__title">Who is Security Engineer? </h3>
+                    <div className="Content__img--box">
+                      <img className="img-fluid w-25 mx-auto d-block" 
+                        src={SecurityEngineerImg}
                         alt="Design, monitor and maintain security controls, networks, and systems to help prevent cyberattacks"
                       />
                       <p className="image-caption">
@@ -240,6 +250,7 @@ export default function CareersInCyber() {
                         networks, and systems to help prevent cyberattacks
                       </p>
                     </div>
+                                       <hr />
                     <p>
                       Security engineers develop and implement security
                       solutions using threats and vulnerability data - often
@@ -250,13 +261,13 @@ export default function CareersInCyber() {
                       retain and adopt security measures to mitigate the risk of
                       attack and data loss.
                     </p>
-                    <mark>Responsibilities</mark>
-                    <p>
-                      <ol className="oList">
-                        <li>
+                    <h3 className="content__title">Responsibilities</h3>
+                  
+                    <ul>
+                      <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Testing and screening security measures across
                           software
@@ -264,7 +275,7 @@ export default function CareersInCyber() {
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Monitor networks and reports to update systems and
                           mitigate vulnerabilities
@@ -272,82 +283,94 @@ export default function CareersInCyber() {
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Identify and implement systems needed for optimal
                           security
                         </li>
-                      </ol>
-                    </p>
-                    <mark>Learning Paths</mark>
+                    </ul>
+                     <div className="note">
+                      <b className="text-danger">Note! :</b> The Following Links From TryHackMe Website
+                    </div>
+                    <b className="content__title">Learning Paths</b>
                     <p>
                       TryHackMe's learning paths will give you both the
                       fundamental technical knowledge and hands-on experience,
                       which is crucial to becoming a successful Security
                       Engineer.
                     </p>
-                    <ol className="oList">
-                      <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">SOC Level 1</a>
+                    <ul>
+                       <li>
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="/LearningPaths/SecurityAnalyst">SOC Level 1</a>
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="/LearningPaths/SecurityAnalyst">
                           JR Penetration Tester
                         </a>
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="/LearningPaths/SecurityAnalyst">
                           Offensive Pentesting
                         </a>
                       </li>
-                    </ol>
-                    <mark>Relevant Career Guides</mark>
-                    <ol className="oList">
+                    </ul>
+                     <b className="content__title">Relevant Career Guides</b>
+                    <ul>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="/LearningPaths/SecurityAnalyst">
                           Becoming a Security Engineer
                         </a>
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="/LearningPaths/SecurityAnalyst">
                           How to Become a Security Engineer
                         </a>
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="/LearningPaths/SecurityAnalyst">
                           A Day in the Life of a Security Engineer
                         </a>
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="/LearningPaths/SecurityAnalyst">
                           Preparing for a Security Engineering Interview
                         </a>
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="/LearningPaths/SecurityAnalyst">
                           Becoming a Security Engineer: Richárd’s Success Story
                         </a>
                       </li>
-                    </ol>
+                    </ul>
                   </div>
+                  <div className="note fit-content">
+                  For More Info Follow This link 👉🏻    <button
+                onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")}
+                      className="go-to my-2"
+              >
+                Security Engineer
+              </button>
+                </div>
+                 
                 </dd>
                 {/* Topic 4*/}
                 <dt className="fadeInUp faq-header">
                   <span>Topic 4</span>Incident Responder
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body open-sans">
                   <div className="faq-content">
-                    <div className="faq-image">
-                      <img
-                        src={CareerImag}
+                     <h3 className="content__title"> who is Incident Responder?</h3>
+                    <div className="Content__img--box">
+                      <img className="img-fluid w-25 mx-auto d-block" 
+                        src={IncidentResponderImg}
                         alt="Identifies and mitigates attacks whilst an attackers operations are still unfolding"
                       />
                       <p className="image-caption">
@@ -370,13 +393,13 @@ export default function CareersInCyber() {
                       protect the company's data, reputation, and financial
                       standing from cyber attacks.
                     </p>
-                    <mark>Responsibilities</mark>
+                    <b className="content__title">Responsibilities</b>
                     <p>
-                      <ol className="oList">
+                      <ol>
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Developing and adopting a thorough, actionable
                           incident response plan
@@ -384,7 +407,7 @@ export default function CareersInCyber() {
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Maintaining strong security best practices and
                           supporting incident response measures
@@ -392,7 +415,7 @@ export default function CareersInCyber() {
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Post-incident reporting and preparation for future
                           attacks, considering learnings and adaptations to take
@@ -400,17 +423,17 @@ export default function CareersInCyber() {
                         </li>
                       </ol>
                     </p>
-                    <mark>Learning Paths</mark>
+                    <b className="content__title">Learning Paths</b>
                     <p>
                       TryHackMe's learning paths will give you both the
                       fundamental technical knowledge and hands-on experience,
                       which is crucial to becoming a successful Incident
                       Responder.
                     </p>
-                    <ol className="oList">
+                    <ol>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
-                        <a href="/LearningPaths/SecurityAnalyst">SOC Level 1</a>
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                        <a className="content__subtitle underline" href="/LearningPaths/SecurityAnalyst">SOC Level 1</a>
                       </li>
                     </ol>
                   </div>
@@ -419,11 +442,12 @@ export default function CareersInCyber() {
                 <dt className="fadeInUp faq-header">
                   <span>Topic 5</span>Digital Forensics Examiner
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body open-sans">
                   <div className="faq-content">
-                    <div className="faq-image">
-                      <img
-                        src={CareerImag}
+                    <h3 className="content__title"> who is Digital Forensics Examiner?</h3>
+                    <div className="Content__img--box">
+                      <img className="img-fluid w-25 mx-auto d-block" 
+                        src={DigitalForensicsExaminerImg}
                         alt="Responsible for using digital forensics to investigate incidents and crimes"
                       />
                       <p className="image-caption">
@@ -441,13 +465,13 @@ export default function CareersInCyber() {
                       will be using your forensic skills to analyse incidents,
                       such as policy violations.
                     </p>
-                    <mark>Responsibilities</mark>
+                    <b className="content__title">Responsibilities</b>
                     <p>
-                      <ol className="oList">
+                      <ol>
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Collect digital evidence while observing legal
                           procedures
@@ -455,7 +479,7 @@ export default function CareersInCyber() {
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Analyse digital evidence to find answers related to
                           the case
@@ -463,7 +487,7 @@ export default function CareersInCyber() {
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Document your findings and report on the case
                         </li>
@@ -475,11 +499,12 @@ export default function CareersInCyber() {
                 <dt className="fadeInUp faq-header">
                   <span>Topic 6</span>Malware Analyst
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body open-sans">
                   <div className="faq-content">
-                    <div className="faq-image">
-                      <img
-                        src={CareerImag}
+                    <h3 className="content__title"> who is Malware Analyst?</h3>
+                    <div className="Content__img--box">
+                      <img className="img-fluid w-25 mx-auto d-block" 
+                        src={MalwareAnalystImg}
                         alt="Responsible for testing technology products for security loopholes"
                       />
                       <p className="image-caption">
@@ -501,13 +526,13 @@ export default function CareersInCyber() {
                       program carries out, find out how to detect it and report
                       it.
                     </p>
-                    <mark>Responsibilities</mark>
+                    <b className="content__title">Responsibilities</b>
                     <p>
-                      <ol className="oList">
+                      <ol>
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Carry out static analysis of malicious programs, which
                           entails reverse-engineering
@@ -515,7 +540,7 @@ export default function CareersInCyber() {
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Conduct dynamic analysis of malware samples by
                           observing their activities in a controlled environment
@@ -523,7 +548,7 @@ export default function CareersInCyber() {
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Document and report all the findings
                         </li>
@@ -535,10 +560,11 @@ export default function CareersInCyber() {
                 <dt className="fadeInUp faq-header">
                   <span>Topic 7</span>Penetration Tester
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body open-sans">
                   <div className="faq-content">
-                    <div className="faq-image">
-                      <img
+                    <h3 className="content__title"> who is Penetration Tester?</h3>
+                    <div className="Content__img--box">
+                      <img className="img-fluid w-25 mx-auto d-block" 
                         src={CareerImag}
                         alt="Responsible for testing technology products for security loopholes"
                       />
@@ -558,13 +584,13 @@ export default function CareersInCyber() {
                       take these insights to rectify issues to prevent a
                       real-world cyberattack.
                     </p>
-                    <mark>Responsibilities</mark>
+                    <b className="content__title">Responsibilities</b>
                     <p>
-                      <ol className="oList">
+                      <ol>
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Conduct tests on computer systems, networks, and
                           web-based applications
@@ -572,7 +598,7 @@ export default function CareersInCyber() {
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Perform security assessments, audits, and analyse
                           policies
@@ -580,50 +606,50 @@ export default function CareersInCyber() {
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Evaluate and report on insights, recommending actions
                           for attack prevention
                         </li>
                       </ol>
                     </p>
-                    <mark>Learning Paths</mark>
+                    <b className="content__title">Learning Paths</b>
                     <p>
                       TryHackMe's learning paths will give you both the
                       fundamental technical knowledge and hands-on experience,
                       which is crucial to becoming a successful Penetration
                       Tester.
                     </p>
-                    <ol className="oList">
+                    <ol>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         JR Penetration Tester
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         Offensive Pentesting
                       </li>
                     </ol>
-                    <mark>Relevant Career Guides</mark>
-                    <ol className="oList">
+                    <b className="content__title">Relevant Career Guides</b>
+                    <ol>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         Becoming a Penetration Tester
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         How to Become a Penetration Tester
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         A Day in the Life of a Penetration Tester
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         Preparing for a Penetration Testing Interview
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         Becoming a Penetration Tester: Alex’s Success Story
                       </li>
                     </ol>
@@ -633,11 +659,12 @@ export default function CareersInCyber() {
                 <dt className="fadeInUp faq-header">
                   <span>Topic 8</span>Red Teamer
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body open-sans">
                   <div className="faq-content">
-                    <div className="faq-image">
-                      <img
-                        src={CareerImag}
+                    <h3 className="content__title"> who is Red Teamer?</h3>
+                    <div className="Content__img--box">
+                      <img className="img-fluid w-25 mx-auto d-block" 
+                        src={RedTeamerImg}
                         alt="Plays the role of an adversary, attacking an organisation and providing feedback from an enemies perspective"
                       />
                       <p className="image-caption">
@@ -659,13 +686,13 @@ export default function CareersInCyber() {
                       company. They are often best suited to organisations with
                       mature security programs in place.
                     </p>
-                    <mark>Responsibilities</mark>
+                    <b className="content__title">Responsibilities</b>
                     <p>
-                      <ol className="oList">
+                      <ol>
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Emulate the role of a threat actor to uncover
                           exploitable vulnerabilities, maintain access and avoid
@@ -674,7 +701,7 @@ export default function CareersInCyber() {
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Assess organisations' security controls, threat
                           intelligence, and incident response procedures
@@ -682,37 +709,37 @@ export default function CareersInCyber() {
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="me-2"
+                            className="me-2 text-warning"
                           />
                           Evaluate and report on insights, with actionable data
                           for companies to avoid real-world instances
                         </li>
                       </ol>
                     </p>
-                    <mark>Learning Paths</mark>
+                    <b className="content__title">Learning Paths</b>
                     <p>
                       TryHackMe's learning paths will give you both the
                       fundamental technical knowledge and hands-on experience,
                       which is crucial to becoming a successful Red Teamer.
                     </p>
-                    <ol className="oList">
+                    <ol>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         JR Penetration Tester
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         Offensive Pentesting
                       </li>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         Red Teamer
                       </li>
                     </ol>
-                    <mark>Relevant Career Guides</mark>
-                    <ol className="oList">
+                    <b className="content__title">Relevant Career Guides</b>
+                    <ol>
                       <li>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         Red Teaming: Job Roles, Salaries & Opportunities
                       </li>
                     </ol>
@@ -722,12 +749,13 @@ export default function CareersInCyber() {
                 <dt className="fadeInUp faq-header">
                   <span>Topic 9</span>Quiz
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className="fadeInUp faq-body open-sans">
                   <div className="faq-content">
+                    
                     <p>
                       This room has provided you with a general overview of the
                       different careers in cyber security. Don't forget that you
-                      <a href="/">
+                      <a className="content__subtitle underline" href="/">
                         can leverage online training to land your dream job
                       </a>{" "}
                       in cyber security. To find out which cyber security role
