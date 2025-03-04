@@ -445,7 +445,7 @@ export default function CareersInCyber() {
                       onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")}
                       className="go-to my-2"
                     >
-                      Security Analyst
+                      Incident Responder
                     </button>
                   </div>
                 </dd>
@@ -513,7 +513,7 @@ export default function CareersInCyber() {
                       onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")}
                       className="go-to my-2"
                     >
-                      Security Analyst
+                      Digital Forensics Examiner
                     </button>
                   </div>
                 </dd>
@@ -585,7 +585,7 @@ export default function CareersInCyber() {
                       onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")}
                       className="go-to my-2"
                     >
-                      Security Analyst
+                      Malware Analyst
                     </button>
                   </div>
                 </dd>
@@ -700,7 +700,7 @@ export default function CareersInCyber() {
                       onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")}
                       className="go-to my-2"
                     >
-                      Security Analyst
+                      Penetration Tester
                     </button>
                   </div>
                 </dd>
@@ -802,7 +802,7 @@ export default function CareersInCyber() {
                       onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")}
                       className="go-to my-2"
                     >
-                      Security Analyst
+                      Red Teamer
                     </button>
                   </div>
                 </dd>
