@@ -104,7 +104,7 @@ const PaginatedCourses = ({ filteredCourses }) => {
           data-aos="fade-up"
           data-aos-delay={index % 3 * 50}
         >
-          <a a href={course.link} className="course-card">
+          <a  href={course.link} className="course-card">
             <div className="card-image-container">
               <img
                 src={course.image}

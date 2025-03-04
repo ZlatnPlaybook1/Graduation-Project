@@ -14,7 +14,7 @@ const courseData = [
     ],
     difficulty: "Beginner",
     image: require("../../assets/img/CareersInCyber/landing.jpg"),
-    state: "pending",
+    state: "published",
     link: "/CareersInCyber",
   },
   {
