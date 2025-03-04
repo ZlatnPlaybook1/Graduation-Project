@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "../../../Header/Header";
 import Footer from "../../../Footer/Footer";
-import background from "../../../assets/img/ACV/background.png";
-import courseImage from "../../../assets/img/ACV/courseImage.png";
+import background from "../../../assets/img/CareersInCyber/RT/background.png";
+import courseImage from "../../../assets/img/CareersInCyber/RT/courseImage.png";
 import UseFaqSection from "../../../Components/UseFaqSection/UseFaqSection.jsx";
 import Banner from "../../../Components/Banner/Banner.jsx";
 import CourseLanding from "../../../Components/CourseLanding/CourseLanding.jsx";
@@ -23,8 +23,8 @@ export default function AC_Vuln() {
         background={background}
         backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
         courseImage={courseImage}
-        courseTitle="Red Teamer"
-        courseDescription="Learn the skills you need to become a Red Teamer"
+        courseTitle="Red Team Fundamentals"
+        courseDescription="Learn about the basics of a red engagement, the main components and stakeholders involved, and how red teaming differs from other cyber security engagements."
         difficulty="Intermediate"
         duration="20 min"
         onSaveRoom={() => console.log("Room Saved!")}
@@ -300,8 +300,8 @@ export default function AC_Vuln() {
               </dl>
             </div>
             <div className="go-to-section">
-              <button onClick={() => handleGoToLab("/red-teamer/labs")} className="go-to">
-                Go To Labs
+              <button onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_MCQ/Red_Teamer/MCQ")} className="go-to">
+                Go To MCQ
               </button>
             </div>
           </div>
