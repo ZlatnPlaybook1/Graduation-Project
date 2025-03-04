@@ -20,6 +20,7 @@ export default function Second_Lab() {
     <li>3.
       Load the admin panel and delete <mark>carlos</mark>.
     </li>
+    <li>4. <code>admin-qfn717</code></li>
   </ul>
 `;
 
