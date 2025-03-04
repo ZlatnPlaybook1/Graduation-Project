@@ -1,14 +1,15 @@
 import { useEffect, useRef } from "react";
 import $ from "jquery";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const UseFaqSection = () => {
   const faqSectionRef = useRef(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleGoToLab = (path) => {
-    navigate(path);
-  };
+  window.open(path, '_blank', 'noopener,noreferrer');
+};
+
 
   useEffect(() => {
     const $faqSection = $(faqSectionRef.current);

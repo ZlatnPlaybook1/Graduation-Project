@@ -51,7 +51,7 @@ const MCQCards = [
       "These are multiple choice questions that are designed to be a review for the exam.",
     difficulty: "Easy",
     image: require("../../assets/img/CareersInCyber/landing.jpg"),
-    link: "/CareersInCyber/CareersInCyber_MCQ/CareersInCyber/CareersInCyber_MCQ/Security_Analyst/MCQ",
+    link: "/CareersInCyber/CareersInCyber_MCQ/Security_Analyst/MCQ",
   },
   {
     id: 7,

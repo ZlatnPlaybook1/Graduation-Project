@@ -2,7 +2,9 @@
 :root {
   --primary-bg: #0f0f0f;
   --secondary-bg: #2e2e2e;
-  --faq-header: #212c42;
+  --faq-header: #3a3c40a3;
+  --faq-body-bg:#282626;
+  --faq-header-hover: #3a3c40;
   --neon-red: #ff073a;
   --crimson-red: #dc143c;
   --burnt-orange: #ff7034;

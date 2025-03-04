@@ -9,12 +9,14 @@ import courseImage from "../../assets/img/Click_Jacking/courseImage.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 export default function Click_Jacking() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
   return (
     <>
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing */}
       <CourseLanding
         background={background}

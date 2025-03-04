@@ -18,6 +18,7 @@ import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 export default function CareersInCyber() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -25,6 +26,7 @@ export default function CareersInCyber() {
     <>
       <Banner />
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing */}
       <CourseLanding
         background={background}
@@ -353,7 +355,7 @@ export default function CareersInCyber() {
                   </div>
                   <div className="note fit-content">
                     For More Info Follow This link 👉🏻    <button
-                      onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")}
+                      onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore7")}
                       className="go-to my-2"
                     >
                       Security Engineer
@@ -395,7 +397,7 @@ export default function CareersInCyber() {
                     </p>
                     <b className="content__title">Responsibilities</b>
                     <p>
-                      <ol>
+                      <ul>
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
@@ -421,10 +423,8 @@ export default function CareersInCyber() {
                           attacks, considering learnings and adaptations to take
                           from incidents
                         </li>
-                      </ol>
-                      <div className="note">
-                        <b className="text-danger">Note! :</b> The Following Links From TryHackMe Website
-                      </div>
+                      </ul>
+                      
                     </p>
                     <b className="content__title">Learning Paths</b>
                     <p>
@@ -433,16 +433,16 @@ export default function CareersInCyber() {
                       which is crucial to becoming a successful Incident
                       Responder.
                     </p>
-                    <ol>
+                    <ul>
                       <li>
                         <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         <a className="content__subtitle underline" href="/LearningPaths/SecurityAnalyst">SOC Level 1</a>
                       </li>
-                    </ol>
+                    </ul>
                   </div>
                   <div className="note fit-content">
                     For More Info Follow This link 👉🏻    <button
-                      onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")}
+                      onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore3")}
                       className="go-to my-2"
                     >
                       Incident Responder
@@ -478,7 +478,7 @@ export default function CareersInCyber() {
                     </p>
                     <b className="content__title">Responsibilities</b>
                     <p>
-                      <ol>
+                      <ul>
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
@@ -502,19 +502,23 @@ export default function CareersInCyber() {
                           />
                           Document your findings and report on the case
                         </li>
-                      </ol>
-                      <div className="note">
-                        <b className="text-danger">Note! :</b> The Following Links From TryHackMe Website
-                      </div>
+                      </ul>
+                     
                     </p>
                   </div>
                   <div className="note fit-content">
                     For More Info Follow This link 👉🏻    <button
-                      onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")}
+                      onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore2")}
                       className="go-to my-2"
                     >
                       Digital Forensics Examiner
+                    </button> , And You can Explore Our Digital Forensics Room 👉🏻    <button
+                      onClick={() => handleGoToLab("/Digital_Forensics")}
+                      className="go-to my-2"
+                    >
+                      Digital Forensics
                     </button>
+
                   </div>
                 </dd>
                 {/* Topic 6 */}
@@ -550,7 +554,7 @@ export default function CareersInCyber() {
                     </p>
                     <b className="content__title">Responsibilities</b>
                     <p>
-                      <ol>
+                      <ul>
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
@@ -574,15 +578,13 @@ export default function CareersInCyber() {
                           />
                           Document and report all the findings
                         </li>
-                      </ol>
-                      <div className="note">
-                        <b className="text-danger">Note! :</b> The Following Links From TryHackMe Website
-                      </div>
+                      </ul>
+                     
                     </p>
                   </div>
                   <div className="note fit-content">
                     For More Info Follow This link 👉🏻    <button
-                      onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")}
+                      onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore4")}
                       className="go-to my-2"
                     >
                       Malware Analyst
@@ -598,7 +600,7 @@ export default function CareersInCyber() {
                     <h3 className="content__title"> who is Penetration Tester?</h3>
                     <div className="Content__img--box">
                       <img className="img-fluid w-25 mx-auto d-block"
-                        src={CareerImag}
+                        src={PenetrationTesterImg}
                         alt="Responsible for testing technology products for security loopholes"
                       />
                       <p className="image-caption">
@@ -619,7 +621,7 @@ export default function CareersInCyber() {
                     </p>
                     <b className="content__title">Responsibilities</b>
                     <p>
-                      <ol>
+                      <ul>
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
@@ -644,7 +646,7 @@ export default function CareersInCyber() {
                           Evaluate and report on insights, recommending actions
                           for attack prevention
                         </li>
-                      </ol>
+                      </ul>
                       <div className="note">
                         <b className="text-danger">Note! :</b> The Following Links From TryHackMe Website
                       </div>
@@ -656,7 +658,7 @@ export default function CareersInCyber() {
                       which is crucial to becoming a successful Penetration
                       Tester.
                     </p>
-                    <ol>
+                    <ul>
                       <li>
                         <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         <a className="content__subtitle underline" href="/LearningPaths/PenetrationTester">JR Penetration Tester</a>
@@ -665,9 +667,9 @@ export default function CareersInCyber() {
                         <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         <a className="content__subtitle underline" href="/LearningPaths/PenetrationTester">Offensive Pentesting</a>
                       </li>
-                    </ol>
+                    </ul>
                     <b className="content__title">Relevant Career Guides</b>
-                    <ol>
+                    <ul>
                       <li>
                         <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         <a className="content__subtitle underline" href="https://tryhackme.com/r/resources/blog/interview-with-soc-analyst">Becoming a Penetration Tester</a>
@@ -693,11 +695,11 @@ export default function CareersInCyber() {
                         <a className="content__subtitle underline" href="https://tryhackme.com/r/resources/blog/interview-with-soc-analyst"> Becoming a Penetration Tester: Alex’s Success Story</a>
 
                       </li>
-                    </ol>
+                    </ul>
                   </div>
                   <div className="note fit-content">
                     For More Info Follow This link 👉🏻    <button
-                      onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")}
+                      onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore5")}
                       className="go-to my-2"
                     >
                       Penetration Tester
@@ -737,7 +739,7 @@ export default function CareersInCyber() {
                     </p>
                     <b className="content__title">Responsibilities</b>
                     <p>
-                      <ol>
+                      <ul>
                         <li>
                           <FontAwesomeIcon
                             icon={faArrowRight}
@@ -763,7 +765,7 @@ export default function CareersInCyber() {
                           Evaluate and report on insights, with actionable data
                           for companies to avoid real-world instances
                         </li>
-                      </ol>
+                      </ul>
                       <div className="note">
                         <b className="text-danger">Note! :</b> The Following Links From TryHackMe Website
                       </div>
@@ -774,7 +776,7 @@ export default function CareersInCyber() {
                       fundamental technical knowledge and hands-on experience,
                       which is crucial to becoming a successful Red Teamer.
                     </p>
-                    <ol>
+                    <ul>
                       <li>
                         <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         <a className="content__subtitle underline" href="/LearningPaths/RedTeamer">JR Penetration Tester</a>
@@ -787,19 +789,19 @@ export default function CareersInCyber() {
                         <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         <a className="content__subtitle underline" href="/LearningPaths/RedTeamer">Red Teamer</a>
                       </li>
-                    </ol>
+                    </ul>
                     <b className="content__title">Relevant Career Guides</b>
-                    <ol>
+                    <ul>
                       <li>
                         <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                         <a className="content__subtitle underline" href="https://tryhackme.com/r/resources/blog/interview-with-soc-analyst">Red Teaming: Job Roles, Salaries & Opportunities</a>
 
                       </li>
-                    </ol>
+                    </ul>
                   </div>
                   <div className="note fit-content">
                     For More Info Follow This link 👉🏻    <button
-                      onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore1")}
+                      onClick={() => handleGoToLab("/CareersInCyber/CareersInCyber_labs/ShowMore6")}
                       className="go-to my-2"
                     >
                       Red Teamer
@@ -815,10 +817,10 @@ export default function CareersInCyber() {
 
                     <p>
                       This room has provided you with a general overview of the
-                      different careers in cyber security. Don't forget that you
-                      <a className="content__subtitle underline" href="/">
+                      different careers in cyber security. Don't forget that you {" "}
+                      <b className="content__subtitle underline" >
                         can leverage online training to land your dream job
-                      </a>{" "}
+                      </b>{" "}
                       in cyber security. To find out which cyber security role
                       suits you best, try our fun quiz, which you can access by
                       clicking the "View Site" button on the right.
@@ -834,7 +836,7 @@ export default function CareersInCyber() {
                 }
                 className="go-to"
               >
-                Go To Labs
+                Go To MCQs
               </button>
             </div>
           </div>

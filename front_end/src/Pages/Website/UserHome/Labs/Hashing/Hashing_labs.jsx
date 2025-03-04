@@ -8,11 +8,13 @@ import { Card } from "../../Components/Card/Card";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function Hashing_labs() {
   return (
     <>
       <Banner />
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing */}
       <LandingPractice />
       {/* End Landing */}

@@ -7,11 +7,13 @@ import Banner from "../../Components/Banner/Banner";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function BL_Vuln_labs() {
   return (
     <>
       <Banner />
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing */}
       <LandingPractice />
       {/* End Landing */}

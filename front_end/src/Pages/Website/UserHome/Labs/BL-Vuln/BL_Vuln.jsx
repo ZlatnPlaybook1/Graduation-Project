@@ -9,6 +9,7 @@ import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import Banner from "../../Components/Banner/Banner.jsx";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 export default function BL_Vuln() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -16,6 +17,7 @@ export default function BL_Vuln() {
     <>
       <Banner />
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing */}
       <CourseLanding
         background={background}

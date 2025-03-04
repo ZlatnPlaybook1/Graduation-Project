@@ -80,21 +80,9 @@ import REGEX_SECOND_LAB from "./Pages/Website/UserHome/Labs/Regex/practical/seco
 //Careers in Cyber
 import CAREERS_IN_CYBER from "./Pages/Website/UserHome/Labs/CareersInCyber/CareersInCyber.jsx";
 import CAREERS_IN_CYBER_MCQ from "./Pages/Website/UserHome/Labs/CareersInCyber/CareersInCyber_labs.jsx";
-import CAREERS_IN_CYBER_MORE1 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/cyberAnalyst.jsx";
-import CAREERS_IN_CYBER_MORE2 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/DigitalForensicsExaminer.jsx";
-import CAREERS_IN_CYBER_MORE3 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/IncidentResponder.jsx";
-import CAREERS_IN_CYBER_MORE4 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/MalwareAnalyst.jsx";
-import CAREERS_IN_CYBER_MORE5 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/PenetrationTester.jsx";
-import CAREERS_IN_CYBER_MORE6 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/RedTeamer.jsx";
-import CAREERS_IN_CYBER_MORE7 from "./Pages/Website/UserHome/Labs/CareersInCyber/more/SecurityEngineer.jsx";
+import CAREERS_IN_CYBER_MCQ_PAGE from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/MCQPage.jsx";
+import CAREERS_IN_CYBER_MORE from "./Pages/Website/UserHome/Labs/CareersInCyber/more/MorePage.jsx";
 
-import CAREERS_IN_CYBER_MCQ1 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/DigitalForensicsExaminer.jsx";
-import CAREERS_IN_CYBER_MCQ2 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/IncidentResponder.jsx";
-import CAREERS_IN_CYBER_MCQ3 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/MalwareAnalyst.jsx";
-import CAREERS_IN_CYBER_MCQ4 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/PenetrationTester.jsx";
-import CAREERS_IN_CYBER_MCQ5 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/RedTeamer.jsx";
-import CAREERS_IN_CYBER_MCQ6 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/SecurityEngineer.jsx";
-import CAREERS_IN_CYBER_MCQ7 from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/SecurityAnalyst.jsx";
 
 // End Careers in Cyber
 // Api Hacking
@@ -134,22 +122,7 @@ import BL_VULN_SECOND_LAB_MY_ACCOUNT from "./Pages/Website/UserHome/Labs/BL-Vuln
 import DIGITAL_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/Digital_Forensics.jsx";
 import DIGITAL_FORENSICS_LABS from "./Pages/Website/UserHome/Labs/Digital_Forensics/Digital_Forensics_Labs.jsx";
 import DIGITAL_FORENSICS_FIRST_LAB from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/first_lab/First_Lab.jsx";
-import BLOCK_CHIN_AND_CRYPTOCURRENCY from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/BlockchainAndCryptocurrency.jsx";
-import COMPUTER_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Computer.jsx";
-import CLOUD_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Cloud.jsx";
-import DATABASE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Database.jsx";
-import DATA_RECOVERY_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/DataRecovery.jsx";
-import DRONE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Drone.jsx";
-import EMAIL_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Email.jsx";
-import GAMING_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Gaming.jsx";
-import IOT_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/IoT.jsx";
-import MALWARE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Malware.jsx";
-import MOBILE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Mobile.jsx";
-import MULTIMEDIA_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Multimedia.jsx";
-import NETWORK_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Network.jsx";
-import SOCIAL_MEDIA_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/SocialMedia.jsx";
-import VEHICLE_FORENSICS from "./Pages/Website/UserHome/Labs/Digital_Forensics/practical/MCQ/Vehicle.jsx";
-
+import DIGITAL_FORENSICS_MCQ_PAGE from "./Pages/Website/UserHome/Labs/Digital_Forensics/DigitalForensicsMCQPage.jsx";
 // End Digital Forensics
 // Hashing
 import HASHING from "./Pages/Website/UserHome/Labs/Hashing/Hashing.jsx";
@@ -304,6 +277,7 @@ import AboutUs from "./Pages/Website/AboutUs/AboutUs.jsx";
 function App() {
   return (
     <div className="App">
+     
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
@@ -483,7 +457,7 @@ function App() {
             path="/Digital_Forensics/Digital_Forensics_labs/lab1"
             element={<DIGITAL_FORENSICS_FIRST_LAB />}
           />
-          <Route
+          {/* <Route
             path="/Digital_Forensics/MCQ/BlockChain"
             element={<BLOCK_CHIN_AND_CRYPTOCURRENCY />}
           />
@@ -542,7 +516,8 @@ function App() {
           <Route
             path="/Digital_Forensics/MCQ/Vehicle"
             element={<VEHICLE_FORENSICS />}
-          />
+          /> */}
+          <Route path="/Digital_Forensics/MCQ/:category" element={<DIGITAL_FORENSICS_MCQ_PAGE />} />
 
           {/* End Digital Forensics */}
           {/* Careers in Cyber */}
@@ -552,64 +527,11 @@ function App() {
             element={<CAREERS_IN_CYBER_MCQ />}
           />
 
-          <Route
-            path="/CareersInCyber/CareersInCyber_labs/ShowMore1"
-            element={<CAREERS_IN_CYBER_MORE1 />}
-          />
-          <Route
-            path="/CareersInCyber/CareersInCyber_labs/ShowMore2"
-            element={<CAREERS_IN_CYBER_MORE2 />}
-          />
-          <Route
-            path="/CareersInCyber/CareersInCyber_labs/ShowMore3"
-            element={<CAREERS_IN_CYBER_MORE3 />}
-          />
-          <Route
-            path="/CareersInCyber/CareersInCyber_labs/ShowMore4"
-            element={<CAREERS_IN_CYBER_MORE4 />}
-          />
-          <Route
-            path="/CareersInCyber/CareersInCyber_labs/ShowMore5"
-            element={<CAREERS_IN_CYBER_MORE5 />}
-          />
-          <Route
-            path="/CareersInCyber/CareersInCyber_labs/ShowMore6"
-            element={<CAREERS_IN_CYBER_MORE6 />}
-          />
-          <Route
-            path="/CareersInCyber/CareersInCyber_labs/ShowMore7"
-            element={<CAREERS_IN_CYBER_MORE7 />}
-          />
-          <Route
-            path="/CareersInCyber/CareersInCyber_MCQ/Security_Analyst/MCQ"
-            element={<CAREERS_IN_CYBER_MCQ1 />}
-          />
-          <Route
-            path="/CareersInCyber/CareersInCyber_MCQ/Security_Engineer/MCQ"
-            element={<CAREERS_IN_CYBER_MCQ2 />}
-          />
-          <Route
-            path="/CareersInCyber/CareersInCyber_MCQ/Incident_Responder/MCQ"
-            element={<CAREERS_IN_CYBER_MCQ3 />}
-          />
-          <Route
-            path="/CareersInCyber/CareersInCyber_MCQ/Digital_Forensics_Examiner/MCQ"
-            element={<CAREERS_IN_CYBER_MCQ4 />}
-          />
-          <Route
-            path="/CareersInCyber/CareersInCyber_MCQ/Malware_Analyst/MCQ"
-            element={<CAREERS_IN_CYBER_MCQ5 />}
-          />
-          <Route
-            path="/CareersInCyber/CareersInCyber_MCQ/Red_Teamer/MCQ"
-            element={<CAREERS_IN_CYBER_MCQ6 />}
-          />
-          <Route
-            path="/CareersInCyber/CareersInCyber_MCQ/Penetration_Tester/MCQ"
-            element={<CAREERS_IN_CYBER_MCQ7 />}
-          />
+        <Route path="/CareersInCyber/CareersInCyber_MCQ/:category/MCQ" element={<CAREERS_IN_CYBER_MCQ_PAGE />} />
+        <Route path="/CareersInCyber/CareersInCyber_labs/:page" element={<CAREERS_IN_CYBER_MORE />} />
 
-          {/* End Careers in Cyber */}
+         
+        {/* End Careers in Cyber */}
 
           {/* Api Hacking */}
           <Route path="/Api_Hacking" element={<API_HACKING />} />

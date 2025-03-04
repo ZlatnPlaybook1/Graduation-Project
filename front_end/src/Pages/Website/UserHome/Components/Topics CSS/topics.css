@@ -45,7 +45,10 @@
   align-items: center;
   gap: 10px;
 }
-
+.content-section .topics-text .faq-header:hover,
+.content-section .topics-text .faq-header.active {
+  background-color: var(--faq-header-hover);
+}
 .content-section .topics-text .faq-header::after {
   content: "\f107";
   font-family: "Font Awesome 5 Free";
@@ -88,16 +91,16 @@
 }
 
 .content-section .topics-text .faq-body {
-  font-size: 16px !important;
+  font-size: 16px ;
   padding: 20px 30px;
   line-height: 1.8;
-  color: var(--white);
+  color: var(--primary-text);
   animation: fadeInUp 0.5s ease-out;
   font-family: "Poppins", sans-serif;
-  background-color: var(--secondary-bg);
+  background-color: var(--faq-body-bg);
   border-radius: 0px 0px 12px 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-weight: 400 !important;
+  font-weight: 400 ;
   margin-top: -5px;
   transition: opacity 0.3s ease, transform 0.3s ease;
   display: none;

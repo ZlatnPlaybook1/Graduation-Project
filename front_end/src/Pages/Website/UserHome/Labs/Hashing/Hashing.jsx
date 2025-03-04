@@ -11,6 +11,7 @@ import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 export default function Hashing() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -18,6 +19,7 @@ export default function Hashing() {
     <>
       <Banner />
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing */}
       <CourseLanding
         background={background}

@@ -12,7 +12,7 @@ import "../Page_Styles/Content_sec.css"
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 // import OutOfBandImage from "../../assets/img/SQL_Injection/Out-of-Band SQLi.png";
 // import DBServerImage from "../../assets/img/SQL_Injection/DBServer.png";
-
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 export default function Sql_Injection() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -20,6 +20,7 @@ export default function Sql_Injection() {
     <>
       <Banner />
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing */}
       <CourseLanding
         background={background}

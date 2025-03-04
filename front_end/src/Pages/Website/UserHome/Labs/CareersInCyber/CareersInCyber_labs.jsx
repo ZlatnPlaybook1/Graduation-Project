@@ -7,11 +7,13 @@ import { Card } from "../../Components/Card/Card";
 import Go2TopBtn from "../../Components/GoBack_Btn/GoBack_Btn";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function Regex_labs() {
   return (
     <>
       <Banner />
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing */}
       <LandingPractice />
       {/* End Landing */}

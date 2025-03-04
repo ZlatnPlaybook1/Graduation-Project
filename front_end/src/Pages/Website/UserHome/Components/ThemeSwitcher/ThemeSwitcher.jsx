@@ -7,6 +7,9 @@ const darkTheme = {
   "--primary-text": "#ffffff",
   "--secondary-text": "#c4c2c2",
   "--main-color": "#00e77f",
+  "--faq-body-bg": "#282626",
+  "--faq-header": "#3a3c40a3",
+  "--faq-header-hover": "#3a3c40",
 };
 
 const lightTheme = {
@@ -14,7 +17,10 @@ const lightTheme = {
   "--secondary-bg": "#c4c2c2",
   "--primary-text": "#0f0f0f",
   "--secondary-text": "#1b1b1bd0",
-  "--main-color": "#00e77f",
+  "--main-color": "#048a4e",
+  "--faq-body-bg": "#bebebe",
+  "--faq-header": "#3a3c40",
+  "--faq-header-hover": "#505358",
 };
 
 const ThemeSwitcher = () => {
