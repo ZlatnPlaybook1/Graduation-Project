@@ -59,7 +59,7 @@ app.use("/src", express.static("src"));
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // Your React app's URL
+    // origin: "http://localhost:3000", // Your React app's URL
     credentials: true, // Required for cookies
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
