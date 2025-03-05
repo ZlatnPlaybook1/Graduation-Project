@@ -4,7 +4,6 @@ export default function TextFileViewer() {
   const [fileContent, setFileContent] = useState("");
 
   useEffect(() => {
-    // Fetch the robots.txt file from the correct path
     fetch("/robots2.txt")
       .then((response) => response.text())
       .then((data) => {
@@ -16,5 +15,5 @@ export default function TextFileViewer() {
   }, []);
 
   // Return raw text content
-  return <pre>{fileContent}</pre>;
+  return <pre className="Custom__body--bg p-3">{fileContent}</pre>;
 }

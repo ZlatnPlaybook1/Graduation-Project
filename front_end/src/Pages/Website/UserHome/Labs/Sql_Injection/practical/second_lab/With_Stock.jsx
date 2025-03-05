@@ -12,7 +12,7 @@ import Go2TopBtn from "../../../../Components/Go2Top_Btn/Go2Top_Btn";
 
 export default function With_Stock() {
   return (
-    <>
+    <div className="Custom__body--bg">
       <GoBackBtn />
       {/* Start Courses  */}
       <div className="course-store ">
@@ -114,6 +114,6 @@ export default function With_Stock() {
       </div>
       <Go2TopBtn />
       {/* End Course Content  */}
-    </>
+    </div>
   );
 }

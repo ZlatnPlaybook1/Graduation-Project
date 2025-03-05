@@ -6,14 +6,12 @@ export default function UserList() {
   const [users, setUsers] = useState([]);
   const [token, setToken] = useState("");
 
-  // Fetch token from cookies on component mount
   useEffect(() => {
     const cookie = Cookie();
     const retrievedToken = cookie.get("CuberWeb");
     setToken(retrievedToken);
   }, []);
 
-  // Fetch user list from the API
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -25,7 +23,7 @@ export default function UserList() {
         });
         if (response.ok) {
           const data = await response.json();
-          setUsers(data); // Assuming API returns an array of objects with id and name
+          setUsers(data); 
         } else {
           console.error("Failed to fetch users.");
         }
@@ -39,7 +37,6 @@ export default function UserList() {
     }
   }, [token]);
 
-  // Delete a user
   const deleteUser = async (id) => {
     try {
       const response = await fetch(
@@ -53,7 +50,7 @@ export default function UserList() {
       );
 
       if (response.ok) {
-        setUsers(users.filter((user) => user.id !== id)); // Update UI
+        setUsers(users.filter((user) => user.id !== id)); 
       } else {
         console.error("Failed to delete user.");
       }
@@ -63,16 +60,18 @@ export default function UserList() {
   };
 
   return (
-    <div className="users-container">
-      <h2>Users</h2>
+    <div className="Custom__body--bg m-0 p-2 " style={{height: "100vh"}}>
+      <div className="users-container row mx-auto  justify-content-center align-items-center text-center">
+      <h2 className=" main-color mb-3 pb-2">Users</h2>
       {users.map((user) => (
         <div className="user-item" key={user.id}>
-          <h2 className="user-name">{user.name}</h2>
+          <h2 className="user-name ">{user.name}</h2>
           <button className="delete-btn" onClick={() => deleteUser(user.id)}>
             Delete
           </button>
         </div>
       ))}
+    </div>
     </div>
   );
 }

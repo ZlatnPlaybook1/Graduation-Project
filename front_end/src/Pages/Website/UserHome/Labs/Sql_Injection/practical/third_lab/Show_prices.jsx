@@ -28,59 +28,86 @@ Continue adding null values until the error disappears and the response includes
 
   `;
   return (
-    <>
-      <GoBackBtn />
-      <ShowHintBtn hintText={hintMessage} />
-      {/* Start Courses  */}
-      <div className="d-flex justify-content-center align-items-center w-100 min-vh-100">
-        <div
-          className="container text-center py-5"
-          style={{
-            backgroundColor: "#f8f9fa",
-            borderRadius: "10px",
-            padding: "30px",
-            boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-          }}
+   <div
+  className="min-vh-100 d-flex flex-column align-items-center justify-content-center"
+  style={{
+    backgroundColor: "var(--primary-bg)",
+  }}
+>
+  <GoBackBtn />
+  <ShowHintBtn hintText={hintMessage} />
+  {/* Start Courses */}
+  <div
+    className="container text-center py-5"
+    style={{
+      backgroundColor: "var(--secondary-bg)",
+      borderRadius: "10px",
+      padding: "30px",
+      boxShadow: "0 0 10px var(--glass-effect)",
+    }}
+  >
+    <h1
+      className="mb-4"
+      style={{ color: "var(--main-color)" }}
+    >
+      Add to Cart
+    </h1>
+    <table
+      className="table table-bordered table-hover"
+      style={{
+        backgroundColor: "var(--primary-bg)!important",
+        borderRadius: "10px",
+        overflow: "hidden",
+        border: "1px solid var(--secondary-text)",
+      }}
+    >
+      <thead>
+        <tr
+          
         >
-          <h1 className="mb-4 text-primary"> Add to Cart</h1>
-          <table
-            className="table table-bordered table-hover"
-            style={{
-              backgroundColor: "white",
-              borderRadius: "10px",
-              overflow: "hidden",
-            }}
+          <th style={{
+            backgroundColor: "var(--primary-bg)",
+            color: "var(--primary-text)",
+          }}> Product Name</th>
+          <th style={{
+            backgroundColor: "var(--primary-bg)",
+            color: "var(--primary-text)",
+          }}>Actual Price</th>
+          <th style={{
+            backgroundColor: "var(--primary-bg)",
+            color: "var(--primary-text)",
+          }}>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.products.map((product, index) => (
+          <tr
+            key={index}
+            
           >
-            <thead className="thead-dark">
-              <tr>
-                <th style={{ backgroundColor: "#007bff", color: "white" }}>
-                  Product Name
-                </th>
-                <th style={{ backgroundColor: "#007bff", color: "white" }}>
-                  Actual Price
-                </th>
-                <th style={{ backgroundColor: "#007bff", color: "white" }}>
-                  Actions
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.products.map((product, index) => (
-                <tr key={index}>
-                  <td>{product.name}</td>
-                  <td>{product.actual_price}</td>
-                  <td>
-                    <button className="btn btn-outline-success btn-sm d-flex align-items-center justify-content-center mx-auto">
-                      <i className="fas fa-cart-plus me-2"></i> AddCart
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-      {/* End Course Content  */}
-    </>
+            <td style={{
+            backgroundColor: "var(--secondary-bg)",
+            color: "var(--primary-text)",
+          }}>{product.name}</td>
+            <td style={{
+            backgroundColor: "var(--secondary-bg)",
+            color: "var(--primary-text)",
+          }}>{product.actual_price}</td>
+            <td style={{
+            backgroundColor: "var(--secondary-bg)",
+            color: "var(--primary-text)",
+          }}>
+              <button className="btn btn-outline-success btn-sm d-flex align-items-center justify-content-center mx-auto">
+                <i className="fas fa-cart-plus me-2"></i> AddCart
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  {/* End Course Content */}
+</div>
+
   );
 }

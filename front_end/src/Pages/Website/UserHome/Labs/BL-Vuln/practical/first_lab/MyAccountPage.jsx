@@ -10,13 +10,11 @@ const MyAccountPage = () => {
   });
 
   useEffect(() => {
-    // Check if the user is logged in
     const loggedIn = localStorage.getItem("loggedIn1") === "true";
     if (!loggedIn) {
-      // Redirect to login if not logged in
+   
       window.location.href = "/BL-Vuln/BL_Vuln_labs/first_lab/login";
     } else {
-      // Retrieve user details from localStorage
       const email = localStorage.getItem("userEmail") || "";
       const name = localStorage.getItem("userName") || "";
       const balance = parseFloat(localStorage.getItem("userBalance") || "0");
@@ -25,12 +23,12 @@ const MyAccountPage = () => {
   }, []);
 
   return (
-    <div className="my-account-page bg-light d-flex flex-column min-vh-100">
+    <div className="my-account-page primary-bg d-flex flex-column min-vh-100">
       <Navigation />
 
       {/* Main Content */}
       <main className="container my-5 flex-grow-1">
-        <h2 className="products-page-title mb-4 text-primary fw-bold">
+        <h2 className="products-page-title mb-4 main-color fw-bold">
           Your Account <i className="fas fa-user-circle me-2"></i>
         </h2>
 
@@ -38,7 +36,7 @@ const MyAccountPage = () => {
         <div className="card shadow border-0 hover-translate w-100">
           <div className="row g-0">
             {/* Left Column: User Image */}
-            <div className="col-md-4 d-flex align-items-center justify-content-center bg-light">
+            <div className="col-md-4 d-flex align-items-center justify-content-center secondary-bg">
               <img
                 src={UserImage}
                 alt="Default User"
@@ -48,7 +46,7 @@ const MyAccountPage = () => {
             </div>
 
             {/* Right Column: User Details */}
-            <div className="col-md-8">
+            <div className="col-md-8 secondary-bg">
               <div className="card-body text-center text-md-start w-100">
                 <h5 className="card-title display-6 mb-3">
                   Hello,{" "}
@@ -74,9 +72,9 @@ const MyAccountPage = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-dark text-white text-center py-3 mt-auto">
+      <footer className="secondary-bg text-center py-3 mt-4">
         <div className="container">
-          <p className="mb-0">© 2025 ShopZone. All rights reserved.</p>
+          <p className="mb-0 primary-text">© 2025 CyberLabs. All rights reserved.</p>
         </div>
       </footer>
     </div>

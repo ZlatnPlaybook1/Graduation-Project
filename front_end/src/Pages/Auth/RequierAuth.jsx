@@ -13,7 +13,7 @@ export default function RequierAuth({ allowedRole }) {
    useEffect(() => {
         const timer = setTimeout(() => {
           setLoading(false);
-        }, 2000);
+        }, 300);
         return () => clearTimeout(timer);
       }, []);
   useEffect(() => {

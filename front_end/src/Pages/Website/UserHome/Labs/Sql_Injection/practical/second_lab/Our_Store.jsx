@@ -19,13 +19,13 @@ export default function Our_Store() {
     </ul>
   `;
   return (
-    <>
+    <div className="Custom__body--bg">
       <div className="container">
         <GoBackBtn />
         <ShowHintBtn hintText={hintMessage} />
         <div className="course-store ">
           <div className="container-store ">
-            <h1 style={{ textAlign: "center" }}>Featured Products</h1>
+            <h1 className="text-center">Featured Products</h1>
             <div className="row-practice">
               <div className="card-store ">
                 <div className="functions">
@@ -75,6 +75,6 @@ export default function Our_Store() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

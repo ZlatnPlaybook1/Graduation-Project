@@ -15,9 +15,9 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg  secondary-bg">
       <div className="container">
-        <Link className="navbar-brand" to="/BL-Vuln/BL_Vuln_labs">
+        <Link className="navbar-brand main-color" to="/BL-Vuln/BL_Vuln_labs">
           ShopZone
         </Link>
         <button

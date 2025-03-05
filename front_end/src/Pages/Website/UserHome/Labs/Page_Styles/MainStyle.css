@@ -33,3 +33,18 @@
     text-decoration: underline!important;
 }
 
+.custom__table{
+  color: var(--primary-text);
+  background: var(--secondary-bg);
+
+}
+.custom__table thead,
+.custom__table th{ 
+  color: var(--primary-text)!important;
+  background: var(--primary-bg)!important;
+}
+.custom__table td,
+.custom__table tr:hover{
+  color: var(--primary-text)!important;
+  background: var(--secondary-bg)!important;
+}

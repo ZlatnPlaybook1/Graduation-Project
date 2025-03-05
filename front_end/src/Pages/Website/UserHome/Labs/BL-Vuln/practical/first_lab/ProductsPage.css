@@ -2,23 +2,22 @@
   width: 100%;
   max-width: 350px;
   height: 500px;
-  background: white;
+  background: var(--secondary-bg)!important;
   margin: auto;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0;
   transform: scale(0.95);
-  transform-origin: center center; /* Ensure scaling happens from the center */
+  transform-origin: center center; 
   transition: box-shadow 0.5s, transform 0.5s;
 }
 
 .my-product-card:hover {
   transform: scale(1);
-  box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 20px 30px var(--glass-effect);
 }
 
-/* Disable hover effects on devices that don't support hover */
 @media (hover: none) {
   .my-product-card:hover {
     transform: scale(0.95);
@@ -26,7 +25,6 @@
   }
 }
 
-/* ... rest of your CSS remains unchanged ... */
 
 .product-card__container {
   width: 100%;
@@ -60,11 +58,13 @@
 .product-card__left {
   height: 100%;
   width: 50%;
-  background: #f4f4f4;
+  background: var(--secondary-bg);
   position: relative;
   float: left;
 }
-
+.product-card__left .product-card__title{
+  color: var(--primary-text);
+}
 .product-card__details {
   padding: 10px 5px;
   float: left;
@@ -79,32 +79,32 @@
   float: right;
   width: calc(30% - 2px);
   height: 100%;
-  background: #f1f1f1;
+  background: var(--secondary-bg);
   transition: background 0.5s;
-  border-left: solid thin rgba(0, 0, 0, 0.1);
+  border-left: solid thin var(--glass-effect);
   cursor: pointer;
 }
 
 .product-card__buy i {
   font-size: 30px;
   padding: 30px;
-  color: #254053;
+  color: var(--main-color);
   transition: transform 0.5s;
 }
 
 .product-card__buy:hover {
-  background: #a6cdde;
+  background: var(--secondary-text);
 }
 
 .product-card__buy:hover i {
   transform: translateY(5px);
-  color: #00394b;
+  color: var(--hover-main-color);
 }
 
 .product-card__right {
   width: 50%;
-  background: #a6cdde;
-  color: white;
+  background: var(--secondary-text);
+  color: var(--secondary-bg);
   float: right;
   height: 200%;
   overflow: hidden;
@@ -120,20 +120,20 @@
   width: calc(30% - 2px);
   float: left;
   transition: transform 0.5s;
-  border-right: solid thin rgba(255, 255, 255, 0.3);
+  border-right: solid thin var(--dark-divider-color);
   height: 50%;
 }
 
 .product-card__done i {
   font-size: 30px;
   padding: 30px;
-  color: white;
+  color: var(--secondary-bg);
 }
 
 .product-card__remove {
   width: calc(30% - 1px);
   clear: both;
-  border-right: solid thin rgba(255, 255, 255, 0.3);
+  border-right: solid thin var(--dark-divider-color);
   height: 50%;
   background: #bc3b59;
   transition: transform 0.5s, background 0.5s;
@@ -152,7 +152,7 @@
   transition: transform 0.5s;
   font-size: 30px;
   padding: 30px;
-  color: white;
+  color: var(--secondary-bg);
 }
 
 .product-card__right:hover .product-card__remove,
@@ -177,7 +177,7 @@
   position: absolute;
   right: 85px;
   top: 85px;
-  color: white;
+  color: var(--secondary-bg);
   opacity: 1;
   transition: opacity 0.5s;
 }
@@ -212,7 +212,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  color: white;
+  color: var(--secondary-bg);
 }
 
 .product-card__info-item {
@@ -237,14 +237,11 @@
   }
   .product-card__top {
     height: auto;
-    padding-top: 56.25%; /* Optional: 16:9 aspect ratio */
+    padding-top: 56.25%; 
   }
   .product-card__bottom {
     height: auto;
   }
 }
 
-/* Product Page Title */
-.products-page-title {
-  text-align: center;
-}
+
