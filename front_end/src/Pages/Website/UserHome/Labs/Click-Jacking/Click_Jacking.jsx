@@ -10,6 +10,7 @@ import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+import click from "../../assets/img/Click_Jacking/clickjacking.svg"
 export default function Click_Jacking() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -47,7 +48,7 @@ export default function Click_Jacking() {
                 <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
-                      <mark>Clickjacking</mark> is a malicious technique where
+                      <b className="content__subtitle me-2">Clickjacking</b> is a malicious technique where
                       an attacker tricks a user into clicking on something
                       different from what the user perceives. This is typically
                       done by placing a transparent iframe or a hidden element
@@ -63,8 +64,10 @@ export default function Click_Jacking() {
                       data theft, or even compromise of sensitive accounts and
                       transactions.
                     </p>
+                    <img src={click} alt="" className="img-fluid w-50 mx-auto d-block" />
+                    <hr />
                     <p>
-                      <b>Key Points about Clickjacking:</b>
+                      <b className="content__title">Key Points about Clickjacking:</b>
                       <br />
                       - Clickjacking attacks are deceptive and often unnoticed
                       by the user.
@@ -89,21 +92,21 @@ export default function Click_Jacking() {
                       help in mitigating and preventing such attacks.
                     </p>
                     <p>
-                      <mark>Common Clickjacking Techniques Include:</mark>
+                      <b className="content__title">Common Clickjacking Techniques Include:</b>
                       <ol>
                         <li>
-                          <span className="pink-note">Invisible iFrames:</span>{" "}
+                          <span className="content__subtitle">Invisible iFrames:</span>{" "}
                           Attackers place an invisible iframe over a legitimate
                           clickable element to capture clicks without the user’s
                           knowledge.
                         </li>
                         <li>
-                          <span className="pink-note">Transparent Layers:</span>{" "}
+                          <span className="content__subtitle">Transparent Layers:</span>{" "}
                           Transparent layers can be used over interactive
                           buttons or links to hijack clicks.
                         </li>
                         <li>
-                          <span className="pink-note">
+                          <span className="content__subtitle">
                             Misleading Visual Elements:
                           </span>{" "}
                           The attacker uses elements that look like legitimate
@@ -127,10 +130,10 @@ export default function Click_Jacking() {
                       integrity of the web application.
                     </p>
                     <p>
-                      <mark>Effective Prevention Techniques Include:</mark>
+                      <b className="content__title">Effective Prevention Techniques Include:</b>
                       <ol>
                         <li>
-                          <span className="pink-note">
+                          <span className="content__subtitle">
                             X-Frame-Options Header:
                           </span>{" "}
                           This HTTP header can prevent the page from being
@@ -138,14 +141,14 @@ export default function Click_Jacking() {
                           attack vector.
                         </li>
                         <li>
-                          <span className="pink-note">
+                          <span className="content__subtitle">
                             Content Security Policy (CSP):
                           </span>{" "}
                           The CSP directive can be configured to block pages
                           from being embedded in frames from untrusted sources.
                         </li>
                         <li>
-                          <span className="pink-note">
+                          <span className="content__subtitle">
                             JavaScript Frame Busting:
                           </span>{" "}
                           JavaScript can be used to prevent the page from being
@@ -163,6 +166,9 @@ export default function Click_Jacking() {
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <div className="faq-content">
+                    <b className="content__title">
+                      Impact of Clickjacking on Cybersecurity:
+                    </b>
                     <p>
                       Clickjacking is a significant cybersecurity threat that
                       can lead to severe consequences if not prevented. It can
@@ -171,7 +177,7 @@ export default function Click_Jacking() {
                     </p>
                     <ol className="oList">
                       <li>
-                        <span className="pink-note">
+                        <span className="content__subtitle">
                           <FontAwesomeIcon
                             icon={faArrowRight}
                             className="me-2"
@@ -183,7 +189,7 @@ export default function Click_Jacking() {
                         payment data.
                       </li>
                       <li>
-                        <span className="pink-note">
+                        <span className="content__subtitle">
                           <FontAwesomeIcon
                             icon={faArrowRight}
                             className="me-2"
@@ -194,7 +200,7 @@ export default function Click_Jacking() {
                         that the user didn’t intend.
                       </li>
                       <li>
-                        <span className="pink-note">
+                        <span className="content__subtitle">
                           <FontAwesomeIcon
                             icon={faArrowRight}
                             className="me-2"
@@ -205,7 +211,7 @@ export default function Click_Jacking() {
                         susceptible to clickjacking attacks.
                       </li>
                       <li>
-                        <span className="pink-note">
+                        <span className="content__subtitle">
                           <FontAwesomeIcon
                             icon={faArrowRight}
                             className="me-2"
@@ -218,6 +224,7 @@ export default function Click_Jacking() {
                     </ol>
                   </div>
                 </dd>
+                {/* Topic 5*/}
                 <dt className="fadeInUp faq-header">
                   <span>Topic 5</span>Detecting Clickjacking Vulnerabilities
                 </dt>
@@ -230,16 +237,16 @@ export default function Click_Jacking() {
                       can also assist in detecting vulnerabilities.
                     </p>
                     <p>
-                      <mark>Detection Methods Include:</mark>
+                      <b className="content__title">Detection Methods Include:</b>
                       <ol>
                         <li>
-                          <span className="pink-note">Manual Inspection:</span>{" "}
+                          <span className="content__subtitle">Manual Inspection:</span>{" "}
                           Review the website for embedded iframes, transparent
                           layers, and improper use of third-party content that
                           could be manipulated for clickjacking.
                         </li>
                         <li>
-                          <span className="pink-note">
+                          <span className="content__subtitle">
                             Automated Security Scanners:
                           </span>{" "}
                           Use tools like OWASP ZAP or Burp Suite to scan for
@@ -247,7 +254,7 @@ export default function Click_Jacking() {
                           missing headers or improper embedding techniques.
                         </li>
                         <li>
-                          <span className="pink-note">
+                          <span className="content__subtitle">
                             Browser Developer Tools:
                           </span>{" "}
                           Use developer tools (e.g., Chrome DevTools) to inspect
@@ -258,6 +265,7 @@ export default function Click_Jacking() {
                     </p>
                   </div>
                 </dd>
+                {/* Topic 6*/}
                 <dt className="fadeInUp faq-header">
                   <span>Topic 6</span>Real-World Examples of Clickjacking
                   Attacks
@@ -271,10 +279,10 @@ export default function Click_Jacking() {
                       the risks and impact of this threat.
                     </p>
                     <p>
-                      <mark>Notable Clickjacking Incidents:</mark>
+                      <b className="content__title">Notable Clickjacking Incidents:</b>
                       <ul>
                         <li>
-                          <span className="pink-note">
+                          <span className="content__subtitle">
                             Facebook Likejacking:
                           </span>{" "}
                           Attackers embedded a hidden iframe over the "Like"
@@ -282,7 +290,7 @@ export default function Click_Jacking() {
                           malicious content without their consent.
                         </li>
                         <li>
-                          <span className="pink-note">
+                          <span className="content__subtitle">
                             YouTube Clickjacking:
                           </span>{" "}
                           Attackers used transparent layers to create fake play
@@ -290,7 +298,7 @@ export default function Click_Jacking() {
                           websites or installing malware when clicked.
                         </li>
                         <li>
-                          <span className="pink-note">
+                          <span className="content__subtitle">
                             PayPal Clickjacking:
                           </span>{" "}
                           A clickjacking attack targeted PayPal users, causing
@@ -302,6 +310,7 @@ export default function Click_Jacking() {
                     </p>
                   </div>
                 </dd>
+                {/* Topic 7*/}
                 <dt className="fadeInUp faq-header">
                   <span>Topic 7</span>Legal and Ethical Implications of
                   Clickjacking
@@ -315,10 +324,10 @@ export default function Click_Jacking() {
                       who fail to protect their users.
                     </p>
                     <p>
-                      <mark>Legal and Ethical Considerations:</mark>
+                      <b className="content__subtitle">Legal and Ethical Considerations:</b>
                       <ul>
                         <li>
-                          <span className="pink-note">
+                          <span className="content__subtitle">
                             Violation of Privacy:
                           </span>{" "}
                           Clickjacking can result in the unauthorized collection
@@ -326,13 +335,13 @@ export default function Click_Jacking() {
                           such as GDPR.
                         </li>
                         <li>
-                          <span className="pink-note">Cybercrime Laws:</span>{" "}
+                          <span className="content__subtitle">Cybercrime Laws:</span>{" "}
                           Many countries have cybercrime laws that make
                           clickjacking a punishable offense, potentially leading
                           to fines or imprisonment for perpetrators.
                         </li>
                         <li>
-                          <span className="pink-note">
+                          <span className="content__subtitle">
                             Ethical Responsibility:
                           </span>{" "}
                           Website owners have an ethical responsibility to
