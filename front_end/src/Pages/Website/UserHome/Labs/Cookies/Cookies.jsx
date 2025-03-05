@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import "../../Components/Topics CSS/topics.css";
-import imagecourse from "../../assets/img/cookies/Cookies_transparent.png";
+import imagecourse from "../../assets/img/cookies/course_image.png";
 import background from "../../assets/img/cookies/baner_lap.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";

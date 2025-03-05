@@ -41,7 +41,7 @@ export default function SSRF() {
 
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <p>erver-side request forgery is a web security vulnerability that allows an attacker to cause the server-side application to make requests to an unintended location.</p>
+                  <p>Server-side request forgery is a web security vulnerability that allows an attacker to cause the server-side application to make requests to an unintended location.</p>
                   <p>In a typical SSRF attack, the attacker might cause the server to make a connection to internal-only services within the organization's infrastructure. In other cases, they may be able to force the server to connect to arbitrary external systems. This could leak sensitive data, such as authorization credentials.</p>
                   <img src={exampleImage10} alt="example" />
                 </dd>
@@ -63,15 +63,15 @@ export default function SSRF() {
                 <dd className="fadeInUp faq-body" id="border-left">
                   <p>SSRF attacks often exploit trust relationships to escalate an attack from the vulnerable application and perform unauthorized actions. These trust relationships might exist in relation to the server, or in relation to other back-end systems within the same organization.</p>
                   <h2>SSRF attacks against the server</h2>
-                  <p>In an SSRF attack against the server, the attacker causes the application to make an HTTP request back to the server that is hosting the application, via its loopback network interface. This typically involves supplying a URL with a hostname like <strong>127.0.0.1</strong> (a reserved IP address that points to the loopback adapter) or <strong>localhost</strong>  (a commonly used name for the same adapter).</p>
+                  <p>In an SSRF attack against the server, the attacker causes the application to make an HTTP request back to the server that is hosting the application, via its loopback network interface. This typically involves supplying a URL with a hostname like <mark>127.0.0.1</mark> (a reserved IP address that points to the loopback adapter) or <mark>localhost</mark>  (a commonly used name for the same adapter).</p>
                   <p>For example, imagine a shopping application that lets the user view whether an item is in stock in a particular store. To provide the stock information, the application must query various back-end REST APIs. It does this by passing the URL to the relevant back-end API endpoint via a front-end HTTP request. When a user views the stock status for an item, their browser makes the following request:</p>
                   <code>POST /product/stock HTTP/1.0</code><p></p>
                   <code>Content-Type: application/x-www-form-urlencoded</code><p></p>
                   <code>Content-Length: 118</code><p></p>
                   <code>stockApi=http://stock.weliketoshop.net:8080/product/stock/check%3FproductId%3D6%26storeId%3D1</code>
                   <p>This causes the server to make a request to the specified URL, retrieve the stock status, and return this to the user.</p>
-                  <p>The server fetches the contents of the <strong>/admin</strong> URL and returns it to the user.</p>
-                  <p>An attacker can visit the <strong>/admin</strong> URL, but the administrative functionality is normally only accessible to authenticated users. This means an attacker won't see anything of interest. However, if the request to the <strong>/admin</strong> URL comes from the local machine, the normal access controls are bypassed. The application grants full access to the administrative functionality, because the request appears to originate from a trusted location.
+                  <p>The server fetches the contents of the <mark>/admin</mark> URL and returns it to the user.</p>
+                  <p>An attacker can visit the <mark>/admin</mark> URL, but the administrative functionality is normally only accessible to authenticated users. This means an attacker won't see anything of interest. However, if the request to the <mark>/admin</mark> URL comes from the local machine, the normal access controls are bypassed. The application grants full access to the administrative functionality, because the request appears to originate from a trusted location.
 
                     LAB
                     APPRENTICE</p>
@@ -84,7 +84,7 @@ export default function SSRF() {
                   <p>These kind of trust relationships, where requests originating from the local machine are handled differently than ordinary requests, often make SSRF into a critical vulnerability.</p>
                   <h2>SSRF attacks against other back-end systems</h2>
                   <p>In some cases, the application server is able to interact with back-end systems that are not directly reachable by users. These systems often have non-routable private IP addresses. The back-end systems are normally protected by the network topology, so they often have a weaker security posture. In many cases, internal back-end systems contain sensitive functionality that can be accessed without authentication by anyone who is able to interact with the systems.</p>
-                  <p>In the previous example, imagine there is an administrative interface at the back-end URL <strong>https://192.168.0.68/admin</strong>. An attacker can submit the following request to exploit the SSRF vulnerability, and access the administrative interface:</p>
+                  <p>In the previous example, imagine there is an administrative interface at the back-end URL <mark>https://192.168.0.68/admin</mark>. An attacker can submit the following request to exploit the SSRF vulnerability, and access the administrative interface:</p>
                   <code>POST /product/stock HTTP/1.0</code><p></p>
                   <code>Content-Type: application/x-www-form-urlencoded</code><p></p>
                   <code>Content-Length: 118</code><p></p>
@@ -97,7 +97,7 @@ export default function SSRF() {
                 <dd className="fadeInUp faq-body" id="border-left">
                   <p>It is common to see applications containing SSRF behavior together with defenses aimed at preventing malicious exploitation. Often, these defenses can be circumvented.</p>
                   <h2>SSRF with blacklist-based input filters</h2>
-                  <p>Some applications block input containing hostnames like <strong>127.0.0.1</strong> and <strong>localhost</strong>, or sensitive URLs like <strong>/admin</strong>. In this situation, you can often circumvent the filter using the following techniques:</p>
+                  <p>Some applications block input containing hostnames like <mark>127.0.0.1</mark> and <mark>localhost</mark>, or sensitive URLs like <mark>/admin</mark>. In this situation, you can often circumvent the filter using the following techniques:</p>
                   <ul>
                     <li>Use an alternative IP representation of 127.0.0.1, such as 2130706433, 017700000001, or 127.1.</li>
                     <li>Register your own domain name that resolves to 127.0.0.1. You can use spoofed.burpcollaborator.net for this purpose.</li>
