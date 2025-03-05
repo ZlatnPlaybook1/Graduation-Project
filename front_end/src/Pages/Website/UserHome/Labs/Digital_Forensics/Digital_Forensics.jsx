@@ -9,6 +9,9 @@ import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+import digital1 from "../../assets/img/DigitalForensics/DigitalForensics.png"
+import digital2 from "../../assets/img/DigitalForensics/DigitalForensics2.png"
+import digital3 from "../../assets/img/DigitalForensics/DigitalForensics3.png"
 export default function Digital_Forensics() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -45,56 +48,53 @@ export default function Digital_Forensics() {
               <dl className="topics-text">
                 {/*Intro*/}
                 <dt className="fadeInUp faq-header" id="border-left">
-                  <span>Intro</span>Intro to Digital Forensics
+                  <span>Intro</span>Introduction To Digital Forensics
                 </dt>
                 <dd className="fadeInUp faq-body">
-                  <h3>Welcome to the Digital Forensics Learning Room!</h3>
-                  {/* <img src={logicflaw} alt="logic flaw img" id="explain-img" /> */}
-                  <div className="desc">
-                    <p>
-                      In this section, we’ll introduce the concept of digital
-                      forensics, focusing on how it enables investigators to
-                      retrieve, analyze, and preserve digital evidence. You’ll
-                      gain insight into the methodologies, tools, and ethical
-                      considerations essential to uncovering and presenting
-                      digital evidence in a legally admissible manner.
-                    </p>
-                  </div>
-                  <h4>Labs:</h4>
-                  <p>
-                    If you’re ready to apply your knowledge in real-world
-                    scenarios, access all the labs in this topic through the
-                    link below.
-                  </p>
+
+                  <img src={digital1} alt="" className="img-fluid w-50 mx-auto d-block" />
+                  <hr />
+                  <p>Forensics is the application of science to investigate crimes and establish facts. With the use and spread of digital systems, such as computers and smartphones, a new branch of forensics was born to investigate related crimes: computer forensics, which later evolved into, digital forensics.</p>
+                  <p>Think about the following scenario. The law enforcement agents arrive at a crime scene; however, part of this crime scene includes digital devices and media. Digital devices include desktop computers, laptops, digital cameras, music players, and smartphones, to name a few. Digital media includes CDs, DVDs, USB flash memory drives, and external storage. A few questions arise:</p>
+                  <ul>
+                    <li><p>How should the police collect digital evidence, such as smartphones and laptops? What are the procedures to follow if the computer and smartphone are running?</p></li>
+                    <li> <p>How to transfer the digital evidence? Are there certain best practices to follow when moving computers, for instance?</p></li>
+                    <li>How to analyze the collected digital evidence? Personal device storage ranges between tens of gigabytes to several terabytes; how can this be analyzed?</li>
+                  </ul>
+                  <img src={digital2} alt="" className="img-fluid w-50 mx-auto d-block" />
+                  <hr />
+                  <p>Assuming this employee is suspected in the figure above, we can quickly see the digital devices that might be of interest to an investigation. We notice a tablet, a smartphone, a digital camera, and a USB flash memory in addition to a desktop computer. Any of these devices might contain a trove of information that can help with an investigation. Processing these as evidence would require digital forensics.</p>
+                  <p>More formally, digital forensics is the application of computer science to investigate digital evidence for a legal purpose. Digital forensics is used in two types of investigations:</p>
+                  <ul>
+                    <li>
+                      <p> <b className="content__subtitle me-2"> Public-sector investigations</b>refer to the investigations carried out by government and law enforcement agencies. They would be part of a crime or civil investigation.</p>
+                    </li>
+                    <li>
+                      <p> <b className="content__subtitle me-2"> Private-sector investigations</b>refer to the investigations carried out by corporate bodies by assigning a private investigator, whether in-house or outsourced. They are triggered by corporate policy violations.</p>
+                    </li>
+                  </ul>
+                  <p>Whether investigating a crime or a corporate policy violation, part of the evidence is related to digital devices and digital media. This is where digital forensics comes into play and tries to establish what has happened. Without trained digital forensics investigators, it won’t be possible to process any digital evidence properly.</p>
+                  <img src={digital3} alt="" className="img-fluid w-50 mx-auto d-block" />
+                  <hr />
                 </dd>
                 {/* Topic 1 */}
                 <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 1:</span> What is Digital Forensics?
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <p>
-                    Digital forensics is the process of identifying, preserving,
+                  <p> <h3 className="content__title "> What is Digital Forensics?</h3>Digital forensics is the process of identifying, preserving,
                     analyzing, and presenting digital evidence in
-                    investigations. This section will cover:
-                  </p>
-                  <ul>
-                    <li>
-                      The importance of digital forensics in modern
-                      investigations.
-                    </li>
-                    <li>
-                      Core concepts like evidence preservation, chain of
-                      custody, and legal compliance.
-                    </li>
+                    investigations. This section will cover:</p>
 
-                    <li>
-                      <b>Key Areas Covered:</b>
-                      <ul>
-                        <li>Forensic methodologies.</li>
-                        <li>Importance of ethical and legal considerations.</li>
-                      </ul>
-                    </li>
-                  </ul>
+
+
+                  <p>The importance of digital forensics in modern
+                    investigations.</p>
+                  <p>Core concepts like evidence preservation, chain of
+                    custody, and legal compliance.</p>
+                  <h3 className="content__title ">Key Areas Covered:</h3>
+                  <li>Forensic methodologies.</li>
+                  <li>Importance of ethical and legal considerations.</li>
                 </dd>
                 {/* Topic 2 */}
                 <dt className="fadeInUp faq-header" id="border-left">
@@ -110,193 +110,193 @@ export default function Digital_Forensics() {
                   </p>
                   <ul>
                     <li>
-                      <b>Computer Forensics:</b>
+                      <spam className="content__title" >Computer Forensics:</spam>
                       <ul>
                         <li>
-                          <b>Focus:</b>Analyzing computers, hard drives, and
+                          <b className="content__subtitle me-2">Focus:</b>Analyzing computers, hard drives, and
                           other storage devices for evidence.
                         </li>
                         <li>
-                          <b>Applications:</b> Recovering deleted files,
+                          <b className="content__subtitle me-2">Applications:</b> Recovering deleted files,
                           analyzing file systems, and investigating user
                           activity.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <b>Mobile Forensics:</b>
+                      <b className="content__title ">Mobile Forensics:</b>
                       <ul>
                         <li>
-                          <b>Focus:</b>Monitoring and analyzing network traffic
+                          <b className="content__subtitle me-2">Focus:</b>Monitoring and analyzing network traffic
                           to detect anomalies or breaches.
                         </li>
                         <li>
-                          <b>Applications:</b> Investigating unauthorized
+                          <b className="content__subtitle me-2">Applications:</b> Investigating unauthorized
                           access, denial-of-service attacks, and data
                           exfiltration.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <b>Memory Forensics:</b>
+                      <b className="content__title ">Memory Forensics:</b>
                       <ul>
                         <li>
-                          <b>Focus:</b>Extracting and analyzing volatile data
+                          <b className="content__subtitle me-2">Focus:</b>Extracting and analyzing volatile data
                           from a system's memory (RAM).
                         </li>
                         <li>
-                          <b>Applications:</b> Detecting malware, analyzing
+                          <b className="content__subtitle me-2">Applications:</b> Detecting malware, analyzing
                           running processes, and retrieving sensitive data.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <b>Cloud Forensics:</b>
+                      <b className="content__title ">Cloud Forensics:</b>
                       <ul>
                         <li>
-                          <b>Focus:</b>Investigating cloud-based platforms,
+                          <b className="content__subtitle me-2">Focus:</b>Investigating cloud-based platforms,
                           virtual environments, and data stored in cloud
                           systems.
                         </li>
                         <li>
-                          <b>Applications:</b> Analyzing logs, tracking data
+                          <b className="content__subtitle me-2">Applications:</b> Analyzing logs, tracking data
                           movement, and investigating breaches in cloud
                           environments.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <b>Database Forensics:</b>
+                      <b className="content__title ">Database Forensics:</b>
                       <ul>
                         <li>
-                          <b>Focus:</b> Analyzing database systems for evidence
+                          <b className="content__subtitle me-2">Focus:</b> Analyzing database systems for evidence
                           of tampering or unauthorized access.
                         </li>
                         <li>
-                          <b>Applications:</b> Investigating SQL injection
+                          <b className="content__subtitle me-2">Applications:</b> Investigating SQL injection
                           attacks, recovering deleted records, and tracking
                           database activity.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <b>IoT Forensics:</b>
+                      <b className="content__title ">IoT Forensics:</b>
                       <ul>
                         <li>
-                          <b>Focus:</b>Investigating Internet of Things (IoT)
+                          <b className="content__subtitle me-2">Focus:</b>Investigating Internet of Things (IoT)
                           devices like smart home systems, wearable tech, and
                           industrial IoT.
                         </li>
                         <li>
-                          <b>Applications:</b> Analyzing sensor logs, device
+                          <b className="content__subtitle me-2">Applications:</b> Analyzing sensor logs, device
                           communication, and potential exploitation of IoT
                           vulnerabilities.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <b>Email Forensics:</b>
+                      <b className="content__title ">Email Forensics:</b>
                       <ul>
                         <li>
-                          <b>Focus:</b> Examining emails for evidence of
+                          <b className="content__subtitle me-2">Focus:</b> Examining emails for evidence of
                           phishing, fraud, or other malicious activity.
                         </li>
                         <li>
-                          <b>Applications:</b>Identifying spoofed email
+                          <b className="content__subtitle me-2">Applications:</b>Identifying spoofed email
                           addresses, analyzing email headers, and retrieving
                           deleted emails.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <b>Social Media Forensics:</b>
+                      <b className="content__title ">Social Media Forensics:</b>
                       <ul>
                         <li>
-                          <b>Focus:</b> Analyzing activity and content on social
+                          <b className="content__subtitle me-2">Focus:</b> Analyzing activity and content on social
                           media platforms for evidence.
                         </li>
                         <li>
-                          <b>Applications:</b> Investigating online harassment,
+                          <b className="content__subtitle me-2">Applications:</b> Investigating online harassment,
                           social engineering attacks, and posts related to
                           criminal activities.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <b>Multimedia Forensics:</b>
+                      <b className="content__title ">Multimedia Forensics:</b>
                       <ul>
                         <li>
-                          <b>Focus:</b>Analyzing digital media files such as
+                          <b className="content__subtitle me-2">Focus:</b>Analyzing digital media files such as
                           images, videos, and audio for evidence of manipulation
                           or hidden data.
                         </li>
                         <li>
-                          <b>Applications:</b> Detecting deepfakes, identifying
+                          <b className="content__subtitle me-2">Applications:</b> Detecting deepfakes, identifying
                           steganographic content, and verifying authenticity.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <b>Vehicle Forensics:</b>
+                      <b className="content__title ">Vehicle Forensics:</b>
                       <ul>
                         <li>
-                          <b>Focus:</b>Retrieving data from modern vehicles
+                          <b className="content__subtitle me-2">Focus:</b>Retrieving data from modern vehicles
                           equipped with digital systems.
                         </li>
                         <li>
-                          <b>Applications:</b> Analyzing GPS data, crash logs,
+                          <b className="content__subtitle me-2">Applications:</b> Analyzing GPS data, crash logs,
                           and onboard diagnostics for investigation purposes.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <b>Drone Forensics:</b>
+                      <b className="content__title ">Drone Forensics:</b>
                       <ul>
                         <li>
-                          <b>Focus:</b>Investigating drones for evidence of
+                          <b className="content__subtitle me-2">Focus:</b>Investigating drones for evidence of
                           misuse or criminal activity.
                         </li>
                         <li>
-                          <b>Applications:</b> Analyzing flight logs, onboard
+                          <b className="content__subtitle me-2">Applications:</b> Analyzing flight logs, onboard
                           cameras, and communication systems.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <b>Malware Forensics:</b>
+                      <b className="content__title ">Malware Forensics:</b>
                       <ul>
                         <li>
-                          <b>Focus:</b>Analyzing malicious software to
+                          <b className="content__subtitle me-2">Focus:</b>Analyzing malicious software to
                           understand its behavior and origin.
                         </li>
                         <li>
-                          <b>Applications:</b> Identifying malware capabilities,
+                          <b className="content__subtitle me-2">Applications:</b> Identifying malware capabilities,
                           tracing its source, and mitigating future attacks.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <b>Gaming Forensics:</b>
+                      <b className="content__title ">Gaming Forensics:</b>
                       <ul>
                         <li>
-                          <b>Focus:</b>Investigating gaming consoles and
+                          <b className="content__subtitle me-2">Focus:</b>Investigating gaming consoles and
                           platforms for digital evidence.
                         </li>
                         <li>
-                          <b>Applications:</b> Analyzing communication,
+                          <b className="content__subtitle me-2">Applications:</b> Analyzing communication,
                           transactions, and other gaming activities.
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <b>Blockchain and Cryptocurrency Forensics:</b>
+                      <b className="content__title ">Blockchain and Cryptocurrency Forensics:</b>
                       <ul>
                         <li>
-                          <b>Focus:</b>Tracing and analyzing blockchain
+                          <b className="content__title "> Focus:</b>Tracing and analyzing blockchain
                           transactions and cryptocurrency wallets.
                         </li>
                         <li>
-                          <b>Applications:</b> Investigating financial fraud,
+                          <b className="content__subtitle me-2">Applications:</b> Investigating financial fraud,
                           money laundering, and illegal transactions.
                         </li>
                       </ul>
@@ -315,8 +315,9 @@ export default function Digital_Forensics() {
                   <span>Topic 3</span>Metadata Analysis
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <ul>
-                    <b>What You’ll Learn::</b>
+                  <ol>
+                    <b className="content__subtitle me-2">What You’ll Learn:</b>
+
 
                     <li>
                       Extracting metadata to uncover file history (creation,
@@ -324,15 +325,16 @@ export default function Digital_Forensics() {
                     </li>
                     <li>Identifying tampered files or hidden information.</li>
                     <li>Tools: ExifTool for metadata analysis.</li>
-                  </ul>
+                  </ol>
                 </dd>
                 {/* Topic 4 */}
                 <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 4</span> Network Traffic Analysis
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <p>Focus:</p>
-                  <ul>
+                  <b className="content__title me-2">Focus:</b>
+
+                  <ol>
                     <li>
                       Analyzing network packets to detect suspicious activity or
                       attacks.
@@ -341,11 +343,13 @@ export default function Digital_Forensics() {
                       Use tools like Scapy and Tshark for network data
                       inspection.
                     </li>
-                    <li>
-                      <b>Practical Focus:</b> Identifying network threats,
-                      unauthorized access, and data breaches.
-                    </li>
-                  </ul>
+                  </ol>
+
+
+                  <b className="content__subtitle">Practical Focus:</b> Identifying network threats,
+                  unauthorized access, and data breaches.
+
+
                   <p>
                     <i>
                       In this section, we'll walk you through common API
@@ -358,27 +362,28 @@ export default function Digital_Forensics() {
                   <span>Topic 5</span> Common Digital Forensic Tools
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <p>Key Tools:</p>
-                  <ul>
+                  <b className="content__title me-2">Key Tools:</b>
+
+                  <ol>
                     <li>
-                      <b>FTK (Forensic Toolkit):</b>
+                      <b className="content__subtitle me-2">FTK (Forensic Toolkit):</b>
                       Comprehensive investigation software.
                     </li>
                     <li>
-                      <b>Volatility Framework:</b> Memory analysis and malware
+                      <b className="content__subtitle me-2">Volatility Framework:</b> Memory analysis and malware
                       detection.
                     </li>
                     <li>
-                      <b>Autopsy:</b>Open-source forensic tool.
+                      <b className="content__subtitle me-2">Autopsy:</b>Open-source forensic tool.
                     </li>
                     <li>
-                      <b>Wireshark:</b>Network packet analysis.
+                      <b className="content__subtitle me-2">Wireshark:</b>Network packet analysis.
                     </li>
                     <li>
-                      <b>Focus:</b>Selecting and using the right tools based on
+                      <b className="content__subtitle me-2">Focus:</b>Selecting and using the right tools based on
                       the forensic scenario.
                     </li>
-                  </ul>
+                  </ol>
                 </dd>
                 {/* Topic 6 */}
                 <dt className="fadeInUp faq-header" id="border-left">
@@ -387,49 +392,52 @@ export default function Digital_Forensics() {
                 <dd className="fadeInUp faq-body" id="border-left">
                   <ul>
                     <li>
-                      <b>Concept:</b> Hiding data within other media (images,
+                      <b className="content__subtitle">Concept:</b> Hiding data within other media (images,
                       videos, audio).
                     </li>
                     <li>
-                      <b>Hands-On:</b>{" "}
-                      <ul>
+                      <b className="content__title">Hands-On:</b>{" "}
+                      <ol>
                         <li>Detecting steganographic traces in files.</li>
+
                         <li>
                           Using tools to extract or embed hidden messages.
                         </li>
-                      </ul>
+                      </ol>
                     </li>
                   </ul>
                 </dd>
+                {/* Topic 7 */}
                 <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 7:</span> Best Practices in Digital Forensics
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <p></p>
-                  <ul>
+                  <ol>
                     <li>
-                      <b>Chain of Custody: </b>Preserve evidence integrity.
+                      <b className="content__subtitle me-2">Chain of Custody:</b>Preserve evidence integrity.
                     </li>
 
                     <li>
-                      <b>Tool Validation: </b>Use reliable and validated
+                      <b className="content__subtitle me-2">Tool Validation:</b>Use reliable and validated
                       forensic tools.
                     </li>
                     <li>
-                      <b>Documentation: </b>Record every step for credibility.
+                      <b className="content__subtitle me-2">Documentation:</b>Record every step for credibility.
                     </li>
                     <li>
-                      <b>Legal Compliance:</b>Ensure evidence is admissible in
+                      <b className="content__subtitle me-2">Legal Compliance:</b>Ensure evidence is admissible in
                       court.
                     </li>
-                  </ul>
+                  </ol>
                 </dd>
+                {/* Topic 8 */}
                 <dt className="fadeInUp faq-header" id="border-left">
                   <span>Topic 8:</span> Conclusion
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <p>
-                    <b>Summary:</b>Mastering digital forensics methodologies,
+                    <b className="content__subtitle me-2">Summary:</b>Mastering digital forensics methodologies,
                     tools, and best practices allows for effective cybercrime
                     investigation. Engage with practical labs to hone your
                     skills in real-world scenarios.

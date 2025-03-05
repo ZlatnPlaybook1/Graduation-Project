@@ -52,13 +52,13 @@ export default function Regex() {
                 <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
-                      <mark>What are regular expressions?</mark> <br />
+                      <h3 className="content__title">What are regular expressions?</h3>
                       Regular expressions (or Regex) are patterns of text that
                       you define to search documents and match exactly what
                       you're looking for.
                     </p>
                     <p>
-                      <mark>Why should I learn how to use them?</mark> <br />
+                      <h3 className="content__title">Why should I learn how to use them?</h3>
                       Even if you won't need them sooner or later, it's a great
                       tool to know how to use. It will make you more capable in
                       CTF's, and potentially a better developer if that's a goal
@@ -66,22 +66,22 @@ export default function Regex() {
                       yourself lots of time in the long run by using it.
                     </p>
                     <p>
-                      <mark>I know all that, but I'm lazy.</mark> <br />
+                      <h3 className="content__title">I know all that, but I'm lazy.</h3>
                       This is a lazy person's tutorial. There's a little
                       reading, and then you learn by doing.
                     </p>
                     <p>
-                      <mark>Where's the 'Deploy' button?</mark> <br />
-                      <b>There's no machine to deploy.</b>There are two ways to
+                      <h3 className="content__title">Where's the 'Deploy' button?</h3>
+                      <span className="content__subtitle me-2">There's no machine to deploy.</span>There are two ways to
                       test your expressions. Either:
                       <br />
                       <ol>
                         <li>
                           create a text file with some test paragraphs (in a
                           Unix machine) and then use egrep{" "}
-                          <div className="dark-no">
+                          <code className="content__code mx-1">
                             &lt;pattern&gt; &lt;file&gt;
-                          </div>
+                          </code>
                           to see what matches and what doesn't, or
                         </li>
                         <li>
@@ -97,7 +97,7 @@ export default function Regex() {
                           "Expression" field.
                         </li>
                       </ol>
-                      <div className="pink-note">
+                      <div className="content__code px-3">
                         I recommend the second way.
                       </div>
                     </p>
@@ -113,10 +113,10 @@ export default function Regex() {
                     <p>
                       When searching for a specific string in a file or block of
                       text, you can search for it as is, with{" "}
-                      <div className="dark-note">
+                      <code className="content__code mx-1">
                         {" "}
                         grep 'string' &lt;file&gt;{" "}
-                      </div>
+                      </code>
                       . But what happens if you want to search for{" "}
                       <b> patterns of text?</b> For example, you could be
                       looking for a word that starts with a specific letter, or
@@ -126,65 +126,65 @@ export default function Regex() {
                     <p>
                       Both of the aforementioned problems can be solved by using{" "}
                       <b>charsets.</b>A charset is defined by enclosing in{" "}
-                      <div className="dark-note"> [ </div>
-                      square brackets <div className="dark-note"> ] </div>
+                      <code className="content__code mx-1"> [ </code>
+                      square brackets <code className="content__code mx-1"> ] </code>
                       the character(s), or range of characters that you want to
                       match. Then, it finds <b>every occurrence</b> of the
                       pattern you have defined in the file/text you are
                       searching.
                     </p>
                     <p>
-                      <div className="dark-note"> [abc] </div>
+                      <code className="content__code mx-1"> [abc] </code>
                       will match
-                      <div className="dark-note"> a </div>,
-                      <div className="dark-note"> b </div>, and
-                      <div className="dark-note"> c </div>
+                      <code className="content__code mx-1"> a </code>,
+                      <code className="content__code mx-1"> b </code>, and
+                      <code className="content__code mx-1"> c </code>
                       (every occurrence of each letter).
                     </p>
                     <p>
-                      <div className="dark-note"> [abc] </div>
+                      <code className="content__code mx-1"> [abc] </code>
                       will match
-                      <div className="dark-note"> azz </div>, ,
-                      <div className="dark-note"> bzz </div>, and
-                      <div className="dark-note"> czz </div>
+                      <code className="content__code mx-1"> azz </code>, ,
+                      <code className="content__code mx-1"> bzz </code>, and
+                      <code className="content__code mx-1"> czz </code>
                     </p>
                     <p>
-                      You can also use a<div className="dark-note"> - </div>
+                      You can also use a<code className="content__code mx-1"> - </code>
                       dash to define ranges:
                     </p>
                     <p>
-                      <div className="dark-note"> [a-c]zz </div>
+                      <code className="content__code mx-1"> [a-c]zz </code>
                       is the same as above.
                     </p>
                     <p>
                       And then you can combine ranges together: <br />
-                      <div className="dark-note"> [a-cx-z]zz </div>
+                      <code className="content__code mx-1"> [a-cx-z]zz </code>
                       will match
-                      <div className="dark-note"> azz </div>,
-                      <div className="dark-note"> bzz </div>, ,
-                      <div className="dark-note"> czz </div>, ,
-                      <div className="dark-note"> xzz </div>,
-                      <div className="dark-note"> yzz </div>, and
-                      <div className="dark-note"> zzz </div>.
+                      <code className="content__code mx-1"> azz </code>,
+                      <code className="content__code mx-1"> bzz </code>, ,
+                      <code className="content__code mx-1"> czz </code>, ,
+                      <code className="content__code mx-1"> xzz </code>,
+                      <code className="content__code mx-1"> yzz </code>, and
+                      <code className="content__code mx-1"> zzz </code>.
                     </p>
                     <p>
                       {" "}
                       Most notably, this can be used to match any alphabetical
                       character: <br />{" "}
-                      <div className="dark-note"> [a-zA-Z] </div>
+                      <code className="content__code mx-1"> [a-zA-Z] </code>
                       will match any <b>single</b> letter (lowercase or
                       uppercase).
                     </p>
                     <p>
                       You can use numbers too: <br />
                       <div className="dark-no"> file[1-3] </div>
-                      will match <div className="dark-note"> file[1-3] </div>,
-                      <div className="dark-note"> file2 </div>, and
-                      <div className="dark-note"> file3 </div>.
+                      will match <code className="content__code mx-1"> file[1-3] </code>,
+                      <code className="content__code mx-1"> file2 </code>, and
+                      <code className="content__code mx-1"> file3 </code>.
                     </p>
                     <p>
                       Then, there is a way to <b>exclude</b> characters from a
-                      charset with the <div className="dark-note"> ^ </div>
+                      charset with the <code className="content__code mx-1"> ^ </code>
                       hat symbol, and include everything else.
                     </p>
                   </div>
@@ -199,34 +199,34 @@ export default function Regex() {
                     <p>
                       The wildcard that is used to match any single character
                       (except the line break) is the{" "}
-                      <div className="dark-note"> . </div> dot. That means that{" "}
-                      <div className="dark-note"> a.c </div> will match{" "}
-                      <div className="dark-note"> aac </div>,
-                      <div className="dark-note"> abc </div>,
-                      <div className="dark-note"> a0c </div>,
-                      <div className="dark-note">a!c</div> and so on. Note: If
+                      <code className="content__code mx-1"> . </code> dot. That means that{" "}
+                      <code className="content__code mx-1"> a.c </code> will match{" "}
+                      <code className="content__code mx-1"> aac </code>,
+                      <code className="content__code mx-1"> abc </code>,
+                      <code className="content__code mx-1"> a0c </code>,
+                      <code className="content__code mx-1">a!c</code> and so on. Note: If
                     </p>
                     <p>
                       Also, you can set a character as optional in your pattern
-                      using the <div className="dark-note"> ? </div> question
+                      using the <code className="content__code mx-1"> ? </code> question
                       mark. That means that{" "}
-                      <div className="dark-note"> abc? </div> will match{" "}
-                      <div className="dark-note"> ab </div> and{" "}
-                      <div className="dark-note"> abc </div>, since the{" "}
-                      <div className="dark-note"> c </div> is optional.
+                      <code className="content__code mx-1"> abc? </code> will match{" "}
+                      <code className="content__code mx-1"> ab </code> and{" "}
+                      <code className="content__code mx-1"> abc </code>, since the{" "}
+                      <code className="content__code mx-1"> c </code> is optional.
                     </p>
                     <div className="note">
                       {" "}
                       you want to search for{" "}
-                      <div className="dark-note"> . </div> a literal dot, you
+                      <code className="content__code mx-1"> . </code> a literal dot, you
                       have to escape it with a{" "}
-                      <div className="dark-note"> \ </div> reverse slash. That
-                      means that <div className="dark-note"> a.c </div> will
-                      match <div className="dark-note"> a.c </div>, but also a{" "}
-                      <div className="dark-note"> abc </div>,{" "}
-                      <div className="dark-note"> a@c </div>, and so on. But{" "}
-                      <div className="dark-note"> a\.c </div>
-                      will match just <div className="dark-note"> a.c </div>.
+                      <code className="content__code mx-1"> \ </code> reverse slash. That
+                      means that <code className="content__code mx-1"> a.c </code> will
+                      match <code className="content__code mx-1"> a.c </code>, but also a{" "}
+                      <code className="content__code mx-1"> abc </code>,{" "}
+                      <code className="content__code mx-1"> a@c </code>, and so on. But{" "}
+                      <code className="content__code mx-1"> a\.c </code>
+                      will match just <code className="content__code mx-1"> a.c </code>.
                     </div>
                   </div>
                 </dd>
@@ -239,62 +239,62 @@ export default function Regex() {
                   <div className="faq-content">
                     <p>
                       There are easier ways to match bigger charsets. For
-                      example, <span className="dark-note"> \d </span> is used
+                      example, <code className="content__code mx-1"> \d </code> is used
                       to match any <b>single</b> digit.
                       <br /> Here's a reference:
                     </p>
                     <ol className="oList">
                       <li>
-                        <div className="dark-note"> \d </div>
+                        <code className="content__code mx-1"> \d </code>
                         matches a digit, like
-                        <div className="dark-note"> 9 </div>
+                        <code className="content__code mx-1"> 9 </code>
                       </li>
                       <li>
-                        <div className="dark-note"> \D </div>
+                        <code className="content__code mx-1"> \D </code>
                         matches a non-digit, like
-                        <div className="dark-note"> A </div> or
-                        <div className="dark-note"> @ </div>
+                        <code className="content__code mx-1"> A </code> or
+                        <code className="content__code mx-1"> @ </code>
                       </li>
                       <li>
-                        <div className="dark-note"> \w </div>
+                        <code className="content__code mx-1"> \w </code>
                         matches an alphanumeric character, like
-                        <div className="dark-note"> a </div> or
-                        <div className="dark-note"> 3 </div>
+                        <code className="content__code mx-1"> a </code> or
+                        <code className="content__code mx-1"> 3 </code>
                       </li>
                       <li>
-                        <div className="dark-note"> \W </div>
+                        <code className="content__code mx-1"> \W </code>
                         matches a non-alphanumeric character, like
-                        <div className="dark-note"> ! </div> or
-                        <div className="dark-note"> # </div>
+                        <code className="content__code mx-1"> ! </code> or
+                        <code className="content__code mx-1"> # </code>
                       </li>
                       <li>
-                        <div className="dark-note"> \s </div>
+                        <code className="content__code mx-1"> \s </code>
                         matches a whitespace character (spaces, tabs, and line
                         breaks)
                       </li>
                       <li>
-                        <div className="dark-note"> \S </div>
+                        <code className="content__code mx-1"> \S </code>
                         matches everything else (alphanumeric characters and
                         symbols)
                       </li>
                     </ol>
                     <div className="note">
-                      Note: Underscores <div className="dark-note"> _ </div> are
-                      included in the <div className="dark-note"> \w </div>{" "}
+                      Note: Underscores <code className="content__code mx-1"> _ </code> are
+                      included in the <code className="content__code mx-1"> \w </code>{" "}
                       metacharacter and not in{" "}
-                      <div className="dark-note"> \W </div>. That means that{" "}
-                      <div className="dark-note"> \w </div> will match every
+                      <code className="content__code mx-1"> \W </code>. That means that{" "}
+                      <code className="content__code mx-1"> \w </code> will match every
                       single character in{" "}
-                      <div className="dark-note">test_file</div>.
+                      <code className="content__code mx-1">test_file</code>.
                     </div>
                     <p>
                       Often we want a pattern that matches many characters of a
                       single type in a row, and we can do that with repetitions.
-                      For example, <div className="dark-note"> {2} </div> is
+                      For example, <code className="content__code mx-1"> {2} </code> is
                       used to match the preceding character (or metacharacter,
                       or charset) two times in a row. That means that{" "}
-                      <div className="dark-note"> z{2} </div> will match exactly
-                      <div className="dark-note"> zz </div>.
+                      <code className="content__code mx-1"> z{2} </code> will match exactly
+                      <code className="content__code mx-1"> zz </code>.
                     </p>
                     <p>
                       Here's a reference for each repetition along with how many
@@ -302,7 +302,7 @@ export default function Regex() {
                       <br />
                       <ol className="oList">
                         <li>
-                          <span className="dark-note"> {12} </span>
+                          <code className="content__code mx-1"> {12} </code>
                           <FontAwesomeIcon
                             icon={faArrowRight}
                             className="mx-2"
@@ -310,10 +310,10 @@ export default function Regex() {
                           <b>exactly 12</b>times.
                         </li>
                         <li>
-                          <span className="dark-note">
+                          <code className="content__code mx-1">
                             {" "}
                             &#123; 1, 5 &#123;{" "}
-                          </span>
+                          </code>
                           <FontAwesomeIcon
                             icon={faArrowRight}
                             className="mx-2"
@@ -321,7 +321,7 @@ export default function Regex() {
                           <b>1 to 5 </b>times.
                         </li>
                         <li>
-                          <span className="dark-note"> &#123;2, &#125;</span>
+                          <code className="content__code mx-1"> &#123;2, &#125;</code>
                           <FontAwesomeIcon
                             icon={faArrowRight}
                             className="mx-2"
@@ -329,7 +329,7 @@ export default function Regex() {
                           <b> 2 or more </b>times.
                         </li>
                         <li>
-                          <span className="dark-note"> * </span>
+                          <code className="content__code mx-1"> * </code>
                           <FontAwesomeIcon
                             icon={faArrowRight}
                             className="mx-2"
@@ -337,7 +337,7 @@ export default function Regex() {
                           <b> 0 or more </b>times.
                         </li>
                         <li>
-                          <span className="dark-note"> + </span>
+                          <code className="content__code mx-1"> + </code>
                           <FontAwesomeIcon
                             icon={faArrowRight}
                             className="mx-2"
@@ -363,7 +363,7 @@ export default function Regex() {
                       with these characters: <br />
                       <ul>
                         <li>
-                          <span className="dark-note"> ^ </span>
+                          <code className="content__code mx-1"> ^ </code>
                           <FontAwesomeIcon
                             icon={faArrowRight}
                             className="mx-2"
@@ -371,7 +371,7 @@ export default function Regex() {
                           <b>Start with</b>
                         </li>
                         <li>
-                          <span className="dark-note"> $ </span>
+                          <code className="content__code mx-1"> $ </code>
                           <FontAwesomeIcon
                             icon={faArrowRight}
                             className="mx-2"
@@ -383,44 +383,44 @@ export default function Regex() {
                     <p>
                       So for example, if you want to search for a line that{" "}
                       <b>starts with </b>
-                      <span className="dark-note"> abc </span>, you can use{" "}
-                      <span className="dark-note"> ^abc </span>. If you want to
+                      <code className="content__code mx-1"> abc </code>, you can use{" "}
+                      <code className="content__code mx-1"> ^abc </code>. If you want to
                       search for a line that ends with{" "}
-                      <span className="dark-note"> xyz </span>, you can use{" "}
-                      <span className="dark-note"> xyz$ </span>.
+                      <code className="content__code mx-1"> xyz </code>, you can use{" "}
+                      <code className="content__code mx-1"> xyz$ </code>.
                     </p>
                     <div className="note">
-                      Note: The <span className="dark-note"> ^ </span>
+                      Note: The <code className="content__code mx-1"> ^ </code>
                       hat symbol is used to exclude a charset when enclosed in
-                      <span className="dark-note"> [ </span>
-                      square brackets <span className="dark-note"> ] </span>,
+                      <code className="content__code mx-1"> [ </code>
+                      square brackets <code className="content__code mx-1"> ] </code>,
                       but when it is not, it is used to specify the beginning of
                       a word.
                     </div>
                     <p>
                       You can also define groups by enclosing a pattern in
-                      <span className="dark-note"> ( </span>, parentheses
-                      <span className="dark-note"> ) </span>, . This function
+                      <code className="content__code mx-1"> ( </code>, parentheses
+                      <code className="content__code mx-1"> ) </code>, . This function
                       can be used for many ways that are not in the scope of
                       this tutorial. We will use it to define an{" "}
                       <b>either/or</b> pattern, and also to repeat patterns. To
                       say "or" in Regex, we use the{" "}
-                      <span className="dark-note"> | </span> pipe.
+                      <code className="content__code mx-1"> | </code> pipe.
                     </p>
                     <p>
                       For an "either/or" pattern example, the pattern{" "}
-                      <span className="dark-note">
+                      <code className="content__code mx-1">
                         {" "}
                         during the (day|night){" "}
-                      </span>
+                      </code>
                       will match both of these sentences:{" "}
-                      <span className="dark-note"> during the day </span>
-                      and <span className="dark-note"> during the night </span>
+                      <code className="content__code mx-1"> during the day </code>
+                      and <code className="content__code mx-1"> during the night </code>
                       . <br />
                       For a repetition example, the pattern{" "}
-                      <span className="dark-note"> (no){5} </span>
+                      <code className="content__code mx-1"> (no){5} </code>
                       will match the sentence{" "}
-                      <span className="dark-note"> nonononono </span>.
+                      <code className="content__code mx-1"> nonononono </code>.
                     </p>
                   </div>
                 </dd>
@@ -430,7 +430,7 @@ export default function Regex() {
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <div className="faq-content">
-                    <div className="pink-note">Well done.</div>
+                    <div className="content__code px-3">Well done.</div>
                     <p>
                       Regular expressions are very powerful, even at their most
                       basic usage. There are many resources to study and

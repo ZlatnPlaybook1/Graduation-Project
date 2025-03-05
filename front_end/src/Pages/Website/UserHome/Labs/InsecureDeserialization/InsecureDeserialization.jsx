@@ -59,7 +59,7 @@ export default function InsecureDeserialization() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 1</span>What is insecure deserialization ?
+                  <span>Task 2</span>What is insecure deserialization ?
                 </dt>
                 <dd className="fadeInUp faq-body">
                 <p>Insecure deserialization is when user-controllable data is deserialized by a website. This potentially enables an attacker to manipulate serialized objects in order to pass harmful data into the application code.</p>
@@ -68,7 +68,7 @@ export default function InsecureDeserialization() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 1</span>How do insecure deserialization vulnerabilities arise ?
+                  <span>Task 3</span>How do insecure deserialization vulnerabilities arise ?
                 </dt>
                 <dd className="fadeInUp faq-body">
                 <p>Insecure deserialization typically arises because there is a general lack of understanding of how dangerous deserializing user-controllable data can be. Ideally, user input should never be deserialized at all.</p>
@@ -80,7 +80,7 @@ export default function InsecureDeserialization() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 1</span>What is the impact of insecure deserialization ?
+                  <span>Task 4</span>What is the impact of insecure deserialization ?
                 </dt>
                 <dd className="fadeInUp faq-body">
                 <img src={exampleImage2} alt="Example" />
@@ -92,7 +92,7 @@ export default function InsecureDeserialization() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 1</span>How to prevent insecure deserialization vulnerabilities ?
+                  <span>Task 5</span>How to prevent insecure deserialization vulnerabilities ?
                 </dt>
                 <dd className="fadeInUp faq-body">
                 <p>Generally speaking, deserialization of user input should be avoided unless absolutely necessary. The high severity of exploits that it potentially enables, and the difficulty in protecting against them, outweigh the benefits in many cases.</p>
