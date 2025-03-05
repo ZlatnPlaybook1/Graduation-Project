@@ -68,7 +68,7 @@ export default function Login_page_second() {
 useEffect(() => {
         const timer = setTimeout(() => {
           setLoading(false);
-        }, 2000);
+        }, 200);
         return () => clearTimeout(timer);
       }, []);
   return (

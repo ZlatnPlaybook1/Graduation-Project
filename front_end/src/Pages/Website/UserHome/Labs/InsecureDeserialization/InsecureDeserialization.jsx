@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import background from "../../assets/img/Insecure_Deserialization/Insecure_Photo_Background.jpg";
-import imagecourse from "../../assets/img/Insecure_Deserialization/Icon_Insecure.png";
+import courseImage from "../../assets/img/Insecure_Deserialization/Icon_Insecure.png";
 import Footer from "../../Footer/Footer";
 import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
@@ -20,7 +20,7 @@ export default function InsecureDeserialization() {
       {/* Start Landing */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Insecure Deserialization"
         courseDescription="In this section, we'll cover what insecure deserialization is and describe how it can potentially expose websites to high-severity attacks. We'll highlight typical scenarios and demonstrate some widely applicable techniques using concrete examples of PHP, Ruby, and Java deserialization. We'll also look at some ways that you can avoid insecure deserialization vulnerabilities in your own websites."
         difficulty="Intermediate"

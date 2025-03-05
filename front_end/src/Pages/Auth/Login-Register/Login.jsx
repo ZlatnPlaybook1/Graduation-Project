@@ -44,7 +44,11 @@ export default function Login() {
 useEffect(() => {
         const timer = setTimeout(() => {
           setLoading(false);
+<<<<<<< HEAD
         }, 300);
+=======
+        }, 200);
+>>>>>>> aeac4b55ed05112b9c2730ccc577fc541e16a4eb
         return () => clearTimeout(timer);
       }, []);
   return (

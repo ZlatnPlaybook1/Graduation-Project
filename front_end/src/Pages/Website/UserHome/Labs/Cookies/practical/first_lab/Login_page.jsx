@@ -79,7 +79,7 @@ export default function Login_page() {
    useEffect(() => {
         const timer = setTimeout(() => {
           setLoading(false);
-        }, 2000);
+        }, 200);
         return () => clearTimeout(timer);
       }, []);
   return (
