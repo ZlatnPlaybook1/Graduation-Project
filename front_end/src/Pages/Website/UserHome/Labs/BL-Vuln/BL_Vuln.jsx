@@ -149,7 +149,7 @@ export default function BL_Vuln() {
                     ways. Some common causes include:</p>
                   <ol>
                     <li>
-                      <p><span className="content__subtitle">Incorrect assumptions about user behavior:</span>
+                      <p><span className="content__subtitle me-2">Incorrect assumptions about user behavior:</span>
                         Developers may make assumptions about how users will
                         interact with an application that turn out to be
                         incorrect. For example, a developer might assume that a
@@ -159,7 +159,7 @@ export default function BL_Vuln() {
                         doesn't handle these unexpected behaviors correctly.</p>
                     </li>
                     <li>
-                      <p><span className="content__subtitle">Insufficient validation of user input:</span>If an
+                      <p><span className="content__subtitle me-2">Insufficient validation of user input:</span>If an
                         application doesn't validate user input properly,
                         attackers may be able to submit unexpected values that
                         cause the application to behave in unexpected ways. For
@@ -168,7 +168,7 @@ export default function BL_Vuln() {
                         online store.</p>
                     </li>
                     <li>
-                      <p><span className="content__subtitle">Failure to enforce business rules:</span>If an
+                      <p><span className="content__subtitle me-2">Failure to enforce business rules:</span>If an
                         application fails to enforce the business rules that were
                         defined when designing the application, logic flaws can
                         occur. For example, an application might allow a user to
@@ -196,7 +196,7 @@ export default function BL_Vuln() {
                     in question. Some common exploitation techniques include:</p>
                   <ol>
                     <li>
-                      <p><span className="content__subtitle">Abusing functionality:</span>Attackers may be able to
+                      <p><span className="content__subtitle me-2">Abusing functionality:</span>Attackers may be able to
                         abuse legitimate functionality in an application to
                         achieve unintended outcomes. For example, an attacker
                         might be able to exploit a logic flaw in an e-commerce
@@ -204,7 +204,7 @@ export default function BL_Vuln() {
 
                     </li>
                     <li>
-                      <p><span className="content__subtitle">Manipulating data flows:</span>Attackers may be able to
+                      <p><span className="content__subtitle me-2">Manipulating data flows:</span>Attackers may be able to
                         manipulate the flow of data within an application to
                         achieve their goals. For example, an attacker might be
                         able to change the recipient of a payment in a banking
@@ -212,7 +212,7 @@ export default function BL_Vuln() {
 
                     </li>
                     <li>
-                      <p><span className="content__subtitle">Bypassing restrictions:</span>Attackers may be able to
+                      <p><span className="content__subtitle me-2">Bypassing restrictions:</span>Attackers may be able to
                         bypass restrictions that are intended to prevent certain
                         actions. For example, an attacker might be able to delete
                         another user's account in a social media application by
@@ -241,33 +241,33 @@ export default function BL_Vuln() {
                     logic flaws include:</p>
                   <ol>
                     <li>
-                      <p><span className="content__subtitle">Validate user input:</span>Always validate user input to
+                      <p><span className="content__subtitle me-2">Validate user input:</span>Always validate user input to
                         ensure that it conforms to expected values. This can help
                         prevent attackers from submitting unexpected values that
                         could lead to logic flaws.</p>
                     </li>
                     <li>
-                      <p><span className="content__subtitle">Enforce business rules:</span>Make sure that your
+                      <p><span className="content__subtitle me-2">Enforce business rules:</span>Make sure that your
                         application enforces the business rules that were defined
                         when designing the application. This can help prevent
                         logic flaws that occur when these rules are not enforced
                         correctly.</p>
                     </li>
                     <li>
-                      <p><span className="content__subtitle">Use secure coding practices:</span>Follow secure coding
+                      <p><span className="content__subtitle me-2">Use secure coding practices:</span>Follow secure coding
                         practices when developing your application to reduce the
                         likelihood of logic flaws. This includes practices such as
                         input validation, output encoding, and secure session
                         management.</p>
                     </li>
                     <li>
-                      <p><span className="content__subtitle">Thoroughly test your application:</span>Test your
+                      <p><span className="content__subtitle me-2">Thoroughly test your application:</span>Test your
                         application thoroughly to identify and fix logic flaws
                         before they can be exploited by attackers. This includes
                         both manual testing and automated testing.</p>
                     </li>
                     <li>
-                      <p><span className="content__subtitle">Monitor your application:</span>Monitor your application
+                      <p><span className="content__subtitle me-2">Monitor your application:</span>Monitor your application
                         for signs of unusual behavior that may indicate a logic
                         flaw. This can help you identify and fix logic flaws
                         before they can be exploited by attackers.</p>
