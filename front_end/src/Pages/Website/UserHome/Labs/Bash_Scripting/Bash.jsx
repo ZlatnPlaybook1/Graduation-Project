@@ -2,7 +2,7 @@ import React from "react";
 import "../../Components/Topics CSS/topics.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/bash/baner_lap.png";
-import imagecourse from "../../assets/img/bash/full_colored_dark (1).png";
+import courseImage from "../../assets/img/bash/full_colored_dark (1).png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import Footer from "../../Footer/Footer";
@@ -33,7 +33,7 @@ export default function Bash() {
       {/* Start Landing  */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Bash Scripting"
         courseDescription="Master the basics of Bash scripting, a powerful tool for
                 automating tasks and managing systems in cybersecurity

@@ -2,7 +2,7 @@ import React from "react";
 import "../../Components/Topics CSS/topics.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/wireshark/baner_lap.png";
-import imagecourse from "../../assets/img/wireshark/course_image.png";
+import courseImage from "../../assets/img/wireshark/course_image.png";
 import Footer from "../../Footer/Footer";
 import exampleImage1 from "../../assets/img/wireshark/course_image.png";
 import exampleImage2 from "../../assets/img/wireshark/1.png";
@@ -45,7 +45,7 @@ export default function WireShark() {
       {/* Start Landing  */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Wire Shark"
         courseDescription="Master the basics of Wire Shark, a powerful technique for
                 securing code and protecting intellectual property in

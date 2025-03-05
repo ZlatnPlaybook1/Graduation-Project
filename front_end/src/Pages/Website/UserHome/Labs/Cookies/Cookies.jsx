@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import "../../Components/Topics CSS/topics.css";
-import imagecourse from "../../assets/img/cookies/course_image.png";
+import courseImage from "../../assets/img/cookies/course_image.png";
 import background from "../../assets/img/cookies/baner_lap.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
@@ -16,7 +16,7 @@ export default function Cookies() {
       {/* Start Landing  */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Cookies"
         courseDescription=" Understand the role of cookies in web security, how they are
                 used, and the potential privacy concerns they introduce."

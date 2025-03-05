@@ -3,7 +3,7 @@ import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 import "../../Components/Topics CSS/topics.css";
 import background from "../../assets/img/Obfuscation/baner_lap.png";
-import imagecourse from "../../assets/img/Obfuscation/course_image.png";
+import courseImage from "../../assets/img/Obfuscation/course_image.png";
 import exampleImage1 from "../../assets/img/Obfuscation/1.png";
 import exampleImage2 from "../../assets/img/Obfuscation/2.png";
 import exampleImage3 from "../../assets/img/Obfuscation/3.png";
@@ -19,7 +19,7 @@ export default function Obfuscation() {
       {/* Start Landing  */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Obfuscation"
         courseDescription="Master the basics of obfuscation, a powerful technique for
                 securing code and protecting intellectual property in

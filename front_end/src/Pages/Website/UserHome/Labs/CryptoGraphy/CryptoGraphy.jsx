@@ -2,7 +2,7 @@ import React from "react";
 import "../../Components/Topics CSS/topics.css";
 import Header from "../../Header/Header";
 import background from "../../assets/img/Cryptography/baner_lap.png";
-import imagecourse from "../../assets/img/Cryptography/course_image.png";
+import courseImage from "../../assets/img/Cryptography/course_image.png";
 import Footer from "../../Footer/Footer";
 import exampleImage1 from "../../assets/img/Cryptography/1.png";
 import exampleImage2 from "../../assets/img/Cryptography/2.png";
@@ -23,7 +23,7 @@ export default function CryptoGraphy() {
       {/* Start Landing  */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="CryptoGraphy"
         courseDescription="  Master the basics of CryptoGraphy, a powerful technique for
                 securing code and protecting intellectual property in
