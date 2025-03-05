@@ -40,7 +40,7 @@ export default function Register() {
 useEffect(() => {
         const timer = setTimeout(() => {
           setLoading(false);
-        }, 300);
+        }, 200);
         return () => clearTimeout(timer);
       }, []);
   return (
