@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import background from "../../assets/img/JWT attacks/baner_lap.png";
-import imagecourse from "../../assets/img/JWT attacks/course_image.png";
+import courseImage from "../../assets/img/JWT attacks/course_image.png";
 import Footer from "../../Footer/Footer";
 import "../../Components/Topics CSS/topics.css";
 import exampleImage1 from "../../assets/img/JWT attacks/image_1.webp";
@@ -16,7 +16,7 @@ export default function JWTAttacks() {
       {/* Start Landing  */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="JWT Attacks"
         courseDescription="Master the basics of JWT Attacks, a powerful technique for
                 securing code and protecting intellectual property in

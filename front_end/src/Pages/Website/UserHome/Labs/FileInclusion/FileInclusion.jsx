@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import background from "../../assets/img/File Inclusion/baner_lap.png";
-import imagecourse from "../../assets/img/File Inclusion/course_image.png";
+import courseImage from "../../assets/img/File Inclusion/course_image.png";
 import Footer from "../../Footer/Footer";
 import "../../Components/Topics CSS/topics.css";
 import exampleImage1 from "../../assets/img/File Inclusion/image_1.webp";
@@ -21,7 +21,7 @@ export default function FileInclusion() {
       {/* Start Landing  */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="File Inclusion"
         courseDescription=" A vulnerability that allows an attacker to attach a remotely or locally hosted file, usually via a script on the web server."
         difficulty="Intermediate"

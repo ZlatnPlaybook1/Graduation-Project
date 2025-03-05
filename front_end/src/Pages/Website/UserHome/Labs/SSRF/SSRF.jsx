@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import background from "../../assets/img/Server Side Template Injection/baner_lap.png";
-import imagecourse from "../../assets/img/Server Side Template Injection/course_image.png";
+import courseImage from "../../assets/img/Server Side Template Injection/course_image.png";
 import Footer from "../../Footer/Footer";
 import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
@@ -19,7 +19,7 @@ export default function SSRF() {
       {/* Start Landing  */}
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Server Side Request Forgery (SSRF)"
         courseDescription="In this section we explain what server-side request forgery (SSRF) is, and describe some common examples. We also show you how to find and exploit SSRF vulnerabilities."
         difficulty="Intermediate"

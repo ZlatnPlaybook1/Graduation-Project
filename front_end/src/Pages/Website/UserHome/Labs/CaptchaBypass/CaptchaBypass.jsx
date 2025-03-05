@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../Header/Header";
 import background from "../../assets/img/Captcha Bypass/baner_lap.png";
-import imagecourse from "../../assets/img/Captcha Bypass/course_image.png";
+import courseImage from "../../assets/img/Captcha Bypass/course_image.png";
 import Footer from "../../Footer/Footer";
 import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
@@ -15,7 +15,7 @@ export default function CaptchaBypass() {
 
       <CourseLanding
         background={background}
-        imagecourse={imagecourse}
+        courseImage={courseImage}
         courseTitle="Captcha Bypass"
         courseDescription=" CAPTCHA bypass methods use programming and AI techniques to defeat website security measures, enabling automated bots to solve challenges. This can facilitate spam, account creation bots, and other malicious activities. However, these methods are unethical, illegal, and actively countered by website owners."
         difficulty="Intermediate"
