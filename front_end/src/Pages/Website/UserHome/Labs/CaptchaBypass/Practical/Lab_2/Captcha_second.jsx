@@ -11,7 +11,6 @@ export default function Captcha_second() {
   const [captchaQuestion, setCaptchaQuestion] = useState(""); // Displayed captcha
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
-  const [id, setID] = useState(1);
 
   // Fetch captcha from backend
   async function fetchCaptcha() {
@@ -67,16 +66,13 @@ export default function Captcha_second() {
             comment: cmt.comment,
           }))
         );
-        setID(response.data.length + 1);
       } else {
         setComments([]);
-        setID(1);
       }
     } catch (error) {
       setErr("Failed to fetch comments.");
       console.error("Error fetching comments:", error);
       setComments([]);
-      setID(1);
     }
   }
 
@@ -90,7 +86,6 @@ export default function Captcha_second() {
       setComments([]);
       setComment("");
       setCaptcha("");
-      setID(1);
     } catch (error) {
       setErr(error.response?.data?.message || "Network Error");
       console.error("Error resetting captcha:", error);

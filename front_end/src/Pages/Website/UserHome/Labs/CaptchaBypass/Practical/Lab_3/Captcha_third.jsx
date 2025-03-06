@@ -11,7 +11,6 @@ export default function CaptchaThird() {
   const [captcha, setCaptcha] = useState(null);
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
-  const [id, setID] = useState(1);
   const recaptchaRef = useRef(null);
   const captchaSiteKey = "6LfMedcqAAAAAB6vOEc_r1EsoNceKP0jJvqB2aWD";
 
@@ -27,24 +26,20 @@ export default function CaptchaThird() {
         "http://127.0.0.1:8080/api/capatchalab3comments"
       );
 
-      // Ensure the response is an array
       if (Array.isArray(response.data)) {
         setComments(
           response.data.map((cmt, index) => ({
-            id: index + 1, // Add an id field to each comment
-            comment: cmt.comment, // Use the 'comment' field from each object
+            id: index + 1,
+            comment: cmt.comment,
           }))
         );
-        setID(response.data.length + 1); // Set the next ID based on the comments length
       } else {
-        setComments([]); // In case the response isn't the expected array
-        setID(1); // Reset ID counter
+        setComments([]);
       }
     } catch (error) {
       setErr("Failed to fetch comments.");
       console.error("Error fetching comments:", error);
-      setComments([]); // Reset comments on failure
-      setID(1); // Reset ID on failure
+      setComments([]);
     }
   }
 
@@ -56,7 +51,6 @@ export default function CaptchaThird() {
       setComments([]);
       setComment("");
       setCaptcha(null);
-      setID(1);
       recaptchaRef.current?.reset();
     } catch (error) {
       setErr(error.response?.data?.message || "Network Error");

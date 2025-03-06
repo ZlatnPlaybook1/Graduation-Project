@@ -13,24 +13,15 @@ export default function Login_page() {
     email: "",
     password: "",
   });
-  //  Navigate
   const navigate = useNavigate();
-  // Cookies
   const cookie = Cookie();
-   const [loading, setLoading] = useState(true);
-    
-     
-  // Error state
+  const [loading, setLoading] = useState(true);
   const [err, setErr] = useState("");
-  const [role, setRole] = useState(cookie.get("role") || "");
-
-  // Handle Form Change
+  const role = cookie.get("role") || "";
   function handleChange(e) {
     e.preventDefault();
     setForm({ ...form, [e.target.name]: e.target.value });
   }
-
-  // Handle Form Submit
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -65,8 +56,6 @@ export default function Login_page() {
       }
     }
   }
-
-  // Effect to monitor changes in the 'role' state and redirect accordingly
   useEffect(() => {
     if (role === "admin") {
       navigate(`/cookies/cookies_lab/first/admin`);
@@ -76,18 +65,17 @@ export default function Login_page() {
       navigate(`/cookies/cookies_lab/first/login`);
     }
   }, [role, navigate]);
-   useEffect(() => {
-        const timer = setTimeout(() => {
-          setLoading(false);
-        }, 200);
-        return () => clearTimeout(timer);
-      }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 200);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
-      {loading && <Preloader loading={loading}/>}
+      {loading && <Preloader loading={loading} />}
       <div className="login-page">
         <GoBackBtn />
-
         <ShowHintBtn
           hintText={"<p>click inspect and cheak cookies value</p>"}
         />

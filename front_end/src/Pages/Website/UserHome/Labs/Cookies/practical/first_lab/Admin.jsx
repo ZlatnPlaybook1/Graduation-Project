@@ -2,18 +2,13 @@ import React from "react";
 import { useEffect } from "react";
 import "../Admin.css";
 import admin from "../../../../assets/img/admin.png";
-import { useState } from "react";
 import Cookie from "cookie-universal";
 import { useNavigate } from "react-router-dom";
 
 export default function Admin() {
   const navigate = useNavigate();
-
   const cookie = Cookie();
-  // Loading state
-  const [role, setRole] = useState(cookie.get("role") || "");
-
-  // Effect to monitor changes in the 'role' state and redirect accordingly
+  const role = cookie.get("role") || "";
   useEffect(() => {
     if (role === "admin") {
       navigate(`/cookies/cookies_lab/first/admin`);
@@ -22,7 +17,7 @@ export default function Admin() {
     } else {
       navigate(`/cookies/cookies_lab/first/login`);
     }
-  }, [role,navigate]);
+  }, [role, navigate]);
 
   return (
     <>

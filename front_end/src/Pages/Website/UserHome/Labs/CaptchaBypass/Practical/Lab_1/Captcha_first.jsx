@@ -9,7 +9,6 @@ export default function Captcha_first() {
   const [comments, setComments] = useState([]);
   const [captcha, setCaptcha] = useState("");
   const [image, setImage] = useState("");
-  const [captchaID, setCaptchaID] = useState("");
   const [storedCaptchaID, setStoredCaptchaID] = useState(""); // Store ID before submission
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
@@ -28,7 +27,6 @@ export default function Captcha_first() {
         : `http://127.0.0.1:8080/${res.data.image}`;
 
       setImage(imgSrc);
-      setCaptchaID(res.data.id);
       setStoredCaptchaID(res.data.id); // Store the ID for verification
       setErr("");
     } catch (error) {

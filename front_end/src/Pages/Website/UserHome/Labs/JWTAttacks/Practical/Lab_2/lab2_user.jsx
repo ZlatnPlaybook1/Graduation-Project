@@ -10,6 +10,9 @@ export default function JWTAttacks_lab2() {
     <div>
       <JWTUser
         hint={hint}
+        lab={lab}
+        tokenName={tokenName}
+        apiEndpoint={apiEndpoint}
       />
     </div>
   );

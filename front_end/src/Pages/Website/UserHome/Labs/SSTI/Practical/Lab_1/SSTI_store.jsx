@@ -6,7 +6,7 @@ import products from "./data.json";
 import axios from "axios";
 export default function SSTI_store() {
   const [outOfStockMessage, setOutOfStockMessage] = useState("");
-  const [resetMessage, setResetMessage] = useState("");
+  // const [resetMessage, setResetMessage] = useState("");
   const [messageFromURL, setMessageFromURL] = useState("");
   const [htmlContent, setHtmlContent] = useState("");
   const hintMessage = `<span>This lab is vulnerable to server-side template injection due to the unsafe construction of an Handlebars template.To solve the lab, review the Handlebars documentation to find out how to execute arbitrary code, then delete the</span><strong> secret.txt</strong>
@@ -43,7 +43,7 @@ export default function SSTI_store() {
         "http://127.0.0.1:8080/api/SSTIlab2Reset"
       );
       if (response.status === 200) {
-        setResetMessage(response.data.message);
+        // setResetMessage(response.data.message);
         window.history.replaceState(
           {},
           "",
@@ -53,7 +53,7 @@ export default function SSTI_store() {
       }
     } catch (error) {
       console.error("Error resetting:", error);
-      setResetMessage("Error: Could not reset.");
+      // setResetMessage("Error: Could not reset.");
     }
   };
   const checkStock = async (product) => {

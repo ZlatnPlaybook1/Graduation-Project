@@ -18,7 +18,7 @@ export default function JWTAttacks_lab1() {
         console.error("Invalid token:", error);
       }
     }
-  }, [tokenName]); // Runs only when tokenName changes
+  }, [tokenName,cookie]); // Runs only when tokenName changes
 
   const apiEndpoint = "http://127.0.0.1:8080/api/lab1jwt";
   const lab = "lab1";

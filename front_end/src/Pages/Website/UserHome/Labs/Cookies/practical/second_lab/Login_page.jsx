@@ -14,9 +14,9 @@ export default function Login_page_second() {
   });
   const navigate = useNavigate();
   const cookie = Cookie();
-   const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [err, setErr] = useState("");
-  const [userId, setUserId] = useState(cookie.get("userId") || "");
+  const userId = cookie.get("userId") || "";
   function handleChange(e) {
     e.preventDefault();
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -65,15 +65,15 @@ export default function Login_page_second() {
       navigate(`/cookies/cookies_lab/second/login`);
     }
   }, [userId, navigate]);
-useEffect(() => {
-        const timer = setTimeout(() => {
-          setLoading(false);
-        }, 200);
-        return () => clearTimeout(timer);
-      }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 200);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
-      {loading && <Preloader loading={loading}/>}
+      {loading && <Preloader loading={loading} />}
       {/* test comment */}
       <div className="login-page">
         <GoBackBtn />
