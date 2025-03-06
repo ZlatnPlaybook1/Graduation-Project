@@ -27,8 +27,9 @@ const SearchIcon = ({ searchTerm, setSearchTerm }) => {
 
   return (
     <div className="search-icon__wrapper">
-      <form className="search-icon">
-        {!isFocused && <FaSearch className="search-icon__icon" onClick={() => setIsFocused(true)} />}
+    <form className="search-icon">
+      {!isFocused && <FaSearch className="search-icon__icon" onClick={() => setIsFocused(true)} />}
+      <div className="search-icon__input-container">
         <input
           type="text"
           className={`search-icon__input form-control ${isFocused ? "visible" : "hidden"}`}
@@ -42,7 +43,9 @@ const SearchIcon = ({ searchTerm, setSearchTerm }) => {
             <FaTimes />
           </button>
         )}
-      </form>
+      </div>
+    </form>
+
 
       {filteredResults.length > 0 && (
         <ul className="search-icon__results list-unstyled">

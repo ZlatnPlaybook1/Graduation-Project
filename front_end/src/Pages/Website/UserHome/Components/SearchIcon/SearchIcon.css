@@ -7,22 +7,32 @@
 .search-icon {
   display: flex;
   align-items: center;
-  background: var(--primary-bg, #222);
   border-radius: 2em;
   padding: 0.5em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
 }
 
 .search-icon__icon {
-  font-size: 1.5em;
+  font-size: 2.2em; /* Increase icon size */
   color: var(--main-color, #00ff99);
   cursor: pointer;
   transition: color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
 
 .search-icon__icon:hover {
   color: var(--highlight-color, #00ccff);
+}
+
+.search-icon__input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .search-icon__input {
@@ -33,8 +43,10 @@
   background: transparent;
   color: var(--primary-text, #fff);
   font-size: 1em;
-  padding: 0.3em;
+  padding: 0.3em 2em 0.3em 0.5em; /* Right padding adjusted for reset button */
   outline: none;
+  border-radius: 2em;
+  background-color: var(--secondary-bg, #222);
 }
 
 .search-icon__input.visible {
@@ -43,12 +55,13 @@
 }
 
 .search-icon__reset {
+  position: absolute;
+  right: 10px;
   background: none;
   border: none;
   color: var(--main-color, #00ff99);
   cursor: pointer;
   font-size: 1.2em;
-  margin-left: 0.5em;
   transition: color 0.3s;
 }
 
