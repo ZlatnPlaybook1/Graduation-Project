@@ -46,17 +46,15 @@ const HashGenerator = () => {
     </ul>
   `;
   return (
-    <>
+    <div className="Custom__body--bg py-5">
       {" "}
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
-      <div className=" w-100 p-y5 mt-5">
+      <div className=" w-100  mt-5">
         <div className="container p-0 my-5">
-          <div className="card shadow-lg">
-            <div className="card-body">
-              <h2 className="card-title my-4 display-5 title-gradient">
+           <h1 className="title-gradient text-center my-4">
                 Hash Generator
-              </h2>
+              </h1>
 
               {/* What is Hashing? */}
               <div className="mb-5 text-left">
@@ -79,13 +77,14 @@ const HashGenerator = () => {
                   <FontAwesomeIcon icon={faChevronDown} className="ms-2" />
                 </h3>
                 <div
-                  className="accordion custom-accordion"
-                  id="exampleAccordion"
+                  className="accordion custom-accordion secondary-bg border-0 primary-text"
+              id="exampleAccordion"
+              style={{backgroundColor: "var(--secondary-bg)"}}
                 >
-                  <div className="accordion-item">
+                  <div className="accordion-item secondary-bg primary-text">
                     <h2 className="accordion-header" id="exampleHeading">
                       <button
-                        className="accordion-button collapsed custom-accordion-button"
+                        className="accordion-button collapsed custom-accordion-button "
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#exampleCollapse"
@@ -106,11 +105,11 @@ const HashGenerator = () => {
                     >
                       <div className="accordion-body text-left">
                         <h5>Example: "hello"</h5>
-                        <p className="text-muted">
+                        <p className="secondary-text">
                           Input: <code>hello</code>
                         </p>
                         <ul className="list-group mb-3">
-                          <li className="list-group-item">
+                          <li className="list-group-item secondary-bg primary-text bb-1">
                             <strong>MD5:</strong>{" "}
                             <code>{MD5("hello").toString()}</code>
                             <button
@@ -124,7 +123,7 @@ const HashGenerator = () => {
                               />
                             </button>
                           </li>
-                          <li className="list-group-item">
+                          <li className="list-group-item secondary-bg primary-text bb-1">
                             <strong>SHA-1:</strong>{" "}
                             <code>{SHA1("hello").toString()}</code>
                             <button
@@ -138,7 +137,7 @@ const HashGenerator = () => {
                               />
                             </button>
                           </li>
-                          <li className="list-group-item">
+                          <li className="list-group-item secondary-bg primary-text bb-1 ">
                             <strong>SHA-256:</strong>{" "}
                             <code>{SHA256("hello").toString()}</code>
                             <button
@@ -185,7 +184,7 @@ const HashGenerator = () => {
                   <FontAwesomeIcon icon={faLink} className="ms-2" />
                 </h3>
                 <div>
-                  <p className="text-muted">
+                  <p className="secondary-text">
                     MD5: <code>{hashes.md5}</code>
                     <button
                       className="btn btn-sm btn-outline-secondary ms-4"
@@ -194,7 +193,7 @@ const HashGenerator = () => {
                       <FontAwesomeIcon icon={isCopied ? faCheck : faCopy} />
                     </button>
                   </p>
-                  <p className="text-muted">
+                  <p className="secondary-text">
                     SHA-1: <code>{hashes.sha1}</code>
                     <button
                       className="btn btn-sm btn-outline-secondary ms-4"
@@ -203,7 +202,7 @@ const HashGenerator = () => {
                       <FontAwesomeIcon icon={isCopied ? faCheck : faCopy} />
                     </button>
                   </p>
-                  <p className="text-muted">
+                  <p className="secondary-text">
                     SHA-256: <code>{hashes.sha256}</code>
                     <button
                       className="btn btn-sm btn-outline-secondary ms-4"
@@ -221,8 +220,8 @@ const HashGenerator = () => {
                   Additional Resources
                   <FontAwesomeIcon icon={faLink} className="ms-2" />
                 </h3>
-                <ul className="list-group list-group-flush mb-4">
-                  <li className="list-group-item">
+                <ul className="list-group list-group-flush mb-4 ">
+                  <li className="list-group-item primary-bg border-0">
                     <a
                       href="https://en.wikipedia.org/wiki/Cryptographic_hash_function"
                       target="_blank"
@@ -233,7 +232,7 @@ const HashGenerator = () => {
                       <FontAwesomeIcon icon={faLink} className="ms-2" />
                     </a>
                   </li>
-                  <li className="list-group-item">
+                  <li className="list-group-item primary-bg border-0">
                     <a
                       href="https://www.geeksforgeeks.org/cryptographic-hash-functions/"
                       target="_blank"
@@ -255,7 +254,7 @@ const HashGenerator = () => {
                 </h3>
                 <div className="row">
                   <div className="col-md-6">
-                    <p className="text-muted">
+                    <p className="secondary-text">
                       Watch this video to learn more about hashing:
                     </p>
                   </div>
@@ -271,12 +270,10 @@ const HashGenerator = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
         </div>
       </div>
       <Go2TopBtn />
-    </>
+    </div>
   );
 };
 export default HashGenerator;

@@ -1,8 +1,4 @@
-.Custom__body--bg{
-  background: var(--primary-bg);
-  color:var(--primary-text) ;
-  min-height: 100vh;
-}
+
 .container-store {
   margin-left: auto;
   margin-right: auto;

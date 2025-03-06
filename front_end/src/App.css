@@ -217,3 +217,8 @@ section,
 .bg-main-color {
   background: var(--main-color)!important;
 }
+.Custom__body--bg{
+  background: var(--primary-bg)!important;
+  color:var(--primary-text) !important;
+  min-height: 100vh;
+}

@@ -2,40 +2,37 @@
 
 .title-gradient {
   font-family: "Roboto Slab", serif;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: linear-gradient(135deg, var(--main-color), var(--hover-main-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-top: 2rem;
 }
-.card-body {
-  padding: 24px;
-  font-size: 16px;
-  color: #666;
-  text-align: center;
-}
+
 .custom-accordion .accordion-button {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: white;
+  background: linear-gradient(135deg, var(--main-color), var(--hover-main-color));
+  color: var(--primary-text);
   border: none;
   border-radius: 8px;
   font-weight: bold;
   transition: all 0.3s ease;
 }
-
+.bb-1{
+  border-bottom: 1px solid var(--glass-effect);
+}
 .custom-accordion .accordion-button:not(.collapsed) {
-  background: linear-gradient(135deg, #2575fc, #6a11cb);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background:  linear-gradient(135deg, var(--main-color), var(--hover-main-color));
+  box-shadow: 0 4px 6px var(--glass-effect);
 }
 
 .custom-accordion .accordion-body {
-  background-color: #f8f9fa;
+  background-color: var(--secondary-bg);
   border-radius: 0 0 8px 8px;
-  border: 1px solid #e9ecef;
+  border: 1px solid var(--glass-effect);
   padding: 20px;
 }
 
 a.text-decoration-none {
-  color: #2575fc;
+  color: var(--main-color);
   transition: color 0.3s ease;
 }
 
@@ -46,7 +43,7 @@ a.text-decoration-none:hover {
 .text-left {
   text-align: left !important;
 }
-.bg-gray {
+/* .bg-gray {
   background-color: #f3f3f3;
   font-style: italic;
-}
+} */

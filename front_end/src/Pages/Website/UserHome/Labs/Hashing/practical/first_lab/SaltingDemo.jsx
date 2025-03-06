@@ -55,7 +55,7 @@ const SaltingDemo = () => {
     </ul>
   `;
   return (
-    <>
+    <div >
       {" "}
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
@@ -308,7 +308,7 @@ const SaltingDemo = () => {
         </div>
       </div>
       <Go2TopBtn />
-    </>
+    </div>
   );
 };
 
