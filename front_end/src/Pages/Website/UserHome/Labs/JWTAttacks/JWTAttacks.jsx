@@ -39,9 +39,9 @@ export default function JWTAttacks() {
                   <span>Topic 1</span> Introduction
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <h1>Welcome to JWT Attacks</h1>
+                  <h1 className="content__title">Welcome to JWT Attacks</h1>
 
-                  <h2>What will you learn?</h2>
+                  <h2 className="content__title">What will you learn?</h2>
                   <ol>
                     <li>What are Obfuscation & Deobfuscation?</li>
                     <li>Why do we use Obfuscation?</li>
@@ -103,7 +103,7 @@ export default function JWTAttacks() {
                       <b>JWTs</b>, escalate privileges, and snatch those task
                       flags like a cybersecurity Indiana Jones.
                     </p>
-                    <h2>Here's the Cheat Sheet:</h2>
+                    <h2 className="content__title">Here's the Cheat Sheet:</h2>
                     <ol>
                       <li>
                         <div className="terminal-container">
@@ -204,7 +204,11 @@ export default function JWTAttacks() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <div className="subject-section">
-                    <img src={exampleImage1} alt="Example" />
+                    <div className="Content__img--box">
+                      <div className="Content__img__box__over--hidden">
+                        <img src={exampleImage1} alt="Example" />
+                      </div>
+                    </div>
                     <p>
                       Imagine you’re at an exclusive party. You flash a fancy
                       wristband at the bouncer, and they immediately know you’re
@@ -214,7 +218,7 @@ export default function JWTAttacks() {
                     </p>
                   </div>
                   <div className="subject-section">
-                    <h2>What is inside a JWT?</h2>
+                    <h2 className="content__title">What is inside a JWT?</h2>
                     <p>
                       A <b>JWT</b> is like a digital sandwich, neatly split into
                       three layers (and yes, they’re <b>Base64Url</b> encoded
@@ -244,7 +248,9 @@ export default function JWTAttacks() {
                     </ol>
                   </div>
                   <div className="subject-section">
-                    <h2>Signing Algorithms: The Sauce Varieties</h2>
+                    <h2 className="content__title">
+                      Signing Algorithms: The Sauce Varieties
+                    </h2>
                     <p>
                       <b>JWTs</b> get their authenticity from the signature, and
                       there are three main styles:
@@ -271,7 +277,7 @@ export default function JWTAttacks() {
                     </ol>
                   </div>
                   <div className="subject-section">
-                    <h2>Why JWTs Are Awesome</h2>
+                    <h2 className="content__title">Why JWTs Are Awesome</h2>
                     <p>
                       The real power of <b>JWTs</b> lies in their signature.
                       Once signed, they can travel around freely — like a VIP
@@ -306,7 +312,9 @@ export default function JWTAttacks() {
                     </p>
                   </div>
                   <div className="subject-section">
-                    <h2>The Problem: JWTs Aren’t Diaries</h2>
+                    <h2 className="content__title">
+                      The Problem: JWTs Aren’t Diaries
+                    </h2>
                     <p>
                       In traditional <span>cookie-based</span> sessions, data
                       stays server-side, tucked away from prying eyes. But{" "}
@@ -335,7 +343,9 @@ export default function JWTAttacks() {
                     </ol>
                   </div>
                   <div className="subject-section">
-                    <h2>Practical Oops Moment: An Example</h2>
+                    <h2 className="content__title">
+                      Practical Oops Moment: An Example
+                    </h2>
                     <div className="terminal-container">
                       <div className="terminal-content">
                         <div className="terminal-top">
@@ -447,7 +457,9 @@ export default function JWTAttacks() {
                     </p>
                   </div>
                   <div className="subject-section">
-                    <h2>Why This Happens: Developer Shortcut Syndrome</h2>
+                    <h2 className="content__title">
+                      Why This Happens: Developer Shortcut Syndrome
+                    </h2>
                     <p>
                       Instead of securely storing sensitive information
                       server-side, some developers toss it all into the token
@@ -458,7 +470,9 @@ export default function JWTAttacks() {
                     </p>
                   </div>
                   <div className="subject-section">
-                    <h2>The Fix: Keep Secrets, Well, Secret</h2>
+                    <h2 className="content__title">
+                      The Fix: Keep Secrets, Well, Secret
+                    </h2>
                     <p>
                       To fix this, sensitive data like passwords or flags should
                       never leave the server. Here’s the right way to handle it:
@@ -533,7 +547,7 @@ export default function JWTAttacks() {
                     </div>
                   </div>
                   <div className="subject-section">
-                    <h2>Takeaway</h2>
+                    <h2 className="content__title">Takeaway</h2>
                     <p>
                       <b>JWTs</b> are powerful, but with great power comes great
                       responsibility. Treat them like postcards everyone can
@@ -551,7 +565,7 @@ export default function JWTAttacks() {
                 <dd className="fadeInUp faq-body" id="border-left">
                   <div className="subject-section">
                     <h4> Not Verifying the Signature</h4>
-                    <h2>Problem</h2>
+                    <h2 className="content__title">Problem</h2>
                     <p>
                       When a server skips signature validation, claims within a
                       <b>JWT</b> can be modified arbitrarily. Attackers can
@@ -560,7 +574,7 @@ export default function JWTAttacks() {
                     </p>
                   </div>
                   <div className="subject-section">
-                    <h2>Practical Example</h2>
+                    <h2 className="content__title">Practical Example</h2>
                     <ol>
                       <li>
                         <div className="terminal-container">
@@ -640,7 +654,7 @@ export default function JWTAttacks() {
                     </ol>
                   </div>
                   <div className="subject-section">
-                    <h2>Fix</h2>
+                    <h2 className="content__title">Fix</h2>
                     <div className="terminal-container">
                       <div className="terminal-content">
                         <div className="terminal-top">
@@ -667,12 +681,12 @@ export default function JWTAttacks() {
                   </div>
                   <div className="subject-section">
                     <h4>Algorithm Downgrade to None</h4>
-                    <h2>Problem</h2>
+                    <h2 className="content__title">Problem</h2>
                     <p>
                       <b>JWTs</b>signed using weak symmetric keys can be cracked
                       offline, allowing attackers to forge valid tokens.
                     </p>
-                    <h2>Pratical Example</h2>
+                    <h2 className="content__title">Pratical Example</h2>
                     <ol>
                       <li>
                         <div className="terminal-container">
@@ -731,7 +745,7 @@ export default function JWTAttacks() {
                         if signature verification is improperly configured.
                       </li>
                     </ol>
-                    <h2>Fix</h2>
+                    <h2 className="content__title">Fix</h2>
                     <div className="terminal-container">
                       <div className="terminal-content">
                         <div className="terminal-top">
@@ -758,7 +772,7 @@ export default function JWTAttacks() {
                   </div>
                   <div className="subject-section">
                     <h4>Weak Symmetric Secrets</h4>
-                    <h2>Problem</h2>
+                    <h2 className="content__title">Problem</h2>
                     <p>
                       <b>JWTs</b> support the None algorithm, which skips
                       signature verification. Attackers can change the alg claim
@@ -766,7 +780,7 @@ export default function JWTAttacks() {
                       checks entirely if developers haven’t restricted
                       algorithms.
                     </p>
-                    <h2>Pratical Example</h2>
+                    <h2 className="content__title">Pratical Example</h2>
                     <ol>
                       <li>
                         Save the <b>JWT</b> in a file (jwt.txt).
@@ -801,7 +815,7 @@ export default function JWTAttacks() {
                         altered claims.
                       </li>
                     </ol>
-                    <h2>Fix</h2>
+                    <h2 className="content__title">Fix</h2>
                     <div className="terminal-container">
                       <div className="terminal-content">
                         <div className="terminal-top">
@@ -827,7 +841,7 @@ export default function JWTAttacks() {
                   </div>
                   <div className="subject-section">
                     <h4>Signature Algorithm Confusion</h4>
-                    <h2>Problem</h2>
+                    <h2 className="content__title">Problem</h2>
                     <p>
                       When mixing <b>symmetric</b> (e.g., <span>HS256</span>)
                       and <b>asymmetric</b> (e.g.,
@@ -837,7 +851,7 @@ export default function JWTAttacks() {
                       secret for a<b>symmetric</b> algorithm, enabling token
                       forgery.
                     </p>
-                    <h2>Pratical Example</h2>
+                    <h2 className="content__title">Pratical Example</h2>
                     <ol>
                       <li>
                         Use the <b>public key</b> to sign a JWT with the{" "}
@@ -850,7 +864,7 @@ export default function JWTAttacks() {
                         <b>symmetric </b> secret.
                       </li>
                     </ol>
-                    <h2>Fix</h2>
+                    <h2 className="content__title">Fix</h2>
                     <div className="terminal-container">
                       <div className="terminal-content">
                         <div className="terminal-top">
@@ -958,14 +972,14 @@ export default function JWTAttacks() {
                       Omitting Additional Authentication Layers for
                       Server-to-Server APIs
                     </h4>
-                    <h2>Problem</h2>
+                    <h2 className="content__title">Problem</h2>
                     <p>
                       Server-to-server <b>APIs</b> may not properly verify{" "}
                       <b>JWTs</b> under the assumption that upstream systems
                       have already authenticated the token. This assumption is
                       risky in complex distributed systems.
                     </p>
-                    <h2>Fix</h2>
+                    <h2 className="content__title">Fix</h2>
                     <div className="terminal-container">
                       <div className="terminal-content">
                         <div className="terminal-top">
@@ -993,7 +1007,9 @@ export default function JWTAttacks() {
                         </pre>
                       </div>
                     </div>
-                    <h2>Key Takeaways for Developers</h2>
+                    <h2 className="content__title">
+                      Key Takeaways for Developers
+                    </h2>
                     <ol>
                       <li>
                         Always validate <b>JWT</b> signatures.
@@ -1031,7 +1047,9 @@ export default function JWTAttacks() {
                       indefinitely. Below, we explore the key issues and
                       solutions regarding token expiration.
                     </p>
-                    <h2>The Problem: Tokens Without Expiry</h2>
+                    <h2 className="content__title">
+                      The Problem: Tokens Without Expiry
+                    </h2>
                     <p>
                       <b>Issue</b>
                     </p>
@@ -1042,7 +1060,7 @@ export default function JWTAttacks() {
                       mechanisms, making them vulnerable to misuse if they are
                       stolen or compromised.
                     </p>
-                    <h2>Practical Example</h2>
+                    <h2 className="content__title">Practical Example</h2>
                     <div className="terminal-container">
                       <div className="terminal-content">
                         <div className="terminal-top">
@@ -1070,7 +1088,9 @@ export default function JWTAttacks() {
                       external mechanisms like token blocklists are in place to
                       revoke it.
                     </p>
-                    <h2>The Fix: Setting an exp Claim</h2>
+                    <h2 className="content__title">
+                      The Fix: Setting an exp Claim
+                    </h2>
                     <p>
                       <b>Set an Expiry Time</b>
                     </p>
@@ -1184,7 +1204,9 @@ export default function JWTAttacks() {
                     </ol>
                   </div>
                   <div className="subject-section">
-                    <h2>Enforce Expiration Checks</h2>
+                    <h2 className="content__title">
+                      Enforce Expiration Checks
+                    </h2>
                     <ol>
                       <li>
                         <div className="terminal-container">
@@ -1249,7 +1271,9 @@ export default function JWTAttacks() {
                     </ol>
                   </div>
                   <div className="subject-section">
-                    <h2>Challenges with Token Expiry</h2>
+                    <h2 className="content__title">
+                      Challenges with Token Expiry
+                    </h2>
                     <p>
                       <b>Revoking Tokens Before Expiry</b>
                     </p>
@@ -1280,7 +1304,7 @@ export default function JWTAttacks() {
                     </ol>
                   </div>
                   <div className="subject-section">
-                    <h2>Refresh Tokens</h2>
+                    <h2 className="content__title">Refresh Tokens</h2>
                     <p>
                       Use refresh <b>tokens</b> to renew short-lived <b>JWTs</b>
                       . This involves issuing two tokens:
@@ -1426,7 +1450,7 @@ export default function JWTAttacks() {
                     </div>
                   </div>
                   <div className="subject-section">
-                    <h2>Key Takeaways</h2>
+                    <h2 className="content__title">Key Takeaways</h2>
                     <p>
                       <b>Always Set exp</b>
                     </p>
@@ -1469,7 +1493,11 @@ export default function JWTAttacks() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <div className="subject-section">
-                    <img src={exampleImage2} alt="Example" />
+                    <div className="Content__img--box">
+                      <div className="Content__img__box__over--hidden">
+                        <img src={exampleImage2} alt="Example" />
+                      </div>
+                    </div>
                     <p>
                       <b>JWT</b> misconfigurations can lead to serious
                       vulnerabilities when used in systems where a centralized
@@ -1481,7 +1509,9 @@ export default function JWTAttacks() {
                   </div>
 
                   <div className="subject-section">
-                    <h2>The Problem: Cross-Service Misconfiguration</h2>
+                    <h2 className="content__title">
+                      The Problem: Cross-Service Misconfiguration
+                    </h2>
                     <p>
                       <b>Cross-Service Relay Attack</b>
                     </p>
@@ -1503,7 +1533,7 @@ export default function JWTAttacks() {
                     </ol>
                   </div>
                   <div className="subject-section">
-                    <h2>Practical Example</h2>
+                    <h2 className="content__title">Practical Example</h2>
                     <p>
                       <b>Steps:</b>
                     </p>
@@ -1663,7 +1693,7 @@ export default function JWTAttacks() {
                     </ol>
                   </div>
                   <div className="subject-section">
-                    <h2>The Development Mistake</h2>
+                    <h2 className="content__title">The Development Mistake</h2>
                     <p>
                       <b>Missing Audience Verification</b>
                     </p>
@@ -1687,7 +1717,7 @@ export default function JWTAttacks() {
                         the intended purpose.
                       </li>
                     </ol>
-                    <h2>The Fix</h2>
+                    <h2 className="content__title">The Fix</h2>
                     <p>
                       <b>Enforce Audience Claim Verification</b>
                     </p>
@@ -1839,7 +1869,9 @@ export default function JWTAttacks() {
                     </div>
                   </div>
                   <div className="subject-section">
-                    <h2>Best Practices for Fixing Audience Issues</h2>
+                    <h2 className="content__title">
+                      Best Practices for Fixing Audience Issues
+                    </h2>
                     <p>
                       <b>Set Specific Audience Claims</b>
                     </p>
@@ -1870,7 +1902,7 @@ export default function JWTAttacks() {
                     </ol>
                   </div>
                   <div className="subject-section">
-                    <h2>Key Takeaways</h2>
+                    <h2 className="content__title">Key Takeaways</h2>
                     <ol>
                       <li>
                         <p>

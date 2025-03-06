@@ -40,7 +40,7 @@ export default function CaptchaBypass() {
                   <p>
                     <br></br>
                   </p>
-                  <h1>What is Captcha?</h1>
+                  <h1 className="content__title">What is Captcha?</h1>
                   <h4>Captcha Overview</h4>
                   <p>
                     Captcha stands for{" "}
@@ -147,7 +147,9 @@ export default function CaptchaBypass() {
                   <p>
                     <br></br>
                   </p>
-                  <h1>Understanding Captcha Bypass Techniques</h1>
+                  <h1 className="content__title">
+                    Understanding Captcha Bypass Techniques
+                  </h1>
                   <h4>Bypass Methods Overview</h4>
                   <p>
                     As bots have become more sophisticated, several methods have
@@ -228,7 +230,9 @@ export default function CaptchaBypass() {
                   <p>
                     <br></br>
                   </p>
-                  <h1>Bypassing Simple Captchas using Python</h1>
+                  <h1 className="content__title">
+                    Bypassing Simple Captchas using Python
+                  </h1>
                   <h4>Python Setup & Tools</h4>
                   <p>
                     Python is a great language for automating tasks and
@@ -448,7 +452,9 @@ export default function CaptchaBypass() {
                   <p>
                     <br></br>
                   </p>
-                  <h1>Bypassing reCAPTCHA v2 & v3</h1>
+                  <h1 className="content__title">
+                    Bypassing reCAPTCHA v2 & v3
+                  </h1>
                   <h4>Understanding reCAPTCHA v2</h4>
                   <p>
                     reCAPTCHA v2 is one of the most commonly encountered

@@ -47,9 +47,11 @@ export default function CryptoGraphy() {
                   <span>step 1</span> Introduction to Cryptography
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <h1>Welcome to Introduction to Cryptography</h1>
+                  <h1 className="content__title">
+                    Welcome to Introduction to Cryptography
+                  </h1>
                   <br></br>
-                  <h2>What will you learn?</h2>
+                  <h2 className="content__title">What will you learn?</h2>
                   <ol>
                     <li>What is Cryptography?</li>
                     <li>The Role of Cryptography in Information Security </li>
@@ -67,7 +69,7 @@ export default function CryptoGraphy() {
                   <p>
                     <br></br>
                   </p>
-                  <h1>What is Cryptography?</h1>
+                  <h1 className="content__title">What is Cryptography?</h1>
                   <h4>Cryptography? </h4>
                   <p>
                     Cryptography refers almost exclusively to encryption, the
@@ -76,7 +78,11 @@ export default function CryptoGraphy() {
                     unintelligible ciphertext to plaintext.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage1} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage1} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <h4>The Role of Cryptography in Information Security</h4>
                   <p>
@@ -91,7 +97,7 @@ export default function CryptoGraphy() {
                   </p>
                   <p>
                     <strong>Confidentiality :</strong> only targeted people
-                    would be able to receive data{" "}
+                    would be able to receive data
                   </p>
                   <p>
                     <strong>Integrity :</strong> we should keep data safe
@@ -109,7 +115,7 @@ export default function CryptoGraphy() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
-                  <h1>What is Steganography?</h1>
+                  <h1 className="content__title">What is Steganography?</h1>
                   <p>
                     Steganography is the art and science of embedding secret
                     messages in a cover message in such a way that, no one apart
@@ -120,7 +126,11 @@ export default function CryptoGraphy() {
                     The diagram below represents a basic steganographic model.{" "}
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage2} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage2} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <h4>How does Steganography differ from Cryptography?</h4>
                   <p>
@@ -155,7 +165,7 @@ export default function CryptoGraphy() {
                     In digital steganography, images are widely used as cover
                     sources, because the digital representation of an image
                     contains a huge number of bits. There are several ways of
-                    hiding the data within an image.{" "}
+                    hiding the data within an image.
                   </p>
                   <br></br>
                   <h4>Popular approaches involve:</h4>
@@ -170,12 +180,12 @@ export default function CryptoGraphy() {
                   <p>
                     In audio steganography, the secret message is embedded into
                     an audio signal which alters the binary sequence of the
-                    corresponding audio file.{" "}
+                    corresponding audio file.
                   </p>
                   <p>
                     Hiding secret messages in digital sound is a much more
                     difficult process when compared to others, such as Image
-                    Steganography.{" "}
+                    Steganography.
                   </p>
                   <br></br>
                   <h4>Different methods of audio steganography include:</h4>
@@ -190,7 +200,7 @@ export default function CryptoGraphy() {
                   <p>
                     There are many software available that offer steganography.
                     Some offer normal steganography, but a few offer encryption
-                    before hiding the data.{" "}
+                    before hiding the data.
                   </p>
                   <br></br>
                   <h4>
@@ -216,7 +226,7 @@ export default function CryptoGraphy() {
                 </dd>
 
                 <dt className="fadeInUp faq-header">
-                  <span> step 4</span> Plaintext to Ciphertext{" "}
+                  <span> step 4</span> Plaintext to Ciphertext
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
@@ -234,7 +244,11 @@ export default function CryptoGraphy() {
                     ciphertext and vice versa.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage3} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage3} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     To recover the plaintext, we must pass the ciphertext along
@@ -243,7 +257,11 @@ export default function CryptoGraphy() {
                     illustration below.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage4} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage4} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     We have just introduced several new terms, and we need to
@@ -297,7 +315,6 @@ export default function CryptoGraphy() {
                   <p>
                     <br></br>
                   </p>
-
                   <p>
                     Cryptography’s history is long and dates back to ancient
                     Egypt in 1900 BCE. However, one of the simplest historical
@@ -320,7 +337,11 @@ export default function CryptoGraphy() {
                     we get the ciphertext of <code>fbehu ode</code>.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage5} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage5} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>To decrypt, we need the following information:</p>
                   <ol>
@@ -331,7 +352,11 @@ export default function CryptoGraphy() {
                     <li>Cipher: Caesar Cipher</li>
                   </ol>
                   <br></br>
-                  <img id="img-full" src={exampleImage6} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage6} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     For encryption, we shift to the right by three; for
@@ -355,9 +380,12 @@ export default function CryptoGraphy() {
                     publicly known, Caesar Cipher is considered insecure.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage7} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage7} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
-
                   <p>
                     You would come across many more historical ciphers in movies
                     and cryptography books. Examples include:
@@ -376,7 +404,6 @@ export default function CryptoGraphy() {
                   <p>
                     <br></br>
                   </p>
-
                   <h3>
                     The two main categories of encryption are{" "}
                     <strong>symmetric</strong> and <strong>asymmetric</strong>.
@@ -398,8 +425,11 @@ export default function CryptoGraphy() {
                     adversary; consider the threat of industrial espionage, for
                     instance.
                   </p>
-
-                  <img id="img-full" src={exampleImage8} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage8} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     Consider the simple case where you created a
                     password-protected document to share it with your colleague.
@@ -450,7 +480,7 @@ export default function CryptoGraphy() {
                     standards.
                   </p>
                   <br></br>
-                  <h2>Asymmetric Encryption</h2>
+                  <h2 className="content__title">Asymmetric Encryption</h2>
                   <br></br>
                   <p>
                     Unlike symmetric encryption, which uses the same key for
@@ -463,7 +493,11 @@ export default function CryptoGraphy() {
                     called <strong>public key cryptography</strong>.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage9} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage9} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     Examples are RSA , Diffie-Hellman, and Elliptic Curve
@@ -503,7 +537,7 @@ export default function CryptoGraphy() {
                     guarded and secret.
                   </p>
                   <br></br>
-                  <h2>Summary of New Terms :</h2>
+                  <h2 className="content__title">Summary of New Terms :</h2>
                   <br></br>
                   <ol>
                     <li>

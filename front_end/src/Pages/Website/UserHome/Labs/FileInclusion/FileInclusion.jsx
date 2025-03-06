@@ -42,7 +42,7 @@ export default function FileInclusion() {
                   <span>Topic 1</span> Introduction
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <h1>Welcome to File Inclusion</h1>
+                  <h1 className="content__title">Welcome to File Inclusion</h1>
                   <p>
                     This room aims to equip you with the essential knowledge to
                     exploit file inclusion vulnerabilities, including Local File
@@ -60,7 +60,11 @@ export default function FileInclusion() {
                     retrieve data or perform actions based on user input. The
                     following diagram breaks down the essential parts of a URL.
                   </p>
-                  <img src={exampleImage1} id="img-full" alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage1} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     For example, parameters are used with Google searching,
                     where GET requests pass user input into the search engine.
@@ -80,8 +84,14 @@ export default function FileInclusion() {
                     , where the file is the parameter and the userCV.pdf, is the
                     required file to access.
                   </p>
-                  <img src={exampleImage2} id="img-full" alt="Example" />
-                  <h2>Why do File inclusion vulnerabilities happen?</h2>
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage2} alt="Example" />
+                    </div>
+                  </div>
+                  <h2 className="content__title">
+                    Why do File inclusion vulnerabilities happen?
+                  </h2>
                   <p>
                     File inclusion vulnerabilities are commonly found and
                     exploited in various programming languages for web
@@ -92,7 +102,9 @@ export default function FileInclusion() {
                     not validated, the user can pass any input to the function,
                     causing the vulnerability.
                   </p>
-                  <h2>What is the risk of File inclusion?</h2>
+                  <h2 className="content__title">
+                    What is the risk of File inclusion?
+                  </h2>
                   <p>
                     By default, an attacker can leverage file inclusion
                     vulnerabilities to leak data, such as code, credentials or
@@ -135,7 +147,11 @@ export default function FileInclusion() {
                     the contents of userCV.pdf from a defined path
                     /var/www/app/CVs.
                   </p>
-                  <img src={exampleImage3} id="img-full" alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage3} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     We can test out the URL parameter by adding payloads to see
                     how the web application behaves. Path traversal attacks,
@@ -155,12 +171,20 @@ export default function FileInclusion() {
                     changes the directory to /etc, and from there, it read the
                     passwd file.
                   </p>
-                  <img src={exampleImage4} id="img-full" alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage4} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     As a result, the web application sends back the file’s
                     content to the user.
                   </p>
-                  <img src={exampleImage5} id="img-full" alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage5} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     Similarly, if the web application runs on a Windows server,
                     the attacker needs to provide Windows paths. For example, if
@@ -558,7 +582,11 @@ export default function FileInclusion() {
                         replaces the first subset string ../ it finds and
                         doesn’t do another pass, leaving what is pictured below.
                       </p>
-                      <img src={exampleImage6} id="img-full" alt="Example" />
+                      <div className="Content__img--box">
+                        <div className="Content__img__box__over--hidden">
+                          <img src={exampleImage6} alt="Example" />
+                        </div>
+                      </div>
                     </li>
                     <li>
                       <p>
@@ -599,7 +627,11 @@ export default function FileInclusion() {
                     the content of the malicious file executes on the vulnerable
                     application server.
                   </p>
-                  <img src={exampleImage7} id="img-full" alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage7} alt="Example" />
+                    </div>
+                  </div>
                   <p>RFI steps</p>
                   <p>
                     The following figure is an example of steps for a successful

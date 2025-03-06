@@ -65,12 +65,10 @@ b {
   inset: 0px;
   z-index: 1;
   height: 100%;
-  background: linear-gradient(
-    to right,
-    var(--alt-color) 30%,
-    rgba(21, 28, 43, 0.98) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(to right,
+      var(--alt-color) 30%,
+      rgba(21, 28, 43, 0.98) 50%,
+      transparent 100%);
 }
 
 .landing-labd .banner img {
@@ -266,7 +264,7 @@ b {
   padding: 10px 20px;
 }
 
- 
+
 
 .faq-section-labd .section-text-labd .faq-body-labd .token {
   color: rgb(186, 200, 212);
@@ -359,11 +357,7 @@ b {
   transition: 0.2s ease-in-out;
 }
 
-.faq-section-labd
-  .section-text-labd
-  .faq-body-labd
-  form
-  button:hover:not(:disabled) {
+.faq-section-labd .section-text-labd .faq-body-labd form button:hover:not(:disabled) {
   background-color: rgb(163, 234, 42);
 }
 
@@ -398,11 +392,9 @@ b {
   color: #d63384;
   font-weight: 400;
   text-transform: capitalize;
-  background: linear-gradient(
-    90deg,
-    rgba(214, 51, 132, 0.2) 0%,
-    rgba(214, 51, 132, 0.1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(214, 51, 132, 0.2) 0%,
+      rgba(214, 51, 132, 0.1) 100%);
   padding: 0.2rem 0.4rem;
   border-radius: 8px;
   transition: background 0.3s ease;
@@ -433,6 +425,7 @@ b {
   margin-right: 5px;
   font-size: 15px;
 }
+
 /* End course-labd Content */
 /* Start Landing */
 .landing-lab1 {
@@ -459,12 +452,10 @@ b {
   inset: 0px !important;
   z-index: 1 !important;
   height: 100% !important;
-  background: linear-gradient(
-    to right,
-    var(--alt-color) 30%,
-    rgba(21, 28, 43, 0.98) 50%,
-    transparent 100%
-  ) !important;
+  background: linear-gradient(to right,
+      var(--alt-color) 30%,
+      rgba(21, 28, 43, 0.98) 50%,
+      transparent 100%) !important;
 }
 
 /* .landing-lab1 .banner img {
@@ -694,10 +685,7 @@ dt.wave-lab1.fadeInUp.faq-header-lab1 span {
   color: #a3ea2a !important;
 }
 
-.faq-section-lab1
-  .section-text-lab1
-  .faq-body-lab1
-  dt.wave-lab1.fadeInUp.faq-header-lab1.m,
+.faq-section-lab1 .section-text-lab1 .faq-body-lab1 dt.wave-lab1.fadeInUp.faq-header-lab1.m,
 #border-left,
 dd {
   border-left: 4px solid var(--main-color) !important;
@@ -757,9 +745,18 @@ tr:hover {
   font-style: italic;
   line-height: 1.8;
 }
+
 .note #note-span {
   color: white !important;
   background-color: #333 !important;
   padding: 2px 5px !important;
   border-radius: 5px !important;
+}
+
+.Content__img__box__over--hidden {
+  overflow: hidden;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

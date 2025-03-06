@@ -19,7 +19,7 @@ export default function SSTI() {
         background={background}
         courseImage={courseImage}
         courseTitle="Server Side Template Injection (SSTI)"
-        courseDescription = "Server-Side Template Injection (SSTI) is a web vulnerability that arises when user input is improperly handled within a server-side template engine.Attackers can exploit this flaw to execute arbitrary code, potentially leaking sensitive information or performing unauthorized actions on the system.\nThis can lead to severe security risks, including data breaches, remote code execution, and server compromise."
+        courseDescription="Server-Side Template Injection (SSTI) is a web vulnerability that arises when user input is improperly handled within a server-side template engine.Attackers can exploit this flaw to execute arbitrary code, potentially leaking sensitive information or performing unauthorized actions on the system.\nThis can lead to severe security risks, including data breaches, remote code execution, and server compromise."
         difficulty="Intermediate"
         duration="30 min"
         onSaveRoom={() => console.log("Room Saved!")}
@@ -39,9 +39,13 @@ export default function SSTI() {
                   <span>Step 1</span> Introduction
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <h1>Welcome to Server Side Template Injection (SSTI)</h1>
+                  <h1 className="content__title">
+                    Welcome to Server Side Template Injection (SSTI)
+                  </h1>
 
-                  <h2>What is server-side template injection?</h2>
+                  <h2 className="content__title">
+                    What is server-side template injection?
+                  </h2>
                   <br></br>
                   <p>
                     Server-side template injection is when an attacker is able
@@ -62,7 +66,9 @@ export default function SSTI() {
                     injection.
                   </p>
                   <br></br>
-                  <h2>What is the impact of server-side template injection?</h2>
+                  <h2 className="content__title">
+                    What is the impact of server-side template injection?
+                  </h2>
                   <br></br>
                   <p>
                     Server-side template injection vulnerabilities can expose
@@ -93,8 +99,10 @@ export default function SSTI() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
-                  <h1>server-side template injection vulnerabilities</h1>
-                  <h2>
+                  <h1 className="content__title">
+                    server-side template injection vulnerabilities
+                  </h1>
+                  <h2 className="content__title">
                     How do server-side template injection vulnerabilities arise?
                   </h2>
                   <br></br>
@@ -252,9 +260,15 @@ export default function SSTI() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
-                  <h1>Constructing a server-side template injection attack</h1>
+                  <h1 className="content__title">
+                    Constructing a server-side template injection attack
+                  </h1>
                   <br></br>
-                  <img src={exampleImage1} id="img-full" alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage1} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <h4>Detect</h4>
                   <p>
@@ -617,7 +631,6 @@ export default function SSTI() {
                   <br></br>
                   <span>from -e:4:in &lt;main&gt; </span>
                   <br></br>
-
                   <br></br>
                   <p>
                     Otherwise, you'll need to manually test different
@@ -632,7 +645,11 @@ export default function SSTI() {
                     you can use a decision tree similar to the following:
                   </p>
                   <br></br>
-                  <img src={exampleImage2} id="img-full" alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage2} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     You should be aware that the same payload can sometimes
@@ -658,7 +675,7 @@ export default function SSTI() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
-                  <h1>
+                  <h1 className="content__title">
                     How to prevent server-side template injection
                     vulnerabilities
                   </h1>

@@ -1,37 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 .open-sans {
   font-family: "Open Sans", serif !important;
   font-style: normal;
 }
-.content__title{
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--main-color);
+
+.content__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--main-color);
 }
-.content__subtitle{
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--main-color3);
-    background: var(--glass-effect);
-    width: fit-content;
+
+.content__subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--main-color3);
+  background: var(--glass-effect);
+  width: fit-content;
 }
-.content__code{
-    margin-block: 1rem;
-    color: var(--main-color);
-    background: var(--glass-effect);
-    width: fit-content;
-    padding:  0.2rem;
+
+.content__code {
+  margin-block: 1rem;
+  color: var(--main-color);
+  background: var(--glass-effect);
+  width: fit-content;
+  padding: 0.2rem;
 }
-.Content__img--box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
+.Content__img--box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.underline{
-    text-decoration: underline!important;
+
+.underline {
+  text-decoration: underline !important;
 }
+
 .terminal-container {
   margin-bottom: 20px;
 }
@@ -64,8 +71,8 @@
   border-radius: 50%;
   background-color: rgb(255, 68, 68);
   box-shadow: rgb(255, 68, 68) 0px 0px 0px 2px,
-              rgb(178, 224, 40) 1.5rem 0px 0px 2px,
-              rgb(255, 156, 7) 3rem 0px 0px 2px;
+    rgb(178, 224, 40) 1.5rem 0px 0px 2px,
+    rgb(255, 156, 7) 3rem 0px 0px 2px;
 }
 
 .terminal-code {
@@ -89,19 +96,20 @@
 }
 
 
-.custom__table{
+.custom__table {
   color: var(--primary-text);
   background: var(--secondary-bg);
 
 }
+
 .custom__table thead,
-.custom__table th{ 
-  color: var(--primary-text)!important;
-  background: var(--primary-bg)!important;
-}
-.custom__table td,
-.custom__table tr:hover{
-  color: var(--primary-text)!important;
-  background: var(--secondary-bg)!important;
+.custom__table th {
+  color: var(--primary-text) !important;
+  background: var(--primary-bg) !important;
 }
 
+.custom__table td,
+.custom__table tr:hover {
+  color: var(--primary-text) !important;
+  background: var(--secondary-bg) !important;
+}

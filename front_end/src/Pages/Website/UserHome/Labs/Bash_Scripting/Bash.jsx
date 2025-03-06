@@ -6,6 +6,7 @@ import courseImage from "../../assets/img/bash/full_colored_dark (1).png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import Footer from "../../Footer/Footer";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import exampleImage1 from "../../assets/img/bash/carbon-8.png";
 import exampleImage2 from "../../assets/img/bash/carbon-9.png";
 import exampleImage3 from "../../assets/img/bash/carbon-10.png";
@@ -24,6 +25,7 @@ import exampleImage15 from "../../assets/img/bash/carbon-16.png";
 import exampleImage16 from "../../assets/img/bash/carbon-17.png";
 import exampleImage17 from "../../assets/img/bash/carbon-25.png";
 import exampleImage18 from "../../assets/img/bash/first.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Bash() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
@@ -56,9 +58,15 @@ export default function Bash() {
                   <span>Topic 1</span> Introduction
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <h1>Welcome to the introductory bash scripting room!</h1>
-                  <img src={exampleImage18} alt="Example" />
-                  <h2>What is bash?</h2>
+                  <h1 className="content__title">
+                    Welcome to the introductory bash scripting room!
+                  </h1>
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage18} alt="Example" />
+                    </div>
+                  </div>
+                  <h2 className="content__subtitle">What is bash?</h2>
                   <p>
                     Bash is a scripting language that runs within the terminal
                     on most Linux distros, as well as MacOS. Shell scripts are a
@@ -71,19 +79,49 @@ export default function Bash() {
                     This is a few things among many that you will learn in this
                     room:
                   </p>
-                  <ol>
-                    <li>Bash syntax</li>
-                    <li>Variables</li>
-                    <li>Using parameters</li>
-                    <li>Arrays</li>
-                    <li>Conditionals</li>
+                  <ol className="list-unstyled">
+                    <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      <b className="content__subtitle">Bash syntax</b>
+                    </li>
+                    <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      <b className="content__subtitle">Variables</b>
+                    </li>
+                    <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      <b className="content__subtitle">Using parameters</b>
+                    </li>
+                    <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      <b className="content__subtitle">Arrays</b>
+                    </li>
+                    <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      <b className="content__subtitle">Conditionals</b>
+                    </li>
                   </ol>
                 </dd>
                 <dt className="fadeInUp faq-header">
                   <span>Topic 2</span> Our first simple bash scripts
                 </dt>
                 <dd className="fadeInUp faq-body">
-                  <h1>
+                  <h1 className="content__title">
                     Ok now that we have had a brief introduction to what bash is
                     and what it is used for let's jump right into some examples!
                   </h1>
@@ -92,32 +130,47 @@ export default function Bash() {
                     A bash script always starts with the following line of code
                     at the top of the script.
                   </p>
-                  <img id="img-full" src={exampleImage1} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage1} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     This is so your shell (whatever type of it) knows that it
                     needs to run your file using bash in the terminal.
                   </p>
                   <p>Lets get into some basic examples.</p>
-                  <img id="img-full" src={exampleImage2} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage2} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     This will return the string “Hello World”. The command “
-                    <code className="content__code">"echo"</code>” is used to output text to the screen,
-                    the same way as “<code className="content__code">print</code>” in python. I suggest
-                    you test this out in your terminal to get to grips with
-                    bash!
+                    <code className="content__code">"echo"</code>” is used to
+                    output text to the screen, the same way as “
+                    <code className="content__code">print</code>” in python. I
+                    suggest you test this out in your terminal to get to grips
+                    with bash!
                   </p>
                   You can also perform normal Linux commands inside your bash
                   script and it will be executed if formatted right. For example
-                  we can run the command “<code className="content__code">ls</code>” inside our bash
+                  we can run the command “
+                  <code className="content__code">ls</code>” inside our bash
                   script and we will see the output when we run the file. So
                   lets make it do this!
-                  <img id="img-full" src={exampleImage3} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage3} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     Now from here on I am going to assume that you have a basic
                     understanding of Linux and its commands.
                   </p>
                   <p>
-                    I'm also not going to include the<code className="content__code"> #!/bin/bash </code>
+                    I'm also not going to include the
+                    <code className="content__code"> #!/bin/bash </code>
                     at the start of my code snippets otherwise it will take up a
                     lot of room so be aware that you need it always at the start
                     of your files!
@@ -128,24 +181,30 @@ export default function Bash() {
                   </p>
                   <code className="content__code">Chmod +x yourfile.sh</code>
                   <p>
-                    And then we run it using <code className="content__code">./</code>
+                    And then we run it using{" "}
+                    <code className="content__code">./</code>
                   </p>
                 </dd>
                 <dt className="fadeInUp faq-header">
                   <span>Topic 3</span> Variables
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <h1>
+                  <h1 className="content__title">
                     Now we are moving onto variables,in bash these are quite
                     simple and we create them
                   </h1>
                   <strong>like so:</strong>
-                  <img id="img-full" src={exampleImage4} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage4} alt="Example" />
+                    </div>
+                  </div>
                   <p>
-                    Where we give the value of <code className="content__code">Jammy</code> and assign it
+                    Where we give the value of{" "}
+                    <code className="content__code">Jammy</code> and assign it
                     to the variable <code className="content__code">name</code>.
                   </p>
-                  <p>
+                  <p className="note">
                     Please note that for variables to work you cannot leave a
                     space between the variable name, the ”=” and the value. They
                     cannot have spaces in.
@@ -155,10 +214,14 @@ export default function Bash() {
                     simple.
                   </p>
                   <p>
-                    We have to add a <code className="content__code">$</code> onto front of our variable
-                    name in order to use it.
+                    We have to add a <code className="content__code">$</code>{" "}
+                    onto front of our variable name in order to use it.
                   </p>
-                  <img id="img-full" src={exampleImage5} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage5} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     If we test this out in our own terminal we get something
                     like this:
@@ -169,7 +232,7 @@ export default function Bash() {
                         This is what a terminal looks like
                       </div>
                       <pre
-                        className="terminal-codelanguage-shell-session"
+                        className="terminal-code language-shell-session"
                         tabIndex="0"
                       >
                         <code className="language-shell-session">
@@ -246,12 +309,21 @@ export default function Bash() {
                     <strong>set +x</strong> to end the section like the
                     following:
                   </p>
-                  <img id="img-full" src={exampleImage6} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage6} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     So lets look at an example. This is our script from earlier
-                    being ran with <code className="content__code">bash -x ./example.sh</code>
+                    being ran with{" "}
+                    <code className="content__code">bash -x ./example.sh</code>
                   </p>
-                  <img id="img-full" src={exampleImage7} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage7} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     You can see its outputting a + for the command and then the
                     output of what that command executed. If there was an error
@@ -262,12 +334,20 @@ export default function Bash() {
                     We can also use multiple variables in something like an echo
                     statement. You aren't just limited to using 1!
                   </p>
-                  <img id="img-full" src={exampleImage8} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage8} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     Answer the following questions and use this piece of code to
                     guide you.
                   </p>
-                  <img id="img-full" src={exampleImage9} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage9} alt="Example" />
+                    </div>
+                  </div>
                   <div className="go-to-section">
                     <button
                       onClick={() =>
@@ -283,7 +363,7 @@ export default function Bash() {
                   <span>Topic 4</span> Parameters
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <h1>
+                  <h1 className="content__title">
                     We will now look at one of the main features of bash and
                     that's using parameters.
                   </h1>
@@ -297,34 +377,54 @@ export default function Bash() {
                     Lets start by declaring a parameter that is going to be our
                     first argument when running our bash script.
                   </p>
-                  <img id="img-full" src={exampleImage10} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage10} alt="Example" />
+                    </div>
+                  </div>
                   <p>
-                    We now run our script with <code className="content__code">./example.sh Alex</code>
+                    We now run our script with{" "}
+                    <code className="content__code">./example.sh Alex</code>
                   </p>
                   <p>And sure enough we get returned with “Alex”</p>
                   <p>
                     So what if we wanted the 2nd argument? Well the process is
-                    very simple and we simply add a <code className="content__code">$2</code> instead of{" "}
+                    very simple and we simply add a{" "}
+                    <code className="content__code">$2</code> instead of{" "}
                     <code className="content__code">name=$1</code>
                   </p>
                   <p>
-                    Then run with <code className="content__code">./example.sh Alex Tony</code>
+                    Then run with{" "}
+                    <code className="content__code">
+                      ./example.sh Alex Tony
+                    </code>
                   </p>
                   <p>What do you think it would return ?</p>
                   <p>
-                    <code className="content__code">it would return "Tony".</code>
+                    <code className="content__code">
+                      it would return "Tony".
+                    </code>
                   </p>
                   <p>
                     What if we didn't want to supply them like this however, and
                     instead it would let us type in our name in a more
-                    interactive way, we can do this using <code className="content__code">read</code>.
+                    interactive way, we can do this using{" "}
+                    <code className="content__code">read</code>.
                   </p>
-                  <img id="img-full" src={exampleImage11} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage11} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     This code will hang after its ran, this gives you the
                     opportunity to type in your name.
                   </p>
-                  <img id="img-full" src={exampleImage12} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage12} alt="Example" />
+                    </div>
+                  </div>
                   <p>And we can see that it worked!</p>
                   <p>
                     Maybe try making a little biography maker, where you take
@@ -337,7 +437,6 @@ export default function Bash() {
                     parameters and I advice you to play around with them, after
                     all practice is what makes you better!
                   </p>
-
                   <div className="go-to-section">
                     <button
                       onClick={() =>
@@ -353,7 +452,7 @@ export default function Bash() {
                   <span>Topic 5</span> Arrays
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <h1>Arrays</h1>
+                  <h1 className="content__title">Arrays</h1>
                   <p>
                     For this module i suggest you follow along in a standard
                     linux terminal to make it easier to understand.
@@ -361,25 +460,29 @@ export default function Bash() {
                   <p>
                     Arrays are used to store multiple pieces of data in one
                     variable, which can then be extracted by using an index.
-                    Most commonly notated as <code className="content__code">var[index_position]</code>.
+                    Most commonly notated as{" "}
+                    <code className="content__code">var[index_position]</code>.
                   </p>
                   <p>
                     Arrays use indexing meaning that each item in an array
                     stands for a number.
                   </p>
                   <p>
-                    In the array <code className="content__code">['car', 'train', 'bike', 'bus'] </code>
+                    In the array{" "}
+                    <code className="content__code">
+                      ['car', 'train', 'bike', 'bus']{" "}
+                    </code>
                     each item has a corresponding index , All indexes start at
                     position 0
                   </p>
                   <table className="table table-bordered table-striped text-center mx-auto">
-                      <thead class="table-dark">
+                    <thead class="table-dark">
                       <tr>
                         <td>item</td>
                         <td>index</td>
                       </tr>
-                      </thead>
-                      <tbody>
+                    </thead>
+                    <tbody>
                       <tr>
                         <td>car</td>
                         <td>0</td>
@@ -402,18 +505,23 @@ export default function Bash() {
                   <p>The syntax is as follows :</p>
                   <p>
                     We have the variable name, in our case
-                    <code className="content__code"> ‘transport’</code> We then wrap each item in brackets
-                    leaving a space between each item.
+                    <code className="content__code"> ‘transport’</code> We then
+                    wrap each item in brackets leaving a space between each
+                    item.
                   </p>
                   <p>
-                    <code className="content__code">transport=('car' 'train' 'bike' 'bus')</code>
+                    <code className="content__code">
+                      transport=('car' 'train' 'bike' 'bus')
+                    </code>
                   </p>
                   <p>
                     We can then echo out all the elements in our array like
                     this:
                   </p>
                   <p>
-                    <code className="content__code">echo "$/&#123;transport[@]&#125;"</code>
+                    <code className="content__code">
+                      echo "$/&#123;transport[@]&#125;"
+                    </code>
                   </p>
                   <p>
                     You can try this in your own terminal and see what it
@@ -425,26 +533,34 @@ export default function Bash() {
                   </p>
                   <p>
                     We would simply type:
-                    <code className="content__code"> echo "$&#123;transport[1]&#125;"</code> because the
-                    train is at index position 1.
+                    <code className="content__code">
+                      {" "}
+                      echo "$&#123;transport[1]&#125;"
+                    </code>{" "}
+                    because the train is at index position 1.
                   </p>
                   <p>
                     The last thing we will cover is if we want to change an
                     element, or delete it. If we wanted to remove an element we
-                    would use the <code className="content__code">unset</code> utility.
+                    would use the <code className="content__code">unset</code>{" "}
+                    utility.
                   </p>
                   <p>
                     <code className="content__code">unset transport[1]</code>
                   </p>
                   <p>
-                    This now removes the <code className="content__code">train</code> item, if we wanted
-                    to we could echo it back out and see that it is indeed gone,
+                    This now removes the{" "}
+                    <code className="content__code">train</code> item, if we
+                    wanted to we could echo it back out and see that it is
+                    indeed gone,
                   </p>
                   <p>Now lets set it to something else. We can do:</p>
                   <p>transport[1]='trainride'</p>
                   <p>If we echo the array then we get:</p>
                   <p>
-                    <code className="content__code">car trainride bike bus</code>
+                    <code className="content__code">
+                      car trainride bike bus
+                    </code>
                   </p>
                   <p>
                     So we successfully managed to swap out an element in our
@@ -466,7 +582,11 @@ export default function Bash() {
                   <span>Topic 6</span> Conditionals
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <img id="img-full" src={exampleImage13} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage13} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     When we talk about conditionals it means that a certain
                     piece of code relies on a condition being met, this is often
@@ -485,9 +605,17 @@ export default function Bash() {
                     First, we will discuss the basic syntax of an if statement.
                   </p>
                   <p>All if statements look like so:</p>
-                  <img id="img-full" src={exampleImage14} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage14} alt="Example" />
+                    </div>
+                  </div>
                   <p>Let's look at an example:</p>
-                  <img id="img-full" src={exampleImage15} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage15} alt="Example" />
+                    </div>
+                  </div>
                   <p>
                     If statements always use a pair of brackets and in the case
                     of the [] we need to leave a space on both sides of the
@@ -505,11 +633,12 @@ export default function Bash() {
                     is equal to 10 so it outputs true.
                   </p>
                   <p>
-                    The <code className="content__code">-eq</code> is one way of doing this, you could
-                    also use <code className="content__code">“=”</code>
+                    The <code className="content__code">-eq</code> is one way of
+                    doing this, you could also use{" "}
+                    <code className="content__code">“=”</code>
                   </p>
                   <table className="table table-bordered table-striped text-center mx-auto">
-                  <thead class="table-dark">
+                    <thead class="table-dark">
                       <tr>
                         <th>Operator</th>
                         <th>Description</th>
@@ -560,7 +689,11 @@ export default function Bash() {
                     an input(a parameter) and checks it against a value to check
                     if it's true or not. A guessing game if you will.
                   </p>
-                  <img id="img-full" src={exampleImage16} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage16} alt="Example" />
+                    </div>
+                  </div>
                   <p>Now let's test this in our terminal.</p>
                   <div className="terminal-container">
                     <div className="terminal-content">
@@ -621,12 +754,17 @@ export default function Bash() {
                   </p>
                   <p>
                     We then check if it exists and if it has{" "}
-                    <code className="content__code">write permissions</code>. If it has write perms then
-                    we echo “hello” to it. If it is either non-accessible or
-                    doesn't exist we will create the file and echo{" "}
-                    <code className="content__code">“hello”</code> to it. Let's begin!
+                    <code className="content__code">write permissions</code>. If
+                    it has write perms then we echo “hello” to it. If it is
+                    either non-accessible or doesn't exist we will create the
+                    file and echo <code className="content__code">“hello”</code>{" "}
+                    to it. Let's begin!
                   </p>
-                  <img id="img-full" src={exampleImage17} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage17} alt="Example" />
+                    </div>
+                  </div>
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">
@@ -675,7 +813,8 @@ export default function Bash() {
                     Test to see if the age is under 18, if it is then echo out
                     their name with "You are not eligible for work" or something
                     along these lines, if they are over 18 then ask them for
-                    their job, you can do this with <code className="content__code">read</code>
+                    their job, you can do this with{" "}
+                    <code className="content__code">read</code>
                   </p>
                   <p>
                     Feel free to add anything you like and make it as

@@ -42,9 +42,9 @@ export default function Obfuscation() {
                   <span>Topic 1</span> Introduction
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <h1>Welcome to Obfuscation</h1>
+                  <h1 className="content__title">Welcome to Obfuscation</h1>
 
-                  <h2>What will you learn?</h2>
+                  <h2 className="content__title">What will you learn?</h2>
                   <ol>
                     <li>What are Obfuscation & Deobfuscation?</li>
                     <li>Why do we use Obfuscation?</li>
@@ -60,7 +60,9 @@ export default function Obfuscation() {
                   <p>
                     <br></br>
                   </p>
-                  <h1>What are Obfuscation & Deobfuscation?</h1>
+                  <h1 className="content__title">
+                    What are Obfuscation & Deobfuscation?
+                  </h1>
                   <h4>Obfuscation </h4>
                   <p>
                     The process of modifying the script to convert it to a
@@ -76,8 +78,12 @@ export default function Obfuscation() {
                     understandable one. This can be done with many tools.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage1} alt="Example" />
-                  <h2>Why do we use Obfuscation?</h2>
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage1} alt="Example" />
+                    </div>
+                  </div>
+                  <h2 className="content__title">Why do we use Obfuscation?</h2>
                   <br></br>
                   <p>
                     There are many reasons why you may use obfuscation, here are
@@ -95,9 +101,10 @@ export default function Obfuscation() {
                     </li>
                   </ol>
                   <br></br>
-                  <h2>Common Techniques of Obfuscation</h2>
+                  <h2 className="content__title">
+                    Common Techniques of Obfuscation
+                  </h2>
                   <br></br>
-
                   <h5>1 . Renaming Variables and Functions:</h5>
                   <p>
                     Changing the names of variables, functions, and classes to
@@ -138,13 +145,17 @@ export default function Obfuscation() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
-                  <h1>Javascript Obfuscation </h1>
+                  <h1 className="content__title">Javascript Obfuscation </h1>
                   <p>
                     There are several methods in JS obfuscation, one of them is
                     to remove spaces, this method is called code minify, usually
                     developers use this method as it reduces script file size.
                   </p>
-                  <img id="img-full" src={exampleImage2} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage2} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <h3>JS Obfuscation Tools </h3>
                   <br></br>
@@ -157,7 +168,11 @@ export default function Obfuscation() {
                     You can try it online from this link:
                     <a href="http://www.jsfuck.com">JSFuck</a>
                   </p>
-                  <img id="img-full" src={exampleImage3} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage3} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <h4>Packer Obfuscation</h4>
                   <p>
@@ -171,7 +186,11 @@ export default function Obfuscation() {
                       Packer Obfuscation
                     </a>
                   </p>
-                  <img id="img-full" src={exampleImage4} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage4} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <h4>JS deobfuscation Tools</h4>
                   <p>

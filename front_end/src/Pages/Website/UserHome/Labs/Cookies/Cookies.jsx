@@ -40,7 +40,7 @@ export default function Cookies() {
                   <span>Topic 1</span> What Are Cookies?
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                <h3 className="content__title">What Are Cookies?</h3>
+                  <h3 className="content__title">What Are Cookies?</h3>
                   <p>
                     Cookies are data that browsers store in small text files on
                     your computer.
@@ -117,7 +117,11 @@ export default function Cookies() {
                     enter your username and password every time you visit a
                     website.
                   </p>
-                  <img src={inLab3} alt="" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={inLab3} alt="Example" />
+                    </div>
+                  </div>
                 </dd>
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
@@ -131,41 +135,35 @@ export default function Cookies() {
                   </p>
                   <ul>
                     <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />
-                      
-                        <span>On Your Computer or Device: </span>Cookies are
-                        stored as small text files on your hard drive or in your
-                        device’s storage.
-                      
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      <span>On Your Computer or Device: </span>Cookies are
+                      stored as small text files on your hard drive or in your
+                      device’s storage.
                     </li>
                     <br></br>
                     <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />
-                      
-                        <span>In Your Web Browser: </span>Each browser (like
-                        Chrome, Firefox, or Safari) has its own way of storing
-                        cookies. They keep cookies in a specific location within
-                        the browser’s data storage.
-                      
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      <span>In Your Web Browser: </span>Each browser (like
+                      Chrome, Firefox, or Safari) has its own way of storing
+                      cookies. They keep cookies in a specific location within
+                      the browser’s data storage.
                     </li>
                     <br></br>
                     <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />
-                      
-                        <span>In the Browser’s Data Folder: </span>For instance,
-                        in Chrome, cookies are kept in the “ file located in the
-                        browser’s profile directory, while Firefox uses a
-                        database file called cookies.sqlite.
-                      
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      <span>In the Browser’s Data Folder: </span>For instance,
+                      in Chrome, cookies are kept in the “ file located in the
+                      browser’s profile directory, while Firefox uses a database
+                      file called cookies.sqlite.
                     </li>
                   </ul>
                 </dd>
@@ -174,7 +172,9 @@ export default function Cookies() {
                   <span>Topic 4</span>Cookies Manipulation
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <h2 className="content__title">Create a Cookie With JavaScript:</h2>
+                  <h2 className="content__title">
+                    Create a Cookie With JavaScript:
+                  </h2>
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">
@@ -246,7 +246,9 @@ export default function Cookies() {
                       </pre>
                     </div>
                   </div>
-                  <h2 className="content__title">Read a Cookie With JavaScript:</h2>
+                  <h2 className="content__title">
+                    Read a Cookie With JavaScript:
+                  </h2>
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">
@@ -268,7 +270,9 @@ export default function Cookies() {
                       </pre>
                     </div>
                   </div>
-                  <h2 className="content__title">Change a Cookie With JavaScript:</h2>
+                  <h2 className="content__title">
+                    Change a Cookie With JavaScript:
+                  </h2>
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">
@@ -292,7 +296,9 @@ export default function Cookies() {
                       </pre>
                     </div>
                   </div>
-                  <h2 className="content__title">Delete a Cookie With JavaScript:</h2>
+                  <h2 className="content__title">
+                    Delete a Cookie With JavaScript:
+                  </h2>
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top" style={{ fontSize: 12 }}>
@@ -317,7 +323,9 @@ export default function Cookies() {
                       </pre>
                     </div>
                   </div>
-                  <h2 className="content__title">A Function to Set a Cookie:</h2>
+                  <h2 className="content__title">
+                    A Function to Set a Cookie:
+                  </h2>
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">

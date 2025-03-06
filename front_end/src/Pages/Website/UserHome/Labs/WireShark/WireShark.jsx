@@ -68,7 +68,7 @@ export default function WireShark() {
                   <span>step 1</span> Introduction
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <h2>Wireshark Fundamentals</h2>
+                  <h2 className="content__title">Wireshark Fundamentals</h2>
                   <br></br>
                   <p>
                     Wireshark, a tool used for creating and analyzing PCAPs
@@ -79,7 +79,11 @@ export default function WireShark() {
                     common networking protocol.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage1} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage1} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     PCAPs used in this room have been sourced from the Wireshark
@@ -88,7 +92,7 @@ export default function WireShark() {
                     respective owners.
                   </p>
                   <br></br>
-                  <h2>Installation :</h2>
+                  <h2 className="content__title">Installation :</h2>
                   <br></br>
                   <p>
                     The installation for Wireshark is very easy and typically
@@ -105,7 +109,11 @@ export default function WireShark() {
                     install wireshark or a similar package manager.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage2} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage2} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     Note: Wireshark can come with other packages and tools; you
@@ -118,7 +126,7 @@ export default function WireShark() {
                   <span>step 2</span> Wireshark Overview
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <h2>Wireshark Overview :</h2>
+                  <h2 className="content__title">Wireshark Overview :</h2>
                   <br></br>
                   <p>
                     The first screen that we are greeted by when opening
@@ -127,7 +135,11 @@ export default function WireShark() {
                     that we are capturing.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage3} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage3} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     Here you can see that I have multiple interfaces to filter
@@ -151,7 +163,11 @@ export default function WireShark() {
                     available filters.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage4} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage4} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     You do not have to select a filter, it will only help to
@@ -176,7 +192,11 @@ export default function WireShark() {
                     begin your analysis.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage5} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage5} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     Looking at the screenshot above we see a sample capture.
@@ -206,7 +226,11 @@ export default function WireShark() {
                     captures.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage6} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage6} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     This quick glance at packet information can be useful to
@@ -393,7 +417,11 @@ export default function WireShark() {
                   </p>
                   <span>Syntax: ip.addr == &lt;IP Address&gt;</span>
                   <br></br>
-                  <img id="img-full" src={exampleImage7} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage7} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     This filter can be handy in practical applications, say when
@@ -415,7 +443,11 @@ export default function WireShark() {
                     </span>
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage8} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage8} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     Similar to the first filter we can see that Wireshark is
@@ -439,7 +471,11 @@ export default function WireShark() {
                     </span>
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage9} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage9} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     Filtering by UDP Protocols: You can also filter by UDP ports
@@ -470,7 +506,11 @@ export default function WireShark() {
                     the OSI model is and how it works.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage10} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage10} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <h4>Packet Details : </h4>
                   <p>
@@ -480,7 +520,11 @@ export default function WireShark() {
                     sample capture.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage11} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage11} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     Looking above we can see 7 distinct layers to the packet:
@@ -497,7 +541,11 @@ export default function WireShark() {
                     </li>
                   </ol>
                   <br></br>
-                  <img id="img-full" src={exampleImage12} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage12} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <ol>
                     <li>
@@ -507,7 +555,11 @@ export default function WireShark() {
                     </li>
                   </ol>
                   <br></br>
-                  <img id="img-full" src={exampleImage13} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage13} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <ol>
                     <li>
@@ -517,7 +569,11 @@ export default function WireShark() {
                     </li>
                   </ol>
                   <br></br>
-                  <img id="img-full" src={exampleImage14} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage14} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <ol>
                     <li>
@@ -527,7 +583,11 @@ export default function WireShark() {
                     </li>
                   </ol>
                   <br></br>
-                  <img id="img-full" src={exampleImage15} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage15} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <ol>
                     <li>
@@ -537,7 +597,11 @@ export default function WireShark() {
                     </li>
                   </ol>
                   <br></br>
-                  <img id="img-full" src={exampleImage16} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage16} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <ol>
                     <li>
@@ -547,7 +611,11 @@ export default function WireShark() {
                     </li>
                   </ol>
                   <br></br>
-                  <img id="img-full" src={exampleImage17} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage17} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <ol>
                     <li>
@@ -556,7 +624,11 @@ export default function WireShark() {
                     </li>
                   </ol>
                   <br></br>
-                  <img id="img-full" src={exampleImage18} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage18} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     Now that we understand what a general packet is composed of,
@@ -567,7 +639,7 @@ export default function WireShark() {
                 </dd>
 
                 <dt className="fadeInUp faq-header">
-                  <span> Step 7</span>ARP Traffic{" "}
+                  <span> Step 7</span>ARP Traffic
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
@@ -589,7 +661,11 @@ export default function WireShark() {
                     and replies.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage19} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage19} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     It is useful to note that most devices will identify
@@ -607,16 +683,24 @@ export default function WireShark() {
                     the side of caution when analyzing packets.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage20} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage20} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
-                  <h2>ARP Traffic Overview </h2>
+                  <h2 className="content__title">ARP Traffic Overview </h2>
                   <h4>ARP Request Packets : </h4>
                   <p>
                     We can begin analyzing packets by looking at the first ARP
                     Request packet and looking at the packet details.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage21} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage21} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     Looking at the packet details above, the most important
@@ -629,7 +713,11 @@ export default function WireShark() {
                   <br></br>
                   <h4>ARP Reply Packets:</h4>
                   <br></br>
-                  <img id="img-full" src={exampleImage22} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage22} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     Looking at the above packet details we can see from the
@@ -651,7 +739,7 @@ export default function WireShark() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <br></br>
-                  <h2>ICMP Overview</h2>
+                  <h2 className="content__title">ICMP Overview</h2>
                   <p>
                     ICMP or Internet Control Message Protocol is used to analyze
                     various nodes on a network. This is most commonly used with
@@ -665,7 +753,11 @@ export default function WireShark() {
                     from the server.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage23} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage23} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <h4>ICMP Traffic Overview</h4>
                   <br></br>
@@ -689,7 +781,11 @@ export default function WireShark() {
                     typically just be a random data string.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage24} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage24} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <h4>ICMP Reply:</h4>
                   <br></br>
@@ -704,11 +800,14 @@ export default function WireShark() {
                     as well, again the main difference will be the packet type
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage25} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage25} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <br></br>
-
-                  <h2>TCP Overview</h2>
+                  <h2 className="content__title">TCP Overview</h2>
                   <br></br>
                   <p>
                     TCP or Transmission Control Protocol handles the delivery of
@@ -722,7 +821,11 @@ export default function WireShark() {
                     ACK packet in red.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage26} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage26} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     When analyzing TCP packets, Wireshark can be very helpful
@@ -747,7 +850,11 @@ export default function WireShark() {
                     ack; That allows devices to establish a connection.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage27} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage27} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     Typically when this handshake is out of order or when it
@@ -767,7 +874,11 @@ export default function WireShark() {
                     is the sequence number and acknowledgment number.
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage28} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage28} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     In this case, we see that the port was not open because the
@@ -779,10 +890,18 @@ export default function WireShark() {
                     &gt; TCP &gt; relative sequence numbers (uncheck boxes).
                   </p>
                   <br></br>
-                  <img id="img-full" src={exampleImage29} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage29} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <br></br>
-                  <img id="img-full" src={exampleImage30} alt="Example" />
+                  <div className="Content__img--box">
+                    <div className="Content__img__box__over--hidden">
+                      <img src={exampleImage30} alt="Example" />
+                    </div>
+                  </div>
                   <br></br>
                   <p>
                     Typically TCP packets need to be looked at as a whole to
