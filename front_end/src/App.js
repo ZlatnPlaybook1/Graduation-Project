@@ -83,7 +83,6 @@ import CAREERS_IN_CYBER_MCQ from "./Pages/Website/UserHome/Labs/CareersInCyber/C
 import CAREERS_IN_CYBER_MCQ_PAGE from "./Pages/Website/UserHome/Labs/CareersInCyber/practical/MCQ/MCQPage.jsx";
 import CAREERS_IN_CYBER_MORE from "./Pages/Website/UserHome/Labs/CareersInCyber/more/MorePage.jsx";
 
-
 // End Careers in Cyber
 // Api Hacking
 import API_HACKING from "./Pages/Website/UserHome/Labs/Api-Hacking/Api_Hacking.jsx";
@@ -273,12 +272,13 @@ import RaceConditionInRegister from "./Pages/Website/UserHome/Labs/Condition_Rac
 import ViewRegistes from "./Pages/Website/UserHome/Labs/Condition_Race/Practical/Lab1/ViewRegistes.jsx";
 import ShoppingCart from "./Pages/Website/UserHome/Labs/Condition_Race/Practical/Lab2/ShoppingCart.jsx";
 import AboutUs from "./Pages/Website/AboutUs/AboutUs.jsx";
+import McqForm from "./Pages/Website/UserHome/Components/Mcq-Form-Sherif/McqForm.jsx";
 
 function App() {
   return (
     <div className="App">
-     
       <Routes>
+        <Route path="/quiz" element={<McqForm />} />
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
         {/* <Route element={<RequireBack />}> */}
@@ -517,7 +517,10 @@ function App() {
             path="/Digital_Forensics/MCQ/Vehicle"
             element={<VEHICLE_FORENSICS />}
           /> */}
-          <Route path="/Digital_Forensics/MCQ/:category" element={<DIGITAL_FORENSICS_MCQ_PAGE />} />
+          <Route
+            path="/Digital_Forensics/MCQ/:category"
+            element={<DIGITAL_FORENSICS_MCQ_PAGE />}
+          />
 
           {/* End Digital Forensics */}
           {/* Careers in Cyber */}
@@ -527,11 +530,16 @@ function App() {
             element={<CAREERS_IN_CYBER_MCQ />}
           />
 
-        <Route path="/CareersInCyber/CareersInCyber_MCQ/:category/MCQ" element={<CAREERS_IN_CYBER_MCQ_PAGE />} />
-        <Route path="/CareersInCyber/CareersInCyber_labs/:page" element={<CAREERS_IN_CYBER_MORE />} />
+          <Route
+            path="/CareersInCyber/CareersInCyber_MCQ/:category/MCQ"
+            element={<CAREERS_IN_CYBER_MCQ_PAGE />}
+          />
+          <Route
+            path="/CareersInCyber/CareersInCyber_labs/:page"
+            element={<CAREERS_IN_CYBER_MORE />}
+          />
 
-         
-        {/* End Careers in Cyber */}
+          {/* End Careers in Cyber */}
 
           {/* Api Hacking */}
           <Route path="/Api_Hacking" element={<API_HACKING />} />
