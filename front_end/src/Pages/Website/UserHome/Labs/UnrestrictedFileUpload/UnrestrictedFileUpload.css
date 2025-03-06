@@ -1,24 +1,8 @@
 /* Start Course Content */
-.modern-title {
-  font-family: "poppins", sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  color: #333;
-  background: linear-gradient(90deg, #4caf50, #2196f3);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-  padding: 10px 15px;
-  border: 2px solid transparent;
-  border-image: linear-gradient(90deg, #4caf50, #2196f3);
-  border-image-slice: 1;
-  border-radius: 8px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 .highlight-UnRestrict {
   font-weight: 600;
   text-transform: uppercase;
+  color: var(--main-color);
 }
 .Content .faq-File-image {
   width: 100%;
@@ -47,20 +31,14 @@
   padding: 12px 20px;
   border-radius: 8px;
   display: inline-block;
-  text-align: center;
-  border: 1px solid #ddd;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
 }
 
-.style-modern-fileUpload:hover {
-  background: var(--primary-bg);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
 .scnarios-fileUplode {
   font-size: 16px;
   font-weight: 400;
-  color: var(--primary-text);
+  color: var(--main-color);
 }
 .Content .faq-File-image:hover {
   transform: scale(1.05);
@@ -212,14 +190,7 @@
   border-left-color: #2ecc71;
   transform: translateX(5px);
 }
-.security-measures-list li::before {
-  content: "\2022";
-  color: #2ecc71;
-  font-size: 1.5rem;
-  margin-right: 10px;
-  display: inline-block;
-  font-weight: bold;
-}
+
 @media (max-width: 768px) {
   .security-measures-list {
     font-size: 0.9rem;

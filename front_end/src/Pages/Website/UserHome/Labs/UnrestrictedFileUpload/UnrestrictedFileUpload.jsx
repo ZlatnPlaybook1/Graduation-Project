@@ -12,7 +12,8 @@ import background from "../../assets/img/Unrestricted File Upload/background_Fil
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 export default function UnrestrictedFileUpload() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
@@ -51,7 +52,7 @@ export default function UnrestrictedFileUpload() {
                   <ul>
                     <li className="style">
                       <p>
-                        <div class="modern-title">
+                        <div class="content__subtitle">
                           Unrestricted File Upload{" "}
                         </div>
                         <div className="Files-first">
@@ -140,15 +141,32 @@ export default function UnrestrictedFileUpload() {
                     </li>
                     <ol>
                       <li>
-                        <span>• MIME-type validation</span>
+                        {" "}
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
+                        <b className="content__subtitle">
+                          • MIME-type validation
+                        </b>
                       </li>
                       <li>
-                        <span>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
+                        <b className="content__subtitle">
                           • Checking the file extension against a deny list{" "}
-                        </span>
+                        </b>
                       </li>
                       <li>
-                        <span>• Image header checks </span>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
+                        <b className="content__subtitle">
+                          • Image header checks{" "}
+                        </b>
                       </li>
                     </ol>
                     <li className="scnarios-fileUplode">
@@ -219,18 +237,34 @@ export default function UnrestrictedFileUpload() {
                     </li>
                     <ul className="styled-list">
                       <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
                         If the application filters file extensions and the MIME
                         type of the uploaded file.
                       </li>
                       <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
                         If placing executable JavaScript or HTML into the file
                         is possible.
                       </li>
                       <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
                         If the header information is returned after the contents
                         of a file are downloaded.
                       </li>
                       <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
                         If the storage location for uploaded content is
                         escapable with a crafted filename.
                       </li>
@@ -242,24 +276,44 @@ export default function UnrestrictedFileUpload() {
                     </li>
                     <ul className="security-measures-list">
                       <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
                         Developers must use an allow list, enforcing acceptance
                         of only listed, non-executable file extensions.
                       </li>
                       <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
                         Developers should ensure file names do not contain
                         directory traversal characters such as ../ that are used
                         to place files outside of designated directory
                         locations.
                       </li>
                       <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
                         Developers should alter permissions on the upload folder
                         to ensure the files can’t be executed.
                       </li>
                       <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
                         Uploads must not be placed in directories that are
                         accessible from the web.
                       </li>
                       <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
                         Developers should ensure that if uploaded files are
                         downloaded by users, they contain
                         X-Content-Type-options: nosniff header and a
@@ -267,10 +321,18 @@ export default function UnrestrictedFileUpload() {
                         handle files as an attachment.
                       </li>
                       <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
                         Uploaded files should be subject to immediate virus
                         scanning.
                       </li>
                       <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
                         Developers must enforce size limits on uploaded files
                         and reject archive formats (like ZIP) from being
                         uploaded at all.
