@@ -6,6 +6,8 @@ import background from "../../assets/img/linux/baner_lap.png";
 import Footer from "../../Footer/Footer";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 export default function Linux() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
@@ -36,6 +38,7 @@ export default function Linux() {
                   <span>Topic 1</span>Running Your First few Commands
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
+                <h3 className="content__title">Running Your First few Commands</h3>
                   <ul>
                     <li>
                       <p>
@@ -88,16 +91,18 @@ export default function Linux() {
                         commands to do so are self-explanatory (once you know
                         what they are of course...)
                       </p>
-                      <p>
+                      <p className="content__title">
                         Let's get started with two of the first commands which I
                         have broken down in the table below:
                       </p>
-                      <table className="table table-bordered">
-                        <tbody>
+                      <table className="table table-bordered table-striped text-center mx-auto table-striped text-center mx-auto">
+                          <thead class="table-dark">
                           <tr>
                             <td>Command</td>
                             <td>Description</td>
                           </tr>
+                          </thead>
+                          <tbody>
                           <tr>
                             <td>echo</td>
                             <td>Output any text that we provide</td>
@@ -110,10 +115,12 @@ export default function Linux() {
                           </tr>
                         </tbody>
                       </table>
-                      <h2 className="note">
+                      <br></br>
+                      <h2 className="content__title">
                         See the snippets below for an example of each command
                         being used...
                       </h2>
+                      <br></br>
                       <div className="terminal-container">
                         <div className="terminal-content">
                           <div className="terminal-top">Using echo</div>
@@ -148,6 +155,7 @@ export default function Linux() {
                           </pre>
                         </div>
                       </div>
+                      <br></br>
                       <div className="terminal-container">
                         <div className="terminal-content">
                           <div className="terminal-top">
@@ -191,8 +199,8 @@ export default function Linux() {
                   <ul>
                     <li>
                       <p>
-                        So far we've only covered the <span> echo </span>and
-                        <span> whoami </span>
+                        So far we've only covered the <code className="content__code"> echo </code>and
+                        <code className="content__code"> whoami </code>
                         commands. Not all that useful when you consider things
                         that we need to do - including navigating the
                         filesystem, read and write to it as well.
@@ -206,19 +214,22 @@ export default function Linux() {
                       </p>
                     </li>
                     <li>
-                      <h2>Interacting With the Filesystem</h2>
+                     <h2 className="content__title">Interacting With the Filesystem</h2>
                       <p>
                         As I previously stated, being able to navigate the
                         machine that you are logged into without relying on a
                         desktop environment is pretty important. After all,
                         what's the point of logging in if we can't go anywhere?
                       </p>
-                      <table className="table table-bordered">
-                        <tbody>
+                      <table className="table table-bordered table-striped text-center mx-auto table-striped text-center mx-auto">
+                        <thead class="table-dark">
+                        
                           <tr>
                             <td>Command</td>
                             <td>Full Name</td>
                           </tr>
+                          </thead>
+                          <tbody>
                           <tr>
                             <td>ls</td>
                             <td>listing</td>
@@ -239,14 +250,14 @@ export default function Linux() {
                       </table>
                     </li>
                     <li>
-                      <h2>Listing Files in Our Current Directory (ls)</h2>
+                     <h2 className="content__title">Listing Files in Our Current Directory (ls)</h2>
                       <p>
                         Before we can do anything such as finding out the
                         contents of any files or folders, we need to know what
                         exists in the first place. This can be done using the
                         "ls" command (short for listing)
                       </p>
-                      <p>
+                      <p className="content__title">
                         Using "ls" to to list the contents of the current
                         directory
                       </p>
@@ -288,15 +299,31 @@ export default function Linux() {
                           </pre>
                         </div>
                       </div>
-                      <p>
+                      <p className="content__title">
                         In the screenshot above, we can see there are the
                         following directories/folders:
                       </p>
                       <ol>
-                        <li>Important Files</li>
-                        <li>My Documents</li>
-                        <li>Notes</li>
-                        <li>Pictures</li>
+                        <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />Important Files</li>
+                        <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />My Documents</li>
+                        <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />Notes</li>
+                        <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />Pictures</li>
                       </ol>
                       <p>
                         Great! You can probably take a guess as to what to
@@ -310,15 +337,15 @@ export default function Linux() {
                       </h2>
                     </li>
                     <li>
-                      <h2>Changing Our Current Directory (cd)</h2>
+                     <h2 className="content__title">Changing Our Current Directory (cd)</h2>
                       <p>
                         Now that we know what folders exist, we need to use the
-                        <span> cd </span>command (short for change directory) to
+                        <code className="content__code"> cd </code>command (short for change directory) to
                         change to that directory. Say if I wanted to open the
-                        "Pictures" directory - I'd do <span>cd Pictures</span>.
+                        "Pictures" directory - I'd do <code className="content__code">cd Pictures</code>.
                         Where again, we want to find out the contents of this
                         "Pictures" directory and to do so, we'd use{" "}
-                        <span>ls</span> again:
+                        <code className="content__code">ls</code> again:
                       </p>
                       <div className="terminal-container">
                         <div className="terminal-content">
@@ -363,7 +390,7 @@ export default function Linux() {
                       </p>
                     </li>
                     <li>
-                      <h2>Outputting the Contents of a File (cat)</h2>
+                     <h2 className="content__title">Outputting the Contents of a File (cat)</h2>
                       <p>
                         Whilst knowing about the existence of files is great —
                         it's not all that useful unless we're able to view the
@@ -374,16 +401,16 @@ export default function Linux() {
                         to us that allows us to transfer files from one machine
                         to another in a later room. But for now, we're going to
                         talk about simply seeing the contents of text files
-                        using a command called <span>cat</span>.
+                        using a command called <code className="content__code">cat</code>.
                       </p>
                       <p>
-                        <span>Cat</span> is short for concatenating & is a
+                        <code className="content__code">Cat</code> is short for concatenating & is a
                         fantastic way for us to output the contents of files
                         (not just text files!).
                       </p>
                       <p>
                         In the screenshot below, you can see how I have combined
-                        the use of <span>ls</span> to list the files within a
+                        the use of <code className="content__code">ls</code> to list the files within a
                         directory called "Documents":
                       </p>
                       <div className="terminal-container">
@@ -455,19 +482,27 @@ export default function Linux() {
                       </p>
                       <ol>
                         <li>
-                          Used <span>ls</span> to let us know what files are
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
+                          Used <code className="content__code">ls</code> to let us know what files are
                           available in the "Documents" folder of this machine.
-                          In this case, it is called <span>todo.txt</span>.
+                          In this case, it is called <code className="content__code">todo.txt</code>.
                         </li>
                         <li>
-                          We have then used <span>cat todo.txt</span> to
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
+                          We have then used <code className="content__code">cat todo.txt</code> to
                           concatenate/output the contents of this "todo.txt"
                           file, where the contents are "Here's something
                           important for me to do later!"
                         </li>
                       </ol>
                       <h2 className="note">
-                        Pro tip: You can use <span>cat</span> to output the
+                        Pro tip: You can use <code className="content__code">cat</code> to output the
                         contents of a file within directories without having to
                         navigate to it by using cat and the name of the
                         directory. I.e. <br />
@@ -486,7 +521,7 @@ export default function Linux() {
                       </p>
                     </li>
                     <li>
-                      <h2>
+                     <h2 className="content__title">
                         Finding out the full Path to our Current Working
                         Directory (pwd)
                       </h2>
@@ -498,7 +533,7 @@ export default function Linux() {
                       <p>
                         It's easy to lose track of where we are on the
                         filesystem exactly, which is why I want to introduce{" "}
-                        <span>pwd</span>. This stands for print working
+                        <code className="content__code">pwd</code>. This stands for print working
                         directory.
                       </p>
                       <p>
@@ -564,25 +599,41 @@ export default function Linux() {
                       <p>Let's break this down:</p>
                       <ol>
                         <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
                           We already know we're in "Documents" thanks to our
                           terminal, but at this point in time, we have no idea
                           where "Documents" is stored so that we can get back to
                           it easily in the future.
                         </li>
                         <li>
-                          I have used the <span>pwd</span> (print working
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
+                          I have used the <code className="content__code">pwd</code> (print working
                           directory) command to find the full file path of this
                           "Documents" folder.
                         </li>
                         <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
                           We're helpfully told by Linux that this "Documents"
                           directory is stored at "/home/ubuntu/Documents" on the
                           machine — great to know!
                         </li>
                         <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
                           Now in the future, if we find ourselves in a different
                           location, we can just use
-                          <span> cd /home/ubuntu/Documents</span> to change our
+                          <code className="content__code"> cd /home/ubuntu/Documents</code> to change our
                           working directory to this "Documents" directory.
                         </li>
                       </ol>
@@ -590,7 +641,7 @@ export default function Linux() {
                   </ul>
                 </dd>
                 <dt className="fadeInUp faq-header">
-                  <span>Topic 3</span>Searching for Files
+                <span>Topic 3</span>Searching for Files
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <ul>
@@ -609,9 +660,9 @@ export default function Linux() {
                         with systems like this is using a set of commands to
                         quickly search for files across the entire system that
                         our user has access to. No need to consistently use
-                        <span> cd </span>
-                        and <span>ls</span> to find out what is where. Instead,
-                        we can use commands such as <span>find </span> to
+                        <code className="content__code"> cd </code>
+                        and <code className="content__code">ls</code> to find out what is where. Instead,
+                        we can use commands such as <code className="content__code">find </code> to
                         automate things like this for us!
                       </p>
                       <p>
@@ -621,7 +672,7 @@ export default function Linux() {
                       </p>
                     </li>
                     <li>
-                      <h2>Using Find</h2>
+                     <h2 className="content__title">Using Find</h2>
                       <p>
                         The find command is fantastic in the sense that it can
                         be used both very simply or rather complex depending
@@ -681,18 +732,36 @@ export default function Linux() {
                           </pre>
                         </div>
                       </div>
+                      <h3 className="content__title">we can see a list of directories
+                      available to us:</h3>
                       <ol>
-                        <li>Desktop</li>
-                        <li>Documents</li>
-                        <li>Pictures</li>
-                        <li>folder1</li>
+                        <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />Desktop</li>
+                        <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />Documents</li>
+                        <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />Pictures</li>
+                        <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />folder1</li>
                       </ol>
                       <p>
                         Now, of course, directories can contain even more
                         directories within themselves. It becomes a headache
                         when we're having to look through every single one just
                         to try and look for specific files. We can use
-                        <span> find</span> to do just this for us!
+                        <code className="content__code"> find</code> to do just this for us!
                       </p>
                       <p>
                         Let's start simple and assume that we already know the
@@ -702,7 +771,7 @@ export default function Linux() {
                       </p>
                       <p>
                         If we remember the filename, we can simply use
-                        <span> find -name passwords.txt</span> where the command
+                        <code className="content__code"> find -name passwords.txt</code> where the command
                         will look through every folder in our current directory
                         for that specific file like so:
                       </p>
@@ -773,7 +842,7 @@ export default function Linux() {
                         search for anything that has .txt at the end. In our
                         case, we want to find every .txt file that's in our
                         current directory. We will construct a command such as
-                        <span>find -name *.txt </span>. Where "Find" has been
+                        <code className="content__code">find -name *.txt </code>. Where "Find" has been
                         able to find every .txt file and has then given us the
                         location of each one:
                       </p>
@@ -839,15 +908,23 @@ export default function Linux() {
                       </div>
                       <p>Find has managed to find:</p>
                       <ol>
-                        <li>"passwords.txt" located within "folder1"</li>
-                        <li>"todo.txt" located within "Documents"</li>
+                        <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />"passwords.txt" located within "folder1"</li>
+                        <li>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />"todo.txt" located within "Documents"</li>
                       </ol>
                     </li>
                     <li>
-                      <h2>Using Grep</h2>
+                     <h2 className="content__title">Using Grep</h2>
                       <p>
                         Another great utility that is a great one to learn about
-                        is the use of <span>grep</span>. The <span>grep </span>
+                        is the use of <code className="content__code">grep</code>. The <code className="content__code">grep </code>
                         command allows us to search the contents of files for
                         specific values that we are looking for.
                       </p>
@@ -910,7 +987,7 @@ export default function Linux() {
                         </div>
                       </div>
                       <p>
-                        Using a command like <span>cat</span> isn't going to cut
+                        Using a command like <code className="content__code">cat</code> isn't going to cut
                         it too well here. Let's say for example if we wanted to
                         search this log file to see the things that a certain
                         user/IP address visited? Looking through 244 entries
@@ -918,7 +995,7 @@ export default function Linux() {
                         specific value.
                       </p>
                       <p>
-                        We can use <span>grep</span> to search the entire
+                        We can use <code className="content__code">grep</code> to search the entire
                         contents of this file for any entries of the value that
                         we are searching for. Going with the example of a web
                         server's access log, we want to see everything that the
@@ -1005,12 +1082,14 @@ export default function Linux() {
                         At an overview, I'm going to be showcasing the following
                         operators:
                       </p>
-                      <table className="table table-bordered">
-                        <tbody>
+                      <table className="table table-bordered table-striped text-center mx-auto">
+                          <thead class="table-dark">  
                           <tr>
                             <td>Symbol / Operator </td>
                             <td>Description</td>
                           </tr>
+                          </thead>
+                          <tbody>
                           <tr>
                             <td>&</td>
                             <td>
@@ -1037,7 +1116,7 @@ export default function Linux() {
                             <td>&gt;&gt;</td>
                             <td>
                               This operator does the same function of the{" "}
-                              <span>&gt;</span> operator but appends the output
+                              <code className="content__code">&gt;</code> operator but appends the output
                               rather than replacing (meaning nothing is
                               overwritten).
                             </td>
@@ -1047,7 +1126,7 @@ export default function Linux() {
                       <p>Let's cover these in a bit more detail.</p>
                     </li>
                     <li>
-                      <h2>Operator "&"</h2>
+                     <h2 className="content__title">Operator "&"</h2>
                       <p>
                         This operator allows us to execute commands in the
                         background. For example, let's say we want to copy a
@@ -1062,18 +1141,18 @@ export default function Linux() {
                       </p>
                     </li>
                     <li>
-                      <h2>Operator "&&"</h2>
+                     <h2 className="content__title">Operator "&&"</h2>
                       <p>
                         This shell operator is a bit misleading in the sense of
                         how familiar is to its partner "&". Unlike the "&"
                         operator, we can use "&&" to make a list of commands to
-                        run for example <span>command1 && command2</span>.
-                        However, it's worth noting that <span>command2 </span>
-                        will only run if <span>command2</span> was successful.
+                        run for example <code className="content__code">command1 && command2</code>.
+                        However, it's worth noting that <code className="content__code">command2 </code>
+                        will only run if <code className="content__code">command2</code> was successful.
                       </p>
                     </li>
                     <li>
-                      <h2>Operator "&gt;"</h2>
+                     <h2 className="content__title">Operator "&gt;"</h2>
                       <p>
                         This operator is what's known as an output redirector.
                         What this essentially means is that we take the output
@@ -1082,9 +1161,9 @@ export default function Linux() {
                       </p>
                       <p>
                         A great example of this is redirecting the output of the
-                        <span> echo</span> command that we learned in Topic 4.
+                        <code className="content__code"> echo</code> command that we learned in Topic 4.
                         Of course, running something such as
-                        <span> echo howdy </span>will return "howdy" back to our
+                        <code className="content__code"> echo howdy </code>will return "howdy" back to our
                         terminal — that isn't super useful. What we can do
                         instead, is redirect "howdy" to something such as a new
                         file!
@@ -1092,7 +1171,7 @@ export default function Linux() {
                       <p>
                         Let's say we wanted to create a file named "welcome"
                         with the message "hey". We can run
-                        <span> echo hey &gt; welcome</span> where we want the
+                        <code className="content__code"> echo hey &gt; welcome</code> where we want the
                         file created with the contents "hey" like so:
                       </p>
                       <div className="terminal-container">
@@ -1173,10 +1252,10 @@ export default function Linux() {
                       </h2>
                     </li>
                     <li>
-                      <h2>Operator "&gt;&gt;"</h2>
+                     <h2 className="content__title">Operator "&gt;&gt;"</h2>
                       <p>
                         This operator is also an output redirector like in the
-                        previous operator <span>&gt;</span> we discussed.
+                        previous operator <code className="content__code">&gt;</code> we discussed.
                         However, what makes this operator different is that
                         rather than overwriting any contents within a file, for
                         example, it instead just puts the output at the end.
@@ -1185,11 +1264,11 @@ export default function Linux() {
                         Following on with our previous example where we have the
                         file "welcome" that has the contents of "hey". If were
                         to use echo to add "hello" to the file using the
-                        <span> &gt;</span> operator, the file will now only have
+                        <code className="content__code"> &gt;</code> operator, the file will now only have
                         "hello" and not "hey".
                       </p>
                       <p>
-                        The <span>&gt;&gt;</span> operator allows to append the
+                        The <code className="content__code">&gt;&gt;</code> operator allows to append the
                         output to the bottom of the file — rather than replacing
                         the contents like so:
                       </p>

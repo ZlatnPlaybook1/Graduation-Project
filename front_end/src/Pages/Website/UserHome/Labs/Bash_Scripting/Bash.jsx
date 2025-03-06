@@ -101,14 +101,14 @@ export default function Bash() {
                   <img id="img-full" src={exampleImage2} alt="Example" />
                   <p>
                     This will return the string “Hello World”. The command “
-                    <span>"echo"</span>” is used to output text to the screen,
-                    the same way as “<span>print</span>” in python. I suggest
+                    <code className="content__code">"echo"</code>” is used to output text to the screen,
+                    the same way as “<code className="content__code">print</code>” in python. I suggest
                     you test this out in your terminal to get to grips with
                     bash!
                   </p>
                   You can also perform normal Linux commands inside your bash
                   script and it will be executed if formatted right. For example
-                  we can run the command “<span>ls</span>” inside our bash
+                  we can run the command “<code className="content__code">ls</code>” inside our bash
                   script and we will see the output when we run the file. So
                   lets make it do this!
                   <img id="img-full" src={exampleImage3} alt="Example" />
@@ -117,7 +117,7 @@ export default function Bash() {
                     understanding of Linux and its commands.
                   </p>
                   <p>
-                    I'm also not going to include the<span> #!/bin/bash </span>
+                    I'm also not going to include the<code className="content__code"> #!/bin/bash </code>
                     at the start of my code snippets otherwise it will take up a
                     lot of room so be aware that you need it always at the start
                     of your files!
@@ -126,9 +126,9 @@ export default function Bash() {
                     Now to run our bash script we must first give it executable
                     permissions :
                   </p>
-                  <span>Chmod +x yourfile.sh</span>
+                  <code className="content__code">Chmod +x yourfile.sh</code>
                   <p>
-                    And then we run it using <span>./</span>
+                    And then we run it using <code className="content__code">./</code>
                   </p>
                 </dd>
                 <dt className="fadeInUp faq-header">
@@ -142,8 +142,8 @@ export default function Bash() {
                   <strong>like so:</strong>
                   <img id="img-full" src={exampleImage4} alt="Example" />
                   <p>
-                    Where we give the value of <span>Jammy</span> and assign it
-                    to the variable <span>name</span>.
+                    Where we give the value of <code className="content__code">Jammy</code> and assign it
+                    to the variable <code className="content__code">name</code>.
                   </p>
                   <p>
                     Please note that for variables to work you cannot leave a
@@ -155,7 +155,7 @@ export default function Bash() {
                     simple.
                   </p>
                   <p>
-                    We have to add a <span>$</span> onto front of our variable
+                    We have to add a <code className="content__code">$</code> onto front of our variable
                     name in order to use it.
                   </p>
                   <img id="img-full" src={exampleImage5} alt="Example" />
@@ -249,7 +249,7 @@ export default function Bash() {
                   <img id="img-full" src={exampleImage6} alt="Example" />
                   <p>
                     So lets look at an example. This is our script from earlier
-                    being ran with <span>bash -x ./example.sh</span>
+                    being ran with <code className="content__code">bash -x ./example.sh</code>
                   </p>
                   <img id="img-full" src={exampleImage7} alt="Example" />
                   <p>
@@ -299,25 +299,25 @@ export default function Bash() {
                   </p>
                   <img id="img-full" src={exampleImage10} alt="Example" />
                   <p>
-                    We now run our script with <span>./example.sh Alex</span>
+                    We now run our script with <code className="content__code">./example.sh Alex</code>
                   </p>
                   <p>And sure enough we get returned with “Alex”</p>
                   <p>
                     So what if we wanted the 2nd argument? Well the process is
-                    very simple and we simply add a <span>$2</span> instead of{" "}
-                    <span>name=$1</span>
+                    very simple and we simply add a <code className="content__code">$2</code> instead of{" "}
+                    <code className="content__code">name=$1</code>
                   </p>
                   <p>
-                    Then run with <span>./example.sh Alex Tony</span>
+                    Then run with <code className="content__code">./example.sh Alex Tony</code>
                   </p>
                   <p>What do you think it would return ?</p>
                   <p>
-                    <span>it would return "Tony".</span>
+                    <code className="content__code">it would return "Tony".</code>
                   </p>
                   <p>
                     What if we didn't want to supply them like this however, and
                     instead it would let us type in our name in a more
-                    interactive way, we can do this using <span>read</span>.
+                    interactive way, we can do this using <code className="content__code">read</code>.
                   </p>
                   <img id="img-full" src={exampleImage11} alt="Example" />
                   <p>
@@ -361,23 +361,25 @@ export default function Bash() {
                   <p>
                     Arrays are used to store multiple pieces of data in one
                     variable, which can then be extracted by using an index.
-                    Most commonly notated as <span>var[index_position]</span>.
+                    Most commonly notated as <code className="content__code">var[index_position]</code>.
                   </p>
                   <p>
                     Arrays use indexing meaning that each item in an array
                     stands for a number.
                   </p>
                   <p>
-                    In the array <span>['car', 'train', 'bike', 'bus'] </span>
+                    In the array <code className="content__code">['car', 'train', 'bike', 'bus'] </code>
                     each item has a corresponding index , All indexes start at
                     position 0
                   </p>
-                  <table className="table table-bordered">
-                    <tbody>
+                  <table className="table table-bordered table-striped text-center mx-auto">
+                      <thead class="table-dark">
                       <tr>
                         <td>item</td>
                         <td>index</td>
                       </tr>
+                      </thead>
+                      <tbody>
                       <tr>
                         <td>car</td>
                         <td>0</td>
@@ -400,18 +402,18 @@ export default function Bash() {
                   <p>The syntax is as follows :</p>
                   <p>
                     We have the variable name, in our case
-                    <span> ‘transport’</span> We then wrap each item in brackets
+                    <code className="content__code"> ‘transport’</code> We then wrap each item in brackets
                     leaving a space between each item.
                   </p>
                   <p>
-                    <span>transport=('car' 'train' 'bike' 'bus')</span>
+                    <code className="content__code">transport=('car' 'train' 'bike' 'bus')</code>
                   </p>
                   <p>
                     We can then echo out all the elements in our array like
                     this:
                   </p>
                   <p>
-                    <span>echo "$/&#123;transport[@]&#125;"</span>
+                    <code className="content__code">echo "$/&#123;transport[@]&#125;"</code>
                   </p>
                   <p>
                     You can try this in your own terminal and see what it
@@ -419,30 +421,30 @@ export default function Bash() {
                   </p>
                   <p>
                     So what if we wanted to print out the item
-                    <span> train</span>.
+                    <code className="content__code"> train</code>.
                   </p>
                   <p>
                     We would simply type:
-                    <span> echo "$&#123;transport[1]&#125;"</span> because the
+                    <code className="content__code"> echo "$&#123;transport[1]&#125;"</code> because the
                     train is at index position 1.
                   </p>
                   <p>
                     The last thing we will cover is if we want to change an
                     element, or delete it. If we wanted to remove an element we
-                    would use the <span>unset</span> utility.
+                    would use the <code className="content__code">unset</code> utility.
                   </p>
                   <p>
-                    <span>unset transport[1]</span>
+                    <code className="content__code">unset transport[1]</code>
                   </p>
                   <p>
-                    This now removes the <span>train</span> item, if we wanted
+                    This now removes the <code className="content__code">train</code> item, if we wanted
                     to we could echo it back out and see that it is indeed gone,
                   </p>
                   <p>Now lets set it to something else. We can do:</p>
                   <p>transport[1]='trainride'</p>
                   <p>If we echo the array then we get:</p>
                   <p>
-                    <span>car trainride bike bus</span>
+                    <code className="content__code">car trainride bike bus</code>
                   </p>
                   <p>
                     So we successfully managed to swap out an element in our
@@ -490,7 +492,7 @@ export default function Bash() {
                     If statements always use a pair of brackets and in the case
                     of the [] we need to leave a space on both sides of the
                     text(the bash syntax). We also always need to end the if
-                    statement with <span>fi</span>
+                    statement with <code className="content__code">fi</code>
                   </p>
                   <p>
                     Here a variable is being declared as 10 and in the top line
@@ -503,11 +505,11 @@ export default function Bash() {
                     is equal to 10 so it outputs true.
                   </p>
                   <p>
-                    The <span>-eq</span> is one way of doing this, you could
-                    also use <span>“=”</span>
+                    The <code className="content__code">-eq</code> is one way of doing this, you could
+                    also use <code className="content__code">“=”</code>
                   </p>
-                  <table className="table table-bordered">
-                    <thead>
+                  <table className="table table-bordered table-striped text-center mx-auto">
+                  <thead class="table-dark">
                       <tr>
                         <th>Operator</th>
                         <th>Description</th>
@@ -619,10 +621,10 @@ export default function Bash() {
                   </p>
                   <p>
                     We then check if it exists and if it has{" "}
-                    <span>write permissions</span>. If it has write perms then
+                    <code className="content__code">write permissions</code>. If it has write perms then
                     we echo “hello” to it. If it is either non-accessible or
                     doesn't exist we will create the file and echo{" "}
-                    <span>“hello”</span> to it. Let's begin!
+                    <code className="content__code">“hello”</code> to it. Let's begin!
                   </p>
                   <img id="img-full" src={exampleImage17} alt="Example" />
                   <div className="terminal-container">
@@ -673,7 +675,7 @@ export default function Bash() {
                     Test to see if the age is under 18, if it is then echo out
                     their name with "You are not eligible for work" or something
                     along these lines, if they are over 18 then ask them for
-                    their job, you can do this with <span>read</span>
+                    their job, you can do this with <code className="content__code">read</code>
                   </p>
                   <p>
                     Feel free to add anything you like and make it as
