@@ -103,3 +103,26 @@ export const isValidCoupon = async (req: Request, res: Response) => {
         return res.status(500).json({ error: "Internal Server Error" });
     }
 };
+
+export const resetLab = async (req: Request, res: Response) => {
+    try {
+        // Start a transaction to ensure atomicity
+        await prisma.$transaction(async (tx) => {
+            // Delete all records from lab2RaceConditionPrice table
+            await tx.lab2RaceConditionPrice.deleteMany({});
+
+            // Update all records in lab2RaceCondition table
+            await tx.lab2RaceCondition.updateMany({
+                data: {
+                    isValid: true,
+                    usedAt: null
+                }
+            });
+        });
+
+        return res.status(200).json({ message: "Lab reset successfully" });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: "Internal Server Error" });
+    }
+};
