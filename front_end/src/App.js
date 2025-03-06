@@ -272,13 +272,11 @@ import RaceConditionInRegister from "./Pages/Website/UserHome/Labs/Condition_Rac
 import ViewRegistes from "./Pages/Website/UserHome/Labs/Condition_Race/Practical/Lab1/ViewRegistes.jsx";
 import ShoppingCart from "./Pages/Website/UserHome/Labs/Condition_Race/Practical/Lab2/ShoppingCart.jsx";
 import AboutUs from "./Pages/Website/AboutUs/AboutUs.jsx";
-import McqForm from "./Pages/Website/UserHome/Components/Mcq-Form-Sherif/McqForm.jsx";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/quiz" element={<McqForm />} />
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
         {/* <Route element={<RequireBack />}> */}

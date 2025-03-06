@@ -3,6 +3,7 @@ import axios from "axios";
 import "./ShoppingCart.css";
 import GoBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function ShoppingCart() {
   const [products, setProducts] = useState([]);
@@ -96,6 +97,7 @@ export default function ShoppingCart() {
     <>
       <GoBack />
       <ShowHint hintText="Use Repeater to send the same coupon request multiple times." />
+      <ThemeSwitcher />
       <div className="cart-center">
         <div className="shopping-cart">
           <div className="info-bar">
@@ -129,7 +131,7 @@ export default function ShoppingCart() {
               <button className="apply-btn" onClick={applyDiscount}>
                 Apply Discount
               </button>
-              <button className="clear-btn" onClick={clearDiscount}>
+              <button className="apply-btn" onClick={clearDiscount}>
                 Clear Discount
               </button>
             </div>

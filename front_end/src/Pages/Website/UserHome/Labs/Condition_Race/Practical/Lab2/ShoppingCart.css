@@ -6,7 +6,16 @@
   min-height: 100vh;
   padding: 20px;
 }
-
+@media (max-width: 768px) {
+  .cart-center {
+    margin-top: 60px;
+  }
+}
+@media (max-width: 1123px) {
+  .cart-center {
+    margin-top: 50px;
+  }
+}
 .shopping-cart {
   background: #fff;
   border-radius: 12px;
@@ -17,7 +26,7 @@
 }
 
 .info-bar {
-  background: #007bff;
+  background: var(--main-color);
   color: #fff;
   padding: 10px;
   border-radius: 8px;
@@ -61,12 +70,12 @@
 
 .product-price {
   font-size: 16px;
-  color: #007bff;
+  color: var(--main-color);
   margin-bottom: 15px;
 }
 
 .add-btn {
-  background: #007bff;
+  background: var(--main-color2);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -76,7 +85,7 @@
 }
 
 .add-btn:hover {
-  background: #0056b3;
+  background: var(--main-color);
 }
 
 .coupon-section {
@@ -88,13 +97,13 @@
 .coupon-input {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--main-color);
   border-radius: 5px;
   font-size: 16px;
 }
 
 .apply-btn {
-  background: #28a745;
+  background: var(--main-color);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -104,7 +113,7 @@
 }
 
 .apply-btn:hover {
-  background: #218838;
+  background: var(--main-color2);
 }
 
 .discount-info {
@@ -126,6 +135,17 @@
   font-weight: 700;
   color: #333;
   margin-top: 10px;
+}
+.reset-btn {
+  background: var(--main-color3);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .message-box {
