@@ -131,21 +131,15 @@ const CyberLabTask = () => {
     </ul>
   `;
   return (
-    <>
+    <div className="Custom__body--bg py-5">
       {" "}
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
       <div className=" w-100 p-y5 my-5">
         <div className="container mt-5">
-          <div
-            style={{
-              height: "2rem",
-            }}
-          ></div>
-          <div className="intro-card shadow-lg">
-            <div className="card-body mt-5">
+          
               {/* Title */}
-              <h2 className="card-title my-4 display-5 title-gradient">
+              <h2 className="title-gradient text-center my-4">
                 Hashing Task 🔒
               </h2>
 
@@ -161,11 +155,11 @@ const CyberLabTask = () => {
                   to generate their hashes. This task helps you understand:
                 </p>
                 <ul className="list-group list-group-flush mb-4">
-                  <li className="list-group-item">✔️ How hashing works</li>
-                  <li className="list-group-item">
+                  <li className="list-group-item secondary-bg primary-text bb-1">✔️ How hashing works</li>
+                  <li className="list-group-item secondary-bg primary-text bb-1">
                     ✔️ Differences between MD5, SHA-1, and SHA-256
                   </li>
-                  <li className="list-group-item">
+                  <li className="list-group-item secondary-bg primary-text bb-1">
                     ✔️ Practical applications of hashing in cybersecurity
                   </li>
                 </ul>
@@ -181,7 +175,7 @@ const CyberLabTask = () => {
                   className="accordion custom-accordion"
                   id="exampleAccordion"
                 >
-                  <div className="accordion-item">
+                  <div className="accordion-item secondary-bg primary-text">
                     <h2 className="accordion-header" id="exampleHeading">
                       <button
                         className="accordion-button collapsed custom-accordion-button"
@@ -206,11 +200,11 @@ const CyberLabTask = () => {
                     >
                       <div className="accordion-body text-left ">
                         <h5>Example Input:</h5>
-                        <pre className="bg-light p-2 text-danger">
+                        <pre className="primary-bg p-2 main-color">
                           Hashed Word 1: 5f4dcc3b5aa765d61d8327deb882cf99
                         </pre>
                         <h5>Example Output:</h5>
-                        <pre className="bg-light p-2 text-danger">
+                        <pre className="primary-bg p-2 main-color">
                           {'{ "word": "password", "hashed_algorithm": "MD5" }'}
                         </pre>
                       </div>
@@ -280,12 +274,11 @@ const CyberLabTask = () => {
                   </div>
                 </div>
               )}
-            </div>
-          </div>
+           
         </div>
       </div>
       <Go2TopBtn />
-    </>
+    </div>
   );
 };
 
