@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import "./team.css";
 import Aos from "aos";
 import image1 from "../assets/img/team-img/member1.jpg";
@@ -94,16 +94,16 @@ const teamMembers = [
 const departments = ["Cyber", "Frontend", "Backend"];
 
 const TeamSection = () => {
-    useEffect(() => {
-      Aos.init({ duration: 1000 });
-    }, []);
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <section id="team" className="team-section section">
       <div className="container">
         <div className="courses__header container" data-aos="fade-up">
-        <h2 className="courses__title">Our Team</h2>
-        <p className="courses__subtitle">team members</p>
-      </div>
+          <h2 className="courses__title">Our Team</h2>
+          <p className="courses__subtitle">team members</p>
+        </div>
         {departments.map((dept) => {
           const deptMembers = teamMembers.filter(
             (member) => member.department === dept
@@ -114,12 +114,12 @@ const TeamSection = () => {
                 {dept} Team
               </h3>
 
-              <div className="row justify-content-center gap-5 ">
+              <div className="row justify-content-center">
                 {deptMembers.map((member) => (
                   <div
                     key={member.id}
-                    className="col-md-4 col-sm-6 mb-4 team-section__member-wrapper  team-section__member card bg-transparent col-md-4 col-sm-6 mb-4"
-                  data-aos="zoom-in">
+                    className="col-md-4 col-sm-6 mb-4 team-section__member-wrapper  team-section__member card bg-transparent"
+                  >
                     {/* <div className="team-section__member card bg-transparent col-md-4 col-sm-6 mb-4"> */}
                     <div className="team-section__member-img card-img-top">
                       <img
