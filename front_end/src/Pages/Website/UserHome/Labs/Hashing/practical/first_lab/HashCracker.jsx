@@ -98,13 +98,13 @@ const HashCracker = () => {
               common strings. Useful for:
             </p>
             <ul className="list-group list-group-flush mb-4">
-              <li className="list-group-item">
+              <li className="list-group-item secondary-bg primary-text bb-1">
                 ✔️ Recovering lost passwords
               </li>
-              <li className="list-group-item">
+              <li className="list-group-item secondary-bg primary-text bb-1">
                 ✔️ Testing the strength of hashed data
               </li>
-              <li className="list-group-item">
+              <li className="list-group-item secondary-bg primary-text bb-1">
                 ✔️ Understanding hash vulnerabilities
               </li>
             </ul>
@@ -127,7 +127,7 @@ const HashCracker = () => {
               className="accordion custom-accordion"
               id="exampleAccordion"
             >
-              <div className="accordion-item">
+              <div className="accordion-item secondary-bg primary-text">
                 <h2 className="accordion-header" id="exampleHeading">
                   <button
                     className="accordion-button collapsed custom-accordion-button"
@@ -151,17 +151,17 @@ const HashCracker = () => {
                 >
                   <div className="accordion-body text-left">
                     <h5>Example 1: MD5 Hash</h5>
-                    <p className="text-muted">
+                    <p className="secondary-text">
                       Try cracking the MD5 hash of the word{" "}
                       <code>password</code>:
                     </p>
                     <ul className="list-group mb-3">
-                      <li className="list-group-item">
+                      <li className="list-group-item secondary-bg primary-text">
                         <strong>Hash:</strong>{" "}
                         <code>5f4dcc3b5aa765d61d8327deb882cf99</code>
                       </li>
                     </ul>
-                    <p className="text-muted">
+                    <p className="secondary-text">
                       When you enter this hash, the result will be{" "}
                       <strong className="text-success">
                         "Cracked! The original string is: password (MD5)"
@@ -170,19 +170,19 @@ const HashCracker = () => {
                     </p>
 
                     <h5 className="mt-4">Example 2: SHA-1 Hash</h5>
-                    <p className="text-muted">
+                    <p className="secondary-text">
                       Try cracking the SHA-1 hash of the word{" "}
                       <code>admin</code>:
                     </p>
                     <ul className="list-group mb-3">
-                      <li className="list-group-item">
+                      <li className="list-group-item secondary-bg primary-text">
                         <strong>Hash:</strong>{" "}
                         <code>
                           d033e22ae348aeb5660fc2140aec35850c4da997
                         </code>
                       </li>
                     </ul>
-                    <p className="text-muted">
+                    <p className="secondary-text">
                       When you enter this hash, the result will be{" "}
                       <strong className="text-success">
                         "Cracked! The original string is: admin (SHA-1)"
@@ -191,19 +191,19 @@ const HashCracker = () => {
                     </p>
 
                     <h5 className="mt-4">Example 3: SHA-256 Hash</h5>
-                    <p className="text-muted">
+                    <p className="secondary-text">
                       Try cracking the SHA-256 hash of the word{" "}
                       <code>letmein</code>:
                     </p>
                     <ul className="list-group mb-3">
-                      <li className="list-group-item">
+                      <li className="list-group-item secondary-bg primary-text">
                         <strong>Hash:</strong>{" "}
                         <code>
                           0acf4539a14b3aa27deeb4cbdf6e4f2a7b5a2b2e
                         </code>
                       </li>
                     </ul>
-                    <p className="text-muted">
+                    <p className="secondary-text">
                       When you enter this hash, the result will be{" "}
                       <strong className="text-success">
                         "Cracked! The original string is: letmein (SHA-256)"
@@ -284,7 +284,7 @@ const HashCracker = () => {
               className="accordion custom-accordion"
               id="dictionaryAccordion"
             >
-              <div className="accordion-item">
+              <div className="accordion-item secondary-bg primary-text">
                 <h2 className="accordion-header" id="dictionaryHeading">
                   <button
                     className="accordion-button collapsed custom-accordion-button"
@@ -309,18 +309,18 @@ const HashCracker = () => {
                   data-bs-parent="#dictionaryAccordion"
                 >
                   <div className="accordion-body text-left">
-                    <p className="text-muted">
+                    <p className="secondary-text">
                       You can modify our dictionary from here:
                     </p>
                     <ul className="list-group mb-3">
                       {dictionary.map((word, index) => (
                         <li
                           key={index}
-                          className="list-group-item d-flex justify-content-between align-items-center"
+                          className="list-group-item secondary-bg primary-text bb-1 d-flex justify-content-between align-items-center"
                         >
                           {word}
                           <button
-                            className="btn btn-sm btn-danger"
+                            className="btn btn-sm btn-danger primary-text"
                             onClick={() => handleDeleteEntry(index)}
                           >
                             <FontAwesomeIcon icon={faTrash} />
@@ -328,14 +328,16 @@ const HashCracker = () => {
                         </li>
                       ))}
                     </ul>
-                    <div className="input-group mb-3">
+                    <div className="form-floating mb-3 input-group">
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control w-75"
                         placeholder="Add new entry"
                         value={newEntry}
                         onChange={(e) => setNewEntry(e.target.value)}
+                      id="floatingInput"
                       />
+                      <label htmlFor="floatingInput">Add new entry</label>
                       <button
                         className="btn btn-primary"
                         onClick={handleAddEntry}
@@ -357,7 +359,7 @@ const HashCracker = () => {
             </h3>
             <div className="row">
               <div className="col-md-6">
-                <p className="text-muted">
+                <p className="secondary-text">
                   Watch this video to understand how hash cracking works:
                 </p>
               </div>
@@ -385,7 +387,7 @@ const HashCracker = () => {
               the following resources:
             </p>
             <ul className="list-group list-group-flush mb-4">
-              <li className="list-group-item">
+              <li className="list-group-item secondary-bg primary-text bb-1">
                 <a
                   href="https://en.wikipedia.org/wiki/Password_cracking"
                   target="_blank"
@@ -396,7 +398,7 @@ const HashCracker = () => {
                   <FontAwesomeIcon icon={faInfoCircle} className="ms-2" />
                 </a>
               </li>
-              <li className="list-group-item">
+              <li className="list-group-item secondary-bg primary-text bb-1">
                 <a
                   href="https://www.geeksforgeeks.org/hash-cracking/"
                   target="_blank"
