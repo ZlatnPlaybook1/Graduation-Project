@@ -61,7 +61,7 @@ export const isValidCoupon = async (req: Request, res: Response) => {
             }
 
             // Calculate the new price after discount
-            const priceAfterDiscount = priceBeforeDiscount.price - 50;
+            const priceAfterDiscount = priceBeforeDiscount.price - (storedCoupon.discount || 50);
 
             // Update the price atomically
             await tx.lab2RaceConditionPrice.update({
