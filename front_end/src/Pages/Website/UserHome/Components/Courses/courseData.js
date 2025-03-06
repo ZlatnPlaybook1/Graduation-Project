@@ -483,9 +483,9 @@ const courseData = [
     description:
       "Placeholder course offering preliminary topics, soon updated with comprehensive content.",
     topics: ["Topic 1", "Topic 2", "Topic 3", "Topic 4"],
-    difficulty: "Beginner",
-    image: require("../../assets/img/Lab2.jpg"),
-    state: "not-published",
+    difficulty: "Hard",
+    image: require("../../assets/img/Server Side Template Injection/Untitled.png"),
+    state: "semi-published",
     link: "/ssrf",
   },
   {
