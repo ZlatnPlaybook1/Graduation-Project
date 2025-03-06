@@ -372,7 +372,7 @@ export default function BurpSuit() {
                     <h2 className="faq-burp-title">
                       Reissue requests with Burp Repeater
                     </h2>
-                    <p className="faq-burp-text">
+                    <p className="faq-burp-desciption">
                       In this tutorial, you'll use Burp Repeater to send an
                       interesting request over and over again. This lets you
                       study the target website's response to different input

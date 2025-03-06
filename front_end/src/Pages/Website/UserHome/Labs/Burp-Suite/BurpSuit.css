@@ -9,7 +9,7 @@
 .faq-burp-step {
   font-size: 30px;
   font-weight: 600;
-  color: #007bff;
+  color: var(--main-color);
   margin-top: 20px;
 }
 

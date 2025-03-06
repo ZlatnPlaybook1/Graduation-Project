@@ -17,7 +17,8 @@ export default function ShoppingCart() {
   );
   const [totalPrice, setTotalPrice] = useState(
     (JSON.parse(localStorage.getItem("cart")) || []).reduce(
-      (sum, price) => sum + price, 0
+      (sum, price) => sum + price,
+      0
     ) - discount
   );
 
@@ -33,7 +34,7 @@ export default function ShoppingCart() {
 
   useEffect(() => {
     const cartTotal = cart.reduce((sum, price) => sum + price, 0) - discount;
-    setTotalPrice(cartTotal); // Update total before applying coupon
+    setTotalPrice(cartTotal);
     updateTotalOnServer(cartTotal);
     localStorage.setItem("cart", JSON.stringify(cart));
     localStorage.setItem("discount", discount);
@@ -41,7 +42,9 @@ export default function ShoppingCart() {
 
   const updateTotalOnServer = (updatedTotal) => {
     axios
-      .post("http://127.0.0.1:8080/api/ShoppingCart/price", { totalPrice: updatedTotal })
+      .post("http://127.0.0.1:8080/api/ShoppingCart/price", {
+        totalPrice: updatedTotal,
+      })
       .catch((error) => console.error("Error updating total:", error));
   };
 
@@ -58,7 +61,7 @@ export default function ShoppingCart() {
       .then((response) => {
         setMessage(response.data.message);
         setDiscount(response.data.discount || 0);
-        setTotalPrice(response.data.totalPrice); // Receive total from backend
+        setTotalPrice(response.data.totalPrice);
       })
       .catch((error) => console.error("Error applying discount:", error));
   };
@@ -74,15 +77,19 @@ export default function ShoppingCart() {
   };
 
   const resetCart = () => {
-    setCart([]);
-    setDiscount(0);
-    setUserCoupon("");
-    setMessage("");
-    localStorage.removeItem("cart");
-    localStorage.removeItem("discount");
+    axios
+      .delete("http://127.0.0.1:8080/api/Resetlab2RaceCondition")
+      .then(() => {
+        setCart([]);
+        setDiscount(0);
+        setUserCoupon("");
+        setMessage("");
+        localStorage.removeItem("cart");
+        localStorage.removeItem("discount");
 
-    setTotalPrice(0);
-    updateTotalOnServer(0);
+        setTotalPrice(0);
+      })
+      .catch((error) => console.error("Error resetting cart:", error));
   };
 
   return (
