@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../../../../Components/HackerLoginForm/HackerLoginForm.css";
@@ -6,20 +6,20 @@ import { Link } from "react-router-dom";
 import Cookie from "cookie-universal";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
-import { jwtDecode } from "jwt-decode";
+import {jwtDecode} from "jwt-decode";
 
 const JWTLogin = ({ apiEndpoint, hint, tokenName, lab }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [decodedToken, setDecodedToken] = useState("null");
   const [loading, setLoading] = useState(false);
-  const [login, setLogin] = useState(false);
   const [err, setErr] = useState("");
+  const [login, setLogin] = useState(false);
   const cookie = Cookie();
   const navigate = useNavigate();
-  const staticExpireTime = 900000; // Token expiration time (15 minutes)
+  const staticExpireTime = 900000;
   const adminurl = `/jwtattacks/jwtattacks_lab/${lab}/admin`;
   const userurl = `/jwtattacks/jwtattacks_lab/${lab}/user`;
+
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,50 +30,35 @@ const JWTLogin = ({ apiEndpoint, hint, tokenName, lab }) => {
       .post(`${apiEndpoint}/login`, data)
       .then((response) => {
         const token = response.data.data.token;
-        console.log(data);
-        // Set the token cookie with specific name and path, and static expiration time
         const expiresIn = new Date(Date.now() + staticExpireTime);
         if (token) {
           cookie.set(tokenName, token, { expires: expiresIn });
           setLogin(true);
-          try {
-            setDecodedToken(jwtDecode(token)); // Decode only if token is valid
-          } catch (e) {
-            console.error("Failed to decode token:", e);
-          }
         }
-
         setLoading(false);
-        if (decodedToken.username === "admin") {
-          navigate(adminurl); // Redirect to admin page
-        } else if (decodedToken.username !== "admin" && login === true) {
-          navigate(userurl); // Redirect to user page
-        }
       })
       .catch((error) => {
         setLoading(false);
         setErr(error.response?.data?.message || "Invalid credentials.");
       });
   };
-
-
-  // UseEffect to handle token on page load (for example, when refreshing the page)
-  React.useEffect(() => {
-    const token = cookie.get(tokenName);
-    if (token) {
-      try {
-        // Token is valid, handle decoded token here (if needed)
-      } catch (e) {
-        // If decoding the token fails, delete the invalid token from cookies
-        cookie.remove(tokenName);
-        console.error("Invalid token:", e);
-        // You may want to redirect or show a message for invalid token
-        navigate(userurl); // Redirect to user page (or another appropriate page)
+  useEffect(() => {
+    if (login) {
+      const token = cookie.get(tokenName);
+      if (token) {
+        try {
+          const decodedToken = jwtDecode(token);
+          if (decodedToken.username === "admin") {
+            navigate(adminurl);
+          } else {
+            navigate(userurl);
+          }
+        } catch (e) {
+          console.error("Failed to decode token:", e);
+        }
       }
-    } else {
-      console.log("No token found.");
     }
-  }, [tokenName, cookie, navigate]);
+  }, [login, cookie, navigate, tokenName, adminurl, userurl]);
 
   const spanCount = 400;
   const hintMessage = hint;
