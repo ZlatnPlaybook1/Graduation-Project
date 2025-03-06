@@ -20,17 +20,15 @@
   font-weight: 600;
   text-transform: uppercase;
 }
-.Content .imageUnrest {
+.Content .faq-File-image {
   width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
+  max-width: 600px;
+  display: block;
+  margin: 15px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  left: 33% !important;
-  margin: 20px 0;
-  height: 100% !important;
-  right: 0;
   transform: translateY(-50%, -50%);
 }
 .Files-first {
@@ -64,25 +62,25 @@
   font-weight: 400;
   color: var(--primary-text);
 }
-.Content .imageUnrest:hover {
+.Content .faq-File-image:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .Content .imageUnrest {
+  .Content .faq-File-image {
     max-width: 350px;
     left: 20%;
   }
 }
 @media (max-width: 768px) {
-  .Content .imageUnrest {
+  .Content .faq-File-image {
     max-width: 100%;
     left: 0%;
   }
 }
 @media (max-width: 480px) {
-  .Content .imageUnrest {
+  .Content .faq-File-image {
     max-width: 90%;
     left: 5%;
   }
@@ -175,15 +173,15 @@
   font-size: 1rem;
   padding: 10px 15px;
   margin: 8px 0;
-  background-color: #f9f9f9;
-  border-left: 4px solid #3498db;
+  background-color: var(--primary-bg);
+  border-left: 4px solid var(--main-color2);
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 .styled-list li:hover {
-  background-color: #e3f2fd;
-  border-left-color: #2980b9;
+  background-color: var(--highlight-color);
+  border-left-color: var(--main-color);
   transform: translateX(5px);
 }
 @media (max-width: 768px) {
@@ -203,14 +201,14 @@
 .security-measures-list li {
   padding: 12px 20px;
   margin-bottom: 12px;
-  background-color: #f4f4f9;
+  background-color: var(--primary-bg);
   border-left: 5px solid #27ae60;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 .security-measures-list li:hover {
-  background-color: #e9f7ef;
+  background-color: var(--main-color2);
   border-left-color: #2ecc71;
   transform: translateX(5px);
 }

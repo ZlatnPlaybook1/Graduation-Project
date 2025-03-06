@@ -7,7 +7,7 @@ import background from "../../assets/img/Broken Authentication/broken_authentica
 import courseImage from "../../assets/img/Broken Authentication/broken-authentication.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
-
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 
 export default function BrokenAuthentication() {
@@ -16,6 +16,7 @@ export default function BrokenAuthentication() {
   return (
     <>
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing */}
       <CourseLanding
         background={background}

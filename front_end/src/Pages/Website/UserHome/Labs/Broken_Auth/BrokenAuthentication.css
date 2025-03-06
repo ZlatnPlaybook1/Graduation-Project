@@ -137,7 +137,7 @@
 .section-title {
   font-size: 16px;
   font-weight: 400;
-  color: #333;
+  color: var(--primary-text);
   margin-bottom: 1rem;
 }
 .section-details {

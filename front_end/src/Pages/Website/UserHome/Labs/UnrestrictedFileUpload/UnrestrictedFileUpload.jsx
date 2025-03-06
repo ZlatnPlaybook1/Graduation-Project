@@ -11,11 +11,14 @@ import courseImage from "../../assets/img/Unrestricted File Upload/FileUploadIco
 import background from "../../assets/img/Unrestricted File Upload/background_File_Upload.jpg";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+
 export default function UnrestrictedFileUpload() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing */}
       <CourseLanding
         background={background}
@@ -40,12 +43,12 @@ export default function UnrestrictedFileUpload() {
                   <span>Task 1</span> Description
                 </dt>
                 <dd className="fadeInUp faq-body">
+                  <img
+                    className="faq-File-image"
+                    src={photo2}
+                    alt="unrestricted"
+                  />
                   <ul>
-                    <img
-                      className="imageUnrest"
-                      src={photo2}
-                      alt="unrestricted"
-                    />
                     <li className="style">
                       <p>
                         <div class="modern-title">

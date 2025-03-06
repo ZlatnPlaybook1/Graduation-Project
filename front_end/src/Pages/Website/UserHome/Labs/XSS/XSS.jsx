@@ -8,11 +8,14 @@ import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 export default function XSS() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing  */}
       <CourseLanding
         background={background}
@@ -540,6 +543,7 @@ export default function XSS() {
           </div>
         </div>
       </div>
+      <GoTop />
       {/* End Course Content  */}
       <Footer />
     </>

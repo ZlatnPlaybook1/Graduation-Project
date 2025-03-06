@@ -1,144 +1,101 @@
-/* General Styles */
-.command-injection-list {
-  list-style: none;
-  padding: 0;
-  font-family: "poppins", sans-serif;
-  font-size: 16px;
-  color: #333;
-  line-height: 1.6;
-  margin: 0;
-}
+.Command-Injection-paragraph {
+  font-size: 1rem;
+  color: var(--secondary-text);
 
-.command-injection-item {
   margin-bottom: 20px;
+  line-height: 1.8;
+  transition: color 0.3s ease;
 }
-
-.highlight-text {
-  font-weight: bold;
-  color: #d9534f;
+.Command-Injection-paragraph:hover {
+  color: var(--primary-text);
 }
-
-/* Nested Lists */
-.command-injection-causes-list,
-.command-injection-separator-list {
-  margin-left: 20px;
-  padding-left: 20px;
-  list-style-type: disc;
+.Command-Injection-image {
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 15px auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
-
-.command-injection-cause-item,
-.separator-item {
-  margin-bottom: 10px;
+.Command-Injection-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
-.command-injection-cause-item code,
-.separator-item code {
-  font-size: 16px;
-  background-color: #f8f8f8;
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-family: "Courier New", monospace;
-}
-
-.command-injection-item code {
-  font-size: 16px;
-  background-color: #f8f8f8;
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-family: "Courier New", monospace;
-}
-
-/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .command-injection-list {
-    font-size: 16px;
+  .Command-Injection-paragraph {
+    font-size: 1rem;
   }
 
-  .command-injection-item {
-    margin-bottom: 16px;
+  .Command-Injection-image {
+    border-radius: 5px;
   }
 }
 
-/* Injection Impact List Styles */
-.injection-impact-list {
-  list-style: none;
-  padding: 0;
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  color: #333;
-  line-height: 1.6;
+.code-command-injection {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  padding: 15px;
+  border-radius: 8px;
+  width: 1000px;
+  height: 65px;
+  overflow-x: auto;
+  white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.code-command-injection:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 768px) {
+  .code-command-injection {
+    font-size: 0.8rem;
+    padding: 10px;
+    width: 500px;
+  }
+}
+.Command-modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--primary-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
   margin: 20px 0;
 }
 
-.injection-impact-item {
-  margin-bottom: 20px;
+.Command-modern-table th,
+.Command-modern-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  color: var(--primary-text);
 }
 
-.emphasis-text {
-  font-weight: bold;
-  color: #d9534f;
+.Command-modern-table th {
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
-.injection-impact-item code {
-  font-size: 14px;
-  background-color: #f8f8f8;
-  padding: 2px 4px;
+.Command-modern-table code {
+  background-color: #f4f4f4;
+  padding: 4px 8px;
   border-radius: 4px;
-  font-family: "Courier New", monospace;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  color: #d63384;
 }
 
-/* Responsive Adjustments */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .injection-impact-list {
-    font-size: 14px;
-  }
-
-  .injection-impact-item {
-    margin-bottom: 15px;
-  }
-}
-
-/* Prevention List Styles */
-.prevention-list {
-  list-style: none;
-  padding: 0;
-  font-size: 16px;
-  color: #333;
-  line-height: 1.6;
-  margin: 20px 0;
-}
-
-.prevention-list .prevention-item {
-  margin-bottom: 20px;
-}
-
-/* Input Validation List Styles */
-.prevention-list .prevention-item .input-validation-list {
-  margin-left: 20px;
-  padding-left: 20px;
-  list-style-type: disc;
-}
-
-.prevention-list .prevention-item .input-validation-item {
-  margin-bottom: 10px;
-}
-
-/* Code Block Styles */
-.prevention-list .prevention-item code {
-  font-size: 14px;
-  background-color: #f8f8f8;
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-family: "Courier New", monospace;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .prevention-list {
-    font-size: 14px;
-  }
-
-  .prevention-item {
-    margin-bottom: 15px;
+  .Command-modern-table th,
+  .Command-modern-table td {
+    padding: 10px;
   }
 }

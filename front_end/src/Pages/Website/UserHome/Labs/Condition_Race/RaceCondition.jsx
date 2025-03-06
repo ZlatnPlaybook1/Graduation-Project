@@ -1,26 +1,25 @@
 import React from "react";
 import Header from "../../Header/Header";
-import background from "../../assets/img/Condition_Race/Race Condition back.jpg";
+import background from "../../assets/img/Condition_Race/background-race-condition.jpg";
 import courseImage from "../../assets/img/Condition_Race/race condition icon.jpg";
 import Footer from "../../Footer/Footer";
 import "../../Components/Topics CSS/topics.css";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
-
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 import exampleImage1 from "../../assets/img/Condition_Race/1.png";
 import exampleImage2 from "../../assets/img/Condition_Race/2.png";
 import exampleImage3 from "../../assets/img/Condition_Race/3.png";
 import exampleImage4 from "../../assets/img/Condition_Race/4.png";
 import exampleImage5 from "../../assets/img/Condition_Race/5.png";
 
-
-
 export default function RaceCondition() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing */}
       <CourseLanding
         background={background}
@@ -44,14 +43,41 @@ export default function RaceCondition() {
                   <span>Topic 1</span>Definition and Causes
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <p>Race conditions are a common type of vulnerability closely related to business logic flaws. They occur when websites process requests concurrently without adequate safeguards. This can lead to multiple distinct threads interacting with the same data at the same time, resulting in a "collision" that causes unintended behavior in the application. A race condition attack uses carefully timed requests to cause intentional collisions and exploit this unintended behavior for malicious purposes.</p>
+                  <p>
+                    Race conditions are a common type of vulnerability closely
+                    related to business logic flaws. They occur when websites
+                    process requests concurrently without adequate safeguards.
+                    This can lead to multiple distinct threads interacting with
+                    the same data at the same time, resulting in a "collision"
+                    that causes unintended behavior in the application. A race
+                    condition attack uses carefully timed requests to cause
+                    intentional collisions and exploit this unintended behavior
+                    for malicious purposes.
+                  </p>
                   <img src={exampleImage1} alt="Example" />
                   <br></br>
                   <br></br>
-                  <p>The period of time during which a collision is possible is known as the "race window". This could be the fraction of a second between two interactions with the database, for example.</p>
-                  <p>Like other logic flaws, the impact of a race condition is heavily dependent on the application and the specific functionality in which it occurs.</p>
-                  <p>In this section, you'll learn how to identify and exploit different types of race condition. We'll teach you how Burp Suite's built-in tooling can help you to overcome the challenges of performing classic attacks, plus a tried and tested methodology that enables you to detect novel classes of race condition in hidden multi-step processes. These go far beyond the limit overruns that you may be familiar with already.</p>
-
+                  <p>
+                    The period of time during which a collision is possible is
+                    known as the "race window". This could be the fraction of a
+                    second between two interactions with the database, for
+                    example.
+                  </p>
+                  <p>
+                    Like other logic flaws, the impact of a race condition is
+                    heavily dependent on the application and the specific
+                    functionality in which it occurs.
+                  </p>
+                  <p>
+                    In this section, you'll learn how to identify and exploit
+                    different types of race condition. We'll teach you how Burp
+                    Suite's built-in tooling can help you to overcome the
+                    challenges of performing classic attacks, plus a tried and
+                    tested methodology that enables you to detect novel classes
+                    of race condition in hidden multi-step processes. These go
+                    far beyond the limit overruns that you may be familiar with
+                    already.
+                  </p>
                 </dd>
 
                 {/* Single FAQ Area */}
@@ -59,60 +85,143 @@ export default function RaceCondition() {
                   <span>Topic 2</span>Limit overrun race conditions
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <p>The most well-known type of race condition enables you to exceed some kind of limit imposed by the business logic of the application.</p>
-                  <p>For example, consider an online store that lets you enter a promotional code during checkout to get a one-time discount on your order. To apply this discount, the application may perform the following high-level steps:</p>
+                  <p>
+                    The most well-known type of race condition enables you to
+                    exceed some kind of limit imposed by the business logic of
+                    the application.
+                  </p>
+                  <p>
+                    For example, consider an online store that lets you enter a
+                    promotional code during checkout to get a one-time discount
+                    on your order. To apply this discount, the application may
+                    perform the following high-level steps:
+                  </p>
                   <ol>
                     <li>Check that you haven't already used this code.</li>
                     <li>Apply the discount to the order total.</li>
-                    <li>Update the record in the database to reflect the fact that you've now used this code.</li>
+                    <li>
+                      Update the record in the database to reflect the fact that
+                      you've now used this code.
+                    </li>
                   </ol>
-                  <p>If you later attempt to reuse this code, the initial checks performed at the start of the process should prevent you from doing this:</p>
+                  <p>
+                    If you later attempt to reuse this code, the initial checks
+                    performed at the start of the process should prevent you
+                    from doing this:
+                  </p>
                   <img src={exampleImage2} alt="Example" />
                   <br></br>
                   <br></br>
-                  <p>Now consider what would happen if a user who has never applied this discount code before tried to apply it twice at almost exactly the same time:</p>
+                  <p>
+                    Now consider what would happen if a user who has never
+                    applied this discount code before tried to apply it twice at
+                    almost exactly the same time:
+                  </p>
                   <img src={exampleImage3} alt="Example" />
                   <br></br>
                   <br></br>
-                  <p>As you can see, the application transitions through a temporary sub-state; that is, a state that it enters and then exits again before request processing is complete. In this case, the sub-state begins when the server starts processing the first request, and ends when it updates the database to indicate that you've already used this code. This introduces a small race window during which you can repeatedly claim the discount as many times as you like.</p>
-                  <p>There are many variations of this kind of attack, including:</p>
+                  <p>
+                    As you can see, the application transitions through a
+                    temporary sub-state; that is, a state that it enters and
+                    then exits again before request processing is complete. In
+                    this case, the sub-state begins when the server starts
+                    processing the first request, and ends when it updates the
+                    database to indicate that you've already used this code.
+                    This introduces a small race window during which you can
+                    repeatedly claim the discount as many times as you like.
+                  </p>
+                  <p>
+                    There are many variations of this kind of attack, including:
+                  </p>
                   <ul>
                     <li>Redeeming a gift card multiple times</li>
                     <li>Rating a product multiple times</li>
-                    <li>Withdrawing or transferring cash in excess of your account balance</li>
+                    <li>
+                      Withdrawing or transferring cash in excess of your account
+                      balance
+                    </li>
                     <li>Reusing a single CAPTCHA solution</li>
                     <li>Bypassing an anti-brute-force rate limit</li>
                   </ul>
-                  <p>Limit overruns are a subtype of so-called "time-of-check to time-of-use" (TOCTOU) flaws. Later in this topic, we'll look at some examples of race condition vulnerabilities that don't fall into either of these categories.</p>
-
+                  <p>
+                    Limit overruns are a subtype of so-called "time-of-check to
+                    time-of-use" (TOCTOU) flaws. Later in this topic, we'll look
+                    at some examples of race condition vulnerabilities that
+                    don't fall into either of these categories.
+                  </p>
                 </dd>
 
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Topic 3</span>Detecting and exploiting limit overrun race conditions with Burp Repeater
-
+                  <span>Topic 3</span>Detecting and exploiting limit overrun
+                  race conditions with Burp Repeater
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <p>The process of detecting and exploiting limit overrun race conditions is relatively simple. In high-level terms, all you need to do is:</p>
+                  <p>
+                    The process of detecting and exploiting limit overrun race
+                    conditions is relatively simple. In high-level terms, all
+                    you need to do is:
+                  </p>
                   <ol>
-                    <li>Identify a single-use or rate-limited endpoint that has some kind of security impact or other useful purpose.</li>
-                    <li>Issue multiple requests to this endpoint in quick succession to see if you can overrun this limit.</li>
+                    <li>
+                      Identify a single-use or rate-limited endpoint that has
+                      some kind of security impact or other useful purpose.
+                    </li>
+                    <li>
+                      Issue multiple requests to this endpoint in quick
+                      succession to see if you can overrun this limit.
+                    </li>
                   </ol>
-                  <p>The primary challenge is timing the requests so that at least two race windows line up, causing a collision. This window is often just milliseconds and can be even shorter.</p>
-                  <p>Even if you send all of the requests at exactly the same time, in practice there are various uncontrollable and unpredictable external factors that affect when the server processes each request and in which order.</p>
+                  <p>
+                    The primary challenge is timing the requests so that at
+                    least two race windows line up, causing a collision. This
+                    window is often just milliseconds and can be even shorter.
+                  </p>
+                  <p>
+                    Even if you send all of the requests at exactly the same
+                    time, in practice there are various uncontrollable and
+                    unpredictable external factors that affect when the server
+                    processes each request and in which order.
+                  </p>
                   <img src={exampleImage4} alt="Example" />
                   <br></br>
                   <br></br>
-                  <p><strong>Burp Suite 2023.9</strong> adds powerful new capabilities to Burp Repeater that enable you to easily send a group of parallel requests in a way that greatly reduces the impact of one of these factors, namely network jitter. Burp automatically adjusts the technique it uses to suit the HTTP version supported by the server:</p>
+                  <p>
+                    <strong>Burp Suite 2023.9</strong> adds powerful new
+                    capabilities to Burp Repeater that enable you to easily send
+                    a group of parallel requests in a way that greatly reduces
+                    the impact of one of these factors, namely network jitter.
+                    Burp automatically adjusts the technique it uses to suit the
+                    HTTP version supported by the server:
+                  </p>
                   <ul>
-                    <li>For HTTP/1.x servers, Burp sends all requests in parallel over a single connection, which reduces the impact of network jitter.</li>
-                    <li>For HTTP/2 servers, Burp sends all requests in parallel over multiple connections, which is more efficient and also reduces the impact of network jitter.</li>
+                    <li>
+                      For HTTP/1.x servers, Burp sends all requests in parallel
+                      over a single connection, which reduces the impact of
+                      network jitter.
+                    </li>
+                    <li>
+                      For HTTP/2 servers, Burp sends all requests in parallel
+                      over multiple connections, which is more efficient and
+                      also reduces the impact of network jitter.
+                    </li>
                   </ul>
-                  <p>The single-packet attack enables you to completely neutralize interference from network jitter by using a single TCP packet to complete 20-30 requests simultaneously.</p>
+                  <p>
+                    The single-packet attack enables you to completely
+                    neutralize interference from network jitter by using a
+                    single TCP packet to complete 20-30 requests simultaneously.
+                  </p>
                   <img src={exampleImage5} alt="Example" />
                   <br></br>
-                  <br></br><p>Although you can often use just two requests to trigger an exploit, sending a large number of requests like this helps to mitigate internal latency, also known as server-side jitter. This is especially useful during the initial discovery phase. We'll cover this methodology in more detail.</p>
-
+                  <br></br>
+                  <p>
+                    Although you can often use just two requests to trigger an
+                    exploit, sending a large number of requests like this helps
+                    to mitigate internal latency, also known as server-side
+                    jitter. This is especially useful during the initial
+                    discovery phase. We'll cover this methodology in more
+                    detail.
+                  </p>
                 </dd>
 
                 {/* Single FAQ Area */}
@@ -120,25 +229,67 @@ export default function RaceCondition() {
                   <span>Topic 4</span>Hidden multi-step sequences
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <p>In practice, a single request may initiate an entire multi-step sequence behind the scenes, transitioning the application through multiple hidden states that it enters and then exits again before request processing is complete. We'll refer to these as "sub-states".</p>
-                  <p>If you can identify one or more HTTP requests that cause an interaction with the same data, you can potentially abuse these sub-states to expose time-sensitive variations of the kinds of logic flaws that are common in multi-step workflows. This enables race condition exploits that go far beyond limit overruns.</p>
-                  <p>For example, you may be familiar with flawed multi-factor authentication (MFA) workflows that let you perform the first part of the login using known credentials, then navigate straight to the application via forced browsing, effectively bypassing MFA entirely.</p>
-                  <p>The following pseudo-code demonstrates how a website could be vulnerable to a race variation of this attack:</p>
-                  <code>session['userid'] = user.userid</code><p></p>
-                  <code>if user.mfa_enabled:</code><p></p>
-                  <code>session['enforce_mfa'] = True</code><p></p>
-                  <code># generate and send MFA code to user</code><p></p>
+                  <p>
+                    In practice, a single request may initiate an entire
+                    multi-step sequence behind the scenes, transitioning the
+                    application through multiple hidden states that it enters
+                    and then exits again before request processing is complete.
+                    We'll refer to these as "sub-states".
+                  </p>
+                  <p>
+                    If you can identify one or more HTTP requests that cause an
+                    interaction with the same data, you can potentially abuse
+                    these sub-states to expose time-sensitive variations of the
+                    kinds of logic flaws that are common in multi-step
+                    workflows. This enables race condition exploits that go far
+                    beyond limit overruns.
+                  </p>
+                  <p>
+                    For example, you may be familiar with flawed multi-factor
+                    authentication (MFA) workflows that let you perform the
+                    first part of the login using known credentials, then
+                    navigate straight to the application via forced browsing,
+                    effectively bypassing MFA entirely.
+                  </p>
+                  <p>
+                    The following pseudo-code demonstrates how a website could
+                    be vulnerable to a race variation of this attack:
+                  </p>
+                  <code>session['userid'] = user.userid</code>
+                  <p></p>
+                  <code>if user.mfa_enabled:</code>
+                  <p></p>
+                  <code>session['enforce_mfa'] = True</code>
+                  <p></p>
+                  <code># generate and send MFA code to user</code>
+                  <p></p>
                   <code># redirect browser to MFA code entry form</code>
-                  <p>As you can see, this is in fact a multi-step sequence within the span of a single request. Most importantly, it transitions through a sub-state in which the user temporarily has a valid logged-in session, but MFA isn't yet being enforced. An attacker could potentially exploit this by sending a login request along with a request to a sensitive, authenticated endpoint.</p>
-                  <p>We'll look at some more examples of hidden multi-step sequences later, and you'll be able to practice exploiting them in our interactive labs. However, as these vulnerabilities are quite application-specific, it's important to first understand the broader methodology you'll need to apply in order to identify them efficiently, both in the labs and in the wild.</p>
+                  <p>
+                    As you can see, this is in fact a multi-step sequence within
+                    the span of a single request. Most importantly, it
+                    transitions through a sub-state in which the user
+                    temporarily has a valid logged-in session, but MFA isn't yet
+                    being enforced. An attacker could potentially exploit this
+                    by sending a login request along with a request to a
+                    sensitive, authenticated endpoint.
+                  </p>
+                  <p>
+                    We'll look at some more examples of hidden multi-step
+                    sequences later, and you'll be able to practice exploiting
+                    them in our interactive labs. However, as these
+                    vulnerabilities are quite application-specific, it's
+                    important to first understand the broader methodology you'll
+                    need to apply in order to identify them efficiently, both in
+                    the labs and in the wild.
+                  </p>
                 </dd>
-
-                
               </dl>
             </div>
             <div className="go-to-section">
               <button
-                onClick={() => handleGoToLab("/Race_Condition/Race_Condition_Labs")}
+                onClick={() =>
+                  handleGoToLab("/Race_Condition/Race_Condition_Labs")
+                }
                 className="go-to"
               >
                 Go To Labs

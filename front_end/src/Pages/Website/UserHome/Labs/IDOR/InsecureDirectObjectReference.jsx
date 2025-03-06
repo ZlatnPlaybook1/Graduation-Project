@@ -9,12 +9,16 @@ import background from "../../assets/img/IDOR/IDOR.jpg";
 import IDOR_Vulerability from "../../assets/img/IDOR/InsecureDirectObjectReference(IDOR)Vulnerability.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
+import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+
 export default function InsecureDirectObjectReference() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
   return (
     <>
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing */}
       <CourseLanding
         background={background}
@@ -267,7 +271,7 @@ export default function InsecureDirectObjectReference() {
           </div>
         </div>
       </div>
-
+      <GoTop />
       {/* End Content */}
       <Footer />
     </>
