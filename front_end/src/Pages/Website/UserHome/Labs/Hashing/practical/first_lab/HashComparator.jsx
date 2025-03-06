@@ -90,7 +90,7 @@ const HashComparator = () => {
               id="exampleAccordion"
               style={{ backgroundColor: "var(--secondary-bg)" }}
             >
-              <div className="accordion-item">
+              <div className="accordion-item secondary-bg primary-text">
                 <h2 className="accordion-header" id="exampleHeading">
                   <button
                     className="accordion-button collapsed custom-accordion-button"
@@ -119,7 +119,7 @@ const HashComparator = () => {
                       Compare the MD5 hash of the word <code>hello</code>:
                     </p>
                     <ul className="list-group mb-3">
-                      <li className="list-group-item secondary-bg primary-text bb-1">
+                      <li className="list-group-item secondary-bg primary-text">
                         <strong>Hash 1:</strong>{" "}
                         <code>5d41402abc4b2a76b9719d911017c592</code>
                         <button
@@ -135,7 +135,7 @@ const HashComparator = () => {
                           />
                         </button>
                       </li>
-                      <li className="list-group-item secondary-bg primary-text bb-1">
+                      <li className="list-group-item secondary-bg primary-text">
                         <strong>Hash 2:</strong>{" "}
                         <code>5d41402abc4b2a76b9719d911017c592</code>
                         <button
@@ -165,7 +165,7 @@ const HashComparator = () => {
                       Compare the SHA-1 hash of the word <code>world</code>:
                     </p>
                     <ul className="list-group mb-3">
-                      <li className="list-group-item">
+                      <li className="list-group-item secondary-bg primary-text">
                         <strong>Hash 1:</strong>{" "}
                         <code>
                           7c211433f02071597741e6ff5a8ea34789abbf43
@@ -183,7 +183,7 @@ const HashComparator = () => {
                           />
                         </button>
                       </li>
-                      <li className="list-group-item">
+                      <li className="list-group-item secondary-bg primary-text">
                         <strong>Hash 2:</strong>{" "}
                         <code>
                           7c211433f02071597741e6ff5a8ea34789abbf43
@@ -293,8 +293,8 @@ const HashComparator = () => {
               To learn more about hashing and cryptography, check out the
               following resources:
             </p>
-            <ul className="list-group list-group-flush mb-4">
-              <li className="list-group-item primary-bg border-0">
+            <ul className="list-group-item secondary-bg primary-text bb-1">
+              <li className="list-group-item secondary-bg primary-text bb-1">
                 <a
                   href="https://en.wikipedia.org/wiki/Cryptographic_hash_function"
                   target="_blank"
