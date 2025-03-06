@@ -392,7 +392,7 @@ const HashCracker = () => {
                   href="https://en.wikipedia.org/wiki/Password_cracking"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none"
+                  className="ref-link main-color"
                 >
                   Wikipedia: Password Cracking
                   <FontAwesomeIcon icon={faInfoCircle} className="ms-2" />
@@ -403,7 +403,7 @@ const HashCracker = () => {
                   href="https://www.geeksforgeeks.org/hash-cracking/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none"
+                  className="ref-link main-color"
                 >
                   GeeksForGeeks: Hash Cracking
                   <FontAwesomeIcon icon={faInfoCircle} className="ms-2" />

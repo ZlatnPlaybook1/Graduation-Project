@@ -299,7 +299,7 @@ const HashComparator = () => {
                   href="https://en.wikipedia.org/wiki/Cryptographic_hash_function"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none"
+                  className="ref-link"
                 >
                   Wikipedia: Cryptographic Hash Function
                   <FontAwesomeIcon icon={faLink} className="ms-2" />
@@ -310,7 +310,7 @@ const HashComparator = () => {
                   href="https://www.geeksforgeeks.org/cryptographic-hash-functions/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none"
+                  className="ref-link"
                 >
                   GeeksForGeeks: Cryptographic Hash Functions
                   <FontAwesomeIcon icon={faLink} className="ms-2" />
@@ -335,7 +335,7 @@ const HashComparator = () => {
                     href="http://www.audible.com/computerphile"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-decoration-none"
+                    className="ref-link"
                   >
                     Audible free book
                     <FontAwesomeIcon icon={faLink} className="ms-2" />
