@@ -5,6 +5,8 @@ import courseImage from "../../assets/img/cookies/course_image.png";
 import background from "../../assets/img/cookies/baner_lap.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import inLab3 from "../../assets/img/inLab3.png";
 import Footer from "../../Footer/Footer";
 
@@ -38,6 +40,7 @@ export default function Cookies() {
                   <span>Topic 1</span> What Are Cookies?
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
+                <h3 className="content__title">What Are Cookies?</h3>
                   <p>
                     Cookies are data that browsers store in small text files on
                     your computer.
@@ -84,7 +87,7 @@ export default function Cookies() {
                   <span>Topic 2</span>What are Cookies Used For?
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <h2>Session Management:</h2>
+                  <h2 className="content__title">Session Management:</h2>
                   <p>
                     Cookies store things like items in your shopping cart or
                     your language preference, so you don’t have to re enter this
@@ -92,7 +95,7 @@ export default function Cookies() {
                     users and recollect their individual login information and
                     preferences.
                   </p>
-                  <h2>Tracking:</h2>
+                  <h2 className="content__title">Tracking:</h2>
                   <p>
                     Advertisers use cookies to track your browsing habits and
                     show you ads that are relevant to you based on the sites you
@@ -100,7 +103,7 @@ export default function Cookies() {
                     users had previously viewed allowing the sites to suggest
                     other goods in which you are interested.
                   </p>
-                  <h2>Personalization:</h2>
+                  <h2 className="content__title">Personalization:</h2>
                   <p>
                     They allow websites to show you content that matches your
                     interests, like suggesting videos or products similar to
@@ -108,7 +111,7 @@ export default function Cookies() {
                     which is the main way cookies are used to personalize your
                     sessions.
                   </p>
-                  <h2>Keeping You Logged In:</h2>
+                  <h2 className="content__title">Keeping You Logged In:</h2>
                   <p>
                     Cookies remember your login details, so you don’t need to
                     enter your username and password every time you visit a
@@ -121,43 +124,57 @@ export default function Cookies() {
                   <span>Topic 3</span>Where are Cookies Stored?
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <p>
+                  <p className="content__title">
                     Cookies are stored on your device in special folders or
                     files within your web browser. Here’s where they can
                     typically be found:
                   </p>
-                  <ol>
+                  <ul>
                     <li>
-                      <p>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
+                      
                         <span>On Your Computer or Device: </span>Cookies are
                         stored as small text files on your hard drive or in your
                         device’s storage.
-                      </p>
+                      
                     </li>
+                    <br></br>
                     <li>
-                      <p>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
+                      
                         <span>In Your Web Browser: </span>Each browser (like
                         Chrome, Firefox, or Safari) has its own way of storing
                         cookies. They keep cookies in a specific location within
                         the browser’s data storage.
-                      </p>
+                      
                     </li>
+                    <br></br>
                     <li>
-                      <p>
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
+                      
                         <span>In the Browser’s Data Folder: </span>For instance,
                         in Chrome, cookies are kept in the “ file located in the
                         browser’s profile directory, while Firefox uses a
                         database file called cookies.sqlite.
-                      </p>
+                      
                     </li>
-                  </ol>
+                  </ul>
                 </dd>
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
                   <span>Topic 4</span>Cookies Manipulation
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <h2>Create a Cookie With JavaScript:</h2>
+                  <h2 className="content__title">Create a Cookie With JavaScript:</h2>
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">
@@ -229,7 +246,7 @@ export default function Cookies() {
                       </pre>
                     </div>
                   </div>
-                  <h2>Read a Cookie With JavaScript:</h2>
+                  <h2 className="content__title">Read a Cookie With JavaScript:</h2>
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">
@@ -251,7 +268,7 @@ export default function Cookies() {
                       </pre>
                     </div>
                   </div>
-                  <h2>Change a Cookie With JavaScript:</h2>
+                  <h2 className="content__title">Change a Cookie With JavaScript:</h2>
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">
@@ -275,7 +292,7 @@ export default function Cookies() {
                       </pre>
                     </div>
                   </div>
-                  <h2>Delete a Cookie With JavaScript:</h2>
+                  <h2 className="content__title">Delete a Cookie With JavaScript:</h2>
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top" style={{ fontSize: 12 }}>
@@ -300,7 +317,7 @@ export default function Cookies() {
                       </pre>
                     </div>
                   </div>
-                  <h2>A Function to Set a Cookie:</h2>
+                  <h2 className="content__title">A Function to Set a Cookie:</h2>
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">
