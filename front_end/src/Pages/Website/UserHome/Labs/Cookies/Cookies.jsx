@@ -59,11 +59,8 @@ export default function Cookies() {
                       <div className="terminal-top">
                         Cookies are saved in name-value pairs like:
                       </div>
-                      <pre
-                        className="terminal-code language-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-code language-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
@@ -182,11 +179,8 @@ export default function Cookies() {
                         document.cookie property With JavaScript, a cookie can
                         be created like this
                       </div>
-                      <pre
-                        className="terminal-code language-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-code language-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
@@ -205,11 +199,8 @@ export default function Cookies() {
                         default, the cookie is deleted when the browser is
                         closed
                       </div>
-                      <pre
-                        className="terminal-code language-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-code language-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
@@ -229,11 +220,8 @@ export default function Cookies() {
                         path the cookie belongs to. By default, the cookie
                         belongs to the current page
                       </div>
-                      <pre
-                        className="terminal-code language-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-code language-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
@@ -254,11 +242,8 @@ export default function Cookies() {
                       <div className="terminal-top">
                         With JavaScript, cookies can be read like this
                       </div>
-                      <pre
-                        className="terminal-code language-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-code language-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
@@ -279,11 +264,8 @@ export default function Cookies() {
                         With JavaScript, you can change a cookie the same way as
                         you create it
                       </div>
-                      <pre
-                        className="terminal-code language-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-code language-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
@@ -306,11 +288,8 @@ export default function Cookies() {
                         specify a cookie value when you delete a cookie. Just
                         set the expires parameter to a passed date:
                       </div>
-                      <pre
-                        className="terminal-code language-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-code language-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
@@ -332,11 +311,8 @@ export default function Cookies() {
                         First, we create a function that stores the name of the
                         visitor in a cookie variable:
                       </div>
-                      <pre
-                        className="terminal-code language-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-code language-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">

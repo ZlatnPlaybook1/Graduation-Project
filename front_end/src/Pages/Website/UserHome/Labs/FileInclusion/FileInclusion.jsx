@@ -237,10 +237,10 @@ export default function FileInclusion() {
                             and the user can select between the EN and AR
                           </div>
                           <pre
-                            className="terminal-codelanguage-shell-session"
+                            className="terminal-codelanguage-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -308,10 +308,10 @@ export default function FileInclusion() {
                             to specify the directory inside the function.
                           </div>
                           <pre
-                            className="terminal-codelanguage-shell-session"
+                            className="terminal-codelanguage-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -392,10 +392,10 @@ export default function FileInclusion() {
                         <div className="terminal-content">
                           <div class="terminal-top"></div>
                           <pre
-                            className="terminal-codelanguage-shell-session"
+                            className="terminal-codelanguage-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -449,10 +449,10 @@ export default function FileInclusion() {
                         <div className="terminal-content">
                           <div className="terminal-top"></div>
                           <pre
-                            className="terminal-codelanguage-shell-session"
+                            className="terminal-codelanguage-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -543,10 +543,10 @@ export default function FileInclusion() {
                         <div className="terminal-content">
                           <div className="terminal-top"></div>
                           <pre
-                            className="terminal-codelanguage-shell-session"
+                            className="terminal-codelanguage-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -643,11 +643,8 @@ export default function FileInclusion() {
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div class="terminal-top"></div>
-                      <pre
-                        className="terminal-codelanguage-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-codelanguage-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">

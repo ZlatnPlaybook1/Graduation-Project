@@ -114,10 +114,10 @@ export default function JWTAttacks() {
                               shiny <b>JWT</b>.
                             </div>
                             <pre
-                              className="terminal-codelanguage-shell-session"
+                              className="terminal-codelanguage-bash"
                               tabIndex="0"
                             >
-                              <code className="language-shell-session">
+                              <code className="language-bash">
                                 <span className="token command-c">
                                   <span className="token info punctuation">
                                     <span className="token user">
@@ -155,10 +155,10 @@ export default function JWTAttacks() {
                               your admin chops and grab that flag.
                             </div>
                             <pre
-                              className="terminal-codelanguage-shell-session"
+                              className="terminal-codelanguage-bash"
                               tabIndex="0"
                             >
-                              <code className="language-shell-session">
+                              <code className="language-bash">
                                 <span className="token command-c">
                                   <span className="token info punctuation">
                                     <span className="token user">
@@ -353,10 +353,10 @@ export default function JWTAttacks() {
                           user:
                         </div>
                         <pre
-                          className="terminal-codelanguage-shell-session"
+                          className="terminal-codelanguage-bash"
                           tabIndex="0"
                         >
-                          <code className="language-shell-session">
+                          <code className="language-bash">
                             <span className="token command-c">
                               <span className="token info punctuation">
                                 <span className="token user">
@@ -392,10 +392,10 @@ export default function JWTAttacks() {
                           user:
                         </div>
                         <pre
-                          className="terminal-codelanguage-shell-session"
+                          className="terminal-codelanguage-bash"
                           tabIndex="0"
                         >
-                          <code className="language-shell-session">
+                          <code className="language-bash">
                             <span className="token command-c">
                               <span className="token info punctuation">
                                 <span className="token punctuation">{"{"}</span>
@@ -500,10 +500,10 @@ export default function JWTAttacks() {
                           user:
                         </div>
                         <pre
-                          className="terminal-codelanguage-shell-session"
+                          className="terminal-codelanguage-bash"
                           tabIndex="0"
                         >
-                          <code className="language-shell-session">
+                          <code className="language-bash">
                             <span className="token command-c">
                               <span className="token info punctuation">
                                 <span className="token user">
@@ -583,10 +583,10 @@ export default function JWTAttacks() {
                               <b>Authenticate using::</b>
                             </div>
                             <pre
-                              className="terminal-codelanguage-shell-session"
+                              className="terminal-codelanguage-bash"
                               tabIndex="0"
                             >
-                              <code className="language-shell-session">
+                              <code className="language-bash">
                                 <span className="token command-c">
                                   <span className="token info punctuation">
                                     <span className="token user">
@@ -623,10 +623,10 @@ export default function JWTAttacks() {
                               second dot .).
                             </div>
                             <pre
-                              className="terminal-codelanguage-shell-session"
+                              className="terminal-codelanguage-bash"
                               tabIndex="0"
                             >
-                              <code className="language-shell-session">
+                              <code className="language-bash">
                                 <span className="token command-c">
                                   <span className="token info punctuation">
                                     <span className="token user">
@@ -662,10 +662,10 @@ export default function JWTAttacks() {
                           trusting claims:
                         </div>
                         <pre
-                          className="terminal-codelanguage-shell-session"
+                          className="terminal-codelanguage-bash"
                           tabIndex="0"
                         >
-                          <code className="language-shell-session">
+                          <code className="language-bash">
                             <span className="token command-c">
                               <span className="token info punctuation">
                                 <span className="token user">
@@ -695,10 +695,10 @@ export default function JWTAttacks() {
                               Edit the JWT header:
                             </div>
                             <pre
-                              className="terminal-codelanguage-shell-session"
+                              className="terminal-codelanguage-bash"
                               tabIndex="0"
                             >
-                              <code className="language-shell-session">
+                              <code className="language-bash">
                                 <span className="token command-c">
                                   <span className="token info punctuation">
                                     <span className="token punctuation">
@@ -753,10 +753,10 @@ export default function JWTAttacks() {
                           supported algorithms:
                         </div>
                         <pre
-                          className="terminal-codelanguage-shell-session"
+                          className="terminal-codelanguage-bash"
                           tabIndex="0"
                         >
-                          <code className="language-shell-session">
+                          <code className="language-bash">
                             <span className="token command-c">
                               <span className="token info punctuation">
                                 <span className="token user">
@@ -793,10 +793,10 @@ export default function JWTAttacks() {
                               key:
                             </div>
                             <pre
-                              className="terminal-codelanguage-shell-session"
+                              className="terminal-codelanguage-bash"
                               tabIndex="0"
                             >
-                              <code className="language-shell-session">
+                              <code className="language-bash">
                                 <span className="token command-c">
                                   <span className="token info punctuation">
                                     <span className="token user">
@@ -823,10 +823,10 @@ export default function JWTAttacks() {
                           entropy:
                         </div>
                         <pre
-                          className="terminal-codelanguage-shell-session"
+                          className="terminal-codelanguage-bash"
                           tabIndex="0"
                         >
-                          <code className="language-shell-session">
+                          <code className="language-bash">
                             <span className="token command-c">
                               <span className="token info punctuation">
                                 <span className="token user">
@@ -872,10 +872,10 @@ export default function JWTAttacks() {
                           process keys appropriately:
                         </div>
                         <pre
-                          className="terminal-codelanguage-shell-session"
+                          className="terminal-codelanguage-bash"
                           tabIndex="0"
                         >
-                          <code className="language-shell-session">
+                          <code className="language-bash">
                             <span className="token command-c">
                               <span className="token info punctuation">
                                 <span className="token user">
@@ -987,10 +987,10 @@ export default function JWTAttacks() {
                           JWTs explicitly:
                         </div>
                         <pre
-                          className="terminal-codelanguage-shell-session"
+                          className="terminal-codelanguage-bash"
                           tabIndex="0"
                         >
-                          <code className="language-shell-session">
+                          <code className="language-bash">
                             <span className="token command-c">
                               <span className="token info punctuation">
                                 <span className="token user">
@@ -1068,10 +1068,10 @@ export default function JWTAttacks() {
                           making it permanently valid:
                         </div>
                         <pre
-                          className="terminal-codelanguage-shell-session"
+                          className="terminal-codelanguage-bash"
                           tabIndex="0"
                         >
-                          <code className="language-shell-session">
+                          <code className="language-bash">
                             <span className="token command-c">
                               <span className="token info punctuation">
                                 <span className="token user">
@@ -1104,10 +1104,10 @@ export default function JWTAttacks() {
                               For example:
                             </div>
                             <pre
-                              className="terminal-codelanguage-shell-session"
+                              className="terminal-codelanguage-bash"
                               tabIndex="0"
                             >
-                              <code className="language-shell-session">
+                              <code className="language-bash">
                                 <span className="token command-c">
                                   <span className="token info punctuation">
                                     <span className="token user">
@@ -1219,10 +1219,10 @@ export default function JWTAttacks() {
                               </b>
                             </div>
                             <pre
-                              className="terminal-codelanguage-shell-session"
+                              className="terminal-codelanguage-bash"
                               tabIndex="0"
                             >
-                              <code className="language-shell-session">
+                              <code className="language-bash">
                                 <span className="token command-c">
                                   <span className="token info punctuation">
                                     <span className="token class-name">
@@ -1325,10 +1325,10 @@ export default function JWTAttacks() {
                           <b>Example of issuing both tokens:</b>
                         </div>
                         <pre
-                          className="terminal-codelanguage-shell-session"
+                          className="terminal-codelanguage-bash"
                           tabIndex="0"
                         >
-                          <code className="language-shell-session">
+                          <code className="language-bash">
                             <span className="token command-c">
                               <span className="token info punctuation">
                                 <span className="token user">
@@ -1549,10 +1549,10 @@ export default function JWTAttacks() {
                               authentication server for <b>appA:</b>
                             </div>
                             <pre
-                              className="terminal-codelanguage-shell-session"
+                              className="terminal-codelanguage-bash"
                               tabIndex="0"
                             >
-                              <code className="language-shell-session">
+                              <code className="language-bash">
                                 <span className="token command-c">
                                   <span className="token info punctuation">
                                     <span className="token user">{"{"}</span>
@@ -1625,10 +1625,10 @@ export default function JWTAttacks() {
                               Send a login request for <b>appB:</b>
                             </div>
                             <pre
-                              className="terminal-codelanguage-shell-session"
+                              className="terminal-codelanguage-bash"
                               tabIndex="0"
                             >
-                              <code className="language-shell-session">
+                              <code className="language-bash">
                                 <span className="token command-c">
                                   <span className="token info punctuation">
                                     <span className="token user">{"{"}</span>
@@ -1737,10 +1737,10 @@ export default function JWTAttacks() {
                           example:
                         </div>
                         <pre
-                          className="terminal-codelanguage-shell-session"
+                          className="terminal-codelanguage-bash"
                           tabIndex="0"
                         >
-                          <code className="language-shell-session">
+                          <code className="language-bash">
                             <span className="token command-c">
                               <span className="token info punctuation">
                                 <span className="token user">

@@ -38,7 +38,9 @@ export default function Linux() {
                   <span>Topic 1</span>Running Your First few Commands
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                <h3 className="content__title">Running Your First few Commands</h3>
+                  <h3 className="content__title">
+                    Running Your First few Commands
+                  </h3>
                   <ul>
                     <li>
                       <p>
@@ -57,10 +59,10 @@ export default function Linux() {
                             This is what a terminal looks like
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -96,13 +98,13 @@ export default function Linux() {
                         have broken down in the table below:
                       </p>
                       <table className="table table-bordered table-striped text-center mx-auto table-striped text-center mx-auto">
-                          <thead class="table-dark">
+                        <thead class="table-dark">
                           <tr>
                             <td>Command</td>
                             <td>Description</td>
                           </tr>
-                          </thead>
-                          <tbody>
+                        </thead>
+                        <tbody>
                           <tr>
                             <td>echo</td>
                             <td>Output any text that we provide</td>
@@ -125,10 +127,10 @@ export default function Linux() {
                         <div className="terminal-content">
                           <div className="terminal-top">Using echo</div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -163,10 +165,10 @@ export default function Linux() {
                             logged in as
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -199,7 +201,8 @@ export default function Linux() {
                   <ul>
                     <li>
                       <p>
-                        So far we've only covered the <code className="content__code"> echo </code>and
+                        So far we've only covered the{" "}
+                        <code className="content__code"> echo </code>and
                         <code className="content__code"> whoami </code>
                         commands. Not all that useful when you consider things
                         that we need to do - including navigating the
@@ -214,7 +217,9 @@ export default function Linux() {
                       </p>
                     </li>
                     <li>
-                     <h2 className="content__title">Interacting With the Filesystem</h2>
+                      <h2 className="content__title">
+                        Interacting With the Filesystem
+                      </h2>
                       <p>
                         As I previously stated, being able to navigate the
                         machine that you are logged into without relying on a
@@ -223,13 +228,12 @@ export default function Linux() {
                       </p>
                       <table className="table table-bordered table-striped text-center mx-auto table-striped text-center mx-auto">
                         <thead class="table-dark">
-                        
                           <tr>
                             <td>Command</td>
                             <td>Full Name</td>
                           </tr>
-                          </thead>
-                          <tbody>
+                        </thead>
+                        <tbody>
                           <tr>
                             <td>ls</td>
                             <td>listing</td>
@@ -250,7 +254,9 @@ export default function Linux() {
                       </table>
                     </li>
                     <li>
-                     <h2 className="content__title">Listing Files in Our Current Directory (ls)</h2>
+                      <h2 className="content__title">
+                        Listing Files in Our Current Directory (ls)
+                      </h2>
                       <p>
                         Before we can do anything such as finding out the
                         contents of any files or folders, we need to know what
@@ -268,10 +274,10 @@ export default function Linux() {
                             directory
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -305,25 +311,33 @@ export default function Linux() {
                       </p>
                       <ol>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />Important Files</li>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
+                          Important Files
+                        </li>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />My Documents</li>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
+                          My Documents
+                        </li>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />Notes</li>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
+                          Notes
+                        </li>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />Pictures</li>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
+                          Pictures
+                        </li>
                       </ol>
                       <p>
                         Great! You can probably take a guess as to what to
@@ -337,12 +351,16 @@ export default function Linux() {
                       </h2>
                     </li>
                     <li>
-                     <h2 className="content__title">Changing Our Current Directory (cd)</h2>
+                      <h2 className="content__title">
+                        Changing Our Current Directory (cd)
+                      </h2>
                       <p>
                         Now that we know what folders exist, we need to use the
-                        <code className="content__code"> cd </code>command (short for change directory) to
-                        change to that directory. Say if I wanted to open the
-                        "Pictures" directory - I'd do <code className="content__code">cd Pictures</code>.
+                        <code className="content__code"> cd </code>command
+                        (short for change directory) to change to that
+                        directory. Say if I wanted to open the "Pictures"
+                        directory - I'd do{" "}
+                        <code className="content__code">cd Pictures</code>.
                         Where again, we want to find out the contents of this
                         "Pictures" directory and to do so, we'd use{" "}
                         <code className="content__code">ls</code> again:
@@ -353,10 +371,10 @@ export default function Linux() {
                             Listing our new directory after we have used "cd"
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -390,7 +408,9 @@ export default function Linux() {
                       </p>
                     </li>
                     <li>
-                     <h2 className="content__title">Outputting the Contents of a File (cat)</h2>
+                      <h2 className="content__title">
+                        Outputting the Contents of a File (cat)
+                      </h2>
                       <p>
                         Whilst knowing about the existence of files is great —
                         it's not all that useful unless we're able to view the
@@ -401,17 +421,18 @@ export default function Linux() {
                         to us that allows us to transfer files from one machine
                         to another in a later room. But for now, we're going to
                         talk about simply seeing the contents of text files
-                        using a command called <code className="content__code">cat</code>.
+                        using a command called{" "}
+                        <code className="content__code">cat</code>.
                       </p>
                       <p>
-                        <code className="content__code">Cat</code> is short for concatenating & is a
-                        fantastic way for us to output the contents of files
-                        (not just text files!).
+                        <code className="content__code">Cat</code> is short for
+                        concatenating & is a fantastic way for us to output the
+                        contents of files (not just text files!).
                       </p>
                       <p>
                         In the screenshot below, you can see how I have combined
-                        the use of <code className="content__code">ls</code> to list the files within a
-                        directory called "Documents":
+                        the use of <code className="content__code">ls</code> to
+                        list the files within a directory called "Documents":
                       </p>
                       <div className="terminal-container">
                         <div className="terminal-content">
@@ -420,10 +441,10 @@ export default function Linux() {
                             directory
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -482,27 +503,30 @@ export default function Linux() {
                       </p>
                       <ol>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />
-                          Used <code className="content__code">ls</code> to let us know what files are
-                          available in the "Documents" folder of this machine.
-                          In this case, it is called <code className="content__code">todo.txt</code>.
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
+                          Used <code className="content__code">ls</code> to let
+                          us know what files are available in the "Documents"
+                          folder of this machine. In this case, it is called{" "}
+                          <code className="content__code">todo.txt</code>.
                         </li>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />
-                          We have then used <code className="content__code">cat todo.txt</code> to
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
+                          We have then used{" "}
+                          <code className="content__code">cat todo.txt</code> to
                           concatenate/output the contents of this "todo.txt"
                           file, where the contents are "Here's something
                           important for me to do later!"
                         </li>
                       </ol>
                       <h2 className="note">
-                        Pro tip: You can use <code className="content__code">cat</code> to output the
+                        Pro tip: You can use{" "}
+                        <code className="content__code">cat</code> to output the
                         contents of a file within directories without having to
                         navigate to it by using cat and the name of the
                         directory. I.e. <br />
@@ -521,7 +545,7 @@ export default function Linux() {
                       </p>
                     </li>
                     <li>
-                     <h2 className="content__title">
+                      <h2 className="content__title">
                         Finding out the full Path to our Current Working
                         Directory (pwd)
                       </h2>
@@ -533,8 +557,8 @@ export default function Linux() {
                       <p>
                         It's easy to lose track of where we are on the
                         filesystem exactly, which is why I want to introduce{" "}
-                        <code className="content__code">pwd</code>. This stands for print working
-                        directory.
+                        <code className="content__code">pwd</code>. This stands
+                        for print working directory.
                       </p>
                       <p>
                         Using the example machine from before, we are currently
@@ -550,10 +574,10 @@ export default function Linux() {
                             directory
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -599,49 +623,54 @@ export default function Linux() {
                       <p>Let's break this down:</p>
                       <ol>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
                           We already know we're in "Documents" thanks to our
                           terminal, but at this point in time, we have no idea
                           where "Documents" is stored so that we can get back to
                           it easily in the future.
                         </li>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />
-                          I have used the <code className="content__code">pwd</code> (print working
-                          directory) command to find the full file path of this
-                          "Documents" folder.
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
+                          I have used the{" "}
+                          <code className="content__code">pwd</code> (print
+                          working directory) command to find the full file path
+                          of this "Documents" folder.
                         </li>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
                           We're helpfully told by Linux that this "Documents"
                           directory is stored at "/home/ubuntu/Documents" on the
                           machine — great to know!
                         </li>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
                           Now in the future, if we find ourselves in a different
                           location, we can just use
-                          <code className="content__code"> cd /home/ubuntu/Documents</code> to change our
-                          working directory to this "Documents" directory.
+                          <code className="content__code">
+                            {" "}
+                            cd /home/ubuntu/Documents
+                          </code>{" "}
+                          to change our working directory to this "Documents"
+                          directory.
                         </li>
                       </ol>
                     </li>
                   </ul>
                 </dd>
                 <dt className="fadeInUp faq-header">
-                <span>Topic 3</span>Searching for Files
+                  <span>Topic 3</span>Searching for Files
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <ul>
@@ -661,9 +690,10 @@ export default function Linux() {
                         quickly search for files across the entire system that
                         our user has access to. No need to consistently use
                         <code className="content__code"> cd </code>
-                        and <code className="content__code">ls</code> to find out what is where. Instead,
-                        we can use commands such as <code className="content__code">find </code> to
-                        automate things like this for us!
+                        and <code className="content__code">ls</code> to find
+                        out what is where. Instead, we can use commands such as{" "}
+                        <code className="content__code">find </code> to automate
+                        things like this for us!
                       </p>
                       <p>
                         This is where Linux starts to become a bit more
@@ -672,7 +702,7 @@ export default function Linux() {
                       </p>
                     </li>
                     <li>
-                     <h2 className="content__title">Using Find</h2>
+                      <h2 className="content__title">Using Find</h2>
                       <p>
                         The find command is fantastic in the sense that it can
                         be used both very simply or rather complex depending
@@ -690,10 +720,10 @@ export default function Linux() {
                             directory
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -732,36 +762,46 @@ export default function Linux() {
                           </pre>
                         </div>
                       </div>
-                      <h3 className="content__title">we can see a list of directories
-                      available to us:</h3>
+                      <h3 className="content__title">
+                        we can see a list of directories available to us:
+                      </h3>
                       <ol>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />Desktop</li>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
+                          Desktop
+                        </li>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />Documents</li>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
+                          Documents
+                        </li>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />Pictures</li>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
+                          Pictures
+                        </li>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />folder1</li>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
+                          folder1
+                        </li>
                       </ol>
                       <p>
                         Now, of course, directories can contain even more
                         directories within themselves. It becomes a headache
                         when we're having to look through every single one just
                         to try and look for specific files. We can use
-                        <code className="content__code"> find</code> to do just this for us!
+                        <code className="content__code"> find</code> to do just
+                        this for us!
                       </p>
                       <p>
                         Let's start simple and assume that we already know the
@@ -771,9 +811,12 @@ export default function Linux() {
                       </p>
                       <p>
                         If we remember the filename, we can simply use
-                        <code className="content__code"> find -name passwords.txt</code> where the command
-                        will look through every folder in our current directory
-                        for that specific file like so:
+                        <code className="content__code">
+                          {" "}
+                          find -name passwords.txt
+                        </code>{" "}
+                        where the command will look through every folder in our
+                        current directory for that specific file like so:
                       </p>
                       <div className="terminal-container">
                         <div className="terminal-content">
@@ -782,10 +825,10 @@ export default function Linux() {
                             "passwords.txt"
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -842,9 +885,9 @@ export default function Linux() {
                         search for anything that has .txt at the end. In our
                         case, we want to find every .txt file that's in our
                         current directory. We will construct a command such as
-                        <code className="content__code">find -name *.txt </code>. Where "Find" has been
-                        able to find every .txt file and has then given us the
-                        location of each one:
+                        <code className="content__code">find -name *.txt </code>
+                        . Where "Find" has been able to find every .txt file and
+                        has then given us the location of each one:
                       </p>
                       <div className="terminal-container">
                         <div className="terminal-content">
@@ -853,10 +896,10 @@ export default function Linux() {
                             ".txt"
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -909,22 +952,28 @@ export default function Linux() {
                       <p>Find has managed to find:</p>
                       <ol>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />"passwords.txt" located within "folder1"</li>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
+                          "passwords.txt" located within "folder1"
+                        </li>
                         <li>
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="me-2 text-warning"
-                        />"todo.txt" located within "Documents"</li>
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="me-2 text-warning"
+                          />
+                          "todo.txt" located within "Documents"
+                        </li>
                       </ol>
                     </li>
                     <li>
-                     <h2 className="content__title">Using Grep</h2>
+                      <h2 className="content__title">Using Grep</h2>
                       <p>
                         Another great utility that is a great one to learn about
-                        is the use of <code className="content__code">grep</code>. The <code className="content__code">grep </code>
+                        is the use of{" "}
+                        <code className="content__code">grep</code>. The{" "}
+                        <code className="content__code">grep </code>
                         command allows us to search the contents of files for
                         specific values that we are looking for.
                       </p>
@@ -940,10 +989,10 @@ export default function Linux() {
                             "access.log"
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -987,20 +1036,21 @@ export default function Linux() {
                         </div>
                       </div>
                       <p>
-                        Using a command like <code className="content__code">cat</code> isn't going to cut
-                        it too well here. Let's say for example if we wanted to
-                        search this log file to see the things that a certain
-                        user/IP address visited? Looking through 244 entries
-                        isn't all that efficient considering we want to find a
-                        specific value.
+                        Using a command like{" "}
+                        <code className="content__code">cat</code> isn't going
+                        to cut it too well here. Let's say for example if we
+                        wanted to search this log file to see the things that a
+                        certain user/IP address visited? Looking through 244
+                        entries isn't all that efficient considering we want to
+                        find a specific value.
                       </p>
                       <p>
-                        We can use <code className="content__code">grep</code> to search the entire
-                        contents of this file for any entries of the value that
-                        we are searching for. Going with the example of a web
-                        server's access log, we want to see everything that the
-                        IP address "81.143.211.90" has visited (note that this
-                        is fictional)
+                        We can use <code className="content__code">grep</code>{" "}
+                        to search the entire contents of this file for any
+                        entries of the value that we are searching for. Going
+                        with the example of a web server's access log, we want
+                        to see everything that the IP address "81.143.211.90"
+                        has visited (note that this is fictional)
                       </p>
                       <div className="terminal-container">
                         <div className="terminal-content">
@@ -1009,10 +1059,10 @@ export default function Linux() {
                             of "81.143.211.90" in "access.log"
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -1083,13 +1133,13 @@ export default function Linux() {
                         operators:
                       </p>
                       <table className="table table-bordered table-striped text-center mx-auto">
-                          <thead class="table-dark">  
+                        <thead class="table-dark">
                           <tr>
                             <td>Symbol / Operator </td>
                             <td>Description</td>
                           </tr>
-                          </thead>
-                          <tbody>
+                        </thead>
+                        <tbody>
                           <tr>
                             <td>&</td>
                             <td>
@@ -1116,9 +1166,9 @@ export default function Linux() {
                             <td>&gt;&gt;</td>
                             <td>
                               This operator does the same function of the{" "}
-                              <code className="content__code">&gt;</code> operator but appends the output
-                              rather than replacing (meaning nothing is
-                              overwritten).
+                              <code className="content__code">&gt;</code>{" "}
+                              operator but appends the output rather than
+                              replacing (meaning nothing is overwritten).
                             </td>
                           </tr>
                         </tbody>
@@ -1126,7 +1176,7 @@ export default function Linux() {
                       <p>Let's cover these in a bit more detail.</p>
                     </li>
                     <li>
-                     <h2 className="content__title">Operator "&"</h2>
+                      <h2 className="content__title">Operator "&"</h2>
                       <p>
                         This operator allows us to execute commands in the
                         background. For example, let's say we want to copy a
@@ -1141,18 +1191,24 @@ export default function Linux() {
                       </p>
                     </li>
                     <li>
-                     <h2 className="content__title">Operator "&&"</h2>
+                      <h2 className="content__title">Operator "&&"</h2>
                       <p>
                         This shell operator is a bit misleading in the sense of
                         how familiar is to its partner "&". Unlike the "&"
                         operator, we can use "&&" to make a list of commands to
-                        run for example <code className="content__code">command1 && command2</code>.
-                        However, it's worth noting that <code className="content__code">command2 </code>
-                        will only run if <code className="content__code">command2</code> was successful.
+                        run for example{" "}
+                        <code className="content__code">
+                          command1 && command2
+                        </code>
+                        . However, it's worth noting that{" "}
+                        <code className="content__code">command2 </code>
+                        will only run if{" "}
+                        <code className="content__code">command2</code> was
+                        successful.
                       </p>
                     </li>
                     <li>
-                     <h2 className="content__title">Operator "&gt;"</h2>
+                      <h2 className="content__title">Operator "&gt;"</h2>
                       <p>
                         This operator is what's known as an output redirector.
                         What this essentially means is that we take the output
@@ -1161,18 +1217,23 @@ export default function Linux() {
                       </p>
                       <p>
                         A great example of this is redirecting the output of the
-                        <code className="content__code"> echo</code> command that we learned in Topic 4.
-                        Of course, running something such as
-                        <code className="content__code"> echo howdy </code>will return "howdy" back to our
-                        terminal — that isn't super useful. What we can do
-                        instead, is redirect "howdy" to something such as a new
-                        file!
+                        <code className="content__code"> echo</code> command
+                        that we learned in Topic 4. Of course, running something
+                        such as
+                        <code className="content__code"> echo howdy </code>will
+                        return "howdy" back to our terminal — that isn't super
+                        useful. What we can do instead, is redirect "howdy" to
+                        something such as a new file!
                       </p>
                       <p>
                         Let's say we wanted to create a file named "welcome"
                         with the message "hey". We can run
-                        <code className="content__code"> echo hey &gt; welcome</code> where we want the
-                        file created with the contents "hey" like so:
+                        <code className="content__code">
+                          {" "}
+                          echo hey &gt; welcome
+                        </code>{" "}
+                        where we want the file created with the contents "hey"
+                        like so:
                       </p>
                       <div className="terminal-container">
                         <div className="terminal-content">
@@ -1180,10 +1241,10 @@ export default function Linux() {
                             Using the &gt; Operator
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -1217,10 +1278,10 @@ export default function Linux() {
                             Using cat to output the "welcome" file
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -1252,25 +1313,27 @@ export default function Linux() {
                       </h2>
                     </li>
                     <li>
-                     <h2 className="content__title">Operator "&gt;&gt;"</h2>
+                      <h2 className="content__title">Operator "&gt;&gt;"</h2>
                       <p>
                         This operator is also an output redirector like in the
-                        previous operator <code className="content__code">&gt;</code> we discussed.
-                        However, what makes this operator different is that
-                        rather than overwriting any contents within a file, for
-                        example, it instead just puts the output at the end.
+                        previous operator{" "}
+                        <code className="content__code">&gt;</code> we
+                        discussed. However, what makes this operator different
+                        is that rather than overwriting any contents within a
+                        file, for example, it instead just puts the output at
+                        the end.
                       </p>
                       <p>
                         Following on with our previous example where we have the
                         file "welcome" that has the contents of "hey". If were
                         to use echo to add "hello" to the file using the
-                        <code className="content__code"> &gt;</code> operator, the file will now only have
-                        "hello" and not "hey".
+                        <code className="content__code"> &gt;</code> operator,
+                        the file will now only have "hello" and not "hey".
                       </p>
                       <p>
-                        The <code className="content__code">&gt;&gt;</code> operator allows to append the
-                        output to the bottom of the file — rather than replacing
-                        the contents like so:
+                        The <code className="content__code">&gt;&gt;</code>{" "}
+                        operator allows to append the output to the bottom of
+                        the file — rather than replacing the contents like so:
                       </p>
                       <div className="terminal-container">
                         <div className="terminal-content">
@@ -1278,10 +1341,10 @@ export default function Linux() {
                             Using the &gt;&gt; Operator
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
@@ -1315,10 +1378,10 @@ export default function Linux() {
                             Using cat to output the "welcome" file
                           </div>
                           <pre
-                            className="terminal-code language-shell-session"
+                            className="terminal-code language-bash"
                             tabIndex="0"
                           >
-                            <code className="language-shell-session">
+                            <code className="language-bash">
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">

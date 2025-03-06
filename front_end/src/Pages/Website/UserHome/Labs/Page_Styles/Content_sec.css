@@ -753,10 +753,13 @@ tr:hover {
   border-radius: 5px !important;
 }
 
-.Content__img__box__over--hidden {
-  overflow: hidden;
-  max-width: 400px;
+.Content__img__box__over--hidden img {
+  margin: 30px 0;
+}
+.Content__img__box__over--hidden img {
+  max-width: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 15px;
 }

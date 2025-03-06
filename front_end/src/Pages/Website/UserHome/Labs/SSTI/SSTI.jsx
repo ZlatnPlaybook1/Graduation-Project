@@ -122,11 +122,8 @@ export default function SSTI() {
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">output</div>
-                      <pre
-                        className="terminal-codelanguage-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-codelanguage-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user"></span>
@@ -168,11 +165,8 @@ export default function SSTI() {
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">output</div>
-                      <pre
-                        className="terminal-codelanguage-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-codelanguage-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user"></span>
@@ -209,11 +203,8 @@ export default function SSTI() {
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">URL</div>
-                      <pre
-                        className="terminal-codelanguage-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-codelanguage-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user"></span>
@@ -328,11 +319,8 @@ export default function SSTI() {
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">vulnerable code:</div>
-                      <pre
-                        className="terminal-codelanguage-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-codelanguage-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user"></span>
@@ -363,11 +351,8 @@ export default function SSTI() {
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">URL</div>
-                      <pre
-                        className="terminal-codelanguage-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-codelanguage-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user"></span>
@@ -415,11 +400,8 @@ export default function SSTI() {
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">Code</div>
-                      <pre
-                        className="terminal-codelanguage-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-codelanguage-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user"></span>
@@ -451,11 +433,8 @@ export default function SSTI() {
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">URL</div>
-                      <pre
-                        className="terminal-codelanguage-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-codelanguage-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user"></span>
@@ -495,11 +474,8 @@ export default function SSTI() {
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">URL</div>
-                      <pre
-                        className="terminal-codelanguage-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-codelanguage-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user"></span>
@@ -533,11 +509,8 @@ export default function SSTI() {
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">URL</div>
-                      <pre
-                        className="terminal-codelanguage-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-codelanguage-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user"></span>
@@ -573,11 +546,8 @@ export default function SSTI() {
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">URL</div>
-                      <pre
-                        className="terminal-codelanguage-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-codelanguage-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user"></span>

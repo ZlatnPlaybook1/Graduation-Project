@@ -231,11 +231,8 @@ export default function Bash() {
                       <div className="terminal-top">
                         This is what a terminal looks like
                       </div>
-                      <pre
-                        className="terminal-code language-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-code language-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
@@ -280,11 +277,8 @@ export default function Bash() {
                       <div className="terminal-top">
                         This is what a terminal looks like
                       </div>
-                      <pre
-                        className="terminal-code language-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-code language-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
@@ -700,11 +694,8 @@ export default function Bash() {
                       <div className="terminal-top">
                         This is what a terminal looks like
                       </div>
-                      <pre
-                        className="terminal-code language-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-code language-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
@@ -770,11 +761,8 @@ export default function Bash() {
                       <div className="terminal-top">
                         This is what a terminal looks like
                       </div>
-                      <pre
-                        className="terminal-code language-shell-session"
-                        tabIndex="0"
-                      >
-                        <code className="language-shell-session">
+                      <pre className="terminal-code language-bash" tabIndex="0">
+                        <code className="language-bash">
                           <span className="token command-c">
                             <span className="token info punctuation">
                               <span className="token user">
