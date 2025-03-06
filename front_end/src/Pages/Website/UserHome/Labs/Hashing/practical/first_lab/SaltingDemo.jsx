@@ -236,7 +236,7 @@ const SaltingDemo = () => {
                   href="https://owasp.org/www-project-top-ten/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none"
+                  className="ref-link"
                 >
                   OWASP Top Ten
                   <FontAwesomeIcon icon={faLink} className="ms-2" />
@@ -247,7 +247,7 @@ const SaltingDemo = () => {
                   href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none"
+                  className="ref-link"
                 >
                   Password Storage Cheat Sheet
                   <FontAwesomeIcon icon={faLink} className="ms-2" />
@@ -259,7 +259,7 @@ const SaltingDemo = () => {
                   href="https://en.wikipedia.org/wiki/Salt_(cryptography)"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none"
+                  className="ref-link"
                 >
                   Wikipedia: Salt (cryptography)
                   <FontAwesomeIcon icon={faLink} className="ms-2" />
@@ -270,7 +270,7 @@ const SaltingDemo = () => {
                   href="https://www.youtube.com/watch?v=xXm9v9ixn7s" // Example YouTube video
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none"
+                  className="ref-link"
                 >
                   Hashing and Salting Explained
                   <FontAwesomeIcon icon={faLink} className="ms-2" />
