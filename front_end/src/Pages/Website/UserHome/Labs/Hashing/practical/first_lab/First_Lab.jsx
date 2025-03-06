@@ -22,9 +22,9 @@ const HashingLab = () => {
       <ShowHintBtn hintText={hintMessage} />
       <div className="course">
         <div className="container mt-5">
-          <div className="intro-card shadow-lg">
-            <div className="card-body p-4">
-              <h1 className="card-title my-4 display-5 title-gradient">
+          <div className="secondary-bg primary-text shadow-lg mb-5">
+            <div className="card-body p-4 ">
+              <h1 className="title-gradient text-center my-4">
                 Hashing Lab
               </h1>
               <p>
