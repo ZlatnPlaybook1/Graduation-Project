@@ -1,7 +1,7 @@
 .faq-burp-title {
   font-size: 24px;
   font-weight: 700;
-  color: var(--primary-text);
+  color: var(--main-color);
   margin-bottom: 15px;
   text-align: center;
 }
@@ -43,15 +43,6 @@
 
 .faq-burp-link:hover {
   text-decoration: underline;
-}
-
-.custom-transformation-list {
-  list-style: none;
-  padding: 20px;
-  background: var(--primary-bg);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: "Montserrat", sans-serif;
 }
 
 .custom-transformation-list li {

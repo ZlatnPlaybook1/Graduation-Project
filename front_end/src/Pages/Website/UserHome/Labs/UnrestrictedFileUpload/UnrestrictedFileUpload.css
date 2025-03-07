@@ -38,7 +38,7 @@
 .scnarios-fileUplode {
   font-size: 16px;
   font-weight: 400;
-  color: var(--main-color);
+  color: var(--primary-text);
 }
 .Content .faq-File-image:hover {
   transform: scale(1.05);
@@ -82,19 +82,19 @@
 }
 .upload-location {
   display: inline-block;
-  background-color: #f4f4f9;
-  border: 2px solid #ddd;
+  background-color: var(--primary-bg);
+  border: 2px solid var(--main-color);
   border-radius: 8px;
   padding: 5px 10px;
   font-weight: 400;
   font-size: 1.1rem;
-  color: #333;
+  color: var(--primary-text);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 .upload-location:hover {
-  background-color: #e1e1f2;
-  border-color: #a3a3d1;
+  background-color: var(--secondary-bg);
+  border-color: var(--highlight-color);
 }
 @media (max-width: 768px) {
   .upload-location {
@@ -104,14 +104,14 @@
 }
 .command-url {
   display: block;
-  background-color: #f7f7f7;
-  border: 1px solid #ddd;
+  background-color: var(--primary-bg);
+  border: 1px solid var(--main-color);
   border-radius: 8px;
   padding: 8px 12px;
   font-family: "poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: #333;
+  color: var(--primary-text);
   word-wrap: break-word;
   overflow-wrap: break-word;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -119,18 +119,18 @@
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 .command-url:hover {
-  background-color: #eaeaea;
-  border-color: #a1a1a1;
+  background-color: var(--secondary-bg);
+  border-color: var(--main-color2);
 }
 .command {
   display: inline-block;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  background-color: var(--primary-bg);
+  border: 1px solid var(--main-color);
   border-radius: 6px;
   padding: 4px 8px;
   font-family: "poppins", sans-serif;
   font-size: 1rem;
-  color: #444;
+  color: var(--primary-text);
   margin-left: 10px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
@@ -158,7 +158,7 @@
   transition: all 0.3s ease;
 }
 .styled-list li:hover {
-  background-color: var(--highlight-color);
+  background-color: var(--main-color3);
   border-left-color: var(--main-color);
   transform: translateX(5px);
 }
@@ -186,11 +186,14 @@
   transition: all 0.3s ease;
 }
 .security-measures-list li:hover {
-  background-color: var(--main-color2);
+  background-color: var(--main-color3);
   border-left-color: #2ecc71;
   transform: translateX(5px);
 }
-
+.preventing-fileUplode {
+  color: var(--main-color);
+  font-size: 16px;
+}
 @media (max-width: 768px) {
   .security-measures-list {
     font-size: 0.9rem;

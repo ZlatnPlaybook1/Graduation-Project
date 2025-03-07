@@ -10,7 +10,8 @@ import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 import exampleImage1 from "../../assets/img/Command Injection/1.png";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 export default function CommandInjection() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
@@ -92,16 +93,18 @@ export default function CommandInjection() {
                     &amp; echo aiwefwlguh &amp;
                   </code>
                   <p class="Command-Injection-paragraph">
-                    If this input is submitted in the <code>productID</code>{" "}
-                    parameter, the command executed by the application is:
+                    If this input is submitted in the{" "}
+                    <code className="content__code">productID</code> parameter,
+                    the command executed by the application is:
                   </p>
                   <code class="code-command-injection">
                     stockreport.pl &amp; echo aiwefwlguh &amp; 29
                   </code>
                   <p class="Command-Injection-paragraph">
-                    The <code>echo</code> command causes the supplied string to
-                    be echoed in the output. This is a useful way to test for
-                    some types of OS command injection. The <code>&amp;</code>{" "}
+                    The <code className="content__code">echo</code> command
+                    causes the supplied string to be echoed in the output. This
+                    is a useful way to test for some types of OS command
+                    injection. The <code className="content__code">&amp;</code>{" "}
                     character is a shell command separator. In this example, it
                     causes three separate commands to execute, one after
                     another. The output returned to the user is:
@@ -115,30 +118,46 @@ export default function CommandInjection() {
                   </p>
                   <ul>
                     <li>
-                      The original <code>stockreport.pl</code> command was
-                      executed without its expected arguments, and so returned
-                      an error message.
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      The original{" "}
+                      <code className="content__code">stockreport.pl</code>{" "}
+                      command was executed without its expected arguments, and
+                      so returned an error message.
                     </li>
                     <li>
-                      The injected <code>echo</code> command was executed, and
-                      the supplied string was echoed in the output.
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      The injected <code className="content__code">echo</code>{" "}
+                      command was executed, and the supplied string was echoed
+                      in the output.
                     </li>
                     <li>
-                      The original argument <code>29</code> was executed as a
-                      command, which caused an error.
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      The original argument{" "}
+                      <code className="content__code">29</code> was executed as
+                      a command, which caused an error.
                     </li>
                   </ul>
                   <p>
-                    Placing the additional command separator <code>&amp;</code>{" "}
-                    after the injected command is useful because it separates
-                    the injected command from whatever follows the injection
-                    point. This reduces the chance that what follows will
-                    prevent the injected command from executing.
+                    Placing the additional command separator{" "}
+                    <code className="content__code">&amp;</code> after the
+                    injected command is useful because it separates the injected
+                    command from whatever follows the injection point. This
+                    reduces the chance that what follows will prevent the
+                    injected command from executing.
                   </p>
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 2</span>Useful commands
+                  <span>Task 3</span>Useful commands
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <p class="Command-Injection-paragraph">
@@ -160,46 +179,46 @@ export default function CommandInjection() {
                       <tr>
                         <td>Name of current user</td>
                         <td>
-                          <code>whoami</code>
+                          <code className="content__code">whoami</code>
                         </td>
                         <td>
-                          <code>whoami</code>
+                          <code className="content__code">whoami</code>
                         </td>
                       </tr>
                       <tr>
                         <td>Operating system</td>
                         <td>
-                          <code>uname -a</code>
+                          <code className="content__code">uname -a</code>
                         </td>
                         <td>
-                          <code>ver</code>
+                          <code className="content__code">ver</code>
                         </td>
                       </tr>
                       <tr>
                         <td>Network configuration</td>
                         <td>
-                          <code>ifconfig</code>
+                          <code className="content__code">ifconfig</code>
                         </td>
                         <td>
-                          <code>ipconfig /all</code>
+                          <code className="content__code">ipconfig /all</code>
                         </td>
                       </tr>
                       <tr>
                         <td>Network connections</td>
                         <td>
-                          <code>netstat -an</code>
+                          <code className="content__code">netstat -an</code>
                         </td>
                         <td>
-                          <code>netstat -an</code>
+                          <code className="content__code">netstat -an</code>
                         </td>
                       </tr>
                       <tr>
                         <td>Running processes</td>
                         <td>
-                          <code>ps -ef</code>
+                          <code className="content__code">ps -ef</code>
                         </td>
                         <td>
-                          <code>tasklist</code>
+                          <code className="content__code">tasklist</code>
                         </td>
                       </tr>
                     </tbody>
@@ -207,7 +226,7 @@ export default function CommandInjection() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 2</span>Blind OS command injection vulnerabilities
+                  <span>Task 4</span>Blind OS command injection vulnerabilities
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <p class="Command-Injection-paragraph">
@@ -236,7 +255,7 @@ export default function CommandInjection() {
                     techniques to detect and exploit a vulnerability.
                   </p>
                   <br></br>
-                  <h2>
+                  <h2 className="content__title">
                     Detecting blind OS command injection using time delays
                   </h2>
                   <p class="Command-Injection-paragraph">

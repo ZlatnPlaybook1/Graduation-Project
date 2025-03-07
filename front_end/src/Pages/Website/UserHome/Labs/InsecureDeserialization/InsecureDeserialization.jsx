@@ -10,7 +10,8 @@ import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import exampleImage1 from "../../assets/img/Insecure_Deserialization/1.jpg";
 import exampleImage2 from "../../assets/img/Insecure_Deserialization/2.jpg";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 export default function InsecureDeserialization() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
@@ -42,18 +43,28 @@ export default function InsecureDeserialization() {
                 <dd className="fadeInUp faq-body">
                   <p>
                     {" "}
-                    <strong>Serialization</strong> is the process of converting
-                    complex data structures, such as objects and their fields,
-                    into a "flatter" format that can be sent and received as a
-                    sequential stream of bytes. Serializing data makes it much
-                    simpler to:
+                    <strong className="content__subtitle">
+                      Serialization
+                    </strong>{" "}
+                    is the process of converting complex data structures, such
+                    as objects and their fields, into a "flatter" format that
+                    can be sent and received as a sequential stream of bytes.
+                    Serializing data makes it much simpler to:
                   </p>
                   <ul>
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       Write complex data to inter-process memory, a file, or a
                       database
                     </li>
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       Send complex data, for example, over a network, between
                       different components of an application, or in an API call
                     </li>
@@ -63,17 +74,25 @@ export default function InsecureDeserialization() {
                     persisted. In other words, the object's attributes are
                     preserved, along with their assigned values.
                   </p>
-                  <h2>Serialization vs deserialization</h2>
+                  <h2 className="content__title">
+                    Serialization vs deserialization
+                  </h2>
                   <p>
                     {" "}
-                    <strong>Deserialization</strong> is the process of restoring
-                    this byte stream to a fully functional replica of the
-                    original object, in the exact state as when it was
-                    serialized. The website's logic can then interact with this
-                    deserialized object, just like it would with any other
-                    object.
+                    <strong className="content__subtitle">
+                      Deserialization
+                    </strong>{" "}
+                    is the process of restoring this byte stream to a fully
+                    functional replica of the original object, in the exact
+                    state as when it was serialized. The website's logic can
+                    then interact with this deserialized object, just like it
+                    would with any other object.
                   </p>
-                  <img src={exampleImage1} alt="Example" />
+                  <img
+                    class="img-fluid w-50 mx-auto d-block"
+                    src={exampleImage1}
+                    alt="Example"
+                  />
                   <br></br>
                   <br></br>
                   <p>
@@ -87,9 +106,11 @@ export default function InsecureDeserialization() {
                     field from being serialized, it must be explicitly marked as
                     "transient" in the class declaration. Be aware that when
                     working with different programming languages, serialization
-                    may be referred to as marshalling (Ruby) or pickling
-                    (Python). These terms are synonymous with "serialization" in
-                    this context.
+                    may be referred to as marshalling{" "}
+                    <strong className="content__code"> (Ruby)</strong> or
+                    pickling
+                    <strong className="content__code">(Python)</strong>. These
+                    terms are synonymous with "serialization" in this context.
                   </p>
                 </dd>
                 {/* Single FAQ Area */}
@@ -98,20 +119,39 @@ export default function InsecureDeserialization() {
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <p>
-                    Insecure deserialization is when user-controllable data is
-                    deserialized by a website. This potentially enables an
-                    attacker to manipulate serialized objects in order to pass
-                    harmful data into the application code.
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="me-2 text-warning"
+                    />
+                    <strong className="content__subtitle">
+                      Insecure deserialization
+                    </strong>
+                    is when user-controllable data is deserialized by a website.
+                    This potentially enables an attacker to manipulate
+                    serialized objects in order to pass harmful data into the
+                    application code.
                   </p>
                   <p>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="me-2 text-warning"
+                    />
                     It is even possible to replace a serialized object with an
                     object of an entirely different class. Alarmingly, objects
                     of any class that is available to the website will be
                     deserialized and instantiated, regardless of which class was
                     expected. For this reason, insecure deserialization is
-                    sometimes known as an "object injection" vulnerability.
+                    sometimes known as an{" "}
+                    <strong className="content__subtitle">
+                      "object injection"
+                    </strong>{" "}
+                    vulnerability.
                   </p>
                   <p>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="me-2 text-warning"
+                    />
                     An object of an unexpected class might cause an exception.
                     By this time, however, the damage may already be done. Many
                     deserialization-based attacks are completed before
@@ -130,12 +170,23 @@ export default function InsecureDeserialization() {
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <p>
-                    Insecure deserialization typically arises because there is a
-                    general lack of understanding of how dangerous deserializing
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="me-2 text-warning"
+                    />
+                    <strong className="content__subtitle">
+                      Insecure deserialization
+                    </strong>
+                    typically arises because there is a general lack of
+                    understanding of how dangerous deserializing
                     user-controllable data can be. Ideally, user input should
                     never be deserialized at all.
                   </p>
                   <p>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="me-2 text-warning"
+                    />
                     However, sometimes website owners think they are safe
                     because they implement some form of additional check on the
                     deserialized data. This approach is often ineffective
@@ -146,6 +197,10 @@ export default function InsecureDeserialization() {
                     many cases will be too late to prevent the attack.
                   </p>
                   <p>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="me-2 text-warning"
+                    />
                     Vulnerabilities may also arise because deserialized objects
                     are often assumed to be trustworthy. Especially when using
                     languages with a binary serialization format, developers
@@ -155,6 +210,10 @@ export default function InsecureDeserialization() {
                     serialized objects as it is to exploit string-based formats.
                   </p>
                   <p>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="me-2 text-warning"
+                    />
                     Deserialization-based attacks are also made possible due to
                     the number of dependencies that exist in modern websites. A
                     typical site might implement many different libraries, which
@@ -170,6 +229,10 @@ export default function InsecureDeserialization() {
                     malicious data and plug every potential hole.
                   </p>
                   <p>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="me-2 text-warning"
+                    />
                     In short, it can be argued that it is not possible to
                     securely deserialize untrusted input.
                   </p>
@@ -180,10 +243,18 @@ export default function InsecureDeserialization() {
                   deserialization ?
                 </dt>
                 <dd className="fadeInUp faq-body">
-                  <img src={exampleImage2} alt="Example" />
+                  <img
+                    class="img-fluid w-50 mx-auto d-block"
+                    src={exampleImage2}
+                    alt="Example"
+                  />
                   <br></br>
                   <br></br>
                   <p>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="me-2 text-warning"
+                    />
                     The impact of insecure deserialization can be very severe
                     because it provides an entry point to a massively increased
                     attack surface. It allows an attacker to reuse existing
@@ -191,6 +262,10 @@ export default function InsecureDeserialization() {
                     other vulnerabilities, often remote code execution.
                   </p>
                   <p>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="me-2 text-warning"
+                    />
                     Even in cases where remote code execution is not possible,
                     insecure deserialization can lead to privilege escalation,
                     arbitrary file access, and denial-of-service attacks.
@@ -203,6 +278,10 @@ export default function InsecureDeserialization() {
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <p>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="me-2 text-warning"
+                    />
                     Generally speaking, deserialization of user input should be
                     avoided unless absolutely necessary. The high severity of
                     exploits that it potentially enables, and the difficulty in
@@ -210,6 +289,10 @@ export default function InsecureDeserialization() {
                     cases.
                   </p>
                   <p>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="me-2 text-warning"
+                    />
                     If you do need to deserialize data from untrusted sources,
                     incorporate robust measures to make sure that the data has
                     not been tampered with. For example, you could implement a
@@ -219,6 +302,10 @@ export default function InsecureDeserialization() {
                     of little use.
                   </p>
                   <p>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="me-2 text-warning"
+                    />
                     If possible, you should avoid using generic deserialization
                     features altogether. Serialized data from these methods
                     contains all attributes of the original object, including
@@ -228,6 +315,10 @@ export default function InsecureDeserialization() {
                     least control which fields are exposed.
                   </p>
                   <p>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="me-2 text-warning"
+                    />
                     Finally, remember that the vulnerability is the
                     deserialization of user input, not the presence of gadget
                     chains that subsequently handle the data. Don't rely on

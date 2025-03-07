@@ -1,14 +1,11 @@
 .Command-Injection-paragraph {
-  font-size: 1rem;
-  color: var(--secondary-text);
-
+  font-size: 1.1rem;
+  color: var(--primary-text);
   margin-bottom: 20px;
   line-height: 1.8;
   transition: color 0.3s ease;
 }
-.Command-Injection-paragraph:hover {
-  color: var(--primary-text);
-}
+
 .Command-Injection-image {
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -84,12 +81,11 @@
 }
 
 .Command-modern-table code {
-  background-color: #f4f4f4;
   padding: 4px 8px;
   border-radius: 4px;
   font-family: "Courier New", Courier, monospace;
   font-size: 0.9rem;
-  color: #d63384;
+  color: var(--main-color);
 }
 
 /* Responsive Design */

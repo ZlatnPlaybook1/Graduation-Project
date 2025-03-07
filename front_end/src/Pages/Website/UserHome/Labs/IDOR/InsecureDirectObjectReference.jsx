@@ -11,6 +11,8 @@ import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function InsecureDirectObjectReference() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
@@ -46,6 +48,10 @@ export default function InsecureDirectObjectReference() {
                 <dd className="fadeInUp faq-body">
                   <ul className="secure-list">
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       The term{" "}
                       <span className="secure-highlight">
                         insecure direct object reference
@@ -57,6 +63,10 @@ export default function InsecureDirectObjectReference() {
                       validation, authorization, or access control.
                     </li>
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       The term was introduced by the Open Web Application
                       Security Project (OWASP) in the
                       <span className="secure-highlight">
@@ -67,6 +77,10 @@ export default function InsecureDirectObjectReference() {
                       Reference.
                     </li>
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       In 2017, it was merged into A5 Broken Access Control along
                       with other access control issues, and later carried over
                       to the 2021 list under A1 Broken Access Control.
@@ -85,6 +99,10 @@ export default function InsecureDirectObjectReference() {
                   />
                   <ul className="secure-list">
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       Most web applications use simple unique identifiers to
                       reference server-side objects. For example, a user in a
                       database will usually be referred to via a unique user ID.
@@ -97,6 +115,10 @@ export default function InsecureDirectObjectReference() {
                       records.
                     </li>
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       Such IDs often see client-side use by web applications and
                       APIs. When sent in URLs via regular HTTP requests using
                       the GET method, the IDs are clearly visible both in the
@@ -111,6 +133,10 @@ export default function InsecureDirectObjectReference() {
                       generic page authentication.
                     </li>
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       For example, let’s say that a web application displays
                       transaction details using the following URL:
                       <span className="secure-link">
@@ -118,6 +144,10 @@ export default function InsecureDirectObjectReference() {
                       </span>
                     </li>
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       A malicious hacker could try tampering with the id
                       parameter value and substituting other, similar values for
                       74656, for example:
@@ -137,6 +167,10 @@ export default function InsecureDirectObjectReference() {
                       vulnerability.
                     </li>
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       Examples of common{" "}
                       <span className="secure-highlight">IDOR</span>{" "}
                       vulnerabilities: IDOR vulnerabilities often appear in
@@ -153,6 +187,10 @@ export default function InsecureDirectObjectReference() {
                       administrator is often 1).
                     </li>
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       <span className="secure-highlight">IDOR</span>{" "}
                       vulnerabilities might also involve filenames, not object
                       IDs. For example, directory traversal (path traversal) is
@@ -167,6 +205,10 @@ export default function InsecureDirectObjectReference() {
                       </span>
                     </li>
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       If there is an{" "}
                       <span className="secure-highlight">IDOR</span>{" "}
                       vulnerability associated with the display_file.php script,
@@ -187,6 +229,10 @@ export default function InsecureDirectObjectReference() {
                 <dd className="fadeInUp faq-body">
                   <ul className="secure-list">
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       Insecure direct object references are a type of access
                       control vulnerability that cannot be directly detected
                       using automated security testing tools (except in the
@@ -204,6 +250,10 @@ export default function InsecureDirectObjectReference() {
                 <dd className="fadeInUp faq-body">
                   <div className="secure-faq-content">
                     <p>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       The only way to protect against IDORs is to implement
                       strict access control checks for all sensitive objects.
                       Luckily, modern back-end development frameworks such as
@@ -219,6 +269,10 @@ export default function InsecureDirectObjectReference() {
                       directly.
                     </p>
                     <p>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       You may see some sources saying that to prevent IDOR
                       vulnerabilities, you should use long, hard-to-guess object
                       identifiers, such as the ones used for session management
@@ -235,20 +289,44 @@ export default function InsecureDirectObjectReference() {
                     </p>
                     <ul>
                       <li>
-                        Implement strict access control checks for sensitive
-                        objects.
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
+                        <b className="content__subtitle">
+                          Implement strict access control checks for sensitive
+                          objects.
+                        </b>
                       </li>
                       <li>
-                        Use reputable frameworks like Ruby on Rails or Django
-                        for secure object access control.
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
+                        <b className="content__subtitle">
+                          Use reputable frameworks like Ruby on Rails or Django
+                          for secure object access control.
+                        </b>
                       </li>
                       <li>
-                        Avoid using long, hard-to-guess identifiers or UUIDs
-                        alone for security.
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
+                        <b className="content__subtitle">
+                          Avoid using long, hard-to-guess identifiers or UUIDs
+                          alone for security.
+                        </b>
                       </li>
                       <li>
-                        Secure cryptographic hashes should be used instead of
-                        direct identifiers.
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="me-2 text-warning"
+                        />
+                        <b className="content__subtitle">
+                          Secure cryptographic hashes should be used instead of
+                          direct identifiers.
+                        </b>
                       </li>
                     </ul>
                   </div>

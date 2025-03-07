@@ -228,7 +228,7 @@ export default function UnrestrictedFileUpload() {
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul>
-                    <li className="scnarios-fileUplode">
+                    <li className="preventing-fileUplode">
                       Developers must review upload functionality to determine
                       if uploaded content is ever returned to other application
                       users and whether that is due to normal application usage
@@ -269,7 +269,7 @@ export default function UnrestrictedFileUpload() {
                         escapable with a crafted filename.
                       </li>
                     </ul>
-                    <li className="scnarios-fileUplode">
+                    <li className="preventing-fileUplode">
                       There are numerous steps toward a more robust upload code
                       architecture that developers must consider in their
                       design:

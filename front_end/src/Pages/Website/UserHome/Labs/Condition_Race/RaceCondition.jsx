@@ -13,7 +13,8 @@ import exampleImage2 from "../../assets/img/Condition_Race/2.png";
 import exampleImage3 from "../../assets/img/Condition_Race/3.png";
 import exampleImage4 from "../../assets/img/Condition_Race/4.png";
 import exampleImage5 from "../../assets/img/Condition_Race/5.png";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 export default function RaceCondition() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
@@ -44,17 +45,24 @@ export default function RaceCondition() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <p>
-                    Race conditions are a common type of vulnerability closely
-                    related to business logic flaws. They occur when websites
-                    process requests concurrently without adequate safeguards.
-                    This can lead to multiple distinct threads interacting with
-                    the same data at the same time, resulting in a "collision"
-                    that causes unintended behavior in the application. A race
+                    <strong className="content__subtitle">
+                      Race conditions
+                    </strong>
+                    are a common type of vulnerability closely related to
+                    business logic flaws. They occur when websites process
+                    requests concurrently without adequate safeguards. This can
+                    lead to multiple distinct threads interacting with the same
+                    data at the same time, resulting in a "collision" that
+                    causes unintended behavior in the application. A race
                     condition attack uses carefully timed requests to cause
                     intentional collisions and exploit this unintended behavior
                     for malicious purposes.
                   </p>
-                  <img src={exampleImage1} alt="Example" />
+                  <img
+                    className="img-fluid w-50 mx-auto d-block"
+                    src={exampleImage1}
+                    alt="Example"
+                  />
                   <br></br>
                   <br></br>
                   <p>
@@ -96,20 +104,49 @@ export default function RaceCondition() {
                     on your order. To apply this discount, the application may
                     perform the following high-level steps:
                   </p>
-                  <ol>
-                    <li>Check that you haven't already used this code.</li>
-                    <li>Apply the discount to the order total.</li>
+                  <ul>
                     <li>
-                      Update the record in the database to reflect the fact that
-                      you've now used this code.
+                      {" "}
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      <b className="content__subtitle">
+                        {" "}
+                        Check that you haven't already used this code.
+                      </b>
                     </li>
-                  </ol>
+                    <li>
+                      {" "}
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      <b className="content__subtitle">
+                        Apply the discount to the order total.
+                      </b>
+                    </li>
+                    <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      <b className="content__subtitle">
+                        Update the record in the database to reflect the fact
+                        that you've now used this code.
+                      </b>
+                    </li>
+                  </ul>
                   <p>
                     If you later attempt to reuse this code, the initial checks
                     performed at the start of the process should prevent you
                     from doing this:
                   </p>
-                  <img src={exampleImage2} alt="Example" />
+                  <img
+                    className="img-fluid w-50 mx-auto d-block"
+                    src={exampleImage2}
+                    alt="Example"
+                  />
                   <br></br>
                   <br></br>
                   <p>
@@ -117,7 +154,11 @@ export default function RaceCondition() {
                     applied this discount code before tried to apply it twice at
                     almost exactly the same time:
                   </p>
-                  <img src={exampleImage3} alt="Example" />
+                  <img
+                    className="img-fluid w-50 mx-auto d-block"
+                    src={exampleImage3}
+                    alt="Example"
+                  />
                   <br></br>
                   <br></br>
                   <p>
@@ -134,14 +175,46 @@ export default function RaceCondition() {
                     There are many variations of this kind of attack, including:
                   </p>
                   <ul>
-                    <li>Redeeming a gift card multiple times</li>
-                    <li>Rating a product multiple times</li>
                     <li>
+                      {" "}
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      Redeeming a gift card multiple times
+                    </li>
+                    <li>
+                      {" "}
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      Rating a product multiple times
+                    </li>
+                    <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       Withdrawing or transferring cash in excess of your account
                       balance
                     </li>
-                    <li>Reusing a single CAPTCHA solution</li>
-                    <li>Bypassing an anti-brute-force rate limit</li>
+                    <li>
+                      {" "}
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      Reusing a single CAPTCHA solution
+                    </li>
+                    <li>
+                      {" "}
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
+                      Bypassing an anti-brute-force rate limit
+                    </li>
                   </ul>
                   <p>
                     Limit overruns are a subtype of so-called "time-of-check to
@@ -162,16 +235,24 @@ export default function RaceCondition() {
                     conditions is relatively simple. In high-level terms, all
                     you need to do is:
                   </p>
-                  <ol>
+                  <ul>
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       Identify a single-use or rate-limited endpoint that has
                       some kind of security impact or other useful purpose.
                     </li>
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       Issue multiple requests to this endpoint in quick
                       succession to see if you can overrun this limit.
                     </li>
-                  </ol>
+                  </ul>
                   <p>
                     The primary challenge is timing the requests so that at
                     least two race windows line up, causing a collision. This
@@ -183,24 +264,39 @@ export default function RaceCondition() {
                     unpredictable external factors that affect when the server
                     processes each request and in which order.
                   </p>
-                  <img src={exampleImage4} alt="Example" />
+                  <img
+                    className="img-fluid w-50 mx-auto d-block"
+                    src={exampleImage4}
+                    alt="Example"
+                  />
                   <br></br>
                   <br></br>
                   <p>
-                    <strong>Burp Suite 2023.9</strong> adds powerful new
-                    capabilities to Burp Repeater that enable you to easily send
-                    a group of parallel requests in a way that greatly reduces
-                    the impact of one of these factors, namely network jitter.
-                    Burp automatically adjusts the technique it uses to suit the
-                    HTTP version supported by the server:
+                    <strong className="content__subtitle">
+                      Burp Suite 2023.9
+                    </strong>{" "}
+                    adds powerful new capabilities to Burp Repeater that enable
+                    you to easily send a group of parallel requests in a way
+                    that greatly reduces the impact of one of these factors,
+                    namely network jitter. Burp automatically adjusts the
+                    technique it uses to suit the HTTP version supported by the
+                    server:
                   </p>
                   <ul>
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       For HTTP/1.x servers, Burp sends all requests in parallel
                       over a single connection, which reduces the impact of
                       network jitter.
                     </li>
                     <li>
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="me-2 text-warning"
+                      />
                       For HTTP/2 servers, Burp sends all requests in parallel
                       over multiple connections, which is more efficient and
                       also reduces the impact of network jitter.
@@ -211,7 +307,11 @@ export default function RaceCondition() {
                     neutralize interference from network jitter by using a
                     single TCP packet to complete 20-30 requests simultaneously.
                   </p>
-                  <img src={exampleImage5} alt="Example" />
+                  <img
+                    className="img-fluid w-50 mx-auto d-block"
+                    src={exampleImage5}
+                    alt="Example"
+                  />
                   <br></br>
                   <br></br>
                   <p>
@@ -245,25 +345,42 @@ export default function RaceCondition() {
                     beyond limit overruns.
                   </p>
                   <p>
-                    For example, you may be familiar with flawed multi-factor
-                    authentication (MFA) workflows that let you perform the
-                    first part of the login using known credentials, then
-                    navigate straight to the application via forced browsing,
-                    effectively bypassing MFA entirely.
+                    For example, you may be familiar with flawed{" "}
+                    <strong className="content__subtitle">
+                      {" "}
+                      multi-factor authentication (MFA)
+                    </strong>{" "}
+                    workflows that let you perform the first part of the login
+                    using known credentials, then navigate straight to the
+                    application via forced browsing, effectively bypassing MFA
+                    entirely.
                   </p>
                   <p>
                     The following pseudo-code demonstrates how a website could
                     be vulnerable to a race variation of this attack:
                   </p>
-                  <code>session['userid'] = user.userid</code>
-                  <p></p>
-                  <code>if user.mfa_enabled:</code>
-                  <p></p>
-                  <code>session['enforce_mfa'] = True</code>
-                  <p></p>
-                  <code># generate and send MFA code to user</code>
-                  <p></p>
-                  <code># redirect browser to MFA code entry form</code>
+                  <code className="content__code">
+                    session['userid'] = user.userid
+                  </code>
+                  <br></br>
+                  <code className="content__code">if user.mfa_enabled:</code>
+                  <br></br>
+
+                  <code className="content__code">
+                    session['enforce_mfa'] = True
+                  </code>
+                  <br></br>
+
+                  <code className="content__code">
+                    # generate and send MFA code to user
+                  </code>
+                  <br></br>
+
+                  <code className="content__code">
+                    # redirect browser to MFA code entry form
+                  </code>
+                  <br></br>
+
                   <p>
                     As you can see, this is in fact a multi-step sequence within
                     the span of a single request. Most importantly, it

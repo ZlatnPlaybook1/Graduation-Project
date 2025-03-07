@@ -9,6 +9,8 @@ import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function BrokenAuthentication() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
@@ -35,7 +37,7 @@ export default function BrokenAuthentication() {
           <div className="content-row">
             <div className="content-section">
               <dl className="topics-text">
-                {/* Single FAQ Area */}
+                {/* Description FAQ Area */}
                 <dt className="fadeInUp faq-header">
                   <span>Task 1</span>Description
                 </dt>
@@ -80,7 +82,7 @@ export default function BrokenAuthentication() {
                     </li>
                   </ul>
                 </dd>
-                {/* Single FAQ Area */}
+                {/* Impact FAQ Area */}
                 <dt className="fadeInUp faq-header">
                   <span>Task 2</span> Impact
                 </dt>
@@ -140,7 +142,7 @@ export default function BrokenAuthentication() {
                     </li>
                   </ul>
                 </dd>
-                {/* Single FAQ Area */}
+                {/* Scenarios FAQ Area */}
                 <dt className="fadeInUp faq-header">
                   <span>Task 3</span> Scenarios
                 </dt>
@@ -167,6 +169,7 @@ export default function BrokenAuthentication() {
                         details, and personal information.
                       </div>
                     </li>
+                    <br></br>
                     {/* Scenario 2 */}
                     <li className="scenario-item">
                       <span className="scenario-title">
@@ -188,6 +191,7 @@ export default function BrokenAuthentication() {
                         data.
                       </div>
                     </li>
+                    <br></br>
                     {/* Additional Scenarios */}
                     <li className="scenario-item">
                       <span className="scenario-title">
@@ -209,6 +213,7 @@ export default function BrokenAuthentication() {
                         needing their password.
                       </div>
                     </li>
+                    <br></br>
                     <li className="scenario-item">
                       <span className="scenario-title">
                         Scenario 4: Missing MFA
@@ -228,6 +233,7 @@ export default function BrokenAuthentication() {
                         performs unauthorized actions.
                       </div>
                     </li>
+                    <br></br>
                     <li className="scenario-item">
                       <span className="scenario-title">
                         Scenario 5: Insecure Password Recovery
@@ -267,17 +273,29 @@ export default function BrokenAuthentication() {
                           <strong>1. Strong Password Policies:</strong>
                           <ul className="detail-list">
                             <li className="emoji">
-                              🔒 Enforce password complexity with a minimum
-                              length of 8-12 characters, and require uppercase,
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Enforce password complexity with a minimum length
+                              of 8-12 characters, and require uppercase,
                               lowercase, numbers, and symbols.
                             </li>
                             <li className="emoji">
-                              🔑 Ban commonly used passwords by integrating
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Ban commonly used passwords by integrating
                               breached password databases (e.g., HaveIBeenPwned
                               API).
                             </li>
                             <li className="emoji">
-                              🔄 Require periodic password changes.
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Require periodic password changes.
                             </li>
                           </ul>
                         </div>
@@ -285,13 +303,21 @@ export default function BrokenAuthentication() {
                           <strong>2. Multi-Factor Authentication (MFA):</strong>
                           <ul className="detail-list">
                             <li className="emoji">
-                              📱 Use a second factor for authentication, such as
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Use a second factor for authentication, such as
                               Time-based One-Time Passwords (TOTP) via apps like
                               Google Authenticator, push notifications, or
                               biometrics (fingerprint or facial recognition).
                             </li>
                             <li className="emoji">
-                              🔐 Make MFA mandatory for admin and high-privilege
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Make MFA mandatory for admin and high-privilege
                               accounts.
                             </li>
                           </ul>
@@ -300,11 +326,19 @@ export default function BrokenAuthentication() {
                           <strong>3. Secure Credential Storage:</strong>
                           <ul className="detail-list">
                             <li className="emoji">
-                              💾 Hash passwords with strong algorithms like
-                              bcrypt (preferred), Argon2, or PBKDF2.
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Hash passwords with strong algorithms like bcrypt
+                              (preferred), Argon2, or PBKDF2.
                             </li>
                             <li className="emoji">
-                              🔒 Salt passwords before hashing to defend against
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Salt passwords before hashing to defend against
                               rainbow table attacks.
                             </li>
                           </ul>
@@ -313,7 +347,11 @@ export default function BrokenAuthentication() {
                           <strong>4. Use CAPTCHA for Bots:</strong>
                           <ul className="detail-list">
                             <li className="emoji">
-                              🤖 Add CAPTCHA (e.g., reCAPTCHA) to login,
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Add CAPTCHA (e.g., reCAPTCHA) to login,
                               registration, and password reset forms to block
                               automated attacks.
                             </li>
@@ -328,14 +366,26 @@ export default function BrokenAuthentication() {
                           <strong>5. Secure Session Tokens:</strong>
                           <ul className="detail-list">
                             <li className="emoji">
-                              🔑 Use random, cryptographically secure tokens.
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Use random, cryptographically secure tokens.
                             </li>
                             <li className="emoji">
-                              🍪 Store session tokens in HTTP-only, secure
-                              cookies (to prevent client-side access).
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Store session tokens in HTTP-only, secure cookies
+                              (to prevent client-side access).
                             </li>
                             <li className="emoji">
-                              ⚙️ Mark cookies with the SameSite attribute to
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Mark cookies with the SameSite attribute to
                               prevent cross-site request forgery (CSRF).
                             </li>
                           </ul>
@@ -344,11 +394,19 @@ export default function BrokenAuthentication() {
                           <strong>6. Session Timeout:</strong>
                           <ul className="detail-list">
                             <li className="emoji">
-                              ⏲️ Set short inactivity timeouts for sensitive
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Set short inactivity timeouts for sensitive
                               operations.
                             </li>
                             <li className="emoji">
-                              🔄 Force token expiration after logout or password
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Force token expiration after logout or password
                               change.
                             </li>
                           </ul>
@@ -357,7 +415,11 @@ export default function BrokenAuthentication() {
                           <strong>7. Prevent Session Fixation:</strong>
                           <ul className="detail-list">
                             <li className="emoji">
-                              🔄 Regenerate session IDs after login or privilege
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Regenerate session IDs after login or privilege
                               escalation.
                             </li>
                           </ul>
@@ -373,11 +435,19 @@ export default function BrokenAuthentication() {
                           <strong>8. Account Lockout Mechanisms:</strong>
                           <ul className="detail-list">
                             <li className="emoji">
-                              🔒 Lock accounts temporarily after several failed
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Lock accounts temporarily after several failed
                               login attempts.
                             </li>
                             <li className="emoji">
-                              ⚠️ Notify users about suspicious login attempts.
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Notify users about suspicious login attempts.
                             </li>
                           </ul>
                         </div>
@@ -385,12 +455,19 @@ export default function BrokenAuthentication() {
                           <strong>9. Monitor and Detect:</strong>
                           <ul className="detail-list">
                             <li className="emoji">
-                              🔍 Implement logging and monitoring for unusual
-                              login patterns or location changes.
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Implement logging and monitoring for unusual login
+                              patterns or location changes.
                             </li>
                             <li className="emoji">
-                              📊 Use rate-limiting to prevent brute force
-                              attacks.
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Use rate-limiting to prevent brute force attacks.
                             </li>
                           </ul>
                         </div>
@@ -398,8 +475,12 @@ export default function BrokenAuthentication() {
                           <strong>10. Use Federated Identity:</strong>
                           <ul className="detail-list">
                             <li className="emoji">
-                              🔗 Use trusted third-party identity providers
-                              (e.g., OAuth 2.0, OpenID Connect) to handle
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Use trusted third-party identity providers (e.g.,
+                              OAuth 2.0, OpenID Connect) to handle
                               authentication securely.
                             </li>
                           </ul>
@@ -421,27 +502,39 @@ export default function BrokenAuthentication() {
                       </span>
                       <div className="section-details">
                         <div className="detail-item">
-                          <strong>• Burp Suite:</strong>
+                          <strong>Burp Suite:</strong>
                           <ul className="detail-list">
                             <li className="emoji">
-                              🛠️ To test for vulnerabilities like session
-                              hijacking or weak password policies.
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              To test for vulnerabilities like session hijacking
+                              or weak password policies.
                             </li>
                           </ul>
                         </div>
                         <div className="detail-item">
-                          <strong>• OWASP ZAP:</strong>
+                          <strong> OWASP ZAP:</strong>
                           <ul className="detail-list">
                             <li className="emoji">
-                              🔍 To scan for common authentication issues.
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              To scan for common authentication issues.
                             </li>
                           </ul>
                         </div>
                         <div className="detail-item">
-                          <strong>• Hydra/Medusa:</strong>
+                          <strong>Hydra/Medusa:</strong>
                           <ul className="detail-list">
                             <li className="emoji">
-                              🔐 For brute-force testing (only with
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              For brute-force testing (only with
                               authorization!).
                             </li>
                           </ul>
@@ -454,14 +547,28 @@ export default function BrokenAuthentication() {
                       </span>
                       <div className="section-details">
                         <div className="detail-item">
-                          <strong>• Security frameworks and libraries:</strong>
+                          <strong>Security frameworks and libraries:</strong>
                           <ul className="detail-list">
                             <li className="emoji">
-                              🔒 Spring Security (Java).
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Spring Security (Java).
                             </li>
-                            <li className="emoji">🔐 Passport.js (Node.js).</li>
                             <li className="emoji">
-                              🛡️ Devise (Ruby on Rails).
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />{" "}
+                              Passport.js (Node.js).
+                            </li>
+                            <li className="emoji">
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="me-2 text-warning"
+                              />
+                              Devise (Ruby on Rails).
                             </li>
                           </ul>
                         </div>
