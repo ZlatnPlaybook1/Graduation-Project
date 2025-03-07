@@ -531,9 +531,9 @@ export default function CryptoGraphy() {
                   </p>
                   <p>
                     We will visit various asymmetric encryption ciphers in the
-                    next room. For now, the important thing to note is that
-                    asymmetric encryption provides you with a public key that
-                    you share with everyone and a private key that you keep
+                    next room. For now, the important thing to note__new--note
+                    is that asymmetric encryption provides you with a public key
+                    that you share with everyone and a private key that you keep
                     guarded and secret.
                   </p>
                   <br></br>

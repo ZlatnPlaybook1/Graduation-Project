@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
-import "../../SSRF_Labs.css"; 
+import "../../SSRF_Labs.css";
 import products from "../../data.json";
 import axios from "axios";
 
@@ -10,7 +10,7 @@ export default function SSRF_store1() {
   const [resetMessage, setResetMessage] = useState("");
   const [messageFromURL, setMessageFromURL] = useState("");
   const [htmlContent, setHtmlContent] = useState("");
-  
+
   const hintMessage = `<span>This lab is vulnerable to SSRF due to improper validation of user-supplied input. To solve the lab, you need to provide a URL that can be exploited to access internal resources (e.g., localhost).</span>`;
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function SSRF_store1() {
   const sendMessageToBackend = async (message) => {
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8080/api/SSRFLab/submitMessage", 
+        "http://127.0.0.1:8080/api/SSRFLab/submitMessage",
         { message }
       );
       console.log("Message sent to backend:", response.data);
@@ -43,7 +43,9 @@ export default function SSRF_store1() {
 
   const labreset = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:8080/api/SSRFLabReset");
+      const response = await axios.get(
+        "http://127.0.0.1:8080/api/SSRFLabReset"
+      );
       if (response.status === 200) {
         setResetMessage(response.data.message);
         window.history.replaceState({}, "", window.location.pathname);
@@ -58,13 +60,17 @@ export default function SSRF_store1() {
   const checkStock = async (product) => {
     try {
       const response = await axios.post(
-        `http://127.0.0.1:8080/api/SSRFLab/checkStock`, 
+        `http://127.0.0.1:8080/api/SSRFLab/checkStock`,
         { productId: product.id }
       );
 
       // Let's simulate SSRF here by sending a manipulated message.
       const message = response.data.message;
-      window.history.pushState({}, "", `?message=${encodeURIComponent(message)}`);
+      window.history.pushState(
+        {},
+        "",
+        `?message=${encodeURIComponent(message)}`
+      );
       setOutOfStockMessage(message);
     } catch (error) {
       console.error("Error sending stock check request:", error);
@@ -105,7 +111,7 @@ export default function SSRF_store1() {
           <h2>{outOfStockMessage}</h2>
         </div>
       )}
-      
+
       {htmlContent && (
         <div
           className="backend-response"
@@ -129,7 +135,7 @@ export default function SSRF_store1() {
                 <div className="ssrf__course-store__card-store--card-text-store">
                   <button
                     onClick={() => checkStock(product)} // Send the request when clicked
-                    className="text-black bg-transparent"
+                    className="text-black bg-transparent border-0"
                   >
                     {product.title}
                   </button>

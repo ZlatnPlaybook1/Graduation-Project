@@ -12,16 +12,24 @@ export default function SSRF_lab() {
     <>
       <Header />
       {/* Start Landing  */}
-      <LandingPractice/>
+      <LandingPractice />
       {/* End Landing  */}
       {/* Start Courses  */}
       <div className="course">
         <div className="container">
-        <PracticeTitle title={"SSRF"} />
-          
+          <PracticeTitle title={"SSRF"} />
           <div className="row">
             <Card
               link={"ssrf_lab1/store"}
+              image={image}
+              title={"SSRF Store Vulnerability"}
+              brief={
+                "This lab is vulnerable to server-side template injection due to the unsafe construction of an Handlebars template."
+              }
+              difficulty={"Intermediate"}
+            />
+            <Card
+              link={"ssrf_lab2/store"}
               image={image}
               title={"SSRF Store Vulnerability"}
               brief={

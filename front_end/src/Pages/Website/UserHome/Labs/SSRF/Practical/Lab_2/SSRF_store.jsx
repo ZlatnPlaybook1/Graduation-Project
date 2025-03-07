@@ -1,24 +1,28 @@
 import React, { useState, useEffect } from "react";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
-import "../../SSRF_Labs.css";
+import "../../SSRF_Labs.css"; 
 import products from "../../data.json";
 import axios from "axios";
-export default function SSRF_store2() {
+
+export default function SSRF_store1() {
   const [outOfStockMessage, setOutOfStockMessage] = useState("");
   const [resetMessage, setResetMessage] = useState("");
   const [messageFromURL, setMessageFromURL] = useState("");
   const [htmlContent, setHtmlContent] = useState("");
-  const hintMessage = `<span>This lab is vulnerable to server-side template injection due to the unsafe construction of an Handlebars template.To solve the lab, review the Handlebars documentation to find out how to execute arbitrary code, then delete the</span><strong> secret.txt</strong>
-  `;
+  const apiUrl = "http://127.0.0.1:8080/api/SSRFLab";
+  
+  const hintMessage = `<span>This lab is vulnerable to SSRF due to improper validation of user-supplied input. To solve the lab, you need to provide a URL that can be exploited to access internal resources (e.g., localhost).</span>`;
+
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const message = urlParams.get("message");
-
+    
     if (message) {
       setMessageFromURL(decodeURIComponent(message));
     }
   }, []);
+
   useEffect(() => {
     if (messageFromURL) {
       sendMessageToBackend(messageFromURL);
@@ -27,21 +31,17 @@ export default function SSRF_store2() {
 
   const sendMessageToBackend = async (message) => {
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8080/api/SSTIlab2/submitMessage",
-        { message }
-      );
+      const response = await axios.post(`${apiUrl}/submitMessage`, { message });
       console.log("Message sent to backend:", response.data);
       setHtmlContent(response.data);
     } catch (error) {
       console.error("Error sending message to backend:", error);
     }
   };
+
   const labreset = async () => {
     try {
-      const response = await axios.get(
-        "http://127.0.0.1:8080/api/SSTIlab2Reset"
-      );
+      const response = await axios.get(`${apiUrl}Reset`);
       if (response.status === 200) {
         setResetMessage(response.data.message);
         window.history.replaceState({}, "", window.location.pathname);
@@ -52,17 +52,13 @@ export default function SSRF_store2() {
       setResetMessage("Error: Could not reset.");
     }
   };
+
   const checkStock = async (product) => {
     try {
-      const response = await axios.post(
-        `http://127.0.0.1:8080/api/SSTIlab2/${product.id}`
-      );
+      const response = await axios.post(`${apiUrl}/checkStock`, { productId: product.id });
+
       const message = response.data.message;
-      window.history.pushState(
-        {},
-        "",
-        `?message=${encodeURIComponent(message)}`
-      );
+      window.history.pushState({}, "", `?message=${encodeURIComponent(message)}`);
       setOutOfStockMessage(message);
     } catch (error) {
       console.error("Error sending stock check request:", error);
@@ -71,7 +67,7 @@ export default function SSRF_store2() {
   };
 
   return (
-    <div className="container-ssti3">
+    <div className="container">
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
       <button
@@ -89,32 +85,19 @@ export default function SSRF_store2() {
         Reset
       </button>
 
-      {/* Display out-of-stock message if available */}
       {outOfStockMessage && (
-        <div
-          className="out-of-stock-message"
-          style={{
-            color: "red",
-            textAlign: "center",
-            marginBottom: "20px",
-            marginTop: "20px",
-          }}
-        >
+        <div className="out-of-stock-message" style={{ color: "red", textAlign: "center", marginBottom: "20px", marginTop: "20px" }}>
           <h2>{outOfStockMessage}</h2>
         </div>
       )}
+      
       {htmlContent && (
-        <div
-          className="backend-response"
-          dangerouslySetInnerHTML={{ __html: htmlContent }} // This will render the HTML content
-        />
+        <div className="backend-response" dangerouslySetInnerHTML={{ __html: htmlContent }} />
       )}
 
       <div className="ssrf__course-store">
         <div className="container">
-          <h1 style={{ textAlign: "center", marginBottom: 60 }}>
-            Featured Products
-          </h1>
+          <h1 style={{ textAlign: "center", marginBottom: 60 }}>Featured Products</h1>
           <div className="ssrf__course-store--row-practice">
             {products.map((product) => (
               <div className="ssrf__course-store--card-store" key={product.id}>
@@ -125,13 +108,12 @@ export default function SSRF_store2() {
                 <img src={product.image} alt={product.title} />
                 <div className="ssrf__course-store__card-store--card-text-store">
                   <button
-                    onClick={() => checkStock(product)} // When clicked, send the product ID to the backend
-                    className="text-black bg-transparent"
+                    onClick={() => checkStock(product)}
+                    className="text-black bg-transparent border-0"
                   >
                     {product.title}
                   </button>
                   <p className="price">${product.price}</p>
-                  {/* Add the Check Stock link */}
                 </div>
               </div>
             ))}

@@ -382,10 +382,10 @@ export default function SSTI() {
                     server-side template injection vulnerability.
                   </p>
                   <p>
-                    Note that the specific syntax required to successfully
-                    evaluate the mathematical operation will vary depending on
-                    which template engine is being used. We'll discuss this in
-                    more detail in the Identify step.
+                    note__new--note that the specific syntax required to
+                    successfully evaluate the mathematical operation will vary
+                    depending on which template engine is being used. We'll
+                    discuss this in more detail in the Identify step.
                   </p>
                   <br></br>
                   <h4>Code context</h4>

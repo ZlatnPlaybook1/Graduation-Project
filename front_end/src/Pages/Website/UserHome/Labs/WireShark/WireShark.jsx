@@ -116,9 +116,9 @@ export default function WireShark() {
                   </div>
                   <br></br>
                   <p>
-                    Note: Wireshark can come with other packages and tools; you
-                    can decide whether or not you want to install them along
-                    with Wireshark.
+                    note__new--note: Wireshark can come with other packages and
+                    tools; you can decide whether or not you want to install
+                    them along with Wireshark.
                   </p>
                 </dd>
 
@@ -148,11 +148,11 @@ export default function WireShark() {
                     on our interface(s) or load a PCAP for analysis.
                   </p>
                   <p>
-                    It is useful to note that the graphs next to the interface
-                    names show the activity on the interface, if an interface
-                    has a flat bar it may be useless to attempt to capture on it
-                    (as no data on that interface is being picked up by the
-                    Wireshark client).
+                    It is useful to note__new--note that the graphs next to the
+                    interface names show the activity on the interface, if an
+                    interface has a flat bar it may be useless to attempt to
+                    capture on it (as no data on that interface is being picked
+                    up by the Wireshark client).
                   </p>
                   <br></br>
                   <h4>Live Packet Captures :</h4>
@@ -320,8 +320,8 @@ export default function WireShark() {
                     send out packets to all ports of the switch.
                   </p>
                   <p>
-                    Note: This technique should be used with extreme caution and
-                    with explicit prior consent.
+                    note__new--note: This technique should be used with extreme
+                    caution and with explicit prior consent.
                   </p>
                   <br></br>
                   <h4>ARP Poisoning :</h4>
@@ -668,13 +668,14 @@ export default function WireShark() {
                   </div>
                   <br></br>
                   <p>
-                    It is useful to note that most devices will identify
-                    themselves or Wireshark will identify it such as Intel_78,
-                    an example of suspicious traffic would be many requests from
-                    an unrecognized source. You need to enable a setting within
-                    Wireshark however to resolve physical addresses. To enable
-                    this feature, navigate to View &gt; Name Resolution &gt;
-                    Ensure that Resolve Physical Addresses is checked
+                    It is useful to note__new--note that most devices will
+                    identify themselves or Wireshark will identify it such as
+                    Intel_78, an example of suspicious traffic would be many
+                    requests from an unrecognized source. You need to enable a
+                    setting within Wireshark however to resolve physical
+                    addresses. To enable this feature, navigate to View &gt;
+                    Name Resolution &gt; Ensure that Resolve Physical Addresses
+                    is checked
                   </p>
                   <p>
                     Looking at the below screenshot we can see that a Cisco
@@ -766,8 +767,8 @@ export default function WireShark() {
                   <p>
                     Below we see packet details for a ping request packet. There
                     are a few important things within the packet details that we
-                    can take note of first being the type and code of the
-                    packet. A type that equals 8 means that it is a request
+                    can take note__new--note of first being the type and code of
+                    the packet. A type that equals 8 means that it is a request
                     packet, if it is equal to 0 it is a reply packet. When these
                     codes are altered or do not seem correct that is typically a
                     sign of suspicious activity.

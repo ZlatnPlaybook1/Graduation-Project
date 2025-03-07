@@ -130,8 +130,8 @@ export default function FileInclusion() {
                   <p>
                     Path traversal vulnerabilities occur when the user’s input
                     is passed to a function such as file_get_contents in PHP.
-                    It’s important to note that the function is not the main
-                    contributor to the vulnerability. Often poor input
+                    It’s important to note__new--note that the function is not
+                    the main contributor to the vulnerability. Often poor input
                     validation or filtering is the cause of the vulnerability.
                     In PHP, you can use the file_get_contents to read the
                     content of a file. You can find more information about the
@@ -440,10 +440,10 @@ export default function FileInclusion() {
                           http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd
                         </a>
                       </p>
-                      <p className="note">
-                        Note that we used 4 ../ because we know the path has
-                        four levels /var/www/html/cyberlaps-4. But we still
-                        receive the following error:
+                      <p className="note__new--note">
+                        note__new--note that we used 4 ../ because we know the
+                        path has four levels /var/www/html/cyberlaps-4. But we
+                        still receive the following error:
                       </p>
                       <div className="terminal-container">
                         <div className="terminal-content">
@@ -493,9 +493,9 @@ export default function FileInclusion() {
                         which equivalent to →
                         include(“languages/../../../../../etc/passwd”);
                       </p>
-                      <p className="note">
-                        NOTE: the %00 trick is fixed and not working with PHP
-                        5.3.4 and above.
+                      <p className="note__new--note">
+                        note__new--note: the %00 trick is fixed and not working
+                        with PHP 5.3.4 and above.
                       </p>
                     </li>
                     <li>

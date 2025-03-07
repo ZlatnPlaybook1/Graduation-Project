@@ -206,12 +206,13 @@ export default function CaptchaBypass() {
                   </ul>
                   <h4>Ethical Considerations</h4>
                   <p>
-                    It's important to note that while these techniques can be
-                    useful for legitimate purposes (e.g., testing Captcha
-                    systems for vulnerabilities or automating repetitive tasks),
-                    bypassing Captchas without permission is illegal and
-                    unethical. Make sure to always have the consent of the
-                    website owner before attempting any form of Captcha bypass.
+                    It's important to note__new--note that while these
+                    techniques can be useful for legitimate purposes (e.g.,
+                    testing Captcha systems for vulnerabilities or automating
+                    repetitive tasks), bypassing Captchas without permission is
+                    illegal and unethical. Make sure to always have the consent
+                    of the website owner before attempting any form of Captcha
+                    bypass.
                   </p>
                   <p>
                     Ethical hacking and responsible disclosure are key

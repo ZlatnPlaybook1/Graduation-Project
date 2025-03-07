@@ -204,10 +204,10 @@ export default function Bash() {
                     <code className="content__code">Jammy</code> and assign it
                     to the variable <code className="content__code">name</code>.
                   </p>
-                  <p className="note">
-                    Please note that for variables to work you cannot leave a
-                    space between the variable name, the ”=” and the value. They
-                    cannot have spaces in.
+                  <p className="note__new--note">
+                    Please note that for variables to work you cannot
+                    leave a space between the variable name, the ”=” and the
+                    value. They cannot have spaces in.
                   </p>
                   <p>
                     So how would we now use our variable? Well its also very

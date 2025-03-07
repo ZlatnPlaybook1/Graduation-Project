@@ -296,8 +296,8 @@ export default function Linux() {
                               <span className="token command-c">
                                 <span className="token info punctuation">
                                   <span className="token user">
-                                    'Important Files' 'My Documents' Notes
-                                    Pictures
+                                    'Important Files' 'My Documents'
+                                    note__new--notes Pictures
                                   </span>
                                 </span>
                               </span>
@@ -329,7 +329,7 @@ export default function Linux() {
                             icon={faArrowRight}
                             className="me-2 text-warning"
                           />
-                          Notes
+                          note__new--notes
                         </li>
                         <li>
                           <FontAwesomeIcon
@@ -343,11 +343,11 @@ export default function Linux() {
                         Great! You can probably take a guess as to what to
                         expect a folder to contain given by its name.
                       </p>
-                      <h2 className="note">
+                      <h2 className="note__new--note">
                         Pro tip: You can list the contents of a directory
                         without having to navigate to it by using ls and the
                         name of the directory. I.e.{" "}
-                        <span id="note-span">ls Pictures</span>
+                        <span id="note__new--note-span">ls Pictures</span>
                       </h2>
                     </li>
                     <li>
@@ -524,14 +524,14 @@ export default function Linux() {
                           important for me to do later!"
                         </li>
                       </ol>
-                      <h2 className="note">
+                      <h2 className="note__new--note">
                         Pro tip: You can use{" "}
                         <code className="content__code">cat</code> to output the
                         contents of a file within directories without having to
                         navigate to it by using cat and the name of the
                         directory. I.e. <br />
                         <span
-                          id="note-span"
+                          id="note__new--note-span"
                           style={{ display: "inline-block", marginTop: "15px" }}
                         >
                           {" "}
@@ -1050,7 +1050,7 @@ export default function Linux() {
                         entries of the value that we are searching for. Going
                         with the example of a web server's access log, we want
                         to see everything that the IP address "81.143.211.90"
-                        has visited (note that this is fictional)
+                        has visited (note__new--note that this is fictional)
                       </p>
                       <div className="terminal-container">
                         <div className="terminal-content">
@@ -1307,9 +1307,9 @@ export default function Linux() {
                           </pre>
                         </div>
                       </div>
-                      <h2 className="note">
-                        Note: If the file i.e. "welcome" already exists, the
-                        contents will be overwritten!
+                      <h2 className="note__new--note">
+                        note__new--note: If the file i.e. "welcome" already
+                        exists, the contents will be overwritten!
                       </h2>
                     </li>
                     <li>
