@@ -284,18 +284,23 @@ model lab3jwt {
 }
 
 model lab2RaceConditionCoupon {
-  id       Int                      @id @default(autoincrement())
-  coupon   String?                  @unique
-  discount Int?                     @default(50)
-  isValid  Boolean                  @default(true)
+  id       Int                        @id @default(autoincrement())
+  coupon   String?                    @unique
+  discount Int?                       @default(50)
+  isValid  Boolean                    @default(true)
   payments lab2RaceConditionPayment[] @relation("CouponPayments")
 }
 
 model lab2RaceConditionPayment {
-  id                  Int                      @id @default(autoincrement())
-  price               Int
-  priceAfterDiscount  Int?
-  createdAt           DateTime                 @default(now())
-  couponId            Int?
-  coupon              lab2RaceConditionCoupon? @relation(fields: [couponId], references: [id], name: "CouponPayments")
+  id                 Int                      @id @default(autoincrement())
+  price              Int
+  priceAfterDiscount Int?
+  createdAt          DateTime                 @default(now())
+  couponId           Int?
+  coupon             lab2RaceConditionCoupon? @relation(fields: [couponId], references: [id], name: "CouponPayments")
+}
+
+model lab1SSRF {
+  id       String  @id @default(uuid())
+  username String  @unique
 }
