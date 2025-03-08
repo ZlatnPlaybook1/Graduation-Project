@@ -52,6 +52,7 @@ import lab1jwtRouter from "./labs/jwt/lab1/lab1.router";
 import lab2jwtRouter from "./labs/jwt/lab2/lab2.router";
 import lab3jwtRouter from "./labs/jwt/lab3/lab3.router";
 import lab1SSRF from "./labs/SSRF/lab1/lab1.router";
+import lab2SSRF from "./labs/SSRF/lab2/lab2.router";
 
 const app = express();
 app.use("/uploads", express.static("uploads"));
@@ -124,6 +125,7 @@ app.use("/api", lab1jwtRouter);
 app.use("/api", lab2jwtRouter);
 app.use("/api", lab3jwtRouter);
 app.use("/api", lab1SSRF);
+app.use("/api", lab2SSRF);
 
 dotenv.config();
 
