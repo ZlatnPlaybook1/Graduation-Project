@@ -118,30 +118,14 @@ export default function JWTAttacks() {
                               tabIndex="0"
                             >
                               <code className="language-bash">
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      curl -H 'Content-Type: application/json'
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      -X POST -d{" "}
-                                      {
-                                        '{ "username" : "user", "password" : "passwordX" }'
-                                      }
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      http://10.10.242.49/api/v1.0/exampleX
-                                    </span>
-                                  </span>
-                                </span>
+                                curl -H 'Content-Type: application/json'
+                                <br />
+                                -X POST -d{" "}
+                                {
+                                  '{ "username" : "user", "password" : "passwordX" }'
+                                }
+                                <br />
+                                http://10.10.242.49/api/v1.0/exampleX
                               </code>
                             </pre>
                           </div>
@@ -159,21 +143,9 @@ export default function JWTAttacks() {
                               tabIndex="0"
                             >
                               <code className="language-bash">
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      curl -H 'Authorization: Bearer [JWT
-                                      token]'
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      http://10.10.242.49/api/v1.0/example2?username=Y
-                                    </span>
-                                  </span>
-                                </span>
+                                curl -H 'Authorization: Bearer [JWT token]'
+                                <br />{" "}
+                                http://10.10.242.49/api/v1.0/example2?username=Y
                               </code>
                             </pre>
                           </div>
@@ -357,18 +329,11 @@ export default function JWTAttacks() {
                           tabIndex="0"
                         >
                           <code className="language-bash">
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  curl -H 'Content-Type: application/json' -X
-                                  POST -d{" "}
-                                  {
-                                    '{ "username" : "user", "password" : "password1" }'
-                                  }{" "}
-                                  http://MACHINE_IP/api/v1.0/example1
-                                </span>
-                              </span>
-                            </span>
+                            curl -H 'Content-Type: application/json' -X POST -d{" "}
+                            {
+                              '{ "username" : "user", "password" : "password1" }'
+                            }{" "}
+                            http://MACHINE_IP/api/v1.0/example1
                           </code>
                         </pre>
                       </div>
@@ -396,57 +361,14 @@ export default function JWTAttacks() {
                           tabIndex="0"
                         >
                           <code className="language-bash">
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token punctuation">{"{"}</span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  "username":{" "}
-                                  <span className="token class-name">
-                                    "user"
-                                  </span>
-                                  ,
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  "password":{" "}
-                                  <span className="token class-name">
-                                    "password1"
-                                  </span>
-                                  ,
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  "admin":{" "}
-                                  <span className="token string">0</span>,
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  "flag":{" "}
-                                  <span className="token class-name">
-                                    "secret_flag"
-                                  </span>
-                                  ,
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token punctuation">{"}"}</span>
-                              </span>
-                            </span>
+                            {"{"}
+                            <br />
+                            "username": "user" ,
+                            <br /> "password": "password1" ,
+                            <br /> "admin": 0,
+                            <br /> "flag": "secret_flag" ,
+                            <br />
+                            {"}"}
                           </code>
                         </pre>
                       </div>
@@ -504,43 +426,11 @@ export default function JWTAttacks() {
                           tabIndex="0"
                         >
                           <code className="language-bash">
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  payload = jwt.decode(token, self.secret,
-                                  algorithms=
-                                  <span className="token class-name">
-                                    "HS256"
-                                  </span>
-                                  )
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  username = payload[
-                                  <span className="token class-name">
-                                    'username'
-                                  </span>
-                                  ]
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  flag = self.db_lookup(username,
-                                  <span className="token class-name">
-                                    "flag"
-                                  </span>
-                                  ){" "}
-                                  <span className="token string">
-                                    # Fetch sensitive data server-side
-                                  </span>
-                                </span>
-                              </span>
-                            </span>
+                            payload = jwt.decode(token, self.secret, algorithms=
+                            "HS256" )
+                            <br /> username = payload[ 'username' ]
+                            <br /> flag = self.db_lookup(username, "flag" ) #
+                            Fetch sensitive data server-side
                           </code>
                         </pre>
                       </div>
@@ -587,24 +477,13 @@ export default function JWTAttacks() {
                               tabIndex="0"
                             >
                               <code className="language-bash">
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      curl -H 'Content-Type: application/json'
-                                      -X POST -d{" "}
-                                      {
-                                        '{ "username" : "user", "password" : "password2" }'
-                                      }
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      http://10.10.94.61/api/v1.0/example2
-                                    </span>
-                                  </span>
-                                </span>
+                                curl -H 'Content-Type: application/json' -X POST
+                                -d{" "}
+                                {
+                                  '{ "username" : "user", "password" : "password2" }'
+                                }
+                                <br />
+                                http://10.10.94.61/api/v1.0/example2
                               </code>
                             </pre>
                           </div>
@@ -627,21 +506,9 @@ export default function JWTAttacks() {
                               tabIndex="0"
                             >
                               <code className="language-bash">
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      curl -H 'Authorization: Bearer [JWT
-                                      Token]'
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      http://10.10.94.61/api/v1.0/example2?username=user
-                                    </span>
-                                  </span>
-                                </span>
+                                curl -H 'Authorization: Bearer [JWT Token]'
+                                <br />
+                                http://10.10.94.61/api/v1.0/example2?username=user
                               </code>
                             </pre>
                           </div>
@@ -666,14 +533,8 @@ export default function JWTAttacks() {
                           tabIndex="0"
                         >
                           <code className="language-bash">
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  payload = jwt.decode(token, self.secret,
-                                  algorithms="HS256"){" "}
-                                </span>
-                              </span>
-                            </span>
+                            payload = jwt.decode(token, self.secret,
+                            algorithms="HS256")
                           </code>
                         </pre>
                       </div>
@@ -699,41 +560,11 @@ export default function JWTAttacks() {
                               tabIndex="0"
                             >
                               <code className="language-bash">
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token punctuation">
-                                      {"{"}
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      "alg":{" "}
-                                      <span className="token class-name">
-                                        "None"
-                                      </span>
-                                      ,
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      "typ":{" "}
-                                      <span className="token class-name">
-                                        "JWT"
-                                      </span>
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token punctuation">
-                                      {"}"}
-                                    </span>
-                                  </span>
-                                </span>
+                                {"{"}
+                                <br />
+                                "alg": "None" ,
+                                <br /> "typ": "JWT"
+                                <br /> {"}"}
                               </code>
                             </pre>
                           </div>
@@ -757,14 +588,8 @@ export default function JWTAttacks() {
                           tabIndex="0"
                         >
                           <code className="language-bash">
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  payload = jwt.decode(token, self.secret,
-                                  algorithms=["HS256", "HS384", "HS512"])
-                                </span>
-                              </span>
-                            </span>
+                            payload = jwt.decode(token, self.secret,
+                            algorithms=["HS256", "HS384", "HS512"])
                           </code>
                         </pre>
                       </div>
@@ -797,14 +622,7 @@ export default function JWTAttacks() {
                               tabIndex="0"
                             >
                               <code className="language-bash">
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      hashcat -m 16500 -a 0 jwt.txt
-                                      jwt.secrets.list
-                                    </span>
-                                  </span>
-                                </span>
+                                hashcat -m 16500 -a 0 jwt.txt jwt.secrets.list
                               </code>
                             </pre>
                           </div>
@@ -827,13 +645,7 @@ export default function JWTAttacks() {
                           tabIndex="0"
                         >
                           <code className="language-bash">
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  secret = secrets.token_urlsafe(64)
-                                </span>
-                              </span>
-                            </span>
+                            secret = secrets.token_urlsafe(64)
                           </code>
                         </pre>
                       </div>
@@ -876,92 +688,19 @@ export default function JWTAttacks() {
                           tabIndex="0"
                         >
                           <code className="language-bash">
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  header = jwt.get_unverified_header(token)
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  algorithm = header[
-                                  <span className="token class-name">
-                                    'alg'
-                                  </span>
-                                  ]
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  <span className="token string">
-                                    if{" "}
-                                    <span className="token class-name">
-                                      "RS"{" "}
-                                    </span>
-                                    in{" "}
-                                  </span>
-                                  algorithm:
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  payload = jwt.decode(token, self.public_key,
-                                  algorithms=[
-                                  <span className="token class-name">
-                                    "RS256"
-                                  </span>
-                                  ,{" "}
-                                  <span className="token class-name">
-                                    "RS384"
-                                  </span>
-                                  ,{" "}
-                                  <span className="token class-name">
-                                    "RS512"
-                                  </span>
-                                  ])
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  <span className="token string">
-                                    if{" "}
-                                    <span className="token class-name">
-                                      "HS"{" "}
-                                    </span>
-                                    in{" "}
-                                  </span>
-                                  algorithm:
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  payload = jwt.decode(token, self.secret,
-                                  algorithms=[
-                                  <span className="token class-name">
-                                    "HS256"
-                                  </span>
-                                  ,{" "}
-                                  <span className="token class-name">
-                                    "HS384"
-                                  </span>
-                                  ,{" "}
-                                  <span className="token class-name">
-                                    "HS512"
-                                  </span>
-                                  ])
-                                </span>
-                              </span>
-                            </span>
+                            header = jwt.get_unverified_header(token)
+                            <br />
+                            algorithm = header[
+                            <span className="token class-name">'alg'</span>
+                            ]
+                            <br />
+                            if "RS" in algorithm:
+                            <br /> payload = jwt.decode(token, self.public_key,
+                            algorithms=[ "RS256" , "RS384" , "RS512" ])
+                            <br />
+                            if "HS" in algorithm:
+                            <br /> payload = jwt.decode(token, self.secret,
+                            algorithms=[ "HS256" , "HS384" , "HS512" ])
                           </code>
                         </pre>
                       </div>
@@ -991,18 +730,8 @@ export default function JWTAttacks() {
                           tabIndex="0"
                         >
                           <code className="language-bash">
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  payload = jwt.decode(token, self.public_key,
-                                  algorithms=[
-                                  <span className="token class-name">
-                                    "RS256"
-                                  </span>
-                                  ])
-                                </span>
-                              </span>
-                            </span>
+                            payload = jwt.decode(token, self.public_key,
+                            algorithms=[ "RS256" ])
                           </code>
                         </pre>
                       </div>
@@ -1072,13 +801,7 @@ export default function JWTAttacks() {
                           tabIndex="0"
                         >
                           <code className="language-bash">
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJhZG1pbiI6MX0.ko7EQiATQQzrQPwRO8ZTY37pQWGLPZWEvdWH0tVDNPU
-                                </span>
-                              </span>
-                            </span>
+                            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJhZG1pbiI6MX0.ko7EQiATQQzrQPwRO8ZTY37pQWGLPZWEvdWH0tVDNPU
                           </code>
                         </pre>
                       </div>
@@ -1108,91 +831,20 @@ export default function JWTAttacks() {
                               tabIndex="0"
                             >
                               <code className="language-bash">
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      <span className="token class-name">
-                                        import{" "}
-                                      </span>
-                                      datetime
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      <span className="token class-name">
-                                        import{" "}
-                                      </span>
-                                      jwt
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      <span className="token string">
-                                        lifetime{" "}
-                                      </span>
-                                      = datetime.datetime.now() +
-                                      datetime.timedelta(minutes=5)
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      payload = {"{"}
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token class-name">
-                                      'username'{" "}
-                                      <span className="token user">: </span>
-                                      'user'{" "}
-                                      <span className="token user">,</span>
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token class-name">
-                                      'admin'{" "}
-                                      <span className="token user">: </span>
-                                      <span className="token string">0 </span>
-                                      <span className="token user">,</span>
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token class-name">
-                                      'exp'{" "}
-                                      <span className="token user">
-                                        : lifetime
-                                      </span>
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">{"}"}</span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      access_token = jwt.encode(payload,
-                                      self.secret, algorithm=
-                                      <span className="token class-name">
-                                        "HS256"
-                                      </span>
-                                      )
-                                    </span>
-                                  </span>
-                                </span>
+                                import datetime
+                                <br /> import jwt
+                                <br /> lifetime = datetime.datetime.now() +
+                                datetime.timedelta(minutes=5)
+                                <br /> payload = {"{"}
+                                <br /> 'username' : 'user' ,
+                                <br />
+                                'admin' : 0 ,
+                                <br /> 'exp' : lifetime
+                                <br />
+                                {"}"}
+                                <br />
+                                access_token = jwt.encode(payload, self.secret,
+                                algorithm= "HS256" )
                               </code>
                             </pre>
                           </div>
@@ -1223,46 +875,12 @@ export default function JWTAttacks() {
                               tabIndex="0"
                             >
                               <code className="language-bash">
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token class-name">
-                                      try<span className="token user">:</span>
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      payload = jwt.decode(token, self.secret,
-                                      algorithms=[
-                                      <span className="token class-name">
-                                        "HS256"
-                                      </span>
-                                      ])
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token class-name">
-                                      except{" "}
-                                      <span className="token user">
-                                        jwt.ExpiredSignatureError:
-                                      </span>
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">
-                                      print(
-                                      <span className="token class-name">
-                                        "Token has expired"
-                                      </span>
-                                      )
-                                    </span>
-                                  </span>
-                                </span>
+                                try:
+                                <br />
+                                payload = jwt.decode(token, self.secret,
+                                algorithms=[ "HS256" ])
+                                <br /> except jwt.ExpiredSignatureError:
+                                <br /> print( "Token has expired" )
                               </code>
                             </pre>
                           </div>
@@ -1329,121 +947,26 @@ export default function JWTAttacks() {
                           tabIndex="0"
                         >
                           <code className="language-bash">
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  access_lifetime = datetime.datetime.now() +
-                                  datetime.timedelta(minutes=
-                                  <span className="token string">5</span>)
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  refresh_lifetime = datetime.datetime.now() +
-                                  datetime.timedelta(days=
-                                  <span className="token string">30</span>)
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  access_payload = {"{"}
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token class-name">
-                                  'username'{" "}
-                                  <span className="token user">: </span>
-                                  'user'{" "}
-                                </span>
-                                <span className="token user">,</span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token class-name">
-                                  'admin' <span className="token user">: </span>
-                                  <span className="token string">0 </span>
-                                </span>
-                                <span className="token user">,</span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  <span className="token class-name">
-                                    'exp'{" "}
-                                  </span>
-                                  : access_lifetime
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">{"}"}</span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  refresh_payload = {"{"}
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token class-name">
-                                  'username'{" "}
-                                  <span className="token user">: </span>
-                                  'user'{" "}
-                                </span>
-                                <span className="token user">,</span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  <span className="token class-name">
-                                    'exp'{" "}
-                                  </span>
-                                  : refresh_lifetime
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">{"}"}</span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  access_token = jwt.encode(access_payload,
-                                  self.secret, algorithm=
-                                  <span className="token class-name">
-                                    "HS256"
-                                  </span>
-                                  )
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  refresh_token = jwt.encode(refresh_payload,
-                                  self.secret, algorithm=
-                                  <span className="token class-name">
-                                    "HS256"
-                                  </span>
-                                  )
-                                </span>
-                              </span>
-                            </span>
+                            access_lifetime = datetime.datetime.now() +
+                            datetime.timedelta(minutes= 5)
+                            <br /> refresh_lifetime = datetime.datetime.now() +
+                            datetime.timedelta(days= 30)
+                            <br />
+                            access_payload = {"{"}
+                            <br /> 'username' : 'user' ,
+                            <br /> 'admin': 0 ,
+                            <br />
+                            'exp' : access_lifetime
+                            <br />
+                            {"}"}
+                            <br /> refresh_payload = {"{"}
+                            <br /> 'username' : 'user' ,
+                            <br /> 'exp' : refresh_lifetime
+                            <br /> {"}"}
+                            <br /> access_token = jwt.encode(access_payload,
+                            self.secret, algorithm= "HS256" )
+                            <br /> refresh_token = jwt.encode(refresh_payload,
+                            self.secret, algorithm= "HS256" )
                           </code>
                         </pre>
                       </div>
@@ -1553,45 +1076,13 @@ export default function JWTAttacks() {
                               tabIndex="0"
                             >
                               <code className="language-bash">
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">{"{"}</span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token class-name">
-                                      'username'
-                                      <span className="token user"> : </span>
-                                      'user'
-                                    </span>
-                                    <span className="token user"> ,</span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token class-name">
-                                      'password'
-                                      <span className="token user"> : </span>
-                                      "password7"
-                                    </span>
-                                    <span className="token user"> ,</span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token class-name">
-                                      'application'
-                                      <span className="token user"> : </span>
-                                      "appA"
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">{"}"}</span>
-                                  </span>
-                                </span>
+                                {"{"}
+                                <br />
+                                'username' : 'user' ,
+                                <br /> 'password' : "password7" ,
+                                <br /> 'application' : "appA"
+                                <br />
+                                {"}"}
                               </code>
                             </pre>
                           </div>
@@ -1629,45 +1120,13 @@ export default function JWTAttacks() {
                               tabIndex="0"
                             >
                               <code className="language-bash">
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">{"{"}</span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token class-name">
-                                      'username'
-                                      <span className="token user"> : </span>
-                                      'user'
-                                    </span>
-                                    <span className="token user"> ,</span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token class-name">
-                                      'password'
-                                      <span className="token user"> : </span>
-                                      "password7"
-                                    </span>
-                                    <span className="token user"> ,</span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token class-name">
-                                      'application'
-                                      <span className="token user"> : </span>
-                                      "appB"
-                                    </span>
-                                  </span>
-                                </span>
-                                <span className="token command-c">
-                                  <span className="token info punctuation">
-                                    <span className="token user">{"}"}</span>
-                                  </span>
-                                </span>
+                                {"{"}
+                                <br />
+                                'username' : 'user' ,
+                                <br /> 'password' : "password7" ,
+                                <br /> 'application' : "appB"
+                                <br />
+                                {"}"}
                               </code>
                             </pre>
                           </div>
@@ -1741,128 +1200,22 @@ export default function JWTAttacks() {
                           tabIndex="0"
                         >
                           <code className="language-bash">
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  <span className="token class-name">
-                                    import{" "}
-                                  </span>
-                                  jwt
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token string">
-                                  # Secret key and audience list
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  secret ={" "}
-                                  <span className="token class-name">
-                                    "your_secret_key"
-                                  </span>
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  audience = [
-                                  <span className="token class-name">
-                                    "appA"
-                                  </span>
-                                  ]{" "}
-                                  <span className="token string">
-                                    # Define the expected audience for this
-                                    application
-                                  </span>
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token string">
-                                  # Decode and verify the token
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token class-name">
-                                  try<span className="token user">:</span>
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  payload = jwt.decode(token, secret,
-                                  audience=audience, algorithms=[
-                                  <span className="token class-name">
-                                    "HS256"
-                                  </span>
-                                  ])
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  print(
-                                  <span className="token class-name">
-                                    "Token is valid for this application."
-                                  </span>
-                                  )
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token class-name">
-                                  except{" "}
-                                  <span className="token user">
-                                    jwt.InvalidAudienceError:
-                                  </span>
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  print(
-                                  <span className="token class-name">
-                                    "Invalid audience claim. Token not
-                                    accepted."
-                                  </span>
-                                  )
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token class-name">
-                                  except{" "}
-                                  <span className="token user">Exception </span>
-                                  as <span className="token user">e:</span>
-                                </span>
-                              </span>
-                            </span>
-                            <span className="token command-c">
-                              <span className="token info punctuation">
-                                <span className="token user">
-                                  print(
-                                  <span className="token class-name">
-                                    f"Token verification failed:{" "}
-                                  </span>
-                                  {"{e}"}
-                                  <span className="token class-na">"</span>)
-                                </span>
-                              </span>
-                            </span>
+                            import jwt
+                            <br /> # Secret key and audience list
+                            <br /> secret = "your_secret_key"
+                            <br /> audience = [ "appA" ] # Define the expected
+                            audience for this application
+                            <br /> # Decode and verify the token
+                            <br /> try:
+                            <br /> payload = jwt.decode(token, secret,
+                            audience=audience, algorithms=[ "HS256" ])
+                            <br /> print( "Token is valid for this application."
+                            )
+                            <br /> except jwt.InvalidAudienceError:
+                            <br /> print( "Invalid audience claim. Token not
+                            accepted." )
+                            <br /> except Exception as e:
+                            <br /> print( f"Token verification failed: {"{e}"})
                           </code>
                         </pre>
                       </div>

@@ -63,24 +63,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token shell-symbol important">
-                                  $
-                                </span>
-                                <span className="token language-bash bash">
-                                  <span className="token">
-                                    {" "}
-                                    enter commands here
-                                  </span>
-                                </span>
-                              </span>
+                              CyberLabs@linux1 : ~ $ enter commands here
                             </code>
                           </pre>
                         </div>
@@ -117,12 +100,12 @@ export default function Linux() {
                           </tr>
                         </tbody>
                       </table>
-                      <br></br>
+                      <br />
                       <h2 className="content__title">
                         See the snippets below for an example of each command
                         being used...
                       </h2>
-                      <br></br>
+                      <br />
                       <div className="terminal-container">
                         <div className="terminal-content">
                           <div className="terminal-top">Using echo</div>
@@ -131,33 +114,12 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="tokenshell-symbol important">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="token class-name">
-                                    {" "}
-                                    echo{" "}
-                                  </span>
-                                  <span className="token string">
-                                    {" "}
-                                    "Hello Friend!"{" "}
-                                  </span>
-                                </span>
-                              </span>
+                              CyberLabs@linux1 :~ $ echo "Hello Friend!"{" "}
                             </code>
                           </pre>
                         </div>
                       </div>
-                      <br></br>
+                      <br />
                       <div className="terminal-container">
                         <div className="terminal-content">
                           <div className="terminal-top">
@@ -169,24 +131,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token shell-symbol important">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="token function">
-                                    {" "}
-                                    whoami{" "}
-                                  </span>
-                                </span>
-                              </span>
+                              CyberLabs@linux1 :~ $ whoami{" "}
                             </code>
                           </pre>
                         </div>
@@ -278,29 +223,8 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="function token"> ls</span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    'Important Files' 'My Documents'
-                                    note__new--notes Pictures
-                                  </span>
-                                </span>
-                              </span>
+                              CyberLabs@linux1 :~ $ ls 'Important Files' 'My
+                              Documents' notes Pictures
                             </code>
                           </pre>
                         </div>
@@ -375,29 +299,9 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~/Pictures</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="function token"> ls</span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    dog_picture1.jpg dog_picture2.jpg
-                                    dog_picture3.jpg dog_picture4.jpg
-                                  </span>
-                                </span>
-                              </span>
+                              CyberLabs@linux1 : ~/Pictures $ ls
+                              <br /> dog_picture1.jpg dog_picture2.jpg
+                              dog_picture3.jpg dog_picture4.jpg
                             </code>
                           </pre>
                         </div>
@@ -445,54 +349,13 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">
-                                    ~/Documents
-                                  </span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="function token"> ls</span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">todo.txt</span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">
-                                    ~/Documents
-                                  </span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="function token"> cat </span>
-                                  <span className="token user">todo.txt</span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    Here's something important for me to do
-                                    later!
-                                  </span>
-                                </span>
-                              </span>
+                              CyberLabs@linux1 : ~/Documents $ ls
+                              <br />
+                              todo.txt
+                              <br /> CyberLabs@linux1 : ~/Documents $ cat
+                              todo.txt
+                              <br /> Here's something important for me to do
+                              later!
                             </code>
                           </pre>
                         </div>
@@ -578,44 +441,10 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">
-                                    ~/Documents
-                                  </span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="class-name token"> pwd</span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    /home/ubuntu/Documents
-                                  </span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">
-                                    ~/Documents
-                                  </span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                              </span>
+                              CyberLabs@linux1 : ~/Documents $ pwd
+                              /home/ubuntu/Documents
+                              <br />
+                              CyberLabs@linux1 : ~/Documents $
                             </code>
                           </pre>
                         </div>
@@ -724,40 +553,9 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="function token"> ls</span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    Desktop Documents Pictures folder1
-                                  </span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                              </span>
+                              CyberLabs@linux1 :~ $ ls Desktop Documents
+                              Pictures folder1
+                              <br /> CyberLabs@linux1 :~ $
                             </code>
                           </pre>
                         </div>
@@ -829,46 +627,11 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="function token">
-                                    {" "}
-                                    find -name{" "}
-                                  </span>
-                                  <span className="token user">
-                                    passwords.txt
-                                  </span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    ./folder1/passwords.txt
-                                  </span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                              </span>
+                              CyberLabs@linux1 :~ $ find -name passwords.txt
+                              <br />
+                              ./folder1/passwords.txt
+                              <br />
+                              CyberLabs@linux1 :~ $
                             </code>
                           </pre>
                         </div>
@@ -900,51 +663,10 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="function token">
-                                    {" "}
-                                    find -name{" "}
-                                  </span>
-                                  <span className="token user">*.txt</span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    ./folder1/passwords.txt
-                                  </span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    ./Documents/todo.txt
-                                  </span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                              </span>
+                              CyberLabs@linux1 :~ $ find -name *.txt
+                              <br /> ./folder1/passwords.txt
+                              <br /> ./Documents/todo.txt
+                              <br /> CyberLabs@linux1 :~ $
                             </code>
                           </pre>
                         </div>
@@ -993,44 +715,10 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="function token">
-                                    {" "}
-                                    wc -l{" "}
-                                  </span>
-                                  <span className="token user">access.log</span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    244 access.log
-                                  </span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                              </span>
+                              CyberLabs@linux1 :~ $ wc -l access.log
+                              <br />
+                              244 access.log
+                              <br /> CyberLabs@linux1 :~ $
                             </code>
                           </pre>
                         </div>
@@ -1063,46 +751,12 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="function token"> grep </span>
-                                  <span className="token string">
-                                    "81.143.211.90"{" "}
-                                  </span>
-                                  <span className="token user">access.log</span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    81.143.211.90 - - [25/Mar/2021:11:17 + 0000]
-                                    "GET / HTTP/1.1" 200 417 "-" "Mozilla/5.0
-                                    (Linux; Android 7.0; Moto G(4))"
-                                  </span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                              </span>
+                              CyberLabs@linux1 :~ $ grep "81.143.211.90"{" "}
+                              access.log
+                              <br /> 81.143.211.90 - - [25/Mar/2021:11:17 +
+                              0000] "GET / HTTP/1.1" 200 417 "-" "Mozilla/5.0
+                              (Linux; Android 7.0; Moto G(4))"
+                              <br /> CyberLabs@linux1 :~ $
                             </code>
                           </pre>
                         </div>
@@ -1245,29 +899,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="class-name token">
-                                    {" "}
-                                    echo
-                                  </span>
-                                  <span className="token user"> hey </span>
-                                  <span className="class-name token">
-                                    &gt;{" "}
-                                  </span>
-                                  <span className="token user">welcome</span>
-                                </span>
-                              </span>
+                              CyberLabs@linux1 :~ $ echo hey &gt; welcome
                             </code>
                           </pre>
                         </div>
@@ -1282,27 +914,9 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="function token"> cat </span>
-                                  <span className="token user">welcome</span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">hey</span>
-                                </span>
-                              </span>
+                              CyberLabs@linux1 :~ $ cat welcome
+                              <br />
+                              hey
                             </code>
                           </pre>
                         </div>
@@ -1345,29 +959,7 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="class-name token">
-                                    {" "}
-                                    echo
-                                  </span>
-                                  <span className="token user"> hello </span>
-                                  <span className="class-name token">
-                                    &gt;&gt;{" "}
-                                  </span>
-                                  <span className="token user">welcome</span>
-                                </span>
-                              </span>
+                              CyberLabs@linux1 :~ $ echo hello &gt;&gt; welcome
                             </code>
                           </pre>
                         </div>
@@ -1382,32 +974,9 @@ export default function Linux() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    CyberLabs@linux1
-                                  </span>
-                                  <span className="token punctuation">:</span>
-                                  <span className="token path">~</span>
-                                </span>
-                                <span className="token important shell-symbol">
-                                  $
-                                </span>
-                                <span className="token bash language-bash">
-                                  <span className="function token"> cat </span>
-                                  <span className="token user">welcome</span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">hey</span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">hello</span>
-                                </span>
-                              </span>
+                              CyberLabs@linux1 :~ $ cat welcome
+                              <br />
+                              hey <br /> hello
                             </code>
                           </pre>
                         </div>

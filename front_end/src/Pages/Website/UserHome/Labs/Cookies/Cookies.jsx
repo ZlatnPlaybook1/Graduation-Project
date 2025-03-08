@@ -60,15 +60,7 @@ export default function Cookies() {
                         Cookies are saved in name-value pairs like:
                       </div>
                       <pre className="terminal-code language-bash" tabIndex="0">
-                        <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                usersname = user
-                              </span>
-                            </span>
-                          </span>
-                        </code>
+                        <code className="language-bash">usersname = user</code>
                       </pre>
                     </div>
                   </div>
@@ -140,7 +132,7 @@ export default function Cookies() {
                       stored as small text files on your hard drive or in your
                       device’s storage.
                     </li>
-                    <br></br>
+                    <br />
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
@@ -151,7 +143,7 @@ export default function Cookies() {
                       cookies. They keep cookies in a specific location within
                       the browser’s data storage.
                     </li>
-                    <br></br>
+                    <br />
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
@@ -181,13 +173,7 @@ export default function Cookies() {
                       </div>
                       <pre className="terminal-code language-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                document.cookie="username= user";
-                              </span>
-                            </span>
-                          </span>
+                          document.cookie="username= user";
                         </code>
                       </pre>
                     </div>
@@ -201,14 +187,8 @@ export default function Cookies() {
                       </div>
                       <pre className="terminal-code language-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                document.cookie = "username=user; expires=Thu,
-                                18 Dec 2013 12:00:00 UTC";
-                              </span>
-                            </span>
-                          </span>
+                          document.cookie = "username=user; expires=Thu, 18 Dec
+                          2013 12:00:00 UTC";
                         </code>
                       </pre>
                     </div>
@@ -222,14 +202,8 @@ export default function Cookies() {
                       </div>
                       <pre className="terminal-code language-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                document.cookie = "username=user; expires=Thu,
-                                18 Dec 2013 12:00:00 UTC; path=/";
-                              </span>
-                            </span>
-                          </span>
+                          document.cookie = "username=user; expires=Thu, 18 Dec
+                          2013 12:00:00 UTC; path=/";
                         </code>
                       </pre>
                     </div>
@@ -244,13 +218,7 @@ export default function Cookies() {
                       </div>
                       <pre className="terminal-code language-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                var x = document.cookie;
-                              </span>
-                            </span>
-                          </span>
+                          var x = document.cookie;
                         </code>
                       </pre>
                     </div>
@@ -266,14 +234,8 @@ export default function Cookies() {
                       </div>
                       <pre className="terminal-code language-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                document.cookie = "username= test ; expires=Thu,
-                                18 Aug 2020 12:00:00 UTC; path=/";
-                              </span>
-                            </span>
-                          </span>
+                          document.cookie = "username= test ; expires=Thu, 18
+                          Aug 2020 12:00:00 UTC; path=/";
                         </code>
                       </pre>
                     </div>
@@ -290,14 +252,8 @@ export default function Cookies() {
                       </div>
                       <pre className="terminal-code language-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                document.cookie = "username=test; expires=Thu,
-                                01 Jan 1970 00:00:00 UTC; path=/;";
-                              </span>
-                            </span>
-                          </span>
+                          document.cookie = "username=test; expires=Thu, 01 Jan
+                          1970 00:00:00 UTC; path=/;";
                         </code>
                       </pre>
                     </div>
@@ -313,49 +269,19 @@ export default function Cookies() {
                       </div>
                       <pre className="terminal-code language-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                function setCookie(cname, cvalue, exdays) {"{"}
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                {"        "}var d = new Date();
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                {"        "}d.setTime(d.getTime() +
-                                (exdays*24*60*60*1000));
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                {"        "}var expires = "expires="+
-                                d.toUTCString();
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                {"        "}document.cookie = cname + "=" +
-                                cvalue + ";" + expires + ";path=/";
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">{"}"}</span>
-                            </span>
-                          </span>
+                          function setCookie(cname, cvalue, exdays) {"{"}
+                          <br />
+                          {"        "}var d = new Date();
+                          <br />
+                          {"        "}d.setTime(d.getTime() +
+                          (exdays*24*60*60*1000));
+                          <br />
+                          {"        "}var expires = "expires="+ d.toUTCString();
+                          <br />
+                          {"        "}document.cookie = cname + "=" + cvalue +
+                          ";" + expires + ";path=/";
+                          <br />
+                          {"}"}
                         </code>
                       </pre>
                     </div>

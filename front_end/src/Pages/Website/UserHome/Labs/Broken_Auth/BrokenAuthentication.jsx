@@ -169,7 +169,7 @@ export default function BrokenAuthentication() {
                         details, and personal information.
                       </div>
                     </li>
-                    <br></br>
+                    <br />
                     {/* Scenario 2 */}
                     <li className="scenario-item">
                       <span className="scenario-title">
@@ -191,7 +191,7 @@ export default function BrokenAuthentication() {
                         data.
                       </div>
                     </li>
-                    <br></br>
+                    <br />
                     {/* Additional Scenarios */}
                     <li className="scenario-item">
                       <span className="scenario-title">
@@ -213,7 +213,7 @@ export default function BrokenAuthentication() {
                         needing their password.
                       </div>
                     </li>
-                    <br></br>
+                    <br />
                     <li className="scenario-item">
                       <span className="scenario-title">
                         Scenario 4: Missing MFA
@@ -233,7 +233,7 @@ export default function BrokenAuthentication() {
                         performs unauthorized actions.
                       </div>
                     </li>
-                    <br></br>
+                    <br />
                     <li className="scenario-item">
                       <span className="scenario-title">
                         Scenario 5: Insecure Password Recovery

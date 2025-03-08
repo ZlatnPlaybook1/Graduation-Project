@@ -93,6 +93,9 @@ const CompleteQuestion = ({ questionsData }) => {
 
       {/* Question */}
       <h2 className="complete_question">{currentQuestion.question}</h2>
+      {currentQuestion.element && (
+        <p dangerouslySetInnerHTML={{ __html: currentQuestion.element }}></p>
+      )}
 
       {/* Answer Input */}
       <input

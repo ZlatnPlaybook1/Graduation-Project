@@ -69,7 +69,7 @@ export default function WireShark() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <h2 className="content__title">Wireshark Fundamentals</h2>
-                  <br></br>
+                  <br />
                   <p>
                     Wireshark, a tool used for creating and analyzing PCAPs
                     (network packet capture files), is commonly used as one of
@@ -78,22 +78,22 @@ export default function WireShark() {
                     perform basic packet analysis and take a deep look at each
                     common networking protocol.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage1} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     PCAPs used in this room have been sourced from the Wireshark
                     Sample Captures Page as well as captures from various
                     members of the TryHackMe community. All credit goes to the
                     respective owners.
                   </p>
-                  <br></br>
+                  <br />
                   <h2 className="content__title">Installation :</h2>
-                  <br></br>
+                  <br />
                   <p>
                     The installation for Wireshark is very easy and typically
                     comes with a packaged GUI wizard. Luckily if you're using
@@ -108,13 +108,13 @@ export default function WireShark() {
                     If you are using Linux you can install Wireshark with apt
                     install wireshark or a similar package manager.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage2} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     note__new--note: Wireshark can come with other packages and
                     tools; you can decide whether or not you want to install
@@ -127,20 +127,20 @@ export default function WireShark() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <h2 className="content__title">Wireshark Overview :</h2>
-                  <br></br>
+                  <br />
                   <p>
                     The first screen that we are greeted by when opening
                     Wireshark is the main page that will allow us to specify our
                     interface(s) as well as apply filters to narrow down traffic
                     that we are capturing.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage3} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     Here you can see that I have multiple interfaces to filter
                     from you may have more or fewer interfaces than I have. From
@@ -154,21 +154,21 @@ export default function WireShark() {
                     capture on it (as no data on that interface is being picked
                     up by the Wireshark client).
                   </p>
-                  <br></br>
+                  <br />
                   <h4>Live Packet Captures :</h4>
-                  <br></br>
+                  <br />
                   <p>
                     If we begin by navigating to the green ribbon in Wireshark
                     and select Manage Capture Filters we can view a list of
                     available filters.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage4} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     You do not have to select a filter, it will only help to
                     bring down the number of packets being brought in and
@@ -191,13 +191,13 @@ export default function WireShark() {
                     can click the red square to stop capturing, and then you can
                     begin your analysis.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage5} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     Looking at the screenshot above we see a sample capture.
                     This screen is where you will do most of your analysis and
@@ -208,7 +208,7 @@ export default function WireShark() {
                     From this screen, Wireshark gives us some important info
                     about each packet including:
                   </p>
-                  <br></br>
+                  <br />
                   <ol>
                     <li>Packet Number</li>
                     <li>Time</li>
@@ -218,20 +218,20 @@ export default function WireShark() {
                     <li>Length</li>
                     <li>Packet Info</li>
                   </ol>
-                  <br></br>
+                  <br />
                   <p>
                     Along with quick packet information, Wireshark also color
                     codes packets in order of danger level as well as protocol
                     to be able to quickly spot anomalies and protocols in
                     captures.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage6} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     This quick glance at packet information can be useful to
                     track down exactly what you're looking for during analysis.
@@ -241,7 +241,7 @@ export default function WireShark() {
                     to get a feel for it, some of the features we will be going
                     into further detail within later tasks.
                   </p>
-                  <br></br>
+                  <br />
                 </dd>
 
                 <dt className="fadeInUp faq-header">
@@ -259,7 +259,7 @@ export default function WireShark() {
                     packet capturing and will only cover the basic theory of
                     each.
                   </p>
-                  <br></br>
+                  <br />
                   <h4>Collection Methods Overview :</h4>
                   <p>
                     Some things to think about before going headfirst into
@@ -286,9 +286,9 @@ export default function WireShark() {
                     method picked out you can begin to actively monitor and
                     collect packets on a network.
                   </p>
-                  <br></br>
+                  <br />
                   <h4>Network Taps :</h4>
-                  <br></br>
+                  <br />
                   <p>
                     Network taps are a physical implant in which you physically
                     tap between a cable, these techniques are commonly used by
@@ -308,9 +308,9 @@ export default function WireShark() {
                     the tap. An example of this tap would be the very common
                     Throwing Star LAN Tap
                   </p>
-                  <br></br>
+                  <br />
                   <h4>MAC Floods :</h4>
-                  <br></br>
+                  <br />
                   <p>
                     MAC Floods are a tactic commonly used by red teams as a way
                     of actively sniffing packets. MAC Flooding is intended to
@@ -323,9 +323,9 @@ export default function WireShark() {
                     note__new--note: This technique should be used with extreme
                     caution and with explicit prior consent.
                   </p>
-                  <br></br>
+                  <br />
                   <h4>ARP Poisoning :</h4>
-                  <br></br>
+                  <br />
                   <p>
                     ARP Poisoning is another technique used by red teams to
                     actively sniff packets. By ARP Poisoning you can redirect
@@ -341,14 +341,14 @@ export default function WireShark() {
                     proactively monitor and collect live packet captures from
                     scratch.
                   </p>
-                  <br></br>
+                  <br />
                 </dd>
 
                 <dt className="fadeInUp faq-header">
                   <span> step 4</span> Filtering Captures{" "}
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <br></br>
+                  <br />
                   <h3>Filtering Captures :</h3>
                   <p>
                     Packet Filtering is a very important part of packet analysis
@@ -360,9 +360,9 @@ export default function WireShark() {
                     apply display captures in two ways: through the analyze tab
                     and at the filter bar at the top of the packet capture.
                   </p>
-                  <br></br>
+                  <br />
                   <h4>Filtering Operators :</h4>
-                  <br></br>
+                  <br />
                   <p>
                     Wireshark's filter syntax can be simple to understand making
                     it easy to get a hold of quickly. To get the most out of
@@ -391,7 +391,7 @@ export default function WireShark() {
                     the Wireshark Filtering Documentation can be a great
                     starting point.
                   </p>
-                  <br></br>
+                  <br />
                   <h4>Basic Filtering</h4>
                   <p>
                     Filtering gives us a very large scope of what we can do with
@@ -416,13 +416,13 @@ export default function WireShark() {
                     destination.
                   </p>
                   <span>Syntax: ip.addr == &lt;IP Address&gt;</span>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage7} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     This filter can be handy in practical applications, say when
                     you are threat hunting, and have identified a potentially
@@ -442,13 +442,13 @@ export default function WireShark() {
                       Address&gt;
                     </span>
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage8} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     Similar to the first filter we can see that Wireshark is
                     combing through the packets and filtering based on the
@@ -470,13 +470,13 @@ export default function WireShark() {
                       tcp.port eq &lt;Port #&gt; or &lt;Protocol Name&gt;
                     </span>
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage9} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     Filtering by UDP Protocols: You can also filter by UDP ports
                     by changing the prefix from tcp to udp
@@ -498,20 +498,20 @@ export default function WireShark() {
                   <span> Step 6 </span> Packet Dissection
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <br></br>
+                  <br />
                   <p>
                     This section covers how Wireshark uses OSI layers to break
                     down packets and how to use these layers for analysis. It is
                     expected that you already have background knowledge of what
                     the OSI model is and how it works.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage10} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <h4>Packet Details : </h4>
                   <p>
                     You can double click on a packet in capture to open its
@@ -519,20 +519,20 @@ export default function WireShark() {
                     model. We will go over all of them in an HTTP packet from a
                     sample capture.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage11} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     Looking above we can see 7 distinct layers to the packet:
                     frame/packet, source [MAC], source [IP], protocol, protocol
                     errors, application protocol, and application data. Below we
                     will go over the layers in more detail.
                   </p>
-                  <br></br>
+                  <br />
                   <ol>
                     <li>
                       Frame (Layer 1) -- This will show you what frame / packet
@@ -540,13 +540,13 @@ export default function WireShark() {
                       Physical layer of the OSI model.
                     </li>
                   </ol>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage12} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <ol>
                     <li>
                       Source [MAC] (Layer 2) -- This will show you the source
@@ -554,13 +554,13 @@ export default function WireShark() {
                       the OSI model.
                     </li>
                   </ol>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage13} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <ol>
                     <li>
                       Source [IP] (Layer 3) -- This will show you the source and
@@ -568,13 +568,13 @@ export default function WireShark() {
                       OSI model.
                     </li>
                   </ol>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage14} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <ol>
                     <li>
                       Protocol (Layer 4) -- This will show you details of the
@@ -582,13 +582,13 @@ export default function WireShark() {
                       ports; from the Transport layer of the OSI model.
                     </li>
                   </ol>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage15} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <ol>
                     <li>
                       Protocol Errors -- This is a continuation of the 4th layer
@@ -596,13 +596,13 @@ export default function WireShark() {
                       reassembled.
                     </li>
                   </ol>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage16} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <ol>
                     <li>
                       Application Protocol (Layer 5) -- This will show details
@@ -610,39 +610,39 @@ export default function WireShark() {
                       etc. From the Application layer of the OSI model.
                     </li>
                   </ol>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage17} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <ol>
                     <li>
                       Application Data -- This is an extension of layer 5 that
                       can show the application-specific data.
                     </li>
                   </ol>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage18} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     Now that we understand what a general packet is composed of,
                     move on to looking at various application protocols and
                     their specific details.
                   </p>
-                  <br></br>
+                  <br />
                 </dd>
 
                 <dt className="fadeInUp faq-header">
                   <span> Step 7</span>ARP Traffic
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <br></br>
+                  <br />
                   <h4>ARP Overview </h4>
                   <p>
                     ARP or Address Resolution Protocol is a Layer 2 protocol
@@ -655,18 +655,18 @@ export default function WireShark() {
                     <li>Request (1)</li>
                     <li>Reply (2)</li>
                   </ol>
-                  <br></br>
+                  <br />
                   <p>
                     Below you can see a packet capture of multiple ARP requests
                     and replies.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage19} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     It is useful to note__new--note that most devices will
                     identify themselves or Wireshark will identify it such as
@@ -683,26 +683,26 @@ export default function WireShark() {
                     able to trust this device, however you should always stay on
                     the side of caution when analyzing packets.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage20} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <h2 className="content__title">ARP Traffic Overview </h2>
                   <h4>ARP Request Packets : </h4>
                   <p>
                     We can begin analyzing packets by looking at the first ARP
                     Request packet and looking at the packet details.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage21} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     Looking at the packet details above, the most important
                     details of the packet are outlined in red. The Opcode is
@@ -711,15 +711,15 @@ export default function WireShark() {
                     where the packet is requesting to, in this case, it is
                     broadcasting the request to all.
                   </p>
-                  <br></br>
+                  <br />
                   <h4>ARP Reply Packets:</h4>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage22} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     Looking at the above packet details we can see from the
                     Opcode that it is an ARP Reply packet. We can also get other
@@ -732,14 +732,14 @@ export default function WireShark() {
                     to remember is to identify whether it is a request or reply
                     packet and who it is being sent by.
                   </p>
-                  <br></br>
+                  <br />
                 </dd>
 
                 <dt className="fadeInUp faq-header">
                   <span> Step 8 </span> ICMP & TCP Traffic{" "}
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <br></br>
+                  <br />
                   <h2 className="content__title">ICMP Overview</h2>
                   <p>
                     ICMP or Internet Control Message Protocol is used to analyze
@@ -753,17 +753,17 @@ export default function WireShark() {
                     we can see a request to the server from ICMP, then a reply
                     from the server.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage23} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <h4>ICMP Traffic Overview</h4>
-                  <br></br>
+                  <br />
                   <p>ICMP request : </p>
-                  <br></br>
+                  <br />
                   <p>
                     Below we see packet details for a ping request packet. There
                     are a few important things within the packet details that we
@@ -781,15 +781,15 @@ export default function WireShark() {
                     cases. We can also look at the data string which will
                     typically just be a random data string.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage24} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <h4>ICMP Reply:</h4>
-                  <br></br>
+                  <br />
                   <p>
                     Below you can see that the reply packet is very similar to
                     the request packet. One of the main difference that
@@ -800,16 +800,16 @@ export default function WireShark() {
                     The same analysis techniques for Request packets apply here
                     as well, again the main difference will be the packet type
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage25} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
-                  <br></br>
+                  <br />
+                  <br />
                   <h2 className="content__title">TCP Overview</h2>
-                  <br></br>
+                  <br />
                   <p>
                     TCP or Transmission Control Protocol handles the delivery of
                     packets including sequencing and errors. You should already
@@ -821,13 +821,13 @@ export default function WireShark() {
                     and 443. We can tell that the port is closed due to the RST,
                     ACK packet in red.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage26} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     When analyzing TCP packets, Wireshark can be very helpful
                     and color code the packets in order of danger level. If you
@@ -841,22 +841,22 @@ export default function WireShark() {
                     tools like RSA NetWitness and NetworkMiner to filter out and
                     further analyze the captures.
                   </p>
-                  <br></br>
+                  <br />
                   <h4>TCP Traffic Overview : </h4>
-                  <br></br>
+                  <br />
                   <p>
                     A common thing that you will see when analyzing TCP packets
                     is known as the TCP handshake, which you should already be
                     familiar with. It includes a series of packets: syn, synack,
                     ack; That allows devices to establish a connection.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage27} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     Typically when this handshake is out of order or when it
                     includes other packets like an RST packet, something
@@ -874,13 +874,13 @@ export default function WireShark() {
                     thing that we want to look for when looking at a TCP packet
                     is the sequence number and acknowledgment number.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage28} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     In this case, we see that the port was not open because the
                     acknowledgment number is 0.
@@ -890,25 +890,25 @@ export default function WireShark() {
                     number by navigating to edit &gt; preferences &gt; protocols
                     &gt; TCP &gt; relative sequence numbers (uncheck boxes).
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage29} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
-                  <br></br>
+                  <br />
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage30} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     Typically TCP packets need to be looked at as a whole to
                     tell a story rather than one by one at the details.
                   </p>
-                  <br></br>
+                  <br />
                 </dd>
               </dl>
             </div>

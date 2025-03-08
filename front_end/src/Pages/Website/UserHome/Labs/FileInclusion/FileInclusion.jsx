@@ -241,27 +241,10 @@ export default function FileInclusion() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    <>&lt;</>?PHP
-                                  </span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    include($_GET["lang"]);
-                                  </span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    ?<>&gt;</>
-                                  </span>
-                                </span>
-                              </span>
+                              <>&lt;</>?PHP
+                              <br />
+                              include($_GET["lang"]);
+                              <br /> ?<>&gt;</>
                             </code>
                           </pre>
                         </div>
@@ -312,27 +295,9 @@ export default function FileInclusion() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    <>&lt;</>?PHP
-                                  </span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    include("languages/". $_GET['lang']);
-                                  </span>
-                                </span>
-                              </span>
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    ?<>&gt;</>
-                                  </span>
-                                </span>
-                              </span>
+                              <>&lt;</>?PHP
+                              <br /> include("languages/". $_GET['lang']);
+                              <br /> ?<>&gt;</>
                             </code>
                           </pre>
                         </div>
@@ -396,17 +361,9 @@ export default function FileInclusion() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    Warning: include(languages/cyberlaps.php):
-                                    failed to open stream: No such file or
-                                    directory in
-                                    /var/www/html/cyberlaps-4/index.php on line
-                                    12
-                                  </span>
-                                </span>
-                              </span>
+                              Warning: include(languages/cyberlaps.php): failed
+                              to open stream: No such file or directory in
+                              /var/www/html/cyberlaps-4/index.php on line 12
                             </code>
                           </pre>
                         </div>
@@ -453,18 +410,10 @@ export default function FileInclusion() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    Warning:
-                                    include(languages/../../../../../etc/passwd.php):
-                                    failed to open stream: No such file or
-                                    directory in
-                                    /var/www/html/cyberlaps-4/index.php on line
-                                    12
-                                  </span>
-                                </span>
-                              </span>
+                              Warning:
+                              include(languages/../../../../../etc/passwd.php):
+                              failed to open stream: No such file or directory
+                              in /var/www/html/cyberlaps-4/index.php on line 12
                             </code>
                           </pre>
                         </div>
@@ -547,17 +496,9 @@ export default function FileInclusion() {
                             tabIndex="0"
                           >
                             <code className="language-bash">
-                              <span className="token command-c">
-                                <span className="token info punctuation">
-                                  <span className="token user">
-                                    Warning: include(languages/etc/passwd):
-                                    failed to open stream: No such file or
-                                    directory in
-                                    /var/www/html/cyberlaps-5/index.php on line
-                                    15
-                                  </span>
-                                </span>
-                              </span>
+                              Warning: include(languages/etc/passwd): failed to
+                              open stream: No such file or directory in
+                              /var/www/html/cyberlaps-5/index.php on line 15
                             </code>
                           </pre>
                         </div>
@@ -645,13 +586,7 @@ export default function FileInclusion() {
                       <div class="terminal-top"></div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                <>&lt;</>?PHP echo "Hello cyberlaps"; ?<>&gt;</>
-                              </span>
-                            </span>
-                          </span>
+                          <>&lt;</>?PHP echo "Hello cyberlaps"; ?<>&gt;</>
                         </code>
                       </pre>
                     </div>

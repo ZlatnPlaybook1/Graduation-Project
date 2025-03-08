@@ -205,9 +205,9 @@ export default function Bash() {
                     to the variable <code className="content__code">name</code>.
                   </p>
                   <p className="note__new--note">
-                    Please note that for variables to work you cannot
-                    leave a space between the variable name, the ”=” and the
-                    value. They cannot have spaces in.
+                    Please note that for variables to work you cannot leave a
+                    space between the variable name, the ”=” and the value. They
+                    cannot have spaces in.
                   </p>
                   <p>
                     So how would we now use our variable? Well its also very
@@ -233,23 +233,10 @@ export default function Bash() {
                       </div>
                       <pre className="terminal-code language-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                $ name = "Jammy"
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">$ echo $name</span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">Jammy</span>
-                            </span>
-                          </span>
+                          $ name = "Jammy"
+                          <br />$ echo $name
+                          <br />
+                          Jammy
                         </code>
                       </pre>
                     </div>
@@ -278,15 +265,7 @@ export default function Bash() {
                         This is what a terminal looks like
                       </div>
                       <pre className="terminal-code language-bash" tabIndex="0">
-                        <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                bash -x ./file.sh
-                              </span>
-                            </span>
-                          </span>
-                        </code>
+                        <code className="language-bash">bash -x ./file.sh</code>
                       </pre>
                     </div>
                   </div>
@@ -696,34 +675,10 @@ export default function Bash() {
                       </div>
                       <pre className="terminal-code language-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                # ./example.sh guessme
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                "They are equal"
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                # ./example.sh hi
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                "They are not equal"
-                              </span>
-                            </span>
-                          </span>
+                          # ./example.sh guessme
+                          <br /> "They are equal"
+                          <br /> # ./example.sh hi
+                          <br /> "They are not equal"
                         </code>
                       </pre>
                     </div>
@@ -763,25 +718,9 @@ export default function Bash() {
                       </div>
                       <pre className="terminal-code language-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                ./example.sh hello.txt
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                ─# cat hello.txt
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">hello</span>
-                            </span>
-                          </span>
+                          ./example.sh hello.txt
+                          <br /> ─# cat hello.txt
+                          <br /> hello
                         </code>
                       </pre>
                     </div>

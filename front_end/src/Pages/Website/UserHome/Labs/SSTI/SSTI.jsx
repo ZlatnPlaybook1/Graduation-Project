@@ -46,7 +46,7 @@ export default function SSTI() {
                   <h2 className="content__title">
                     What is server-side template injection?
                   </h2>
-                  <br></br>
+                  <br />
                   <p>
                     Server-side template injection is when an attacker is able
                     to use native template syntax to inject a malicious payload
@@ -65,11 +65,11 @@ export default function SSTI() {
                     much more dangerous than a typical client-side template
                     injection.
                   </p>
-                  <br></br>
+                  <br />
                   <h2 className="content__title">
                     What is the impact of server-side template injection?
                   </h2>
-                  <br></br>
+                  <br />
                   <p>
                     Server-side template injection vulnerabilities can expose
                     websites to a variety of attacks depending on the template
@@ -91,21 +91,21 @@ export default function SSTI() {
                     potentially gaining read access to sensitive data and
                     arbitrary files on the server.
                   </p>
-                  <br></br>
+                  <br />
                 </dd>
 
                 <dt className="fadeInUp faq-header">
                   <span>Step 2</span> SSTI vulnerabilities
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <br></br>
+                  <br />
                   <h1 className="content__title">
                     server-side template injection vulnerabilities
                   </h1>
                   <h2 className="content__title">
                     How do server-side template injection vulnerabilities arise?
                   </h2>
-                  <br></br>
+                  <br />
                   <p>
                     Server-side template injection vulnerabilities arise when
                     user input is concatenated into templates rather than being
@@ -118,36 +118,19 @@ export default function SSTI() {
                     email that greets each user by their name, such as the
                     following extract from a Twig template:
                   </p>
-                  <br></br>
+                  <br />
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">output</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                $output = $twig-{">"}render("Dear
-                                (first_name),", array("first_name" ={">"}{" "}
-                                $user.first_name) );
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                          $output = $twig-{">"}render("Dear (first_name),",
+                          array("first_name" ={">"} $user.first_name) );
                         </code>
                       </pre>
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     This is not vulnerable to server-side template injection
                     because the user's first name is merely passed into the
@@ -161,35 +144,18 @@ export default function SSTI() {
                     the email before it is sent. For example, they might be able
                     to choose the name that is used:
                   </p>
-                  <br></br>
+                  <br />
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">output</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                $output = $twig-{">"}render("Dear " .
-                                $_GET['name']);
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                          $output = $twig-{">"}render("Dear " . $_GET['name']);
                         </code>
                       </pre>
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     In this example, instead of a static value being passed into
                     the template, part of the template itself is being
@@ -199,29 +165,13 @@ export default function SSTI() {
                     server-side template injection payload inside the{" "}
                     <span>name</span> parameter as follows:
                   </p>
-                  <br></br>
+                  <br />
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">URL</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                http://vulnerable-website.com/?name=&#123;&#123;bad-stuff-here&#125;&#125;
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                          http://vulnerable-website.com/?name=&#123;&#123;bad-stuff-here&#125;&#125;
                         </code>
                       </pre>
                     </div>
@@ -243,24 +193,24 @@ export default function SSTI() {
                     huge security risk if an attacker is able to compromise an
                     account with such privileges.
                   </p>
-                  <br></br>
+                  <br />
                 </dd>
 
                 <dt className="fadeInUp faq-header">
                   <span>Step 2</span> Constructing a SSTI attack
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <br></br>
+                  <br />
                   <h1 className="content__title">
                     Constructing a server-side template injection attack
                   </h1>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage1} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <h4>Detect</h4>
                   <p>
                     Server-side template injection vulnerabilities often go
@@ -284,7 +234,7 @@ export default function SSTI() {
                     server in some way. This is one sign that a vulnerability to
                     server-side template injection may exist.
                   </p>
-                  <br></br>
+                  <br />
                   <p>
                     Server-side template injection vulnerabilities occur in two
                     distinct contexts, each of which requires its own detection
@@ -295,9 +245,9 @@ export default function SSTI() {
                     fuzzing did suggest a template injection vulnerability, you
                     still need to identify its context in order to exploit it.
                   </p>
-                  <br></br>
+                  <br />
                   <h4>Plaintext context</h4>
-                  <br></br>
+                  <br />
                   <p>
                     Most template languages allow you to freely input content
                     either by using HTML tags directly or by using the
@@ -315,66 +265,34 @@ export default function SSTI() {
                     server-side template injection attack.For example, consider
                     a template that contains the following vulnerable code:
                   </p>
-                  <br></br>
+                  <br />
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">vulnerable code:</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                render('Hello ' + username)
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                          render('Hello ' + username)
                         </code>
                       </pre>
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     During auditing, we might test for server-side template
                     injection by requesting a URL such as:
                   </p>
-                  <br></br>
+                  <br />
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">URL</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                http://vulnerable-website.com/?username=${7 * 7}
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                          http://vulnerable-website.com/?username=${7 * 7}
                         </code>
                       </pre>
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     If the resulting output contains <span>Hello 49</span>, this
                     shows that the mathematical operation is being evaluated
@@ -387,9 +305,9 @@ export default function SSTI() {
                     depending on which template engine is being used. We'll
                     discuss this in more detail in the Identify step.
                   </p>
-                  <br></br>
+                  <br />
                   <h4>Code context</h4>
-                  <br></br>
+                  <br />
                   <p>
                     In other cases, the vulnerability is exposed by user input
                     being placed within a template expression, as we saw earlier
@@ -402,61 +320,29 @@ export default function SSTI() {
                       <div className="terminal-top">Code</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                greeting = getQueryParameter('greeting')
-                                engine.render("Hello
-                                &#123;&#123;"+greeting+"&#125;&#125;", data)
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                          greeting = getQueryParameter('greeting')
+                          engine.render("Hello
+                          &#123;&#123;"+greeting+"&#125;&#125;", data)
                         </code>
                       </pre>
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     On the website, the resulting URL would be something like:
                   </p>
-                  <br></br>
+                  <br />
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">URL</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                http://vulnerable-website.com/?greeting=data.username
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                          http://vulnerable-website.com/?greeting=data.username
                         </code>
                       </pre>
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     This would be rendered in the output to{" "}
                     <span>Hello Carlos</span>, for example.
@@ -470,34 +356,18 @@ export default function SSTI() {
                     contain a direct XSS vulnerability by injecting arbitrary
                     HTML into the value:
                   </p>
-                  <br></br>
+                  <br />
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">URL</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                http://vulnerable-website.com/?greeting=data.username&lt;tag&gt;{" "}
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                          http://vulnerable-website.com/?greeting=data.username&lt;tag&gt;{" "}
                         </code>
                       </pre>
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     In the absence of XSS, this will usually either result in a
                     blank entry in the output (just Hello with no username),
@@ -505,34 +375,18 @@ export default function SSTI() {
                     and break out of the statement using common templating
                     syntax and attempt to inject arbitrary HTML after it:
                   </p>
-                  <br></br>
+                  <br />
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">URL</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                http://vulnerable-website.com/?greeting=data.username&#125;&#125;&lt;tag&gt;{" "}
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                          http://vulnerable-website.com/?greeting=data.username&#125;&#125;&lt;tag&gt;{" "}
                         </code>
                       </pre>
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     If this again results in an error or blank output, you have
                     either used syntax from the wrong templating language or, if
@@ -542,36 +396,20 @@ export default function SSTI() {
                     this is a key indication that a server-side template
                     injection vulnerability is present:
                   </p>
-                  <br></br>
+                  <br />
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">URL</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                Hello Carlos&lt;tag&gt;
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                          Hello Carlos&lt;tag&gt;
                         </code>
                       </pre>
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <h4>Identify</h4>
-                  <br></br>
+                  <br />
                   <p>
                     Once you have detected the template injection potential, the
                     next step is to identify the template engine.
@@ -594,14 +432,14 @@ export default function SSTI() {
                     (erb):1:in &lt;main&gt;: undefined local variable or method
                     `foobar' for main:Object (NameError)
                   </span>
-                  <br></br>
+                  <br />
                   <span>from /usr/lib/ruby/2.5.0/erb.rb:876:in `eval'</span>
-                  <br></br>
+                  <br />
                   <span>from /usr/lib/ruby/2.5.0/erb.rb:876:in `result'</span>
-                  <br></br>
+                  <br />
                   <span>from -e:4:in &lt;main&gt; </span>
-                  <br></br>
-                  <br></br>
+                  <br />
+                  <br />
                   <p>
                     Otherwise, you'll need to manually test different
                     language-specific payloads and study how they are
@@ -614,13 +452,13 @@ export default function SSTI() {
                     they are successfully evaluated. To help with this process,
                     you can use a decision tree similar to the following:
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage2} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <p>
                     You should be aware that the same payload can sometimes
                     return a successful response in more than one template
@@ -630,9 +468,9 @@ export default function SSTI() {
                     Therefore, it is important not to jump to conclusions based
                     on a single successful response.
                   </p>
-                  <br></br>
+                  <br />
                   <h4>Exploit</h4>
-                  <br></br>
+                  <br />
                   <p>
                     After detecting that a potential vulnerability exists and
                     successfully identifying the template engine, you can begin
@@ -644,12 +482,12 @@ export default function SSTI() {
                   <span>Step 4</span> How to prevent SSTI vulnerabilities
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <br></br>
+                  <br />
                   <h1 className="content__title">
                     How to prevent server-side template injection
                     vulnerabilities
                   </h1>
-                  <br></br>
+                  <br />
                   <p>
                     The best way to prevent server-side template injection is to
                     not allow any users to modify or submit new templates.

@@ -309,12 +309,12 @@ export default function SSRF() {
                   <code>
                     /product/nextProduct?currentProductId=6&path=http://evil-user.net
                   </code>
-                  <br></br>
-                  <br></br>
+                  <br />
+                  <br />
                   <p>returns a redirection to:</p>
                   <code>http://evil-user.net</code>
-                  <br></br>
-                  <br></br>
+                  <br />
+                  <br />
                   <p>
                     This SSRF exploit works because the application first
                     validates that the supplied stockAPI URL is on an allowed

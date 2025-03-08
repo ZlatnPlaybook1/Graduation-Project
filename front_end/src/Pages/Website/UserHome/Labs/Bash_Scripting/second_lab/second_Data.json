@@ -63,18 +63,21 @@
     {
       "id": 11,
       "question": "What would be the command to print audi to the screen using indexing?",
+      "element":"<p>Array: <code>cars=('honda' 'audi' 'bmw' 'tesla')</code></p>",
       "correctAnswer": "echo ${cars[1]}",
       "hint": "Start the pattern with b or h and end with optional 's'"
     },
     {
       "id": 12,
       "question": "If we wanted to remove tesla from the array how would we do so?",
+      "element":"<p>Array: <code>cars=('honda' 'audi' 'bmw' 'tesla')</code></p>",
       "correctAnswer": "unset cars[3]",
       "hint": "Match the exact string 'catssss'"
     },
     {
       "id": 13,
       "question": "How could we insert a new value called toyota to replace tesla?",
+      "element":"<p>Array: <code>cars=('honda' 'audi' 'bmw' 'tesla')</code></p>",
       "correctAnswer": "cars[3]='toyota'",
       "hint": "Use '*' to match zero or more occurrences of 's'"
     },

@@ -58,7 +58,7 @@ export default function Obfuscation() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <p>
-                    <br></br>
+                    <br />
                   </p>
                   <h1 className="content__title">
                     What are Obfuscation & Deobfuscation?
@@ -70,21 +70,21 @@ export default function Obfuscation() {
                     same result. There are several obfuscation methods hence
                     that there are many tools for it.
                   </p>
-                  <br></br>
+                  <br />
                   <h4>Deobfuscation </h4>
                   <p>
                     It is the reverse process of obfuscation, as it rewrites the
                     script again from a very difficult to read to an
                     understandable one. This can be done with many tools.
                   </p>
-                  <br></br>
+                  <br />
                   <div className="Content__img--box">
                     <div className="Content__img__box__over--hidden">
                       <img src={exampleImage1} alt="Example" />
                     </div>
                   </div>
                   <h2 className="content__title">Why do we use Obfuscation?</h2>
-                  <br></br>
+                  <br />
                   <p>
                     There are many reasons why you may use obfuscation, here are
                     some of them:
@@ -100,11 +100,11 @@ export default function Obfuscation() {
                       filtering or detecting your payloads.{" "}
                     </li>
                   </ol>
-                  <br></br>
+                  <br />
                   <h2 className="content__title">
                     Common Techniques of Obfuscation
                   </h2>
-                  <br></br>
+                  <br />
                   <h5>1 . Renaming Variables and Functions:</h5>
                   <p>
                     Changing the names of variables, functions, and classes to
@@ -144,7 +144,7 @@ export default function Obfuscation() {
                   <span> Topic 3</span>Javascript Obfuscation{" "}
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <br></br>
+                  <br />
                   <h1 className="content__title">Javascript Obfuscation </h1>
                   <p>
                     There are several methods in JS obfuscation, one of them is
@@ -156,9 +156,9 @@ export default function Obfuscation() {
                       <img src={exampleImage2} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <h3>JS Obfuscation Tools </h3>
-                  <br></br>
+                  <br />
                   <h4>JSF</h4>
                   <p>
                     By this method, you can rewrite any JS script with just six
@@ -173,7 +173,7 @@ export default function Obfuscation() {
                       <img src={exampleImage3} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <h4>Packer Obfuscation</h4>
                   <p>
                     In this one, all script text and symbols will be stored in a
@@ -191,13 +191,13 @@ export default function Obfuscation() {
                       <img src={exampleImage4} alt="Example" />
                     </div>
                   </div>
-                  <br></br>
+                  <br />
                   <h4>JS deobfuscation Tools</h4>
                   <p>
                     Instead of downloading and using deobfuscation tools on your
                     machine, you can use them online.
                   </p>
-                  <br></br>
+                  <br />
                   <h3>Here are some examples:</h3>
                   <ol>
                     <li>

@@ -38,7 +38,7 @@ export default function CaptchaBypass() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <p>
-                    <br></br>
+                    <br/>
                   </p>
                   <h1 className="content__title">What is Captcha?</h1>
                   <h4>Captcha Overview</h4>
@@ -137,7 +137,7 @@ export default function CaptchaBypass() {
                     step ahead of bot automation, while also ensuring
                     accessibility for users with disabilities.
                   </p>
-                  <br></br>
+                  <br/>
                 </dd>
 
                 <dt className="fadeInUp faq-header">
@@ -145,7 +145,7 @@ export default function CaptchaBypass() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <p>
-                    <br></br>
+                    <br/>
                   </p>
                   <h1 className="content__title">
                     Understanding Captcha Bypass Techniques
@@ -221,7 +221,7 @@ export default function CaptchaBypass() {
                     the website or service owner. Always use these techniques
                     for educational or ethical hacking purposes only.
                   </p>
-                  <br></br>
+                  <br/>
                 </dd>
 
                 <dt className="fadeInUp faq-header">
@@ -229,7 +229,7 @@ export default function CaptchaBypass() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <p>
-                    <br></br>
+                    <br/>
                   </p>
                   <h1 className="content__title">
                     Bypassing Simple Captchas using Python
@@ -252,23 +252,7 @@ export default function CaptchaBypass() {
                       <div className="terminal-top">URL</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                pip install pytesseract opencv-python selenium
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                          pip install pytesseract opencv-python selenium
                         </code>
                       </pre>
                     </div>
@@ -282,23 +266,7 @@ export default function CaptchaBypass() {
                       <div className="terminal-top">Code</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                sudo apt install tesseract-ocr
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                          sudo apt install tesseract-ocr
                         </code>
                       </pre>
                     </div>
@@ -314,49 +282,33 @@ export default function CaptchaBypass() {
                     Captchas. Here's a simple example of how to use OCR to read
                     text from an image:
                   </p>
-                  <br></br>
+                  <br/>
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">Code</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                import pytesseract<br></br>
-                                import cv2<br></br>
-                                <br></br># Load image<br></br>
-                                <br></br>
-                                image = cv2.imread('captcha-image.png')<br></br>
-                                <br></br># Preprocess image (optional)<br></br>
-                                <br></br>
+                                import pytesseract<br/>
+                                import cv2<br/>
+                                <br/># Load image<br/>
+                                <br/>
+                                image = cv2.imread('captcha-image.png')<br/>
+                                <br/># Preprocess image (optional)<br/>
+                                <br/>
                                 gray_image = cv2.cvtColor(image,
-                                cv2.COLOR_BGR2GRAY)<br></br>
-                                <br></br># Extract text from image using
-                                pytesseract<br></br>
-                                <br></br>
+                                cv2.COLOR_BGR2GRAY)<br/>
+                                <br/># Extract text from image using
+                                pytesseract<br/>
+                                <br/>
                                 captcha_text =
-                                pytesseract.image_to_string(gray_image)<br></br>
+                                pytesseract.image_to_string(gray_image)<br/>
                                 print(f"Captcha Text: &#123;captcha_text&#125;")
-                                <br></br>
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                                <br/>
                         </code>
                       </pre>
                     </div>
                   </div>
-                  <br></br>
+                  <br/>
                   <p>
                     This code loads the image, converts it to grayscale (which
                     helps improve OCR accuracy), and then uses `pytesseract` to
@@ -371,66 +323,50 @@ export default function CaptchaBypass() {
                     you can use Selenium. Here's an example of how you can fill
                     out a form and submit it:
                   </p>
-                  <br></br>
+                  <br/>
                   <div className="terminal-container">
                     <div className="terminal-content">
                       <div className="terminal-top">Code</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
-                                from selenium import webdriver<br></br>
+                                from selenium import webdriver<br/>
                                 from selenium.webdriver.common.keys import Keys
-                                <br></br>
-                                <br></br># Initialize WebDriver<br></br>
-                                <br></br>
-                                driver = webdriver.Chrome()<br></br>
-                                <br></br># Open website<br></br>
-                                <br></br>
+                                <br/>
+                                <br/># Initialize WebDriver<br/>
+                                <br/>
+                                driver = webdriver.Chrome()<br/>
+                                <br/># Open website<br/>
+                                <br/>
                                 driver.get('https://example.com/captcha-form')
-                                <br></br>
-                                <br></br># Fill out form fields<br></br>
-                                <br></br>
+                                <br/>
+                                <br/># Fill out form fields<br/>
+                                <br/>
                                 driver.find_element_by_id('username').send_keys('my_username')
-                                <br></br>
+                                <br/>
                                 driver.find_element_by_id('password').send_keys('my_password')
-                                <br></br>
-                                <br></br># Solve Captcha (assumes you already
-                                got the text from pytesseract)<br></br>
-                                <br></br>
+                                <br/>
+                                <br/># Solve Captcha (assumes you already
+                                got the text from pytesseract)<br/>
+                                <br/>
                                 captcha_input =
                                 driver.find_element_by_id('captcha_input')
-                                <br></br>
-                                captcha_input.send_keys(captcha_text)<br></br>
-                                <br></br># Submit form<br></br>
-                                <br></br>
+                                <br/>
+                                captcha_input.send_keys(captcha_text)<br/>
+                                <br/># Submit form<br/>
+                                <br/>
                                 driver.find_element_by_id('submit_button').click()
-                                <br></br>
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                                <br/>
                         </code>
                       </pre>
                     </div>
                   </div>
-                  <br></br>
+                  <br/>
                   <p>
                     This code will automatically open the page, fill in the form
                     fields, solve the Captcha (by sending the extracted text to
                     the Captcha input), and submit the form.
                   </p>
-                  <br></br>
+                  <br/>
                 </dd>
 
                 <dt className="fadeInUp faq-header">
@@ -439,7 +375,7 @@ export default function CaptchaBypass() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <p>
-                    <br></br>
+                    <br/>
                   </p>
                   <h1 className="content__title">
                     Bypassing reCAPTCHA v2 & v3
@@ -471,58 +407,42 @@ export default function CaptchaBypass() {
                       <div className="terminal-top">Code</div>
                       <pre className="terminal-codelanguage-bash" tabIndex="0">
                         <code className="language-bash">
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user">
                                 <p>import requests</p>
-                                <br></br># API key from 2Captcha <br></br>
-                                <br></br>
-                                api_key = 'YOUR_2CAPTCHA_API_KEY'<br></br>
-                                <br></br># Image URL of the Captcha challenge
-                                <br></br>
-                                <br></br>
+                                <br/># API key from 2Captcha <br/>
+                                <br/>
+                                api_key = 'YOUR_2CAPTCHA_API_KEY'<br/>
+                                <br/># Image URL of the Captcha challenge
+                                <br/>
+                                <br/>
                                 captcha_image_url =
-                                'https://example.com/captcha-image.jpg'<br></br>
-                                <br></br># Request for solving the captcha
-                                <br></br>
-                                <br></br>
+                                'https://example.com/captcha-image.jpg'<br/>
+                                <br/># Request for solving the captcha
+                                <br/>
+                                <br/>
                                 response =
                                 requests.post('http://2captcha.com/in.php',
-                                data=&#123;<br></br>
-                                'key': api_key,<br></br>
-                                'method': 'base64',<br></br>
-                                'body': captcha_image_url,<br></br>
-                                'json': 1,<br></br>
-                                &#125;)<br></br>
-                                <br></br>
-                                result = response.json()<br></br>
-                                captcha_id = result['request']<br></br>
-                                <br></br># Wait for the solution<br></br>
-                                <br></br>
-                                solution = None<br></br>
-                                while solution is None:<br></br>
+                                data=&#123;<br/>
+                                'key': api_key,<br/>
+                                'method': 'base64',<br/>
+                                'body': captcha_image_url,<br/>
+                                'json': 1,<br/>
+                                &#125;)<br/>
+                                <br/>
+                                result = response.json()<br/>
+                                captcha_id = result['request']<br/>
+                                <br/># Wait for the solution<br/>
+                                <br/>
+                                solution = None<br/>
+                                while solution is None:<br/>
                                 response =
                                 requests.get(f'http://2captcha.com/res.php?key=&#123;api_key&#125;&action=get&id=&#123;captcha_id&#125;&json=1')
-                                <br></br>
-                                result = response.json()<br></br>
-                                if result['status'] == 1:<br></br>
-                                solution = result['request']<br></br>
-                                <br></br>
+                                <br/>
+                                result = response.json()<br/>
+                                if result['status'] == 1:<br/>
+                                solution = result['request']<br/>
+                                <br/>
                                 print(f"Captcha solved: &#123;solution&#125;")
-                                <br></br>
-                              </span>
-                            </span>
-                          </span>
-                          <span className="token command-c">
-                            <span className="token info punctuation">
-                              <span className="token user"></span>
-                            </span>
-                          </span>
+                                <br/>
                         </code>
                       </pre>
                     </div>
@@ -541,7 +461,7 @@ export default function CaptchaBypass() {
                     automate these interactions and make the system appear
                     human-like to reCAPTCHA v3.
                   </p>
-                  <br></br>
+                  <br/>
                 </dd>
               </dl>
             </div>
