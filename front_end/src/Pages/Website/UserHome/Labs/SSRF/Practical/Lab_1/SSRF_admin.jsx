@@ -6,17 +6,6 @@ import axios from "axios";
 
 export default function SSRF_AdminLab() {
   const [usernames, setUserNames] = useState([]);
-
-  // const createUsers = async () => {
-  //   try {
-  //     const response = await axios.post(
-  //       "http://127.0.0.1:8080/api/create-users"
-  //     );
-  //     setUserNames(response.data.username);
-  //   } catch (error) {
-  //     console.error("Error creating users:", error);
-  //   }
-  // };
   const labreset = async () => {
     try {
       const response = await axios.post(
@@ -33,7 +22,9 @@ export default function SSRF_AdminLab() {
 
   const deleteUser = async (username) => {
     try {
-      await axios.delete(`http://127.0.0.1:8080/api/SSRFLab/deleteUser/${username}`);
+      await axios.delete(
+        `http://127.0.0.1:8080/api/SSRFLab/deleteUser/${username}`
+      );
       setUserNames(usernames.filter((user) => user.name !== usernames));
     } catch (error) {
       console.error("Error deleting user:", error);
@@ -61,18 +52,9 @@ export default function SSRF_AdminLab() {
       <h1 style={{ textAlign: "center", marginBottom: 20 }}>User Management</h1>
       <ul>
         {usernames && (
-          <li>
+          <li className="ssrf_user_list">
             {usernames}
-            <button
-              onClick={() => deleteUser(usernames)}
-              style={{
-                marginLeft: "10px",
-                backgroundColor: "red",
-                color: "white",
-              }}
-            >
-              Delete
-            </button>
+            <button onClick={() => deleteUser(usernames)} className="delete_user">Delete</button>
           </li>
         )}
       </ul>

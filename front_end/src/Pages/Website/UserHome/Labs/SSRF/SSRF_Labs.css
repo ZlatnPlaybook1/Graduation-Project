@@ -100,3 +100,21 @@
     grid-template-columns: 0.5fr 0.5fr;
   }
 }
+
+.ssrf_user_list {
+  background-color: #eaeaee;
+  margin: 10rem auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+}
+
+.ssrf_user_list button.delete_user {
+  margin-Left: 30px;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  border: none;
+  float: right;
+  color: white;
+}
