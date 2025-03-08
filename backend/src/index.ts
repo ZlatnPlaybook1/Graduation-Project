@@ -5,7 +5,6 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import path from "path";
-import ejs from "ejs";
 import registerRouter from "./registerWithAuthentication/register.router";
 import loginRouter from "./login/login.router";
 import logoutRouter from "./logout/logout.router";
@@ -52,6 +51,7 @@ import bLVulnRouter from "./labs/BL-Vuln/Lab1/lab1.router";
 import lab1jwtRouter from "./labs/jwt/lab1/lab1.router";
 import lab2jwtRouter from "./labs/jwt/lab2/lab2.router";
 import lab3jwtRouter from "./labs/jwt/lab3/lab3.router";
+import lab1SSRF from "./labs/SSRF/lab1/lab1.router";
 
 const app = express();
 app.use("/uploads", express.static("uploads"));
@@ -123,6 +123,7 @@ app.use("/api", bLVulnRouter);
 app.use("/api", lab1jwtRouter);
 app.use("/api", lab2jwtRouter);
 app.use("/api", lab3jwtRouter);
+app.use("/api", lab1SSRF);
 
 dotenv.config();
 
