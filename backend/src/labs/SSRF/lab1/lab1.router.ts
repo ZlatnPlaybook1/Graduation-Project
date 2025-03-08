@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { checkStock , deleteUser, resetLab1} from "./lab1.controller";
+import { products , deleteUser, resetLab1} from "./lab1.controller";
 
 const lab1SSRF = Router();
 
-lab1SSRF.post("/SSRFLab/checkStock",checkStock );
+lab1SSRF.post("/SSRFLab/checkStock",products );
 
 lab1SSRF.delete("/SSRFLab/deleteUser/:username",deleteUser );
 

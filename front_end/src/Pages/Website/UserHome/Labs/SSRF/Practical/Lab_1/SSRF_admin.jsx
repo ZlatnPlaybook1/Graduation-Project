@@ -25,7 +25,7 @@ export default function SSRF_AdminLab() {
       await axios.delete(
         `http://127.0.0.1:8080/api/SSRFLab/deleteUser/${username}`
       );
-      setUserNames(usernames.filter((user) => user.name !== usernames));
+      setUserNames([]);
     } catch (error) {
       console.error("Error deleting user:", error);
     }
@@ -51,10 +51,15 @@ export default function SSRF_AdminLab() {
       </button>
       <h1 style={{ textAlign: "center", marginBottom: 20 }}>User Management</h1>
       <ul>
-        {usernames && (
+        {usernames !== undefined && (
           <li className="ssrf_user_list">
             {usernames}
-            <button onClick={() => deleteUser(usernames)} className="delete_user">Delete</button>
+            <button
+              onClick={() => deleteUser(usernames)}
+              className="delete_user"
+            >
+              Delete
+            </button>
           </li>
         )}
       </ul>

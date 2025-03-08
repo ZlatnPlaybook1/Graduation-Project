@@ -113,6 +113,7 @@
 .ssrf_user_list button.delete_user {
   margin-Left: 30px;
   border-radius: 5px;
+  padding: 5px 10px;
   background-color: var(--main-color);
   border: none;
   float: right;

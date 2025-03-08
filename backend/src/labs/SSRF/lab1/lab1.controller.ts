@@ -4,9 +4,13 @@ import prisma from "../../../utilities/db";
 export const checkStock = (): string => {
     return Math.random() > 0.5 ? "In Stock" : "Out of Stock";
 };
+export const products = (req: Request, res: Response) => {
+  res.json({ message: checkStock() });
+};
 
 export const deleteUser = async (req: Request, res: Response) => {
-    const username = req.body.username;
+    const username = req.params.username;
+    console.log(username);
     if (!username) {
         return res.status(400).json({ error: "userId is required" });
     }
