@@ -1,11 +1,9 @@
-
-
 .login-page {
   font-family: 'poppins', 'sans-serif';
   overflow-y: hidden;
   height: 100vh;
-  background-color: var(--alt-color);
-  color: white;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
 }
 
 
@@ -17,7 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 
@@ -62,7 +60,9 @@
 .login-form {
   padding: 50px;
   border-radius: 5px;
-  background-color: var(--main-color);
+  min-width: 400px;
+  background-color: var(--primary-bg);
+  border: 3px solid var(--faq-header);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,9 +85,10 @@
   padding: 10px;
   margin: 10px 0;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: lighter;
-  color: black;
+  color: var(--primary-text);
+  background-color: var(--faq-header);
 }
 
 .login-form .form-group {
@@ -102,14 +103,14 @@
   margin: 10px 0;
   border: none;
   border-radius: 5px;
-  color: var(--font-color);
-  background-color: var(--sec-main-color);
+  color: whitesmoke;
+  background: linear-gradient(0deg, var(--neon-red), var(--burnt-orange));
   cursor: pointer;
   transition: var(--main-transition);
 }
 
 .login-form button:hover {
-  background-color: #7fc900;
+  opacity: .85;
 }
 
 form .error {

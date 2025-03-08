@@ -1,49 +1,10 @@
-.container-labcc {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Extra small */
-@media (min-width: 0px) {
-  .container-labcc {
-    max-width: 100%;
-  }
-}
-
-/* small */
-@media (min-width: 576px) {
-  .container-labcc {
-    max-width: 540px;
-  }
-}
-
-/*  Medium */
-@media (min-width: 768px) {
-  .container-labcc {
-    max-width: 750px;
-  }
-}
-
-/* Large */
-@media (min-width: 992px) {
-  .container-labcc {
-    max-width: 970px;
-  }
-}
-
-/* X-Large */
-@media (min-width: 1200px) {
-  .container-labcc {
-    max-width: 1170px;
-  }
-}
-
 .course-labcc {
   position: relative;
   min-height: calc(100vh - (102px));
   padding-top: 50px;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
 }
-
 
 .course-labcc .course-section {
   background-color: inherit;
@@ -73,7 +34,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  background-color: #f9f9f9;
+  background-color: var(--faq-header);
   padding: 10px 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: max-content;
@@ -265,15 +226,14 @@
   pointer-events: initial;
   border-width: 1px;
   border-style: solid;
-  background-color: transparent;
-  color: rgb(21, 28, 43);
-  border-color: rgb(163, 234, 42);
+  background-color: var(--main-color2);
+  color: var(--primary-text);
   transition: 0.2s ease-in-out;
 }
 
 .faq-section-labcc form button:hover:not(:disabled) {
-  background-color: rgb(163, 234, 42);
-  color: whitesmoke;
+  background-color: var(--hover-highlight-color);
+  color: var(--primary-text);
 }
 
 .capital-info {
@@ -291,11 +251,11 @@
 }
 
 .fileViewer {
-  border: 1px solid #ccc;
+  border: 2px solid var(--faq-header-hover);
   border-radius: 8px;
   padding: 20px;
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--faq-header);
+  box-shadow: 0 4px 10px rgba(200, 200, 200, 0.1);
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -304,7 +264,7 @@
   margin-bottom: 30px;
 }
 
-/* .fileViewer .info {} */
+/* .fileViewer .info  */
 
 #lab-info {
   font-size: 24px;
@@ -312,8 +272,8 @@
 }
 
 .downloadButton {
-  background-color: var(--sec-main-color);
-  color: white;
+  background-color: var(--main-color2);
+  color: var(--primary-text);
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
@@ -323,8 +283,7 @@
 }
 
 .downloadButton:hover {
-  background-color: #92d51f;
-  /* A slightly darker shade for hover effect */
+  background-color: var(--hover-highlight-color);
 }
 
 .downloadButton i {

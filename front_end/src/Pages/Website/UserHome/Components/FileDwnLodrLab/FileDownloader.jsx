@@ -85,7 +85,7 @@ export const FileDownloader = ({
         <div className="firework" id="firework"></div>
         {showSuccess && <div className="message success">Congratulations!</div>}
         {showFail && <div className="message fail">Wrong!</div>}
-        <div className="container-labcc">
+        <div className="container">
           <div className="faq-section-labcc">
             {labInfo && (
               <div className="fileViewer">

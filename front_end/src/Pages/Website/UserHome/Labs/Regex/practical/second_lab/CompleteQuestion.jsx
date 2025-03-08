@@ -74,60 +74,69 @@ const CompleteQuestion = ({ questionsData }) => {
     </ul>
   `;
   return (
-    <div className="quiz-container">
+    <div className="complete_quiz_container">
       {/* Progress Bar */}
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
       <h2>Complete the questions</h2>
-      <div className="progress-bar">
+      <div className="complete_progress_bar">
         <div
-          className="progress"
+          className="complete_progress"
           style={{
             width: `${progressPercentage}%`,
           }}
         ></div>
       </div>
-      <div className="progress-text">
+      <div className="complete_progress_text">
         Question {currentQuestionIndex + 1} of {totalQuestions}
       </div>
 
       {/* Question */}
-      <div className="question-container">
-        <h2 className="question">{currentQuestion.question}</h2>
+      <h2 className="complete_question">{currentQuestion.question}</h2>
 
-        {/* Answer Input */}
-        <input
-          type="text"
-          className="answer-input"
-          value={userAnswer}
-          onChange={(e) => setUserAnswer(e.target.value)}
-          disabled={showAnswer}
-        />
-        <button onClick={handleAnswerSubmit} disabled={showAnswer}>
-          Submit Answer
-        </button>
+      {/* Answer Input */}
+      <input
+        type="text"
+        className="complete_answer_input"
+        value={userAnswer}
+        onChange={(e) => setUserAnswer(e.target.value)}
+        disabled={showAnswer}
+      />
+      <button
+        onClick={handleAnswerSubmit}
+        disabled={showAnswer}
+        className="complete_navigate"
+      >
+        Submit Answer
+      </button>
 
-        {/* Feedback */}
-        {showAnswer && (
-          <p className="feedback">
-            {userAnswer.toLowerCase() ===
-            currentQuestion.correctAnswer.toLowerCase()
-              ? "Correct!"
-              : `Wrong! The correct answer is: ${currentQuestion.correctAnswer}`}
-          </p>
-        )}
-      </div>
+      {/* Feedback */}
+      {showAnswer && (
+        <p className="complete_feedback">
+          {userAnswer.toLowerCase() ===
+          currentQuestion.correctAnswer.toLowerCase()
+            ? "Correct!"
+            : `Wrong! The correct answer is: ${currentQuestion.correctAnswer}`}
+        </p>
+      )}
 
       {/* Navigation Buttons */}
-      <div className="navigation-buttons">
-        <button onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
+      <div className="complete_navigation_buttons">
+        <button
+          onClick={handlePrevious}
+          className="complete_navigate"
+          disabled={currentQuestionIndex === 0}
+        >
           Previous
         </button>
         {currentQuestionIndex === totalQuestions - 1 ? (
-          <button onClick={handleSubmit}>Submit</button>
+          <button onClick={handleSubmit} className="complete_navigate">
+            Submit
+          </button>
         ) : (
           <button
             onClick={handleNext}
+            className="complete_navigate"
             disabled={currentQuestionIndex === totalQuestions - 1}
           >
             Next

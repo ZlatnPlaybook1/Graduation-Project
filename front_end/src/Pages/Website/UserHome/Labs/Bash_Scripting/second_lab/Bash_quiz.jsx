@@ -13,6 +13,9 @@ export default function Second_Lab() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        backgroundColor: "var(--faq-body-bg)",
+        color: "var(--primary-text)",
+        height: "100vh",
       }}
     >
       <CompleteQuestion questionsData={Data} />

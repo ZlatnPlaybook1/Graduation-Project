@@ -67,7 +67,7 @@ export const SelectionLab = ({
       <div className="course-labcc">
         <GoBackBtn />
         <ShowHintBtn hintText={hint} />
-        <div className="container-labcc">
+        <div className="container">
           <div className="faq-section-labcc">
             <div className="question-div">
               <div className="text-center">
