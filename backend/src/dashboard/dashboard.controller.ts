@@ -2,7 +2,7 @@ import {Request, Response} from "express";
 import jwt from 'jsonwebtoken';
 import multer from 'multer';
 import prisma from "../utilities/db";
-import {hashPassword} from "../utilities/auth";
+import {hashPassword, comparePasswords} from "../utilities/auth";
 
 
 export async function getAllUsers(req: Request, res: Response): Promise<Response> {
@@ -233,8 +233,8 @@ export async function resetPassword(req: Request, res: Response): Promise<Respon
         if (!user) {
             return res.status(404).json({error: "User not found"});
         }
-
-        if (user.password !== req.body.oldPassword) {
+ 
+        if (!await comparePasswords(req.body.oldPassword, user.password)) {
             return res.status(400).json({error: "Old password is incorrect"});
         }
 
@@ -242,7 +242,7 @@ export async function resetPassword(req: Request, res: Response): Promise<Respon
         
         const newPassword = await prisma.user.update({
             where: {id: userId},
-            data: {
+            data: { 
                 password: hashedPassword,
             },
         });
