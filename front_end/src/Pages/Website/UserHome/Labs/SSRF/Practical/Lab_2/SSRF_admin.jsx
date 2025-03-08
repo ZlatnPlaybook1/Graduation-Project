@@ -8,26 +8,25 @@ import axios from "axios";
 // Lab hint for SSRF
 const hintMessage = `<span>This lab is vulnerable to SSRF due to improper validation of user-supplied input. To solve the lab, you need to submit a URL that could access internal resources such as <strong>http://localhost/admin</strong> or <strong>http://127.0.0.1/secret.txt</strong>.</span>`;
 
-export default function SSRF_AdminLab() {
+export default function SSRF_AdminLab1() {
   const [responseFromBackend, setResponseFromBackend] = useState(""); // Store backend response
   const [urlInput, setUrlInput] = useState(""); // User input for URL
   const [outOfStockMessage, setOutOfStockMessage] = useState(""); // Message from backend (e.g., stock status)
   const [isAdmin, setIsAdmin] = useState(false); // Admin check flag
   const [isDeleted, setIsDeleted] = useState(false); // Track if the file was deleted
 
-  // Fetch user role from backend to check if the user is an admin
   useEffect(() => {
     const checkAdminStatus = async () => {
       try {
         const response = await axios.get(
           "http://127.0.0.1:8080/api/check-admin"
-        ); // Endpoint to check if the user is an admin
+        );
         if (response.data.isAdmin) {
-          setIsAdmin(true); // If user is an admin, grant access
-          window.location.reload(); // Reload the page when admin status changes
+          setIsAdmin(true);
+          window.location.reload();
         } else {
-          setIsAdmin(false); // If user is not an admin, deny access
-          window.location.reload(); // Reload the page when admin status changes
+          setIsAdmin(false);
+          window.location.reload();
         }
       } catch (error) {
         console.error("Error checking admin status:", error);

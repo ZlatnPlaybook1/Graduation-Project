@@ -5,30 +5,36 @@ import "../../SSRF_Labs.css";
 import axios from "axios";
 
 export default function SSRF_AdminLab() {
-  const [users, setUsers] = useState([]);
+  const [usernames, setUserNames] = useState([]);
 
+  // const createUsers = async () => {
+  //   try {
+  //     const response = await axios.post(
+  //       "http://127.0.0.1:8080/api/create-users"
+  //     );
+  //     setUserNames(response.data.username);
+  //   } catch (error) {
+  //     console.error("Error creating users:", error);
+  //   }
+  // };
+  const labreset = async () => {
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8080/api/SSRFLab/resetLab1"
+      );
+      setUserNames(response.data.username);
+    } catch (error) {
+      console.error("Error creating users:", error);
+    }
+  };
   useEffect(() => {
-    const createUsers = async () => {
-      try {
-        const usernames = ["Alice", "Bob", "Charlie", "David", "Eve"];
-        const response = await axios.post(
-          "http://127.0.0.1:8080/api/create-users",
-          {
-            usernames,
-          }
-        );
-        setUsers(response.data.users);
-      } catch (error) {
-        console.error("Error creating users:", error);
-      }
-    };
-    createUsers();
+    labreset();
   }, []);
 
-  const deleteUser = async (userId) => {
+  const deleteUser = async (username) => {
     try {
-      await axios.delete(`http://127.0.0.1:8080/api/delete-user/${userId}`);
-      setUsers(users.filter((user) => user.id !== userId));
+      await axios.delete(`http://127.0.0.1:8080/api/SSRFLab/deleteUser/${username}`);
+      setUserNames(usernames.filter((user) => user.name !== usernames));
     } catch (error) {
       console.error("Error deleting user:", error);
     }
@@ -38,14 +44,27 @@ export default function SSRF_AdminLab() {
     <div className="container">
       <GoBackBtn />
       <ShowHintBtn hintText="This lab demonstrates SSRF vulnerabilities." />
-
+      <button
+        onClick={labreset}
+        className="reset-btn"
+        style={{
+          width: "fit-content",
+          marginTop: "20px",
+          marginLeft: "20px",
+          borderRadius: "5px",
+          position: "absolute",
+          left: "15%",
+        }}
+      >
+        Reset
+      </button>
       <h1 style={{ textAlign: "center", marginBottom: 20 }}>User Management</h1>
       <ul>
-        {users.map((user) => (
-          <li key={user.id}>
-            {user.name}
+        {usernames && (
+          <li>
+            {usernames}
             <button
-              onClick={() => deleteUser(user.id)}
+              onClick={() => deleteUser(usernames)}
               style={{
                 marginLeft: "10px",
                 backgroundColor: "red",
@@ -55,7 +74,7 @@ export default function SSRF_AdminLab() {
               Delete
             </button>
           </li>
-        ))}
+        )}
       </ul>
     </div>
   );

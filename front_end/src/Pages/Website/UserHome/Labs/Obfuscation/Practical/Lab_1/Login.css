@@ -1,55 +1,9 @@
-.obu-container {
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-/* Extra small */
-@media (min-width: 0px) {
-  .obu-container {
-    max-width: 100%;
-  }
-}
-
-
-/* small */
-@media (min-width: 576px) {
-  .obu-container {
-    max-width: 540px;
-  }
-}
-
-
-/*  Medium */
-@media (min-width: 768px) {
-  .obu-container {
-    max-width: 750px;
-  }
-}
-
-/* Large */
-@media (min-width: 992px) {
-  .obu-container {
-    max-width: 970px;
-  }
-}
-
-/* X-Large */
-@media (min-width: 1200px) {
-  .obu-container {
-    max-width: 1170px;
-  }
-}
-
-.body {
+.obu_body {
   box-sizing: border-box;
   width: 100%;
   height: 100vh;
   overflow-y: hidden;
-  background-color: #DBE2EF;
+  background-color: #212121;
   padding-top: 40px;
 }
 
@@ -61,13 +15,12 @@
 }
 
 .obu-card {
-  background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   height: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: max-content;
-  background-color: #112D4E;
+  background-color: #323232;
   color: #EAEAEA;
 }
 
@@ -120,7 +73,7 @@
 .obu-card_field .input i {
   position: absolute;
   border-radius: 50%;
-  background-color: #252A34;
+  background-color: #0D7377;
   padding: 10px;
   color: #EAEAEA;
 }
@@ -144,7 +97,7 @@
   width: 100%;
   height: 50px;
   border-radius: 50px;
-  background-color: #3F72AF;
+  background-color: #0D7377;
   text-align: center;
   border: none;
   color: #EAEAEA;

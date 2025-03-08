@@ -45,7 +45,7 @@ export default function Obfuscation_login() {
 
   return (
     <>
-      <div className="body">
+      <div className="obu_body">
         <GoBackBtn />
         <ShowHintBtn
           hintText={
@@ -53,7 +53,7 @@ export default function Obfuscation_login() {
           }
         />
         <div className="obfuscation_lab_body">
-          <div className="obu-container">
+          <div className="container d-flex justify-content-center">
             <div className="obu-card">
               <div className="obu-card_content">
                 <div className="obu-card_title">Login</div>

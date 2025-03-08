@@ -7,7 +7,7 @@ import axios from "axios";
 
 export default function SSRF_store1() {
   const [outOfStockMessage, setOutOfStockMessage] = useState("");
-  const [resetMessage, setResetMessage] = useState("");
+  // const [resetMessage, setResetMessage] = useState("");
   const [messageFromURL, setMessageFromURL] = useState("");
   const [htmlContent, setHtmlContent] = useState("");
 
@@ -22,40 +22,40 @@ export default function SSRF_store1() {
     }
   }, []);
 
-  useEffect(() => {
-    if (messageFromURL) {
-      sendMessageToBackend(messageFromURL);
-    }
-  }, [messageFromURL]);
+  // useEffect(() => {
+  //   if (messageFromURL) {
+  //     sendMessageToBackend(messageFromURL);
+  //   }
+  // }, [messageFromURL]);
 
-  const sendMessageToBackend = async (message) => {
-    try {
-      const response = await axios.post(
-        "http://127.0.0.1:8080/api/SSRFLab/submitMessage",
-        { message }
-      );
-      console.log("Message sent to backend:", response.data);
-      setHtmlContent(response.data);
-    } catch (error) {
-      console.error("Error sending message to backend:", error);
-    }
-  };
+  // const sendMessageToBackend = async (message) => {
+  //   try {
+  //     const response = await axios.post(
+  //       "http://127.0.0.1:8080/api/SSRFLab/submitMessage",
+  //       { message }
+  //     );
+  //     console.log("Message sent to backend:", response.data);
+  //     setHtmlContent(response.data);
+  //   } catch (error) {
+  //     console.error("Error sending message to backend:", error);
+  //   }
+  // };
 
-  const labreset = async () => {
-    try {
-      const response = await axios.get(
-        "http://127.0.0.1:8080/api/SSRFLabReset"
-      );
-      if (response.status === 200) {
-        setResetMessage(response.data.message);
-        window.history.replaceState({}, "", window.location.pathname);
-        window.location.reload();
-      }
-    } catch (error) {
-      console.error("Error resetting:", error);
-      setResetMessage("Error: Could not reset.");
-    }
-  };
+  // const labreset = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       "http://127.0.0.1:8080/api/SSRFLabReset"
+  //     );
+  //     if (response.status === 200) {
+  //       setResetMessage(response.data.message);
+  //       window.history.replaceState({}, "", window.location.pathname);
+  //       window.location.reload();
+  //     }
+  //   } catch (error) {
+  //     console.error("Error resetting:", error);
+  //     setResetMessage("Error: Could not reset.");
+  //   }
+  // };
 
   const checkStock = async (product) => {
     try {
@@ -82,7 +82,7 @@ export default function SSRF_store1() {
     <div className="container">
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
-      <button
+      {/* <button
         onClick={labreset}
         className="reset-btn"
         style={{
@@ -95,7 +95,7 @@ export default function SSRF_store1() {
         }}
       >
         Reset
-      </button>
+      </button> */}
 
       {/* Display out-of-stock message if available */}
       {outOfStockMessage && (
