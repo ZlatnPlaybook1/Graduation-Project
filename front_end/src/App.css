@@ -110,6 +110,7 @@ ul li {
 }
 body {
   overflow-x: hidden;
+  background-color: var(--primary-bg);
 }
 
 .flex {

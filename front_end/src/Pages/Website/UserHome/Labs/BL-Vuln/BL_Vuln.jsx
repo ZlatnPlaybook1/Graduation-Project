@@ -51,8 +51,9 @@ export default function BL_Vuln() {
                   <span>Intro to </span> Business logic vulnerabilities
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
+                  <h3 className="content__title">Business logic vulnerabilities</h3>
                   <p>
-                    <h3 className="content__title">Business logic vulnerabilities</h3> In this section, we'll introduce the concept of business
+                     In this section, we'll introduce the concept of business
                     logic vulnerabilities and explain how they can arise due to
                     flawed assumptions about user behavior. We'll discuss the
                     potential impact of logic flaws and teach you how they can
@@ -64,20 +65,21 @@ export default function BL_Vuln() {
                   </p>
 
 
-                  <img src={logicFlow} alt="logic flaw img" id="explain-img" />
-                  <p></p>
-                  <p><h3 className="content__title">Labs</h3>If you're already familiar with the basic concepts
+                  <img src={logicFlow} alt="logic flaw img" className="img-fluid w-50 mx-auto d-block" />
+                  <hr />
+                  
+                  <h3 className="content__title mt-2">Labs</h3>
+                  <p>If you're already familiar with the basic concepts
                     behind business logic vulnerabilities and just want to
                     practice exploiting them on some realistic, deliberately
                     vulnerable targets, you can access all of the labs in
                     this topic from the link below. </p>
-                  <li>
-
-                    <a className="content__subtitle underline" href="http://localhost:3000/BL-Vuln/BL_Vuln_labs">
-                      View all business logic
+                  <div className="note">
+                    You can access all of the labs in this topic from the link below. <a className="content__subtitle underline" href="BL-Vuln/BL_Vuln_labs">
+                      business logic
                       vulnerabilities labs.
                     </a>
-                  </li>
+                  </div>
                 </dd>
                 {/* Topic 1 */}
                 <dt className="fadeInUp faq-header" id="border-left">
@@ -94,20 +96,15 @@ export default function BL_Vuln() {
                     occur and, consequently, failing to handle them safely.
                   </p>
                   <div className="note">
-                    <i>
-                      <spam className="content__title">Note: </spam>
-                      <b>
+                      <span className="text-danger">Note: </span>
                         In this context, the term "business logic" simply
                         refers to the set of rules that define how the
                         application operates. As these rules aren't always
                         directly related to a business, the associated
                         vulnerabilities are also known as "application logic
                         vulnerabilities" or simply "logic flaws".
-                        <br />
-                      </b>
-                    </i>
                   </div>
-                  <p className="desc">
+                  <p >
                     Logic flaws are often invisible to people who aren't
                     explicitly looking for them as they typically won't be
                     exposed by normal use of the application. However, an
@@ -121,12 +118,17 @@ export default function BL_Vuln() {
                     preventing users from doing things that will have a negative
                     impact on the business or that simply don't make sense.
                     Flaws in the logic can allow attackers to circumvent these
-                    rules. For example, they might be able to complete a
+                    rules.
+                    
+                  </p>
+                  <p>For example, they might be able to complete a
                     transaction without going through the intended purchase
                     workflow. In other cases, broken or non-existent validation
                     of user-supplied data might allow users to make arbitrary
                     changes to transaction-critical values or submit nonsensical
-                    input. By passing unexpected values into server-side logic,
+                    input.</p>
+                  <p>
+                    By passing unexpected values into server-side logic,
                     an attacker can potentially induce the application to do
                     something that it isn't supposed to. Logic-based
                     vulnerabilities can be extremely diverse and are often
@@ -145,35 +147,36 @@ export default function BL_Vuln() {
                   arise?
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <p><h3 className="content__title">How do business logic vulnerabilities arise </h3>Business logic vulnerabilities can arise in a number of
+                  <h3 className="content__title">How do business logic vulnerabilities arise </h3>
+                  <p>Business logic vulnerabilities can arise in a number of
                     ways. Some common causes include:</p>
                   <ol>
                     <li>
-                      <p><span className="content__subtitle me-2">Incorrect assumptions about user behavior:</span>
+                      <span className="content__subtitle me-2">Incorrect assumptions about user behavior:</span>
                         Developers may make assumptions about how users will
                         interact with an application that turn out to be
                         incorrect. For example, a developer might assume that a
                         user will always follow a certain sequence of steps when
                         using a feature, but in reality, users might not behave as
                         expected. This can lead to logic flaws if the application
-                        doesn't handle these unexpected behaviors correctly.</p>
+                        doesn't handle these unexpected behaviors correctly.
                     </li>
                     <li>
-                      <p><span className="content__subtitle me-2">Insufficient validation of user input:</span>If an
+                      <span className="content__subtitle me-2">Insufficient validation of user input:</span>If an
                         application doesn't validate user input properly,
                         attackers may be able to submit unexpected values that
                         cause the application to behave in unexpected ways. For
                         example, an attacker might be able to manipulate a hidden
                         field in a form to change the price of an item in an
-                        online store.</p>
+                        online store.
                     </li>
                     <li>
-                      <p><span className="content__subtitle me-2">Failure to enforce business rules:</span>If an
+                      <span className="content__subtitle me-2">Failure to enforce business rules:</span>If an
                         application fails to enforce the business rules that were
                         defined when designing the application, logic flaws can
                         occur. For example, an application might allow a user to
                         perform an action that should be restricted, such as
-                        deleting another user's account.</p>
+                        deleting another user's account.
                     </li>
                   </ol>
                   <p>
@@ -190,33 +193,33 @@ export default function BL_Vuln() {
                   be exploited?
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <p><h3 className="content__title">How can business logic vulnerabilities
-                    be exploited </h3>Business logic vulnerabilities can be exploited in a variety
+                 <h3 className="content__title">How can business logic vulnerabilities
+                    be exploited </h3>
+                  <p>Business logic vulnerabilities can be exploited in a variety
                     of ways, depending on the specific flaw and the application
                     in question. Some common exploitation techniques include:</p>
                   <ol>
                     <li>
-                      <p><span className="content__subtitle me-2">Abusing functionality:</span>Attackers may be able to
+                   <span className="content__subtitle me-2">Abusing functionality:</span>Attackers may be able to
                         abuse legitimate functionality in an application to
                         achieve unintended outcomes. For example, an attacker
                         might be able to exploit a logic flaw in an e-commerce
-                        application to purchase items at a reduced price.</p>
-
+                        application to purchase items at a reduced price.
                     </li>
                     <li>
-                      <p><span className="content__subtitle me-2">Manipulating data flows:</span>Attackers may be able to
+                      <span className="content__subtitle me-2">Manipulating data flows:</span>Attackers may be able to
                         manipulate the flow of data within an application to
                         achieve their goals. For example, an attacker might be
                         able to change the recipient of a payment in a banking
-                        application by exploiting a logic flaw.</p>
+                        application by exploiting a logic flaw.
 
                     </li>
                     <li>
-                      <p><span className="content__subtitle me-2">Bypassing restrictions:</span>Attackers may be able to
+                     <span className="content__subtitle me-2">Bypassing restrictions:</span>Attackers may be able to
                         bypass restrictions that are intended to prevent certain
                         actions. For example, an attacker might be able to delete
                         another user's account in a social media application by
-                        exploiting a logic flaw.</p>
+                        exploiting a logic flaw.
 
                     </li>
                   </ol>
@@ -234,43 +237,44 @@ export default function BL_Vuln() {
                   be prevented?
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
-                  <p><h3 className="content__title">How can business logic vulnerabilities
-                    be prevented </h3>Preventing business logic vulnerabilities requires a
+                  <h3 className="content__title">How can business logic vulnerabilities
+                    be prevented </h3>
+                  <p>Preventing business logic vulnerabilities requires a
                     combination of secure coding practices, thorough testing,
                     and ongoing monitoring. Some best practices for preventing
                     logic flaws include:</p>
                   <ol>
                     <li>
-                      <p><span className="content__subtitle me-2">Validate user input:</span>Always validate user input to
+                      <span className="content__subtitle me-2">Validate user input:</span>Always validate user input to
                         ensure that it conforms to expected values. This can help
                         prevent attackers from submitting unexpected values that
-                        could lead to logic flaws.</p>
+                        could lead to logic flaws.
                     </li>
                     <li>
-                      <p><span className="content__subtitle me-2">Enforce business rules:</span>Make sure that your
+                      <span className="content__subtitle me-2">Enforce business rules:</span>Make sure that your
                         application enforces the business rules that were defined
                         when designing the application. This can help prevent
                         logic flaws that occur when these rules are not enforced
-                        correctly.</p>
+                        correctly.
                     </li>
                     <li>
-                      <p><span className="content__subtitle me-2">Use secure coding practices:</span>Follow secure coding
+                      <span className="content__subtitle me-2">Use secure coding practices:</span>Follow secure coding
                         practices when developing your application to reduce the
                         likelihood of logic flaws. This includes practices such as
                         input validation, output encoding, and secure session
-                        management.</p>
+                        management.
                     </li>
                     <li>
-                      <p><span className="content__subtitle me-2">Thoroughly test your application:</span>Test your
+                      <span className="content__subtitle me-2">Thoroughly test your application:</span>Test your
                         application thoroughly to identify and fix logic flaws
                         before they can be exploited by attackers. This includes
-                        both manual testing and automated testing.</p>
+                        both manual testing and automated testing.
                     </li>
                     <li>
-                      <p><span className="content__subtitle me-2">Monitor your application:</span>Monitor your application
+                      <span className="content__subtitle me-2">Monitor your application:</span>Monitor your application
                         for signs of unusual behavior that may indicate a logic
                         flaw. This can help you identify and fix logic flaws
-                        before they can be exploited by attackers.</p>
+                        before they can be exploited by attackers.
                     </li>
                   </ol>
                   <p>
@@ -298,12 +302,10 @@ export default function BL_Vuln() {
                     secure.
                   </p>
                   <div className="note">
-                    <i>
-                      <p><h3 className="content__title"> Note</h3> If you're ready to put your knowledge to the test,
+                    <span className="text-danger"> Note</span> If you're ready to put your knowledge to the test,
                         you can access all of the labs in this topic from the
                         link below. View all business logic vulnerabilities
-                        labs.</p>
-                    </i>
+                        labs.
                   </div>
                 </dd>
               </dl>

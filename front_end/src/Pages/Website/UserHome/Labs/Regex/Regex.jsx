@@ -390,7 +390,8 @@ export default function Regex() {
                       <code className="content__code mx-1"> xyz$ </code>.
                     </p>
                     <div className="note">
-                      Note: The <code className="content__code mx-1"> ^ </code>
+                      <b className="text-danger">
+                       Note:</b> The <code className="content__code mx-1"> ^ </code>
                       hat symbol is used to exclude a charset when enclosed in
                       <code className="content__code mx-1"> [ </code>
                       square brackets <code className="content__code mx-1"> ] </code>,
@@ -430,7 +431,7 @@ export default function Regex() {
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <div className="faq-content">
-                    <div className="content__code px-3">Well done.</div>
+                    <p className="content__subtitle px-3 text-warning">Well done.</p>
                     <p>
                       Regular expressions are very powerful, even at their most
                       basic usage. There are many resources to study and

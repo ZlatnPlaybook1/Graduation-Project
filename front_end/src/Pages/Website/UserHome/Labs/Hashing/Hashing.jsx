@@ -47,7 +47,7 @@ export default function Hashing() {
                 <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
-                      <b className="content__subtitle">Hashing</b> is a one-way function that takes a
+                      <span className="content__subtitle me-2">Hashing</span> is a one-way function that takes a
                       string of any length and returns a fixed-length string.
                       The output of the function is called a hash. Hashing is
                       used to verify the integrity of data. It is also used to
@@ -58,13 +58,12 @@ export default function Hashing() {
                     </p>
                     <p></p>
                     <p>
-                      <b className="content__title">Another Definitions:</b>
-                      <br />
-                      <b className="content__subtitle">Hashing</b> is a one-way mathematical function
+                      <h3 className="content__title">Another Definitions:</h3>
+                      <span className="content__subtitle me-2">Hashing</span> is a one-way mathematical function
                       that turns data into a string of nondescript text that
                       cannot be reversed or decoded. In the context of
                       cybersecurity,
-                      <b className="content__subtitle">hashing</b> is a way to keep sensitive
+                      <span className="content__subtitle me-2">hashing</span> is a way to keep sensitive
                       information and data — including passwords, messages, and
                       documents — secure. Once this content is converted via a
                       hashing algorithm, the resulting value (or hash code) is
@@ -73,8 +72,8 @@ export default function Hashing() {
                       become an important cybersecurity tool for organizations,
                       especially given the rise in remote work and use of
                       personal devices. Both of these trends require
-                      organizations to leverage{" "}
-                      <b className="content__subtitle"> single sign-on (SSO) </b>
+                      organizations to leverage
+                      <span className="content__subtitle me-2"> single sign-on (SSO) </span>
                       technology to enable a remote workforce and reduce
                       friction within the user experience. Though this is a
                       necessary part of modern business, attackers have come to
@@ -85,36 +84,38 @@ export default function Hashing() {
                     <p>
                       <b className="content__title">Components of hashing</b>
                       <p></p>
-                      <b className="content__subtitle"> Hashing has three main components:</b>
+                      <span className="content__subtitle me-2"> Hashing has three main components:</span>
                       <ol>
                         <li>The input key</li>
                         <li>The hash function</li>
                         <li>The hash table</li>
                       </ol>
                     </p>
-                    <p>
+                    <ul>
+                    <li>
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                       <span>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
                         <span className="content__subtitle me-2"> Input Key:</span>
                       </span>
                       The input data or message that is processed by the hash
                       function and converted into the hash code.
-                    </p>
-                    <p>
+                    </li>
+                    <li>
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                       <span>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
                         <span className="content__subtitle me-2"> Hash Function</span>
                       </span>
                       A mathematical function that converts the input data, or
                       key, into a unique hash value.
-                    </p>
-                    <p>
+                    </li>
+                    <li>
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                       <span>
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
                         <span className="content__subtitle me-2"> Hash Table:</span>
                       </span>
                       A data structure that stores data and maps keys to values.
-                    </p>
+                    </li>
+                    </ul>
                   </div>
                 </dd>
 
@@ -127,14 +128,14 @@ export default function Hashing() {
                     <p>
                       Hashing is not singular in nature. In fact, there are a
                       variety of hashing algorithms that are suitable for
-                      various use cases.{" "}
-                      <span className="content__subtitle">Here, we explore The following common hashing
-                        algorithms:</span>
+                      various use cases.
+                      
                     </p>
-                    <p>
-                      <ol>
+                    <h5 className="main-color">Here, we explore The following common hashing
+                        algorithms:</h5>
+                     <ol>
                         <li>
-                          <span className="content__subtitle">LANMAN:</span> The
+                          <span className="content__subtitle me-2">LANMAN:</span> The
                           Microsoft LAN Manager hashing algorithm, or LANMAN, is
                           a network operating system and authentication protocol
                           developed by Microsoft primarily for storing
@@ -143,8 +144,8 @@ export default function Hashing() {
                           best-known example of a hashing algorithm.
                         </li>
                         <li>
-                          <span className="content__subtitle">
-                            NTLM (New Technology LAN Manager):{" "}
+                          <span className="content__subtitle me-2">
+                            NTLM (New Technology LAN Manager):
                           </span>
                           Windows New Technology LAN Manager (NTLM) is a suite
                           of security protocols offered by Microsoft to
@@ -156,7 +157,7 @@ export default function Hashing() {
                           known as NTLM authentication.
                         </li>
                         <li>
-                          <span className="content__subtitle">Script:</span> This
+                          <span className="content__subtitle me-2">Script:</span> This
                           hashing algorithm is is a key derivation function
                           (KDF) and password-based key derivation function
                           (PBKDF) that can convert data or passwords into
@@ -165,44 +166,43 @@ export default function Hashing() {
                           attacks, such as brute-force attacks.
                         </li>
                         <li>
-                          <span className="content__subtitle">Ehtash:</span> Ethash is a
+                          <span className="content__subtitle me-2">Ehtash:</span> Ethash is a
                           “proof of work” hashing algorithm developed by the
                           Ethereum network. The algorithm is custom built to
                           secure the Ethereum cryptocurrency network and its
                           blockchain and validate platform transactions.
                         </li>
                         <li>
-                          <span className="content__subtitle">
+                          <span className="content__subtitle me-2">
                             MD5(Message Digest Algorithm 5):
-                          </span>{" "}
+                          </span>
                           MD5 is a widely used hashing algorithm that produces a
                           128-bit hash value. It is commonly used to verify data
                           integrity and ensure that data is not tampered with
                           during transmission.
                         </li>
                         <li>
-                          <span className="content__subtitle">SHA-1:</span> SHA-1 is a
+                          <span className="content__subtitle me-2">SHA-1:</span> SHA-1 is a
                           widely used hashing algorithm that produces a 160-bit
                           hash value. It is commonly used to verify data
                           integrity and ensure that data is not tampered with
                           during transmission.
                         </li>
                         <li>
-                          <span className="content__subtitle">SHA-256:</span> SHA-256 is
+                          <span className="content__subtitle me-2">SHA-256:</span> SHA-256 is
                           a widely used hashing algorithm that produces a
                           256-bit hash value. It is commonly used to verify data
                           integrity and ensure that data is not tampered with
                           during transmission.
                         </li>
                         <li>
-                          <span className="content__subtitle">SHA-512:</span> SHA-512 is
+                          <span className="content__subtitle me-2">SHA-512:</span> SHA-512 is
                           a widely used hashing algorithm that produces a
                           512-bit hash value. It is commonly used to verify data
                           integrity and ensure that data is not tampered with
                           during transmission.
                         </li>
                       </ol>
-                    </p>
                   </div>
                 </dd>
 
@@ -213,28 +213,29 @@ export default function Hashing() {
                 <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
-                      <b className="content__subtitle">Hashing</b> plays an important role in many
+                      <span className="content__subtitle me-2">Hashing</span> plays an important role in many
                       cybersecurity algorithms and protocols. At the most basic
                       level, hashing is a way to encode sensitive data or text
                       into an indecipherable value that is incredibly difficult
                       to decode.
                     </p>
                     <p>
-                      <b className="content__subtitle">
+                      <h5 className="main-color">
                         Below, we discuss three of the most common hashing use
                         cases in cybersecurity:
-                      </b>
+                      </h5>
                       <ol>
                         <li>Password storage</li>
                         <li>Digital signatures</li>
                         <li>File and document management</li>
                       </ol>
                     </p>
-                    <p>
-                      <span className="content__subtitle">
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+                    <ul className="ps-2"> 
+                      <li>
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                      <span className="content__subtitle me-2">
                         Password storage: <br />
-                      </span>{" "}
+                      </span>
                       Storing passwords as plain text within a system,
                       application, or device is extremely risky. A password
                       storage solution can use hashing to encode and save login
@@ -242,71 +243,60 @@ export default function Hashing() {
                       access the system in the future, the solution will
                       authenticate the user by validating the password that was
                       entered with the hashed value in the database.
-                    </p>
+                    </li>
 
-                    <p>
-                      <span className="content__subtitle">
-                        <FontAwesomeIcon icon={faArrowRight} className="me-2" />{" "}
+                    <li>
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                      <span className="content__subtitle me-2">
                         Digital signatures: <br />
-                      </span>{" "}
+                      </span>
                       A digital signature is a cryptographic technique used to
                       verify the origin, authenticity, and integrity of a
                       message, document, or transaction.
-                    </p>
-                    <p>
-                      <b className="content__subtitle">To create a digital signature using hashing:</b>
-                      <ol className="oList">
-                        <li style={{ listStyleType: "none" }}>
-                          <FontAwesomeIcon
-                            icon={faArrowRight}
-                            className="me-2  content__subtitle"
-                          />{" "}
+                    </li>
+                      <li>
+                        <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                      <span className="content__subtitle me-2">To create a digital signature using hashing:</span>
+                      
+                    </li>
+                    </ul>
+                    <ol >
+                        <li>
+                          
                           A hash function is applied to the original message to
                           create a secure hash value
                         </li>
-                        <li style={{ listStyleType: "none" }}>
-                          <FontAwesomeIcon
-                            icon={faArrowRight}
-                            className="me-2  content__subtitle"
-                          />{" "}
+                        <li>
+                          
                           The hash value is then encrypted using a private key
                           that belongs to the sender; this process creates the
                           digital signature
                         </li>
-                        <li style={{ listStyleType: "none" }}>
-                          <FontAwesomeIcon
-                            icon={faArrowRight}
-                            className="me-2  content__subtitle"
-                          />{" "}
+                        <li>
+                          
                           The recipient uses a public key to decrypt the digital
                           signature
                         </li>
-                        <li style={{ listStyleType: "none" }}>
-                          <FontAwesomeIcon
-                            icon={faArrowRight}
-                            className="me-2  content__subtitle"
-                          />{" "}
+                        <li>
+                          
                           The recipient then takes the resulting hash value and
                           applies the same hash function; if the hash values
                           match, it proves that the message has not been altered
                           and that it originated with the designated sender
                         </li>
                       </ol>
-                    </p>
 
+                     <p> <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" /><span className="content__subtitle me-2">File and document management</span></p>
                     <p>
-                      <b className="content__subtitle">File and document management</b>
-                      <br />
                       Though digital signatures are often used to secure email
                       and other digital communications, they can also
                       authenticate and verify any kind of electronic transaction
                       or document. Two main use cases are:
                     </p>
-                    <p>
-                      <ol>
+                    <ol>
                         <li>
-                          <span className="content__subtitle">
-                            Document comparisons:{" "}
+                          <span className="content__subtitle me-2">
+                            Document comparisons:
                           </span>
                           During hashing, the hash function will produce a
                           fixed-value character string that serves as a unique
@@ -325,9 +315,9 @@ export default function Hashing() {
                           values match, then the data is considered secure.
                         </li>
                         <li>
-                          <span className="content__subtitle">
+                          <span className="content__subtitle me-2">
                             Data integrity verification:
-                          </span>{" "}
+                          </span>
                           To verify the integrity of the data within a file or
                           document, a hashing algorithm can be used to produce a
                           checksum, which is a hash value that reflects the sum
@@ -338,7 +328,6 @@ export default function Hashing() {
                           considered secure.
                         </li>
                       </ol>
-                    </p>
                   </div>
                 </dd>
 
@@ -349,19 +338,18 @@ export default function Hashing() {
                 <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
-                      <b className="content__subtitle">Hashing</b> is an essential component within many
+                      <span className="content__subtitle me-2">Hashing</span> is an essential component within many
                       cybersecurity practices and protocols. Benefits include:
                     </p>
-                    <p>
-                      <ol className="oList">
-                        <li style={{ listStyleType: "none" }}>
-                          <span className="content__subtitle">
+                     <ul>
+                        <li>
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="me-2"
-                            />{" "}
+                              className="me-2 text-warning"
+                            />
+                          <span className="content__subtitle me-2">
                             Strong password security:
-                          </span>{" "}
+                          </span>
                           Hashing is a critical part of identity and access
                           management (IAM) tools. By using a hashing tool,
                           organizations can ensure the identity of their users
@@ -369,12 +357,12 @@ export default function Hashing() {
                           prevent password-based attacks, such as password
                           spraying or credential theft.
                         </li>
-                        <li style={{ listStyleType: "none" }}>
-                          <span className="content__subtitle">
+                        <li>
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="me-2"
-                            />{" "}
+                              className="me-2 text-warning"
+                            />
+                          <span className="content__subtitle me-2">
                             File and data integrity:
                           </span>
                           Once a file, document, or dataset is hashed, any
@@ -383,13 +371,13 @@ export default function Hashing() {
                           and when assets have been altered and immediately stop
                           using any asset that may be compromised.
                         </li>
-                        <li style={{ listStyleType: "none" }}>
-                          <span className="content__subtitle">
+                        <li>
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="me-2"
-                            />{" "}
-                            Data security:{" "}
+                              className="me-2 text-warning"
+                            />
+                          <span className="content__subtitle me-2">
+                            Data security:
                           </span>
                           A hashed value is virtually useless to cybercriminals
                           and bad actors because it is extremely challenging to
@@ -397,44 +385,43 @@ export default function Hashing() {
                           breach may not necessarily result in the loss of
                           sensitive data if it has been properly hashed.
                         </li>
-                        <li style={{ listStyleType: "none" }}>
-                          <span className="content__subtitle">
+                        <li>
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="me-2"
-                            />{" "}
+                              className="me-2 text-warning"
+                            />
+                          <span className="content__subtitle me-2">
                             Secure communications:
-                          </span>{" "}
+                          </span>
                           Hashing is a critical part of digital signatures,
                           which is the primary way to authenticate both the
                           contents of a message and the identity of the sender.
                         </li>
-                        <li style={{ listStyleType: "none" }}>
-                          <span className="content__subtitle">
+                        <li>
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="me-2"
-                            />{" "}
-                            Secure downloads:{" "}
+                              className="me-2 text-warning"
+                            />
+                          <span className="content__subtitle me-2">
+                            Secure downloads:
                           </span>
                           When downloading software or any large file, systems
                           can verify the hash value of the download to ensure it
                           has not been infected with malware.
                         </li>
-                        <li style={{ listStyleType: "none" }}>
-                          <span className="content__subtitle">
+                        <li>
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="me-2"
-                            />{" "}
+                              className="me-2 text-warning"
+                            />
+                          <span className="content__subtitle me-2">
                             Improved threat detection:
-                          </span>{" "}
+                          </span>
                           Hash codes are a fast and effective way to scan and
                           discover known threats on a system or within the
                           network.
                         </li>
-                      </ol>
-                    </p>
+                      </ul>
                   </div>
                 </dd>
 
@@ -445,18 +432,17 @@ export default function Hashing() {
                 <dd className="fadeInUp faq-body">
                   <div className="faq-content">
                     <p>
-                      <b className="content__subtitle">Though hashing</b> is a useful tool, it has its
+                      <span className="content__subtitle me-2">Though hashing</span> is a useful tool, it has its
                       limitations. In this section, we explore a few challenges
                       and drawbacks of using hashing in cybersecurity:
                     </p>
-                    <p>
-                      <ol className="oList">
-                        <li style={{ listStyleType: "none" }}>
-                          <span className="content__subtitle ">
+                      <ul >
+                        <li>
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="me-2"
-                            />{" "}
+                              className="me-2 text-warning"
+                            />
+                          <span className="content__subtitle me-2">
                             Collision:
                           </span>
                           A collision is when two or more inputs result in the
@@ -468,12 +454,12 @@ export default function Hashing() {
                           duplicative value is added to a linked list on the
                           hash table.
                         </li>
-                        <li style={{ listStyleType: "none" }}>
-                          <span className="content__subtitle">
+                        <li>
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="me-2"
+                              className="me-2 text-warning"
                             />
+                          <span className="content__subtitle me-2">
                             Performance:
                           </span>
                           Hashing can be a bit of a balancing act. Algorithms
@@ -485,12 +471,12 @@ export default function Hashing() {
                           facing significant backlogs can translate into higher
                           risk.
                         </li>
-                        <li style={{ listStyleType: "none" }}>
-                          <span className="content__subtitle">
+                        <li>
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="me-2"
+                              className="me-2 text-warning"
                             />
+                          <span className="content__subtitle me-2">
                             Security risks:
                           </span>
                           By definition, hashing is a one-way conversion of data
@@ -501,8 +487,7 @@ export default function Hashing() {
                           would allow them to reverse engineer the hash values
                           or tamper with the dataset by creating fake inputs.
                         </li>
-                      </ol>
-                    </p>
+                      </ul>
                   </div>
                 </dd>
                 {/* Topic 6 */}
@@ -514,7 +499,7 @@ export default function Hashing() {
                     <p>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 content__subtitle mb-0"
+                        className="me-2 mb-0 text-warning"
                       />
                       Though hashing and encryption may seem to result in the
                       same outcome, they are actually two different functions.
@@ -522,9 +507,9 @@ export default function Hashing() {
                     <p>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 content__subtitle mb-0"
+                        className="me-2 mb-0 text-warning"
                       />
-                      The main difference is that <span className="content__subtitle">Hashing</span> is always
+                      The main difference is that <span className="content__subtitle me-2">Hashing</span> is always
                       intended to be a one-way conversion of data. The hash
                       value is a unique string of text that can only be decoded
                       if the adversary is able to steal or guess the hash
@@ -533,7 +518,7 @@ export default function Hashing() {
                     <p>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 content__subtitle mb-0"
+                        className="me-2 mb-0 text-warning"
                       />
                       <span className="content__subtitle" >Data encryption,</span> on the other hand, is a
                       two-way process. Though encryption also uses cryptographic
@@ -541,21 +526,21 @@ export default function Hashing() {
                       it has a corresponding decoding key that allows users to
                       decrypt the data.
                     </p>
-                    <div className="faq-image">
-                      <img
+                    <img
                         src={HashingVsEncryption}
                         alt="Hashing Vs Encryption"
-                        className="w-50 mx-auto bg-light d-block"
+                        className="w-50 mx-auto bg-light d-block img-fluid"
                       />
-
-                      <p className="content__title">Hashing Vs Encryption.</p>
-                    </div>
+                    <p className="text-center">
+                      <i className="main-color">Hashing Vs Encryption.</i>
+                      </p>
+                      <hr />
                     <p>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 content__subtitle mb-0"
+                        className="me-2 mb-0 text-warning"
                       />
-                      Another key difference is that <b className="content__subtitle">Hashing</b>{" "}
+                      Another key difference is that <span className="content__subtitle me-2">Hashing</span>
                       provides you with the ability to authenticate data,
                       messages, files, or other assets. Users can confirm that
                       data sent from one user to another has not been
@@ -565,48 +550,52 @@ export default function Hashing() {
                       validate the data or tell if it has been changed, which is
                       why hashing is preferred for authentication purposes.
                     </p>
-                    <p>
-                      <span className="content__subtitle">
+                    <span className="content__title">
                         Compare & Contrast: Encryption vs. Hashing
                       </span>
+                    <p>
+                      
                       Both hashing and encryption scramble data to protect it
                       from hackers. But the way the data is scrambled, and what
                       happens with it after encoding, is different.
-                      <div className="table-responsive w-75 mx-auto">
-                        <table className="table table-bordered compare-table">
-                          <tr>
-                            <th></th>
-                            <th>Encryption</th>
-                            <th>Hashing </th>
+                     
+                    </p>
+                     <table className="table table-bordered table-striped text-center mx-auto">
+                      <thead className="table-dark">
+                        <tr>
+                            <th className="bg-dark text-light"></th>
+                            <th className="bg-dark text-light">Encryption</th>
+                            <th className="bg-dark text-light">Hashing </th>
                           </tr>
+                          </thead>
+                      <tbody>
                           <tr>
-                            <th>Goal </th>
+                            <th className="bg-dark text-light">Goal </th>
                             <td>Protect while in storage </td>
                             <td>No</td>
                           </tr>
                           <tr>
-                            <th>Decoding available? </th>
+                            <th className="bg-dark text-light">Decoding available? </th>
                             <td>Yes</td>
                             <td>No</td>
                           </tr>
                           <tr>
-                            <th>Data anonymized?</th>
+                            <th className="bg-dark text-light">Data anonymized?</th>
                             <td>No</td>
                             <td>No</td>
                           </tr>
                           <tr>
-                            <th>Type of key</th>
+                            <th className="bg-dark text-light">Type of key</th>
                             <td>Public and Private</td>
                             <td>Private</td>
                           </tr>
                           <tr>
-                            <th>Used for passwords?</th>
+                            <th className="bg-dark text-light">Used for passwords?</th>
                             <td>Yes, while in transit</td>
                             <td>Yes, while in storage </td>
                           </tr>
+                        </tbody>
                         </table>
-                      </div>
-                    </p>
                   </div>
                 </dd>
               </dl>
