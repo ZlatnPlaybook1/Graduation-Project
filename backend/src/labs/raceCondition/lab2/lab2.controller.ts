@@ -88,17 +88,25 @@ export const isValidCoupon = async (req: Request, res: Response) => {
         if (!payment || payment.price === 0) {
             return res.status(404).json({ error: " There is no payment cannot apply coupon" });
         }
+        
+        // Calculate the payment after discount
+        let paymentAfterDiscount;
+        if (payment.priceAfterDiscount !== null) {
+            paymentAfterDiscount = payment.priceAfterDiscount - (couponInDB.discount || 50);
+        } else {
+            paymentAfterDiscount = payment.price - (couponInDB.discount || 50);
+        }
 
-        // update the payment with the discount
-        const paymentAfterDiscount = await prisma.lab2RaceConditionPayment.update({
+        // Update the payment with the discount
+        const updatedPayment = await prisma.lab2RaceConditionPayment.update({
             where: { id: payment.id },
             data: {
-                priceAfterDiscount: payment.price - (couponInDB.discount) || 50,
+                priceAfterDiscount: paymentAfterDiscount,
                 couponId: couponInDB.id
             }
         });
 
-        const totalPrice = paymentAfterDiscount.priceAfterDiscount !== null ? paymentAfterDiscount.priceAfterDiscount : paymentAfterDiscount.price;
+        const totalPrice = updatedPayment.priceAfterDiscount !== null ? updatedPayment.priceAfterDiscount : updatedPayment.price;
         console.log(totalPrice);
 
         return res.status(200).json({
