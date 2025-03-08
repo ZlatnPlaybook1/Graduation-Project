@@ -283,15 +283,19 @@ model lab3jwt {
   token    String?
 }
 
-model lab2RaceCondition {
-  id      Int    @id @default(autoincrement())
-  coupon   String?   @unique
-  discount Int?
-  isValid  Boolean?  @default(true)
-  usedAt   DateTime? // Stores the last usage timestamp
+model lab2RaceConditionCoupon {
+  id       Int                      @id @default(autoincrement())
+  coupon   String?                  @unique
+  discount Int?                     @default(50)
+  isValid  Boolean                  @default(true)
+  payments lab2RaceConditionPayment[] @relation("CouponPayments")
 }
 
-model lab2RaceConditionPrice {
-  id    Int    @id @default(autoincrement())
-  price Int
+model lab2RaceConditionPayment {
+  id                  Int                      @id @default(autoincrement())
+  price               Int
+  priceAfterDiscount  Int?
+  createdAt           DateTime                 @default(now())
+  couponId            Int?
+  coupon              lab2RaceConditionCoupon? @relation(fields: [couponId], references: [id], name: "CouponPayments")
 }

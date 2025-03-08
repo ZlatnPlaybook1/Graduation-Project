@@ -3,121 +3,175 @@ import prisma from "../../../utilities/db";
 
 export const shoppingCart = async (req: Request, res: Response) => {
     try {
-        const products = [{ "name": "airphone", "price": 150 },
-        { "name": "iphone", "price": 1000 },
-        { "name": "powerbank", "price": 200 }];
-        const couponCode = "158657";
+        const products = [
+            { name: "airphone", price: 150 },
+            { name: "iphone", price: 1000 },
+            { name: "powerbank", price: 200 }
+        ];
 
-        return res.status(200).json({ products, couponCode: couponCode });
+        const payment = await prisma.lab2RaceConditionPayment.findFirst({
+            orderBy: { createdAt: 'desc' }
+        });
+
+        if (!payment || payment.price === 0) {
+            return res.status(404).json({ error: "can not apply coupon" });
+        }
+        const totalPrice = payment.priceAfterDiscount !== null ? payment.priceAfterDiscount : payment.price;
+
+        return res.status(200).json({
+            products,
+            totalPrice
+        });
     } catch (e) {
         console.error(e);
+        return res.status(500).send("Internal Server Error");
     }
-    return res.status(500).send("Internal Server Error");
-}
+};
 
 export const setPrice = async (req: Request, res: Response) => {
     try {
-        const priceBeforeDiscount = req.body.totalPrice;
-        await prisma.lab2RaceConditionPrice.create({
+        console.log(req.body);
+
+        const price = req.body.totalPrice;
+
+        // Insert new payment
+        await prisma.lab2RaceConditionPayment.create({
             data: {
-                price: priceBeforeDiscount
+                price,
             }
         });
-        return res.status(200).json({ message: "Price has been set" });
-    } catch (e) {
-        console.error(e);
-        res.status(500).send("Internal Server Error");
-    }
-}
 
+        return res.status(201).json({
+            totalPrice: price,
+            message: "Price set successfully"
+        });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: "Internal Server Error" });
+    }
+};
 
 export const isValidCoupon = async (req: Request, res: Response) => {
     try {
-        const { couponCode } = req.body;
-        // Start a transaction to ensure atomicity
-        const result = await prisma.$transaction(async (tx) => {
-            // Check if the coupon is valid
-            const storedCoupon = await tx.lab2RaceCondition.findFirst({
-                where: {
-                    coupon: couponCode,
-                }
-            });
+        const coupon = req.body.couponCode;
 
-            if (!storedCoupon) {
-                return { success: false, message: "Coupon does not exist" };
-            }
-
-            if (!storedCoupon.isValid) {
-                return { success: false, message: "Coupon is invalid." };
-            }
-
-            // Fetch the latest price
-            const priceBeforeDiscount = await tx.lab2RaceConditionPrice.findFirst({
-                orderBy: { id: "desc" }
-            });
-
-            if (!priceBeforeDiscount) {
-                return { success: false, message: "No price record found" };
-            }
-
-            // Calculate the new price after discount
-            const priceAfterDiscount = priceBeforeDiscount.price - (storedCoupon.discount || 50);
-
-            // Update the price atomically
-            await tx.lab2RaceConditionPrice.update({
-                where: { id: priceBeforeDiscount.id },
-                data: { price: priceAfterDiscount }
-            });
-
-            // Mark the coupon as used
-            if (!storedCoupon.usedAt) {
-                await tx.lab2RaceCondition.update({
-                    where: { id: storedCoupon.id },
-                    data: { usedAt: new Date(), isValid: true }
-                });
-
-                // After 1 seconds, disable the coupon
-                setTimeout(async () => {
-                    await prisma.lab2RaceCondition.update({
-                        where: { id: storedCoupon.id },
-                        data: { isValid: false }
-                    }).catch(() => {}); // Ignore errors if the coupon doesn't exist
-                }, 1000);
-            }
-
-            return { success: true, priceAfterDiscount };
-        });
-
-        // If the coupon was invalid, return a friendly message instead of 400
-        if (!result.success) {
-            return res.status(200).json({ message: result.message });
+        if (!coupon) {
+            return res.status(400).json({ error: "Coupon is required" });
         }
 
-        // Send the updated price
+        // Find the lab entry by coupon
+        const couponInDB = await prisma.lab2RaceConditionCoupon.findUnique({
+            where: { coupon }
+        });
+
+        if (!couponInDB) {
+            return res.status(404).json({ error: "Invalid coupon" });
+        }
+
+        if (!couponInDB.isValid) {
+            return res.status(400).json({ error: "Coupon is no longer valid" });
+        }
+
+        // Disable the coupon after 500ms
+        setTimeout(async () => {
+            await prisma.lab2RaceConditionCoupon.update({
+                where: { id: couponInDB.id },
+                data: { isValid: false }
+            });
+        }, 500);
+
+        // Get the last payment used for the coupon in descending order
+        const payment = await prisma.lab2RaceConditionPayment.findFirst({
+            orderBy: { createdAt: 'desc' }
+        });
+
+        if (!payment || payment.price === 0) {
+            return res.status(404).json({ error: " There is no payment cannot apply coupon" });
+        }
+
+        // update the payment with the discount
+        const paymentAfterDiscount = await prisma.lab2RaceConditionPayment.update({
+            where: { id: payment.id },
+            data: {
+                priceAfterDiscount: payment.price - (couponInDB.discount) || 50,
+                couponId: couponInDB.id
+            }
+        });
+
+        const totalPrice = paymentAfterDiscount.priceAfterDiscount !== null ? paymentAfterDiscount.priceAfterDiscount : paymentAfterDiscount.price;
+        console.log(totalPrice);
+
         return res.status(200).json({
             message: "Coupon applied successfully",
-            totalPrice: result.priceAfterDiscount
+            totalPrice
+        });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: "Internal Server Error" });
+    }
+};
+
+export const clearDiscount = async (req: Request, res: Response) => {
+    try {
+        const { coupon } = req.body;
+        if (!coupon) {
+            return res.status(400).json({ error: "Coupon is required" });
+        }
+
+        // Find the lab entry by coupon
+        const couponInDB = await prisma.lab2RaceConditionCoupon.findUnique({
+            where: { coupon },
+        });
+
+        if (!couponInDB) {
+            console.log("here");
+            return res.status(404).json({ error: "Invalid coupon" });
+        }
+
+        console.log(couponInDB);
+
+        await prisma.lab2RaceConditionCoupon.update({
+            where: { id: couponInDB.id },
+            data: { isValid: true }
+        });
+
+        // Get the payment used for the coupon
+        const payment = await prisma.lab2RaceConditionPayment.findFirst({
+            where: { couponId: couponInDB.id },
+        });
+
+        if (!payment) {
+            return res.status(404).json({ error: "Payment not found" });
+        }
+
+        // Clear the discount
+        await prisma.lab2RaceConditionPayment.update({
+            where: { id: payment.id },
+            data: { priceAfterDiscount: null }
+        });
+
+        return res.status(200).json({
+            price: payment.price,
+            message: "Discount cleared successfully"
         });
 
     } catch (error) {
+        console.error(error);
         return res.status(500).json({ error: "Internal Server Error" });
     }
 };
 
 export const resetLab = async (req: Request, res: Response) => {
     try {
-        // Start a transaction to ensure atomicity
         await prisma.$transaction(async (tx) => {
-            // Delete all records from lab2RaceConditionPrice table
-            await tx.lab2RaceConditionPrice.deleteMany({});
-
-            // Update all records in lab2RaceCondition table
-            await tx.lab2RaceCondition.updateMany({
-                data: {
-                    isValid: true,
-                    usedAt: null
-                }
+            // Update all coupons to be valid
+            await tx.lab2RaceConditionCoupon.updateMany({
+                where: { isValid: false },
+                data: { isValid: true, }
             });
+
+            // Delete all payments
+            await tx.lab2RaceConditionPayment.deleteMany();
         });
 
         return res.status(200).json({ message: "Lab reset successfully" });

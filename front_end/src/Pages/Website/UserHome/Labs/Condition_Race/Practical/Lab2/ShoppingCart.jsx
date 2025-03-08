@@ -68,13 +68,20 @@ export default function ShoppingCart() {
   };
 
   const clearDiscount = () => {
-    setDiscount(0);
-    setUserCoupon("");
-    setMessage("");
+    axios
+      .post("http://127.0.0.1:8080/api/lab2RaceCondition/cleardiscount", {
+        coupon: userCoupon,
+      })
+      .then((response) => {
+        setDiscount(0);
+        setUserCoupon("");
+        setMessage(response.data.message);
 
-    const updatedTotal = cart.reduce((sum, price) => sum + price, 0);
-    setTotalPrice(updatedTotal);
-    updateTotalOnServer(updatedTotal);
+        const updatedTotal = cart.reduce((sum, price) => sum + price, 0);
+        setTotalPrice(updatedTotal);
+        updateTotalOnServer(updatedTotal);
+      })
+      .catch((error) => console.error("Error clearing discount:", error));
   };
 
   const resetCart = () => {
