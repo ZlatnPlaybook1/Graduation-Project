@@ -13,6 +13,7 @@ export default function SSRF_store2() {
     try {
       const response = await axios.post(`${apiUrl}`, {
         productId: product.id,
+        stock: product.stock,
       });
       const message = response.data.message;
       window.history.pushState(
