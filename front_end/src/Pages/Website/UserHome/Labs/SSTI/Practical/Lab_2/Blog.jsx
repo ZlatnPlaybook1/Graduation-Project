@@ -61,7 +61,7 @@ export default function Blog() {
       <ShowHint hintText={hintMessage} />
       {/* Start Courses */}
       <div className="course-ssti-lab2">
-        <div className="container-ssti-lab2">
+        <div className="container">
           {/* Render Cards or "No data found" message */}
           <div className="row-practice">
             {hasSearched && (

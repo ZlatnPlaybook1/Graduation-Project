@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
-import "./Second_Lab.css";
+import "./SSTI_store.css";
 import products from "./data.json";
 import axios from "axios";
 export default function SSTI_store() {
@@ -75,6 +75,7 @@ export default function SSTI_store() {
   };
 
   return (
+    <div className="ssti_body">
     <div className="container-ssti3">
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
@@ -129,7 +130,7 @@ export default function SSTI_store() {
                 <div className="card-text-store">
                   <button
                     onClick={() => checkStock(product)} // When clicked, send the product ID to the backend
-                    className="text-black bg-transparent"
+                    className="bg-transparent"
                   >
                     {product.title}
                   </button>
@@ -141,6 +142,7 @@ export default function SSTI_store() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

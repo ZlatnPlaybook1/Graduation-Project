@@ -1,50 +1,7 @@
-.container-blog-item {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-/* Extra small */
-@media (min-width: 0px) {
-  .container-blog-item {
-    max-width: 100%;
-  }
-}
-
-
-/* small */
-@media (min-width: 576px) {
-  .container-blog-item {
-    max-width: 540px;
-  }
-}
-
-
-/*  Medium */
-@media (min-width: 768px) {
-  .container-blog-item {
-    max-width: 750px;
-  }
-}
-
-/* Large */
-@media (min-width: 991px) {
-  .container-blog-item {
-    max-width: 970px;
-  }
-}
-
-/* X-Large */
-@media (min-width: 1200px) {
-  .container-blog-item {
-    max-width: 1170px;
-  }
-}
-
 /* Start Course  */
 .course-blog-item {
   padding: 50px 0;
-  background-color: var(--main-color);
+  background-color: var(--secondary-bg);
   color: white;
 }
 
@@ -124,7 +81,7 @@
   padding: 10px 20px;
   margin-top: 20px;
   border: none;
-  background: var(--sec-main-color);
+  background: var(--main-color);
   color: white;
   position: relative;
   overflow: hidden;
