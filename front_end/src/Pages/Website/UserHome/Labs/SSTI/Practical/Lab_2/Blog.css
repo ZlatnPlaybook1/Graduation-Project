@@ -1,6 +1,7 @@
 .course-ssti-lab2 a {
   color: white;
 }
+
 .search-result {
   margin-top: 10px;
   margin-left: 20px;
@@ -8,50 +9,10 @@
   color: #333;
 }
 
-.container-ssti-lab2 {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Extra small */
-@media (min-width: 0px) {
-  .container-ssti-lab2 {
-    max-width: 100%;
-  }
-}
-
-/* small */
-@media (min-width: 576px) {
-  .container-ssti-lab2 {
-    max-width: 540px;
-  }
-}
-
-/*  Medium */
-@media (min-width: 768px) {
-  .container-ssti-lab2 {
-    max-width: 750px;
-  }
-}
-
-/* Large */
-@media (min-width: 991px) {
-  .container-ssti-lab2 {
-    max-width: 970px;
-  }
-}
-
-/* X-Large */
-@media (min-width: 1200px) {
-  .container-ssti-lab2 {
-    max-width: 1170px;
-  }
-}
-
 /* Start Course  */
 .course-ssti-lab2 {
   padding: 70px 0;
-  background-color: var(--main-color);
+  background-color: var(--primary-bg);
   color: white;
 }
 
@@ -67,6 +28,7 @@
   margin-top: 50px;
   width: 85%;
 }
+
 .login-ssti-lab2 a {
   color: #fff;
   font-size: 18px;
@@ -77,6 +39,7 @@
   background: var(--sec-main-color);
   transition: var(--main-transition);
 }
+
 .login-ssti-lab2 a:hover {
   background: var(--alt-color);
 }
@@ -107,6 +70,7 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--secondary-bg);
   transition: var(--main-transition);
 }
 

@@ -114,7 +114,7 @@ export default function BlogItem() {
         <GoBackBtn />
         <ShowHint hintText={hintMessage} />
 
-        <div className="container-blog-item">
+        <div className="container">
           <div className="row-practice">
             <div className="card-blog-item">
               <img src={image_1} alt="" />

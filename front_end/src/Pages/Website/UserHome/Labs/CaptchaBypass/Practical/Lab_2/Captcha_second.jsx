@@ -134,7 +134,7 @@ export default function Captcha_second() {
             </div>
           </div>
           <div className="reset mb-5">
-            <button onClick={deleteCaptcha} disabled={loading}>
+            <button onClick={deleteCaptcha} disabled={loading} className="captcha_reset_btn">
               {loading ? "Resetting..." : "Reset"}
             </button>
           </div>
