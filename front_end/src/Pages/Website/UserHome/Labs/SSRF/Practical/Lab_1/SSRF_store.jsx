@@ -1,13 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import "../../SSRF_Labs.css";
 import products from "../../data.json";
 import axios from "axios";
+import { use } from "react";
 
 export default function SSRF_store1() {
   const [outOfStockMessage, setOutOfStockMessage] = useState("");
+    const [usernames, setUserNames] = useState([]);
+  
   const hintMessage = `<span>This lab is vulnerable to SSRF due to improper validation of user-supplied input. To solve the lab, you need to provide a URL that can be exploited to access internal resources (e.g., localhost).</span>`;
+  const labreset = async () => {
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8080/api/SSRFLab/resetLab1"
+      );
+      setUserNames(response.data.username);
+    } catch (error) {
+      console.error("Error creating users:", error);
+    }
+  };
+  useEffect(() => {
+    labreset();
+  }, []);
   const checkStock = async (product) => {
     try {
       const response = await axios.post(
