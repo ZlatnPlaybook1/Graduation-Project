@@ -68,7 +68,7 @@ export default function CommandInjection() {
                     whether an item is in stock in a particular store. This
                     information is accessed via a URL:
                   </p>
-                  <code class="code-command-injection">
+                  <code class="code-command-injectionss">
                     https://insecure-website.com/stockStatus?productID=381&amp;storeID=29
                   </code>
                   <p class="Command-Injection-paragraph">
@@ -77,7 +77,7 @@ export default function CommandInjection() {
                     functionality is implemented by calling out to a shell
                     command with the product and store IDs as arguments:
                   </p>
-                  <code class="code-command-injection">
+                  <code class="code-command-injectionss">
                     stockreport.pl 381 29
                   </code>
                   <p class="Command-Injection-paragraph">
@@ -89,7 +89,7 @@ export default function CommandInjection() {
                     injection, so an attacker can submit the following input to
                     execute an arbitrary command:
                   </p>
-                  <code class="code-command-injection">
+                  <code class="code-command-injectionss">
                     &amp; echo aiwefwlguh &amp;
                   </code>
                   <p class="Command-Injection-paragraph">
@@ -97,7 +97,7 @@ export default function CommandInjection() {
                     <code className="content__code">productID</code> parameter,
                     the command executed by the application is:
                   </p>
-                  <code class="code-command-injection">
+                  <code class="code-command-injectionss">
                     stockreport.pl &amp; echo aiwefwlguh &amp; 29
                   </code>
                   <p class="Command-Injection-paragraph">
@@ -109,7 +109,7 @@ export default function CommandInjection() {
                     causes three separate commands to execute, one after
                     another. The output returned to the user is:
                   </p>
-                  <code class="code-command-injection">
+                  <code class="code-command-injectionss">
                     Error - productID was not provided aiwefwlguh 29: command
                     not found
                   </code>
@@ -244,7 +244,7 @@ export default function CommandInjection() {
                     feedback. To do this, it calls out to the mail program with
                     the submitted details:
                   </p>
-                  <code class="code-command-injection">
+                  <code class="code-command-injectionss">
                     mail -s "This site is great" -aFrom:peter@normal-user.net
                     feedback@vulnerable-website.com"
                   </code>
@@ -266,7 +266,7 @@ export default function CommandInjection() {
                     the number of ICMP packets to send. This enables you to
                     control the time taken for the command to run:
                   </p>
-                  <code class="code-command-injection">
+                  <code class="code-command-injectionss">
                     & ping -c 10 127.0.0.1 &{" "}
                   </code>
                 </dd>
