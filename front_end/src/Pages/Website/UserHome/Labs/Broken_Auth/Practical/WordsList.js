@@ -1,5 +1,6 @@
 import React from "react";
 import "./Word_list.css";
+import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function WordsList() {
   const words =
@@ -17,13 +18,16 @@ export default function WordsList() {
     .slice(0, 50);
 
   return (
-    <div className="words-list-container">
-      <h1>Words List</h1>
-      <div className="word-list">
-        {wordArray.map((word, index) => (
-          <p key={index}>{word}</p>
-        ))}
+    <>
+      <ThemeSwitcher />
+      <div className="words-list-container">
+        <h1>Words List</h1>
+        <div className="word-list">
+          {wordArray.map((word, index) => (
+            <p key={index}>{word}</p>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

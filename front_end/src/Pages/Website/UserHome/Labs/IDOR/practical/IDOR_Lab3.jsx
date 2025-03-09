@@ -3,6 +3,7 @@ import axios from "axios";
 import "./IDOR_Lab3.css";
 import GoBack from "../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function IDORLabComponent() {
   const hintMessage = `
@@ -73,88 +74,92 @@ export default function IDORLabComponent() {
     <>
       <GoBack />
       <ShowHint hintText={hintMessage} />
-      <div className="idorlab-container">
-        <div className="idorlab-header">
-          <h1>Money Transfer</h1>
-          <button
-            className="btn btn-secondary btn-sm"
-            onClick={() => {
-              setTransferAmount("");
-              setRecipientId("");
-              setMessage("");
-            }}
-          >
-            Reset
-          </button>
-        </div>
+      <ThemeSwitcher />
+      <div className="idor-lab3-center">
+        <div className="idorlab-container">
+          <div className="idorlab-header">
+            <h1>Money Transfer</h1>
+            <button
+              className="btn btn-secondary btn-sm"
+              onClick={() => {
+                setTransferAmount("");
+                setRecipientId("");
+                setMessage("");
+              }}
+            >
+              Reset
+            </button>
+          </div>
 
-        <div className="idorlab-account-info">
-          <div className="card-transfer">
-            <div className="card-header-transfer">
-              Account Name: <b>{account.name}</b> <br />
-              Balance: <b>{account.balance} $</b>
+          <div className="idorlab-account-info">
+            <div className="card-transfer">
+              <div className="card-header-transfer">
+                Account Name: <b>{account.name}</b> <br />
+                Balance: <b>{account.balance} $</b>
+              </div>
             </div>
           </div>
-        </div>
 
-        {message && (
-          <div
-            className={`alert ${
-              message.includes("success") ? "alert-success" : "alert-danger"
-            }`}
-          >
-            {message}
-          </div>
-        )}
+          {message && (
+            <div
+              className={`alert ${
+                message.includes("success") ? "alert-success" : "alert-danger"
+              }`}
+            >
+              {message}
+            </div>
+          )}
 
-        <form onSubmit={handleTransfer} className="idorlab-transfer-form">
-          <div className="form-group">
-            <label className="transferAmount" htmlFor="transfer_amount">
-              Transfer Amount:
-            </label>
-            <input
-              className="idor-number"
-              type="number"
-              id="transfer_amount"
-              value={transferAmount}
-              onChange={(e) => setTransferAmount(e.target.value)}
-              required
-            />
+          <form onSubmit={handleTransfer} className="idorlab-transfer-form">
+            <div className="form-group">
+              <label className="transferAmount" htmlFor="transfer_amount">
+                Transfer Amount:
+              </label>
+              <input
+                className="idor-number"
+                type="number"
+                id="transfer_amount"
+                value={transferAmount}
+                onChange={(e) => setTransferAmount(e.target.value)}
+                required
+              />
 
-            <label className="transferAmount" htmlFor="recipient_id">
-              Recipient ID:
-            </label>
-            <input
-              type="number"
-              id="recipient_id"
-              value={recipientId}
-              onChange={(e) => setRecipientId(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit" className="Idor-button">
-            Transfer
-          </button>
-        </form>
+              <label className="transferAmount" htmlFor="recipient_id">
+                Recipient ID:
+              </label>
+              <input
+                className="idor-number"
+                type="number"
+                id="recipient_id"
+                value={recipientId}
+                onChange={(e) => setRecipientId(e.target.value)}
+                required
+              />
+            </div>
+            <button type="submit" className="Idor-button">
+              Transfer
+            </button>
+          </form>
 
-        <table className="table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Balance</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user) => (
-              <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.balance} $</td>
+          <table className=" table-style-bg">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Balance</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {users.map((user) => (
+                <tr key={user.id}>
+                  <td>{user.id}</td>
+                  <td>{user.name}</td>
+                  <td>{user.balance} $</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </>
   );

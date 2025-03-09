@@ -4,6 +4,7 @@ import axios from "axios";
 import "./PathTraversalBlacklist.css";
 import GOBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function PathTraversalBlacklist() {
   const hintMessage = `
@@ -63,29 +64,34 @@ export default function PathTraversalBlacklist() {
     <>
       <GOBack />
       <ShowHint hintText={hintMessage} />
-      <div className="unique-container">
-        <h2 className="unique-title">Products</h2>
-        <div className="unique-row">
-          {products.map((product) => (
-            <div key={product.id} className="unique-col">
-              <div className="unique-card">
-                <img
-                  src={`http://127.0.0.1:8080/${product.path}`}
-                  alt={product.name}
-                  className="unique-card-img"
-                  onClick={() =>
-                    navigate(
-                      `/Path__Traversal/Path_Traversal_Labs/lab1/Show_Products/${product.id}`
-                    )
-                  }
-                  style={{ cursor: "pointer" }}
-                />
-                <div className="unique-card-body">
-                  <h5 className="unique-card-title">{product.name}</h5>
+      <ThemeSwitcher />
+      <div style={{ backgroundColor: "var(--primary-bg)", minHeight: "100vh" }}>
+        <div className="unique-color-bg">
+          <div className="unique-container-path">
+            <h2 className="unique-title">Products</h2>
+            <div className="unique-row">
+              {products.map((product) => (
+                <div key={product.id} className="unique-col">
+                  <div className="unique-card">
+                    <img
+                      src={`http://127.0.0.1:8080/${product.path}`}
+                      alt={product.name}
+                      className="unique-card-img"
+                      onClick={() =>
+                        navigate(
+                          `/Path__Traversal/Path_Traversal_Labs/lab1/Show_Products/${product.id}`
+                        )
+                      }
+                      style={{ cursor: "pointer" }}
+                    />
+                    <div className="unique-card-body">
+                      <h5 className="unique-card-title">{product.name}</h5>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </>

@@ -1,12 +1,13 @@
-.unique-container {
-  margin-top: 20px;
-  padding-top: 20px;
+.unique-container-path {
+  background-color: var(--secondary-bg);
+  padding-top: 30px;
+  min-height: 100vh;
 }
 
 .unique-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  color: #333;
+  color: var(--primary-text);
   text-align: center;
   margin-bottom: 20px;
 }
@@ -16,6 +17,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  background-color: var(--secondary-bg);
 }
 
 .unique-col {
@@ -28,7 +30,7 @@
   transition: transform 0.3s ease-in-out;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background: #fff;
+  background: var(--secondary-bg);
 }
 
 .unique-card:hover {
@@ -42,7 +44,7 @@
 }
 
 .unique-card-body {
-  background: #f8f9fa;
+  background-color: var(--secondary-bg);
   padding: 15px;
   text-align: center;
 }
@@ -50,7 +52,7 @@
 .unique-card-title {
   font-size: 1.25rem;
   font-weight: bold;
-  color: #007bff;
+  color: var(--primary-text);
 }
 
 .unique-card-text {
@@ -62,5 +64,14 @@
   .unique-col {
     flex: 1 1 100%;
     max-width: 100%;
+
+    /* Flexbox centering */
+    display: flex;
+    justify-content: center; /* Horizontal center */
+    align-items: center; /* Vertical center */
+  }
+
+  .unique-card {
+    width: 450px;
   }
 }

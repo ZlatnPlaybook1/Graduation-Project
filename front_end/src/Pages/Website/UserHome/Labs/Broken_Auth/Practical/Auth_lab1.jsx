@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./auth_lab.css";
 import GOBack from "../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function Auth_lab1() {
   const hintMessage = `<p>Use the wordlist in Burp Suite's Intruder to discover the correct password.</p>`;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  useEffect(() => {
+    if (message === "success!") {
+      window.open("/broken-auth/Broken_Authentication_Lab/products", "_blank");
+    }
+  }, [message]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,6 +49,7 @@ export default function Auth_lab1() {
     <>
       <GOBack />
       <ShowHint hintText={hintMessage} />
+      <ThemeSwitcher />
       <div className="lab1-login-container">
         <div className="lab1-login-card">
           <h3 className="lab1-login-title">Login</h3>
@@ -100,7 +107,7 @@ export default function Auth_lab1() {
             </p>
           </div>
 
-          <Link to="/words-list" className="lab1-words-link">
+          <Link to="/words-list" target="_blank" className="lab1-words-link">
             Click here to view the words list
           </Link>
         </div>

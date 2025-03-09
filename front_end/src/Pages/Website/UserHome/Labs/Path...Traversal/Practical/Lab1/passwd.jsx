@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import GOBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import "./ShowProducts.css";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function Passwd() {
   const [message, setMessage] = useState("");
@@ -16,11 +17,14 @@ export default function Passwd() {
   return (
     <>
       <GOBack />
-      <div className="page-container">
-        <div className="content-area">
-          <pre>{message}</pre>
-          {message === ""}
-          <p>No products available</p>
+      <ThemeSwitcher />
+      <div style={{ backgroundColor: "var(--primary-bg)", minHeight: "100vh" }}>
+        <div className="page-container-pwd">
+          <div className="content-area">
+            <pre>{message}</pre>
+            {message === ""}
+            <p>No products available</p>
+          </div>
         </div>
       </div>
     </>

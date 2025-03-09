@@ -81,28 +81,30 @@ export default function Products() {
   ];
 
   return (
-    <div className="lab4-products-container">
-      <h1 className="lab4-products-title">Our Products</h1>
-      <div className="lab4-products-grid">
-        {products.map((product) => (
-          <div key={product.id} className="product-card">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="lab4-product-image"
-            />
-            <h2 className="lab4-product-name">{product.name}</h2>
-            <p className="lab4-product-price">{product.price}</p>
-            <p className="lab4-product-description">{product.description}</p>
-          </div>
-        ))}
+    <div>
+      <div className="lab4-products-container">
+        <h1 className="lab4-products-title">Our Products</h1>
+        <div className="lab4-products-grid">
+          {products.map((product) => (
+            <div key={product.id} className="product-card secondary-bg">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="lab4-product-image"
+              />
+              <h2 className="lab4-product-name">{product.name}</h2>
+              <p className="lab4-product-price">{product.price}</p>
+              <p className="lab4-product-description">{product.description}</p>
+            </div>
+          ))}
+        </div>
+        <Link
+          to="/broken-auth/Broken_Authentication_Lab"
+          className="lab4-back-home-link"
+        >
+          Back to the Previous Page
+        </Link>
       </div>
-      <Link
-        to="/broken-auth/Broken_Authentication_Lab"
-        className="back-home-link"
-      >
-        Back to the Previous Page
-      </Link>
     </div>
   );
 }

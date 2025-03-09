@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./IDOR_LAB1.css";
 import GoBack from "../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function IDOR_Lab1() {
   const hintMessage = `
@@ -100,10 +101,11 @@ export default function IDOR_Lab1() {
   }, [location.search]);
 
   return (
-    <>
+    <div style={{ backgroundColor: "var(--primary-bg)", minHeight: "100vh" }}>
       <GoBack />
       <ShowHint hintText={hintMessage} />
-      <div className="center-idor">
+      <ThemeSwitcher />
+      <div className="idor-wrapper">
         <div className="idor-container">
           <div className="idor-container-wrapper">
             <div className="idor-row idor-pt-5 idor-mt-5 idor-mb-3">
@@ -144,6 +146,6 @@ export default function IDOR_Lab1() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

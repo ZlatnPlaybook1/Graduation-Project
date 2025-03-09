@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./BurpSuitLab2.css";
 import GoBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function BurpSuitLab2() {
   const hintMessage = `<p>Add Something</p>`;
@@ -43,6 +44,7 @@ export default function BurpSuitLab2() {
     <>
       <GoBack />
       <ShowHint hintText={hintMessage} />
+      <ThemeSwitcher />
       <div className="bs-lab2-container">
         <div className="bs-lab2-card">
           <h3 className="bs-lab2-title">Secure Login Portal</h3>
@@ -97,15 +99,19 @@ export default function BurpSuitLab2() {
           <div className="bs-lab2-cred-hint">
             <p className="bs-lab2-cred-item">
               <span className="bs-lab2-cred-label">Test Username:</span>
-              <code>admin</code>
+              <code className="code-bs">admin</code>
             </p>
             <p className="bs-lab2-cred-item">
               <span className="bs-lab2-cred-label">Wordlist:</span>
-              <code>Seclist-10000 Common Credentials</code>
+              <code className="code-bs">Seclist-10000 Common Credentials</code>
             </p>
           </div>
 
-          <Link to="/words-list" className="bs-lab2-wordlist-link">
+          <Link
+            to="/words-list"
+            target="_blank"
+            className="bs-lab2-wordlist-link"
+          >
             <span className="bs-lab2-link-icon">🔗</span>
             View Wordlist Documentation
           </Link>

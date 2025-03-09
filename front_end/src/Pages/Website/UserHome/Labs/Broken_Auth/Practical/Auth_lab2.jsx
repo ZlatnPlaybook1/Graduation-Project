@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./auth_lab.css";
 import GOBack from "../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function Auth_lab2() {
   const hintMessage = `<p>Use the wordlist in Burp Suite's Intruder to discover the correct username and password.</p>`;
@@ -43,6 +44,7 @@ export default function Auth_lab2() {
     <>
       <GOBack />
       <ShowHint hintText={hintMessage} />
+      <ThemeSwitcher />
       <div className="lab1-login-container">
         <div className="lab1-login-card">
           <h3 className="lab1-login-title">Login</h3>

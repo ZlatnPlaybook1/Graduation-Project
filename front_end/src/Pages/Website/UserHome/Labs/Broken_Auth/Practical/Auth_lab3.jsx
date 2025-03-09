@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./auth_lab.css";
 import GOBack from "../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function Auth_lab3() {
   const hintMessage = `<p>The next badge is hidden somewhere after login. Try to locate and access it directly.</p>`;
@@ -51,6 +52,7 @@ export default function Auth_lab3() {
     <>
       <GOBack />
       <ShowHint hintText={hintMessage} />
+      <ThemeSwitcher />
       <div className="lab1-login-container">
         <div className="lab1-login-card">
           <h3 className="lab1-login-title">Login</h3>

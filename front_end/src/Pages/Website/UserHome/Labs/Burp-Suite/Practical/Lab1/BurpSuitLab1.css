@@ -1,22 +1,15 @@
-:root {
-  --primary: hsl(210, 80%, 55%);
-  --success: hsl(145, 63%, 49%);
-  --error: hsl(0, 82%, 63%);
-  --text: hsl(220, 17%, 17%);
-  --background: hsl(220, 17%, 98%);
-  --surface: hsl(0, 0%, 100%);
-  --radius: 1rem;
-  --shadow: 0 8px 32px hsla(0, 0%, 0%, 0.1);
+.color-page-bg {
+  background-color: var(--primary-bg);
+  padding-top: 35px;
 }
-
 .transfer-container {
   max-width: 850px;
   margin: 2rem auto;
   padding: 2.5rem;
   font-family: "Inter", system-ui, sans-serif;
-  background: var(--surface);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  background: var(--primary-bg);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.1);
   border: 1px solid hsla(0, 0%, 100%, 0.4);
   backdrop-filter: blur(12px);
 }
@@ -25,19 +18,15 @@
   text-align: center;
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--text);
+  color: var(--primary-text);
   letter-spacing: -0.05em;
   margin-bottom: 0.5rem;
-  background: linear-gradient(to right, var(--primary), hsl(210, 80%, 45%));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
 }
 
 .transfer-subtitle {
   text-align: center;
   font-size: 1.1rem;
-  color: hsl(220, 10%, 50%);
+  color: var(--secondary-text);
   margin-bottom: 2.5rem;
   max-width: 60ch;
   margin-left: auto;
@@ -47,12 +36,14 @@
 
 .transfer-details h2 {
   font-size: 1.5rem;
-  color: var(--text);
+  color: var(--secondary-text);
   margin: 2rem 0 1rem;
   position: relative;
   padding-left: 1.5rem;
 }
-
+.transfer-details p {
+  color: var(--secondary-text);
+}
 .transfer-details h2::before {
   content: "";
   position: absolute;
@@ -60,7 +51,7 @@
   top: 0.35em;
   height: 1em;
   width: 6px;
-  background: var(--primary);
+  background: var(--primary-bg);
   border-radius: 99px;
 }
 
@@ -70,11 +61,11 @@
   display: grid;
   gap: 1rem;
 }
-
 .transfer-steps li {
   padding: 1.5rem;
-  background: var(--background);
-  border-radius: calc(var(--radius) - 0.25rem);
+  background: var(--secondary-bg);
+  color: var(--primary-text);
+  border-radius: calc(1rem - 0.25rem);
   position: relative;
   transition: transform 0.2s ease;
 }
@@ -84,41 +75,36 @@
 }
 
 .account-card {
-  background: var(--background);
+  background: var(--secondary-bg);
   padding: 2rem;
-  border-radius: var(--radius);
+  border-radius: 1rem;
   position: relative;
   overflow: hidden;
   transition: transform 0.2s ease;
 }
-
-.account-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--primary);
+.account-card h3 {
+  color: var(--primary-text);
 }
-
-.message-box {
+.account-card p {
+  color: var(--secondary-text);
+}
+.message-box-money {
   padding: 1rem;
-  border-radius: calc(var(--radius) - 0.5rem);
+  border-radius: calc(1rem - 0.5rem);
   font-weight: 600;
   margin: 1.5rem 0;
 }
 
 .success-msg {
   background: hsla(145, 63%, 49%, 0.1);
-  color: var(--success);
-  border: 1px solid var(--success);
+  color: hsl(145, 63%, 49%);
+  border: 1px solid hsl(145, 63%, 49%);
 }
 
 .error-msg {
   background: hsla(0, 82%, 63%, 0.1);
-  color: var(--error);
-  border: 1px solid var(--error);
+  color: hsl(0, 82%, 63%);
+  border: 1px solid hsl(0, 82%, 63%);
 }
 
 .transfer-form {
@@ -128,7 +114,7 @@
 
 .transfer-form label {
   font-weight: 600;
-  color: var(--text);
+  color: var(--primary-text);
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -136,23 +122,23 @@
 .transfer-form input {
   width: 100%;
   padding: 1rem;
-  border: 1px solid hsl(220, 10%, 90%);
-  border-radius: calc(var(--radius) - 0.5rem);
+  border: 1px solid #eee;
+  border-radius: calc(1rem - 0.5rem);
   transition: all 0.2s ease;
 }
 
 .transfer-form input:focus {
-  border-color: var(--primary);
+  border-color: var(--main-color);
   box-shadow: 0 0 0 3px hsla(210, 80%, 55%, 0.2);
   outline: none;
 }
 
 .transfer-btn {
-  background: var(--primary);
+  background: var(--main-color);
   color: white;
   padding: 1rem 2rem;
   border: none;
-  border-radius: calc(var(--radius) - 0.5rem);
+  border-radius: calc(1rem - 0.5rem);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -160,19 +146,20 @@
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .transfer-btn:hover {
-  background: hsl(210, 80%, 45%);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
+  background: var(--main-color2);
 }
-
+.users-heading {
+  color: var(--primary-text);
+}
 .users-table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--background);
-  border-radius: var(--radius);
+  background: var(--primary-bg);
+  border-radius: 1rem;
   overflow: hidden;
 }
 
@@ -183,26 +170,22 @@
 }
 
 .users-table th {
-  background: var(--primary);
-  color: white;
+  color: var(--primary-text);
   font-weight: 600;
+}
+.users-table td {
+  color: var(--primary-text);
 }
 
 .users-table tr:not(:last-child) td {
   border-bottom: 1px solid hsl(220, 10%, 90%);
 }
 
-.securitys-section h3 {
-  color: var(--error);
-  position: relative;
-  padding-left: 2rem;
-}
-
-.securitys-section h3::before {
-  content: "⚠️";
-  position: absolute;
-  left: 0;
-  top: 0.1em;
+.securitys-section h3,
+.securitys-section h2,
+.securitys-section p,
+.securitys-section h4 {
+  color: var(--primary-text);
 }
 
 @media (max-width: 768px) {

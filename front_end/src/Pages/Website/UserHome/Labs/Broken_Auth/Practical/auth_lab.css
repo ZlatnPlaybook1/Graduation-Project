@@ -4,10 +4,11 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: var(--primary-bg);
 }
 
 .lab1-login-card {
-  background: #fff;
+  background: var(--secondary-bg);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -20,7 +21,7 @@
   text-align: center;
   font-size: 28px;
   margin-bottom: 30px;
-  color: #333;
+  color: var(--primary-text);
 }
 
 .lab1-login-form {
@@ -35,7 +36,7 @@
 .lab1-input-label {
   font-size: 14px;
   margin-bottom: 8px;
-  color: #555;
+  color: var(--primary-text);
   font-weight: bold;
 }
 
@@ -44,29 +45,29 @@
   padding: 12px 15px;
   font-size: 16px;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--main-color);
   outline: none;
   box-sizing: border-box;
   transition: border-color 0.3s ease-in-out;
 }
 
 .lab1-input-field:focus {
-  border-color: #2575fc;
+  border-color: var(--main-color3);
 }
 
 .lab1-submit-btn {
-  background-color: #2575fc;
+  background-color: var(--main-color);
   color: #fff;
   border: none;
   padding: 15px;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .lab1-submit-btn:hover {
-  background-color: #6a11cb;
+  background-color: var(--main-color2);
 }
 
 /* Mobile Responsiveness */
@@ -86,29 +87,29 @@
   margin-top: 8px;
   font-size: 1rem;
   font-weight: bold;
-  color: #007bff;
+  color: var(--primary-text);
   text-decoration: none;
   transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .lab1-words-link:hover {
-  color: #0056b3;
+  color: var(--main-color);
   text-decoration: underline;
 }
 
 .lab1-words-link:focus {
   outline: none;
-  color: #004085;
+  color: var(--primary-text);
   text-decoration: underline;
 }
 
 .lab1-credentials-info {
   margin-top: 20px;
   font-size: 1rem;
-  color: #333;
+  color: var(--main-color);
 }
 .lab1-credentials-info strong {
-  color: #000;
+  color: var(--primary-text);
 }
 .lab1-response-message {
   margin-top: 15px;

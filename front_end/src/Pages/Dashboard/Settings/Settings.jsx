@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cookie from "cookie-universal";
 import "./Settings.css";
-import Preloader from "../../Website/Preloader/Preloader";
 export default function Settings() {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [loadingPage, setLoadingPage] = useState(true);
 
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -19,15 +17,8 @@ export default function Settings() {
     const retrievedToken = cookie.get("CuberWeb");
     setToken(retrievedToken);
   }, []);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoadingPage(false);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoadingPage(true);
 
     if (newPassword !== confirmPassword) {
       setErrorMessage("New passwords do not match!");
@@ -69,7 +60,6 @@ export default function Settings() {
   };
   return (
     <>
-      {loadingPage && <Preloader loading={loadingPage} />}
       <div className="settings-container">
         <form className="reset-password-form" onSubmit={handleSubmit}>
           <h2>Reset Password</h2>

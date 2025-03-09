@@ -3,6 +3,7 @@ import data from "./questions.json";
 import "./BurpSuitLab4.css";
 import GOBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function BurpSuitLab4() {
   const [userAnswers, setUserAnswers] = useState(
@@ -51,6 +52,7 @@ export default function BurpSuitLab4() {
     <>
       <GOBack />
       <ShowHint hintText="<p>Complete the Questions</p>" />
+      <ThemeSwitcher />
       <div className="burp-center">
         <div className="burp-container">
           <h2 className="burp-title">Decode & Verify</h2>
@@ -84,6 +86,7 @@ export default function BurpSuitLab4() {
                         value={option}
                         checked={userAnswers[currentIndex] === option}
                         onChange={handleInputChange}
+                        className="bs-input-color"
                       />
                       {option}
                     </label>

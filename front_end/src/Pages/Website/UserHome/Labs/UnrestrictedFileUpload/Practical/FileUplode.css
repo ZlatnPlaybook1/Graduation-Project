@@ -1,11 +1,17 @@
+.color-file-uploade-container {
+  padding: 0;
+  margin: 0;
+  background: var(--primary-bg);
+}
 .unique-container {
   margin: 0 auto;
   padding: 20px;
-  width: 75%;
+  width: 100%;
   max-width: 1200px;
+  background-color: var(--primary-bg);
 }
 .unique-container-wrapper {
-  background: linear-gradient(145deg, #ffffff, #f1f3f6);
+  background: var(--secondary-bg);
   border-radius: 15px;
   padding: 25px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -22,6 +28,7 @@
 .unique-container-wrapper button {
   font-family: "Poppins" !important;
   font-weight: 400;
+  color: var(--primary-text);
 }
 .row-file {
   display: flex;
@@ -33,7 +40,7 @@
   margin-bottom: 20px;
   border: none;
   border-radius: 10px;
-  background: #ffffff;
+  background: var(--primary-bg);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -80,11 +87,14 @@
 }
 
 .style-btn {
-  background: #4a90e2;
+  background: var(--main-color);
   color: #ffffff;
   border: none;
 }
 
 .style-btn:hover {
-  background: #357ab8;
+  background: var(--main-color3);
+}
+.style-form-cont {
+  background-color: var(--primary-bg);
 }

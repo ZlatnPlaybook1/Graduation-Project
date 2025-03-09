@@ -6,7 +6,7 @@ export default function PathTraversalMcq1() {
   return (
     <>
       <Goback />
-      <MCQQuiz questionsData={MCQData} />
+      <MCQQuiz questionsData={MCQData.questions} />
     </>
   );
 }

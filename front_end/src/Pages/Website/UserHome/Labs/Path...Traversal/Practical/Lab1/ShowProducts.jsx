@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import GOBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import "./ShowProducts.css";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function ShowProducts() {
   const { id } = useParams();
@@ -34,13 +35,17 @@ export default function ShowProducts() {
   return (
     <>
       <GOBack />
-      <div className="product-container">
-        <img
-          src={`http://127.0.0.1:8080/${product.path}`}
-          alt={product.name}
-          className="product-image"
-        />
-        <p className="product-description">{product.description}</p>
+      <ThemeSwitcher />
+
+      <div style={{ backgroundColor: "var(--primary-bg)", minHeight: "100vh" }}>
+        <div className="product-container">
+          <img
+            src={`http://127.0.0.1:8080/${product.path}`}
+            alt={product.name}
+            className="product-image"
+          />
+          <p className="product-description">{product.description}</p>
+        </div>
       </div>
     </>
   );

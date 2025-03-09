@@ -27,7 +27,7 @@
 .product-description {
   margin-top: 20px;
   font-size: 1rem;
-  color: #444;
+  color: var(--primary-text);
   max-width: 600px;
   line-height: 1.6;
 }
@@ -35,12 +35,12 @@
 .loading-text {
   text-align: center;
   font-size: 1.2rem;
-  color: #666;
+  color: var(--primary-text);
   margin-top: 50px;
 }
 
 /* Style page passwd jsx */
-.page-container {
+.page-container-pwd {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,13 +58,13 @@
 
 .content-area p {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--primary-text);
   margin-top: 20px;
 }
 
 .content-area pre {
   font-size: 1.1rem;
-  color: #333;
+  color: var(--primary-text);
   white-space: pre-wrap;
   word-wrap: break-word;
 }
