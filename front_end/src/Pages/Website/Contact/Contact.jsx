@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../Header/HeaderHome";
 import Footer from "../Footer/FooterHome";
 import phoneIcon from "../assets/img/contact-img/icon-phone-accent.svg";
@@ -7,9 +7,73 @@ import locationIcon from "../assets/img/contact-img/icon-location.svg";
 import "./Contact.css";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    fname: "",
+    lname: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState({
+    loading: false,
+    success: null,
+    error: null,
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ loading: true, success: null, error: null });
+
+    try {
+      const response = await fetch("http://127.0.0.1:8080/api/contactWithUs", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+
+      const result = await response.json();
+
+      setStatus({
+        loading: false,
+        success: result.message || "Message sent successfully!",
+        error: null,
+      });
+
+      setFormData({
+        fname: "",
+        lname: "",
+        phone: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      setStatus({
+        loading: false,
+        success: null,
+        error: error.message || "Something went wrong!",
+      });
+    }
+  };
+
   return (
     <>
       <Header />
+
       <div className="page-header parallaxie">
         <div className="container">
           <div className="row align-items-center">
@@ -100,7 +164,7 @@ const Contact = () => {
                   </div>
 
                   <div className="member-contact-form contact-form">
-                    <form id="contactForm" action="#" method="POST">
+                    <form id="contactForm" onSubmit={handleSubmit}>
                       <div className="row">
                         <div className="form-group col-md-6 mb-4">
                           <input
@@ -108,6 +172,8 @@ const Contact = () => {
                             name="fname"
                             className="form-control"
                             placeholder="First name"
+                            value={formData.fname}
+                            onChange={handleChange}
                             required
                           />
                         </div>
@@ -118,6 +184,8 @@ const Contact = () => {
                             name="lname"
                             className="form-control"
                             placeholder="Last name"
+                            value={formData.lname}
+                            onChange={handleChange}
                             required
                           />
                         </div>
@@ -128,6 +196,8 @@ const Contact = () => {
                             name="phone"
                             className="form-control"
                             placeholder="Enter Your Phone No."
+                            value={formData.phone}
+                            onChange={handleChange}
                             required
                           />
                         </div>
@@ -138,6 +208,8 @@ const Contact = () => {
                             name="email"
                             className="form-control"
                             placeholder="Enter Your E-mail"
+                            value={formData.email}
+                            onChange={handleChange}
                             required
                           />
                         </div>
@@ -148,6 +220,9 @@ const Contact = () => {
                             className="form-control"
                             rows="4"
                             placeholder="Write Message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
                           ></textarea>
                         </div>
 
@@ -155,10 +230,24 @@ const Contact = () => {
                           <button
                             type="submit"
                             className="btn-default btn-highlighted"
+                            disabled={status.loading}
                           >
-                            <span>submit message</span>
+                            <span>
+                              {status.loading ? "Sending..." : "Submit Message"}
+                            </span>
                           </button>
                         </div>
+
+                        {status.success && (
+                          <div className="alert alert-success mt-3">
+                            {status.success}
+                          </div>
+                        )}
+                        {status.error && (
+                          <div className="alert alert-danger mt-3">
+                            {status.error}
+                          </div>
+                        )}
                       </div>
                     </form>
                   </div>
@@ -187,6 +276,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   );

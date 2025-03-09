@@ -238,7 +238,8 @@
 }
 
 .member-contact-form.contact-form .form-control {
-  background: var(--white);
+  background: var(--primary-bg);
+  color: var(--primary-text);
 }
 
 .google-map .container-fluid {
