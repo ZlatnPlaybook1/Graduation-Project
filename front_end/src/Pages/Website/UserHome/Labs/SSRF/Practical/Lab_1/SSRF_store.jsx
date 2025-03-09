@@ -26,8 +26,11 @@ export default function SSRF_store1() {
   const checkStock = async (product) => {
     try {
       const response = await axios.post(
-        `http://127.0.0.1:8080/api/SSRFLab/checkStock`,
-        { productId: product.id, stock: product.stock }
+        `http://127.0.0.1:8080/api/SSRFLab/checkstock`,
+        {
+          productId: product.id,
+          stock: product.stock,
+        }
       );
       const message = response.data.message;
       window.history.pushState(
@@ -35,6 +38,19 @@ export default function SSRF_store1() {
         "",
         `?message=${encodeURIComponent(message)}`
       );
+      setOutOfStockMessage(message);
+    } catch (error) {
+      console.error("Error sending stock check request:", error);
+      setOutOfStockMessage("Error: Could not fetch stock information.");
+    }
+  };
+  const admin = async () => {
+    try {
+      const response = await axios.post(
+        `http://127.0.0.1:8080/api/SSRFLab/admin`
+      );
+      const message = response.data.message;
+      window.history.pushState({}, "", `/admin`);
       setOutOfStockMessage(message);
     } catch (error) {
       console.error("Error sending stock check request:", error);
