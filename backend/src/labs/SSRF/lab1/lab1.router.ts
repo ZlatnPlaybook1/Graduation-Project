@@ -4,6 +4,7 @@ import { products , deleteUser, resetLab1} from "./lab1.controller";
 const lab1SSRF = Router();
 
 lab1SSRF.post("/SSRFLab/checkStock",products );
+lab1SSRF.post("/SSRFLab/admin",resetLab1 );
 
 lab1SSRF.delete("/SSRFLab/deleteUser/:username",deleteUser );
 

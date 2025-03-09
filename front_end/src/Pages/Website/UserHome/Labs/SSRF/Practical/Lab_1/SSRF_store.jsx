@@ -7,15 +7,11 @@ import axios from "axios";
 
 export default function SSRF_store1() {
   const [outOfStockMessage, setOutOfStockMessage] = useState("");
-  const [usernames, setUserNames] = useState([]);
 
   const hintMessage = `<span>This lab is vulnerable to SSRF due to improper validation of user-supplied input. To solve the lab, you need to provide a URL that can be exploited to access internal resources (e.g., localhost).</span>`;
   const labreset = async () => {
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8080/api/SSRFLab/resetLab1"
-      );
-      setUserNames(response.data.username);
+      await axios.post("http://127.0.0.1:8080/api/SSRFLab/resetLab1");
     } catch (error) {
       console.error("Error creating users:", error);
     }
@@ -46,17 +42,14 @@ export default function SSRF_store1() {
   };
   const admin = async () => {
     try {
-      const response = await axios.post(
-        `http://127.0.0.1:8080/api/SSRFLab/admin`
-      );
-      const message = response.data.message;
-      window.history.pushState({}, "", `/admin`);
-      setOutOfStockMessage(message);
+      await axios.post(`http://127.0.0.1:8080/api/SSRFLab/admin`);
+      window.history.pushState({}, "", `store/admin`);
+      window.location.reload();
     } catch (error) {
-      console.error("Error sending stock check request:", error);
-      setOutOfStockMessage("Error: Could not fetch stock information.");
+      console.error("Error using api:", error);
     }
   };
+  console.log(admin);
 
   return (
     <div className="container">
