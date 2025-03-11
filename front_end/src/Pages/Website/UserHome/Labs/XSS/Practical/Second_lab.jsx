@@ -6,6 +6,7 @@ import Footer from "../../../Footer/Footer";
 import axios from "axios";
 import GoBackBtn from "../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function Second_lab_XSS() {
   const hintMessage = `
@@ -19,7 +20,7 @@ export default function Second_lab_XSS() {
       <p>Go back to the blog.</p>
     </div>
   `;
-  const [setForm] = useState({
+  const [form, setForm] = useState({
     email: "",
     content: "",
   });
@@ -111,6 +112,7 @@ export default function Second_lab_XSS() {
       <div className="course-Second_lab">
         <GoBackBtn />
         <ShowHint hintText={hintMessage} />
+        <ThemeSwitcher />
         <div className="container-Second_lab">
           <div className="row-practice">
             <div className="card-Second_lab">
@@ -184,14 +186,22 @@ export default function Second_lab_XSS() {
                   id="content"
                   placeholder="Write Your Comment......"
                   required
-                ></textarea>
+                  value={form.content}
+                  onChange={(e) =>
+                    setForm({ ...form, content: e.target.value })
+                  }
+                />
                 <input
                   type="email"
                   name="email"
                   placeholder="Write Your Email"
                   className="form_input"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
                 />
-                <button type="submit">Submit</button>
+                <button type="submit" className="button-btn-primary">
+                  Submit
+                </button>
                 {err && <span className="error">{err}</span>}
               </form>
               <div className="comment-section">
@@ -242,7 +252,6 @@ export default function Second_lab_XSS() {
         </div>
       </div>
       {/* End Course Content  */}
-      <Footer />
     </>
   );
 }

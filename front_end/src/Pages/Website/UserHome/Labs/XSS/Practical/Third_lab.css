@@ -40,12 +40,14 @@
 
 /* Start Course  */
 .course-Third_lab {
-  padding: 70px 0;
+  background-color: var(--primary-bg);
+  min-height: 100vh;
 }
 
 .course-Third_lab .container-Third_lab {
   display: flex;
   flex-direction: column;
+  padding-top: 80px;
 }
 
 .course-Third_lab .container-Third_lab .search {
@@ -57,7 +59,7 @@
 
 .course-Third_lab .container-Third_lab .search input {
   padding: 5px 10px;
-  border: 3px solid var(--sec-main-color);
+  border: 3px solid var(--main-color);
   height: 50px;
   width: 450px;
 }
@@ -70,8 +72,8 @@
 
 .course-Third_lab .container-Third_lab .search i {
   font-size: 20px;
-  background-color: var(--sec-main-color);
-  color: white;
+  background-color: var(--main-color);
+  color: var(--primary-text);
   padding: 5px 10px;
   cursor: pointer;
   height: 50px;

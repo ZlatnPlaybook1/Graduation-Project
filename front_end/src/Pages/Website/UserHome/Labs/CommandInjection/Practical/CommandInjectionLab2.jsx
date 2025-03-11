@@ -6,6 +6,7 @@ import "./CommandInjectionLabs.css";
 import Image1 from "../../../assets/img/Command Injection/resim.jpg";
 import Image2 from "../../../assets/img/Command Injection/resim2.jpg";
 import Image3 from "../../../assets/img/Command Injection/resim3.jpg";
+import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function CommandInjectionLab2() {
   const hintMessage = `<p>Try to add “;” to the URL </p>`;
@@ -77,6 +78,7 @@ export default function CommandInjectionLab2() {
     <>
       <GOBack />
       <ShowHint hintText={hintMessage} />
+      <ThemeSwitcher />
       <div className="page-container">
         <div className="image-container">
           <div className="image-card" onClick={() => handleCardClick(1)}>

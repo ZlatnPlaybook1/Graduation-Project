@@ -9,6 +9,7 @@ import Footer from "../../../Footer/Footer";
 import { Link } from "react-router-dom";
 import GoBack from "../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function XSS_FOURTH() {
   const hintMessage = `
@@ -135,6 +136,7 @@ export default function XSS_FOURTH() {
     <>
       <GoBack />
       <ShowHint hintText={hintMessage} />
+      <ThemeSwitcher />
       <div className="course-First_lab">
         <div className="container-First_lab">
           {errorMessage && (

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Fourth_lab.css";
 import image_1 from "../../../assets/img/practical_lab2/image_1.png";
 import icon from "../../../assets/img/practical_lab2/icon.png";
-import Footer from "../../../Footer/Footer";
+import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 // Helper function to validate email
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -42,9 +42,10 @@ export default function Robots() {
   return (
     <>
       {/* Start Course Content */}
+      <ThemeSwitcher />
       <div className="course-Second_lab">
         <div className="container-Second_lab">
-          <div className="row-practice">
+          <div className="row-practice p-4">
             <div className="card-Second_lab">
               <img src={image_1} alt="Robotics" />
               <div className="card-text-Second_lab">
@@ -130,7 +131,9 @@ export default function Robots() {
                   placeholder="Write Your Website"
                   className="form_input"
                 />
-                <button type="submit">Submit</button>
+                <button type="submit" className="button-btn-primary">
+                  Submit
+                </button>
                 {err && <span className="error">{err}</span>}
                 {success && (
                   <div className="success-message">
@@ -167,7 +170,6 @@ export default function Robots() {
         </div>
       </div>
       {/* End Course Content */}
-      <Footer />
     </>
   );
 }
