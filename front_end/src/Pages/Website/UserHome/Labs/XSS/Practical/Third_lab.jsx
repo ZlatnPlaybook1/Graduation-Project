@@ -5,9 +5,9 @@ import image_2 from "../../../assets/img/practical_lab2/image_2.png";
 import image_3 from "../../../assets/img/practical_lab2/image_3.png";
 import image_4 from "../../../assets/img/practical_lab2/image_4.png";
 import image_5 from "../../../assets/img/practical_lab2/image_5.png";
-import Footer from "../../../Footer/Footer";
 import GoBack from "../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function Third_lab() {
   const hintMessage = `
@@ -132,6 +132,7 @@ export default function Third_lab() {
     <>
       <GoBack />
       <ShowHint hintText={hintMessage} />
+      <ThemeSwitcher />
       <div className="course-First_lab">
         <div className="container-First_lab">
           {errorMessage && (
@@ -196,7 +197,6 @@ export default function Third_lab() {
           )}
         </div>
       </div>
-      <Footer />
     </>
   );
 }
