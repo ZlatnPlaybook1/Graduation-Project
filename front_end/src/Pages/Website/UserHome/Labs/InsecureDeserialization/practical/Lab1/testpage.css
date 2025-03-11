@@ -1,7 +1,7 @@
 .test-page-container {
   font-family: "Montserrat", sans-serif;
-  background: var(--primary-gradient);
-  color: #fff;
+  background: var(--primary-bg);
+  color: var(--primary-text);
   display: grid;
   place-items: center;
   min-height: 100vh;
@@ -16,7 +16,7 @@
   position: absolute;
   width: 200%;
   height: 200%;
-  background: var(--primary-gradient);
+  background: var(--secondary-bg);
   animation: rotate 20s linear infinite;
   opacity: 0.1;
 }
@@ -54,6 +54,7 @@
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 1.5rem;
   font-weight: 700;
+  color: var(--main-color);
   text-shadow: var(--text-shadow);
   animation: fadeInUp 0.8s ease-out;
 }
