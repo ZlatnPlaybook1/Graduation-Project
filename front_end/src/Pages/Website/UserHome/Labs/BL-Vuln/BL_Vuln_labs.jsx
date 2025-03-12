@@ -9,7 +9,7 @@ import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function BL_Vuln_labs() {
-  const Courses = [
+  const Courses= [
     {
       link: "/BL-Vuln/BL_Vuln_labs/first_lab",
       image: labImg,
@@ -40,6 +40,16 @@ export default function BL_Vuln_labs() {
         <div className="container">
           <PracticeTitle title={"Business logic vulnerabilities"} />
           <div className="row">
+            {Courses.map((course, index) => (
+              <Card
+                key={index}
+                link={course.link}
+                image={course.image}
+                title={course.title}
+                brief={course.brief}
+                difficulty={course.difficulty}
+              />
+            ))}
             {Courses.map((course, index) => (
               <Card
                 key={index}
