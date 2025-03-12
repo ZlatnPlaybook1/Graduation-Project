@@ -3,7 +3,6 @@ import Navigation from "./Navigation";
 
 const CartPage = () => {
   const [cart, setCart] = useState([]);
-  // Base URL for backend API
   const BASE_URL = "http://localhost:8080/api";
 
   useEffect(() => {
@@ -73,10 +72,10 @@ const CartPage = () => {
   };
 
   return (
-    <>
+   <div className="Custom__body--bg">
       <Navigation />
       <div className="container mt-5 d-flex flex-column min-vh-100">
-        <h2 className=" products-page-title mb-4 text-primary fw-bold">
+        <h2 className=" mb-4 main-color fw-bold">
           <i className="fas fa-shopping-cart me-2"></i>
           Your Cart{" "}
           <span className=" text-danger">
@@ -88,17 +87,14 @@ const CartPage = () => {
           </span>
         </h2>
 
-        {/* Card Wrapper for the Table */}
         <div className="card shadow border-0 mb-4 w-100">
-          {/* Optional: Card header */}
-          <div className="card-header bg-primary text-white">
+          <div className="card-header bg-primary primary-text">
             <strong>Shopping Details</strong>
           </div>
 
-          {/* Card Body with Table */}
           <div className="card-body p-0">
-            <table className="table table-hover align-middle mb-0">
-              <thead className="table-light">
+            <table className="table table-hover align-middle mb-0 custom__table" >
+              <thead >
                 <tr>
                   <th scope="col">Item</th>
                   <th scope="col">Price</th>
@@ -143,7 +139,6 @@ const CartPage = () => {
           </div>
         </div>
 
-        {/* Grand Total & Checkout Button */}
         <div className="d-flex justify-content-between align-items-center">
           <h4 className="text-success">
             Grand Total: $
@@ -158,13 +153,12 @@ const CartPage = () => {
         </div>
       </div>
 
-      {/* Simple Footer */}
-      <footer className="bg-dark text-white text-center py-3 mt-auto">
+      <footer className="secondary-bg primary-text text-center py-3 mt-auto">
         <div className="container">
-          <p className="mb-0">© 2025 ShopZone. All rights reserved.</p>
+          <p className="mb-0">© 2025 CyberLabs. All rights reserved.</p>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 

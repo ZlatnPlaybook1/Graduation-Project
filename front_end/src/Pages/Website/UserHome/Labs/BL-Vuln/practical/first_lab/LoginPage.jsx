@@ -5,7 +5,6 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  // Base URL for backend API
   const BASE_URL = "http://localhost:8080/api";
 
   const handleLogin = async (e) => {
@@ -23,7 +22,6 @@ const LoginPage = () => {
       const data = await response.json();
 
       if (response.ok) {
-        // Save the returned user data in localStorage
         localStorage.setItem("loggedIn1", "true");
         localStorage.setItem("userId", data.user.id);
         localStorage.setItem("userBalance", data.user.balance);
@@ -55,7 +53,6 @@ const LoginPage = () => {
             <span key={index} className="hackerLogin-gridSpan"></span>
           ))}
 
-          {/* Sign-in Form */}
           <div className="hackerLogin-signin">
             <div className="hackerLogin-content">
               <h2>Sign In</h2>

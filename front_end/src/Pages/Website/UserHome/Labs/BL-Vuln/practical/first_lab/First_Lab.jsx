@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./ProductsPage.css";
+import ".././Lab_Style.css";
 import Navigation from "./Navigation";
 import ProductCard from "./ProductCard";
 
