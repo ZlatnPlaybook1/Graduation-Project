@@ -227,3 +227,7 @@ section,
   color: var(--primary-text) !important;
   min-height: 100vh;
 }
+.focus-bg-transparent:focus {
+  background-color: transparent !important;
+  color: var(--primary-text) !important;
+}
