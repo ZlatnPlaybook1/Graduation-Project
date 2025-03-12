@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "./Navigation";
-import "bootstrap/dist/css/bootstrap.min.css";
 import UserImage from "../defultUser.jpg";
 const MyAccountPage = () => {
   const [user, setUser] = useState({
@@ -26,16 +25,13 @@ const MyAccountPage = () => {
     <div className="my-account-page primary-bg d-flex flex-column min-vh-100">
       <Navigation />
 
-      {/* Main Content */}
       <main className="container my-5 flex-grow-1">
         <h2 className="products-page-title mb-4 main-color fw-bold">
           Your Account <i className="fas fa-user-circle me-2"></i>
         </h2>
 
-        {/* Account Card */}
         <div className="card shadow border-0 hover-translate w-100">
           <div className="row g-0">
-            {/* Left Column: User Image */}
             <div className="col-md-4 d-flex align-items-center justify-content-center secondary-bg">
               <img
                 src={UserImage}
@@ -45,7 +41,6 @@ const MyAccountPage = () => {
               />
             </div>
 
-            {/* Right Column: User Details */}
             <div className="col-md-8 secondary-bg">
               <div className="card-body text-center text-md-start w-100">
                 <h5 className="card-title display-6 mb-3">
@@ -70,8 +65,6 @@ const MyAccountPage = () => {
           </div>
         </div>
       </main>
-
-      {/* Footer */}
       <footer className="secondary-bg text-center py-3 mt-4">
         <div className="container">
           <p className="mb-0 primary-text">© 2025 CyberLabs. All rights reserved.</p>

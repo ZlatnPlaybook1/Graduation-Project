@@ -5,9 +5,10 @@ import image_2 from "../../../assets/img/practical_lab2/image_2.png";
 import image_3 from "../../../assets/img/practical_lab2/image_3.png";
 import image_4 from "../../../assets/img/practical_lab2/image_4.png";
 import image_5 from "../../../assets/img/practical_lab2/image_5.png";
-import Footer from "../../../Footer/Footer";
 import GoBack from "../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher";
+
 export default function First_lab() {
   const hintMessage = `
     <div
@@ -129,57 +130,61 @@ export default function First_lab() {
     <>
       <GoBack />
       <ShowHint hintText={hintMessage} />
+      <ThemeSwitcher />
       {/* Start Courses */}
-      <div className="course-First_lab">
-        <div className="container-First_lab">
-          {/* Search Form */}
-          <form className="search" onSubmit={handleSearch}>
-            <input
-              type="text"
-              placeholder="Search for a practice"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)} // Update search query on input change
-            />
-            <button type="submit">
-              <i className="fa-solid fa-search"></i>
-            </button>
-          </form>
+      <div className="firstlab-primary">
+        <div className="course-First_lab">
+          <div className="container-First_lab">
+            {/* Search Form */}
+            <form className="search" onSubmit={handleSearch}>
+              <input
+                type="text"
+                placeholder="Search for a practice"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)} // Update search query on input change
+              />
+              <button type="submit">
+                <i className="fa-solid fa-search"></i>
+              </button>
+            </form>
 
-          {/* Render Cards or "No data found" message */}
-          <div className="row-practice">
-            {hasSearched && (
-              <p className="html-output">
-                Your Search Result: "
-                {scriptOutput ? (
-                  <span>
-                    <span>{scriptOutput}</span>
-                  </span>
-                ) : isHTML ? (
-                  <span dangerouslySetInnerHTML={{ __html: htmlOutput }}></span>
-                ) : (
-                  <span>{searchQuery}</span>
-                )}
-                "{" "}
-              </p>
-            )}
-            {filteredCards.length > 0 ? (
-              filteredCards.map((card) => (
-                <div className="card-First_lab" key={card.id}>
-                  <img src={card.image} alt={card.title} />
-                  <div className="card-text-First_lab">
-                    <h2>{card.title}</h2>
-                    <p>{card.content}</p>
+            {/* Render Cards or "No data found" message */}
+            <div className="row-practice">
+              {hasSearched && (
+                <p className="html-output">
+                  Your Search Result: "
+                  {scriptOutput ? (
+                    <span>
+                      <span>{scriptOutput}</span>
+                    </span>
+                  ) : isHTML ? (
+                    <span
+                      dangerouslySetInnerHTML={{ __html: htmlOutput }}
+                    ></span>
+                  ) : (
+                    <span>{searchQuery}</span>
+                  )}
+                  "{" "}
+                </p>
+              )}
+              {filteredCards.length > 0 ? (
+                filteredCards.map((card) => (
+                  <div className="card-First_lab" key={card.id}>
+                    <img src={card.image} alt={card.title} />
+                    <div className="card-text-First_lab">
+                      <h2>{card.title}</h2>
+                      <p>{card.content}</p>
+                    </div>
                   </div>
-                </div>
-              ))
-            ) : (
-              <h1>No data found</h1>
-            )}
+                ))
+              ) : (
+                <h1>No data found</h1>
+              )}
+            </div>
           </div>
         </div>
       </div>
       {/* End Course Content */}
-      <Footer />
     </>
   );
 }

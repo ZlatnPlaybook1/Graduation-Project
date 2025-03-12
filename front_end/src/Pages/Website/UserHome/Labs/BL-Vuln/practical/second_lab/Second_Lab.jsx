@@ -30,10 +30,10 @@ const ProductsPage = () => {
   };
 
   return (
-    <div className="products-page bg-light">
+    <div className="products-page primary-bg">
       <Navigation />
       <main className="container ">
-        <h1 className="my-5 products-page-title ">Our Products 🛍️ </h1>
+        <h1 className="my-5 text-center main-color">Our Products 🛍️ </h1>
         <div className="row">
           {products.map((product) => (
             <div key={product.id} className="col-md-4 mb-4">
@@ -42,9 +42,9 @@ const ProductsPage = () => {
           ))}
         </div>
       </main>
-      <footer className="bg-dark text-white text-center py-3 mt-4">
+      <footer className="secondary-bg text-center py-3 mt-4">
         <div className="container">
-          <p className="mb-0">© 2025 ShopZone. All rights reserved.</p>
+          <p className="mb-0 primary-text">© 2025 CyberLabs. All rights reserved.</p>
         </div>
       </footer>
     </div>

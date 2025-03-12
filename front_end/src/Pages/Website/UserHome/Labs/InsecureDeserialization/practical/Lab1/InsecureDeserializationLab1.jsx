@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./InsecureDeserializationLab1.css";
 import GoBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function InsecureDeserializationLab1() {
   const [username, setUsername] = useState("");
@@ -72,6 +73,7 @@ https://www.base64decode.org/
     <>
       <GoBack />
       <ShowHint hintText={hintMessage} />
+      <ThemeSwitcher />
       <div className="InsecureDeserializationLab-container">
         <div className="InsecureDeserializationLab-form-wrapper">
           <h2 className="InsecureDeserializationLab-title">Welcome Back</h2>

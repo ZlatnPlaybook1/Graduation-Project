@@ -13,7 +13,6 @@ const ProductCard = ({ product, addToCart }) => {
     setClicked(false);
   };
 
-  // Trim the title to the first three words
   const trimmedTitle = product.title.split(" ").slice(0, 3).join(" ");
 
   return (

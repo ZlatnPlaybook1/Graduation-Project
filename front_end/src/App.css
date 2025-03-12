@@ -110,6 +110,9 @@ ul li {
 }
 body {
   overflow-x: hidden;
+}
+html,body{
+  color: var(--primary-text);
   background-color: var(--primary-bg);
 }
 
@@ -222,4 +225,12 @@ section,
   background: var(--primary-bg)!important;
   color:var(--primary-text) !important;
   min-height: 100vh;
+}
+.focus-bg-transparent:disabled,
+.focus-bg-transparent:focus {
+  background-color: transparent !important;
+  color: var(--primary-text) !important;
+}
+.focus-bg-transparent::placeholder {
+  color: var(--secondary-text) !important;
 }

@@ -108,7 +108,7 @@ export default function Users() {
       <div className="table-container">
         <h2 className="table-title">User List</h2>
         <div className="d-flex justify-content-start">
-          <Link className="btn-add btn-primary-add" to={"/dashboard/user/add"}>
+          <Link className="btn-add use-btn" to={"/dashboard/user/add"}>
             Add User
           </Link>
         </div>

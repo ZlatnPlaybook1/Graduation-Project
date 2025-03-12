@@ -70,15 +70,6 @@
 .modern-table tbody .d-flex {
   justify-content: center;
 }
-
-.btn-primary {
-  background-color: var(--primary-bg);
-}
-
-.btn-primary:hover {
-
-}
-
 /* Action Icons */
 .fa-trash {
   color: #dc3545;

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { FaUser, FaMoneyBillWave, FaLock } from "react-icons/fa"; // Icons for account details
+import { FaUser, FaMoneyBillWave, FaLock } from "react-icons/fa"; 
 
 export default function CSRF_FIRST_LAB() {
   const [account, setAccount] = useState(null);
@@ -8,7 +7,6 @@ export default function CSRF_FIRST_LAB() {
   const [message, setMessage] = useState("");
   const [setUpdatedId] = useState(null);
 
-  // Fetch account details by ID (if provided) or first account
   const fetchAccount = async (id = null) => {
     try {
       const url = id
@@ -32,7 +30,6 @@ export default function CSRF_FIRST_LAB() {
     fetchAccount();
   }, []);
 
-  // Update password and fetch updated account info
   const updatePassword = async () => {
     if (!account) return;
 
@@ -53,7 +50,7 @@ export default function CSRF_FIRST_LAB() {
 
         if (result.account) {
           setUpdatedId(result.account.id);
-          setAccount(result.account); // Immediately update UI
+          setAccount(result.account); 
         }
       } else {
         setMessage("Error updating password");
@@ -65,76 +62,44 @@ export default function CSRF_FIRST_LAB() {
   };
 
   return (
-    <div
-      className="container-fluid min-vh-100 d-flex align-items-center justify-content-center"
-      style={{ background: "linear-gradient(135deg, #6f42c1, #00bcd4)" }}
-    >
-      <div
-        className="card shadow-lg rounded-lg border-0 p-4"
-        style={{ width: "400px", boxShadow: "0 8px 20px rgba(0, 0, 0, 0.1)" }}
-      >
-        <h2 className="text-center text-white mb-4">Account Information</h2>
+   <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center primary-bg primary-text">
+  <div class="card shadow-lg rounded border-0 p-4 secondary-bg primary-text col-lg-8 col-md-10 col-sm-12">
+    <h2 class="text-center mb-4">Account Information</h2>
 
-        {message && (
-          <div
-            className={`alert ${
-              message === "Password Updated Successfully"
-                ? "alert-success"
-                : "alert-danger"
-            }`}
-          >
-            {message}
-          </div>
-        )}
-
-        {account ? (
-          <div className="mb-4">
-            <h3 className="text-info mb-3">Account Details</h3>
-            <div className="d-flex align-items-center mb-3">
-              <FaUser className="text-primary me-2" />
-              <p className="mb-0">
-                <strong>Account No:</strong> {account.accountNo}
-              </p>
-            </div>
-            <div className="d-flex align-items-center mb-3">
-              <FaMoneyBillWave className="text-success me-2" />
-              <p className="mb-0">
-                <strong>Balance:</strong> ${account.accountBalance}
-              </p>
-            </div>
-            <div className="d-flex align-items-center mb-4">
-              <FaUser className="text-info me-2" />
-              <p className="mb-0">
-                <strong>Name:</strong> {account.accountName}
-              </p>
-            </div>
-
-            <h4 className="text-info mb-3">Update Password</h4>
-            <div className="d-flex mb-3">
-              <input
-                type="password"
-                className="form-control me-2 border-0 shadow-sm"
-                placeholder="Enter new password"
-                value={newPass}
-                onChange={(e) => setNewPass(e.target.value)}
-                style={{ borderRadius: "30px" }}
-              />
-              <button
-                className="btn btn-warning px-4 shadow-sm"
-                style={{
-                  borderRadius: "30px",
-                  transition: "all 0.3s ease",
-                }}
-                onClick={updatePassword}
-              >
-                <FaLock /> Update Password
-              </button>
-            </div>
-          </div>
-        ) : (
-          <p className="text-danger text-center">No account found.</p>
-        )}
+    {message && (
+      <div className={`alert ${message === "Password Updated Successfully" ? "alert-success" : "alert-danger"}`}>
+        {message}
       </div>
-    </div>
+    )}
+
+    {account ? (
+      <div class="mb-4">
+        <h3 class="main-color mb-3">Account Details</h3>
+        <div class="d-flex align-items-center mb-3">
+          <FaUser class="main-color me-2" />
+          <p class="mb-0"><strong>Account No:</strong> {account.accountNo}</p>
+        </div>
+        <div class="d-flex align-items-center mb-3">
+          <FaMoneyBillWave class="main-color me-2" />
+          <p class="mb-0"><strong>Balance:</strong> ${account.accountBalance}</p>
+        </div>
+        <div class="d-flex align-items-center mb-4">
+          <FaUser class="main-color me-2" />
+          <p class="mb-0"><strong>Name:</strong> {account.accountName}</p>
+        </div>
+
+        <h4 class="main-color mb-3">Update Password</h4>
+        <div class="d-flex">
+          <input type="password" class="form-control rounded-pill me-2 px-3 focus-bg-transparent" placeholder="Enter new password" value={newPass} onChange={(e) => setNewPass(e.target.value)} />
+          <button class="btn go-to p-3 my-0 w-25" onClick={updatePassword}>
+            <FaLock /> Update Password
+          </button>
+        </div>
+      </div>
+    ) : (
+      <p class="text-danger text-center">No account found.</p>
+    )}
+  </div>
+</div>
   );
 }

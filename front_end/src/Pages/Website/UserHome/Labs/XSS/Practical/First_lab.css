@@ -1,8 +1,12 @@
+.firstlab-primary {
+  background-color: var(--primary-bg);
+  min-height: 100vh;
+}
 .search-result {
   margin-top: 10px;
   margin-left: 20px;
   font-size: 18px;
-  color: #333;
+  color: var(--primary-text);
 }
 
 .container-First_lab {
@@ -47,12 +51,13 @@
 
 /* Start Course  */
 .course-First_lab {
-  padding: 70px 0;
+  background-color: var(--primary-bg);
+  min-height: 100vh;
 }
-
 .course-First_lab .container-First_lab {
   display: flex;
   flex-direction: column;
+  padding-top: 80px;
 }
 
 .course-First_lab .container-First_lab .search {
@@ -63,10 +68,11 @@
 }
 
 .course-First_lab .container-First_lab .search input {
-  padding: 5px 10px;
-  border: 3px solid var(--sec-main-color);
+  padding: 29px 10px;
+  border: 3px solid var(--main-color);
   height: 50px;
   width: 450px;
+  outline: none;
 }
 
 .course-First_lab .container-First_lab .search button {
@@ -78,9 +84,9 @@
 
 .course-First_lab .container-First_lab .search i {
   font-size: 20px;
-  background-color: var(--sec-main-color);
-  color: white;
-  padding: 5px 10px;
+  background-color: var(--main-color);
+  color: var(--primary-text);
+  padding: 32px 29px;
   cursor: pointer;
   height: 50px;
   width: 50px;
@@ -95,6 +101,7 @@
   align-items: center;
   font-size: 28px;
   margin-bottom: 0;
+  color: var(--primary-text);
 }
 .course-First_lab .row-practice .html-output span {
   font-weight: 300;
@@ -108,6 +115,9 @@
   margin-top: 30px;
   margin-bottom: 50px;
   gap: 20px;
+}
+.course-First_lab .row-practice h1 {
+  color: var(--primary-text);
 }
 
 .course-First_lab .row-practice .card-First_lab {
@@ -134,12 +144,16 @@
 .course-First_lab .row-practice .card-First_lab .card-text-First_lab {
   padding: 20px 10px;
 }
+.course-First_lab .row-practice .card-First_lab .card-text-First_lab h2 {
+  color: var(--main-color);
+}
 
 .course-First_lab .row-practice .card-First_lab .card-text-First_lab p {
   font-size: 16px;
   font-weight: lighter;
   margin-top: 10px;
   margin-bottom: 20px;
+  color: var(--primary-text);
 }
 
 /* End Course  */

@@ -3,6 +3,7 @@ import axios from "axios";
 import "./CommandInjectionLabs.css";
 import GOBack from "../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function CommandInjectionLab3() {
   const hintMessage = `<p>Find a way to bypass the blacklist."</p>`;
@@ -65,6 +66,7 @@ export default function CommandInjectionLab3() {
     <>
       <GOBack />
       <ShowHint hintText={hintMessage} />
+      <ThemeSwitcher />
       <div className="ping-container ">
         <div className="ping-main-wrapper">
           <div className="ping-header-wrapper">

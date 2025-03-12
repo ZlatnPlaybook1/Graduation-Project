@@ -9,45 +9,50 @@ import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function BL_Vuln_labs() {
+  const Labs= [
+    {
+      link: "/BL-Vuln/BL_Vuln_labs/first_lab",
+      image: labImg,
+      title: "Excessive trust in client-side controls",
+      brief: [
+        "This lab has an issue with its client-side controls that allows you to change the price of items in the store. To solve the lab, buy a 'Lightweight l33t leather jacket'. You can log in to your own account using the following credentials: ",
+      ],
+      difficulty: "Easy",
+    },
+    {
+      link: "/BL-Vuln/BL_Vuln_labs/second_lab",
+      image: labImg,
+      title: "High-level logic vulnerability",
+      brief: [
+        "This lab has a logic flaw in its purchasing workflow that allows you to buy items for free. To solve the lab, buy a 'Lightweight l33t leather jacket'. You can log in to your own account using the following credentials: ",
+      ],
+      difficulty: "Easy",
+    },
+  ];
   return (
     <>
       <Banner />
       <Header />
       <ThemeSwitcher />
-      {/* Start Landing */}
       <LandingPractice />
-      {/* End Landing */}
 
-      {/* Start Course */}
       <div className="course">
         <div className="container">
           <PracticeTitle title={"Business logic vulnerabilities"} />
           <div className="row">
-            {/* lab1 */}
-            <Card
-              link={"/BL-Vuln/BL_Vuln_labs/first_lab"}
-              image={labImg}
-              title={"Excessive trust in client-side controls"}
-              brief={[
-                "This lab has an issue with its client-side controls that allows you to change the price of items in the store. To solve the lab, buy a 'Lightweight l33t leather jacket'. You can log in to your own account using the following credentials: ",
-              ]}
-              difficulty={"Easy"}
-            />
-
-            {/* lab2 */}
-            <Card
-              link={"/BL-Vuln/BL_Vuln_labs/second_lab"}
-              image={labImg}
-              title={"High-level logic vulnerability"}
-              brief={[
-                "This lab has a logic flaw in its purchasing workflow that allows you to buy items for free. To solve the lab, buy a 'Lightweight l33t leather jacket'. You can log in to your own account using the following credentials: ",
-              ]}
-              difficulty={"Easy"}
-            />
+            {Labs.map((course, index) => (
+              <Card
+                key={index}
+                link={course.link}
+                image={course.image}
+                title={course.title}
+                brief={course.brief}
+                difficulty={course.difficulty}
+              />
+            ))}
           </div>
         </div>
       </div>
-      {/* End Course */}
       <Go2TopBtn />
       <Footer />
     </>
