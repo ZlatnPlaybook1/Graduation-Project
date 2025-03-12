@@ -111,8 +111,7 @@ ul li {
 body {
   overflow-x: hidden;
 }
-html,
-body {
+html,body{
   color: var(--primary-text);
   background-color: var(--primary-bg);
 }
