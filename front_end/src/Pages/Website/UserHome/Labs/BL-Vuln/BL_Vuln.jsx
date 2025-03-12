@@ -18,7 +18,6 @@ export default function BL_Vuln() {
       <Banner />
       <Header />
       <ThemeSwitcher />
-      {/* Start Landing */}
       <CourseLanding
         background={background}
         backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
@@ -39,8 +38,7 @@ export default function BL_Vuln() {
         onLike={() => console.log("Liked!")}
         onDislike={() => console.log("Disliked!")}
       />
-      {/* End Landing */}
-      {/* Start Course */}
+      
       <div className="Content">
         <div className="secure-container">
           <div className="content-row">

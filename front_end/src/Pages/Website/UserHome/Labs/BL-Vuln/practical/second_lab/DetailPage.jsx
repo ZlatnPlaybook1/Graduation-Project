@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
-// Inline Navigation component
 const Navigation = () => {
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -56,9 +55,10 @@ const DetailPage = () => {
   if (!product) return <h2>Loading...</h2>;
 
   return (
-    <div className="container mt-5">
+     <div className="Custom__body--bg">
       <Navigation />
-      <h2>{product.title}</h2>
+    <div className="container mt-5  min-vh-100">
+      <h2 className=" text-center mb-4 main-color fw-bold">{product.title}</h2>
       <img
         src={product.image}
         alt={product.title}
@@ -67,9 +67,15 @@ const DetailPage = () => {
       />
       <p>{product.description}</p>
       <h4>${product.price.toFixed(2)}</h4>
-      <Link to="/BL-Vuln/BL_Vuln_labs/second_lab" className="btn btn-primary">
+      <Link to="/BL-Vuln/BL_Vuln_labs/first_lab" className="btn go-to">
         Back to Shopping
       </Link>
+      </div>
+        <footer className="secondary-bg primary-text text-center py-3 mt-auto ">
+        <div className="container">
+          <p className="mb-0">© 2025 CyberLabs. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 };

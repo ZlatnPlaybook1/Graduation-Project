@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./ProductsPage.css";
 const Navigation = () => {
   const [loggedIn, setLoggedIn] = useState(false);
 
