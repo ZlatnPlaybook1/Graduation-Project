@@ -91,90 +91,100 @@ export default function Third_Lab() {
   };
 
   return (
-    <div className="container mt-4">
-      <div className="header text-center mb-4">
-        <h1 className="display-4">Money Transfer</h1>
-      </div>
+  <div className="Custom__body--bg p-3">
+  <div className="container my-5 secondary-bg p-4 rounded">
+    <div className="text-center mb-4">
+      <h1 className="display-4 main-color">Money Transfer</h1>
+    </div>
 
-      <div className="card shadow-sm mb-4">
-        <div className="card-body">
-          <h5 className="card-title">Account Information</h5>
-          {users.length > 0 ? (
-            <>
-              <p className="card-text">
-                Sender Name: <b>{users[0].name}</b>
-              </p>
-              <p className="card-text">
-                Balance: <b>{users[0].balance} $</b>
-              </p>
-            </>
-          ) : (
-            <p>Loading account information...</p>
-          )}
-        </div>
-      </div>
-
-      {message && (
-        <div
-          className={`alert ${
-            message.includes("success") ? "alert-success" : "alert-danger"
-          }`}
-          role="alert"
-        >
-          {message}
-        </div>
-      )}
-
-      <form onSubmit={handleTransfer} className="form-group">
-        <div className="form-group">
-          <label htmlFor="recipient_name">Recipient Name:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="recipient_name"
-            value={recipientName}
-            readOnly
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="transfer_amount">Transfer Amount:</label>
-          <input
-            type="number"
-            className="form-control"
-            id="transfer_amount"
-            value={transferAmount}
-            onChange={(e) => setTransferAmount(e.target.value)}
-            required
-            min="0"
-          />
-        </div>
-
-        <button type="submit" className="btn btn-primary mt-3">
-          Transfer
-        </button>
-      </form>
-
-      <div className="table-responsive mt-4">
-        <table className="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Balance</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user) => (
-              <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.balance} $</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className="card mb-4 secondary-bg primary-text" style={{boxShadow: "0 0 10px var(--glass-effect)"}}>
+      <div className="card-body">
+        <h5 className="card-title mb-1">Account Information</h5>
+        {users.length > 0 ? (
+          <>
+            <p className="card-text">
+              Sender Name: <strong>{users[0].name}</strong>
+            </p>
+            <p className="card-text">
+              Balance: <strong>{users[0].balance} $</strong>
+            </p>
+          </>
+        ) : (
+          <p>Loading account information...</p>
+        )}
       </div>
     </div>
+
+    {message && (
+      <div
+        className={`alert ${
+          message.includes("success") ? "alert-success" : "alert-danger"
+        }`}
+        role="alert"
+      >
+        {message}
+      </div>
+    )}
+
+    <div className="card mb-4 secondary-bg " style={{boxShadow: "0 0 10px var(--glass-effect)"}}>
+      <div className="card-body primary-text">
+        <form onSubmit={handleTransfer}>
+          <div className="mb-3">
+            <label htmlFor="recipient_name" className="form-label">
+              Recipient Name:
+            </label>
+            <input
+              type="text"
+              className="form-control focus-bg-transparent primary-text"
+              id="recipient_name"
+              value={recipientName}
+              readOnly
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="transfer_amount" className="form-label">
+              Transfer Amount:
+            </label>
+            <input
+              type="number"
+              className="form-control focus-bg-transparent"
+              id="transfer_amount"
+              value={transferAmount}
+              onChange={(e) => setTransferAmount(e.target.value)}
+              required
+              min="0"
+            />
+          </div>
+
+          <button type="submit" className="btn go-to my-3">
+            Transfer
+          </button>
+        </form>
+      </div>
+    </div>
+
+      <table className="table table-bordered table-striped text-center mx-auto">
+         <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody >
+          {users.map((user) => (
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>{user.name}</td>
+              <td>{user.balance} $</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+  </div>
+</div>
+
+
   );
 }
