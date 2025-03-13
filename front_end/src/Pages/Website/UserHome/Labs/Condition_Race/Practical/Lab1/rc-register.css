@@ -4,12 +4,12 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f0f2f5;
+  background-color: var(--primary-bg);
   padding: 20px;
 }
 
 .rc-content {
-  background-color: #ffffff;
+  background-color: var(--glass-effect);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -21,7 +21,7 @@
 .rc-title {
   font-size: 24px;
   font-weight: 600;
-  color: #333;
+  color: var(--main-color);
   text-align: center;
   margin-bottom: 20px;
 }
@@ -54,7 +54,7 @@
 .rc-form-group label {
   display: block;
   font-size: 14px;
-  color: #555;
+  color: var(--primary-text);
   margin-bottom: 8px;
 }
 
@@ -69,7 +69,7 @@
 }
 
 .rc-form-group input:focus {
-  border-color: #007bff;
+  border-color: var(--main-color);
   outline: none;
 }
 
@@ -77,8 +77,8 @@
 .rc-btn-primary {
   width: 100%;
   padding: 12px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--main-color2);
+  color: var(--primary-text);
   border: none;
   border-radius: 6px;
   font-size: 16px;
@@ -88,7 +88,7 @@
 }
 
 .rc-btn-primary:hover {
-  background-color: #0056b3;
+  background-color: var(--main-color3);
 }
 
 .rc-btn-secondary {
