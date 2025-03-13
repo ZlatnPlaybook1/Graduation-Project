@@ -10,12 +10,12 @@ export default function Corrupted() {
       }
       labInfo={`We found a strange string of characters while scanning through
                 encrypted files, but they appear to be corrupted.<br></br>
-                <br></br>
-                <span>
+                
+                
                   <strong>The text reads : </strong>
-                  R[corrupted]hZ3tjeWJlcl9sYWJfY29ycnVwdGVkX2Jhc2U2NF9yZXZlYWx9
-                </span>
-                <br></br> <br></br>
+                  <code class="content__code">R[corrupted]hZ3tjeWJlcl9sYWJfY29ycnVwdGVkX2Jhc2U2NF9yZXZlYWx9
+                </code>
+                <br></br> 
                 Can you make sense of this and uncover what it really means?`}
       subject={"CryptoGraphy"}
       title={"Corrupted"}
