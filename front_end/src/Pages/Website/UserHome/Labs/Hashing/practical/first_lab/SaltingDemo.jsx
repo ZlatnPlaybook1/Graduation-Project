@@ -175,8 +175,8 @@ const SaltingDemo = () => {
             <div className="form-floating mb-3">
               <input
                 type="text"
-                className="form-control"
-                placeholder="Enter text"
+                className="form-control focus-bg-transparent"
+                placeholder=""
                 value={input}
                 onChange={handleInputChange}
                 id="floatingInput"
@@ -186,8 +186,8 @@ const SaltingDemo = () => {
             <div className="form-floating mb-3">
               <input
                 type="text"
-                className="form-control"
-                placeholder="Enter salt"
+                className="form-control focus-bg-transparent"
+                placeholder=""
                 value={salt}
                 onChange={handleSaltChange}
                 id="floatingSalt"

@@ -11,6 +11,7 @@ const PaginatedCourses = ({ filteredCourses }) => {
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
+    window.scrollTo({ top:300 ,behavior: "smooth" });
   };
 
   // Toggle favorite status for a course and update in DB.
@@ -96,7 +97,8 @@ const PaginatedCourses = ({ filteredCourses }) => {
   );
 
     return (
-    <>
+      <>
+        
       {displayedCourses.map((course, index) => (
         <div
           key={course.id}

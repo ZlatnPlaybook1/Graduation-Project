@@ -3,7 +3,7 @@ import MCQData from "./MCQData";
 export default function FirstLab() {
   return (
     <>
-      <MCQQuiz questionsData={MCQData} />
+      <MCQQuiz questionsData={MCQData.questions} />
     </>
   );
 }

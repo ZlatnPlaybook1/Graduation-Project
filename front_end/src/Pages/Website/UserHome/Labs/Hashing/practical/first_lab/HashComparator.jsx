@@ -67,13 +67,13 @@ const HashComparator = () => {
               values are identical. Useful for:
             </p>
             <ul className="list-group list-group-flush mb-4">
-              <li className="mb-5 text-left">
+              <li className="list-group-item secondary-bg primary-text bb-1">
                 ✔️ Checking data integrity
               </li>
-              <li className="mb-5 text-left">
+              <li className="list-group-item secondary-bg primary-text bb-1">
                 ✔️ Verifying file authenticity
               </li>
-              <li className="mb-5 text-left">
+              <li className="list-group-item secondary-bg primary-text bb-1">
                 ✔️ Secure password comparisons
               </li>
             </ul>
@@ -227,8 +227,8 @@ const HashComparator = () => {
                   <input
                     id="floatingHash1"
                     type="text"
-                    className="form-control"
-                    placeholder="Enter first hash"
+                    className="form-control focus-bg-transparent"
+                    placeholder=""
                     value={hash1}
                     onChange={(e) => setHash1(e.target.value)}
                   />
@@ -240,8 +240,8 @@ const HashComparator = () => {
                   <input
                     id="floatingHash2"
                     type="text"
-                    className="form-control"
-                    placeholder="Enter second hash"
+                    className="form-control focus-bg-transparent"
+                    placeholder=""
                     value={hash2}
                     onChange={(e) => setHash2(e.target.value)}
                   />

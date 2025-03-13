@@ -60,11 +60,11 @@ export default function DashboardAdmin() {
   }
 
   return (
-    <>
+    <div className="Custom__body--bg">
       <GOBack />
       <ShowHint hintText={hintMessage} />
       <div className="wallpaper-dashboard">
-        <h2 className="wallpaper-title">Wallpaper Details</h2>
+        <h2 className="main-color text-center my-5">Wallpaper Details</h2>
         {wallpapers.length > 0 ? (
           wallpapers.map((wallpaper) => (
             <div className="wallpaper-item" key={wallpaper.id}>
@@ -90,6 +90,6 @@ export default function DashboardAdmin() {
           </p>
         )}
       </div>
-    </>
+    </div>
   );
 }

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./Second_Lab.css";
+import { useNavigate,Link } from "react-router-dom";
 import GOBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 
@@ -20,7 +19,6 @@ export default function Second_Lab() {
     }
 
     try {
-      // Request to the API
       const response = await fetch("http://127.0.0.1:8080/api/ApiHackinglab2", {
         method: "POST",
         headers: {
@@ -40,7 +38,6 @@ export default function Second_Lab() {
 
         const userId = Number(data.data.id);
 
-        // Navigate based on user ID
         if (userId === 1) {
           navigate(
             `/Api_Hacking/Api_Hacking_labs/lab2/DashboardAdmin/${userId}`
@@ -58,67 +55,69 @@ export default function Second_Lab() {
       console.error("Error:", error);
     }
   };
-
+const spanCount = 400;
   return (
     <>
       <GOBack />
       <ShowHint hintText={hintMessage} />
-      <div className="lab1-login-container">
-        <div className="lab1-login-card">
-          <h3 className="lab1-login-title">Login</h3>
-
-          <form onSubmit={handleSubmit} className="lab1-login-form">
-            <div className="lab1-input-section">
-              <label htmlFor="username" className="lab1-input-label">
-                Username
-              </label>
-              <input
-                type="text"
-                className="lab1-input-field lab1-username-input"
-                id="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="lab1-input-section">
-              <label htmlFor="password" className="lab1-input-label">
-                Password
-              </label>
-              <input
-                type="password"
-                className="lab1-input-field lab1-password-input"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-              <p className="lab1-default-text">Username: user</p>
-              <p className="lab1-default-text">Password: user</p>
-            </div>
-
-            <button type="submit" className="lab1-submit-btn">
-              Submit
-            </button>
-          </form>
-
-          {message && (
-            <p
-              className={`lab1-response-message ${
-                message.includes("successful") ? "success" : "error"
-              }`}
+ <div
+              style={{
+                backgroundColor: "#000",
+                position: "relative",
+                width: "100vw",
+                height: "100vh",
+                overflow: "hidden",
+              }}
             >
-              {message}
-            </p>
+              <main className="hacker-login">
+                {Array.from({ length: spanCount }).map((_, index) => (
+                  <span key={index} className="hackerLogin-gridSpan"></span>
+                ))}
+      
+                <div className="hackerLogin-signin">
+                  <div className="hackerLogin-content">
+                    <h2>Sign In</h2>
+                    <form onSubmit={handleSubmit} className="hacker-form">
+                      <div className="hackerLogin-inputBox">
+                        <input
+                          type="text"
+                          required
+                          value={username}
+                          onChange={(e) => setUsername(e.target.value)}
+                        />
+                        <i>UserName</i>
+                      </div>
+                      <div className="hackerLogin-inputBox">
+                        <input
+                          type="password"
+                          required
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <i>Password</i>
+                      </div>
+                      <div className="hackerLogin-links">
+                        <Link to="/forgot">Forgot Password?</Link>
+                  <Link to="/signup">Sign Up</Link>
+                  
+                      </div>
+                <div className="primary-bg p-2 mx-0 my-0">
+                  <p className="secondary-text my-1">Username:  <strong className="main-color">user</strong></p>
+                  <p className="secondary-text my-1">Password:  <strong className="main-color">user</strong></p>
+                </div>
+                      <div className="hackerLogin-inputBox">
+                        <input type="submit" value="Login" />
+                      </div>
+              </form>
+               {message && (
+            <p className={`alert text-center mt-3 fade show ${message.includes("successful") ? "alert-success" : "alert-danger"}`}>
+  {message}
+</p>
           )}
-        </div>
-      </div>
-
-      {/* Hidden div to inform about the data source */}
-      <div className="hidden-data-source" style={{ display: "none" }}>
-        <p> Read users json </p>
-      </div>
+                  </div>
+                </div>
+              </main>
+            </div>
     </>
   );
 }

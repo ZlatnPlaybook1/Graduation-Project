@@ -1,8 +1,7 @@
 const courseData = [
   {
     id: 1,
-    // category: "Career & Industry",
-    category: "My Courses",
+    category: "Career & Industry",
     title: "Careers in Cyber",
     description:
       "Discover diverse cybersecurity careers, essential skills, and industry opportunities today.",
@@ -16,6 +15,8 @@ const courseData = [
     image: require("../../assets/img/CareersInCyber/landing.jpg"),
     state: "published",
     link: "/CareersInCyber",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 2,
@@ -33,6 +34,8 @@ const courseData = [
     image: require("../../assets/img/Burp_Suit/BurpSuit_Content.png"),
     state: "not-published",
     link: "/Burp_Suit",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 3,
@@ -50,11 +53,12 @@ const courseData = [
     image: require("../../assets/img/cookies/Cookies_transparent.png"),
     state: "published",
     link: "/cookies",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 4,
-    // category: "Vulnerabilities",
-    category: "My Courses",
+    category: "Vulnerabilities",
     title: "SQL Injection",
     description:
       "Identify SQL injection flaws, extract hidden data, and secure applications.",
@@ -68,6 +72,8 @@ const courseData = [
     image: require("../../assets/img/SQL_Injection/landing3.png"),
     state: "semi-published",
     link: "/sql_Injection",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 5,
@@ -85,6 +91,8 @@ const courseData = [
     image: require("../../assets/img/Unrestricted File Upload/card_image.png"),
     state: "published",
     link: "/UnrestrictedFileUpload",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 6,
@@ -102,11 +110,12 @@ const courseData = [
     image: require("../../assets/img/linux/card_image.png"),
     state: "published",
     link: "/linux",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 7,
-    // category: "Vulnerabilities",
-    category: "My Courses",
+    category: "Vulnerabilities",
     title: "Access Control Vulnerabilities",
     description:
       "Learn to detect and mitigate access control vulnerabilities in applications.",
@@ -120,6 +129,8 @@ const courseData = [
     image: require("../../assets/img/ACV/Landing.jpg"),
     state: "semi-published",
     link: "/AC_Vuln",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 8,
@@ -137,6 +148,8 @@ const courseData = [
     image: require("../../assets/img/Broken Authentication/card_image.png"),
     state: "published",
     link: "/broken-auth",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 9,
@@ -149,11 +162,12 @@ const courseData = [
     image: require("../../assets/img/bash/bash_course_logo.png"),
     state: "published",
     link: "/bash-scripting",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 10,
-    // category: "Vulnerabilities",
-    category: "My Courses",
+    category: "Vulnerabilities",
     title: "Business Logic Vulnerabilities",
     description:
       "Analyze business logic flaws, exploitation methods, and strategies for mitigation.",
@@ -167,6 +181,8 @@ const courseData = [
     image: require("../../assets/img/BLV/Landing.jpg"),
     state: "semi-published",
     link: "/BL_Vuln",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 11,
@@ -185,6 +201,8 @@ const courseData = [
     image: require("../../assets/img/IDOR/Insecure_Direct_Object_Reference.png"),
     state: "published",
     link: "/Insecure_Direct_Object_Reference(IDOR)",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 12,
@@ -202,11 +220,12 @@ const courseData = [
     image: require("../../assets/img/Obfuscation/card_image.png"),
     state: "published",
     link: "/obfuscation",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 13,
-    // category: "Vulnerabilities",
-    category: "My Courses",
+    category: "Vulnerabilities",
     title: "Cross Site Request Forgery (CSRF)",
     description:
       "Understand CSRF attack vectors, mitigation techniques, and prevention best practices.",
@@ -220,6 +239,8 @@ const courseData = [
     image: require("../../assets/img/CSRF/landing.jpg"),
     state: "semi-published",
     link: "/CSRF",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 14,
@@ -237,6 +258,8 @@ const courseData = [
     image: require("../../assets/img/Path__Traversal/Photo_Content_Path_Traversal.png"),
     state: "published",
     link: "/Path__Traversal",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 15,
@@ -254,11 +277,12 @@ const courseData = [
     image: require("../../assets/img/Cryptography/card_image.png"),
     state: "published",
     link: "/cryptography",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 16,
-    // category: "Fundamentals",
-    category: "My Courses",
+    category: "Fundamentals",
     title: "Regular expressions",
     description:
       "Craft effective regular expressions for text matching, searching, and parsing.",
@@ -272,6 +296,8 @@ const courseData = [
     image: require("../../assets/img/Regex/Landing.jpg"),
     state: "semi-published",
     link: "/Regex",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 17,
@@ -289,6 +315,8 @@ const courseData = [
     image: require("../../assets/img/Cross_Site_Scripting/xss.jpeg.jpg"),
     state: "published",
     link: "/xss",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 18,
@@ -306,11 +334,12 @@ const courseData = [
     image: require("../../assets/img/wireshark/card_image.png"),
     state: "published",
     link: "/wireshark",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 19,
-    // category: "Fundamentals",
-    category: "My Courses",
+    category: "Fundamentals",
     title: "Hashing",
     description:
       "Understand hashing concepts, algorithms, security implications, and best practices thoroughly.",
@@ -324,6 +353,8 @@ const courseData = [
     image: require("../../assets/img/Hashing/landing.jpg"),
     state: "published",
     link: "/Hashing",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 20,
@@ -341,6 +372,8 @@ const courseData = [
     image: require("../../assets/img/Command Injection/Content_Command_Injection.jpg"),
     state: "published",
     link: "/Command_Injection",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 21,
@@ -358,11 +391,12 @@ const courseData = [
     image: require("../../assets/img/File Inclusion/card_image.png"),
     state: "published",
     link: "/fileinclusion",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 22,
-    // category: "Fundamentals",
-    category: "My Courses",
+    category: "Fundamentals",
     title: "Digital Forensics",
     description:
       "Investigate digital evidence using forensic techniques for accurate cyber investigations.",
@@ -376,6 +410,8 @@ const courseData = [
     image: require("../../assets/img/AudFor/landing.png"),
     state: "semi-published",
     link: "/Digital_Forensics",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 23,
@@ -393,6 +429,8 @@ const courseData = [
     image: require("../../assets/img/Insecure_Deserialization/Content_Insecure_Photo.jpg"),
     state: "published",
     link: "/Insecure_Deserialization",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 24,
@@ -410,11 +448,12 @@ const courseData = [
     image: require("../../assets/img/Server Side Template Injection/card_image.png"),
     state: "published",
     link: "/SSTI",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 25,
-    // category: "Tools & Techniques",
-    category: "My Courses",
+    category: "Tools & Techniques",
     title: "API Hacking & Testing",
     description:
       "Master API hacking techniques, testing methodologies, and security assessment procedures.",
@@ -428,6 +467,9 @@ const courseData = [
     image: require("../../assets/img/Api_Hacking/landing.png"),
     state: "pending",
     link: "/Api_Hacking",
+    
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 26,
@@ -440,6 +482,8 @@ const courseData = [
     image: require("../../assets/img/Condition_Race/Race Condition.png"),
     state: "pending",
     link: "/Race_Condition",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 27,
@@ -457,11 +501,12 @@ const courseData = [
     image: require("../../assets/img/Captcha Bypass/card_image.png"),
     state: "published",
     link: "/captchabypass",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 28,
-    // category: "Vulnerabilities",
-    category: "My Courses",
+    category: "Vulnerabilities",
     title: "click jacking",
     description:
       "Investigate click jacking strategies, analyze attack mechanisms, and implement countermeasures.",
@@ -475,6 +520,8 @@ const courseData = [
     image: require("../../assets/img/Click_Jacking/landing.jpg"),
     state: "semi-published",
     link: "/Click_Jacking",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 29,
@@ -487,6 +534,8 @@ const courseData = [
     image: require("../../assets/img/Server Side Template Injection/Untitled.png"),
     state: "semi-published",
     link: "/ssrf",
+    favorite: false,
+    myCourses: false,
   },
   {
     id: 30,
@@ -504,6 +553,8 @@ const courseData = [
     image: require("../../assets/img/JWT attacks/card_image.png"),
     state: "published",
     link: "/jwtattacks",
+    favorite: false,
+    myCourses: false,
   },
 ];
 

@@ -2,6 +2,9 @@
   "scripts": {
     "start": "nodemon src/index.ts"
   },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "dependencies": {
     "@prisma/adapter-pg": "^5.18.0",
     "@types/axios": "^0.9.36",
