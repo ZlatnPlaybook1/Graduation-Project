@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ViewRegisters.css";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function ViewRegisters() {
   const [data, setData] = useState([]);
@@ -66,65 +67,60 @@ export default function ViewRegisters() {
     setDeleteId(null);
   };
 
-  const handleBack = () => {
-    navigate("/Race_Condition/Race_Condition_Labs/Lab1");
-  };
-
   return (
-    <div className="view-registers-container">
-      <h1 className="view-registers-title">Registered Users</h1>
+    <>
+      <ThemeSwitcher />
+      <div className="view-registers-container">
+        <h1 className="view-registers-title">Registered Users</h1>
 
-      {message.text && (
-        <div className={`view-registers-message ${message.type}`}>
-          {message.text}
-        </div>
-      )}
+        {message.text && (
+          <div className={`view-registers-message ${message.type}`}>
+            {message.text}
+          </div>
+        )}
 
-      <button className="view-registers-back-button" onClick={handleBack}>
-        Back
-      </button>
-
-      <table className="view-registers-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Email</th>
-            <th>Tel</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item) => (
-            <tr key={item.id}>
-              <td>{item.name}</td>
-              <td>{item.surname}</td>
-              <td>{item.email}</td>
-              <td>{item.tel}</td>
-              <td>
-                <button
-                  className="view-registers-delete-button"
-                  onClick={() => handleDeleteClick(item.id)}
-                >
-                  Delete
-                </button>
-              </td>
+        <table className="view-registers-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Surname</th>
+              <th>Email</th>
+              <th>Tel</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {data.map((item) => (
+              <tr key={item.id}>
+                <td>{item.name}</td>
+                <td>{item.surname}</td>
+                <td>{item.email}</td>
+                <td>{item.tel}</td>
+                <td>
+                  <button
+                    className="view-registers-delete-button"
+                    onClick={() => handleDeleteClick(item.id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
-      {deleteId !== null && (
-        <div className="delete-confirmation">
-          <p>Are you sure you want to delete this register?</p>
-          <button className="confirm-button" onClick={handleConfirmDelete}>
-            Yes
-          </button>
-          <button className="cancel-button" onClick={handleCancelDelete}>
-            No
-          </button>
-        </div>
-      )}
-    </div>
+        {deleteId !== null && (
+          <div className="delete-confirmation">
+            <p>Are you sure you want to delete this register?</p>
+            <button className="confirm-button" onClick={handleConfirmDelete}>
+              Yes
+            </button>
+            <button className="cancel-button" onClick={handleCancelDelete}>
+              No
+            </button>
+          </div>
+        )}
+      </div>
+    </>
   );
 }

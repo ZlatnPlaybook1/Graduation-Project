@@ -1,10 +1,8 @@
 /* General Styles */
 .view-registers-container {
-  max-width: 900px;
   margin: auto;
   padding: 30px;
-  background: white;
-  border-radius: 12px;
+  background: var(--primary-bg);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -15,13 +13,13 @@
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #333;
+  color: var(--main-color);
 }
 
 /* Back Button */
 .view-registers-back-button {
-  background: linear-gradient(45deg, #007bff, #0056b3);
-  color: white;
+  background: linear-gradient(45deg, var(--main-color2), var(--main-color3));
+  color: var(--primary-text);
   border: none;
   padding: 12px 20px;
   cursor: pointer;
@@ -31,7 +29,7 @@
 }
 
 .view-registers-back-button:hover {
-  background: linear-gradient(45deg, #0056b3, #003f80);
+  background: linear-gradient(45deg, var(--main-color4), var(--main-color));
 }
 
 /* Table Styling */
@@ -45,7 +43,7 @@
 }
 
 .view-registers-table th {
-  background: #007bff;
+  background: var(--main-color3);
   color: white;
   padding: 12px;
   text-transform: uppercase;

@@ -3,6 +3,7 @@ import axios from "axios";
 import "./rc-register.css";
 import GoBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function RC_In_Register() {
   const hintMessage = `Use Repeater to send multiple account creation requests simultaneously.`;
@@ -44,6 +45,7 @@ export default function RC_In_Register() {
     <>
       <GoBack />
       <ShowHint hintText={hintMessage} />
+      <ThemeSwitcher />
       <div className="rc-container">
         <div className="rc-content">
           {message && (
