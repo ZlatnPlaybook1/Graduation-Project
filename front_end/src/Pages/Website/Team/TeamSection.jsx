@@ -3,7 +3,7 @@ import "./team.css";
 import Aos from "aos";
 import image1 from "../assets/img/team-img/member1.jpg";
 import imageButen from "../assets/img/team-img/Buten.jpg";
-import Mo from "../assets/img/team-img/carousel_avater5.png";
+import imageMo from "../assets/img/team-img/member1.png";
 const teamMembers = [
   {
     id: 1,
@@ -24,9 +24,9 @@ const teamMembers = [
     department: "Frontend",
     image: imageButen,
     links: {
-      fb: "https://www.facebook.com/",
-      twit: "https://www.twitter.com/",
-      linkedin: "https://www.linkedin.com/",
+      fb: "https://www.facebook.com/profile.php?id=100004491948645",
+      twit: "https://x.com/AhmedSh33249042",
+      linkedin: "https://www.linkedin.com/in/ahmed-sherif-096804264/",
     },
   },
   {
@@ -46,7 +46,7 @@ const teamMembers = [
     name: "M'omen Mustafa",
     role: "Backend Developer",
     department: "Backend",
-    image: Mo,
+    image: imageMo,
     links: {
       fb: "https://www.facebook.com/",
       twit: "https://www.twitter.com/",
