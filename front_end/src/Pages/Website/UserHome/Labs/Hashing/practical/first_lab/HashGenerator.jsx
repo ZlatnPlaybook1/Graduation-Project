@@ -164,16 +164,16 @@ const HashGenerator = () => {
                   Input
                   <FontAwesomeIcon icon={faSyncAlt} className="ms-2" />
                 </h3>
-                <div className="form-floating mb-3">
+                <div className="form-floating mb-3 ">
                   <input
                     type="text"
-                    className="form-control"
-                    placeholder="Enter text to hash"
+                    className="form-control focus-bg-transparent"
+                    placeholder=""
                     value={input}
                     onChange={handleInputChange}
                     id="floatingInput"
                   />
-                  <label htmlFor="floatingInput">Enter Text</label>
+                  <label htmlFor="floatingInput" >Enter Text</label>
                 </div>
               </div>
 

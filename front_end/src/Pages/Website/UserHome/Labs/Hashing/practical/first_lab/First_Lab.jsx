@@ -16,6 +16,40 @@ const HashingLab = () => {
       </li>
     </ul>
   `;
+  const Tools = [
+    {
+      title: "Hash Generator",
+      brief:
+        "Generate MD5, SHA-1, and SHA-256 hashes for any text input.",
+      link: "/Hashing/Hashing_labs/lab1/HashGenerator",
+      image: GeneratorImage,
+      difficulty: "Easy",
+    },
+    {
+      title: "Hash Comparator",
+      brief:
+        "Compare two hashes to see if they match. Useful for verifying data integrity.",
+      link: "/Hashing/Hashing_labs/lab1/HashComparator",
+      image: ComparatorImage,
+      difficulty: "Easy",
+    },
+    {
+      title: "Hash Cracker",
+      brief:
+        "Attempt to crack common password hashes using a dictionary attack (for educational purposes only).",
+      link: "/Hashing/Hashing_labs/lab1/HashCracker",
+      image: CrackerImage,
+      difficulty: "Easy",
+    },
+    {
+      title: "Salting Demo",
+      brief:
+        "See how salting adds security to password hashing by adding a random string before hashing.",
+      link: "/Hashing/Hashing_labs/lab1/SaltingDemo",
+      image: SaltingImage,
+      difficulty: "Easy",
+    },
+  ]
   return (
     <>
       <GoBackBtn />
@@ -44,42 +78,16 @@ const HashingLab = () => {
           </div>
 
           <div className="row">
-            <Card
-              link={"/Hashing/Hashing_labs/lab1/HashGenerator"}
-              image={GeneratorImage}
-              title={"Hash Generator"}
-              brief={
-                "Generate MD5, SHA-1, and SHA-256 hashes for any text input."
-              }
-              difficulty={"Easy"}
-            />
-            <Card
-              link={"/Hashing/Hashing_labs/lab1/HashComparator"}
-              image={ComparatorImage}
-              title={"Hash Comparator"}
-              brief={
-                "Compare two hashes to see if they match. Useful for verifying data integrity."
-              }
-              difficulty={"Easy"}
-            />
-            <Card
-              link={"/Hashing/Hashing_labs/lab1/HashCracker"}
-              image={CrackerImage}
-              title={"Hash Cracker"}
-              brief={
-                "Attempt to crack common password hashes using a dictionary attack (for educational purposes only)."
-              }
-              difficulty={"Easy"}
-            />
-            <Card
-              link={"/Hashing/Hashing_labs/lab1/SaltingDemo"}
-              image={SaltingImage}
-              title={"Salting Demo"}
-              brief={
-                "See how salting adds security to password hashing by adding a random string before hashing."
-              }
-              difficulty={"Easy"}
-            />
+            {Tools.map((tool, index) => (
+              <Card
+                key={index}
+                title={tool.title}
+                brief={tool.brief}
+                link={tool.link}
+                image={tool.image}
+                difficulty={tool.difficulty}
+              />
+            ))}
           </div>
         </div>
       </div>

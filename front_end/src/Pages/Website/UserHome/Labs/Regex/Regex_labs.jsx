@@ -9,45 +9,51 @@ import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function Regex_labs() {
+  const Labs = [
+    {
+      title: "MCQ Question Review",
+      link: "/Regex/Regex_labs/MCQReview",
+      image: labImg,
+      brief: [
+        "These are multiple choice questions that are designed to be a review for the exam.",
+      ],
+      difficulty: "Easy",
+    },
+    {
+      title: "Complete Question Review",
+      link: "/Regex/Regex_labs/CompleteReview",
+      image: labImg,
+      brief: [
+        "These are Complete questions that are designed to be a review for the exam.",
+      ],
+      difficulty: "Easy",
+    },
+  ];
   return (
     <>
       <Banner />
       <Header />
       <ThemeSwitcher />
-      {/* Start Landing */}
       <LandingPractice />
-      {/* End Landing */}
-
-      {/* Start Course */}
       <div className="course">
         <div className="container">
           <PracticeTitle title={"Regular Expressions"} />
           <div className="row">
-            {/* Lab1 */}
-            <Card
-              link={"/Regex/Regex_labs/MCQReview"}
-              image={labImg}
-              title={"MCQ Question Review"}
-              brief={
-                "These are multiple choice questions that are designed to be a review for the exam."
-              }
-              difficulty={"Easy"}
-            />
-
-            {/* Lab2 */}
-            <Card
-              link={"/Regex/Regex_labs/CompleteReview"}
-              image={labImg}
-              title={"Complete Question Review"}
-              brief={
-                "These are Complete questions that are designed to be a review for the exam."
-              }
-              difficulty={"Easy"}
-            />
+            {Labs.map((lab, index) => {
+              return (
+                <Card
+                  title={lab.title}
+                  link={lab.link}
+                  image={lab.image}
+                  brief={lab.brief}
+                  difficulty={lab.difficulty}
+                  key={index}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
-      {/* End Course */}
       <Go2TopBtn />
       <Footer />
     </>

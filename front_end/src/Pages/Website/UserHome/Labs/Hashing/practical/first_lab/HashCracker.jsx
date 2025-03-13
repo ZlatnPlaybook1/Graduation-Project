@@ -225,9 +225,9 @@ const HashCracker = () => {
             <div className="form-floating mb-3">
               <input
                 type="text"
-                className="form-control"
+                className="form-control focus-bg-transparent"
                 id="floatingHash"
-                placeholder="Enter hash to crack"
+                placeholder=""
                 value={hash}
                 onChange={(e) => setHash(e.target.value)}
               />
@@ -331,8 +331,8 @@ const HashCracker = () => {
                     <div className="form-floating mb-3 input-group">
                       <input
                         type="text"
-                        className="form-control w-75"
-                        placeholder="Add new entry"
+                        className="form-control focus-bg-transparent w-75"
+                        placeholder=""
                         value={newEntry}
                         onChange={(e) => setNewEntry(e.target.value)}
                       id="floatingInput"

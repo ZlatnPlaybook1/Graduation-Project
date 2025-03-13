@@ -5,7 +5,6 @@ import axios from "axios";
 // External API URL for fetching product details
 const PRODUCT_API_URL = "https://fakestoreapi.com/products";
 
-// Define an interface for the product from the external API
 interface Product {
   id: number;
   title: string;

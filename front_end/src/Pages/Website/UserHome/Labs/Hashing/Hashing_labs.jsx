@@ -10,41 +10,48 @@ import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
 import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function Hashing_labs() {
+  const Labs = [
+    {
+      title: "Hashing Tools",
+      link: "/Hashing/Hashing_labs/lab1",
+      image: labImg,
+      brief: [
+        "Generate, compare, and crack hashes, and see how salting adds security to password hashing.",
+      ],
+      difficulty: "Easy",
+    },
+    {
+      title: "Hashing Task",
+      link: "/Hashing/Hashing_labs/lab2",
+      image: labImg,
+      brief: [
+        "This task helps you understand: How hashing works ,Differences between MD5, SHA-1, and SHA-256,and other.",
+      ],
+      difficulty: "Easy",
+    },
+  ];
   return (
     <>
       <Banner />
       <Header />
       <ThemeSwitcher />
-      {/* Start Landing */}
       <LandingPractice />
-      {/* End Landing */}
-
-      {/* Start Course */}
       <div className="course">
         <div className="container">
           <PracticeTitle title={"Hashing"} />
           <div className="row">
-            {/* lab1 */}
-            <Card
-              link={"/Hashing/Hashing_labs/lab1"}
-              image={labImg}
-              title={"Hashing Tools"}
-              brief={
-                "Generate, compare, and crack hashes, and see how salting adds security to password hashing."
-              }
-              difficulty={"Easy"}
-            />
-            {/* lab2 */}
-            <Card
-              link={"/Hashing/Hashing_labs/lab2"}
-              image={labImg}
-              title={"Hashing Task"}
-              brief={
-                "This task helps you understand: How hashing works ,Differences between MD5, SHA-1, and SHA-256,and other."
-              }
-              difficulty={"Easy"}
-            />
-            {/* Lab3 */}
+            {Labs.map((lab, index) => {
+              return (
+                <Card
+                  title={lab.title}
+                  link={lab.link}
+                  image={lab.image}
+                  brief={lab.brief}
+                  difficulty={lab.difficulty}
+                  key={index}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

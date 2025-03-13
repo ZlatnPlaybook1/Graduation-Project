@@ -1,0 +1,240 @@
+/* Smooth background animation (optional) */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container styling */
+.pro-container {
+  padding: 1rem;
+  animation: gradientAnimation 15s ease infinite;
+  display: flex;
+  gap: 1rem;
+  border-radius: 8px;
+}
+
+/* Sidebar */
+.pro-sidebar {
+  flex: 0 0 200px;
+  padding: 1rem;
+  border-radius: 8px;
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+.pro-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pro-sidebar li {
+  margin-bottom: 0.75rem;
+}
+.pro-sidebar a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.pro-sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Main content area */
+.pro-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.pro-header-section {
+  margin-bottom: 1.5rem;
+}
+.pro-header {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.3rem;
+  margin-bottom: 0.5rem;
+}
+.pro-subheader {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Card styling */
+.pro-card {
+  border: none;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pro-card-body {
+  padding: 0;
+}
+.pro-card-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Accordion */
+.pro-accordion-button {
+  width: 100%;
+  text-align: left;
+  border: none;
+  padding: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+}
+.pro-accordion-button:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+.pro-accordion-collapse {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.pro-accordion-body {
+  padding: 1rem 0;
+}
+
+/* Inputs & Buttons */
+.pro-upload {
+  margin-bottom: 1.5rem;
+}
+.pro-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.pro-input {
+  width: 100%;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+.pro-input:focus {
+  outline: none;
+  border-color: var(--main-color);
+}
+.focus-bg-transparent:focus {
+  background-color: transparent !important;
+}
+.pro-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.pro-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Score & Progress */
+.pro-score {
+  margin-top: 1rem;
+}
+.pro-alert {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+.pro-alert-success {
+  background-color: rgba(40,167,69,0.2);
+  color: #28a745;
+}
+.pro-progress {
+  background: rgba(255,255,255,0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  height: 20px;
+}
+.pro-progress-bar {
+  height: 100%;
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+  transition: width 0.5s ease;
+  background: #28a745;
+}
+
+/* Additional Info / Insights */
+.pro-info-header {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.pro-info-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.pro-info-card {
+  flex: 1 1 30%;
+  min-width: 250px;
+  transition: transform 0.3s ease;
+}
+.pro-info-card:hover {
+  transform: translateY(-5px);
+}
+.pro-info-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.pro-info-text {
+  font-size: 0.9rem;
+}
+
+/* Tools images */
+.tool-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Code blocks */
+.pro-code {
+  background: rgba(255,255,255,0.05);
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+/* Modal */
+.pro-modal-content {
+  border-radius: 8px;
+}
+.pro-modal-body {
+  padding: 1rem;
+}
+.pro-modal-subtitle {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.pro-instruction-list {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.pro-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.9rem;
+  text-align: center;
+}

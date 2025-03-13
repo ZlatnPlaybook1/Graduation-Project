@@ -11,7 +11,6 @@ export default function Dashboard1() {
   const [loading, setLoading] = useState(true);
   const hintMessage = `<p>Add Something</p>`;
 
-  // Fetch wallpapers for a specific user
   useEffect(() => {
     const fetchWallpapersByUserId = async () => {
       try {
@@ -35,7 +34,6 @@ export default function Dashboard1() {
     }
   }, [userId]);
 
-  // Delete a specific wallpaper
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
@@ -60,11 +58,11 @@ export default function Dashboard1() {
   }
 
   return (
-    <>
+    <div className="Custom__body--bg">
       <GOBack />
       <ShowHint hintText={hintMessage} />
       <div className="wallpaper-dashboard">
-        <h2 className="wallpaper-title">Wallpaper Details</h2>
+        <h2 className="main-color text-center my-5">Wallpaper Details</h2>
         {wallpapers.length > 0 ? (
           wallpapers.map((wallpaper) => (
             <div className="wallpaper-item" key={wallpaper.id}>
@@ -90,6 +88,6 @@ export default function Dashboard1() {
           </p>
         )}
       </div>
-    </>
+    </div>
   );
 }

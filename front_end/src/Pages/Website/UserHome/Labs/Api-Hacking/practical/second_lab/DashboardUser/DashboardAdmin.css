@@ -2,17 +2,12 @@
 .wallpaper-dashboard {
   padding: 2rem;
   max-width: 1200px;
+  background-color: var(--secondary-bg);
   margin: 0 auto;
   margin-top: 4rem;
 }
 
-.wallpaper-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #2c3e50;
-}
+
 
 /* Wallpapers Grid */
 .wallpaper-dashboard {
@@ -23,16 +18,16 @@
 
 /* Wallpaper Item */
 .wallpaper-item {
-  background: #ffffff;
+  background: var(--primary-bg);
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--glass-effect);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .wallpaper-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px var(--glass-effect);
 }
 
 /* Wallpaper Thumbnail */
@@ -46,7 +41,7 @@
 
 .wallpaper-thumbnail:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px var(--glass-effect);
   opacity: 0.95;
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link  } from "react-router-dom";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -20,32 +20,58 @@ function Login() {
       alert("Login failed");
     }
   };
-
+  const spanCount = 400;
   return (
-    <div>
-      <h1>Login lab1</h1>
-      <form onSubmit={handleLogin}>
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Username"
-          required
-        />
-        <br />
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          required
-        />
-        <br />
-        <button type="submit">Login</button>
-      </form>
-    </div>
+    <>
+        <div
+              style={{
+                backgroundColor: "#000",
+                position: "relative",
+                width: "100vw",
+                height: "100vh",
+                overflow: "hidden",
+              }}
+            >
+              <main className="hacker-login">
+                {Array.from({ length: spanCount }).map((_, index) => (
+                  <span key={index} className="hackerLogin-gridSpan"></span>
+                ))}
+      
+                <div className="hackerLogin-signin">
+                  <div className="hackerLogin-content">
+                    <h2>Sign In</h2>
+                    <form onSubmit={handleLogin} className="hacker-form">
+                      <div className="hackerLogin-inputBox">
+                        <input
+                          type="text"
+                          required
+                          value={username}
+                          onChange={(e) => setUsername(e.target.value)}
+                        />
+                        <i>UserName</i>
+                      </div>
+                      <div className="hackerLogin-inputBox">
+                        <input
+                          type="password"
+                          required
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <i>Password</i>
+                      </div>
+                      <div className="hackerLogin-links">
+                        <Link to="/forgot">Forgot Password?</Link>
+                        <Link to="/signup">Sign Up</Link>
+                      </div>
+                      <div className="hackerLogin-inputBox">
+                        <input type="submit" value="Login" />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </main>
+            </div>
+    </>
   );
 }
 

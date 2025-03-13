@@ -184,6 +184,8 @@ model Course {
   topics        String[]
   difficulty    String
   favorite      Boolean              @default(false)
+  category      String
+  myCourses     Boolean
   registrations CourseRegistration[]
 }
 
