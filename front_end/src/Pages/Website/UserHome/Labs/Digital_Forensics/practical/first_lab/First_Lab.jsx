@@ -3,7 +3,9 @@ import Swal from "sweetalert2";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import Go2TopBtn from "../../../../Components/Go2Top_Btn/Go2Top_Btn";
-// import "./First_Lab.css";
+import "./First_Lab.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const hintMessage = `
   <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
@@ -17,7 +19,7 @@ const AudioForensicsLab = () => {
   const correctMessage = "Cyber Labs";
 
   const handleDownload = () => {
-    const audioUrl = "/front_end/public/AudioForensics.wav"; // Replace with your actual audio file URL
+    const audioUrl = "/AudioForensics/AudioForensics.wav";
     const link = document.createElement("a");
     link.href = audioUrl;
     link.download = "AudioForensics.wav";
@@ -46,39 +48,61 @@ const AudioForensicsLab = () => {
   };
 
   return (
-    <div className="audio-lab-container">
+    <div className="Custom__body--bg p-5">
       <GoBackBtn />
-      <ShowHintBtn hintText={hintMessage} />
-      <h1 className="title">Audio Forensics Lab</h1>
-      <main className="main-content">
-        <div className="content-wrapper">
-          {/* Title Section */}
-          <div className="intro-section">
-            <p className="intro-text">
-              Discover how to extract hidden messages from audio files. This lab
-              will enhance your audio analysis and forensic investigation
-              skills.
-            </p>
-          </div>
+          <ShowHintBtn hintText={hintMessage} />
+       <div className="container py-5 my-5 secondary-bg ">
+     
+      <div className="row text-center mb-3">
+        <div className="col">
+          <h1 className="fw-bold text-center main-color mb-2">
+            Audio Forensics Lab
+            <i className="fas fa-headphones-alt ms-2"></i>
+          </h1>
+          <p className="secondary-text mb-0">
+            Uncover hidden data in audio files using forensic techniques
+          </p>
+        </div>
+      </div>
+      <hr className="mb-5 w-50 mx-auto main-color" />
 
-          {/* Helper Links */}
-          <div className="helper-links">
-            <h2 className="section-title">Helpful Resources:</h2>
-            <ul className="link-list">
-              <li>
+      <div className="row mb-5 px-2">
+        <div className="col-lg-8 mb-4">
+          <section className="mb-4">
+            <h4 className="mb-2" style={{ color: "var(--main-color2)" }}>
+             Task Overview <i className="fas fa-info-circle ms-2 text-warning"></i>
+            </h4>
+            <p className="secondary-text italic fs-5 " >
+              In this lab, your goal is to identify and extract a hidden message
+              embedded in the provided audio file. The message may be concealed
+              using steganographic techniques. Use the recommended tools and
+              resources to investigate the audio file’s waveform, spectrogram,
+              or metadata. Once you discover the hidden message, submit it
+              below.
+            </p>
+          </section>
+
+          <section className="mb-4">
+            <h4 className="mb-2" style={{ color: "var(--main-color2)" }}>
+              Helpful Resources <i className="fas fa-tools ms-2 text-warning"></i>
+            </h4>
+            <ul>
+                <li className="mb-2">
+                  <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                 <a
                   href="https://www.audacityteam.org/"
-                  className="link"
+                  className="primary-link underline "
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Audacity - Audio Editing Tool
                 </a>
               </li>
-              <li>
+                <li>
+                  <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
                 <a
                   href="https://www.sonicvisualiser.org/"
-                  className="link"
+                  className="primary-link underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -86,37 +110,80 @@ const AudioForensicsLab = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </section>
 
-          {/* Embedded YouTube Video */}
-          <div className="video-section">
-            <h2 className="section-title">Watch This Guide:</h2>
-            <div className="video-container">
+          <section className="p-3  border rounded">
+            <h4 className="mb-2 " style={{ color: "var(--main-color2)" }}>
+              Pro Tips<i className="fas fa-lightbulb ms-2 text-warning"></i>
+            </h4>
+            <ul className="mb-0 ps-3 italic fs-5 secondary-text">  
+              <li>
+                <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                  Check the spectrogram for unusual patterns or text overlays.
+                   <i className="fas fa-wave-square ms-2 text-warning"></i>
+              </li>
+                <li>
+                   <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                  Experiment with filters, reversing the audio, or adjusting speed.
+                <i className="fas fa-sliders-h ms-2 text-warning"></i>
+                  
+              </li>
+                <li>
+                   <FontAwesomeIcon icon={faArrowRight} className="me-2 text-warning" />
+                  Inspect metadata or hidden channels for extra clues.
+                <i className="fas fa-search ms-2 text-warning"></i>
+                  
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <div className="col-lg-4">
+          <section className="mb-4">
+            <h4 className="mb-3 " style={{ color: "var(--main-color2)" }}>
+              Watch This Guide <i className="fas fa-play  ms-2 text-warning"></i>
+            </h4>
+            <div className="audio-lab__video-container">
               <iframe
                 src="https://www.youtube.com/embed/1EqCQrVEEVs"
                 title="Audio Forensics Guide"
                 allowFullScreen
-                Aspect="9:6"
               ></iframe>
             </div>
-          </div>
+          </section>
+        </div>
+      </div>
 
-          {/* Audio Download and Form */}
-          <div className="form-section">
-            <h2 className="section-title">Step 1: Download the Audio File</h2>
-            <button onClick={handleDownload} className="download-btn">
-              Download Audio File
-            </button>
-            <audio controls className="audio-player">
-              <source src="./AudioForensics.wav" type="audio/wav" />
-              Your browser does not support the audio element.
-            </audio>
+      <div className="row">
+        <div className="col-lg-6 col-md-11 mx-md-auto mb-4">
+          <section className=" p-4 secondary-bg rounded shadow">
+            <h4 className="main-color">
+             <span className="primary-text">Step 1:</span> Download the Audio File  <i className="fas fa-file-download ms-2 text-warning"></i>
+            </h4>
+            <div className="mb-4">
+              <button
+                onClick={handleDownload}
+                className=" btn-main-color download-btn  mb-3 py-2 px-5"
+                >
+                Download Audio File
+                  <i className="fas fa-arrow-down ms-2 text-warning fs-5"></i>
+              </button>
+              <audio controls className="w-100 mt-3 main-color rounded">
+                <source src="/AudioForensics/AudioForensics.wav" type="audio/wav" />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </section>
+        </div>
 
-            <h2 className="section-title">
-              Step 2: Extract the Hidden Message
-            </h2>
-            <form onSubmit={handleSubmit} className="message-form">
-              <div className="form-group">
+        <div className="col-lg-6 col-md-11 mx-md-auto mb-4">
+          <section className=" p-4 secondary-bg rounded shadow">
+            <h4 className="main-color">
+               <span className="primary-text"> Step 2:</span> Extract the Hidden Message
+                <i className="fas fa-search  ms-2 text-warning"></i>
+            </h4>
+            <form onSubmit={handleSubmit} className="audio-lab__message-form">
+              <div className="form-group mb-3">
                 <label htmlFor="message" className="form-label">
                   Type the Hidden Message:
                 </label>
@@ -126,19 +193,21 @@ const AudioForensicsLab = () => {
                   placeholder="Enter the hidden message here"
                   value={userMessage}
                   onChange={(e) => setUserMessage(e.target.value)}
-                  className="form-input"
+                  className="form-control focus-bg-transparent"
                   required
                 />
               </div>
-              <button type="submit" className="submit-btn">
+              <button type="submit" className="btn-main-color2 px-4 py-1">
                 Submit
               </button>
             </form>
-          </div>
+          </section>
         </div>
-      </main>
+      </div>
+
       <Go2TopBtn />
     </div>
+   </div>
   );
 };
 

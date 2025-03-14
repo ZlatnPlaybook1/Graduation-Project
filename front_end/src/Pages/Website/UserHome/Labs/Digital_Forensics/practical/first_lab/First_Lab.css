@@ -1,172 +1,45 @@
-/* Container for the entire component */
-.audio-lab-container {
-  font-family: "Arial", sans-serif;
-  background-color: #f8f9fa;
-  padding: 20px;
-  width: 100%;
-  margin: 0 auto;
-  color: #333;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Title Section */
-
-
-/* Main Content Section */
-.main-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Wrapper for inner content */
-.content-wrapper {
-  margin-top: 20px;
-}
-
-/* Intro Section */
-.intro-section {
-  margin-bottom: 30px;
-}
-
-.intro-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-}
-
-/* Section Title */
-.section-title {
-  font-size: 1.5rem;
-  color: #444;
-  margin-bottom: 15px;
-}
-
-/* Helper Links Section */
-.helper-links {
-  margin-bottom: 30px;
-}
-
-.link-list {
-  list-style: disc;
-  padding-left: 20px;
-}
-
-.link {
-  color: #1d4ed8;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.link:hover {
-  text-decoration: underline;
-}
-
-/* Video Section */
-.video-section {
-  margin-bottom: 30px;
-}
-
-.video-container {
+.audio-lab__video-container {
   position: relative;
-  width: 80%;
-  margin: 0 auto;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  border-radius: 10px;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-.video-container iframe {
+.audio-lab__video-container iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border: none;
-}
-
-/* Form Section */
-.form-section {
-  margin-bottom: 30px;
+  border: 0;
 }
 
 .download-btn {
-  display: inline-block;
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
-
 .download-btn:hover {
-  background-color: #0056b3;
+  transform: scale(1.05);
 }
-
-.message-form {
-  margin-top: 20px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-label {
-  display: block;
-  font-size: 1rem;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.form-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.submit-btn {
-  background-color: #28a745;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.submit-btn:hover {
-  background-color: #218838;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .title {
-    font-size: 2rem;
+.download-btn i {
+    animation: download 1s infinite;
+    transition: all 0.3s ease-in-out;
   }
+  .download-btn:hover i {
+  transform: translateY(0);
+  animation: none;
 
-  .section-title {
-    font-size: 1.25rem;
+}
+@keyframes download {
+  0% {
+    transform: translateY(0);
   }
-
-  .download-btn,
-  .submit-btn {
-    font-size: 0.9rem;
+  50% {
+    transform: translateY(5px);
   }
+  100% {
+    transform: translateY(0);
+  }
+  
 }
