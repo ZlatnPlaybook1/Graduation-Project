@@ -8,12 +8,6 @@
 }
 
 /* Style for product card items */
-.product-list > div {
-  flex: 1 1 calc(25% - 20px);
-  max-width: calc(25% - 20px);
-  min-width: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
 /* Small screens - Mobile */
 @media (max-width: 600px) {
