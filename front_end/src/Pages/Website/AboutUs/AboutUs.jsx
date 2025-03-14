@@ -22,7 +22,6 @@ export default function HomePage() {
       <Header />
       <HomeLanding />
       <Team />
-      <TestimonialsSection />
       <Footer />
     </div>
   );
