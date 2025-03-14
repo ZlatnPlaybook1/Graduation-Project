@@ -39,18 +39,18 @@ export default function Third_Lab() {
 `;
 
   return (
-    <>
+    <div className="Custom__body--bg">
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
       <div className="container">
         <h1 style={{ textAlign: "center", marginBlock: "50px" }}>Products </h1>
-        <Link to={`/AC-Vuln/AC_Vuln_labs/third_lab/login`}>Login</Link>
+        <Link to={`/AC-Vuln/AC_Vuln_labs/third_lab/login`} className="btn-main-color">Login</Link>
         {isLoggedIn && (
           <Link to={`/AC-Vuln/AC_Vuln_labs/third_lab/admin`}>Go to Admin</Link>
         )}
         <ProductList products={products} />
         <Go2TopBtn />
       </div>
-    </>
+    </div>
   );
 }
