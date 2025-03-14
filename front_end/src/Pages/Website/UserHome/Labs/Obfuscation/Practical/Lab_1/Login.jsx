@@ -2,33 +2,41 @@ import React, { useState } from "react";
 import "./Login.css";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
+import Swal from "sweetalert2";
 
 export default function Obfuscation_login() {
   const [form, setForm] = useState({
     username: "",
     password: "",
   });
-  const [setLoading] = useState(false);
   const [err, setErr] = useState("");
-  const [right, setRight] = useState("");
   function handleChange(e) {
     e.preventDefault();
     setForm({ ...form, [e.target.name]: e.target.value });
   }
   async function submitLogin(e) {
     e.preventDefault();
-    setLoading(true);
+    // setLoading(true);
     setErr("");
     try {
       if (form.username === "cyberlab" && form.password === "Obfuscation") {
-        setLoading(false);
-        setRight(`Congratz \n Flag: {0BFU5C4T10N_1S_4RT_4ND_PR0T3CT10N}`);
+        // setRight(`Congratz \n Flag: {0BFU5C4T10N_1S_4RT_4ND_PR0T3CT10N}`);
+        Swal.fire({
+          title: "Congratulations!",
+          text: `Congratz You Solved The Lab`,
+          icon: "success",
+          confirmButtonText: "OK",
+        });
       } else {
-        setLoading(false);
-        setErr("Wrong Email or Password");
+        Swal.fire({
+          title: "Error!",
+          text: `Wrong Creditentials`,
+          icon: "error",
+          confirmButtonText: "OK",
+        });
       }
     } catch (error) {
-      setLoading(false);
+      // setLoading(false);
       if (error.response) {
         if (error.response.status === 401) {
           setErr("Wrong Email or Password");
@@ -94,7 +102,6 @@ export default function Obfuscation_login() {
                     <button type="submit">Login</button>
                   </div>
                   {err !== "" && <span className="error">{err}</span>}
-                  {right !== `` && <span className="right">{right}</span>}
                 </form>
               </div>
             </div>

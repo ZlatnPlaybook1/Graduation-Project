@@ -30,18 +30,18 @@ export default function CookiesLogin({ CookieName, ApiEnd, labName, values }) {
       const res = await axios.post(`http://127.0.0.1:8080/api/${ApiEnd}`, form);
       setLoading(false);
       if (CookieName === "role") {
-          const role = res.data.role;
+        const role = res.data.role;
         cookie.set("role", role);
       } else if (CookieName === "userId") {
         const userID = res.data.userId;
         cookie.set("userId", userID);
       }
       if (Cookievar === "admin") {
-        navigate(`/cookies/cookies_lab/${labName}/admin`);
+        navigate(`/cookies/cookies_lab/${labName}/admin`, { replace: true });
       } else if (Cookievar === "support") {
-        navigate(`/cookies/cookies_lab/${labName}/support`);
+        navigate(`/cookies/cookies_lab/${labName}/support`, { replace: true });
       } else {
-        navigate(`/cookies/cookies_lab/${labName}/login`);
+        navigate(`/cookies/cookies_lab/${labName}/login`, { replace: true });
       }
     } catch (error) {
       setLoading(false);
@@ -60,11 +60,11 @@ export default function CookiesLogin({ CookieName, ApiEnd, labName, values }) {
   }
   useEffect(() => {
     if (Cookievar === values[0]) {
-      navigate(`/cookies/cookies_lab/${labName}/admin`);
+      navigate(`/cookies/cookies_lab/${labName}/admin`, { replace: true });
     } else if (Cookievar === values[1]) {
-      navigate(`/cookies/cookies_lab/${labName}/support`);
+      navigate(`/cookies/cookies_lab/${labName}/support`, { replace: true });
     } else {
-      navigate(`/cookies/cookies_lab/${labName}/login`);
+      navigate(`/cookies/cookies_lab/${labName}/login`, { replace: true });
     }
   }, [Cookievar, navigate, values, labName]);
   useEffect(() => {

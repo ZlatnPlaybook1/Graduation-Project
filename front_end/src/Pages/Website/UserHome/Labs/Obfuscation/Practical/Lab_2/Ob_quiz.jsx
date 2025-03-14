@@ -1,18 +1,11 @@
-import CompleteQuestion from "../../../../Components/CompleteQuestion/CompleteQuestion";
+import MCQQuiz from "../../../../Components/MCQ_Form/MCQQuiz";
 import Data from "./Ob_Data.json";
 import "./Ob_quiz.css";
 
 export default function Ob_Second_Lab() {
   return (
-    <div
-      style={{
-        padding: "20px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <CompleteQuestion questionsData={Data} />
-    </div>
+    <>
+      <MCQQuiz questionsData={Data.questions} />
+    </>
   );
 }
