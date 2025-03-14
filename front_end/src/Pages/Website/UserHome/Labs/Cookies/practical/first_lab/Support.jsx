@@ -11,11 +11,11 @@ export default function Support() {
   const role = cookie.get("role") || "";
   useEffect(() => {
     if (role === "admin") {
-      navigate(`/cookies/cookies_lab/first/admin`);
+      navigate(`/cookies/cookies_lab/first/admin`, { replace: true });
     } else if (role === "support") {
-      navigate(`/cookies/cookies_lab/first/support`);
+      navigate(`/cookies/cookies_lab/first/support`, { replace: true });
     } else {
-      navigate(`/cookies/cookies_lab/first/login`);
+      navigate(`/cookies/cookies_lab/first/login`, { replace: true });
     }
   }, [role, navigate]);
   return (

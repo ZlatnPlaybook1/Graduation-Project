@@ -119,6 +119,7 @@ export default function Captcha_second() {
                   <input
                     type="number"
                     name="captcha"
+                    className="input"
                     value={captcha}
                     onChange={(e) => setCaptcha(e.target.value)}
                     required

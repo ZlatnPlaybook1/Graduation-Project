@@ -105,7 +105,8 @@
   border: none;
   border-radius: 5px;
   color: whitesmoke;
-  background: linear-gradient(0deg, var(--neon-red), var(--burnt-orange));
+  /* background: linear-gradient(0deg, var(--neon-red), var(--burnt-orange)); */
+  background-color: var(--main-color);
   cursor: pointer;
   transition: var(--main-transition);
 }

@@ -242,7 +242,7 @@ const MCQQuiz = ({ questionsData }) => {
         </div>
 
         {/* Footer Line */}
-        <div className="mcq-quiz__footer-line"></div>
+        {/* <div className="mcq-quiz__footer-line"></div> */}
       </main>
       {/* <div id="error"></div> */}
     </div>

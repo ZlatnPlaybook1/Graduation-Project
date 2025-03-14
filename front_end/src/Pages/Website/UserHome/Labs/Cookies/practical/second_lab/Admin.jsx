@@ -12,11 +12,11 @@ export default function Admin() {
   const userId = cookie.get("userId") || "";
   useEffect(() => {
     if (userId === "MQ==") {
-      navigate(`/cookies/cookies_lab/second/admin`);
+      navigate(`/cookies/cookies_lab/second/admin`, { replace: true });
     } else if (userId === "OQ==") {
-      navigate(`/cookies/cookies_lab/second/support`);
+      navigate(`/cookies/cookies_lab/second/support`, { replace: true });
     } else {
-      navigate(`/cookies/cookies_lab/second/login`);
+      navigate(`/cookies/cookies_lab/second/login`, { replace: true });
     }
   }, [userId, navigate]);
   return (
