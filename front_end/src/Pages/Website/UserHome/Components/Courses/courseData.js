@@ -127,7 +127,7 @@ const courseData = [
     ],
     difficulty: "Intermediate",
     image: require("../../assets/img/ACV/Landing.jpg"),
-    state: "semi-published",
+    state: "published",
     link: "/AC_Vuln",
     favorite: false,
     myCourses: false,
@@ -467,7 +467,7 @@ const courseData = [
     image: require("../../assets/img/Api_Hacking/landing.png"),
     state: "published",
     link: "/Api_Hacking",
-    
+
     favorite: false,
     myCourses: false,
   },
