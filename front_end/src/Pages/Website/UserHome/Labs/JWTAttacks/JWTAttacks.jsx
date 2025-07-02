@@ -8,11 +8,13 @@ import exampleImage1 from "../../assets/img/JWT attacks/image_1.webp";
 import exampleImage2 from "../../assets/img/JWT attacks/image_2.webp";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 export default function JWTAttacks() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing  */}
       <CourseLanding
         background={background}
@@ -100,7 +102,7 @@ export default function JWTAttacks() {
                       <b>Python Flask API</b>, your wits, and a lot of{" "}
                       <b>cURL</b> commands. The mission? Crack open those{" "}
                       <b>API</b> endpoints, swipe some
-                      <b>JWTs</b>, escalate privileges, and snatch those task
+                      <b>JWTs</b>, escalate privileges, and snatch those Topic
                       flags like a cybersecurity Indiana Jones.
                     </p>
                     <h2 className="content__title">Here's the Cheat Sheet:</h2>

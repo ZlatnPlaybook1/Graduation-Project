@@ -4,6 +4,7 @@ import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function CaptchaThird() {
   const [comment, setComment] = useState("");
@@ -105,6 +106,7 @@ export default function CaptchaThird() {
     <div className="body-captcha">
       <GoBackBtn />
       <ShowHintBtn hintText=" Inspect the request and try removing the CAPTCHA field to see if validation still happens! 🚀" />
+      <ThemeSwitcher/>
       <div className="captcha_first">
         <div className="container-captcha">
           <div className="card-captcha">

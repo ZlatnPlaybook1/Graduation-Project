@@ -41,7 +41,7 @@ export default function UnrestrictedFileUpload() {
               <dl className="topics-text">
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 1</span> Description
+                  <span>Topic 1</span> Description
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <img
@@ -87,7 +87,7 @@ export default function UnrestrictedFileUpload() {
                 </dd>
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 2</span>Impact
+                  <span>Topic 2</span>Impact
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul>
@@ -126,7 +126,7 @@ export default function UnrestrictedFileUpload() {
                 </dd>
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 3</span>Scenarios
+                  <span>Topic 3</span>Scenarios
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul>
@@ -224,7 +224,7 @@ export default function UnrestrictedFileUpload() {
                   </ul>
                 </dd>
                 <dt className="fadeInUp faq-header">
-                  <span>Task 4</span> Prevention
+                  <span>Topic 4</span> Prevention
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul>

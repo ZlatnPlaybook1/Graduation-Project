@@ -42,8 +42,8 @@ export default function InsecureDirectObjectReference() {
               <dl className="topics-text">
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 1</span> What does insecure direct object reference
-                  mean?
+                  <span>Topic 1</span> What does insecure direct object
+                  reference mean?
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul className="secure-list">
@@ -89,7 +89,7 @@ export default function InsecureDirectObjectReference() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 2</span> How do IDOR vulnerabilities happen?
+                  <span>Topic 2</span> How do IDOR vulnerabilities happen?
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <img
@@ -224,7 +224,7 @@ export default function InsecureDirectObjectReference() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 3</span> How to detect IDOR vulnerabilities?
+                  <span>Topic 3</span> How to detect IDOR vulnerabilities?
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul className="secure-list">
@@ -245,7 +245,7 @@ export default function InsecureDirectObjectReference() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 4</span> How to prevent IDOR attacks?
+                  <span>Topic 4</span> How to prevent IDOR attacks?
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <div className="secure-faq-content">

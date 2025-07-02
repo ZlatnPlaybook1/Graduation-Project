@@ -3,6 +3,7 @@ import "../Captcha_labs.css";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import axios from "axios";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function Captcha_second() {
   const [comment, setComment] = useState("");
@@ -98,6 +99,7 @@ export default function Captcha_second() {
     <div className="body-captcha">
       <GoBackBtn />
       <ShowHintBtn hintText="The CAPTCHA values stay the same in the session until solved. Try brute-forcing different answers until you get it right! 🚀" />
+      <ThemeSwitcher/>
       <div className="captcha_first">
         <div className="container-captcha">
           <div className="card-captcha">

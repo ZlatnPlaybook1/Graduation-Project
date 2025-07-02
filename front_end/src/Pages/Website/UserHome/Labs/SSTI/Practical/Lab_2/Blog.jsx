@@ -9,6 +9,7 @@ import Footer from "../../../../Footer/Footer";
 import GoBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import { Link } from "react-router-dom";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function Blog() {
   const hintMessage = `<span>This lab is vulnerable to server-side template injection due to the unsafe construction of an Handlebars template.To solve the lab, review the Handlebars documentation to find out how to execute arbitrary code, then delete the</span><strong> secret.txt</strong>`;
   // Step 1: Define the card data in an array
@@ -59,6 +60,7 @@ export default function Blog() {
     <>
       <GoBack />
       <ShowHint hintText={hintMessage} />
+      <ThemeSwitcher />
       {/* Start Courses */}
       <div className="course-ssti-lab2">
         <div className="container">

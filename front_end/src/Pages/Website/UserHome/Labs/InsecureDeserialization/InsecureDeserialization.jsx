@@ -38,7 +38,7 @@ export default function InsecureDeserialization() {
               <dl className="topics-text">
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 1</span>What is serialization ?
+                  <span>Topic 1</span>What is serialization ?
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <p>
@@ -115,7 +115,7 @@ export default function InsecureDeserialization() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 2</span>What is insecure deserialization ?
+                  <span>Topic 2</span>What is insecure deserialization ?
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <p>
@@ -165,7 +165,7 @@ export default function InsecureDeserialization() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 3</span>How do insecure deserialization
+                  <span>Topic 3</span>How do insecure deserialization
                   vulnerabilities arise ?
                 </dt>
                 <dd className="fadeInUp faq-body">
@@ -239,7 +239,7 @@ export default function InsecureDeserialization() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 4</span>What is the impact of insecure
+                  <span>Topic 4</span>What is the impact of insecure
                   deserialization ?
                 </dt>
                 <dd className="fadeInUp faq-body">
@@ -273,7 +273,7 @@ export default function InsecureDeserialization() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 5</span>How to prevent insecure deserialization
+                  <span>Topic 5</span>How to prevent insecure deserialization
                   vulnerabilities ?
                 </dt>
                 <dd className="fadeInUp faq-body">

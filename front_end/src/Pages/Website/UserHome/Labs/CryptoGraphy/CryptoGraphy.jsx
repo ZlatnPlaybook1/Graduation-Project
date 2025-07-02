@@ -15,11 +15,13 @@ import exampleImage8 from "../../assets/img/Cryptography/8.svg";
 import exampleImage9 from "../../assets/img/Cryptography/9.svg";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 export default function CryptoGraphy() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing  */}
       <CourseLanding
         background={background}
@@ -291,7 +293,7 @@ export default function CryptoGraphy() {
                       to encrypt or decrypt data. In general, the used cipher is
                       public knowledge; however, the key must remain secret
                       unless it is the public key in asymmetric encryption. We
-                      will visit asymmetric encryption in a later task.
+                      will visit asymmetric encryption in a later Topic.
                     </li>
                     <li>
                       <strong>Encryption</strong> is the process of converting

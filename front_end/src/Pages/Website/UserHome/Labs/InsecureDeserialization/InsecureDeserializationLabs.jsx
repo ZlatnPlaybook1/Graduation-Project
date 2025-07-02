@@ -5,11 +5,13 @@ import Auth_Photo from "../../assets/img/Insecure_Deserialization/Labs_Photo_Ins
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function InsecureDeserializationLabs() {
   return (
     <>
       <Header />
+      <ThemeSwitcher/>
       {/* Start Landing */}
       <LandingPractice />
       {/* End Landing */}

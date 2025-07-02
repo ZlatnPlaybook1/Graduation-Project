@@ -6,10 +6,12 @@ import { Card } from "../../Components/Card/Card";
 import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function CommandInjectionLabs() {
   return (
     <>
       <Header />
+      <ThemeSwitcher/>
       {/* Start Landing */}
       <LandingPractice />
       {/* End Landing */}

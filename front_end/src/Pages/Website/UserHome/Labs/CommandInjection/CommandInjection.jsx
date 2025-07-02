@@ -38,7 +38,7 @@ export default function CommandInjection() {
               <dl className="topics-text">
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 1</span>What is OS command injection ?
+                  <span>Topic 1</span>What is OS command injection ?
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <p class="Command-Injection-paragraph">
@@ -60,7 +60,7 @@ export default function CommandInjection() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 2</span>Injecting OS commands
+                  <span>Topic 2</span>Injecting OS commands
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <p class="Command-Injection-paragraph">
@@ -157,7 +157,7 @@ export default function CommandInjection() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 3</span>Useful commands
+                  <span>Topic 3</span>Useful commands
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <p class="Command-Injection-paragraph">
@@ -226,7 +226,7 @@ export default function CommandInjection() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 4</span>Blind OS command injection vulnerabilities
+                  <span>Topic 4</span>Blind OS command injection vulnerabilities
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <p class="Command-Injection-paragraph">

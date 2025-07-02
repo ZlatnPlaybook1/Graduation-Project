@@ -8,12 +8,14 @@ import exampleImage1 from "../../assets/img/Server Side Template Injection/1.png
 import exampleImage2 from "../../assets/img/Server Side Template Injection/2.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 
 export default function SSTI() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
+      <ThemeSwitcher/>
       {/* Start Landing  */}
       <CourseLanding
         background={background}

@@ -4,6 +4,7 @@ import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import "./SSTI_store.css";
 import products from "./data.json";
 import axios from "axios";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function SSTI_store() {
   const [outOfStockMessage, setOutOfStockMessage] = useState("");
   // const [resetMessage, setResetMessage] = useState("");
@@ -79,6 +80,7 @@ export default function SSTI_store() {
     <div className="container-ssti3">
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
+      <ThemeSwitcher/>
       <button
         onClick={labreset}
         className="reset-btn"

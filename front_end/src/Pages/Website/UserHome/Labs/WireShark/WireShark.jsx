@@ -36,12 +36,14 @@ import exampleImage29 from "../../assets/img/wireshark/29.png";
 import exampleImage30 from "../../assets/img/wireshark/30.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 
 export default function WireShark() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing  */}
       <CourseLanding
         background={background}
@@ -173,7 +175,7 @@ export default function WireShark() {
                     You do not have to select a filter, it will only help to
                     bring down the number of packets being brought in and
                     organize the capture. This is only a brief introduction to
-                    filters for more information about filters go to Task 12 or
+                    filters for more information about filters go to Topic 12 or
                     go to the Wireshark Website.
                   </p>
                   <p>
@@ -239,7 +241,7 @@ export default function WireShark() {
                   <p>
                     Play around with the menus and various features of Wireshark
                     to get a feel for it, some of the features we will be going
-                    into further detail within later tasks.
+                    into further detail within later Topics.
                   </p>
                   <br />
                 </dd>
@@ -337,7 +339,7 @@ export default function WireShark() {
                   </p>
                   <p>
                     Combining these methods with your previous knowledge of
-                    capturing traffic from the previous task will allow you to
+                    capturing traffic from the previous Topic will allow you to
                     proactively monitor and collect live packet captures from
                     scratch.
                   </p>
@@ -353,7 +355,7 @@ export default function WireShark() {
                   <p>
                     Packet Filtering is a very important part of packet analysis
                     especially when you have a very large number of packet
-                    sometimes even 100,000 plus. In task 3 capture filters were
+                    sometimes even 100,000 plus. In Topic 3 capture filters were
                     briefly covered however there is a second type of filter
                     that is often thought of as more powerful and easier to use.
                     This second method is known as display captures, you can
@@ -488,7 +490,7 @@ export default function WireShark() {
                     </span>
                   </p>
                   <p>
-                    That is the end of filtering for this task however I
+                    That is the end of filtering for this Topic however I
                     recommend you play around with other filters and operators
                     on your own. Once you're ready move on to step 5.
                   </p>
@@ -831,7 +833,7 @@ export default function WireShark() {
                   <p>
                     When analyzing TCP packets, Wireshark can be very helpful
                     and color code the packets in order of danger level. If you
-                    can't remember the color code go back to Task 3 and refresh
+                    can't remember the color code go back to Topic 3 and refresh
                     on how Wireshark uses colors to match packets.
                   </p>
                   <p>

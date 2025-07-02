@@ -1,4 +1,3 @@
-import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 import { FileDownloader } from "../../../../Components/FileDwnLodrLab/FileDownloader";
 export default function Test() {
   const hint =
@@ -6,7 +5,6 @@ export default function Test() {
 
   return (
     <>
-      <ThemeSwitcher />
       <FileDownloader
         answerText={"flag{y0u_h4v3_d0n3_1t}"}
         hint={hint}

@@ -6,11 +6,13 @@ import { Card } from "../../Components/Card/Card";
 import Footer from "../../Footer/Footer";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function FileInclusion_lab() {
   return (
     <>
       <Header />
+      <ThemeSwitcher/>
       {/* Start Landing  */}
       <LandingPractice />
       {/* End Landing  */}

@@ -1,12 +1,10 @@
 import { FileDownloader } from "../../../../Components/FileDwnLodrLab/FileDownloader";
-import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function Welcome() {
   const hint =
     "Navigate like a pro in Linux! 🐧 Use ls to list files and cd foldername to move between directories. Example: cd Documents && ls to enter 'Documents' and see its contents.";
 
   return (
     <>
-      <ThemeSwitcher />
       <FileDownloader
         answerText={"flag{Welcome_to_cyber_lap}"}
         hint={hint}

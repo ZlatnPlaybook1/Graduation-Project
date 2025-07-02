@@ -440,7 +440,7 @@ export default function BurpSuit() {
                       By resending the same request with different input each
                       time, you can identify and confirm a variety of
                       input-based vulnerabilities. This is one of the most
-                      common tasks you will perform during manual testing with
+                      common Topics you will perform during manual testing with
                       Burp Suite.
                     </p>
                     <h4 className="faq-burp-step">

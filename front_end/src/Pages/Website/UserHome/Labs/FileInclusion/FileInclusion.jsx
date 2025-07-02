@@ -13,11 +13,13 @@ import exampleImage6 from "../../assets/img/File Inclusion/image_6.webp";
 import exampleImage7 from "../../assets/img/File Inclusion/image_7.webp";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 export default function FileInclusion() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
+      <ThemeSwitcher/>
       {/* Start Landing  */}
       <CourseLanding
         background={background}
@@ -331,7 +333,7 @@ export default function FileInclusion() {
                 </dt>
                 <dd className="fadeInUp faq-body" id="border-left">
                   <p>
-                    In this task, we go a little bit deeper into LFI. We
+                    In this Topicc, we go a little bit deeper into LFI. We
                     discussed a couple of techniques to bypass the filter within
                     the include function.
                   </p>

@@ -3,6 +3,7 @@ import "../Captcha_labs.css";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import axios from "axios";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function Captcha_first() {
   const [comment, setComment] = useState("");
@@ -120,6 +121,7 @@ export default function Captcha_first() {
     <div className="body-captcha">
       <GoBackBtn />
       <ShowHintBtn hintText=" Look 🔍 at how CAPTCHA values are stored and verified.The CAPTCHA values are stored in array." />
+      <ThemeSwitcher/>
       <div className="captcha_first">
         <div className="container-captcha">
           <div className="card-captcha">

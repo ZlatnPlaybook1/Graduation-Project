@@ -9,12 +9,14 @@ import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 
 import exampleImage10 from "../../assets/img/Server Side Template Injection/10.jpg";
 import exampleImage11 from "../../assets/img/Server Side Template Injection/11.jpg";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 
 export default function SSRF() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
+      <ThemeSwitcher/>
       {/* Start Landing  */}
       <CourseLanding
         background={background}

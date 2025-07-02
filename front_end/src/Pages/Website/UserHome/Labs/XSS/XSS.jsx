@@ -40,7 +40,7 @@ export default function XSS() {
               <dl className="topics-text">
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 1</span> What is cross-site scripting (XSS)?
+                  <span>Topic 1</span> What is cross-site scripting (XSS)?
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul>
@@ -83,7 +83,7 @@ export default function XSS() {
                 </dd>
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 2</span>How does cross-site scripting work?
+                  <span>Topic 2</span>How does cross-site scripting work?
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul>
@@ -215,7 +215,7 @@ export default function XSS() {
                 </dd>
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 3</span>What are the types of XSS attacks?
+                  <span>Topic 3</span>What are the types of XSS attacks?
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul>
@@ -257,7 +257,7 @@ export default function XSS() {
                 </dd>
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 4</span>Reflected cross-site scripting
+                  <span>Topic 4</span>Reflected cross-site scripting
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul>
@@ -311,7 +311,7 @@ export default function XSS() {
                 </dd>
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 5</span>Stored cross-site scripting
+                  <span>Topic 5</span>Stored cross-site scripting
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul>
@@ -372,7 +372,7 @@ export default function XSS() {
                 </dd>
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 6</span>DOM-based cross-site scripting
+                  <span>Topic 6</span>DOM-based cross-site scripting
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul>
@@ -443,7 +443,7 @@ export default function XSS() {
                 </dd>
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 7</span>Examples of known cross-site scripting
+                  <span>Topic 7</span>Examples of known cross-site scripting
                   vulnerabilities
                 </dt>
                 <dd className="fadeInUp faq-body">
@@ -506,7 +506,7 @@ export default function XSS() {
                 </dd>
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 8</span>What can XSS be used for?
+                  <span>Topic 8</span>What can XSS be used for?
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul>
@@ -563,7 +563,7 @@ export default function XSS() {
                 </dd>
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 9</span>How XSS Attacks Work?
+                  <span>Topic 9</span>How XSS Attacks Work?
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul>
@@ -594,7 +594,7 @@ export default function XSS() {
                 </dd>
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 10</span>Consequences of XSS Attacks
+                  <span>Topic 10</span>Consequences of XSS Attacks
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul>
@@ -627,7 +627,7 @@ export default function XSS() {
                 </dd>
                 {/* Single FAQ Area  */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 11</span>How to prevent XSS attacks?
+                  <span>Topic 11</span>How to prevent XSS attacks?
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul>

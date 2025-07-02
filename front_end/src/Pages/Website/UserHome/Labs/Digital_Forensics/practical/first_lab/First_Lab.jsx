@@ -70,7 +70,7 @@ const AudioForensicsLab = () => {
           <div className="col-lg-8 mb-4">
             <section className="mb-4">
               <h4 className="mb-2" style={{ color: "var(--main-color2)" }}>
-                Task Overview{" "}
+                Topic Overview{" "}
                 <i className="fas fa-info-circle ms-2 text-warning"></i>
               </h4>
               <p className="secondary-text italic fs-5 ">

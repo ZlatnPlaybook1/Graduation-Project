@@ -5,11 +5,13 @@ import Auth_Photo from "../../assets/img/Path__Traversal/Photo_Labs_Path_Travers
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function PathTraversalLabs() {
   return (
     <>
       <Header />
+      <ThemeSwitcher/>
       {/* Start Landing */}
       <LandingPractice />
       {/* End Landing */}

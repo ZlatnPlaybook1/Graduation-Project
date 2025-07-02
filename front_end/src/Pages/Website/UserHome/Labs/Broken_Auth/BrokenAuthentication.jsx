@@ -39,7 +39,7 @@ export default function BrokenAuthentication() {
               <dl className="topics-text">
                 {/* Description FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 1</span>Description
+                  <span>Topic 1</span>Description
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul className="auth-issues-list">
@@ -84,7 +84,7 @@ export default function BrokenAuthentication() {
                 </dd>
                 {/* Impact FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 2</span> Impact
+                  <span>Topic 2</span> Impact
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul className="impact-list">
@@ -144,7 +144,7 @@ export default function BrokenAuthentication() {
                 </dd>
                 {/* Scenarios FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 3</span> Scenarios
+                  <span>Topic 3</span> Scenarios
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul className="scenario-list">
@@ -256,7 +256,7 @@ export default function BrokenAuthentication() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span>Task 4</span> Prevention
+                  <span>Topic 4</span> Prevention
                 </dt>
                 <dd className="fadeInUp faq-body">
                   <ul className="security-list">
@@ -491,7 +491,7 @@ export default function BrokenAuthentication() {
                 </dd>
                 {/* Single FAQ Area */}
                 <dt className="fadeInUp faq-header">
-                  <span> Task 5</span>
+                  <span> Topic 5</span>
                   Tools for Testing and Prevention
                 </dt>
                 <dd className="fadeInUp faq-body">

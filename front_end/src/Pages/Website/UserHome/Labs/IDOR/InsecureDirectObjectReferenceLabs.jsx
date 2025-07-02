@@ -5,11 +5,13 @@ import Idor_cover from "../../assets/img/IDOR/IDOR_Cover.jpg";
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function InsecureDirectObjectReferenceLabs() {
   return (
     <>
       <Header />
+      <ThemeSwitcher/>
       {/* Start Landing */}
       <LandingPractice />
       {/* End Landing */}

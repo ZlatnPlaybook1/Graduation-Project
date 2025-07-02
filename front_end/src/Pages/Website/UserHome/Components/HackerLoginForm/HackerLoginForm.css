@@ -49,7 +49,7 @@
 .hackerLogin-signin {
   position: absolute;
   width: 400px;
-  background: var(--hacker-bg);
+  background: var(--secondary-bg);
   z-index: 1000;
   display: flex;
   justify-content: center;

@@ -6,6 +6,7 @@ import icon from "../../../../assets/img/practical_lab2/icon.png";
 import Footer from "../../../../Footer/Footer";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function BlogItem() {
   const [resetmessage, setResetMessage] = useState("");
@@ -113,7 +114,7 @@ export default function BlogItem() {
       <div className="course-blog-item">
         <GoBackBtn />
         <ShowHint hintText={hintMessage} />
-
+        <ThemeSwitcher />
         <div className="container">
           <div className="row-practice">
             <div className="card-blog-item">

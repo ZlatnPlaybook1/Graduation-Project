@@ -35,7 +35,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  background-color: var(--faq-header);
+  background-color: var(--secondary-bg);
   padding: 10px 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: max-content;
@@ -47,14 +47,13 @@
 .caution p {
   margin: 0;
   margin-right: 10px;
-  color: #eee;
+  color: var(--primary-text);
 }
 
 .fileViewer {
-  border: 2px solid var(--faq-header-hover);
   border-radius: 8px;
   padding: 20px;
-  background-color: var(--faq-header);
+  background-color: var(--secondary-bg);
   box-shadow: 0 4px 10px rgba(200, 200, 200, 0.1);
   margin-top: 20px;
   display: flex;
@@ -232,6 +231,7 @@
   pointer-events: initial;
   border-width: 1px;
   border-style: solid;
+  border: none;
   background-color: var(--main-color2);
   color: var(--primary-text);
   transition: 0.2s ease-in-out;

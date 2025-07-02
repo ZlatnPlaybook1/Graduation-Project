@@ -10,12 +10,14 @@ import exampleImage3 from "../../assets/img/Obfuscation/3.png";
 import exampleImage4 from "../../assets/img/Obfuscation/4.png";
 import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
 import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 
 export default function Obfuscation() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
+      <ThemeSwitcher/>
       {/* Start Landing  */}
       <CourseLanding
         background={background}

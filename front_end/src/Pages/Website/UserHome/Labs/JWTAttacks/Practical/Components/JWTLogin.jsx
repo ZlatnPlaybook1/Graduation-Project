@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import Cookie from "cookie-universal";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
-import {jwtDecode} from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 const JWTLogin = ({ apiEndpoint, hint, tokenName, lab }) => {
   const [username, setUsername] = useState("");
@@ -74,6 +75,7 @@ const JWTLogin = ({ apiEndpoint, hint, tokenName, lab }) => {
     >
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
+      <ThemeSwitcher />
       <main className="hacker-login">
         {Array.from({ length: spanCount }).map((_, index) => (
           <span key={index} className="hackerLogin-gridSpan"></span>

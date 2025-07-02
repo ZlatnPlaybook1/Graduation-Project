@@ -26,12 +26,14 @@ import exampleImage16 from "../../assets/img/bash/carbon-17.png";
 import exampleImage17 from "../../assets/img/bash/carbon-25.png";
 import exampleImage18 from "../../assets/img/bash/first.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 
 export default function Bash() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
+      <ThemeSwitcher/>
       {/* Start Landing  */}
       <CourseLanding
         background={background}

@@ -2,6 +2,7 @@ import "./FileDownloader.css";
 import { useEffect, useState } from "react";
 import GoBackBtn from "../GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 export const FileDownloader = ({
   answerText,
   fileName,
@@ -80,6 +81,7 @@ export const FileDownloader = ({
     <>
       <div className="course-labcc">
         <GoBackBtn />
+        <ThemeSwitcher/>
         <ShowHintBtn hintText={hint} />
         <div className="firework" id="firework"></div>
         {showSuccess && <div className="message success">Congratulations!</div>}

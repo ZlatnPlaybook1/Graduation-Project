@@ -6,6 +6,7 @@ import Cookie from "cookie-universal";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import Swal from "sweetalert2";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 const AdminPage = ({ apiEndpoint, tokenName, lab, hint, condition }) => {
   const [loadingDelete, setLoadingDelete] = useState(false);
@@ -101,6 +102,7 @@ const AdminPage = ({ apiEndpoint, tokenName, lab, hint, condition }) => {
     >
       <GoBackBtn />
       <ShowHintBtn />
+      <ThemeSwitcher/>
       <main className="hacker-login">
         {Array.from({ length: spanCount }).map((_, index) => (
           <span key={index} className="hackerLogin-gridSpan"></span>
