@@ -141,8 +141,8 @@
 }
 
 .landing__edge-icon--left {
-  top: 25%;
-  left: -10px;
+  top: 20%;
+  left: 0;
   transform: translateY(-50%) rotate(45deg);
 }
 

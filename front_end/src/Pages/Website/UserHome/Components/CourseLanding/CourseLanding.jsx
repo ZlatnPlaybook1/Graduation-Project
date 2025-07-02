@@ -68,7 +68,18 @@ const CourseLanding = ({
   };
 
   return (
-    <div className="my-landing" style={backgroundStyle ? { background: `url(${background || defaultBg})` , backgroundSize: "cover", backgroundPosition: "center" } : {}}>
+    <div
+      className="my-landing"
+      style={
+        backgroundStyle
+          ? {
+              background: `url(${background || defaultBg})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }
+          : {}
+      }
+    >
       {/* Background overlay */}
       <div className="landing__overlay"></div>
 
@@ -77,61 +88,55 @@ const CourseLanding = ({
         {/* Left side (breadcrumb, title, description, etc.) */}
         <div className="landing__text">
           <div className="landing__breadcrumb">
-                    <ul>
-                      <li>
-                        <Link to="/home">Home</Link>
-                      </li>
-                      <li>
-                        <Link to="">{courseTitle}</Link>
-                      </li>
-                    </ul>
+            <ul>
+              <li>
+                <Link to="/home">Home</Link>
+              </li>
+              <li>
+                <Link to="">{courseTitle}</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="landing__course--info">
+            <img src={courseImage || defaultImage} alt="Course" />
+            <div className="course-text">
+              <h1>{courseTitle}</h1>
+              <p>{courseDescription}</p>
+              <div className="course-icons">
+                <div className="diff">
+                  <div className="easy">
+                    <i className="fa-solid fa-signal"></i>
+                    <p>{difficulty}</p>
                   </div>
-                  <div className="landing__course--info">
-                    <img src={courseImage || defaultImage} alt="Course" />
-                    <div className="course-text">
-                      <h1>{courseTitle}</h1>
-                      <p>{courseDescription}</p>
-                      <div className="course-icons">
-                        <div className="diff">
-                          <div className="easy">
-                            <i className="fa-solid fa-signal"></i>
-                            <p>{difficulty}</p>
-                          </div>
-                        </div>
-                        <div className="duration">
-                          <i className="fa-solid fa-clock"></i>
-                          <p className="time">{duration}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="landing__options">
-                    <button
-                      onClick={toggleSaveRoom}
-                      className={isSaved ? "active" : ""}
-                    >
-                      <i className="far fa-bookmark"></i>
-                      <p>{isSaved ? "Remove from Favorite" : "Add to Favorite"}</p>
-                    </button>
-                    <div className="like">
-                      <button
-                        onClick={toggleLike}
-                        className={isLiked ? "active" : ""} 
-                      >
-                        <i className="fas fa-thumbs-up"></i>
-                      </button>
-                      <button
-                        onClick={toggleDislike}
-                        className={isDisliked ? "active" : ""}
-                      >
-                        <i className="fas fa-thumbs-down"></i>
-                      </button>
-                    </div>
-                  </div>
-
-
+                </div>
+                <div className="duration">
+                  <i className="fa-solid fa-clock"></i>
+                  <p className="time">{duration}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="landing__options">
+            <button
+              onClick={toggleSaveRoom}
+              className={isSaved ? "active" : ""}
+            >
+              <i className="far fa-bookmark"></i>
+              <p>{isSaved ? "Remove from Favorite" : "Add to Favorite"}</p>
+            </button>
+            <div className="like">
+              <button onClick={toggleLike} className={isLiked ? "active" : ""}>
+                <i className="fas fa-thumbs-up"></i>
+              </button>
+              <button
+                onClick={toggleDislike}
+                className={isDisliked ? "active" : ""}
+              >
+                <i className="fas fa-thumbs-down"></i>
+              </button>
+            </div>
+          </div>
         </div>
-
         {/* Right side (icon border, optional) */}
         <div className="landing__icon">
           <div className="landing__icon-border">
