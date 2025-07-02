@@ -1,6 +1,5 @@
 import "./FileDownloader.css";
-import Footer from "../../Footer/Footer";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import GoBackBtn from "../GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../ShowHint_Btn/ShowHint_Btn";
 export const FileDownloader = ({
@@ -123,7 +122,6 @@ export const FileDownloader = ({
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

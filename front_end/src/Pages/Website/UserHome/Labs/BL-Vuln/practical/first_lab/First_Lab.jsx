@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ".././Lab_Style.css";
 import Navigation from "./Navigation";
 import ProductCard from "./ProductCard";
-
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
@@ -32,24 +32,29 @@ const ProductsPage = () => {
   };
 
   return (
-    <div className="products-page primary-bg">
-      <Navigation />
-      <main className="container ">
-        <h1 className="my-5 text-center main-color">Our Products 🛍️ </h1>
-        <div className="row">
-          {products.map((product) => (
-            <div key={product.id} className="col-md-4 mb-4">
-              <ProductCard product={product} addToCart={addToCart} />
-            </div>
-          ))}
-        </div>
-      </main>
-      <footer className="secondary-bg text-center py-3 mt-4">
-        <div className="container">
-          <p className="mb-0 primary-text">© 2025 CyberLabs. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
+    <>
+      <ThemeSwitcher />
+      <div className="products-page primary-bg">
+        <Navigation />
+        <main className="container ">
+          <h1 className="my-5 text-center main-color">Our Products 🛍️ </h1>
+          <div className="row">
+            {products.map((product) => (
+              <div key={product.id} className="col-md-4 mb-4">
+                <ProductCard product={product} addToCart={addToCart} />
+              </div>
+            ))}
+          </div>
+        </main>
+        <footer className="secondary-bg text-center py-3 mt-4">
+          <div className="container">
+            <p className="mb-0 primary-text">
+              © 2025 CyberLabs. All rights reserved.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </>
   );
 };
 

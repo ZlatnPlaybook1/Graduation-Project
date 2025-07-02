@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Cookie from "cookie-universal";
 import "../Lab_Style.css";
-
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function UserList() {
   const [users, setUsers] = useState([]);
   const [token, setToken] = useState("");
@@ -23,7 +23,7 @@ export default function UserList() {
         });
         if (response.ok) {
           const data = await response.json();
-          setUsers(data); 
+          setUsers(data);
         } else {
           console.error("Failed to fetch users.");
         }
@@ -50,7 +50,7 @@ export default function UserList() {
       );
 
       if (response.ok) {
-        setUsers(users.filter((user) => user.id !== id)); 
+        setUsers(users.filter((user) => user.id !== id));
       } else {
         console.error("Failed to delete user.");
       }
@@ -60,18 +60,24 @@ export default function UserList() {
   };
 
   return (
-    <div className="Custom__body--bg m-0 p-2 " style={{height: "100vh"}}>
-      <div className="users-container row mx-auto  justify-content-center align-items-center text-center">
-      <h2 className=" main-color mb-3 pb-2">Users</h2>
-      {users.map((user) => (
-        <div className="user-item" key={user.id}>
-          <h2 className="user-name ">{user.name}</h2>
-          <button className="delete-btn" onClick={() => deleteUser(user.id)}>
-            Delete
-          </button>
+    <>
+      <ThemeSwitcher />
+      <div className="Custom__body--bg m-0 p-2 " style={{ height: "100vh" }}>
+        <div className="users-container row mx-auto  justify-content-center align-items-center text-center">
+          <h2 className=" main-color mb-3 pb-2">Users</h2>
+          {users.map((user) => (
+            <div className="user-item" key={user.id}>
+              <h2 className="user-name ">{user.name}</h2>
+              <button
+                className="delete-btn"
+                onClick={() => deleteUser(user.id)}
+              >
+                Delete
+              </button>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-    </div>
+      </div>
+    </>
   );
 }

@@ -5,7 +5,7 @@ import "../../../../Components/HackerLoginForm/HackerLoginForm.css";
 import { Link } from "react-router-dom";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
-
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 const LoginSqlInjection = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -64,6 +64,7 @@ const LoginSqlInjection = () => {
     >
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
+      <ThemeSwitcher />
       <main className="hacker-login">
         {Array.from({ length: spanCount }).map((_, index) => (
           <span key={index} className="hackerLogin-gridSpan"></span>

@@ -1,6 +1,7 @@
 import data from "./Data.json";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function Show_prices() {
   const hintMessage = `
     <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
@@ -28,86 +29,103 @@ Continue adding null values until the error disappears and the response includes
 
   `;
   return (
-   <div
-  className="min-vh-100 d-flex flex-column align-items-center justify-content-center"
-  style={{
-    backgroundColor: "var(--primary-bg)",
-  }}
->
-  <GoBackBtn />
-  <ShowHintBtn hintText={hintMessage} />
-  {/* Start Courses */}
-  <div
-    className="container text-center py-5"
-    style={{
-      backgroundColor: "var(--secondary-bg)",
-      borderRadius: "10px",
-      padding: "30px",
-      boxShadow: "0 0 10px var(--glass-effect)",
-    }}
-  >
-    <h1
-      className="mb-4"
-      style={{ color: "var(--main-color)" }}
-    >
-      Add to Cart
-    </h1>
-    <table
-      className="table table-bordered table-hover"
-      style={{
-        backgroundColor: "var(--primary-bg)!important",
-        borderRadius: "10px",
-        overflow: "hidden",
-        border: "1px solid var(--secondary-text)",
-      }}
-    >
-      <thead>
-        <tr
-          
+    <>
+      <ThemeSwitcher />
+      <div
+        className="min-vh-100 d-flex flex-column align-items-center justify-content-center"
+        style={{
+          backgroundColor: "var(--primary-bg)",
+        }}
+      >
+        <GoBackBtn />
+        <ShowHintBtn hintText={hintMessage} />
+        {/* Start Courses */}
+        <div
+          className="container text-center py-5"
+          style={{
+            backgroundColor: "var(--secondary-bg)",
+            borderRadius: "10px",
+            padding: "30px",
+            boxShadow: "0 0 10px var(--glass-effect)",
+          }}
         >
-          <th style={{
-            backgroundColor: "var(--primary-bg)",
-            color: "var(--primary-text)",
-          }}> Product Name</th>
-          <th style={{
-            backgroundColor: "var(--primary-bg)",
-            color: "var(--primary-text)",
-          }}>Actual Price</th>
-          <th style={{
-            backgroundColor: "var(--primary-bg)",
-            color: "var(--primary-text)",
-          }}>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.products.map((product, index) => (
-          <tr
-            key={index}
-            
+          <h1 className="mb-4" style={{ color: "var(--main-color)" }}>
+            Add to Cart
+          </h1>
+          <table
+            className="table table-bordered table-hover"
+            style={{
+              backgroundColor: "var(--primary-bg)!important",
+              borderRadius: "10px",
+              overflow: "hidden",
+              border: "1px solid var(--secondary-text)",
+            }}
           >
-            <td style={{
-            backgroundColor: "var(--secondary-bg)",
-            color: "var(--primary-text)",
-          }}>{product.name}</td>
-            <td style={{
-            backgroundColor: "var(--secondary-bg)",
-            color: "var(--primary-text)",
-          }}>{product.actual_price}</td>
-            <td style={{
-            backgroundColor: "var(--secondary-bg)",
-            color: "var(--primary-text)",
-          }}>
-              <button className="btn btn-outline-success btn-sm d-flex align-items-center justify-content-center mx-auto">
-                <i className="fas fa-cart-plus me-2"></i> AddCart
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-  {/* End Course Content */}
-</div>
-
+            <thead>
+              <tr>
+                <th
+                  style={{
+                    backgroundColor: "var(--primary-bg)",
+                    color: "var(--primary-text)",
+                  }}
+                >
+                  {" "}
+                  Product Name
+                </th>
+                <th
+                  style={{
+                    backgroundColor: "var(--primary-bg)",
+                    color: "var(--primary-text)",
+                  }}
+                >
+                  Actual Price
+                </th>
+                <th
+                  style={{
+                    backgroundColor: "var(--primary-bg)",
+                    color: "var(--primary-text)",
+                  }}
+                >
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.products.map((product, index) => (
+                <tr key={index}>
+                  <td
+                    style={{
+                      backgroundColor: "var(--secondary-bg)",
+                      color: "var(--primary-text)",
+                    }}
+                  >
+                    {product.name}
+                  </td>
+                  <td
+                    style={{
+                      backgroundColor: "var(--secondary-bg)",
+                      color: "var(--primary-text)",
+                    }}
+                  >
+                    {product.actual_price}
+                  </td>
+                  <td
+                    style={{
+                      backgroundColor: "var(--secondary-bg)",
+                      color: "var(--primary-text)",
+                    }}
+                  >
+                    <button className="btn btn-outline-success btn-sm d-flex align-items-center justify-content-center mx-auto">
+                      <i className="fas fa-cart-plus me-2"></i> AddCart
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {/* End Course Content */}
+      </div>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 // Inline Navigation component
 const Navigation = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -16,30 +16,33 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="custom-nav">
-      <ul className="custom-nav__list">
-        <li className="custom-nav__item">
-          <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/cart">Cart</Link>
-        </li>
-        <li className="custom-nav__item">
-          <Link to="/BL-Vuln/BL_Vuln_labs/first_lab">Shopping</Link>
-        </li>
-        <li className="custom-nav__item">
-          <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/myaccount">MyAcc</Link>
-        </li>
-        {loggedIn ? (
+    <>
+      <ThemeSwitcher />
+      <nav className="custom-nav">
+        <ul className="custom-nav__list">
           <li className="custom-nav__item">
-            <button onClick={handleLogout} className="btn btn-link">
-              Logout
-            </button>
+            <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/cart">Cart</Link>
           </li>
-        ) : (
           <li className="custom-nav__item">
-            <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/login">Login</Link>
+            <Link to="/BL-Vuln/BL_Vuln_labs/first_lab">Shopping</Link>
           </li>
-        )}
-      </ul>
-    </nav>
+          <li className="custom-nav__item">
+            <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/myaccount">MyAcc</Link>
+          </li>
+          {loggedIn ? (
+            <li className="custom-nav__item">
+              <button onClick={handleLogout} className="btn btn-link">
+                Logout
+              </button>
+            </li>
+          ) : (
+            <li className="custom-nav__item">
+              <Link to="/BL-Vuln/BL_Vuln_labs/first_lab/login">Login</Link>
+            </li>
+          )}
+        </ul>
+      </nav>
+    </>
   );
 };
 
@@ -56,21 +59,24 @@ const DetailPage = () => {
   if (!product) return <h2>Loading...</h2>;
 
   return (
-    <div className="container mt-5">
-      <Navigation />
-      <h2>{product.title}</h2>
-      <img
-        src={product.image}
-        alt={product.title}
-        className="img-fluid"
-        style={{ maxWidth: "300px" }}
-      />
-      <p>{product.description}</p>
-      <h4>${product.price.toFixed(2)}</h4>
-      <Link to="/BL-Vuln/BL_Vuln_labs/first_lab" className="btn btn-primary">
-        Back to Shopping
-      </Link>
-    </div>
+    <>
+      <ThemeSwitcher />
+      <div className="container mt-5">
+        <Navigation />
+        <h2>{product.title}</h2>
+        <img
+          src={product.image}
+          alt={product.title}
+          className="img-fluid"
+          style={{ maxWidth: "300px" }}
+        />
+        <p>{product.description}</p>
+        <h4>${product.price.toFixed(2)}</h4>
+        <Link to="/BL-Vuln/BL_Vuln_labs/first_lab" className="btn btn-primary">
+          Back to Shopping
+        </Link>
+      </div>
+    </>
   );
 };
 

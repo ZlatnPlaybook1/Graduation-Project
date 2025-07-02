@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import Go2TopBtn from "../../../../Components/Go2Top_Btn/Go2Top_Btn";
-
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function First_Lab() {
   const hintMessage = `
     <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
@@ -66,6 +66,7 @@ export default function First_Lab() {
   }
   return (
     <>
+      <ThemeSwitcher />
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <Link className="navbar-brand" to="/AC-Vuln/AC_Vuln_labs">
@@ -85,10 +86,7 @@ export default function First_Lab() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link
-                  className="nav-link text-light"
-                  to=""
-                >
+                <Link className="nav-link text-light" to="">
                   Cart 🛒
                 </Link>
               </li>
@@ -101,10 +99,7 @@ export default function First_Lab() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link
-                  className="nav-link text-light"
-                  to=""
-                >
+                <Link className="nav-link text-light" to="">
                   My Account
                 </Link>
               </li>

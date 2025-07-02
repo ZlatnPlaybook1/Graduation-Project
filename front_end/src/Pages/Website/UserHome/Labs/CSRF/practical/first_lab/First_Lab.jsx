@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { FaUser, FaMoneyBillWave, FaLock } from "react-icons/fa"; 
-
+import { FaUser, FaMoneyBillWave, FaLock } from "react-icons/fa";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function CSRF_FIRST_LAB() {
   const [account, setAccount] = useState(null);
   const [newPass, setNewPass] = useState("");
@@ -50,7 +50,7 @@ export default function CSRF_FIRST_LAB() {
 
         if (result.account) {
           setUpdatedId(result.account.id);
-          setAccount(result.account); 
+          setAccount(result.account);
         }
       } else {
         setMessage("Error updating password");
@@ -62,44 +62,68 @@ export default function CSRF_FIRST_LAB() {
   };
 
   return (
-   <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center primary-bg primary-text">
-  <div class="card shadow-lg rounded border-0 p-4 secondary-bg primary-text col-lg-8 col-md-10 col-sm-12">
-    <h2 class="text-center mb-4">Account Information</h2>
+    <>
+      <ThemeSwitcher />
+      <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center primary-bg primary-text">
+        <div class="card shadow-lg rounded border-0 p-4 secondary-bg primary-text col-lg-8 col-md-10 col-sm-12">
+          <h2 class="text-center mb-4">Account Information</h2>
 
-    {message && (
-      <div className={`alert ${message === "Password Updated Successfully" ? "alert-success" : "alert-danger"}`}>
-        {message}
+          {message && (
+            <div
+              className={`alert ${
+                message === "Password Updated Successfully"
+                  ? "alert-success"
+                  : "alert-danger"
+              }`}
+            >
+              {message}
+            </div>
+          )}
+
+          {account ? (
+            <div class="mb-4">
+              <h3 class="main-color mb-3">Account Details</h3>
+              <div class="d-flex align-items-center mb-3">
+                <FaUser class="main-color me-2" />
+                <p class="mb-0">
+                  <strong>Account No:</strong> {account.accountNo}
+                </p>
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <FaMoneyBillWave class="main-color me-2" />
+                <p class="mb-0">
+                  <strong>Balance:</strong> ${account.accountBalance}
+                </p>
+              </div>
+              <div class="d-flex align-items-center mb-4">
+                <FaUser class="main-color me-2" />
+                <p class="mb-0">
+                  <strong>Name:</strong> {account.accountName}
+                </p>
+              </div>
+
+              <h4 class="main-color mb-3">Update Password</h4>
+              <div class="d-flex">
+                <input
+                  type="password"
+                  class="form-control rounded-pill me-2 px-3 focus-bg-transparent"
+                  placeholder="Enter new password"
+                  value={newPass}
+                  onChange={(e) => setNewPass(e.target.value)}
+                />
+                <button
+                  class="btn go-to p-3 my-0 w-25"
+                  onClick={updatePassword}
+                >
+                  <FaLock /> Update Password
+                </button>
+              </div>
+            </div>
+          ) : (
+            <p class="text-danger text-center">No account found.</p>
+          )}
+        </div>
       </div>
-    )}
-
-    {account ? (
-      <div class="mb-4">
-        <h3 class="main-color mb-3">Account Details</h3>
-        <div class="d-flex align-items-center mb-3">
-          <FaUser class="main-color me-2" />
-          <p class="mb-0"><strong>Account No:</strong> {account.accountNo}</p>
-        </div>
-        <div class="d-flex align-items-center mb-3">
-          <FaMoneyBillWave class="main-color me-2" />
-          <p class="mb-0"><strong>Balance:</strong> ${account.accountBalance}</p>
-        </div>
-        <div class="d-flex align-items-center mb-4">
-          <FaUser class="main-color me-2" />
-          <p class="mb-0"><strong>Name:</strong> {account.accountName}</p>
-        </div>
-
-        <h4 class="main-color mb-3">Update Password</h4>
-        <div class="d-flex">
-          <input type="password" class="form-control rounded-pill me-2 px-3 focus-bg-transparent" placeholder="Enter new password" value={newPass} onChange={(e) => setNewPass(e.target.value)} />
-          <button class="btn go-to p-3 my-0 w-25" onClick={updatePassword}>
-            <FaLock /> Update Password
-          </button>
-        </div>
-      </div>
-    ) : (
-      <p class="text-danger text-center">No account found.</p>
-    )}
-  </div>
-</div>
+    </>
   );
 }

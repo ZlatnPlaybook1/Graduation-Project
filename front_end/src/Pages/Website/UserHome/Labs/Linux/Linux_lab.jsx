@@ -6,6 +6,7 @@ import Footer from "../../Footer/Footer";
 import { Card } from "../../Components/Card/Card";
 import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
 import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
+import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 
 export default function Linux_lab() {
   useEffect(() => {
@@ -14,8 +15,9 @@ export default function Linux_lab() {
   return (
     <>
       <Header />
+      <ThemeSwitcher />
       {/* Start Landing  */}
-      <LandingPractice/>
+      <LandingPractice />
       {/* End Landing  */}
       {/* Start Courses  */}
       <div className="course">

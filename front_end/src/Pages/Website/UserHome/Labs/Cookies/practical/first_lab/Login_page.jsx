@@ -1,11 +1,15 @@
 import CookiesLogin from "../Login";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function Login_page() {
   return (
-    <CookiesLogin
-      CookieName="role"
-      ApiEnd="cookie_login"
-      labName="first"
-      values={["admin", "support"]}
-    />
+    <>
+      <ThemeSwitcher />
+      <CookiesLogin
+        CookieName="role"
+        ApiEnd="cookie_login"
+        labName="first"
+        values={["admin", "support"]}
+      />
+    </>
   );
 }
