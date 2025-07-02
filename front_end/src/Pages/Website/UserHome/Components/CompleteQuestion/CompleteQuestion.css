@@ -1,4 +1,3 @@
-
 .complete-quiz__top-buttons {
   position: relative;
   z-index: 10;
@@ -43,10 +42,9 @@
 .complete-quiz__answer-input:focus {
   box-shadow: 0 0 8px var(--hover-highlight-color);
 }
-
 .complete-quiz__nav-btn,
 .complete-quiz__submit-btn {
-  background-color: var(--main-color); 
+  background-color: var(--main-color);
   color: #fff;
   border: none;
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -60,7 +58,6 @@
 
 .complete-quiz__submit-btn {
   width: 80%;
-
 }
 .complete-quiz__submit-btn,
 .complete-quiz__nav-btn {
@@ -107,4 +104,3 @@
 .animate-bounce {
   animation: bounce 1s ease;
 }
-

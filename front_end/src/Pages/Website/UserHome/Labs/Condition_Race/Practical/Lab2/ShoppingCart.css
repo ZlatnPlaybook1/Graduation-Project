@@ -41,13 +41,13 @@
   gap: 20px;
 }
 
-.product-list {
+.product-list-rc {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
 }
 
-.product {
+.product-rc {
   background: #f9f9f9;
   padding: 15px;
   border-radius: 8px;
@@ -56,11 +56,6 @@
   flex-direction: column;
   align-items: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .product-name {

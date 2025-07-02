@@ -8,6 +8,7 @@ import { Card } from "../../../../Components/Card/Card";
 import GoBackBtn from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import Go2TopBtn from "../../../../Components/Go2Top_Btn/Go2Top_Btn";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 const HashingLab = () => {
   const hintMessage = `
     <ul style="text-align: left; font-size: 16px; line-height: 1.8;">
@@ -19,8 +20,7 @@ const HashingLab = () => {
   const Tools = [
     {
       title: "Hash Generator",
-      brief:
-        "Generate MD5, SHA-1, and SHA-256 hashes for any text input.",
+      brief: "Generate MD5, SHA-1, and SHA-256 hashes for any text input.",
       link: "/Hashing/Hashing_labs/lab1/HashGenerator",
       image: GeneratorImage,
       difficulty: "Easy",
@@ -49,18 +49,17 @@ const HashingLab = () => {
       image: SaltingImage,
       difficulty: "Easy",
     },
-  ]
+  ];
   return (
     <>
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
+      <ThemeSwitcher />
       <div className="course">
         <div className="container mt-5">
           <div className="secondary-bg primary-text shadow-lg mb-5">
             <div className="card-body p-4 ">
-              <h1 className="title-gradient text-center my-4">
-                Hashing Lab
-              </h1>
+              <h1 className="title-gradient text-center my-4">Hashing Lab</h1>
               <p>
                 Hashing is the process of converting an input (which can be a
                 password, a file, or any message) into a fixed-length string of

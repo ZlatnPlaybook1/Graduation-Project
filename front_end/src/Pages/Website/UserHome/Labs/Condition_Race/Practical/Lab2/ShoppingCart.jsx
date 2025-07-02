@@ -112,9 +112,9 @@ export default function ShoppingCart() {
           </div>
 
           <div className="container-shopping-cart">
-            <div className="product-list">
+            <div className="product-list-rc">
               {products.map((product, index) => (
-                <div key={index} className="product">
+                <div key={index} className="product-rc">
                   <span className="product-name">{product.name}</span>
                   <span className="product-price">{product.price} units</span>
                   <button
