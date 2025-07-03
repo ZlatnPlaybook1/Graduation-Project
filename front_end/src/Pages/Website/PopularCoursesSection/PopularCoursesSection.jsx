@@ -1,9 +1,9 @@
 import React from "react";
 import "./PopularCoursesSection.css";
 import teamImage from "../assets/img/team-img/member1.jpg";
-import courseImage1 from "../UserHome/assets/img/bash/bash_course_logo.png";
+import courseImage1 from "../UserHome/assets/img/BLV/Landing.jpg";
 import courseImage2 from "../UserHome/assets/img/bash/bash_course_logo.png";
-import courseImage3 from "../UserHome/assets/img/bash/bash_course_logo.png";
+import courseImage3 from "../UserHome/assets/img/Cross_Site_Scripting/xss.jpeg.jpg";
 import Aos from "aos";
 const coursesData = [
   {
@@ -72,7 +72,7 @@ const PopularCoursesSection = () => {
       </div>
 
       <div className="container">
-        <div className="row">
+        <div className="row gy-lg-0 gy-sm-4">
           {coursesData.map((course) => (
             <div
               key={course.id}

@@ -53,12 +53,12 @@ const HeaderHome = () => {
   }, []);
   return (
     <header
-      className={`header ${isScrolled ? "sticky" : ""}`}
+      className={`header ${isScrolled ? "sticky" : ""} px-md-0`}
       data-aos="fade-down"
       data-aos-duration="500"
     >
-      <nav className="navbar navbar-expand-lg navbar-light mx-5">
-        <div className={isScrolled ? "container" : "container-fluid"}>
+      <nav className="navbar navbar-expand-lg navbar-light mx-0 mx-lg-5">
+        <div className={isScrolled ? "container " : "container-fluid "}>
           {/* Logo */}
           <Link className="navbar-brand header__logo" to="/">
             <h2 className="header__logo-title">
@@ -77,7 +77,7 @@ const HeaderHome = () => {
           >
             <FontAwesomeIcon
               icon={isDropdownOpen ? faXmark : faBars}
-              className="text-white"
+              className="primary-text "
             />
           </button>
 
@@ -139,7 +139,7 @@ const HeaderHome = () => {
                         style={{ width: "50px", height: "50px" }}
                       />
                     ) : (
-                      <i className="fa-solid fa-user text-white"></i>
+                      <i class="fa-solid fa-circle-user primary-text fs-2"></i>
                     )}
                   </button>
                   {profileListVisible && (

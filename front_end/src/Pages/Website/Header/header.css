@@ -10,9 +10,25 @@
   background-color: var(--primary-bg);
   padding:0 2rem; 
 }
-
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 1rem; 
+  }
+  
+}
+@media screen and (max-width: 576px) {
+  .header {
+    padding: 0 0.5rem; 
+  }
+  
+}
+.header .navbar {
+  padding: 0.5rem 0;
+  transition: background-color 0.3s ease;
+}
 .header.sticky {
   position: fixed;
+  width: 100%;
   top: 0;
   background-color: var(--secondary-bg);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -186,4 +202,16 @@
     left: 5%;
     transform: translateX(0);
   }
+}
+.navbar-toggler {
+  border: 1px solid var(--main-color);
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+.navbar-toggler:hover {
+  background-color: var(--main-color);
+}
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
 }

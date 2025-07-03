@@ -16,7 +16,7 @@ const CountsSection = () => {
   return (
     <section id="counts" className="counts section  ">
       <div className="container counts-container" data-aos="zoom-in" data-aos-delay="100">
-        <div className="row gy-lg-0 gy-sm-4 py-lg-3 py-md-1 ">
+        <div className="row gy-lg-0 gy-sm-4 py-lg-3 pb-sm-4 align-items-center justify-content-center">
           <div className="col-lg-3 col-md-6">
             <div className="stats-item text-center w-100 h-100 ">
               <CountUp start={0} end={1232} duration={1} className="custom-counter" />
