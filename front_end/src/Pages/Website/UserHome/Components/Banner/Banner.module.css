@@ -14,9 +14,10 @@
 
 .soonBanner {
   display: flex;
-  width: 200vw;
+  /* width: 200vw; */
   animation: slideText 30s linear infinite;
 }
+
 
 .soonBannerText {
   width: 100vw;
@@ -25,6 +26,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .soonBannerText{
+    width: 150vw;
+  }
+  .soonBanner {
+    animation: slideText 40s linear infinite;
+  }
+ @keyframes slideText {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50vw);
+    }
+  }
+  
 }
 
 @keyframes slideText {
@@ -35,3 +53,4 @@
     transform: translateX(-100vw);
   }
 }
+

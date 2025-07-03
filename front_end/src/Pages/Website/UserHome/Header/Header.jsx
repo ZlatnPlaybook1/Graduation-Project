@@ -82,7 +82,7 @@ const Header = () => {
           >
             <FontAwesomeIcon
               icon={isDropdownOpen ? faXmark : faBars}
-              className="text-white"
+              className="primary-text "
             />
           </button>
 
@@ -153,7 +153,7 @@ const Header = () => {
                         style={{ width: "50px", height: "50px" }}
                       />
                     ) : (
-                      <i className="fa-solid fa-user text-white"></i>
+                      <i class="fa-solid fa-circle-user primary-text fs-2"></i>
                     )}
                   </button>
                   {profileListVisible && (

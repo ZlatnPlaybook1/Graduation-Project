@@ -6,7 +6,11 @@ const Footer = () => {
     <div className="footer-footer">
       <div className="container">
         <div className="row-footer">
-          <div className="copyright">Copyright CyberLabs</div>
+          <div className="copyright">Copyright 
+            <span className="header__logo-title">
+                          Cyber <span>Labs</span>
+                        </span>
+          </div>
           <div className="links-footer">
             <ul>
               <li>

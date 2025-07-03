@@ -28,8 +28,9 @@
 }
 
 .copyright {
-  font-size: 14px;
-  color: var(--primary-text);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-bg);
 }
 
 .links-footer ul {
@@ -45,7 +46,7 @@
 }
 
 .links-footer ul li a {
-  color: #ddd;
+  color: var(--primary-text);
   font-size: 22px;
   padding: 10px;
   border-radius: 50%;

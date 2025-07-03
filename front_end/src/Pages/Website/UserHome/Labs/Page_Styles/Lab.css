@@ -122,7 +122,16 @@
   align-self: center;
   padding: 20px 10px;
 }
-
+@media screen and (max-width: 991px) {
+  .course .row,
+  .course .row > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+}
 .course .section-p {
   color: var(--white-alpha-20);
   font-weight: lighter;
