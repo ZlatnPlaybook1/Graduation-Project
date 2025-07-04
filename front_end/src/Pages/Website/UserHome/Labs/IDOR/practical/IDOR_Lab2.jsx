@@ -126,6 +126,7 @@ const IDOR_Lab2 = () => {
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               placeholder="Enter ticket amount"
+              min="0"
               required
             />
             <button type="submit" className="unique-ticket-btn">

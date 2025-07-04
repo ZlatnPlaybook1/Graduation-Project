@@ -101,51 +101,53 @@ export default function IDOR_Lab1() {
   }, [location.search]);
 
   return (
-    <div style={{ backgroundColor: "var(--primary-bg)", minHeight: "100vh" }}>
+    <>
       <GoBack />
       <ShowHint hintText={hintMessage} />
       <ThemeSwitcher />
-      <div className="idor-wrapper">
-        <div className="idor-container">
-          <div className="idor-container-wrapper">
-            <div className="idor-row idor-pt-5 idor-mt-5 idor-mb-3">
-              <div className="idor-col-md-3"></div>
-              <div className="idor-col-md-6">
-                <h1 className="idor-title">{strings.title}</h1>
-              </div>
-              <div className="idor-col-md-3"></div>
-            </div>
-
-            <div className="idor-row idor-pt-2">
-              <div className="idor-col-md-3"></div>
-              <div className="idor-col-md-6">
-                <div className="idor-card idor-border-primary idor-mb-4">
-                  <div className="idor-card-header idor-text-primary">
-                    {strings.card_alert}
-                  </div>
+      <div style={{ backgroundColor: "var(--primary-bg)", minHeight: "100vh" }}>
+        <div className="idor-wrapper">
+          <div className="idor-container">
+            <div className="idor-container-wrapper">
+              <div className="idor-row idor-pt-5 idor-mt-5 idor-mb-3">
+                <div className="idor-col-md-3"></div>
+                <div className="idor-col-md-6">
+                  <h1 className="idor-title">{strings.title}</h1>
                 </div>
-
-                <h3 className="idor-middle-title idor-mb-3">
-                  {strings.middle_title}
-                </h3>
-
-                <form onSubmit={(e) => e.preventDefault()}>
-                  <div className="idor-d-grid idor-gap-2">
-                    <button
-                      className="idor-btn idor-btn-primary"
-                      type="button"
-                      onClick={() => handleViewClick(1)}
-                    >
-                      {strings.button}
-                    </button>
-                  </div>
-                </form>
+                <div className="idor-col-md-3"></div>
               </div>
-              <div className="idor-col-md-3"></div>
+
+              <div className="idor-row idor-pt-2">
+                <div className="idor-col-md-3"></div>
+                <div className="idor-col-md-6">
+                  <div className="idor-card idor-border-primary idor-mb-4">
+                    <div className="idor-card-header idor-text-primary">
+                      {strings.card_alert}
+                    </div>
+                  </div>
+
+                  <h3 className="idor-middle-title idor-mb-3">
+                    {strings.middle_title}
+                  </h3>
+
+                  <form onSubmit={(e) => e.preventDefault()}>
+                    <div className="idor-d-grid idor-gap-2">
+                      <button
+                        className="idor-btn idor-btn-primary"
+                        type="button"
+                        onClick={() => handleViewClick(1)}
+                      >
+                        {strings.button}
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <div className="idor-col-md-3"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

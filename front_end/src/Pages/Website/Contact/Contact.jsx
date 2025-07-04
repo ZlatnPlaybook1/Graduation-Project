@@ -5,7 +5,7 @@ import phoneIcon from "../assets/img/contact-img/icon-phone-accent.svg";
 import mailIcon from "../assets/img/contact-img/icon-mail-accent.svg";
 import locationIcon from "../assets/img/contact-img/icon-location.svg";
 import "./Contact.css";
-
+import ThemeSwitcher from "../UserHome/Components/ThemeSwitcher/ThemeSwitcher";
 const Contact = () => {
   const [formData, setFormData] = useState({
     fname: "",
@@ -73,7 +73,7 @@ const Contact = () => {
   return (
     <>
       <Header />
-
+      <ThemeSwitcher />
       <div className="page-header parallaxie">
         <div className="container">
           <div className="row align-items-center">

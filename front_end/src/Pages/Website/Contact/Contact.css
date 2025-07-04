@@ -239,7 +239,7 @@
 
 .member-contact-form.contact-form .form-control {
   background: var(--primary-bg);
-  color: var(--primary-text);
+  color: var(--whiteColor);
 }
 
 .google-map .container-fluid {

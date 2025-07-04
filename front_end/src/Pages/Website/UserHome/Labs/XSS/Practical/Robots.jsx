@@ -3,6 +3,8 @@ import "./Fourth_lab.css";
 import image_1 from "../../../assets/img/practical_lab2/image_1.png";
 import icon from "../../../assets/img/practical_lab2/icon.png";
 import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher";
+import ShowHint_Btn from "../../../Components/ShowHint_Btn/ShowHint_Btn";
+import GoBackBtn from "../../../Components/GoBack_Btn/GoBack_Btn";
 
 // Helper function to validate email
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -42,13 +44,15 @@ export default function Robots() {
   return (
     <>
       {/* Start Course Content */}
-      <ThemeSwitcher />
-      <div className="course-Second_lab">
-        <div className="container-Second_lab">
+      <div className="course-Fourth_lab">
+        <GoBackBtn />
+        <ShowHint_Btn />
+        <ThemeSwitcher />
+        <div className="container-Fourth_lab">
           <div className="row-practice p-4">
-            <div className="card-Second_lab">
-              <img src={image_1} alt="Robotics" />
-              <div className="card-text-Second_lab">
+            <div className="card-Fourth_lab">
+              <img className="robot-image" src={image_1} alt="Robotics" />
+              <div className="card-Fourth_lab">
                 <h2>Robots in Our Lives</h2>
                 <p>
                   The development of robots has significantly transformed our
@@ -145,7 +149,7 @@ export default function Robots() {
                 {comments.map((comment, index) => (
                   <div key={index} className="comment-card">
                     <div className="comment-header">
-                      <img src={icon} className="icon" alt="User Icon" />
+                      <img src={icon} className="icon-lab4" alt="User Icon" />
                       <a
                         href={comment.website || "#"}
                         target="_blank"

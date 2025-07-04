@@ -4,7 +4,7 @@ import ShowHintBtn from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
 import "../../SSRF_Labs.css";
 import products from "../../data.json";
 import axios from "axios";
-
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 export default function SSRF_store1() {
   const [outOfStockMessage, setOutOfStockMessage] = useState("");
 
@@ -52,24 +52,23 @@ export default function SSRF_store1() {
   console.log(admin);
 
   return (
-    <div className="container">
+    <>
       <GoBackBtn />
       <ShowHintBtn hintText={hintMessage} />
-      {outOfStockMessage && (
-        <div
-          className="out-of-stock-message"
-          style={{
-            color: "red",
-            textAlign: "center",
-            marginBottom: "20px",
-            marginTop: "20px",
-          }}
-        >
-          <h2>{outOfStockMessage}</h2>
-        </div>
-      )}
+      <ThemeSwitcher />
 
       <div className="ssrf__course-store">
+        {outOfStockMessage && (
+          <div
+            className="out-of-stock-message"
+            style={{
+              color: "red",
+              textAlign: "center",
+            }}
+          >
+            <h2>{outOfStockMessage}</h2>
+          </div>
+        )}
         <div className="container">
           <h1 style={{ textAlign: "center", marginBottom: 60 }}>
             Featured Products
@@ -85,7 +84,7 @@ export default function SSRF_store1() {
                 <div className="ssrf__course-store__card-store--card-text-store">
                   <button
                     onClick={() => checkStock(product)} // Send the request when clicked
-                    className="text-black bg-transparent border-0"
+                    className="text-ssrf bg-transparent border-0"
                   >
                     {product.title}
                   </button>
@@ -96,6 +95,6 @@ export default function SSRF_store1() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

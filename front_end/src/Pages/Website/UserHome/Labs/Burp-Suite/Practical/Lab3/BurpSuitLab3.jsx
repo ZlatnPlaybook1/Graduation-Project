@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./BurpSuitLab3.css";
 import GOBack from "../../../../Components/GoBack_Btn/GoBack_Btn";
 import ShowHint from "../../../../Components/ShowHint_Btn/ShowHint_Btn";
+import ThemeSwitcher from "../../../../Components/ThemeSwitcher/ThemeSwitcher";
 
 export default function BurpSuitLab3() {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -24,42 +25,44 @@ export default function BurpSuitLab3() {
   };
 
   return (
-    <div className="question-wrapper">
+    <>
       <GOBack />
       <ShowHint hintText="<p>Think logically about badge numbers!</p>" />
+      <ThemeSwitcher />
+      <div className="question-wrapper">
+        <div className="question-box">
+          <h3>{questionData.question}</h3>
+          <ul className="answer-list">
+            {questionData.options.map((option, index) => (
+              <li key={index} className="answer-item">
+                <label className="lbl-lab3">
+                  <input
+                    type="radio"
+                    name="quiz"
+                    value={option}
+                    checked={selectedOption === option}
+                    onChange={() => setSelectedOption(option)}
+                  />
+                  {option}
+                </label>
+              </li>
+            ))}
+          </ul>
+          <button onClick={handleSubmit} className="btn-submit">
+            Submit
+          </button>
 
-      <div className="question-box">
-        <h3>{questionData.question}</h3>
-        <ul className="answer-list">
-          {questionData.options.map((option, index) => (
-            <li key={index} className="answer-item">
-              <label>
-                <input
-                  type="radio"
-                  name="quiz"
-                  value={option}
-                  checked={selectedOption === option}
-                  onChange={() => setSelectedOption(option)}
-                />
-                {option}
-              </label>
-            </li>
-          ))}
-        </ul>
-        <button onClick={handleSubmit} className="btn-submit">
-          Submit
-        </button>
-
-        {submitted && (
-          <p
-            className={`feedback-message ${
-              isCorrect ? "feedback-correct" : "feedback-wrong"
-            }`}
-          >
-            {isCorrect ? "Correct! ✅" : "Wrong ❌"}
-          </p>
-        )}
+          {submitted && (
+            <p
+              className={`feedback-message ${
+                isCorrect ? "feedback-correct" : "feedback-wrong"
+              }`}
+            >
+              {isCorrect ? "Correct! ✅" : "Wrong ❌"}
+            </p>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

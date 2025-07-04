@@ -111,7 +111,7 @@ export default function IDORLabComponent() {
           )}
 
           <form onSubmit={handleTransfer} className="idorlab-transfer-form">
-            <div className="form-group">
+            <div className="form-group-lab3">
               <label className="transferAmount" htmlFor="transfer_amount">
                 Transfer Amount:
               </label>
