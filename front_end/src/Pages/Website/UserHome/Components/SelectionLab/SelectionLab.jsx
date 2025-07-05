@@ -12,6 +12,7 @@ export const SelectionLab = ({
   options = [],
   question,
   type,
+  navigateTo = -1,
 }) => {
   const [selectedFile, setSelectedFile] = useState("");
   const [fileContent, setFileContent] = useState("");
@@ -65,7 +66,7 @@ export const SelectionLab = ({
   return (
     <>
       <div className="course-labcc">
-        <GoBackBtn />
+        <GoBackBtn navigateTo={navigateTo}/>
         <ShowHintBtn hintText={hint} />
         <div className="container">
           <div className="faq-section-labcc">

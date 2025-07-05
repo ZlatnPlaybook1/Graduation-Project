@@ -15,6 +15,7 @@ export default function Learn_capital_3() {
         options={["BMW", "GTR", "Honda", "Kia", "Mazda", "Nissan"]}
         question={"What is The Logo"}
         type={"car"}
+        navigateTo={"/fileinclusion/fileinclusion_lab"}
       />
     </>
   );

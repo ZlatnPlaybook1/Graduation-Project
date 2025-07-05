@@ -16,6 +16,7 @@ export default function Learn_capital_1() {
         question={"What is The Capital?"}
         title={"File Inclusion Demonstration"}
         type={"city"}
+        navigateTo={"/fileinclusion/fileinclusion_lab"}
       />
     </>
   );

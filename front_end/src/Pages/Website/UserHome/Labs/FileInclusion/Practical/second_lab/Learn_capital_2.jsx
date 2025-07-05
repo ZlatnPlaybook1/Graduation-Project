@@ -22,6 +22,7 @@ export default function Learn_capital_2() {
         ]}
         question={"What is The Fruit?"}
         type={"fruit"}
+        navigateTo={"/fileinclusion/fileinclusion_lab"}
       />
     </>
   );
