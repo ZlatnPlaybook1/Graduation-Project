@@ -90,9 +90,9 @@ const HeaderHome = () => {
           >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center">
               <li className="nav-item">
-                <a className="nav-link active" href="/">
+                <NavLink className="nav-link" to="/">
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
                 {token ? (
@@ -106,9 +106,12 @@ const HeaderHome = () => {
                 )}
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/about-us">
+                {/* <a className="nav-link" href="/about-us">
                   About Us
-                </a>
+                </a> */}
+                <NavLink className="nav-link" to="/about-us">
+                  About Us
+                </NavLink>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#allLabs">

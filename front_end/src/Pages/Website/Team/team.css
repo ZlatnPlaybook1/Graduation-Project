@@ -9,7 +9,11 @@
 
 
 .team-section__member {
-  /* max-width: 25rem; */
+  max-width: 25rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .team-section__member-img {

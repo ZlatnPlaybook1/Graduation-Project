@@ -145,7 +145,7 @@
 /* Bottom Section */
 .footer__bottom {
   padding: 25px 15px;
-  border-top: 1px solid var(--primary-text);
+  border-top: 1px solid white;
   transition: all 0.3s ease-in-out;
 }
 
