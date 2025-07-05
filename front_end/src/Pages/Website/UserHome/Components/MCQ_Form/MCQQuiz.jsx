@@ -5,6 +5,7 @@ import "./MCQQuiz.css";
 // Sound imports
 import correctSound from "./sound-effects/correct-ans.mp3";
 import wrongSound from "./sound-effects/wrong-ans.mp3";
+import { useNavigate } from "react-router-dom";
 import passedSound from "./sound-effects/quiz-passed.mp3";
 import failedSound from "./sound-effects/quiz-failed.mp3";
 
@@ -19,10 +20,11 @@ const MCQQuiz = ({ questionsData }) => {
   const [submitted, setSubmitted] = useState(false); // Prevent multiple submissions
 
   const maxStepsToShow = 5;
+  const navigate = useNavigate();
 
   const getAnimationClass = (index) => {
-    const delays = ['', 'delay-100', 'delay-200', 'delay-300'];
-    return `mcq-quiz__bounce-left ${delays[index] || ''}`;
+    const delays = ["", "delay-100", "delay-200", "delay-300"];
+    return `mcq-quiz__bounce-left ${delays[index] || ""}`;
   };
 
   // Show start alert on mount
@@ -37,6 +39,11 @@ const MCQQuiz = ({ questionsData }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         setQuizStarted(true);
+      } else if (
+        result.isDismissed &&
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        navigate(-1);
       }
     });
   }, []);
@@ -143,11 +150,17 @@ const MCQQuiz = ({ questionsData }) => {
 
   // Calculate sliding window for steps progress
   const totalQuestions = questionsData.length;
-  let startIndex = Math.max(0, currentQuestion - Math.floor(maxStepsToShow / 2));
+  let startIndex = Math.max(
+    0,
+    currentQuestion - Math.floor(maxStepsToShow / 2)
+  );
   if (startIndex + maxStepsToShow > totalQuestions) {
     startIndex = Math.max(0, totalQuestions - maxStepsToShow);
   }
-  const stepsToDisplay = questionsData.slice(startIndex, startIndex + maxStepsToShow);
+  const stepsToDisplay = questionsData.slice(
+    startIndex,
+    startIndex + maxStepsToShow
+  );
 
   return (
     <div className="overflow-hidden">
@@ -170,7 +183,9 @@ const MCQQuiz = ({ questionsData }) => {
                     return (
                       <div
                         key={actualIndex}
-                        className={`step-single ${actualIndex <= currentQuestion ? 'active' : ''}`}
+                        className={`step-single ${
+                          actualIndex <= currentQuestion ? "active" : ""
+                        }`}
                       >
                         <div className="step-line">
                           <div className="fill"></div>
@@ -186,7 +201,10 @@ const MCQQuiz = ({ questionsData }) => {
 
           {/* Right Side - Quiz Content */}
           <div className="col-md-7 tab-100">
-            <form className="mcq-quiz__form" onSubmit={(e) => e.preventDefault()}>
+            <form
+              className="mcq-quiz__form"
+              onSubmit={(e) => e.preventDefault()}
+            >
               <div className="mcq-quiz__show-section mcq-quiz__wrapper">
                 <section className="mcq-quiz__steps">
                   <h1 className="mcq-quiz__question">
@@ -196,7 +214,9 @@ const MCQQuiz = ({ questionsData }) => {
                   <fieldset className="mcq-quiz__options">
                     {currentQuestionData.options.map((option, idx) => (
                       <div
-                        className={`mcq-quiz__radio-field mcq-quiz__bounce-left ${getAnimationClass(idx)}`}
+                        className={`mcq-quiz__radio-field mcq-quiz__bounce-left ${getAnimationClass(
+                          idx
+                        )}`}
                         key={idx}
                       >
                         <input
@@ -204,10 +224,14 @@ const MCQQuiz = ({ questionsData }) => {
                           type="radio"
                           name={`question_${currentQuestionData.id}`}
                           value={option}
-                          checked={selectedAnswers[currentQuestionData.id] === option}
+                          checked={
+                            selectedAnswers[currentQuestionData.id] === option
+                          }
                           onChange={handleOptionChange}
                         />
-                        <label className={`mcq-quiz__op op${idx + 1}`}>{option}</label>
+                        <label className={`mcq-quiz__op op${idx + 1}`}>
+                          {option}
+                        </label>
                       </div>
                     ))}
                   </fieldset>
@@ -215,13 +239,20 @@ const MCQQuiz = ({ questionsData }) => {
                   {/* Navigation Buttons */}
                   <div className="mcq-quiz__next-prev">
                     {currentQuestion > 0 && (
-                      <button className="mcq-quiz__prev" onClick={goToPreviousQuestion}>
+                      <button
+                        className="mcq-quiz__prev"
+                        onClick={goToPreviousQuestion}
+                      >
                         <i className="fa-solid fa-arrow-left"></i> Last Question
                       </button>
                     )}
                     {currentQuestion < questionsData.length - 1 ? (
-                      <button className="mcq-quiz__next" onClick={goToNextQuestion}>
-                        Next Question <i className="fa-solid fa-arrow-right"></i>
+                      <button
+                        className="mcq-quiz__next"
+                        onClick={goToNextQuestion}
+                      >
+                        Next Question{" "}
+                        <i className="fa-solid fa-arrow-right"></i>
                       </button>
                     ) : (
                       <button className="mcq-quiz__next" onClick={handleSubmit}>
