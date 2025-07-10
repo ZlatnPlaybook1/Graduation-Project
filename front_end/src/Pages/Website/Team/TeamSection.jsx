@@ -2,8 +2,13 @@ import React, { useEffect } from "react";
 import "./team.css";
 import Aos from "aos";
 import image1 from "../assets/img/team-img/member1.jpg";
-import imageButen from "../assets/img/team-img/Buten.jpg";
-import imageMo from "../assets/img/team-img/member1.png";
+import PhotoDeveloperAhmed from "../assets/img/team-img/Team-4.webp";
+import PhotoDeveloperFront from "../assets/img/team-img/4.jpg";
+import PhotoDeveloperBack from "../assets/img/team-img/9.jpg";
+import PhotoCyberTeam1 from "../assets/img/team-img/Team-3.webp";
+import PhotoCyberTeam2 from "../assets/img/team-img/team-7UT4L65.jpg";
+import PhotoCyberTeam3 from "../assets/img/team-img/team-52G3BWD.jpg";
+
 const teamMembers = [
   {
     id: 1,
@@ -22,7 +27,7 @@ const teamMembers = [
     name: "Ahmed Sherif",
     role: "Frontend Developer",
     department: "Frontend",
-    image: imageButen,
+    image: PhotoDeveloperAhmed,
     links: {
       fb: "https://www.facebook.com/profile.php?id=100004491948645",
       twit: "https://x.com/AhmedSh33249042",
@@ -34,7 +39,7 @@ const teamMembers = [
     name: "Ebrahiem Gamal",
     role: "Frontend Developer",
     department: "Frontend",
-    image: image1,
+    image: PhotoDeveloperFront,
     links: {
       fb: "https://www.facebook.com/",
       twit: "https://www.twitter.com/",
@@ -46,7 +51,7 @@ const teamMembers = [
     name: "M'omen Mustafa",
     role: "Backend Developer",
     department: "Backend",
-    image: imageMo,
+    image: PhotoDeveloperBack,
     links: {
       fb: "https://www.facebook.com/",
       twit: "https://www.twitter.com/",
@@ -58,7 +63,7 @@ const teamMembers = [
     name: "Ebrahim Nassar",
     role: "Cyber Security Specialist",
     department: "Cyber",
-    image: image1,
+    image: PhotoCyberTeam1,
     links: {
       fb: "https://www.facebook.com/",
       twit: "https://www.twitter.com/",
@@ -70,7 +75,7 @@ const teamMembers = [
     name: "Ahmed Rdwan",
     role: "Cyber Security Specialist",
     department: "Cyber",
-    image: image1,
+    image: PhotoCyberTeam2,
     links: {
       fb: "https://www.facebook.com/",
       twit: "https://www.twitter.com/",
@@ -82,7 +87,7 @@ const teamMembers = [
     name: "Mohamed Emad",
     role: "Cyber Security Specialist",
     department: "Cyber",
-    image: image1,
+    image: PhotoCyberTeam3,
     links: {
       fb: "https://www.facebook.com/",
       twit: "https://www.twitter.com/",
