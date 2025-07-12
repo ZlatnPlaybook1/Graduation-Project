@@ -60,14 +60,12 @@ app.use("/src", express.static("src"));
 
 app.use(
   cors({
-    // origin: "http://localhost:3000", // Your React app's URL
     credentials: true, // Required for cookies
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
 
-app.use(morgan("dev")); // morgan: HTTP request logger middleware,
-// dev: predefined format string that Morgan will use to log requests
+app.use(morgan("dev"));
 app.use(bodyParser.json({ limit: "10mb" }));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 app.use(express.json());
