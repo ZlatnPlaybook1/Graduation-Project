@@ -82,10 +82,10 @@ export default function CookiesLogin({ CookieName, ApiEnd, labName, values }) {
           hintText={"<p>click inspect and cheak cookies value</p>"}
         />
         <div className="container-login">
-          <div className="login-form">
+          <div className="cookies__login-form">
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
-              <div className="form-group">
+              <div className="cookies__login__form-group">
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
@@ -97,7 +97,7 @@ export default function CookiesLogin({ CookieName, ApiEnd, labName, values }) {
                   placeholder="Enter Your Email.."
                 />
               </div>
-              <div className="form-group">
+              <div className="cookies__login__form-group">
                 <label htmlFor="password">Password</label>
                 <input
                   type="password"
@@ -110,7 +110,7 @@ export default function CookiesLogin({ CookieName, ApiEnd, labName, values }) {
                   placeholder="Enter Your Password.."
                 />
               </div>
-              <div className="form-group">
+              <div className="cookies__login__form-group">
                 <button type="submit" className="btn-login">
                   Login
                 </button>

@@ -57,48 +57,49 @@
 }
 
 /* End Global Var */
-.login-form {
+.cookies__login-form {
   padding: 50px;
   border-radius: 5px;
   min-width: 400px;
-  background-color: var(--faq-header);
-  border: 3px solid var(--faq-header-hover);
-  box-shadow: 0 4px 10px rgba(200, 200, 200, 0.1);
+  background-color: var(--secondary-bg);
+  border: 3px solid var(--faq-body-bg);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
 }
+.cookies__login-form form{
+  width: 100%;
+}
 
-.login-form h1 {
+.cookies__login-form h1 {
   margin-bottom: 20px;
 }
 
-.login-form .form-group label {
+.cookies__login-form .cookies__login__form-group label {
   font-size: 1.2rem;
-  font-weight: lighter;
-  color: whitesmoke
+  color: var(--primary-text);
 }
 
-.login-form .form-group input {
+.cookies__login-form .cookies__login__form-group input {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
   border: none;
   border-radius: 10px;
-  font-weight: lighter;
   color: var(--primary-text);
-  background-color: var(--faq-header);
+  background-color: var(--faq-header-hover);
 }
 
-.login-form .form-group {
+.cookies__login-form .cookies__login__form-group {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center;  
 }
 
-.login-form button.btn-login {
+.cookies__login-form button.btn-login {
   width: 60%;
   padding: 10px;
   margin: 10px 0;
@@ -111,7 +112,7 @@
   transition: var(--main-transition);
 }
 
-.login-form button:hover {
+.cookies__login-form button:hover {
   opacity: .85;
 }
 
