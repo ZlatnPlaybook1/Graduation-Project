@@ -56,7 +56,6 @@ import lab2SSRF from "./labs/SSRF/lab2/lab2.router";
 
 const app = express();
 app.use("/uploads", express.static("uploads"));
-app.use("/src", express.static("src"));
 
 app.use(
   cors({
