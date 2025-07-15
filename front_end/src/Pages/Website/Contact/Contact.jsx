@@ -50,7 +50,7 @@ const Contact = () => {
 
       setStatus({
         loading: false,
-        success: result.message || "Message sent successfully!",
+        success: result.mas || "Message sent successfully!",
         error: null,
       });
 

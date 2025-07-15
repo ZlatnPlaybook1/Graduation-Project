@@ -7,7 +7,7 @@
   height: 100%;
   z-index: 9999;
   overflow: hidden;
-  background: #0f0f0f; 
+  background: #0f0f0f;
 }
 
 .loader-wrapper .loader-section {
@@ -76,7 +76,7 @@
   transform: translate(-50%, -50%);
   font-size: 1.2rem;
   color: #16a085;
-  font-family: 'Orbitron', sans-serif; /* Include Orbitron from Google Fonts if desired */
+  font-family: "Orbitron", sans-serif; /* Include Orbitron from Google Fonts if desired */
   text-transform: uppercase;
   letter-spacing: 0.1em;
   z-index: 12;
@@ -85,10 +85,12 @@
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 5px #16a085, 0 0 10px #16a085, 0 0 20px #16a085, 0 0 40px #16a085;
+    text-shadow: 0 0 5px #16a085, 0 0 10px #16a085, 0 0 20px #16a085,
+      0 0 40px #16a085;
   }
   to {
-    text-shadow: 0 0 10px #16a085, 0 0 20px #16a085, 0 0 30px #16a085, 0 0 50px #16a085;
+    text-shadow: 0 0 10px #16a085, 0 0 20px #16a085, 0 0 30px #16a085,
+      0 0 50px #16a085;
   }
 }
 
@@ -112,11 +114,19 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes spin-reverse {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(-360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
