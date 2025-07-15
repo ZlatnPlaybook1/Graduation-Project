@@ -1,6 +1,8 @@
 import React from "react";
 import "./PopularCoursesSection.css";
-import teamImage from "../assets/img/team-img/member1.jpg";
+import teamImage from "../assets//img/team-img/team-7UT4L65.jpg";
+import teamImage1 from "../assets//img/team-img/team-52G3BWD.jpg";
+import teamImage2 from "../assets//img/team-img/Team-3.webp";
 import courseImage1 from "../UserHome/assets/img/BLV/Landing.jpg";
 import courseImage2 from "../UserHome/assets/img/bash/bash_course_logo.png";
 import courseImage3 from "../UserHome/assets/img/Cross_Site_Scripting/xss.jpeg.jpg";
@@ -14,9 +16,9 @@ const coursesData = [
     description:
       "Analyze business logic flaws, exploitation methods, and strategies for mitigation.",
     image: courseImage1,
-    detailsLink: "course-details.html",
+    detailsLink: "/BL_Vuln",
     trainer: {
-      name: "Smara ",
+      name: "Eng. Ahmed Radwan ",
       image: teamImage,
       userCount: 50,
       heartCount: 65,
@@ -31,10 +33,10 @@ const coursesData = [
     description:
       "Develop efficient Bash scripts to automate tasks and system management.",
     image: courseImage2,
-    detailsLink: "course-details.html",
+    detailsLink: "/bash-scripting",
     trainer: {
-      name: "Nsar",
-      image: teamImage,
+      name: "Eng. Ebrahim Nasar",
+      image: teamImage2,
       userCount: 35,
       heartCount: 42,
     },
@@ -48,10 +50,10 @@ const coursesData = [
     description:
       "Understand CSRF attack vectors, mitigation techniques, and prevention best practices.",
     image: courseImage3,
-    detailsLink: "course-details.html",
+    detailsLink: "/xss",
     trainer: {
-      name: " Emad",
-      image: teamImage,
+      name: "Eng. Mohamed Emad",
+      image: teamImage1,
       userCount: 20,
       heartCount: 85,
     },
