@@ -367,3 +367,26 @@ export async function saveImage(req, res: Response, next) {
         res.status(500).json({ error: error.message || 'Error uploading file.' });
     }
 }
+
+export async function contactUs(req: Request, res: Response): Promise<Response> {
+    const { name, email, subject, message } = req.body;
+
+    try {
+        const contact = await prisma.contactUs.create({
+            data: {
+                name,
+                email,
+                subject,
+                message,
+            },
+        });
+
+        return res.status(201).json({
+            msg: "Message sent successfully.We will get back to you soon.",
+            data: contact
+        });
+    } catch (error) {
+        console.error('Error sending message:', error);
+        return res.status(500).json({ error: " server error" });
+    }
+}
