@@ -1,5 +1,5 @@
-import {Router} from "express";
-import {isAuthenticated} from "../utilities/auth";
+import { Router } from "express";
+import { isAuthenticated } from "../utilities/auth";
 import {
     createNewUser,
     deleteUser,
@@ -31,11 +31,11 @@ dashboardRouter.delete("/user/:id", deleteUser)
 //user
 dashboardRouter.get("/user", isAuthenticated, getUserByToken)
 
-dashboardRouter.post("/dataUser", isAuthenticated, upload.single("image"),saveImage,addPersonalInfo)
+dashboardRouter.post("/dataUser", isAuthenticated, upload.single("image"), saveImage, addPersonalInfo)
 
-dashboardRouter.post("/reset-password",isAuthenticated,resetPassword)
+dashboardRouter.post("/reset-password", isAuthenticated, resetPassword)
 
-dashboardRouter.get("/personalInfo",isAuthenticated,getUserByToken)
+dashboardRouter.get("/personalInfo", isAuthenticated, getUserByToken)
 
-dashboardRouter.post("/contactWithUs", (contactUs));
+dashboardRouter.post("/contactWithUs", contactUs);
 export default dashboardRouter;

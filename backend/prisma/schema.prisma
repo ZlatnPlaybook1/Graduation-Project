@@ -303,15 +303,16 @@ model lab2RaceConditionPayment {
 }
 
 model lab1SSRF {
-  id       String  @id @default(uuid())
-  username String  @unique
+  id       String @id @default(uuid())
+  username String @unique
 }
 
 model contactUs {
-  id        String      @id @default(uuid())
-  name      String
+  id        String   @id @default(uuid())
+  fname     String
+  lname     String
+  phone     String
   email     String
-  subject   String
   message   String
   createdAt DateTime @default(now())
 }

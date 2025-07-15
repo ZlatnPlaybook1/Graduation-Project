@@ -1,13 +1,13 @@
-import {Request, Response} from "express";
+import { Request, Response } from "express";
 import jwt from 'jsonwebtoken';
 import multer from 'multer';
 import prisma from "../utilities/db";
-import {hashPassword, comparePasswords} from "../utilities/auth";
+import { hashPassword, comparePasswords } from "../utilities/auth";
 
 
 export async function getAllUsers(req: Request, res: Response): Promise<Response> {
     const writers = await prisma.user.findMany({
-        where: {role: 'writer'},
+        where: { role: 'writer' },
     });
     return res.status(200).json({
         data: writers
@@ -15,31 +15,31 @@ export async function getAllUsers(req: Request, res: Response): Promise<Response
 }
 
 export async function getUserById(req: Request, res: Response): Promise<Response> {
-    const {id} = req.params;
+    const { id } = req.params;
     try {
         const user = await prisma.user.findUnique({
-            where: {id},
-            select: {email: true, name: true, role: true, id: true},
+            where: { id },
+            select: { email: true, name: true, role: true, id: true },
 
         });
 
         if (!user) {
-            return res.status(404).json({error: "User not found"});
+            return res.status(404).json({ error: "User not found" });
         }
 
         return res.status(200).json({
             msg: "User found",
-            data: {email: user.email, name: user.name, role: user.role}
+            data: { email: user.email, name: user.name, role: user.role }
         });
 
     } catch (error) {
         console.error('Error getting user:', error);
-        return res.status(500).json({error: " server error"});
+        return res.status(500).json({ error: " server error" });
     }
 }
 
 export async function createNewUser(req: Request, res: Response): Promise<Response> {
-    const {email, name, role} = req.body;
+    const { email, name, role } = req.body;
     const hashedPassword = await hashPassword(req.body.password);
     try {
         const user = await prisma.user.create({
@@ -57,25 +57,25 @@ export async function createNewUser(req: Request, res: Response): Promise<Respon
         });
     } catch (error) {
         console.error('Error creating user:', error);
-        return res.status(500).json({error: " server error"});
+        return res.status(500).json({ error: " server error" });
     }
 }
 
 export async function updateUser(req: Request, res: Response): Promise<Response> {
-    const {id} = req.params;
-    const {email, name, role} = req.body;
+    const { id } = req.params;
+    const { email, name, role } = req.body;
 
     try {
         const user = await prisma.user.findUnique({
-            where: {id},
+            where: { id },
         });
 
         if (!user) {
-            return res.status(404).json({error: "User not found"});
+            return res.status(404).json({ error: "User not found" });
         }
 
         await prisma.user.update({
-            where: {id},
+            where: { id },
             data: {
                 email,
                 name,
@@ -84,8 +84,8 @@ export async function updateUser(req: Request, res: Response): Promise<Response>
         });
 
         const updatedUser = await prisma.user.findUnique({
-            where: {id},
-            select: {email: true, name: true, role: true, id: true},
+            where: { id },
+            select: { email: true, name: true, role: true, id: true },
         });
 
 
@@ -97,27 +97,27 @@ export async function updateUser(req: Request, res: Response): Promise<Response>
 
     } catch (error) {
         console.error('Error updating user:', error);
-        return res.status(500).json({error: " server error"});
+        return res.status(500).json({ error: " server error" });
     }
 }
 
 export async function deleteUser(req: Request, res: Response): Promise<Response> {
-    const {id} = req.params;
+    const { id } = req.params;
 
     try {
         const user = await prisma.user.findUnique({
-            where: {id},
+            where: { id },
         });
 
         if (!user) {
-            return res.status(404).json({error: "User not found"});
+            return res.status(404).json({ error: "User not found" });
         }
         await prisma.validationNumber.deleteMany({
-            where: {userId: id},
+            where: { userId: id },
         });
 
         await prisma.user.delete({
-            where: {id},
+            where: { id },
         });
         return res.status(200).json({
             message: "User deleted successfully",
@@ -126,7 +126,7 @@ export async function deleteUser(req: Request, res: Response): Promise<Response>
 
     } catch (error) {
         console.error('Error deleting user:', error);
-        return res.status(500).json({error: " server error"});
+        return res.status(500).json({ error: " server error" });
     }
 }
 
@@ -134,7 +134,7 @@ export async function getUserByToken(req: Request, res: Response): Promise<Respo
     const token = req.headers.authorization?.split(' ')[1]; // Extract token from "Bearer <token>"
 
     if (!token) {
-        return res.status(401).json({error: "Authorization token is required"});
+        return res.status(401).json({ error: "Authorization token is required" });
     }
 
     try {
@@ -142,7 +142,7 @@ export async function getUserByToken(req: Request, res: Response): Promise<Respo
         const userId = decoded.id;
 
         const user = await prisma.user.findUnique({
-            where: {id: userId},
+            where: { id: userId },
             select: {
                 id: true,
                 email: true,
@@ -159,7 +159,7 @@ export async function getUserByToken(req: Request, res: Response): Promise<Respo
         });
 
         if (!user) {
-            return res.status(404).json({error: "User not found"});
+            return res.status(404).json({ error: "User not found" });
         }
 
         return res.status(200).json({
@@ -169,7 +169,7 @@ export async function getUserByToken(req: Request, res: Response): Promise<Respo
 
     } catch (error) {
         console.error('Error verifying token:', error);
-        return res.status(401).json({error: "Invalid or expired token"});
+        return res.status(401).json({ error: "Invalid or expired token" });
     }
 }
 
@@ -188,7 +188,7 @@ export async function addPersonalInfo(req: Request, res: Response): Promise<Resp
         const existName = await prisma.user.findUnique({
             where: { name: req.body.name },
         });
-        
+
 
         // Build the update data dynamically
         const updateData: any = {
@@ -227,22 +227,22 @@ export async function resetPassword(req: Request, res: Response): Promise<Respon
     try {
 
         const user = await prisma.user.findUnique({
-            where: {id: userId},
+            where: { id: userId },
         });
 
         if (!user) {
-            return res.status(404).json({error: "User not found"});
+            return res.status(404).json({ error: "User not found" });
         }
- 
+
         if (!await comparePasswords(req.body.oldPassword, user.password)) {
-            return res.status(400).json({error: "Old password is incorrect"});
+            return res.status(400).json({ error: "Old password is incorrect" });
         }
 
         const hashedPassword = await hashPassword(req.body.newPassword);
-        
+
         const newPassword = await prisma.user.update({
-            where: {id: userId},
-            data: { 
+            where: { id: userId },
+            data: {
                 password: hashedPassword,
             },
         });
@@ -252,23 +252,23 @@ export async function resetPassword(req: Request, res: Response): Promise<Respon
         });
 
     } catch
-        (error) {
+    (error) {
         console.error('Error getting user:', error);
-        return res.status(500).json({error: " server error"});
+        return res.status(500).json({ error: " server error" });
     }
 }
 
 export async function personalInfo(req: Request, res: Response): Promise<Response> {
-    const {id} = req.params;
+    const { id } = req.params;
     try {
         const user = await prisma.user.findUnique({
-            where: {id},
-            select: {email: true, name: true, role: true, birthday: true, phoneNum: true, address: true},
+            where: { id },
+            select: { email: true, name: true, role: true, birthday: true, phoneNum: true, address: true },
 
         });
 
         if (!user) {
-            return res.status(404).json({error: "User not found"});
+            return res.status(404).json({ error: "User not found" });
         }
 
         return res.status(200).json({
@@ -285,7 +285,7 @@ export async function personalInfo(req: Request, res: Response): Promise<Respons
 
     } catch (error) {
         console.error('Error getting user:', error);
-        return res.status(500).json({error: " server error"});
+        return res.status(500).json({ error: " server error" });
     }
 }
 
@@ -302,7 +302,7 @@ export const upload = multer({
     }),
     fileFilter: (req, file, cb) => {
         // Check the file type
-        const allowedMimeTypes = ['image/jpeg','image/jpg', 'image/png', 'image/gif'];
+        const allowedMimeTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
         if (allowedMimeTypes.includes(file.mimetype)) {
             cb(null, true); // Accept the file
         } else {
@@ -369,20 +369,19 @@ export async function saveImage(req, res: Response, next) {
 }
 
 export async function contactUs(req: Request, res: Response): Promise<Response> {
-    const { name, email, subject, message } = req.body;
-
+    const { fname, lname, phone, email, message } = req.body;
     try {
         const contact = await prisma.contactUs.create({
             data: {
-                name,
+                fname,
+                lname,
+                phone,
                 email,
-                subject,
-                message,
-            },
+                message
+            }
         });
-
         return res.status(201).json({
-            msg: "Message sent successfully.We will get back to you soon.",
+            msg: "Message sent successfully. We will contact you soon.",
             data: contact
         });
     } catch (error) {
